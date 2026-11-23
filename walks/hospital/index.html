@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>醫院街的仕紳之路</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 安靜的個人走讀筆記，像夾在一本老照片活頁夾裡的散步紀錄
+   IDEA: 導覽人手上那本老照片活頁夾：每一站翻開一張「從前」，再抬頭看「現在」
+   PICTURE: 頂部大幅照片（巷仔46 長屋的後院立面），下方 20 站路線條
+   COLOUR and TYPE: 老照片的墨黑 #1f2a33、紅磚 #b0472f、溝面磚的土黃 #a77d3f；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 單欄閱讀，左側掛時間；照片網格點開可放大左右切換 */
+:root{color-scheme:light dark;
+--bg:light-dark(#f6f4f0,#141617);--card:light-dark(#fffefb,#1d2022);--ink:light-dark(#1e2124,#e7e4df);
+--mute:light-dark(#66625c,#a09b94);--brick:light-dark(#b0472f,#e48a72);--ink2:light-dark(#1f2a33,#9fb3c4);
+--tile:light-dark(#efe6d6,#2a251d);--ochre:light-dark(#8c6528,#d4ac6a);--line:light-dark(#e5ded5,#2e3133)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.75 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+html{scroll-padding-top:16px}
+h1,h2,h3{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.1;font-weight:800}
+h2{font-size:clamp(22px,3vw,28px);line-height:1.3;font-weight:800}
+.hero{background:#1f2a33;color:#f4f1ec}
+.hero .ph{position:relative;height:clamp(320px,56vh,540px);overflow:hidden}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(17,23,28,.92))}
+.hero .tx{position:absolute;left:max(5vw,16px);right:max(5vw,16px);bottom:24px;z-index:1}
+.hero .kick{font-size:15px;opacity:.9;margin:0 0 6px}
+.hero p{margin:.5em 0 0;font-size:17px;max-width:66ch;opacity:.93}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;padding:16px max(5vw,16px);font-size:14px;background:#8a3826;color:#f6e6df}
+.meta b{color:#fff;font-weight:700;margin-right:4px}
+.only{background:var(--tile);border-bottom:1px solid var(--line)}
+.only>div{max-width:1040px;margin:0 auto;padding:24px max(4vw,14px)}
+.only h3{font-size:20px;color:var(--brick);margin-bottom:6px}
+.only ul{margin:8px 0 0;columns:2 320px;column-gap:34px}
+.only li{break-inside:avoid;margin:0 0 .5em}
+nav:not(.yr-pn){max-width:1040px;margin:22px auto 0;padding:0 max(4vw,14px)}
+nav .scroll{display:flex;flex-wrap:wrap;gap:8px}
+nav a{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:14px;min-height:36px;background:var(--card)}
+nav a span{color:var(--brick);font-weight:700}
+nav a:focus-visible,button:focus-visible{outline:3px solid var(--brick);outline-offset:2px}
+main{max-width:1040px;margin:0 auto;padding:12px max(4vw,14px) 60px}
+.note{font-size:14.5px;color:var(--mute);margin:16px 0 0}
+.part{margin:44px 0 0;padding:10px 0 0;border-top:3px solid var(--ink2);color:var(--ink2);font:800 15px "Noto Serif TC",serif}
+.stop{display:grid;grid-template-columns:118px minmax(0,1fr);gap:0 26px;padding:34px 0;border-bottom:1px solid var(--line)}
+.when{font-size:14px;color:var(--mute);line-height:1.5;padding-top:4px}
+.when .n{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--ink2);color:var(--bg);font:800 17px "Noto Serif TC",serif;margin-bottom:8px}
+.when b{display:block;color:var(--ink);font-size:16px}
+.when i{font-style:normal;white-space:nowrap}
+.place{font-size:14px;color:var(--ochre);font-weight:500;margin:4px 0 0}
+ul{margin:12px 0 0;padding-left:1.2em}
+li{margin:.25em 0}
+li::marker{color:var(--brick)}
+.q{background:var(--tile);border-radius:10px;padding:10px 14px;margin-top:14px;font-size:15px}
+.q b{color:var(--brick)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;margin-top:18px}
+.grid button{all:unset;cursor:pointer;position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--line)}
+.grid button:focus-visible{outline:3px solid var(--brick);outline-offset:2px}
+.grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.grid button:hover img{transform:scale(1.04)}
+.grid small{position:absolute;left:6px;right:6px;bottom:5px;width:fit-content;max-width:calc(100% - 12px);background:rgba(0,0,0,.62);color:#fff;font-size:12px;line-height:1.45;padding:1px 7px;border-radius:4px}
+.fix{border-left:3px solid var(--brick);padding:10px 16px;margin-top:28px;font-size:15px;background:var(--card)}
+#lb{position:fixed;inset:0;z-index:20;background:rgba(10,12,13,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:14px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:10px;align-items:center;color:#eee;margin-top:10px;font-size:15px;flex-wrap:wrap;justify-content:center;text-align:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer}
+footer{max-width:1040px;margin:0 auto;padding:0 max(4vw,14px) 40px;color:var(--mute);font-size:14px}
+@media(max-width:640px){.hero .ph{height:620px}.hero p{font-size:16px}.stop{grid-template-columns:minmax(0,1fr)}.when{display:flex;gap:12px;align-items:center;margin-bottom:6px}.when .n{margin:0}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.grid small{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.grid img{transition:none}}
+#stops ul li b{color:var(--ink2);font-weight:700}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・51 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html" aria-current="page"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html" aria-current="page"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></details><span>2025/11/20</span></div>
+<header class="hero">
+  <div class="ph"><img src="img/133035.jpg" alt="巷仔46 長屋的後院立面，參加者在院子裡聽導覽">
+    <div class="tx"><p class="kick">舊城散步趣－慢遊中壢・記憶處方箋</p><h1>醫院街的<br>仕紳之路</h1>
+    <p>從中壢舊城「澗仔壢」一條不到兩公尺寬的巷子出發，跟著在這裡長大的第四代屋主陳俊有，帶著一整本老照片活頁夾，走過大時鐘、中壢醫院、德星醫院、新國民醫院，再沿老街溪繞回市場。看的是醫院，聽到的卻是整個中壢：誰住在街上、誰開了醫院、市場怎麼散了、河怎麼被蓋起來又打開。</p></div>
+  </div>
+</header>
+<div class="meta"><span><b>日期</b>2025/11/20（四）13:00–15:30</span><span><b>講師</b>陳俊有（俊有）・巷仔46文化共享空間</span><span><b>系列</b>舊城散步趣－慢遊中壢：日常的人文軌跡文化走讀 ②</span><span><b>集合</b>巷仔46文化共享空間（中壢區民生路 46 號，由 44 號旁小巷進入）</span><span><b>路線</b>巷仔46 → 民生市場 → 大時鐘 → 中壢醫院 → 德星醫院 → 新國民醫院 → 壢景町 → 壢小故事森林 → 芙蓉宮 → 老街溪 → 青草街（中正橋）→ 回到巷仔46</span></div>
+<section class="only"><div><h3>這一場，來了才看得到</h3>
+<ul>
+<li><b>走進一棟私人老宅。</b>巷仔46 是陳家曾祖母蓋的六戶連棟「長屋」，平常只在每月最後一個週末或活動時開；二、三樓還在邊修邊用，不對外開放。</li>
+<li><b>中壢醫院的門開著。</b>這棟 1930 年代的醫院平常鐵門拉下，只能在外面看；這天剛好有人駐點，一行人得以進到掛號窗口、看見牆裡的編竹夾泥。</li>
+<li><b>一本只在現場翻的老照片。</b>大時鐘前的消防演習照、1930 年與 1970 年同一角度的中正路、澤元醫院二樓窗台上的老太太、坐在牛背上的簡吉⋯⋯很多是講師訪談後代、翻《臺灣日日新報》一張張找來的。</li>
+<li><b>可能是「最後幾眼」。</b>中壢鐵路地下化正在進行，講師估計八年後舊城地貌會大翻轉；火車站已經拆了，站前的大樓也勢必改建。今天走過的街角，不一定還會在。</li>
+<li><b>2025 年剛好是 1977 年中壢事件的 48 週年。</b>站在新國民醫院前、中壢分局隔壁聽這段，格外有感。</li>
+<li><b>收尾的一首客家歌。</b>回到巷仔46，講師放了羅思容唱的〈平安戲〉——詩是杜潘芳格寫的，為系列裡走杜潘芳格詩意街道的那一場先暖身。</li>
+</ul></div></section>
+<nav><div class="scroll" id="nav"></div></nav>
+<main>
+<p class="note">這是系列走讀的第二場，主題叫「記憶處方箋」。天氣前一天還下雨，當天出了太陽，涼涼的很好走；不少人是連著第二、三場都來。講師說自己帶走讀「比較像在閒聊」——以醫院為線，順手把中壢舊城的市場、行政、學校、河流和信仰一起串起來。以下照著走的順序整理，每站附當天拍的照片，點圖可放大、用方向鍵切換。</p>
+<div id="stops"></div>
+<div class="fix"><b>想自己去走走</b><br>・巷仔46 在民生路 44 號旁的窄巷裡，一般在每月最後一個週六、週日 10:00–17:00 開放，其他時間要先在粉專留言預約。<br>・中壢醫院（中正路 131 號）多半只能看外觀：記得抬頭看溝面磚、上小下大的縮柱和車寄。<br>・壢景町、壢小故事森林、老街溪河川教育中心彼此走路都在 5–10 分鐘內，週一多半休館。<br>・中正路以「延平路」為界，往火車站那頭走一段，再往老街這頭走一段，用耳朵聽聽兩邊的語言有什麼不同——講師賣的關子。<br>・走累了：三角店菜包、劉媽媽菜包，或去吃一碗加了九層塔的清湯牛雜湯。</div>
+</main>
+<footer>2025/11/20 參加「舊城散步去－慢遊中壢：日常的人文軌跡文化走讀」② 記憶處方箋｜醫院街的仕紳之路（搭配老照片說故事）的走讀筆記。系列另有版畫、小刀吊飾的「手作印記：刻與印的地方記憶工作坊」，以及繪本導讀、客家詩人介紹與傳統廟宇認識等場次。</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../wangdh/index.html"><small>‹ 較新的一場・2025/11/25</small>王大閎與中研院</a><a class="nx" href="../renwen/index.html"><small>較早的一場・2025/11/18 ›</small>四分溪畔與人文大道</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar"><button id="lbp" aria-label="上一張">‹</button><span id="lbc"></span><button id="lbn" aria-label="下一張">›</button><button id="lbx" aria-label="關閉">✕</button></div>
+</div>
+<script>
+{
+const S=[
+{part:"出發：一條巷子裡的長屋"},
+{t:"13:10",short:"巷仔46",title:"一棟「垂直的三合院」",place:"巷仔46文化共享空間・長屋內",ph:[["124228","長屋後院立面"],["130211","長廊與天井"],["130133","中壢老店的木牌地圖"],["131119","巷仔的空拍地圖"]],b:[
+"講師是土生土長的中壢人，這棟房子是他曾祖母蓋的，他是第四代；中壢國小、中壢國中、中壢高中一路念上來。在臺北工作多年後，<b>2018 年</b>回到中壢，說服家族讓他整理老宅、做地方文化推廣。",
+"房子本身就是一個故事：<b>1950 年</b>左右蓋的六戶連棟，長廊左右各三房，每一房都有自己的樓梯通到二樓。朋友形容它是<b>「垂直的三合院」</b>——長廊像曬穀場，逢年過節各房分工，東西搬到廊上就開始拜拜。",
+"中壢的老街屋多半很長，所以需要天井採光；這裡特別的是多了這條<b>「穿廊」</b>。小時候玩捉迷藏，從一頭跑到另一頭、樓上樓下繞著跑。",
+"巷子裡十幾個小孩年紀相近，<b>跟外面市場</b>人家的孩子吵架時，一吆喝就集合——講師說，巷子內外的關係有點像眷村。",
+"這一帶都市計畫是<b>「純商業區」</b>，地價貴、家族共有，多數人想賣掉。講師笑說自己大概是家族裡唯一的<b>「釘子戶」</b>：不開餐廳、不做商業，只做地方文化，「但這個空間能存在多久，坦白講我也不知道」。",
+"屋裡現在是<b>「街區博物館」</b>的基地：用木牌、老店介紹串起中壢的老店家；永利刀具第三代、少見的女性傳承人，也加入了這個網絡。"],
+q:"二、三樓目前邊修邊用、不開放；一樓只在開放日和活動時能進來。"},
+{t:"13:27",short:"後院與香椿",title:"沒有屋頂的澡堂、長到穿破屋頂的香椿",place:"巷仔46・後院",ph:[["132656","後院一角，攝影師在二樓陽台拍團體照"],["132909","高過屋頂的香椿樹"]],b:[
+"後院那間沒有屋頂的小房子，以前是澡堂：每一房各有大灶燒水，排隊洗澡；廁所也在最後面、全家共用，晚上去很黑很怕。",
+"現在站的平台以前是倉庫，曾租給外面市場的人放貨；旁邊的小花圃是奶奶的<b>「開心農場」</b>。",
+"<b>講師每次都考大家</b>：這棵是什麼樹？——香椿。很多人說從沒看過長這麼高的香椿。房子空了二十多年，先驅植物自己長進來，有一棵還把屋頂穿破了。",
+"小時候這一排只有他們家是樓房，其他都是土角厝；後來鄰居一棟棟蓋高，反而把這棟<b>「封存」</b>在時光裡，八十年來幾乎沒變。"]},
+{t:"13:32",short:"民生市場",title:"十萬人擠過的市場，和一條賣軍品的估衣巷",place:"民生路人行專用道・估衣巷・中平路口",ph:[["133351","講師翻出民生市場的老照片"],["133702","估衣巷，現在只剩兩家還開著"]],b:[
+"巷口外就是以前的民生市場，在地人叫<b>「番薯市」</b>。聽老人家說，全盛時一天人流十來萬；講師小時候上學是從遮雨棚底下「擠」出去的，下雨天塑膠棚積水，一不小心就<b>「中獎」</b>淋一身。",
+"<b>2006 年</b>前後市場遷到興國市場（大家開玩笑叫<b>「貴婦市場」</b>：有停車場、有冷氣），這裡改成人行專用道。但店家進出貨時間各不相同，至今車子照樣開進來。",
+"轉角的<b>「估衣巷」</b>：一開始是退伍老兵搭棚做小生意，賣的是軍用品——部隊裝檢缺什麼就來這裡找；後來臺灣成了拆船大國，拆船來的指北針、望遠鏡、錄影機也在這裡賣，最後才變成賣衣服。現在只剩兩家，其中一家老闆是講師兒時同巷的鄰居。",
+"旁邊的中平路這一段叫<b>「水果街」</b>：老街做生意的人要拜訪客戶，順手在這裡買水果禮盒。"]},
+{part:"從前的中壢街：市場、行政、學校"},
+{t:"13:43",short:"大時鐘",title:"大時鐘為什麼重要：從衛生開始講起",place:"大時鐘（原第一公有市場）",ph:[["134712","大時鐘前，講師拿著市場三代的照片"],["134906","日治時期的計時臺老照片"]],b:[
+"<b>今天以醫院</b>為主題，講師先問：日本接收臺灣時，死最多人的原因是什麼？不是戰爭，而是水土不服、生病。北白川宮能久親王來臺不久就死在臺南，一般認為也是染病。",
+"所以日本統治第一件大事是<b>「改善衛生」</b>：市區改正、排水溝、騎樓、立面，然後蓋公有市場。像萬華的新富町市場，旁邊就長出東三水街那樣的攤販市場；全臺灣很多地方都是這個模式，中壢也一樣。",
+"大時鐘是第一公有市場，已經是第三代建築。講師翻出日治時期在這裡做消防演習的照片：畫面裡就有一座<b>「計時臺」</b>，是中元節建醮時地方士紳送的，位置和後來的大時鐘幾乎一樣。",
+"沒有手錶手機的年代，有鐘、又在市中心，中壢人約會都約在大時鐘。",
+"<b>以前的市場</b>什麼都賣，賣刀的、算命的、布莊都在裡面；現在是一層兩家餐廳的美食廣場。講師說得有點傷感：「我小時候的大時鐘，對我來說已經消失了。」"]},
+{t:"13:51",short:"中正路老街",title:"同一個角度，四十年就換了一張臉",place:"中正路・大時鐘到康樂路一段",ph:[["135337","1930 年代的中正路老照片"],["135819","抬頭看現在的中正路"],["135947","老照片裡的那一棟，還在"]],b:[
+"一般以為城市最熱鬧的是火車站周邊，但中壢不是：老街比車站熱鬧得多。車站一帶舊名<b>「石頭庄」</b>，石頭多、不能耕作；大正年間市區改正拓寬中正路，就是為了把車站和老街接起來。",
+"狹義的中壢老街，就是大時鐘到中光行（康樂路口）這不到 <b>300 公尺</b>。",
+"老照片裡兩側是紅磚配白色飾帶的<b>「辰野式」</b>街屋，總統府就是這種風格的代表；<b>1970 年</b>前後中正路拓寬，整排被拆。拿 1930 和 1970 同一角度的照片一比，不到四十年，街景完全不同——只有一家老店至今還在原地，成了對照的座標。",
+"另一張照片裡有<b>「澤元醫院」</b>：是在地士紳林家開的，講師訪談後代才知道，二樓窗台上的老太太就是兄弟倆的母親。",
+"這裡也是以前的行政、教育中心：街役場就是今天的區公所位置，後面是中壢國小。旁邊的中興巷，<b>民國 50 年</b>代聚集了許多視障算命師，在地人叫<b>「瞎子巷」</b>，現在只剩巷名和瞎子巷麵店。"]},
+{t:"14:02",short:"澗仔壢",title:"沒有大廟的城市，和「澗仔壢」這個名字",place:"中正路上，往中壢醫院途中",ph:[],b:[
+"多數臺灣老城以大廟為中心、<b>軸線拉向車站</b>，像桃園以景福宮為中心。中壢的仁海宮卻在新街，比老街晚了將近一百年——中壢是靠商業和交通長起來的。",
+"為什麼叫<b>「中壢」</b>？往南是竹塹、往北是淡水，走路、坐牛車要過夜，這裡剛好在兩個行政節點中間。",
+"「壢」常被說是客家話裡河谷間的低地。但在康熙、乾隆年間的臺灣輿圖上，這裡標的是原住民的<b>「澗仔力社」</b>，後來還分成內、外兩社——原本是平埔族的獵場。客家人進來開墾，<b>「澗仔力」</b>慢慢變成「澗仔壢」，再變成中壢。",
+"路過一棟小時候叫<b>「觀光大樓」</b>的樓：不是給觀光客的，是小孩把零用錢在這裡「花光光」。"]},
+{part:"醫院街：中壢醫院、德星醫院、新國民醫院"},
+{t:"14:07",short:"中壢醫院外觀",title:"溝面磚不是為了躲轟炸",place:"中壢醫院・中正路 131 號",ph:[["140811","中壢醫院正立面"],["141120","車寄上方的轉角與溝面磚"],["140748","門口的牌子：以文吟社、伯仲文教基金會、佛光山中壢禪淨中心"]],b:[
+"中壢舊城裡日治時期的建築，除了文化局的日式宿舍群，只剩三棟：這裡、一棟只剩立面牌樓的老屋，和火車站附近和平街的一排四連棟。中壢醫院是保存最完整的一棟，據說由當時中壢的營造商<b>「太原組」</b>承建。",
+"牆上貼的是<b>「溝面磚」</b>，表面有一道道凹槽。常聽人說它叫「國防磚」，因為不反光、從空中看像土地，轟炸機不容易發現。講師說這「對也不對」：溝面磚在 <b>1920 年</b>代就由北投的窯廠大量生產，不是為了戰爭設計的，只是剛好有這個效果。臺北中山堂也是這種磚。",
+"門口突出的是<b>「車寄」</b>：三輪車可以拉到門下，病人下車不會淋雨。中山堂的車寄大到汽車能開進去，醫院小一號。",
+"柱子上小下大，叫縮柱；幾何造型的柱頭是多立克式。講師順便提：廟裡柱頭的高麗菜花樣，跟西方的柯林斯柱其實有點像，很多樣式就這樣一路被保留下來。"]},
+{t:"14:13",short:"中壢醫院室內",title:"掛號窗口還在，牆裡看得見竹子和泥",place:"中壢醫院・一樓",ph:[["141425","半圓拱窗"],["141808","牆面剝落處露出的編竹夾泥"],["141921","牆上的家族老照片與銅像"]],b:[
+"原本的掛號櫃檯和窗口都還在。窗戶是上下推拉的<b>「重錘窗」</b>：窗框旁的滑軌裡有鋼索吊著平衡錘，推到哪就停在哪——全靠機械和重量算得準，是真正的技術活。講師也拋出一個問題：老房子修好了，為什麼常常不讓人碰這些窗？",
+"牆面剝落處看得到<b>「編竹夾泥牆」</b>：先用竹子編成骨架，糊上拌了稻殼的泥，再一層細泥，最後抹白石灰。",
+"這裡是吳家的醫院，由吳鴻森醫師開設。吳家從秀才吳榮棣（字少青）起家：他白天在中壢公學校教書、晚上教漢學，<b>1921 年</b>創了<b>「以文吟社」</b>，仁海宮石柱上的楹聯就有他的字。以文吟社是少數到今天還在固定聚會的客家傳統詩社。",
+"吳家後來從文人、醫生跨到運輸、政治：家族裡出了三代縣長，也有一位法官在二二八中罹難。講師說，早期很多臺灣家族都是這樣，「既是政治的受害者，也是既得利益者」。",
+"牆上掛著家族老照片，有<b>八個孩子在醫院</b>前的合照，也有婚禮照。現在二樓是佛光山的禪淨中心，一樓是服務處和基金會。"],
+q:"講師說，之前來幾次鐵門都拉著，只能在外面看；這次剛好遇到駐點人員，才進得來。"},
+{t:"14:25",short:"德星醫院",title:"法院出張所、勞保醫院，和一整排吳家產業",place:"中壢醫院隔壁到中華銀行一帶",ph:[["142652","講師翻出德星醫院的老照片"]],b:[
+"中壢醫院隔壁的臺灣銀行，日治時期是<b>「法院出張所」</b>，戰後當過衛生所、地政事務所，後來才變成銀行。",
+"往前一點的中華銀行，以前是<b>「德星醫院」</b>，橫跨日治到戰後，比中壢醫院晚一些。陳家是平鎮的醫生世家，老家還在；講師說，它是中壢最早的勞保醫院。",
+"那個年代鄉下人生大病，<b>得到街上的醫院</b>看，常要在街上的親戚家借住幾天——醫院和街上人家的生活，是綁在一起的。",
+"對面的大樓以前是<b>民國 50 年</b>代的<b>「亞洲飯店」</b>；這一排房子，連對面的桃園客運，都跟吳家有關。"]},
+{t:"14:30",short:"新國民醫院",title:"茶葉倉庫變醫院，也是三次中壢事件的地點",place:"新國民醫院前・復興路",ph:[["143015","新國民醫院前"],["143433","坐在牛背上的簡吉"],["143215","對面的桃園客運"]],b:[
+"小時候叫<b>「新國民綜合醫院」</b>，現在和臺北醫學大學合作成了教學醫院，<b>「綜合」</b>兩字拿掉了。講師說，地區醫院要拉高層級、才拿得到更多醫療資源，這是近年很多醫院找大學合作的原因。",
+"醫院由吳鴻森在 <b>1968 年</b>開設，後來由兒子吳運東接手。這塊地在日治時期是日本拓殖會社的倉庫，放的是茶葉。",
+"講師口中的<b>「中壢事件」</b>有三次：第一次是日治時期（<b>1920 年</b>代後期）農民組合帶頭的農民抗爭，老照片裡的抗議旗子，拍的就是這個位置；第二次和戰後白色恐怖的逮捕有關；第三次是 1977 年因選舉爆發、火燒警察局的那一次——2025 年正好 48 週年。",
+"他翻出一張坐在牛背上的人：簡吉，原本是老師，是農民組合的重要人物，後來在白色恐怖中被槍決。講師說，中壢人看起來溫和，<b>「其實骨子裡有反骨」</b>。",
+"<b>吳家的產業也從這裡看得出來</b>：從文人、醫院跨到運輸——桃園客運的前身，就是早年的輕便鐵路公司。"]},
+{t:"14:37",short:"武德殿・分局",title:"消失的武德殿，和一直「拉皮」的警察局",place:"西服店一帶・中壢分局",ph:[["143811","武德殿與郡役所的老照片"],["143854","中壢分局一帶"]],b:[
+"<b>路過一排西服店</b>：臺北中華商場拆遷後，不少做西服的師傅搬到中壢，民國六十幾年慢慢形成。",
+"現在的停車場，以前是中壢的武德殿，已經完全看不到了。",
+"前面的中壢分局，日治時是郡役所，《臺灣日日新報》留下了剛落成時的照片。它其實從沒被整棟拆掉重蓋，而是被<b>「拉皮」</b>了很多次（<b>1977 年</b>燒過，也一定要整修）。想找日治的痕跡？走進大門往玄關上方看，四個方向的拱門造型就是原來的樣子。",
+"講師還在美軍轟炸時期的空照圖裡看到：分局後方曾有一座歐式宮廷風的花園，只是圖上只有兩公分見方，一直找不到更清楚的照片——「誰找到，就是第一手」。"]},
+{part:"文教區：宿舍、學校、伯公"},
+{t:"14:39",short:"壢景町",title:"警察宿舍變成故事館",place:"壢景町",ph:[["144139","講師對照老照片"],["144337","整修後的日式宿舍"],["144346","用剪紙方式說在地故事的造景"]],b:[
+"壢景町<b>以前是警察宿舍</b>，右手邊是分局長宿舍，另外幾棟現在是餐廳和有機食品店，由文化局委外經營。",
+"外觀是整修時保留的日式黑瓦。前兩年加了用<b>「剪紙」</b>方式做的造景，一格格說的是在地故事。",
+"<b>從市場走到這裡不過十分鐘</b>：中正路一邊是商業區，一邊是文教行政區，分得很清楚。"]},
+{t:"14:45",short:"學校與市場",title:"公學校、小學校，和賣雞鴨的第二公有市場",place:"中壢大飯店・綠苑・中壢國小・壢小故事森林",ph:[["144600","綠苑（澗仔壢環境教育中心）"],["144741","中壢國小的新校舍"],["145123","講師指著當年小學校的方向"]],b:[
+"中壢大飯店以前是<b>「蔡醫院」</b>。對面就是中壢國小，下課時只要聽到蔡醫院養的大狼犬一叫，有小孩就轉身跑了。",
+"<b>「綠苑」</b>是中壢國小的一塊校地，做成環境教育場域；它背面保留了第二公有市場的痕跡——那裡以前是雞鴨等家禽的批發中心。",
+"日治時期的<b>「中壢街」</b>管得很大，連平鎮、楊梅、觀音都歸它管。",
+"中壢國小是一百二十多年的老學校，以前叫<b>「中壢公學校」</b>，給臺灣人念；對面的中壢家商以前是<b>「小學校」</b>，給日本人念。有錢人家的孩子也能念小學校，像詩人杜潘芳格就是。",
+"壢小故事<b>森林原是公學校</b>的教師宿舍，保留了三棟，因為被很多樹圍著而取了這個名字，現在是親子閱讀的空間。"]},
+{t:"14:53",short:"芙蓉宮",title:"中壢街的庄頭伯公，和怎麼讀一塊沿革碑",place:"芙蓉宮（土地公廟）",ph:[["145330","芙蓉宮的重建沿革碑"],["145754","從廟前往外看"]],b:[
+"客家人到一個地方開墾，庄頭要有<b>「庄頭伯公」</b>，水邊有<b>「水口伯公」</b>，田裡有「田頭伯公」。客家人習慣叫伯公、不太說土地公，聽起來像自家長輩一樣親。",
+"看沿革碑要<b>「看門道」</b>：前面寫土地公姓張名福德、哪年生哪年成神，參考就好；重點在後面——什麼時候建、誰捐地、<b>民國 64 年</b>重修。一開始可能只是一塊石頭。",
+"很多人以為這是隔壁新南庄的伯公，但講師對照日治的地籍資料，這裡屬<b>「中壢老小段」</b>，是中壢街的庄頭伯公。",
+"站在這裡，講師說起現在的中壢：<b>週末火車站</b>周邊聽到的是越南話、泰國話、印尼話、英語，站前的經濟很大一部分靠新住民和移工。從西班牙、清朝、日本到國民政府，再到新住民——臺灣一直是移民社會，中壢只是一個縮小版。"]},
+{part:"沿著老街溪，回到市場"},
+{t:"15:04",short:"老街溪",title:"一條被蓋了 725 公尺、又被打開的河",place:"老街溪河川教育中心・老街溪步道",ph:[["150507","老街溪畔步道"],["150940","從橋上看老街溪"]],b:[
+"老街溪被叫做中壢的<b>「母親之河」</b>。講師說中壢得天獨厚：一個城區兩邊都有自然河川流過，不是人工水圳。",
+"當年為了振興沒落的老街，在河面上加蓋了 <b>725 公尺</b>、兩層樓的商場，卻因為拿不到使用執照，從來沒開幕過，成了一條超大蚊子館。後來颱風把河邊一排公寓沖倒，才決定拆。<b>2011 年</b>（民國 100 年），花了 120 天把河上的建築全部拆光。",
+"拆蓋復育後，在地調查記錄到 <b>103 種</b>鳥類——在城市裡的河，這是很驚人的數字。",
+"<b>路過時講師順手推薦</b>：三角店菜包、劉媽媽菜包，還有一家今年拿到「臺灣 500 碗」的菜包店。"]},
+{t:"15:08",short:"文心診所",title:"牆上滿是紋路的老診所",place:"老街溪旁",ph:[["150921","老診所的水泥立面"],["150903","被大樹包圍的入口"]],b:[
+"沿著溪邊，看到一棟整面水泥牆、刻滿紋路的老房子，是以前的<b>「文心診所」</b>。這條路上類似的老醫院、老診所不只一家，走著走著就會碰到。"]},
+{t:"15:09",short:"青草街",title:"從青草、成藥到西醫：常民的看病順序",place:"中正橋・青草街",ph:[["150950","中正橋上講青草店的故事"]],b:[
+"橋頭對面一整排青草店。講師把常民的看病順序講了一遍：肚子痛、想退火，先到青草店抓一帖；不行就吃寄在家裡的<b>「寄藥包」</b>成藥；再來去中藥店；最後才看西醫。",
+"中壢的中正路也被叫<b>「醫人街」</b>、中平路被叫「醫院街」，因為兩條路上醫院、診所特別多。",
+"講師自己的小發現：龍潭有向神農大帝求藥籤、拿去中藥店抓藥的習俗。他看過一段訪問影片，藥籤本上印著<b>「中壢中正路兩百多號」</b>的地址；兩年後別人訪問同一家，地址卻被塗掉了。他推測龍潭的藥籤，當年可能是中壢的中藥批發商幫忙印的——店家後來想強調自己的地位，就把這層關係「斷」掉了。",
+"這些青草大多不是本地種的，主要從楊梅一帶進貨。"]},
+{t:"15:16",short:"邱家大宅",title:"開戲院的邱家，和一條戲院街",place:"老街溪旁・邱家大宅",ph:[["152011","邱家大宅，現在是印度料理"]],b:[
+"這一帶以前有刻墓碑的、做煤球的。吳家最早來中壢時，可能就落腳在附近，之後<b>才搬到中壢醫院</b>那裡——這段很少人問過，講師說還要再訪談。",
+"邱家大宅現在租給印度料理。邱家早期開的是<b>「國際戲院」</b>：中山路以前就叫戲院街，一路有大東、中壢、國際等好幾家戲院。",
+"隔壁的小舊閣樓，白天咖啡、晚上酒吧，是這條街上青年返鄉創業做得最好的一家。"]},
+{t:"15:20",short:"回到市場",title:"大東戲院拆了、四果冰收了，中壢三寶還在",place:"中正路・民生路口",ph:[["152028","走回市場的路上"]],b:[
+"桃園客運的前身是桃崁輕便鐵路，吳家是後來入股、取得經營權的。<b>1930 年</b>代公路運輸興起，輕便鐵路慢慢轉型成客運公司；今天客運的路線，跟當年的軌道幾乎一樣。",
+"河邊開了幾十年的四果冰，前兩年收了；對面停車場原本是大東戲院，曾是中壢保存最完整的老戲院，前幾年被拆。",
+"中壢三寶：酥糖、鐮刀、牛肉麵。牛肉麵是戰後退伍老兵帶來的（新明、永川），但講師說小時候中壢最有名的其實是<b>「牛雜湯」</b>——清湯、上面撒九層塔。",
+"<b>中壢鐮刀為什麼出名？</b>傳統鐮刀刃口是平的，中壢的師傅參考割甘蔗刀，在刃上打出細小的鋸齒，割草更省力。新街以前有八十幾家打鐵店，現在多轉型成五金機械行。"]},
+{t:"15:30",short:"平安戲",title:"回到巷仔46：一首〈平安戲〉",place:"巷仔46文化共享空間",ph:[["154756","巷仔46 裡的印章與老照片展示"],["154954","巷口牆上的老街解說板"]],b:[
+"最後講師放了一首客家歌〈平安戲〉：詞是詩人杜潘芳格的詩，羅思容演唱，背景是客家北管。詩寫的是秋收後的<b>「平安戲」</b>——拜伯公、謝平安，也就是剛剛芙蓉宮那樣的庄頭伯公。",
+"杜潘芳格從小受日文教育，戰後學華文，<b>1980 年</b>代後又用客語寫詩，一個人橫跨三種語言；她寫的是新詩，和以文吟社的傳統古典詩是兩種路線。系列裡另有一場，專門走她的詩意街道。",
+"問答時補充了今天沒去到的兩棟日治建築：大時鐘旁只剩一面牌樓的老店立面，<b>和火車站</b>附近和平街那排兩層樓的四連棟——一樓也是縮柱、二樓有很深的陽台，和洋混合，可惜不開放。",
+"<b>還有人問中壢之前的地方怎麼找？</b>講師說：翻日治地籍的地號，對照今天的地號，就能知道老醫院、老店到底在哪裡。"]}
+];
+const flat=[],stopOf={};let k=0;
+const fmtP=p=>`${p.slice(0,2)}:${p.slice(2,4)}`;
+document.getElementById("nav").innerHTML=S.filter(x=>!x.part).map((x,i)=>`<a href="#s${i+1}"><span>${i+1}</span>${x.short}</a>`).join("");
+document.getElementById("stops").innerHTML=S.map(x=>{
+  if(x.part)return `<h3 class="part">${x.part}</h3>`;
+  const i=k++;
+  const g=x.ph.map(([p,c])=>{flat.push([p,c]);stopOf[p]=i;return `<button data-i="${flat.length-1}" aria-label="照片：${c}"><img loading="lazy" src="img/${p}.jpg" alt="${c}"><small>${c}</small></button>`}).join("");
+  return `<section class="stop" id="s${i+1}"><div class="when"><span class="n">${i+1}</span><div><b>${x.short}</b><i>約 ${x.t}</i></div></div>
+  <div><h2>${x.title}</h2><p class="place">${x.place}</p><ul>${x.b.map(l=>`<li>${l}</li>`).join("")}</ul>${x.q?`<div class="q"><b>只有這次</b>　${x.q}</div>`:""}
+  ${g?`<div class="grid">${g}</div>`:""}</div></section>`}).join("");
+const lb=document.getElementById("lb"),im=document.getElementById("lbi"),cap=document.getElementById("lbc");let cur=0;
+const show=i=>{cur=(i+flat.length)%flat.length;const [p,c]=flat[cur];im.src=`img/${p}.jpg`;im.alt=c;cap.textContent=`${c}　${fmtP(p)}　第 ${stopOf[p]+1} 站　${cur+1}/${flat.length}`};
+document.getElementById("stops").addEventListener("click",e=>{const b=e.target.closest("button[data-i]");if(b){show(+b.dataset.i);lb.classList.add("on");document.getElementById("lbx").focus()}});
+document.getElementById("lbp").onclick=()=>show(cur-1);
+document.getElementById("lbn").onclick=()=>show(cur+1);
+const close=()=>lb.classList.remove("on");
+document.getElementById("lbx").onclick=close;
+lb.addEventListener("click",e=>{if(e.target===lb)close()});
+document.addEventListener("keydown",e=>{if(!lb.classList.contains("on"))return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+}
+</script>
+</body>
+</html>

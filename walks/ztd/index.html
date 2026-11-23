@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>忠孝東路走九遍・走讀筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 親切的城市散步手冊，給同行者回味、給沒去的人補課
+   IDEA: 一張折頁導覽圖——沿著路線一站一站翻開
+   PICTURE: 頁首的路線條：從 SOGO 忠孝館出發，沿途站點連成一條線
+   COLOUR and TYPE: 柏油灰底＋招牌紅點綴＋水圳藍（消失的河）；Noto Serif TC 標題、Noto Sans TC 內文
+   LAYOUT: 單欄閱讀，每站文字在左、照片在右，手機上堆疊 */
+:root{color-scheme:light dark;--bg:light-dark(#f4f3ef,#16181a);--card:light-dark(#ffffff,#202326);--ink:light-dark(#1d2124,#e9e7e1);--mute:light-dark(#5b6268,#a3a8ad);--red:light-dark(#c8282e,#ff6b6b);--blue:light-dark(#1f6f9a,#6cc0e8);--line:light-dark(#d9d6cd,#33373b);--head:light-dark(#22272b,#0f1113)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.75 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+h1,h2{font-family:"Noto Serif TC",serif;line-height:1.2;text-wrap:balance;margin:0}
+header{background:var(--head);color:#f1efe8;padding:clamp(32px,5vw,64px) max(5vw,16px) 28px}
+header .in{max-width:1100px;margin:auto}
+h1{font-size:clamp(32px,5vw,50px)}
+.sub{color:#bfc3c6;margin:10px 0 0;max-width:62ch}
+.meta{color:#d9c27a;font-size:15px;margin-top:8px}
+.kick{color:#9aa0a5;font-size:14px;margin:0 0 10px}
+.intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:22px;align-items:center}
+.intro img{width:100%;border-radius:10px;display:block}
+.intro h3{font:700 15px "Noto Sans TC";margin:12px 0 2px;color:var(--red)}
+@media(max-width:760px){.intro{grid-template-columns:1fr}}
+.route{margin-top:28px;overflow-x:auto;padding-bottom:6px}
+.route ol{list-style:none;display:flex;margin:0;padding:0;min-width:820px;position:relative}
+.route ol::before{content:"";position:absolute;left:10px;right:10px;top:9px;height:4px;background:#e7473c;border-radius:2px}
+.route li{flex:1;position:relative;padding-top:26px;font-size:13px;color:#d7d9da;text-align:center;line-height:1.35}
+.route li::before{content:"";position:absolute;top:2px;left:50%;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:var(--head);border:4px solid #f1efe8}
+.route a{color:inherit;text-decoration:none}.route a:hover{color:#fff;text-decoration:underline}
+main{max-width:1100px;margin:auto;padding:12px max(4vw,14px) 60px}
+.intro{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin:28px 0 8px}
+.intro p{margin:.3em 0}
+section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:28px;padding:40px 0;border-bottom:1px solid var(--line);scroll-margin-top:16px}
+section.np{grid-template-columns:1fr}
+section:last-of-type{border-bottom:0}
+.n{color:var(--red);font:700 14px "Noto Sans TC";margin-bottom:6px}
+h2{font-size:clamp(23px,3vw,30px);margin-bottom:6px}
+.where{color:var(--mute);font-size:14px;margin-bottom:14px}
+ul{padding-left:1.2em;margin:0}li{margin:.35em 0}
+b{color:var(--ink);font-weight:700}
+.water{color:var(--blue);font-weight:700}
+.tip{margin-top:14px;padding:10px 14px;border-left:3px solid var(--blue);background:light-dark(#eaf3f7,#1b2a33);border-radius:0 8px 8px 0;font-size:15px}
+.ph{display:grid;gap:10px;align-content:start}
+.ph.two{grid-template-columns:1fr 1fr}
+figure{margin:0}
+figure img{width:100%;display:block;border-radius:10px;background:var(--line);aspect-ratio:4/3;object-fit:cover}
+figure.tall img{aspect-ratio:3/4}
+figure.wide{grid-column:1/-1}
+figcaption{font-size:13.5px;color:var(--mute);margin-top:5px;line-height:1.5}
+a{color:var(--blue)}
+code{overflow-wrap:anywhere;font-size:13.5px}
+footer{color:var(--mute);font-size:14px;text-align:center;padding:0 16px 40px}
+@media(max-width:760px){section{grid-template-columns:1fr;gap:18px;padding:30px 0}}
+@media(max-width:420px){.ph.two{grid-template-columns:1fr}}
+ul li b{color:var(--red);font-weight:700}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・51 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html" aria-current="page"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html" aria-current="page"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></details><span>2026/09/23</span></div>
+<header><div class="in">
+<p class="kick">臺北繞個路｜2026 臺北文化小旅行・街地器走讀共創工作坊　場次⑦・大安區</p>
+<h1>忠孝東路走九遍：東區的時代變奏曲</h1>
+<p class="sub">東區最年輕的大馬路只有五十多年歷史：從水田、水圳與空軍眷村，一路走到 SOGO、頂好、誠品敦南的黃金年代。</p>
+<p class="meta">2026 年 9 月 23 日（三）14:00–17:30｜帶路人：美食作家 Hally Chen｜忠孝東路 ⇝ 敦化南路 ⇝ 仁愛路四段</p>
+<nav class="route" aria-label="路線"><ol>
+<li><a href="#s1">SOGO 忠孝館</a></li><li><a href="#s3">八德路</a></li><li><a href="#s4">懷生國中</a></li><li><a href="#s6">瑠公圳碑</a></li><li><a href="#s7">鼎好・龍門</a></li><li><a href="#s8">光武新邨</a></li><li><a href="#s9">復旦橋</a></li><li><a href="#s10">順成蛋糕</a></li><li><a href="#s11">SOGO 敦南</a></li><li><a href="#s12">仁愛路・台新</a></li><li><a href="#s13">雙聖・誠品</a></li><li><a href="#s14">敦南林蔭</a></li>
+</ol></nav>
+</div></header>
+
+<main>
+<div class="intro">
+<div>
+<p>「忠孝東路走九遍」是許多人熟悉的歌詞，也是一整個世代的東區記憶。這場城市散步由長年觀察台北飲食與城市文化的 <b>Hally Chen</b> 帶路：他國中就讀懷生國中，看著第一家 SOGO 從打地基到落成；退伍後在忠孝東路四段巷內開設唱片美術設計工作室，在這裡工作了二十多年、做過約上千張唱片封面。</p>
+<p>他一手拿著平板，在每個路口對照老地圖與老照片，從早年的農地、水圳與眷村，到 1970 年代後的快速都市化，再到 1990 年代百貨、餐廳、咖啡館與流行文化匯聚的黃金時期，講的是東區的變化，也是他自己的青春。</p>
+<h3>故事節點</h3><p>懷生國中、遠東 SOGO 百貨台北忠孝館、頂好名店城、仁愛圓環、國泰世華銀行仁愛分行（誠品舊址）</p>
+<h3>活動形式</h3><p>走讀 × 交流（約 2–2.5 小時）＋ 共創 × 分享：在回饋卡上畫下印象最深的畫面，聊聊一路上的觀察（約 1 小時）</p>
+</div>
+<img src="img/banner.jpg" alt="忠孝東路走九遍：東區的時代變奏曲 活動主視覺">
+</div>
+
+<section id="s1">
+<div>
+<div class="n">第 1 站</div>
+<h2>出發：最年輕的大馬路</h2>
+<div class="where">SOGO 忠孝館轉角｜約 14:05</div>
+<ul>
+<li>忠孝、仁愛、信義、和平、南京這幾條東區大馬路中，<b>忠孝東路是最後開的</b>：1970 年 7 月起才把原本的小路拓寬成大馬路。1957 年的地圖上，四段這一帶還看不到這條路。</li>
+<li>名稱由來：以前的<b>「中正路」</b>是今天忠孝東路一、二段到華山再轉進今八德路的那一段。後來八德路那段改名，前段拓寬成為忠孝東路。坊間另有一說：總統之尊<b>「不可分段」</b>，所以才改名——Hally說這只能當笑話聽。士林的中正路當年歸陽明山管理局管，所以沒被改到。</li>
+<li>開通不過二十年，九〇年代的流行歌就已把它寫進歌詞（例如動力火車〈忠孝東路走九遍〉），成了台北繁榮的代名詞。</li>
+<li><span class="water">消失的河</span>：地圖上的藍線都是昔日水道。<b>安東街以前是一條河</b>，有人在河邊洗衣洗菜，加蓋後成了綠地；SOGO 後方的<b>瑠公公園</b>就是為紀念這條水道而命名，水路一路穿到安和路。東區棋盤路網中突然出現的斜路，多半是河道加蓋留下的痕跡；新生高架橋下也曾是大圳。</li>
+</ul>
+</div>
+<div class="ph">
+<figure><img src="img/140934.jpg" alt="團員在 SOGO 轉角看平板上的 1957 年地圖"><figcaption>出發點，Hally用 1957 年地圖說明當時還沒有忠孝東路四段</figcaption></figure>
+</div>
+</section>
+
+<section id="s2">
+<div>
+<div class="n">第 2 站</div>
+<h2>眷村巷弄與流動的台北</h2>
+<div class="where">SOGO 後方巷弄｜約 14:15</div>
+<ul>
+<li>這一帶過去多是眷村住戶。以前巷內一樓都是住宅，這十幾年隨著百貨開發與都更才陸續改成店面。</li>
+<li>Hally讀國中時還沒有百貨公司、也沒有捷運，同學多住附近。左手邊原有一棟空軍的活動中心，許多喜宴與活動都在那裡辦，後<b>來拆掉改建大樓</b>。</li>
+<li><b>台北是一座流動的城市</b>：父母那一代努力來到台北打拼，退休後又把房子賣掉、搬到外縣市換大一點、不用爬樓梯的房子——同樣是為了生活。老同學如今一大半已不住台北。</li>
+</ul>
+</div>
+<div class="ph">
+<figure><img src="img/141745.jpg" alt="巷內老公寓"><figcaption>巷弄裡的老公寓群</figcaption></figure>
+</div>
+</section>
+
+<section id="s3">
+<div>
+<div class="n">第 3 站</div>
+<h2>八德路：清代就有的官道</h2>
+<div class="where">往懷生國中途中｜約 14:20</div>
+<ul>
+<li>對照 1895 年與 1904 年的地圖：畫綠線的就是<b>今天八德路的前身</b>，清代的官道，把基隆、宜蘭方向的貨物一路送到<b>東門</b>，是台北最老的道路之一。</li>
+<li><b>為什麼送到東門？</b>因為當時只有台北城內才算官方管理的地方，東門以外都是荒郊，一兩百年前的東區還在開墾中。</li>
+<li>老地圖上的鐵道就是今天的<b>市民大道</b>（高架橋）位置，拿來當地標很好認。</li>
+</ul>
+</div>
+<div class="ph">
+<figure><img src="img/142238.jpg" alt="平板上的老地圖"><figcaption>平板上的老地圖，紅線標出清代官道</figcaption></figure>
+</div>
+</section>
+
+<section id="s4">
+<div>
+<div class="n">第 4 站</div>
+<h2>空軍總部、正義新村與懷生國中</h2>
+<div class="where">懷生國中校門前｜約 14:21–14:35</div>
+<ul>
+<li><b>空軍總司令部舊址</b>：原為日治時期台灣總督府工業研究所，1949 年由國防部接收為空軍總司令部，稱「仁愛營區」；2012 年營區遷往大直後，轉型為社會創新基地，2024 年升格為國定古蹟。旁邊是當年的眷舍<b>正義新村</b>。</li>
+<li><b>懷生國中</b>：1949 年成立台北空軍子弟學校，為紀念空軍烈士<b>陳懷生</b>，1967 年更名懷生國小。陳懷生是「黑貓中隊」成員，駕駛 U-2 高空偵察機（約兩萬公尺高空、在衛星攝影普及前執行空拍任務），在任務中遭擊落殉職。1969 年國小遷到安東街，原址擴建為懷生國中，1970 年新校舍啟用。</li>
+<li>空軍總部、宿舍、學校、托兒所集中在一起，是時代背景使然：情勢緊張時，軍人半夜也能立刻趕回單位。</li>
+<li><b>台灣第一面跆拳道金牌</b>：秦玉芳是懷生國中校友（Hally的學姊），在漢城奧運跆拳道示範項目拿下女子 43 公斤級金牌，當年的道館就在學校旁邊。</li>
+<li>忠孝東路雖然 1970 年後才開，其實<b>日治時期（1932 年市區計畫圖）就已規劃好</b>。後來的仁愛路、南京東路也都是把當年未完成的計畫補完——因為規劃有道理：要連接松山車站、港口與台北城。</li>
+</ul>
+<div class="tip">想看自家附近五十年前的樣子？可以用這兩個老地圖對照網站：<br>台北歷史對照地圖 <code>imdataman.github.io/taipei-map-1957</code><br>中研院百年歷史地圖 1957 年臺北市街道圖 <code>gis.sinica.edu.tw/showwmts/index.php?s=taipei&amp;l=Taipei_1957</code></div>
+</div>
+<div class="ph two">
+<figure class="wide"><img src="img/142104.jpg" alt="團員在懷生國中校門前聽解說"><figcaption>懷生國中校門前</figcaption></figure>
+<figure><img src="img/142406.jpg" alt="空軍總部、正義新村與懷生國中說明"><figcaption>空軍總部與懷生國中的沿革</figcaption></figure>
+<figure><img src="img/142610.jpg" alt="台灣第一面跆拳道金牌"><figcaption>台灣第一面跆拳道金牌</figcaption></figure>
+<figure><img src="img/142652.jpg" alt="1932 年市區計畫圖"><figcaption>日治時期的市區計畫圖，忠孝東路已在其中</figcaption></figure>
+<figure><img src="img/143314.jpg" alt="老地圖網站 QR code"><figcaption>老地圖對照網站</figcaption></figure>
+</div>
+</section>
+
+<section id="s5" class="np">
+<div>
+<div class="n">第 5 站</div>
+<h2>台灣第一條捷運、消失的小店</h2>
+<div class="where">忠孝東路四段・往 SOGO｜約 14:36–14:44</div>
+<ul>
+<li>頭頂的<b>木柵線（今文湖線）是台北第一條通車的捷運</b>（1996 年）。當年與原廠商法國馬特拉公司鬧翻、對方不願提供後續維修，最後由我們自己撐起來，一路運作到今天。</li>
+<li>斜對面的永豐銀行，前身是台北區中小企銀；Hally <b>1996 年</b>創業時的第一個公司帳戶就開在這裡。</li>
+<li>空軍總部轉型後，附近巷子開了不少咖啡店。但房租一調整，小店最容易消失——這是城市餐飲業的共同難題。</li>
+</ul>
+</div>
+</section>
+
+<section id="s6">
+<div>
+<div class="n">第 6 站</div>
+<h2>瑠公圳碑與 SOGO 的誕生</h2>
+<div class="where">SOGO 忠孝館前的紀念碑｜約 14:44–14:55</div>
+<ul>
+<li>SOGO 旁這塊碑多數人走過都沒注意：這片土地原屬<b>瑠公</b>，如今是<b>農田水利會</b>的財產，以租約方式租給太平洋建設，<b>期限 1983 年至 2033 年</b>，再過幾年就到期。附近還有不少土地屬水利會所有。</li>
+<li>1987 年，<b>第一家太平洋 SOGO 百貨</b>在這裡開幕。太平洋建設創辦人<b>章民強</b>早年在大陸工程任職，據《天下雜誌》報導，他把台北地圖攤開，從東到西、從北到南各畫一條線，交叉點正好落在忠孝東路與敦化南路口，於是開始集資買地。</li>
+<li>對照老照片：開發前這裡是一片平房與兩層樓建築，只有一條小路；今天巷口一樓是星巴克的那兩棟大樓，至今沒變。1958、1973、1991、<b>2013 年</b>的空照圖並列，五十年的變化一目了然。</li>
+<li><b>2000 年</b>前後受金融風暴等因素影響，SOGO 易主，現屬遠東集團。</li>
+<li><b>2001 年納莉颱風</b>：9 月 17 日豪雨讓東區大淹水，水從 SOGO 地下樓層等多處灌進捷運站，短短數十分鐘就淹滿。現在忠孝復興站內還畫有當年的淹水線。</li>
+<li><b>Hally</b>的工作室就在斜對面。唱片圈全盛時，客戶常晚上十點後才來看稿，改到清晨四點發稿是常態，印刷廠業務就睡在沙發上等稿；那也是台北人最不睡覺的年代。</li>
+</ul>
+</div>
+<div class="ph two">
+<figure class="wide"><img src="img/145033.jpg" alt="紀念碑前對照新舊空照圖"><figcaption>在紀念碑前對照新舊空照圖</figcaption></figure>
+<figure class="tall"><img src="img/144532.jpg" alt="SOGO 前的紀念碑"><figcaption>SOGO 前的紀念碑與開放空間標示</figcaption></figure>
+<figure class="tall"><img src="img/145145.jpg" alt="Hally解說"><figcaption>Hally指出老照片中至今仍在的大樓</figcaption></figure>
+</div>
+</section>
+
+<section id="s7">
+<div>
+<div class="n">第 7 站</div>
+<h2>頂好名店城與龍門商場</h2>
+<div class="where">忠孝東路四段・大安路口一帶｜約 14:57–15:15</div>
+<ul>
+<li>眼前的<b>香檳大廈（頂好名店城）</b>同樣是太平洋建設所建，<b>1971 年 9 月 1 日竣工，比 SOGO 還早</b>。裡面的頂好超市據說是第一家提供購物推車的超市，還有保齡球館、咖啡廳，是七、八〇年代電影常取景的時髦地標；後來被香港惠康併購，才有「頂好惠康」這個名字。</li>
+<li>左邊香檳大廈、右邊漢宮大廈、後面龍門大廈（龍門商場），在地<b>人都直接叫大樓</b>名稱。建築都沒變，只是拉皮過。龍門二樓曾有淘兒唱片（Tower Records），是早年少數買得到歐美原文音樂雜誌的地方。</li>
+<li>老照片裡，河道從這裡流過，<b>今天斑馬線的位置當年是一座橋</b>。下次過斑馬線時，想像腳下五十年前是一條河。</li>
+<li>老照片中的黑松汽水廣告牆至今仍在。黑松汽水廠舊址就在附近，是老一輩的大地標。</li>
+<li><b>1987 年</b> SOGO 開幕，肯德基也同年進駐，東區的繁華從那時正式起飛。Hally說，十三年就足以讓人忘記一個地方原本的樣子。</li>
+<li>美食口袋名單：頂好名店城地下室的<b>頂好紫琳蒸餃</b>（素蒸餃、鍋貼，隨時都在排隊），隔壁原本還有一家小火鍋，生意好到老闆搬上樓獨立開店。</li>
+</ul>
+</div>
+<div class="ph two">
+<figure class="wide"><img src="img/150336.jpg" alt="1990 年頂好商場走鋼索表演"><figcaption>1990 年頂好商場的高空走鋼索表演，後方可見龍門大廈</figcaption></figure>
+<figure><img src="img/150506.jpg" alt="團員在忠孝東路人行道聽解說"><figcaption>忠孝東路人行道上對照老照片</figcaption></figure>
+<figure><img src="img/151517.jpg" alt="平板展示 1976 年街景"><figcaption>1976 年的街景照片</figcaption></figure>
+</div>
+</section>
+
+<section id="s8">
+<div>
+<div class="n">第 8 站</div>
+<h2>光武新邨：太平洋建設的起點</h2>
+<div class="where">巷內老公寓｜約 15:15–15:20</div>
+<ul>
+<li>由大陸工程於民國 54 年（1965 年）開發，是<b>台灣最早引進多層式連棟公寓的大規模代表作之一</b>。建築師兼工地主任是知名建築師沈祖海，工地會計就是後來的太平洋建設創辦人章民強。</li>
+<li>基地<b>約 866 坪</b>，分 A、B 兩區、共 72 戶，每戶約 30 坪。因屋齡老舊，<b>2010 年</b>起由安信建經與精耕建設推動都更，這幾年仍在協商中。</li>
+<li>章民強一家當年就住在這裡，方便就近管理收購土地與工地。沿路看<b>下來的許多大樓</b>都出自太平洋建設，起點就在這裡。</li>
+<li>五〇年代台灣多是平房與兩層樓建築，到七〇年代才流行這種西式公寓。牆上<b>「光武新邨」</b>的字已經看不太清楚了。</li>
+</ul>
+</div>
+<div class="ph two">
+<figure class="tall"><img src="img/151916.jpg" alt="光武新邨老公寓"><figcaption>光武新邨的連棟公寓</figcaption></figure>
+<figure class="tall"><img src="img/152009.jpg" alt="光武新邨介紹"><figcaption>光武新邨的介紹</figcaption></figure>
+</div>
+</section>
+
+<section id="s9">
+<div>
+<div class="n">第 9 站</div>
+<h2>復旦橋與國門大道</h2>
+<div class="where">忠孝東路・敦化路口｜約 15:21–15:25</div>
+<ul>
+<li>腳下這個路口往北，以前有一座<b>復旦橋</b>，用來跨越鐵道。1959 年 2 月 8 日，復旦橋與仁愛路三、四段一起剪綵通車。照片中當時四周一片空曠。</li>
+<li>鐵路地下化後，橋在九〇年代初拆除，前後只用了約三十年——城市進步得太快。</li>
+<li><b>敦化北路</b>在 1956 年就開成六線道大馬路，因為松山機場是當時唯一的國際機場。外賓從機場出來，沿敦化北路到仁愛路圓環右轉，再沿仁愛路直通總統府；沿途種椰子樹、設噴水池，全是為了國門門面。當時圓環以南的敦化南路還沒開。</li>
+</ul>
+</div>
+<div class="ph two">
+<figure class="wide"><img src="img/152217.jpg" alt="1959 年復旦橋通車照片"><figcaption>1959 年復旦橋通車典禮</figcaption></figure>
+<figure class="wide"><img src="img/152353.jpg" alt="今天的路口"><figcaption>今天的路口，復旦橋就在這裡往北延伸</figcaption></figure>
+</div>
+</section>
+
+<section id="s10">
+<div>
+<div class="n">第 10 站</div>
+<h2>順成蛋糕與安樂大樓</h2>
+<div class="where">敦化南路口｜約 15:25–15:30</div>
+<ul>
+<li>當年馬路開闢後，沿路地主還得繳<b>「道路受益費」</b>，有大樓前後就被徵收了三次。照片中可見 <b>1993 年</b>捷運施工時的順成麵包。</li>
+<li><b>安樂大樓</b>剛蓋好時一樓有庭院和欄杆，車子可以開進去停，後來被徵收成人行道。1972 年的彩色照片裡，那時的建築現在看來仍然很時髦。</li>
+<li>大樓外觀變化的原因之一，是台灣曾流行把<b>陽台外推</b>；後來很多人後悔，因為陽台通風好、住起來舒服，現在的豪宅反而陽台都很大。</li>
+<li><b>順成蛋糕</b>歷史悠久，生意始終很好。有一款綁著紅緞帶的泰迪熊造型麵包，現在只在聖誕節前夕才做。2000 年前後誠品敦南 24 小時營業，二樓的港式飲茶也跟著熱鬧。</li>
+</ul>
+</div>
+<div class="ph two">
+<figure><img src="img/152702.jpg" alt="Hally手持老照片"><figcaption>Hally展示安樂大樓的老照片</figcaption></figure>
+<figure><img src="img/152751.jpg" alt="安樂大樓早期彩色照片"><figcaption>大樓早期的彩色照片</figcaption></figure>
+</div>
+</section>
+
+<section id="s11">
+<div>
+<div class="n">第 11 站</div>
+<h2>仁愛保齡球館、SOGO 敦南店</h2>
+<div class="where">忠孝東路・敦化南路口｜約 15:30–15:40</div>
+<ul>
+<li>眼前閒置的 SOGO 敦南店，<b>前身是仁愛保齡球館</b>（三層樓），1971 年開幕——忠孝東路一開發，大家都看到了商機。旁邊的空地是<b>仁愛游泳池</b>，與東門游泳池同為當年小朋友印象最深的公立泳池。</li>
+<li>演變：<b>1986 年</b>成為東王西餐廳大型秀場 → <b>1988 年</b>永琦百貨 → 1994 年 SOGO 接手為敦南店 → 太平洋建設 2002 年發生財務危機 → 2025 年結束營業，原本要改建，後來停工閒置。</li>
+<li><b>復興中小學</b>：日治時期原屬愛國婦人會，戰後由陳儀夫人接手辦幼稚園，1949 年婦聯會成立後改名復興幼稚園，1954 年向省政府取得土地建校。</li>
+</ul>
+<div class="tip">延伸散步：想找這一區比較有歷史的廟，可以到國泰醫院後方巷子底的<b>火神廟</b>。延吉街、信義路口一帶早年是木炭批發地，因此奉祀火神。東區一百年前多是河和農地，老廟不多。</div>
+</div>
+<div class="ph two">
+<figure class="wide"><img src="img/153401.jpg" alt="團員拍攝 SOGO 敦南店"><figcaption>今天的 SOGO 敦南店建築</figcaption></figure>
+<figure><img src="img/153407.jpg" alt="仁愛保齡球館老照片"><figcaption>當年的仁愛保齡球館，牆上有大大的保齡球瓶</figcaption></figure>
+<figure><img src="img/153742.jpg" alt="早期空照"><figcaption>早期照片中的保齡球館、泳池與復興中學一帶</figcaption></figure>
+</div>
+</section>
+
+<section id="s12">
+<div>
+<div class="n">第 12 站</div>
+<h2>仁愛路與財神酒店的故事</h2>
+<div class="where">仁愛路・敦化南路圓環｜約 15:40–15:48</div>
+<ul>
+<li><b>仁愛路</b>在 1956 年以美援經費開闢，比忠孝東路早得多。1960 年的照片中旁邊還沒有醫院，幾乎什麼都沒有；1972 年才漸漸熱鬧起來。</li>
+<li>對面的圓柱形<b>台新大樓</b>，前身是<b>財神酒店</b>，八〇年代初是國賓來台下榻的頂級飯店。它把套房分售給三、四百位業主，原以為是創新，結果一出問題就難以收拾：先是財務危機，接手的鴻源集團又爆發違法吸金案，產權複雜到難以處理，最後才由台新金控透過都更重建。</li>
+<li><b>Hally</b>高一暑假曾在這附近的百貨四樓打工，推著台車做了一個月——不是為了錢，是覺得打工很酷，結果累到不行。</li>
+</ul>
+</div>
+<div class="ph two">
+<figure class="tall"><img src="img/154339.jpg" alt="圓柱形台新大樓"><figcaption>財神酒店舊址上的圓柱形大樓</figcaption></figure>
+<figure class="tall"><img src="img/154807.jpg" alt="團員在仁愛路口"><figcaption>團員在仁愛路口遠望</figcaption></figure>
+</div>
+</section>
+
+<section id="s13">
+<div>
+<div class="n">第 13 站</div>
+<h2>雙聖冰淇淋與誠品敦南</h2>
+<div class="where">敦化南路・仁愛路口｜約 15:49–15:58</div>
+<ul>
+<li>轉角的<b>雙聖</b>（Swensen's）1948 年在美國創立，1984 年引進台灣，2016 年暫停營業。最有名的是美式早餐的<b>咖啡無限續杯</b>：倒小杯、喝完再續，冬天也不會冷掉。創辦人 1992 年還曾來過這家店。</li>
+<li>這棟大樓（今<b>國泰世華銀行仁愛分行</b>）就是<b>最早的誠品書店</b>：只有一樓和地下室，中間挖空一塊樓板，賣書也賣法國電影海報，入口就在今天種樹的轉角。許多日後走紅的歌手出道前，週末就在門口路邊唱歌。</li>
+<li>原址要都更時，剛上任的市長陳水扁陪同拜訪新光集團，留下「台北不缺百貨公司，但不能沒有誠品」這句話，誠品因此搬進隔壁大樓，也就是後來的<b>誠品敦南</b>；營業到半夜後發現有需求，就變成了 24 小時書店。</li>
+<li>誠品敦南熄燈時，<b>Hally</b> 受日本雜誌《Subsequence》邀稿，以「Sleepless in Taipei」為題，記錄這個不夜城文化的落幕：東區因它而起，也因它而落。</li>
+</ul>
+</div>
+<div class="ph two">
+<figure class="wide"><img src="img/155306.jpg" alt="團員在雙聖轉角"><figcaption>雙聖所在的轉角</figcaption></figure>
+<figure class="wide"><img src="img/155717.jpg" alt="Subsequence 雜誌文章"><figcaption>《Subsequence》雜誌刊出的誠品敦南熄燈記錄</figcaption></figure>
+</div>
+</section>
+
+<section id="s14">
+<div>
+<div class="n">第 14 站</div>
+<h2>敦化南路的林蔭步道</h2>
+<div class="where">敦化南路安全島｜約 15:58–16:10</div>
+<ul>
+<li>中間這條步道其實是安全島，功能一變再變：<b>早期是噴水池</b>（和國門大道一樣），因為耗水耗電而拆除；十年前改成可以從機場一路騎過來的自行車道；現在是步道。</li>
+<li>對面老爺大廈曾是<b>老爺酒店</b>，規模小但非常雅致；旁邊玻璃帷幕一樓曾是新學友書店，附近學生都在那裡買文具。</li>
+<li>敦化南路分三次才開通：一開始只拓寬到仁愛路圓環，後來才往南延伸；中間有一段因為<b>林家古厝</b>卡住，古厝後來遷到花博公園美術館附近，路才打通。</li>
+<li>走讀在這裡告一段落，接著前往主辦方安排的場地——一間設計感十足、要有指引才找得到入口的藥局空間，進行「共創 × 分享」：每個人在回饋卡上畫下今天印象最深的畫面，交流一路上的觀察。</li>
+</ul>
+</div>
+<div class="ph two">
+<figure class="wide"><img src="img/160033.jpg" alt="敦化南路林蔭步道"><figcaption>敦化南路中央的林蔭步道</figcaption></figure>
+<figure><img src="img/160153.jpg" alt="仁愛路圓環一帶"><figcaption>仁愛路、敦化南路口一帶</figcaption></figure>
+<figure><img src="img/161108.jpg" alt="終點活動場地"><figcaption>終點的共創分享場地</figcaption></figure>
+</div>
+</section>
+</main>
+<footer>臺北繞個路・2026 臺北文化小旅行　場次⑦　忠孝東路走九遍：東區的時代變奏曲（2026/9/23）</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../kala/index.html"><small>‹ 較新的一場・2026/09/26</small>南萬華散步：南城再現，加蚋好味</a><a class="nx" href="../keelung/index.html"><small>較早的一場・2026/09/20 ›</small>港灣即城市：國門廣場周邊散步</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+</body>
+</html>

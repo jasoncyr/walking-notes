@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>民族所建築導覽：一只生活的容器</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 安靜的個人走讀筆記
+   IDEA: 一棟房子裡的 13 個停留點，從外牆走上天台、再下到博物館
+   COLOUR and TYPE: 斗子砌紅磚 #b5532f、白粉牆、屋瓦深褐 #5a3324；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 單欄閱讀，左側掛時間；照片網格點開可放大左右切換 */
+:root{color-scheme:light dark;
+--bg:light-dark(#f8f5f1,#151312);--card:light-dark(#fffdfa,#1e1b19);--ink:light-dark(#221d1a,#ebe6e1);
+--mute:light-dark(#68605a,#a59d96);--brick:light-dark(#b5532f,#e8936f);--tile:light-dark(#5a3324,#d3a58c);
+--wash:light-dark(#f1e6dd,#2a211c);--line:light-dark(#e7ddd5,#302a26)}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.75 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+html{scroll-padding-top:16px}
+h1,h2{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.15;font-weight:800}
+h2{font-size:clamp(22px,3vw,28px);line-height:1.3;font-weight:800}
+.hero{background:#3a2219;color:#f7f1ec}
+.hero .ph{position:relative;height:clamp(320px,56vh,540px);overflow:hidden}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(40,20,12,.9))}
+.hero .tx{position:absolute;left:max(5vw,16px);right:max(5vw,16px);bottom:24px;z-index:1}
+.hero .kick{font-size:15px;opacity:.9;margin:0 0 6px}
+.hero p{margin:.5em 0 0;font-size:17px;max-width:66ch;opacity:.94}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;padding:16px max(5vw,16px);font-size:14px;background:#8f3f22;color:#f6e4da}
+.meta b{color:#fff;font-weight:700;margin-right:4px}
+.intro{background:var(--card);border-bottom:1px solid var(--line)}
+.intro div{max-width:1040px;margin:0 auto;padding:22px max(4vw,14px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:center}
+.intro .yr{font:800 clamp(30px,5vw,48px)/1.1 "Noto Serif TC",serif;color:var(--brick);white-space:nowrap}
+.intro .yr small{display:block;font:500 13px "Noto Sans TC",sans-serif;color:var(--mute);margin-top:6px}
+.intro p{margin:0;font-size:15.5px}
+.intro q{color:var(--tile);font-weight:700}
+nav:not(.yr-pn){max-width:1040px;margin:22px auto 0;padding:0 max(4vw,14px)}
+nav .scroll{display:flex;flex-wrap:wrap;gap:8px}
+nav a{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:14px;min-height:36px;background:var(--card)}
+nav a span{color:var(--brick);font-weight:700}
+nav a:focus-visible,button:focus-visible{outline:3px solid var(--brick);outline-offset:2px}
+main{max-width:1040px;margin:0 auto;padding:12px max(4vw,14px) 60px}
+.note{font-size:14px;color:var(--mute);margin:14px 0 0}
+.part{font:800 15px "Noto Sans TC",sans-serif;color:var(--tile);letter-spacing:.08em;margin:40px 0 0;padding:6px 0;border-bottom:2px solid var(--brick)}
+.stop{display:grid;grid-template-columns:118px minmax(0,1fr);gap:0 26px;padding:34px 0;border-bottom:1px solid var(--line)}
+.when{font-size:14px;color:var(--mute);line-height:1.5;padding-top:4px}
+.when .n{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--brick);color:#fff;font:800 17px "Noto Serif TC",serif;margin-bottom:8px}
+.when b{display:block;color:var(--ink);font-size:16px}
+.when i{font-style:normal;white-space:nowrap}
+.place{font-size:14px;color:var(--tile);font-weight:500;margin:4px 0 0}
+ul{margin:12px 0 0;padding-left:1.2em}
+li{margin:.25em 0}
+li::marker{color:var(--brick)}
+.q{background:var(--wash);border-radius:10px;padding:10px 14px;margin-top:14px;font-size:15px}
+.q b{color:var(--brick)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;margin-top:18px}
+.grid button{all:unset;cursor:pointer;position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--line)}
+.grid button:focus-visible{outline:3px solid var(--brick);outline-offset:2px}
+.grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.grid button:hover img{transform:scale(1.04)}
+.grid small{position:absolute;left:6px;bottom:5px;background:rgba(0,0,0,.6);color:#fff;font-size:12px;padding:0 6px;border-radius:4px}
+.fix{border-left:3px solid var(--brick);padding:8px 14px;margin-top:24px;font-size:15px;background:var(--card)}
+#lb{position:fixed;inset:0;z-index:20;background:rgba(12,10,9,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:14px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 90px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:10px;align-items:center;color:#eee;margin-top:10px;font-size:15px;flex-wrap:wrap;justify-content:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer}
+footer{max-width:1040px;margin:0 auto;padding:0 max(4vw,14px) 40px;color:var(--mute);font-size:14px}
+@media(max-width:640px){.stop{grid-template-columns:minmax(0,1fr)}.when{display:flex;gap:12px;align-items:center;margin-bottom:6px}.when .n{margin:0}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.intro div{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){.grid img{transition:none}}
+#stops ul li b{color:var(--brick);font-weight:700}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・51 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html" aria-current="page"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html" aria-current="page"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></details><span>2025/12/05</span></div>
+<header class="hero">
+  <div class="ph"><img src="img/112528.jpg" alt="民族所舊棟天台，一整排高低起伏的白色山牆與紅瓦">
+    <div class="tx"><p class="kick">中研院民族所博物館（MIOE）建築導覽</p><h1>一只生活的容器：<br>漢寶德的民族所</h1>
+    <p>中研院裡有一棟很好認的房子：紅磚、白牆、一排高高低低的山牆，走近還有瓶形窗和葫蘆窗。跟著博物館館員從外牆繞一圈，爬上平常不開放的天台，進到所務會議用的大會議室，最後回到博物館大廳。一個小時，看一位建築師怎麼把臺灣各地看來的閩南老房子細節，一件件收進一棟現代建築裡。</p></div>
+  </div>
+</header>
+<div class="meta"><span><b>日期</b>2025/12/05（五）上午</span><span><b>導覽</b>民族所博物館館員</span><span><b>地點</b>中研院民族學研究所（臺北市南港區研究院路二段 128 號，近胡適公園站）</span><span><b>路線</b>外牆 → 天台 → 大會議室 → 博物館大廳與展廳</span></div>
+<section class="intro"><div><div class="yr">1985<small>舊棟・漢寶德</small><br>1997<small>新棟・黃永沃、黃永洪</small></div><p>民族所的建築由舊棟和新棟組成。舊棟是漢寶德的設計，1985 年完成（又稱凌純聲大樓，現在是民族所博物館所在）；新棟由黃永沃、黃永洪兩位建築師接力，1997 年完成。漢寶德是建築教育家，對城市、環境、文化、藝術教育都有獨到的看法，他說<q>「建築是一種生活的容器」</q>，而民族所是他自認把傳統建築和現代技術融合得最滿意的一次嘗試。</p></div></section>
+<nav><div class="scroll" id="nav"></div></nav>
+<main>
+<p class="note">以下照著走的順序整理，每站附當天拍的照片，點圖可放大、用方向鍵切換。那天是陰天，紅磚的顏色反而很沉。</p>
+<div id="stops"></div>
+<div class="fix"><b>想自己去走走</b><br>・建築外觀隨時可以看：從研究院路側繞舊棟一圈，找找瓶形窗、葫蘆窗和斗子砌的紅磚。<br>・博物館大廳與展廳平日開放、免費；入口櫃台旁有「民族所印章」可以蓋，參觀還能拿一張明信片。<br>・天台和大會議室平常不開放，只有跟著建築導覽才上得去，留意民族所博物館的導覽報名公告。<br>・夏天上午可以在大廳等等看，陽光會從八角天窗灑下一道光束。<br>・漢寶德的溪頭青年活動中心、他做過調查的板橋林家花園、鹿港的甕牆，都能接著排進下一次。</div>
+</main>
+<footer>2025/12/05 參加中研院民族所博物館「民族所建築導覽」的走讀筆記</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../humanities/index.html"><small>‹ 較新的一場・2025/12/13</small>人文大道與早期經典建築</a><a class="nx" href="../nightride/index.html"><small>較早的一場・2025/12/03 ›</small>城南夜騎探奇</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar"><button id="lbp" aria-label="上一張">‹</button><span id="lbc"></span><button id="lbn" aria-label="下一張">›</button><button id="lbx" aria-label="關閉">✕</button></div>
+</div>
+<script>
+{
+const S=[
+{part:"外牆一圈",t:"11:20",short:"紅磚外牆",title:"為什麼要蓋成閩南的樣子",place:"舊棟外牆・研究院路側",ph:["112030","112156","112215"],b:[
+"民族所 <b>1955 年</b>成立，最早的所舍不在這裡，走的是當年流行的中國宮殿風，想傳遞的是<b>「中華文化」</b>。",
+"後來要蓋新的研究大樓，當時的所長文崇一在李亦園支持下，覺得民族所的房子應該要有<b>「民俗風格」</b>——民族所那時正在做漢人社會文化研究，於是希望設計能和臺灣在地的閩南建築有關，找來了漢寶德。",
+"漢寶德在臺南念成功大學建築系，之後到美國哈佛念建築，學的是簡約、幾何的現代主義。他早期的作品多用圓形、三角形這些基本形狀，在建築圈很受好評，一般人卻常<b>「看不懂」</b>。",
+"後來他提出<b>「大乘建築觀」</b>，主張建築要雅俗共賞、讓人有親近感，而不是看起來漂亮卻很高冷。溪頭的青年活動中心就是例子：融合當地的材料和環境，很受大家歡迎。",
+"外牆這種紅磚叫<b>「斗子砌」</b>：以前的磚砌成一格一格像斗子的樣子。臺南特別多，漢寶德在成大念書時到處看臺南老房子，覺得這種牆給人很溫暖的感覺。",
+"<b>不過這些磚其實是裝飾</b>：裡面是鋼筋水泥，外面再貼上磚面。牆腳和台階則用石材砌成，接住整面紅磚。"]},
+{t:"11:22",short:"圓弧",title:"圓弧，是現代主義留下的線索",place:"舊棟外牆・圓弧形雨庇下",ph:["112204","112208"],b:[
+"在閩南的山牆、紅磚旁邊，突然出現一大片圓弧形的雨庇，底下是一條條黑白相間的格柵。",
+"館員說，這種圓的設計來自漢寶德早期那套幾何的想法：外觀是閩南，骨子裡還是現代建築。",
+"<b>建築本身也是這樣安排的</b>：公共性最高的大廳放在中心，其他空間用迴廊組織在四周，格局是西方現代的，細節才是傳統的。"]},
+{t:"11:23",short:"瓶形窗",title:"一扇窗，就是一句吉祥話",place:"舊棟側面・瓶形窗",ph:["112257"],b:[
+"白牆上挖出一個花瓶形狀的窗，是這棟房子最常被拍的地方。「瓶」諧音「平」，取的是平安的意思。",
+"同樣的路數還有葫蘆窗（福祿）、萬字紋（萬事吉祥）——漢寶德把臺灣民間建築裡這些帶著好兆頭的小元素，一個個收進來。",
+"像陶磚做的窗、柳葉形的窗，在板橋林家花園、甚至一些廟裡都看得到。漢寶德當年正好參與過林家花園的調查測繪，這棟房子裡很多細節，都是他在臺灣各地做調查時看過的東西。",
+"還有陶甕窗：鹿港有很多<b>「甕牆」</b>，傳說早年和對岸貿易，回程船上沒貨，就載紹興酒壓艙，酒喝完了，空甕捨不得丟，就砌進牆裡。漢寶德也做過鹿港的規劃，於是陶甕也搬到了南港。"]},
+{part:"天台",t:"11:25",short:"山牆群",title:"天台上，一整排不一樣的山牆",place:"舊棟天台（平常不開放）",ph:["112528","112603","112717"],b:[
+"跟著館員爬上天台，眼前是一整排高高低低、彎彎曲曲的白色山牆，這是平常在地面上看不到的角度。",
+"閩南傳統建築的山牆有金、木、水、火、土<b>「五行」</b>的造型：圓弧的、直挺的、波浪的、尖角的、方平的。臺灣各地的廟和老厝通常各取一種，漢寶德卻把好幾種收在同一棟房子上。",
+"館員自己的看法是，這像是漢寶德想讓大家一抬頭就覺得熟悉、親近。",
+"天台上那面開了葫蘆形洞口的白牆，諧音<b>「福祿」</b>；從洞口望出去，剛好框住後面的山。"]},
+{t:"11:26",short:"新舊兩棟",title:"從天台看新棟、迴廊與水池",place:"舊棟天台・望向中庭與新棟",ph:["112652","112731"],b:[
+"舊棟 <b>1985 年</b>完成，新棟大約 <b>1997 年</b>，由黃永沃、黃永洪兩位建築師接手；底下的水池也是新棟時期一起做的。",
+"<b>怎麼分新舊？</b>館員的小訣竅是看磁磚：新棟用的磚和舊棟不一樣。",
+"現在新棟主要是研究人員的研究室，<b>舊棟則是圖書館</b>、博物館和行政單位。",
+"這些裝飾性的細節施工起來不容易：漢寶德的設計不是一般中規中矩的房子，從圖面到真的蓋出來，溝通和時間成本都比較高，舊棟大約蓋了三、四年。",
+"天台的迴廊這些年只做維修沒有大改，欄杆的顏色可能和當年不同，比較像是換了新材料。"]},
+{t:"11:27",short:"花磚矮牆",title:"女兒牆上的透空花磚",place:"舊棟天台・女兒牆",ph:["112706"],b:[
+"天台邊的矮牆下半段是紅磚交錯砌出來的透空花磚，一格一格留著洞，又通風又有圖案。",
+"這也是閩南老房子常見的做法，在這裡被放在一般人看不到的天台上，看得出設計時連角落都沒有放過。"]},
+{t:"11:29",short:"八角天窗",title:"天窗之下，就是博物館大廳",place:"舊棟天台・中庭八角天窗",ph:["112916","112926"],b:[
+"天台中央是一座八角形的玻璃天窗，正下方就<b>是一進門的博物館</b>大廳。",
+"館員說她自己每次看都覺得很像廟裡的<b>「藻井」</b>——這不是設計說明寫的，只是她的聯想，但從底下往上看，確實很有那個味道。",
+"四周是紅瓦、白牆、紅磚台階和小陽台，站在這裡會有一點身在合院裡的錯覺。"]},
+{part:"室內",t:"11:30",short:"大會議室",title:"所務會議的地方",place:"舊棟・大會議室（平常不開放）",ph:["113041","113111","113223"],b:[
+"從天台下來，進到一間平常不開放的大會議室：橢圓形的會議桌一圈圍著，天花板是一條條黑白的木格柵，中間懸著一道彎彎的燈。",
+"可以坐四十人左右，是民族所裡最大的會議室，所務會議就在這裡開。",
+"室內後來重新裝修過，大家都覺得設計師很厲害：椅子、木牆、燈光都恰到好處，而且沒有變成現在到處都一樣的那種風格。",
+"天花板的木格柵和外面雨庇的黑白格柵是同一個語彙。"]},
+{t:"11:35",short:"博物館大廳",title:"從二樓迴廊看下去",place:"舊棟・民族所博物館大廳",ph:["113506","113916","113911"],b:[
+"<b>回到博物館</b>，從二樓迴廊往下看大廳：剛剛在天台上看到的八角天窗，從這裡往上看就是一圈吊燈圍著的光井。",
+"館員說，夏天太陽角度對的時候，光會從天窗打下來，在大廳裡形成一道光束。",
+"一樓那座圓弧形的櫃台，外牆用紅白兩色磚拼出連續的回紋——又是圓弧（現代）加上傳統紋樣的組合。"]},
+{t:"11:35",short:"石板屋",title:"族人親手做的石板屋模型",place:"博物館・二樓展區",ph:["113528","113858"],b:[
+"二樓有一座石板屋模型，是原住民<b>族人親手幫博物館</b>做的。博物館也辦過石板屋的 DIY 活動。",
+"旁邊牆上嵌著一組刻著人像的石板雕刻，和石板屋放在一起看，很能感覺到石材在部落生活裡的分量。",
+"館員說，平常他們只會定期幫這些展品除塵，盡量維持原樣。"]},
+{t:"11:37",short:"凌純聲與常設展",title:"凌純聲，和一樓的常設展",place:"博物館・一樓常設展",ph:["113727","113716","113756"],b:[
+"大廳一角是凌純聲先生的銅像。這棟舊棟也以他命名為<b>「凌純聲大樓」</b>。",
+"一樓常設展有臺灣原住民族的區塊，大廳中央那艘蘭嶼拼板舟最醒目；另一側展的是凌純聲當年在中國大陸南方採集的少數民族文物，還有漢人的民間信仰。",
+"樓梯下那對彩繪門神，也是大廳裡很搶眼的收藏。",
+"展區裡也談到漢人民間教派——很多信仰從民間的地方信仰慢慢發展出教派的形式，這是民族所漢人研究的一部分。"]},
+{t:"11:38",short:"鮑克蘭特展",title:"正在展的：鮑克蘭先生的臺灣壯遊",place:"博物館・特展室",ph:["113823"],b:[
+"特展室正在展<b>「鮑克蘭先生的臺灣壯遊」</b>，展期到 2027 年 5 月。",
+"鮑克蘭（Inez de Beauclair）是早年在民族所工作的人類學者。展覽用她留下的文物、照片、田野筆記和書信，追她在臺灣的足跡，也用了 AI、全像投影這些技術讓老照片<b>「活起來」</b>。",
+"以前特展大約半年換一次，現在這檔展期長達一年半，可以慢慢來看。"]},
+{t:"12:00",short:"蓋章",title:"最後，蓋一個民族所的章",place:"博物館入口櫃台",ph:["120104"],b:[
+"出口前別忘了蓋章：櫃台旁有<b>「民族所印章怎麼蓋」</b>的說明，照著一、二、三、四步驟就能蓋出一張紀念戳，再夾進磁鐵框裡，就是一個小紀念品。",
+"參觀還能挑一張明信片，一共五款，每來一次可以拿一張。",
+"<b>館員最後提醒</b>：博物館是免費的，平常有空就可以來。"]}];
+const flat=[],stopOf={};
+const fmtP=p=>`${p.slice(0,2)}:${p.slice(2,4)}`;
+document.getElementById("nav").innerHTML=S.map((x,i)=>`<a href="#s${i+1}"><span>${i+1}</span>${x.short}</a>`).join("");
+document.getElementById("stops").innerHTML=S.map((x,i)=>{
+  const g=x.ph.map(p=>{flat.push(p);stopOf[p]=i;return `<button data-i="${flat.length-1}" aria-label="照片 ${fmtP(p)}"><img loading="lazy" src="img/${p}.jpg" alt=""><small>${fmtP(p)}</small></button>`}).join("");
+  return `${x.part?`<p class="part">${x.part}</p>`:""}<section class="stop" id="s${i+1}"><div class="when"><span class="n">${i+1}</span><div><b>${x.short}</b><i>約 ${x.t}</i></div></div>
+  <div><h2>${x.title}</h2><p class="place">${x.place}</p><ul>${x.b.map(l=>`<li>${l}</li>`).join("")}</ul>${x.q?`<div class="q"><b>附記</b>　${x.q}</div>`:""}
+  ${g?`<div class="grid">${g}</div>`:""}</div></section>`}).join("");
+const lb=document.getElementById("lb"),im=document.getElementById("lbi"),cap=document.getElementById("lbc");let cur=0;
+const show=i=>{cur=(i+flat.length)%flat.length;const p=flat[cur];im.src=`img/${p}.jpg`;cap.textContent=`${fmtP(p)}　第 ${stopOf[p]+1} 站　${cur+1}/${flat.length}`};
+document.getElementById("stops").addEventListener("click",e=>{const b=e.target.closest("button[data-i]");if(b){show(+b.dataset.i);lb.classList.add("on");document.getElementById("lbx").focus()}});
+document.getElementById("lbp").onclick=()=>show(cur-1);
+document.getElementById("lbn").onclick=()=>show(cur+1);
+const close=()=>lb.classList.remove("on");
+document.getElementById("lbx").onclick=close;
+lb.addEventListener("click",e=>{if(e.target===lb)close()});
+document.addEventListener("keydown",e=>{if(!lb.classList.contains("on"))return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+}
+</script>
+</body>
+</html>

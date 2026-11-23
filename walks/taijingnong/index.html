@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>臺靜農故居定點導覽走讀筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 安靜的田野筆記，像導覽老師手上那疊講稿
+   IDEA: 一場在書房與展間裡走完的導覽：每一站一件作品、一段人與事，附當天拍的照片
+   PICTURE: 頂部大幅照片（黑瓦木板牆的故居外觀），下方 24 站路線條
+   COLOUR and TYPE: 墨 #23201c、宣紙 #f6f1e7、檜木棕 #6d4c35、印泥朱 #a93a2b；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 單欄閱讀，左側掛時間；照片網格點開可放大左右切換 */
+:root{color-scheme:light dark;
+--bg:light-dark(#f6f1e7,#171512);--card:light-dark(#fffdf7,#201d19);--ink:light-dark(#23201c,#ece6da);
+--mute:light-dark(#6a6458,#a59e90);--seal:light-dark(#a93a2b,#e2806b);--wood:light-dark(#6d4c35,#c9a78a);
+--paper:light-dark(#efe6d3,#2a251e);--line:light-dark(#e1d8c5,#33302a)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.8 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+html{scroll-padding-top:16px}
+h1,h2{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.15;font-weight:800}
+h2{font-size:clamp(21px,3vw,27px);line-height:1.35;font-weight:800}
+.hero{display:grid;grid-template-columns:minmax(0,1fr);background:#3a2a1e;color:#f6efe2}
+.hero .ph{position:relative;height:clamp(280px,50vh,500px);overflow:hidden}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(34,22,14,.9))}
+.hero .tx{position:absolute;left:max(5vw,16px);right:max(5vw,16px);bottom:24px;z-index:1}
+.hero p{margin:.5em 0 0;font-size:17px;max-width:64ch;opacity:.95}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;padding:16px max(5vw,16px);font-size:14px;background:#2b1f16;color:#e6dccb}
+.meta b{color:#fff;font-weight:700}
+nav:not(.yr-pn){max-width:1040px;margin:22px auto 0;padding:0 max(4vw,14px)}
+nav .scroll{display:flex;flex-wrap:wrap;gap:8px}
+nav a{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:14px;min-height:36px;background:var(--card)}
+nav a span{color:var(--seal);font-weight:700}
+nav a:focus-visible,button:focus-visible{outline:3px solid var(--seal);outline-offset:2px}
+main{max-width:1040px;margin:0 auto;padding:12px max(4vw,14px) 60px}
+.note{font-size:14px;color:var(--mute);margin:14px 0 0}
+.hl{margin:22px 0 4px;padding:20px 22px;background:var(--paper);border-radius:12px;border-left:5px solid var(--seal)}
+.hl h2{font-size:clamp(19px,2.6vw,23px);margin-bottom:6px}
+.hl ul{margin:8px 0 0}
+.hl li{margin:.5em 0}
+.stop{display:grid;grid-template-columns:118px minmax(0,1fr);gap:0 26px;padding:34px 0;border-bottom:1px solid var(--line)}
+.when{font-size:14px;color:var(--mute);line-height:1.5;padding-top:4px}
+.when .n{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:5px;background:var(--seal);color:#fff;font:800 17px "Noto Serif TC",serif;margin-bottom:8px;transform:rotate(-3deg)}
+.when b{display:block;color:var(--ink);font-size:16px;white-space:nowrap}
+.when i{font-style:normal;white-space:nowrap}
+ul{margin:12px 0 0;padding-left:1.2em}
+li{margin:.3em 0}
+li::marker{color:var(--seal)}
+.q{background:var(--paper);border-radius:10px;padding:10px 14px;margin-top:14px;font-size:15px}
+.q b{color:var(--seal)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;margin-top:18px}
+.grid button{all:unset;cursor:pointer;position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--line)}
+.grid button:focus-visible{outline:3px solid var(--seal);outline-offset:2px}
+.grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.grid button:hover img{transform:scale(1.04)}
+.grid small{position:absolute;left:6px;bottom:5px;background:rgba(0,0,0,.62);color:#fff;font-size:12px;padding:0 6px;border-radius:4px;max-width:calc(100% - 12px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fix{border-left:3px solid var(--seal);padding:8px 16px;margin-top:26px;font-size:15px;background:var(--card)}
+.fix a{color:var(--wood)}
+#lb{position:fixed;inset:0;z-index:20;background:rgba(14,11,8,.95);display:none;align-items:center;justify-content:center;flex-direction:column;padding:14px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:10px;align-items:center;color:#eee;margin-top:10px;font-size:15px}
+#lb .cap{color:#eee;margin-top:10px;font-size:15px;text-align:center;max-width:90ch}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #666;background:#2a241d;color:#fff;font-size:18px;cursor:pointer}
+footer{max-width:1040px;margin:0 auto;padding:0 max(4vw,14px) 40px;color:var(--mute);font-size:14px}
+@media(max-width:640px){.stop{grid-template-columns:minmax(0,1fr)}.when{display:flex;gap:12px;align-items:center;margin-bottom:6px}.when .n{margin:0}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.grid img{transition:none}}
+#stops ul li b{color:var(--wood);font-weight:700}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・51 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html" aria-current="page"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html" aria-current="page"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></details><span>2025/11/11</span></div>
+<header class="hero">
+  <div class="ph"><img src="img/151551.jpg" alt="黑瓦、木板牆與六角形窗板的臺靜農故居外觀">
+    <div class="tx"><h1>臺靜農故居定點導覽<br>走讀筆記</h1>
+    <p>臺大校門口「國立臺灣大學」六個字，出自臺大中文系臺靜農教授之手。微雨的午後，我們從溫州街 25 號出發，先在書房「龍坡丈室」聽他的一生，再走進展間，一幅一幅讀他的字。每件作品背後都有一個收藏的人、一段送字的緣由。</p></div>
+  </div>
+</header>
+<div class="meta"><span><b>日期</b> 2025/11/11（二）13:30–15:00，微雨</span><span><b>地點</b> 臺靜農人文會館（臺靜農故居）・溫州街 25 號</span><span><b>導覽</b> 臺大中文系老師親自導覽・24 站</span><span><b>名額</b> 20 人</span><span><b>主辦</b> 國立臺灣大學學生會</span></div>
+<nav><div class="scroll" id="nav"></div></nav>
+<main>
+<p class="note">依導覽順序整理的筆記，每一站附上當天拍的照片，點圖可放大、用方向鍵切換。前半場在書房聽生平，後半場在展間看書畫，最後繞到屋外。</p>
+
+<section class="hl">
+<h2>這一場才有的</h2>
+<ul>
+<li><b>在書房裡開講。</b>導覽從臺靜農的書桌旁開始，聽的人就站在「龍坡丈室」裡，聽完生平才移步展間。</li>
+<li><b>十七幅作品，一次看齊。</b>臺靜農的書法與畫作，大多是送給朋友與學生的，散藏在五十多位收藏者手中，平常難得聚在一起。這回特別從三百多幅裡挑出與他最親近的十七幅，由老師一幅一幅講。</li>
+<li><b>每一幅都附著一個人。</b>誰要的字、為什麼寫這兩句、寫的時候幾歲，老師都講得出來；收藏者之一陳宏勉老師也在現場，當場補充他怎麼拿到那幅 87 歲的字。</li>
+<li><b>展期只有兩週多。</b>同一時間，館內正展出「但使龍城飛將在」喬大壯先生捐贈儀式暨文物展（10/30–11/15），《圍棋集》首度公開，我們趕在展期尾聲看到。</li>
+<li><b>這個檔期看不到、但聽得到的東西。</b>原本展櫃裡會陳列臺靜農的流亡證、難民證、聘書與書信，這回櫃子換成了喬大壯的文物，老師就用講的補上。</li>
+<li><b>老師導覽是活動限定。</b>平日館內可以入內參觀，但由中文系老師站在原地一件一件講，是這類活動才有的。</li>
+</ul>
+</section>
+
+<div id="stops"></div>
+
+<div class="fix"><b>想自己去走走</b><br>・臺靜農人文會館平日開放參觀，開放時間與最新展覽請看<a href="https://tjn.ntu.edu.tw/home.jsp?lang=tw">官網</a>，或在臉書搜尋「臺靜農人文會館」。<br>・入館要脫鞋、穿襪子，不吃喝、不碰展品，拍照請依館內規定；書房桌上的 QR code 可以掃，收聽李隆獻教授的語音導覽。<br>・展間掛的書畫是高精度複製，原件在各收藏者手中；想看更完整的作品，可以找老師主編的書畫集。<br>・臺大典藏的臺靜農文物（流亡證、聘書、書信等）可以向臺大申請調閱。</div>
+</main>
+<footer>2025/11/11 參加「臺靜農故居定點導覽」的走讀筆記</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../ntnuart/index.html"><small>‹ 較新的一場・2025/11/12</small>師大美術館：巷弄中的異形建築</a><a class="nx" href="../yejintu/index.html"><small>較早的一場・2025/11/02 ›</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="cap" id="lbt"></div>
+  <div class="bar"><button id="lbp" aria-label="上一張">‹</button><span id="lbc"></span><button id="lbn" aria-label="下一張">›</button><button id="lbx" aria-label="關閉">✕</button></div>
+</div>
+<script>
+{
+const S=[
+{c:"13:32",short:"書房開講",t:"龍坡丈室：從書桌旁開講",b:[
+"集合在故居前，進屋先到書房。這間<b>「龍坡丈室」</b>是依臺靜農 <b>1990 年</b>代入住時的樣貌重現，老師就站在書桌旁，手拿講稿開講。",
+"桌角放著一張 <b>QR code</b>，掃了可以收聽李隆獻教授的語音導覽。",
+"老師先把生平講完，再請大家到外面看書畫：因為一走動，回頭再聚就不容易了。"],
+ph:[["133237","書房裡，老師手拿講稿開講"],["134029","書桌上的語音導覽 QR code"]]},
+{c:"13:34",short:"白沙歲月",t:"從文學青年到白沙歲月",b:[
+"臺靜農早年是新文學青年，在北京寫短篇小說，結集成《地之子》《建塔者》；來臺後又出版了《亡明講史》。",
+"三十歲後開始教書，先後在北京、廈門、山東等地任教。他是安徽人，不太適應南方的潮溼，待不久就轉往別處。",
+"<b>1937 年</b>北京淪陷，他輾轉到四川白沙，任國立編譯館委員，寫下《白沙詩草》。在白沙教了將近五年的書，抗戰後出任女子師範學院的系主任。",
+"生活很苦。教育部發不出薪水，師母總是傍晚才去買菜，因為那時比較便宜；後來到了臺灣，也<b>一樣到黃昏市場</b>買菜。",
+"戰後國民政府原說要在南京重建學院，學校卻遷去重慶。他與師生抗議無效，辭職失業。同年經魏建功轉介，到臺大文學院任教，10 月抵臺，住進溫州街 18 巷 6 號。"],
+ph:[["134053","老師站在書房窗邊，講述臺靜農的前半生"]]},
+{c:"13:37",short:"歇腳庵",t:"歇腳庵，到龍坡丈室",b:[
+"剛到臺灣時，他嫌這裡潮溼，想著有機會還是要回大陸，就把書齋叫做<b>「歇腳庵」</b>：暫時停一停腳。",
+"到了八十歲以後，他覺得大概回不去了，改叫<b>「龍坡丈室」</b>：龍坡是所住的里名，丈室是說書房只有一丈見方。",
+"原本的書房在 18 巷 6 號，他在那裡住了四十多年。宿舍改建後，<b>約 88 歲</b>才搬進這一棟，住不到一年就過世。",
+"<b>重建這間書房時做了調整</b>：書房縮小了一點，玄關放大了，臺靜農椅子後面那個大書櫃就放不進來，老師說到現在還在想怎麼辦。",
+"附近 18 巷 8 號到 12 <b>號的宿舍</b>，格局和當年的 6 號一模一樣，聽說剛公布決定保留，但什麼時候修復還沒有定。"],
+ph:[["134034","書桌上的書冊、硯與文房"],["134042","龍坡丈室的書桌一角"]]},
+{c:"13:39",short:"中文系",t:"臺大中文系的前二十年",b:[
+"<b>1945 年 10 月</b>臺灣光復，11 月臺北帝大改名臺灣大學。文學院設中文、歷史、哲學三系，當時中文系只有兩位副教授，吳守禮與黃得時。",
+"<b>1947 年</b>，許壽裳來當第一任系主任，隔年 2 月 18 日（二二八事件後不到一年）在宿舍被人用斧頭砍死。接任的喬大壯，那年夏天回到蘇州，投河自盡，原因至今成謎。",
+"在這樣的時局下，臺靜農接下系主任，一做就是二十年。期間常被監視，也曾一度被捕，後來由系上老師聯名保出來。",
+"<b>他延聘的老師個個是大學者</b>：洪炎秋、戴君仁、鄭騫、毛子水、董同龢、王叔岷、屈萬里、李孝定、董作賓、孔德成……助教有裴溥言、廖蔚卿、金祥恆。導覽老師當年上過這幾位助教的課。",
+"老師說，正因為他在最動盪的時候穩住了系，奠定了好的系風，系上每位老師到今天都很感念。"]},
+{c:"13:45",short:"扇面",t:"扇面：一面是喬大壯的詩，一面是臺靜農補的梅",b:[
+"走進展間，第一件是扇面：一面寫著喬大壯的詩，一面是臺靜農畫的梅花和題跋。",
+"喬大壯是中文系第二任系主任，以詩和篆刻出名，作品很少流傳。收藏者陳宏勉老師為了這把扇子找了很久，價錢不低，狠下心買了，又不確定真假，就拿去請臺靜農鑑定。",
+"臺靜農說是真的，要他過兩天再來拿。再去時，扇子的另一面已經畫上梅花、寫好題跋。那年他已經八十多歲，是晚年的作品。",
+"題跋提到他與喬大壯共事不到一年，喬就在蘇州走了。第二任與第三任系主任的字畫在同一把扇上，陳老師至今珍藏，捨不得捐。"],
+ph:[["134527","老師在扇面前講解"],["134542","扇面：上方喬大壯的詩，下方臺靜農補的梅花"]]},
+{c:"13:47",short:"人生實難",t:"人生實難，大道多歧",b:[
+"牆上高掛的橫披，寫的是「人生實難　大道多歧」，臺靜農八十歲左右寫給系上親近的學生方瑜老師。",
+"<b>「大道多歧」</b>出自列子，是歧路亡羊的故事，說路太多，要好好選。<b>「人生實難」</b>出自《左傳》，老師說這正是他的專長：典故講的是一位被許多人爭奪的美人，說人要好好活著很難。",
+"老師說，這兩句像是臺靜農一生的寫照。他早年是文學青年，後來為了教書與創作輾轉各地，要慎選，也要面對活著的難。",
+"他其實也覺得能在臺灣安住下來是幸運的，雖然偶有不平，多半只在喝酒聊天時才流露。既然在這裡落了腳，就決定在這裡扎根。"],
+ph:[["134726","橫披：人生實難　大道多歧"],["134733","老師講述這幅橫披"]]},
+{c:"13:49",short:"不求甚解",t:"讀書不求甚解，飲酒如其為人",b:[
+"<b>1976 年</b>、七十多歲時寫給張亨、彭毅夫婦的對聯，兩位都是他的學生，住在隔壁。上聯用陶淵明<b>「不求甚解」</b>，下聯是蘇東坡評陶淵明的話。",
+"張亨研究理學，這副對聯其實是在開玩笑：讀書別太較真。臺靜農很愛開玩笑。",
+"展間裡也掛了比較早期的字，像 <b>59 歲</b>、<b>60 歲</b>、63 歲所寫，老師要大家看起筆與收筆：跟晚年完全不同。60 歲前的字很少見，書畫集收到最早的是 59 歲。"],
+ph:[["134911","對聯：讀書不求甚解，飲酒如其為人"],["134920","老師與對聯"]]},
+{c:"13:52",short:"氣吞湖海",t:"氣吞湖海豪猶昔，老閱滄桑骨已仙",b:[
+"<b>76 歲</b>時寫的對聯，是比較少見的字形：筆畫的起收與平常不太一樣，老師推測是用龍鬚筆寫的。臺靜農平常多用純羊毫的長鋒筆。",
+"這是替黃景如先生祝壽寫的。黃先生是黃啟方老師的父親，從警界退休，所以上聯寫<b>「氣吞湖海」</b>，下聯說老來閱盡滄桑，骨已成仙，很貼他的身份。",
+"尤其是「仙」字，寫的是古體。老師特別把這幅留下來，因為少見。"],
+ph:[["150113","對聯：氣吞湖海豪猶昔，老閱滄桑骨已仙"]]},
+{c:"13:53",short:"三絕冊",t:"四幅墨畫，與一本被送回來的畫冊",b:[
+"<b>這四幅是臺靜農最常畫的題材</b>：梅花、水仙、松、蘭，全是墨色。他有時也畫紅梅，但這幾幅都是墨梅。",
+"它們出自一本《三絕冊》（詩、書、畫三絕），緣由很有趣：日本東京有家出名的店出一種畫冊，李昂在東京買了送給姊姊施淑。施淑想到臺靜農寫字都是隨手寫，沒有一本固定的冊子，就把畫冊轉送給他。",
+"沒多久，臺靜農叫施淑過來，把畫滿了整本的畫冊全部還給她，施淑不好意思，卻也成了一件珍貴的作品。"],
+ph:[["135314","墨畫四幅：梅、水仙、松、蘭"],["135319","老師細說這四幅畫"]]},
+{c:"13:55",short:"龔自珍",t:"施淑一生唯一一次指定的詩",b:[
+"這幅是臺靜農 <b>77 歲</b>左右寫的行書，和剛剛的字比起來更秀氣。寫的是龔自珍的詩：九州生氣恃風雷，萬馬齊喑究可哀；我勸天公重抖擻，不拘一格降人才。主張改革、重用人才。",
+"施淑老師說，這是她一生唯一一次指定要臺靜農寫哪一首詩，其他都是他想送什麼就收什麼，所以她特別重視，這幅至今沒有捐出。",
+"施淑原名施淑女，後來覺得「女」字不好，就去掉了，反而比原名更有名。她收藏的臺靜農作品很多，<b>大多已捐給圖書館</b>，手邊只留下少數幾件。"],
+ph:[["135532","老師對著龔自珍詩句的立軸講解"],["135538","行書立軸：九州生氣恃風雷"]]},
+{c:"13:57",short:"閣夜",t:"杜甫〈閣夜〉：一幅走進中文系的字",b:[
+"這是杜甫在四川寫的〈閣夜〉。寫的是歲末的江邊：三峽星河搖動，野外有人哭戰事，詩的最後感嘆臥龍、躍馬這樣的人才也終歸黃土。",
+"老師說，臺靜農借這首詩，也是在感嘆自己一生沒能有成。杜甫四十歲以後流落四川，詩裡也寫到戰亂。",
+"這幅原是施淑老師珍藏。<b>2011 年</b>老師擔任系主任時，施淑突然來電說要來看他，當場把這幅字送給中文系；老師說自己不敢收，就代表系上接下來。",
+"原件髒得厲害，後來重新裝裱、換了框；現場展出的是複製，連紙上的汙點和印章都照原樣複製下來。臺靜農用的印章都是自己刻的。"],
+ph:[["135717","老師指著〈閣夜〉立軸講解"],["135727","整幅〈閣夜〉與一旁的對聯"]]},
+{c:"14:00",short:"八十歲後",t:"八十歲以後，字越寫越好",b:[
+"<b>這是老師要大家特別留意的</b>：到了八十歲，一般人體力都衰退了，臺靜農卻越寫越好。",
+"<b>82 歲</b>那幅，是寫給王叔岷老師的，用的是講<b>「校書」</b>的詩句。王叔岷是世界知名的校讎學者，一輩子在外國教學，晚年回臺大，95 歲還在教書。兩人都住在溫州街一帶，關係很好。",
+"<b>83 歲</b>和 85 歲的字也不一樣：看得出越來越熟練，結構又有一點不同。"]},
+{c:"14:02",short:"相逢握手",t:"相逢握手一大笑，故人風物兩依然",b:[
+"83 到 <b>85 歲</b>之間的對聯，兩句分別出自蘇東坡兩首送朋友的詩。老師說，他非常喜歡這兩句：久別重逢，握手一笑，眼前的人與景都沒有變，多難得。",
+"這副對聯原本是要送給一位遠在他方的老友，卻一直沒送出去，最後留在身邊的人手中。上一次辦展，老師懇求了很久才借到。",
+"一個「笑」字，引出老師一段題外話：書法裡常為了讓結構好看，改用異體字。古書上的異體字寫法因時代而不同，反過來還能幫忙判定版本，這也是校讎學者的功夫。"],
+ph:[["140222","對聯：相逢握手一大笑，故人風物兩依然"],["140229","老師講述這副對聯"]]},
+{c:"14:06",short:"87 歲",t:"87 歲寫得最好的一副",b:[
+"隸書對聯「北海尊前誦楚辭　西安石上校漢隸」，取法《石門頌》，款識寫著戊辰（1988）除夕前，在龍坡丈室，時年 <b>87 歲</b>。",
+"臺靜農的隸書臨摹過幾十種漢碑。老師說，他看過的北海、西安這副對聯，這一副最好。每一筆都在微微發抖，結構卻極穩，比《石門頌》更雍容大度。字越大越難寫，這幅偏偏最穩。",
+"收藏者陳宏勉老師當場補了這幅字的由來：他整理已過世的篆刻老師的遺物，裡面有一疊老師生前畫好大格子的紙，格子太大，他自己寫不下去，擱了半年，才鼓起勇氣請臺靜農寫。",
+"臺靜農說<b>「緩一緩」</b>。過了兩三週，近年底，一通電話來：「我今年寫了一幅最好的字，快來拿。」這幅字至今珍藏在陳老師手上。",
+"陳老師也說，臺靜農不主動說話，你問他一句，他才答一句，但有時那一句會影響你一生。",
+"老師補充，臺靜農的行書取法明末殉國的倪元璐，看中的是那份不屈。"],
+ph:[["140639","隸書對聯：北海尊前誦楚辭、西安石上校漢隸"],["142249","大家爭相拍下這副對聯"]]},
+{c:"14:21",short:"小楷小篆",t:"小楷與小篆：很小很小的字",b:[
+"早期臺靜農寫的字非常小，上一輩的老師也是。老師說，他上孔德成老師《三禮》的課，講義先用小楷抄在稿紙上，正文寫完再抄注解。所以老師自己上課前也一定先寫稿子，今天也為大家備了一本稿子。",
+"展間裡有一幅抄寫陶淵明詩的小楷，是臺家珍藏，字小到只有這麼大。題識說，如今目力已經無法寫這麼小了。",
+"另一幅是罕見的小篆，抄的是呂坤《呻吟語》裡的話：大事難事看擔當，逆境順境看襟度，臨喜臨怒看涵養，群行群處看識見。是送給張亨老師的，期許他成為這樣的人。老師說，張亨一輩子可說無愧這幾句，是中文系非常受敬重的老師，從大一到大四都上過他的課，影響極大。",
+"楷書這次沒有掛，臺靜農平常多寫行書、行草與隸書。"],
+ph:[["142125","左側是抄寫陶淵明詩的小楷"],["142242","近看細小的字跡"]]},
+{c:"14:25",short:"高山流水",t:"高山知靜理，流水辨清音",b:[
+"隸書對聯，80 到 <b>87 歲</b>之間寫給龍宇純、杜其容夫婦。兩位都是語言文字學者，是臺靜農從香港禮聘回來的，任教三四十年，對中文系的小學課程影響很大。",
+"高山流水是知音的意思。老師說龍宇純家中本有戲班，他自己愛唱戲，老生唱得極好，所以臺靜農用高山流水來形容。",
+"說到唱戲，老師提到中文系每年都有公演，老師和學生同台演兩小時，有五六位老師可以上台，每年訓練學生。"],
+ph:[["142540","對聯：高山知靜理，流水辨清音"],["142607","老師指著對聯講解"]]},
+{c:"14:27",short:"喬大壯",t:"喬大壯的印稿，與《圍棋集》",b:[
+"展間另一角，是這回特展的主角喬大壯：<b>「但使龍城飛將在」</b>喬大壯先生捐贈儀式暨文物展，10/30 捐贈、展到 11/15。",
+"<b>海報上的《圍棋集》很特別</b>：喬大壯的兒子無遏是飛虎隊成員，抗戰中屢次出生入死，他用謝安的典故賦了圍棋詩，曾克耑、沈尹默、潘伯鷹等七位名家次韻題詠，成了這冊珍本，這次是首度公開。",
+"展出的還有喬大壯的印稿，一排排朱紅的方印，以及《喬大壯篆刻及其章法》。老師說，展櫃裡喬大壯印章的印套，是陳宏勉老師為它做的。",
+"老師預告，這檔展覽之後是臺灣印社的展覽，他們會把臺靜農的字拿去刻。"],
+ph:[["142724","喬大壯先生印稿"],["150759","《喬大壯篆刻及其章法》"],["151436","「但使龍城飛將在」展覽海報"]]},
+{c:"14:29",short:"王信的鏡頭",t:"王信的鏡頭：肖像、菸斗與一張老照片",b:[
+"牆角的相框是攝影家王信拍的臺靜農，是正式洗印的原照；去找他借照片時，他挑了最滿意的幾張。",
+"其中叼著菸斗的那張，在 18 巷 6 號的後院拍的。攝影師要他自然一點，他就這樣抽起菸斗。這張後來成了 <b>120 歲</b>冥誕展的主視覺，校方來函說<b>「吸菸有害」</b>，系上笑說不拿下，不然在下面加一行「吸菸有害」；最後主視覺沒有換。",
+"另一張是 <b>1956 年</b>（<b>民國 45 年</b>）中文系畢業旅行的合照，臺靜農帶著那一屆畢業生去霧峰北溝，那時故宮還在那裡。當時一個班才十來位，照片裡有四位後來成為系上的老師。",
+"還有他 <b>68 歲</b>左右畫梅花的照片，以及 69 歲與師母的合照。"],
+ph:[["142937","老師對著相框講解"],["143251","1956 年畢業旅行的合照"],["150952","叼著菸斗的臺靜農，120 歲冥誕展的主視覺"]]},
+{c:"14:33",short:"問答時間",t:"問答時間：真跡、展售與書畫集",b:[
+"<b>展出的是真跡嗎？</b>不是，是高精度的掃描複製，原件散在五十多位收藏者手中。老師說，若是真跡，像那副隸書對聯恐怕要數百萬元。只有照片是正式洗印的。",
+"<b>書畫集。</b>2021 年前後，老師主編了一本臺靜農書畫集，從五十位收藏者家借來掃描，收了三百多幅，每件都附上尺寸、收藏者、印章與釋文。最早是 59 歲，最多的是 70 到 80 多歲，以 75 到 87 歲最精彩。初版 2000 本一個禮拜賣光，再版增加了二十多篇文章，現在還買得到。",
+"<b>臺靜農賣字嗎？</b>平常不賣，全是送的：你送他酒、菸、紙、墨、毛筆，他就寫給你。唯一一次公開展售是 1982 年 10 月 5 日到 11 日，在國立歷史博物館國家畫廊，當場賣光。老師自己去搶，一副對聯 8000 元，而他那時月薪 5000 元，沒搶到。",
+"<b>為什麼越老越好？</b>功夫夠了，各種風格都融在自己身上，到 87 歲時，他自己最滿意。",
+"<b>可以做文創嗎？</b>老師說不輕易做，因為作品是各收藏者珍藏的。近年大陸拍賣價格飆升，不少收藏者生前也不會拿出來。",
+"<b>今天看不到的。</b>原本展櫃裡可以看到臺靜農的流亡證、難民證、聘書與書信，這回換成喬大壯的文物。原件都在臺大，可以向臺大申請調閱，要戴手套。"],
+ph:[["143526","大家坐下來聽老師回答問題"],["144331","老師接受提問"]]},
+{c:"14:45",short:"書桌舊物",t:"書桌上的舊物",b:[
+"回到書房，老師逐一說明桌上哪些是臺靜農本人的：菸斗、手錶、化石是他的，檯燈和書架則是系上提供的。",
+"桌上那函線裝書是金祥恆編的《陶文編》，書名由臺靜農題簽。老師說，臺靜農題簽的書大概有幾百本，很多出版社都找他，河洛出版社的老闆是中文系系友，幾乎每本都請他題。"],
+ph:[["144657","回到書桌旁"],["144722","桌上的文房與書冊"],["150409","書桌全景，後方相框是臺靜農與師母"]]},
+{c:"14:49",short:"房子本身",t:"房子本身：窗、宿舍與修復",b:[
+"<b>窗戶大致按原來的樣子重做</b>：同一面窗，一邊是霧玻璃，一邊是透明的，窗格花樣也不同，很特別。",
+"這是日本時代的官舍，依官階分大小，這是最小的一種；<b>殷海光故居</b>那種才是大房子。展間原本是客廳，拉門是為了展覽才裝上去的。",
+"整修時房子全部拆開、再照原樣蓋起來，能用的舊料留下，少數樑柱和地板是原物，其餘建材另外尋找。老師說整修經費<b>約 2700 萬</b>元。",
+"臺靜農在這裡其實住不到一年，他真正住了四十多年的是 18 巷 6 號。是黃啟方老師幫他找了這個地方，因為近，搬家也方便。"],
+ph:[["151642","木窗格：一邊霧玻璃，一邊透明"],["150628","穿過紙拉門，望向另一間展間"]]},
+{c:"15:01",short:"合影蘭花",t:"合影，與一段花園往事",b:[
+"導覽尾聲，老師請大家在屋裡合影，年輕的蹲著，一起拍了。他說，下週以後還有臺灣印社的展覽，歡迎再來。",
+"大家圍著相框看照片時，老師說起臺靜農後院的花園：師母喜歡種水仙與蘭花，庭院裡有杜鵑盆栽。彭毅老師曾說過，有一次蘭花開了二十幾朵，臺靜農高興得特別叫學生們去賞花、吃飯。"],
+ph:[["150439","圍著相框看照片"],["150814","從展間望向庭院"]]},
+{c:"15:06",short:"散場再看",t:"散場後，再慢慢看",b:[
+"導覽結束後，大家分頭再看一圈。屋子另一側是一間展覽空間，有展示櫃與播放影片的螢幕；狹長的走道兩旁是紙拉門，通往幾個小房間。",
+"有人留在對聯前再拍幾張，也有人留下來再問老師幾個問題。"],
+ph:[["150803","另一側的展覽空間"],["150856","狹長的走道與紙拉門"]]},
+{c:"15:15",short:"屋外繞一圈",t:"屋外繞一圈",b:[
+"走出屋外，雨還沒停。黑瓦屋頂、深褐色木板牆，牆上有六角形的窗板，屋簷下垂著一條雨鏈，旁邊就是<b>現代的住宅大樓</b>。",
+"門柱上掛著<b>「臺靜農人文會館」</b>的木牌，故居建於 <b>1932 年</b>，是黑瓦的日式老屋。從 2020 年傳出可能拆除，到眾多文學教授與文史工作者努力保留，在 2024 年 11 月 2 日重新啟用。",
+"這一小時半，我們沒有走遠，卻在一間屋子裡讀完了一位教授的一生。"],
+ph:[["151549","木板牆、六角形窗板與黑瓦"],["151632","玄關與雨鏈"],["151731","門柱上的「臺靜農人文會館」"]]}
+];
+const flat=[],stopOf={},cap={};
+const fmt=p=>p;
+document.getElementById("nav").innerHTML=S.map((x,i)=>`<a href="#s${i+1}"><span>${i+1}</span>${x.short}</a>`).join("");
+document.getElementById("stops").innerHTML=S.map((x,i)=>{
+  const g=(x.ph||[]).map(([p,c])=>{flat.push(p);stopOf[p]=i;cap[p]=c;return `<button data-i="${flat.length-1}" aria-label="${c}"><img loading="lazy" src="img/${p}.jpg" alt="${c}"><small>${c}</small></button>`}).join("");
+  return `<section class="stop" id="s${i+1}"><div class="when"><span class="n">${i+1}</span><div><b>${x.short}</b><i>約 ${x.c}</i></div></div>
+  <div><h2>${x.t}</h2><ul>${x.b.map(l=>`<li>${l}</li>`).join("")}</ul>${g?`<div class="grid">${g}</div>`:""}</div></section>`}).join("");
+const lb=document.getElementById("lb"),im=document.getElementById("lbi"),cp=document.getElementById("lbc"),tt=document.getElementById("lbt");let cur=0;
+const show=i=>{cur=(i+flat.length)%flat.length;const p=flat[cur];im.src=`img/${p}.jpg`;im.alt=cap[p];tt.textContent=cap[p];cp.textContent=`第 ${stopOf[p]+1} 站　${cur+1}/${flat.length}`};
+document.getElementById("stops").addEventListener("click",e=>{const b=e.target.closest("button[data-i]");if(b){show(+b.dataset.i);lb.classList.add("on");document.getElementById("lbx").focus()}});
+document.getElementById("lbp").onclick=()=>show(cur-1);
+document.getElementById("lbn").onclick=()=>show(cur+1);
+const close=()=>lb.classList.remove("on");
+document.getElementById("lbx").onclick=close;
+lb.addEventListener("click",e=>{if(e.target===lb)close()});
+document.addEventListener("keydown",e=>{if(!lb.classList.contains("on"))return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+}
+</script>
+</body>
+</html>

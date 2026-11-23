@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>自來水博物館走讀筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 安靜的田野筆記，像導覽員手上那本寫滿水路的小冊子
+   IDEA: 沿著「水的路線」走一圈：取水、抽水、過濾、再抽上山，每一站有筆記與當天拍的照片
+   PICTURE: 頂部大幅照片（圓弧列柱廊與穹頂），下方 16 站路線條
+   COLOUR and TYPE: 窗框青綠 #2f7d73、水源地砂岩 #b79c78、鑄鐵黑 #25282b；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 單欄閱讀，左側掛站號；「這一場才有」重點卡；照片網格點開可放大左右切換 */
+:root{color-scheme:light dark;
+--bg:light-dark(#f6f3ec,#131615);--card:light-dark(#fffdf8,#1c201f);--ink:light-dark(#1f2321,#e8e6df);
+--mute:light-dark(#66685f,#a2a69d);--teal:light-dark(#2a7468,#7cc4b6);--teal-deep:#1f5a50;
+--sand:light-dark(#9a7c52,#d2b88f);--water:light-dark(#dcebea,#1f3431);--line:light-dark(#e1dccf,#2c3331);
+--iron:light-dark(#25282b,#e8e6df)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.75 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+html{scroll-padding-top:16px}
+h1,h2,h3{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.1;font-weight:800}
+h2{font-size:clamp(22px,3vw,28px);line-height:1.3;font-weight:800}
+.hero{display:grid;grid-template-columns:minmax(0,1fr);background:var(--teal-deep);color:#f2f5f1}
+.hero .ph{position:relative;height:clamp(280px,48vh,500px);overflow:hidden}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;display:block}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(12,38,34,.9))}
+.hero .tx{position:absolute;left:max(5vw,16px);right:max(5vw,16px);bottom:24px;z-index:1}
+.hero p{margin:.5em 0 0;font-size:17px;max-width:64ch;opacity:.94}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;padding:16px max(5vw,16px);font-size:14px;background:#17463e;color:#d9e8e4}
+.meta b{color:#fff;font-weight:700}
+nav:not(.yr-pn){max-width:1040px;margin:22px auto 0;padding:0 max(4vw,14px)}
+nav .scroll{display:flex;flex-wrap:wrap;gap:8px}
+nav a{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:14px;min-height:36px;background:var(--card)}
+nav a span{color:var(--teal);font-weight:700}
+nav a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+main{max-width:1040px;margin:0 auto;padding:12px max(4vw,14px) 60px}
+.note{font-size:14px;color:var(--mute);margin:14px 0 0}
+.uniq{margin:22px 0 4px;padding:18px 18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.uniq h3{font-size:19px;color:var(--teal);margin-bottom:4px}
+.uniq>p{margin:0 0 12px;font-size:14.5px;color:var(--mute)}
+.ucards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.ucards a{display:block;text-decoration:none;color:var(--ink);background:var(--water);border-radius:10px;padding:12px 14px;font-size:14.5px;line-height:1.6}
+.ucards a:hover{outline:2px solid var(--teal)}
+.ucards em{font-style:normal;display:inline-block;margin-bottom:4px;padding:0 9px;border-radius:999px;background:var(--teal-deep);color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.04em}
+.stop{display:grid;grid-template-columns:118px minmax(0,1fr);gap:0 26px;padding:34px 0;border-bottom:1px solid var(--line)}
+.when{font-size:14px;color:var(--mute);line-height:1.5;padding-top:4px}
+.when .n{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--teal-deep);color:#fff;font:800 17px "Noto Serif TC",serif;margin-bottom:8px}
+.when b{display:block;color:var(--ink);font-size:16px;white-space:nowrap}
+.when i{font-style:normal;white-space:nowrap}
+ul{margin:12px 0 0;padding-left:1.2em}
+li{margin:.25em 0}
+li::marker{color:var(--teal)}
+.only{margin-top:16px;display:grid;gap:8px}
+.only div{background:var(--water);border-left:4px solid var(--teal);border-radius:0 10px 10px 0;padding:9px 14px;font-size:15px;line-height:1.65}
+.only em{font-style:normal;display:inline-block;margin-right:8px;padding:0 9px;border-radius:999px;background:var(--teal-deep);color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.04em;vertical-align:1px}
+.flow{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:0}
+.flow li{position:relative;margin:0;padding:10px 14px 10px 46px;border:1px solid var(--line);background:var(--card);font-size:15px}
+.flow li+li{margin-top:22px}
+.flow li+li::before{content:"↓";position:absolute;left:18px;top:-24px;color:var(--teal);font-weight:700;font-size:18px}
+.flow li::after{content:attr(data-n);position:absolute;left:12px;top:11px;width:24px;height:24px;border-radius:50%;background:var(--water);color:var(--teal);font:700 13px/24px system-ui;text-align:center}
+.flow b{font-weight:700}
+.flow .pump{border-color:var(--teal);background:var(--water)}
+.flow .pump::after{background:var(--teal-deep);color:#fff}
+.flow .grav{border-style:dashed}
+.flow small{display:block;color:var(--mute);font-size:13.5px;line-height:1.55}
+.flowlegend{font-size:13.5px;color:var(--mute);margin:10px 0 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;margin-top:18px}
+.grid button{all:unset;cursor:pointer;position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--line)}
+.grid button:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.grid button:hover img{transform:scale(1.04)}
+.grid small{position:absolute;left:6px;bottom:5px;right:6px;background:rgba(0,0,0,.62);color:#fff;font-size:12px;line-height:1.45;padding:1px 7px;border-radius:4px;width:fit-content;max-width:calc(100% - 12px)}
+.fix{border-left:3px solid var(--teal);padding:8px 16px;margin-top:26px;font-size:15px;background:var(--card)}
+.fix b{color:var(--teal)}
+.src{margin-top:20px;font-size:13.5px;color:var(--mute)}
+.src a{color:var(--teal)}
+#lb{position:fixed;inset:0;z-index:20;background:rgba(8,12,11,.95);display:none;align-items:center;justify-content:center;flex-direction:column;padding:14px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:10px;align-items:center;color:#eee;margin-top:10px;font-size:15px;flex-wrap:wrap;justify-content:center}
+#lb .cp{color:#ddd;font-size:14.5px;margin-top:8px;text-align:center;max-width:70ch}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer}
+footer{max-width:1040px;margin:0 auto;padding:0 max(4vw,14px) 40px;color:var(--mute);font-size:14px}
+@media(max-width:640px){.stop{grid-template-columns:minmax(0,1fr)}.when{display:flex;gap:12px;align-items:center;margin-bottom:6px}.when .n{margin:0}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.grid img{transition:none}html{scroll-behavior:auto}}
+#stops ul li b{color:var(--teal-deep);font-weight:700}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・51 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html" aria-current="page"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html" aria-current="page"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></details><span>2025/11/12</span></div>
+<header class="hero">
+  <div class="ph"><img src="img/a104644.jpg" alt="自來水博物館圓弧形的列柱廊與穹頂，前方是修剪整齊的花圃">
+    <div class="tx"><h1>自來水博物館<br>走讀筆記</h1>
+    <p>一百多年前，臺北人的第一口自來水，是從公館這棟圓弧形的老房子抽上山的。跟著導覽員走進臺北水道水源地唧筒室：看它為什麼長成這樣、水怎麼被一路抽到觀音山上，還有那些只有走進館裡才會遇見的小細節。</p></div>
+  </div>
+</header>
+<div class="meta"><span><b>日期</b> 2025/11/12（三）上午；隔天 11/13 再回館內補看展件</span><span><b>地點</b> 臺北市中正區思源街 1 號・自來水園區（臺北水道水源地唧筒室）</span><span><b>導覽</b> 自來水博物館導覽（定時導覽約 30 分鐘；這次走的是團體場，約 80 分鐘）</span><span><b>集合</b> 自來水博物館前廣場</span></div>
+<nav><div class="scroll" id="nav"></div></nav>
+<main>
+<p class="note">沿著導覽的順序整理，每一站挑了最能代表的照片。點圖可放大、用方向鍵切換。</p>
+
+<section class="uniq" aria-label="這一場的獨特之處">
+  <h3>這一場，只有走進來才遇得到</h3>
+  <p>有些東西不會寫在簡介上，現場走一趟才知道。</p>
+  <div class="ucards">
+    <a href="#s14"><em>唯一</em><br>1922 年的抽水機，導覽員說原廠自己也只剩一台；鎮館雙寶之一，就在館內等你找紅色小牌。</a>
+    <a href="#s1"><em>第一</em><br>全國第一座自來水博物館，建築本身就是第一代臺北自來水的心臟，是臺灣第三座近代水道。</a>
+    <a href="#s8"><em>現場才聽得到</em><br>馬達整天發熱，那些熱氣到底排去哪了？一百多年後的今天，導覽員說還是個謎。</a>
+    <a href="#s8"><em>稍縱即逝</em><br>天氣好的午後，斜陽把窗框的格子影子投進大廳；得挑天氣、挑時間，碰運氣。</a>
+  </div>
+</section>
+
+<div id="stops"></div>
+
+<div class="fix"><b>想自己去走走</b><br>・<b>定時導覽</b>：週二至週日 10:00，在自來水博物館前廣場集合，全程約 30 分鐘。<br>・<b>尋寶</b>：找那台日本原廠製、館內最老的抽水機，旁邊有張紅色印章樣式的「鎮館之寶」小牌；另一件鎮館之寶，是 1907 年從英國訂製運來的鑄鋼管。<br>・<b>拍照</b>：扇形展開的艾歐尼克柱長廊，站在花圃邊拍整道圓弧最好看；午後光線斜進來，窗框影子最有味道。<br>・<b>走動</b>：館內樓梯窄、下樓時天花板偏低，小心頭。機器和電盤請用看的、不要碰。<br>・<b>觀音山蓄水池</b>是另外的導覽，不能隨時進去；導覽員提到有少數免費場次、名額很少，要先領牌，實際時段請以現場公告與官網為準。</div>
+
+<p class="src">史實補充參考：<a href="https://themefile.culture.tw/file/2019-03-06/8323b600-4923-4f21-9410-98c0b40e7c40/2.%E5%8F%B0%E5%8C%97%E6%B0%B4%E9%81%93%E6%B0%B4%E6%BA%90%E5%9C%B0.pdf">文化資產資料〈臺北水道水源地〉</a>、<a href="https://www.taiwan.net.tw/m1.aspx?id=9988&sNo=0001016">交通部觀光署〈自來水園區—自來水博物館〉</a>、<a href="https://www.nippon.com/hk/column/g00528/">nippon.com〈濱野彌四郎〉</a>。</p>
+</main>
+<footer>2025/11/12 參加自來水博物館導覽的走讀筆記</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../guanyin/index.html"><small>‹ 較新的一場・2025/11/13</small>觀音山蓄水池・地下水宮殿</a><a class="nx" href="../ntnuart/index.html"><small>較早的一場・2025/11/12 ›</small>師大美術館：巷弄中的異形建築</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="cp" id="lbt"></div>
+  <div class="bar"><button id="lbp" aria-label="上一張">‹</button><span id="lbc"></span><button id="lbn" aria-label="下一張">›</button><button id="lbx" aria-label="關閉">✕</button></div>
+</div>
+<script>
+{
+const S=[
+{short:"館前廣場",tag:"集合",t:"館前廣場：先看一眼這棟百年老房子",b:[
+"一圈圓弧形的列柱廊把大家圍在中間。導覽員開場先說：這座館比附近的校園還要早，<b>1907 年</b>動工、<b>1908 年</b>落成。",
+"這次走的是館內這一棟。山坡上的<b>「觀音山蓄水池」</b>是另外的行程，要預約才進得去；這邊是隨時來都能走進去的開放空間。",
+"<b>兩處本來就是一條線</b>：先有水源地，水再被送上山的蓄水池，最後流向全臺北的家。",
+"開場時有隻小熊蜂繞到身邊，導覽員只交代一句<b>「不要動就好」</b>，牠不太會螫人。"],
+only:[["第一","全國第一座自來水博物館（1998 年開放），建築本身就是臺北第一代近代水道的心臟，是臺灣第三座近代水道。"]],
+ph:[["a091213","導覽前，大家沿著花圃走向圓弧列柱廊"]]},
+{short:"水土不服",tag:"歷史",t:"「水土不服」：日本人為什麼先蓋水廠",b:[
+"<b>1895 年</b>日本領臺，軍隊最怕的不是打仗而是生病：戰死一百多人，病死的卻有四千多人，還有上萬人被送回日本養病。",
+"當時臺北人喝的是河水、井水、泉水。清代劉銘傳在衡陽路一帶打過三口井，但在日本人眼裡，這些水都不夠乾淨。",
+"日本國內早有自來水，來到這裡很不適應，想在臺灣待下去，第一件事就是把水淨化。臺灣的自來水起步得早，源頭在這裡。"],ph:[]},
+{short:"第三座水廠",tag:"歷史",t:"為什麼拖到 1908：三座水廠的順序",b:[
+"第一座建在淡水。淡水是通商港口，港口得先有乾淨的水。",
+"<b>第二座在暖暖</b>：為了開發基隆港，取基隆河支流暖暖溪的水，上游東、西兩條溪水量豐沛。暖暖那裡至今還留著百年的抽水房。",
+"公館這座是第三座。導覽員說，戰事讓經費吃緊，一直拖到 <b>1907 年</b>才動工，所以比想像中晚。",
+"<b>選址有訣竅</b>：旁邊要有水源。館後方，就是新店溪。"],ph:[]},
+{short:"水從哪來",tag:"水源",t:"今天喝的水，其實不是門口這段溪",b:[
+"一百多年前，新店溪沒有污染，館前這段溪水就是水源。導覽員特別澄清：現在這段溪的水其實很髒，今天臺北喝的水，取自更上游的青潭堰以上。",
+"再往上游分成南勢溪與北勢溪，翡翠水庫在北勢溪。以一整年計，大約七成五的水來自南勢溪，兩成五來自北勢溪。",
+"<b>為什麼不全用翡翠水庫的水？</b>導覽員的說法：南勢溪水量充沛；而水庫放出的水，自來水公司要向水庫買。"],
+ph:[["a101442","園區導覽圖：左上 A 是新店溪，可以看出水源地就貼在溪邊"]]},
+{short:"兩位先行者",tag:"人物",t:"巴爾頓與濱野彌四郎：踏查出一座城的水",b:[
+"威廉・巴爾頓（William K. Burton）是英國籍的衛生工程師，<b>1896 年</b>來臺。三年之間，他帶著學生走遍各地水系，卻在調查途中染病，回到東京後去世。",
+"他的學生濱野彌四郎留了下來，老師的規劃，後來全由他一步一步執行完成。",
+"館內有兩位的介紹展板和銅像，其中一塊還記錄了這尊銅像曾經離開、後來又復原的經過。"],
+ph:[["b141956","展板〈威廉・巴爾頓：臺灣自來水的先行者〉"],["b142001","濱野彌四郎的介紹展板"],["b141936","巴爾頓的半身銅像"]]},
+{short:"圓弧形",tag:"建築",t:"為什麼是圓弧形？耐震，也順風",b:[
+"設計者是森山松之助，總統府（當年的總督府）也出自他之手。",
+"圓弧形平面的第一個好處是耐震。導覽員教了個小實驗：一張 A4 紙直直立不起來，只要稍微折出一點弧度，就站得住了。這棟房子歷經包括 921 在內的多次大地震，依然好好的。",
+"<b>第二個好處是朝向</b>：整棟坐西南、朝東北，剛好迎著臺北冬天的東北季風、夏天的西南風，讓風能穿過整個大廳。",
+"據文資資料，這道半圓列柱廊的靈感，來自梵蒂岡聖彼得廣場兩側的弧形柱廊。"],
+only:[["只有進館才看得到","館內有一座玻璃桌面的剖面模型，從上往下看，馬上就懂這個弧形與內部機器、水池的配置。"]],
+ph:[["b142114","館內展示的建築藍圖：弧形立面與穹頂"],["b142221","剖面模型：從上往下看圓弧形的配置"]]},
+{short:"華麗外觀",tag:"建築",t:"為什麼蓋得這麼漂亮？外觀的小心機",b:[
+"當年的臺北地圖上，公館這一帶是一片水田，只有後面的小山。突然冒出一棟歐式建築，是日本人要給大家看的門面。導覽員說，走進來彷彿沒出國就到了歐洲。",
+"艾歐尼克柱修長優雅，下面稍寬、上面較細，頂端有渦卷裝飾，<b>跟二二八公園</b>那種粗壯的柱子很不一樣。",
+"中間兩扇門之間左右對稱，兩側連著工作室，上方還有連拱，混搭好幾種歐式元素，卻混得很修長。",
+"<b>看不到的細節</b>：它用了當時臺灣少見的鋼筋混凝土，走近一點，在柱子與屋簷交接處還找得到鋼筋；立面用洗石子，上方貼的銅片氧化成漂亮的銅綠。"],
+only:[["走近才看得到","柱頭與樑交接的地方，藏著一百多年前的鋼筋。"]],
+ph:[["a093530","修長的艾歐尼克柱，一路向弧形的遠處排開"],["a104608","側面的穹頂亭與山牆，鑄鐵與洗石子的質感很好"]]},
+{short:"窗與熱氣之謎",tag:"建築",t:"窗：一片一片的小玻璃，與一個至今的謎",b:[
+"窗戶不是大片玻璃，而是用壓條與釘子固定的一片片小玻璃。機器震動時不會一次全破，除非好幾根釘子同時鬆脫。",
+"導覽員說，這些玻璃和木窗框大多還是 <b>1907 年</b>那批，幾乎沒換過，也是這棟房子能留到現在的重要原因之一。",
+"前後窗戶位置對齊，風能直穿；窗扇還可以整片打平 180 度，通風量非常大。",
+"馬達運轉會發熱，上方另有小窗幫忙排熱。原本以為熱氣是排到外面的花台，後來發現不是。那熱氣到底去哪了？到現在還在追查中。"],
+only:[["現場才聽得到","「熱氣到底怎麼不見的」，導覽員說到現在還是個謎，仍在追查中。"],["稍縱即逝","天氣好的午後，陽光從後方照進來，窗框的格子影子會投在大廳裡。得挑天氣、挑時間，碰運氣。"]],
+ph:[["a094035","青綠窗框裡嵌著一片片小玻璃"],["b142120","館內展示的木窗框樣本"],["a095009","大廳兩側整排的窗，前後對位"]]},
+{short:"先有機器？",tag:"設計",t:"先有機器，還是先有房子？",b:[
+"<b>答案是</b>：同時。房子是為機器而蓋的，每條水管的位置、機器的基座都一起規劃，不是蓋好房子再把機器搬進來。",
+"<b>1907 年</b>的臺灣沒有鋼鐵工業，要用的管路和機器，在動工的同時就向英國訂製。等房子蓋好，剛好漸次運到，回來組裝。",
+"機器是從房子後方運進來的。館內的老照片裡，還看得到當年施工用的鐵軌，<b>山上蓄水池</b>的建材，就是靠鐵軌一路拉上去的。"],
+only:[["唯一","那批 1907 年從英國訂製運來的鑄鋼管，是館內「鎮館雙寶」之一；管子上還鑄著廠名、年份與尺寸。"]],
+ph:[["b141517","一整排抽水機，管路隨機器一起設計"]]},
+{short:"水的路線",tag:"流程",t:"站上高處往下看：水是怎麼走的？",flow:true,b:[
+"一百年前電很珍貴，設計者很厲害：整套流程只用了兩次電抽水，其餘全靠高低差。",
+"這種慢濾的方式，從進水到出水大約要三天。現在的淨水場一路流動，只要約三小時，所以今天不再需要這麼大的場地，這也是為什麼園區看起來空空的。",
+"<b>機器階梯式排列</b>：低處四台負責抽原水，高處五台負責把乾淨的水抽上山。"],
+only:[["只有站上高處才看得到","從二樓的欄杆邊往下看，整排抽水機沿著弧形一字排開，那個畫面，在大廳地面是看不到的。"]],
+ph:[["a094954","從高處俯瞰：機器沿著弧形一字排開"]]},
+{short:"大理石電盤",tag:"設備",t:"大理石配電盤與紗布包的電線",b:[
+"電盤要日夜運轉，木頭怕受潮變形，所以用大理石。<b>1907 年</b>那批是進口的義大利大理石（當時花蓮還沒開採），後來增設的是花蓮大理石，從紋路就看得出新舊。",
+"電線的包覆材料是棉麻紗布，一層一層纏得非常細，一百多年後還是整整齊齊。",
+"當年送進來的是高壓電，在館內自己接收、變壓、分配。"],
+only:[["現場才看得出","新舊大理石的紋路不同，跟著導覽員指的位置比一比，才會發現。"]],
+ph:[["b141918","大理石配電盤與一排老電表"],["a100555","老電線一層層的紗布包覆，細節很驚人"]]},
+{short:"水管演進",tag:"設備",t:"水管的演進：鉛管、塑膠管、不鏽鋼管",b:[
+"早期水廠人員要自己彎製鉛管、裁切尺寸，館內以展板呈現配管的樣子。",
+"<b>後來改成塑膠管</b>：便宜好取得，但不耐壓又怕日曬，早年臺北漏水的問題與此有關；再後來是不鏽鋼管。",
+"不鏽鋼很硬，每個轉角接點都可能是漏水的起點。導覽員用<b>「彎曲吸管」</b>比喻：現在用的是可以彎折的概念。",
+"導覽員說，921 大地震之後，<b>新建大樓</b>被要求使用不鏽鋼管，因為即使結構受損，管子也不易變形，修復比較快。"],
+ph:[["b141803","展板上的配管示意：一段段彎折的管路"]]},
+{short:"機器仍在",tag:"設備",t:"機器還在：馬力、避雷器與公館的雷",b:[
+"機器的說明牌上可以看到日立（<b>HITACHI</b>）等廠牌，其中一台標示 110 馬力，在那個年代是非常大的機器。",
+"公館這一帶夏天容易打雷，所以機房裡也有避雷器。導覽員說，日本製的避雷器多裝在外面，美國製的則藏在馬達裡。",
+"<b>1977 年</b>（<b>民國 66 年</b>），唧筒室完成任務，原水抽取全面停用，淨水廠也搬到隔壁，這裡才變成博物館。"],
+ph:[["a101008","導覽員對著互動螢幕，細說眼前這整套抽水機"]]},
+{short:"鎮館之寶",tag:"唯一",t:"鎮館之寶：1922 年的抽水機",b:[
+"找一張紅色印章樣式、寫著「鎮館之寶 <b>Since</b> 1922」的小牌，就是了。",
+"導覽員說，館方要把每台機器變成展品時，得先追溯來歷，聯絡上日本原廠才發現，原廠自己也只剩一台，沒想到臺灣這邊還有，而且保存得很好。原廠希望把這台買回去，館方沒有答應，<b>於是成了博物館</b>的寶貝。",
+"這台機組從 <b>1922 年</b>起服役，直到唧筒室退役。"],
+only:[["唯一","日本原廠製、館內最老的抽水機。鎮館雙寶之一，來了就能親眼找到它。"]],
+ph:[["a101411","紅色印章樣的「鎮館之寶 Since 1922」小牌"],["b141620","貼著小牌的那台機組，整個大廳最老的一位"]]},
+{short:"水位計・洗手台",tag:"小細節",t:"水位計與角落的洗手台",b:[
+"<b>如果山上的蓄水池</b>水已滿，就不用一直往上抽。機房這邊看得到水位，可以調整，或關掉一台機器，讓水不要一直送上去。",
+"大廳角落還留著日治時期的洗手台，瓷磚非常漂亮。當年工人在這種環境工作，也要隨時保持手乾淨。"],
+only:[["只有走到角落才看得見","那座洗手台躲在轉角，要特地走過去才會發現；記得只用看的，不要摸。"]],
+ph:[["a101720","導覽員指著水位計，說明怎麼控制上山的水量"],["b141729","角落裡日治時期留下的洗手台"]]},
+{short:"走出館外",tag:"尾聲",t:"走出館外：現代淨水場與藍色管材公園",b:[
+"館旁邊現在的公館淨水場，範圍小很多：水一直流動、進來到出去約三小時，不需要以前那麼大的池子。",
+"館後方<b>有座管材小公園</b>，展示臺灣自來水用的大大小小水管，藍色水管拱成一串，是很討喜的拍照點。",
+"導覽員的收尾小知識：臺北水質好，直接喝自來水就很甘甜，水價也便宜，他說每度不超過 <b>15 元</b>。",
+"<b>下次還可以安排</b>：蓄水池導覽，以及園區另一邊體驗現代化進水流程的環境教育課程。"],
+ph:[["a104018","管材小公園：藍色水管拱成一串"],["a104714","隔著柵欄，看得到現在仍在運作的公館淨水場"]]}
+];
+const flat=[],stopOf=[];
+const flowHTML=`<ol class="flow">
+<li data-n="1"><b>新店溪取水</b><small>當年的取水口設在公館附近，水從隱蔽的水路流進館後方的井</small></li>
+<li data-n="2" class="pump"><b>第一次抽水：低處 4 台抽原水</b><small>把原水抽到半山腰的井（用電 ①）</small></li>
+<li data-n="3" class="grav"><b>沉澱池 2 座 → 過濾池 8 座</b><small>靠重力慢慢流，髒東西沉下去、濾掉，全程約三天</small></li>
+<li data-n="4" class="pump"><b>第二次抽水：高處 5 台抽乾淨的水</b><small>把過濾好的水抽上山（用電 ②）</small></li>
+<li data-n="5"><b>觀音山蓄水池</b><small>儲水，高處也是之後的水壓來源</small></li>
+<li data-n="6" class="grav"><b>靠重力流向臺北家家戶戶</b><small>不需要再用任何馬達</small></li>
+</ol><p class="flowlegend">深色底：用電抽水（只有兩次）；虛線框：靠高低差、重力自己流。</p>`;
+document.getElementById("nav").innerHTML=S.map((x,i)=>`<a href="#s${i+1}"><span>${i+1}</span>${x.short}</a>`).join("");
+document.getElementById("stops").innerHTML=S.map((x,i)=>{
+  const g=x.ph.map(([f,c])=>{flat.push([f,c,i]);return `<button data-i="${flat.length-1}" aria-label="放大照片：${c}"><img loading="lazy" src="img/${f}.jpg" alt="${c}"><small>${c}</small></button>`}).join("");
+  const only=(x.only||[]).map(([k,v])=>`<div><em>${k}</em>${v}</div>`).join("");
+  return `<section class="stop" id="s${i+1}"><div class="when"><span class="n">${i+1}</span><div><b>${x.short}</b><i>${x.tag}</i></div></div>
+  <div><h2>${x.t}</h2><ul>${x.b.map(l=>`<li>${l}</li>`).join("")}</ul>${x.flow?flowHTML:""}${only?`<div class="only">${only}</div>`:""}
+  ${g?`<div class="grid">${g}</div>`:""}</div></section>`}).join("");
+const lb=document.getElementById("lb"),im=document.getElementById("lbi"),cap=document.getElementById("lbc"),tt=document.getElementById("lbt");let cur=0;
+const show=i=>{cur=(i+flat.length)%flat.length;const [f,c,s]=flat[cur];im.src=`img/${f}.jpg`;im.alt=c;tt.textContent=c;cap.textContent=`第 ${s+1} 站　${cur+1}/${flat.length}`};
+document.getElementById("stops").addEventListener("click",e=>{const b=e.target.closest("button[data-i]");if(b){show(+b.dataset.i);lb.classList.add("on");document.getElementById("lbx").focus()}});
+document.getElementById("lbp").onclick=()=>show(cur-1);
+document.getElementById("lbn").onclick=()=>show(cur+1);
+const close=()=>lb.classList.remove("on");
+document.getElementById("lbx").onclick=close;
+lb.addEventListener("click",e=>{if(e.target===lb)close()});
+document.addEventListener("keydown",e=>{if(!lb.classList.contains("on"))return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+}
+</script>
+</body>
+</html>

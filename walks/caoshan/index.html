@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>草山御道與朝聖之途</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 安靜的田野筆記，跟其他幾場走讀同一本導覽冊
+   IDEA: 從眾樂園一路走到巴旅館：每一站有筆記與當天拍的照片
+   PICTURE: 頂部大幅照片（巴旅館八角浴室的安山岩外牆與越屋頂），下方 11 站路線條
+   COLOUR and TYPE: 安山岩灰紫 #4a4752、硫磺黃 #93680f、山霧淡灰 #e6e7e3；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 單欄閱讀，左側掛站號與時間；照片網格點開可放大左右切換 */
+:root{color-scheme:light dark;
+--bg:light-dark(#f5f5f2,#121413);--card:light-dark(#fffffc,#1b1e1d);--ink:light-dark(#1c1e1d,#e7e6e1);
+--mute:light-dark(#626563,#a3a5a2);--brick:light-dark(#93680f,#e0b85a);--stone:light-dark(#4a4752,#b4aec2);
+--rain:light-dark(#e6e7e3,#222826);--line:light-dark(#dedfd9,#2c312f)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.75 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+html{scroll-padding-top:16px}
+h1,h2{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.1;font-weight:800}
+h2{font-size:clamp(22px,3vw,28px);line-height:1.3;font-weight:800}
+.hero{background:#2b2a30;color:#f3f1ec}
+.hero .ph{position:relative;height:clamp(280px,52vh,520px);overflow:hidden}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(24,23,28,.9))}
+.hero .tx{position:absolute;left:max(5vw,16px);right:max(5vw,16px);bottom:24px;z-index:1}
+.hero .kick{font-size:14px;opacity:.85;margin:0 0 6px}
+.hero p{margin:.5em 0 0;font-size:17px;max-width:64ch;opacity:.92}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;padding:16px max(5vw,16px);font-size:14px;background:#4a4752;color:#e6e3ec}
+.meta b{color:#fff;font-weight:700}
+nav:not(.yr-pn){max-width:1040px;margin:22px auto 0;padding:0 max(4vw,14px)}
+nav .scroll{display:flex;flex-wrap:wrap;gap:8px}
+nav a{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:14px;min-height:36px;background:var(--card)}
+nav a span{color:var(--brick);font-weight:700}
+nav a:focus-visible,button:focus-visible{outline:3px solid var(--brick);outline-offset:2px}
+main{max-width:1040px;margin:0 auto;padding:12px max(4vw,14px) 60px}
+.intro{padding:26px 0 8px;border-bottom:1px solid var(--line)}
+.intro p{margin:0 0 12px;max-width:70ch}
+.note{font-size:14px;color:var(--mute);margin:6px 0 0}
+.stop{display:grid;grid-template-columns:118px minmax(0,1fr);gap:0 26px;padding:34px 0;border-bottom:1px solid var(--line)}
+.when{font-size:14px;color:var(--mute);line-height:1.5;padding-top:4px}
+.when .n{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--brick);color:#fff;font:800 17px "Noto Serif TC",serif;margin-bottom:8px}
+.when b{display:block;color:var(--ink);font-size:16px;white-space:nowrap}
+.when i{font-style:normal;white-space:nowrap}
+.lead{margin:10px 0 0}
+ul{margin:12px 0 0;padding-left:1.2em}
+li{margin:.3em 0}
+li::marker{color:var(--brick)}
+li b{color:var(--stone)}
+table{border-collapse:collapse;width:100%;margin-top:14px;font-size:15px;background:var(--card)}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--rain);font-weight:700}
+td:first-child{white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:18px}
+.grid figure{margin:0}
+.grid button{all:unset;cursor:pointer;display:block;width:100%;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--line)}
+.grid button:focus-visible{outline:3px solid var(--brick);outline-offset:2px}
+.grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.grid button:hover img{transform:scale(1.04)}
+.grid figcaption{font-size:13.5px;color:var(--mute);line-height:1.5;margin-top:5px}
+.fix{border-left:3px solid var(--brick);padding:8px 14px;margin-top:24px;font-size:15px;background:var(--card)}
+#lb{position:fixed;inset:0;z-index:20;background:rgba(10,12,13,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:14px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;color:#eee;margin-top:10px;font-size:15px;text-align:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer}
+footer{max-width:1040px;margin:0 auto;padding:0 max(4vw,14px) 40px;color:var(--mute);font-size:14px}
+@media(max-width:640px){.stop{grid-template-columns:minmax(0,1fr)}.when{display:flex;gap:12px;align-items:center;margin-bottom:6px}.when .n{margin:0}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}table{font-size:13.5px}th,td{padding:6px}}
+@media(prefers-reduced-motion:reduce){.grid img{transition:none}}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・51 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html" aria-current="page"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html" aria-current="page"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></details><span>2026/09/20</span></div>
+<header class="hero">
+  <div class="ph"><img src="img/120357.jpg" alt="巴旅館八角浴室的安山岩外牆與屋頂上的八角越屋頂">
+    <div class="tx"><p class="kick">2026 臺北古蹟日・臺北美式漫步｜老房子走讀 01 路線 2</p>
+    <h1>草山御道與朝聖之途</h1>
+    <p>從日本時代的公共浴場「眾樂園」出發，沿著舊磺溪與皇太子走過的御道，經過修復中的草山御賓館、戰後的前山公園與陽明湖，一路走到修復工地裡的巴旅館八角浴室。</p></div>
+  </div>
+</header>
+<div class="meta"><span><b>日期</b> 2026/9/20（日）10:00 場・雨後轉晴</span><span><b>集合</b> 草山教師研習中心（北投區湖山里建國街 2 號）</span><span><b>路線</b> 眾樂園 → 新園橋 → 御賓館 → 湖山路 → 前山公園 → 中山路 → 福壽橋 → 溫泉紀念碑 → 巴旅館・11 站</span><span><b>帶路人</b> 陳詩翰（《草山千層派》共同作者）；巴旅館段由修復設計團隊建築師解說</span></div>
+<nav><div class="scroll" id="nav"></div></nav>
+<main>
+<section class="intro">
+<p>2026 臺北古蹟日以「臺北美式漫步」為題。從 1925 年前美國大使官邸落成至今，臺北走過一個世紀：日治末期的外交場域、戰後的冷戰前沿、1950 年代美援湧入後的城市轉變，最後走向古蹟再生。「老房子走讀 01：在老城裡，閱讀修復與生活」從艋舺、草山走到中山北路，跟著修復建築師、地方文化工作者與文史研究者，走進仍在使用、修復或轉化中的文化資產。</p>
+<p>陽明山舊稱「草山」，自日本時代起就是溫泉療養與宗教朝聖的地方。臺北四國八十八所靈場的石佛沿山而立，皇太子行啟的御賓館靜立林間。這條路線把草山拆成一層一層來讀：清末日初的匪亂、溫泉與公共浴場的興起、1923 年皇太子行啟、國立公園的構想，以及戰後「陽明山管理局」時代留下的庭園、眷舍與政治地景。</p>
+<p class="note">事後沿著導覽路線整理的筆記，每站附上當天拍的照片，點圖可放大、用方向鍵切換。</p>
+</section>
+<div id="stops"></div>
+<div class="fix"><b>想自己去走走</b><br>・起點在草山教師研習中心前的廣場，公車在陽明山總站一帶下車步行即到；整段約兩小時，有上下坡與一小段泥土步道，雨天記得帶傘、穿防滑的鞋。<br>・教師研習中心、御賓館與巴旅館目前都不對外開放，只能在外面看；草山御賓館與巴旅館完成驗收、找到營運單位後才會開放。<br>・想看草山溫泉的另一面，可以夏天去前山公園游泳池（山泉水），或從福壽橋旁看白雲瀑布。<br>・延伸閱讀：《草山千層派：品嚐陽明山建築的時代更迭味》（有理文化）。</div>
+</main>
+<footer>2026/9/20 參加臺北古蹟日老房子走讀「路線 2：草山御道與朝聖之途」的走讀筆記｜主辦：臺北市政府文化局</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../keelung/index.html"><small>‹ 較新的一場・2026/09/20</small>港灣即城市：國門廣場周邊散步</a><a class="nx" href="../monga/index.html"><small>較早的一場・2026/09/19 ›</small>艋舺的修復進行式</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar"><button id="lbp" aria-label="上一張">‹</button><span id="lbc"></span><button id="lbn" aria-label="下一張">›</button><button id="lbx" aria-label="關閉">✕</button></div>
+</div>
+<script>
+{
+const S=[
+{t:"草山眾樂園：今天的教師研習中心",short:"眾樂園",at:"10:00",lead:"集合點臺北市教師研習中心，前身是 1931 年落成的公共浴場「眾樂園」，由台北州出資興建，給一般民眾泡湯。",b:[
+"<b>一棟房子三種身分</b>：日本時代是眾樂園；戰後先做為陽明山管理局辦公室（管理局曾在巴旅館與這裡之間搬過家），1950～70 年代間交由國防部使用，最後才成為教師研習中心。建築外觀大致維持 1931 年的樣子，最後面一棟是新蓋的。",
+"<b>八角窗那一棟</b>：現在的大禮堂，原本是大眾池，前半是女湯、後半是男湯。接收後浴池被打平，已看不到泡湯痕跡；附近 1940 年代出生的居民還記得進去泡過溫泉。",
+"<b>一年約四萬人次</b>：日本人自己的統計。公共浴場便宜、設備又好，附近的民營溫泉旅館一直抱怨生意被搶，屢屢在報上要求關掉它。",
+"<b>廣場為什麼這麼大</b>：原本規劃成很寬的四線道，計畫沒做成，留下大廣場，後來成了第二代的陽明山公車站。旅客一下車就看到眾樂園；有些在地人就靠替旅客把行李扛到溫泉旅館賺小費。",
+"<b>安山岩砌牆</b>：灰紫色的石牆用的是大屯火山群特有的安山岩，這種砌法在臺灣幾乎只見於北部火山區。"],
+ph:[["092041","草山教師研習中心（舊眾樂園）與前方的大廣場"],["092210","研習中心入口，兩側是安山岩石牆"],["100110","在廣場上集合，帶路人陳詩翰開場"]]},
+{t:"草山的幾個時代",short:"草山分期",at:"10:10",lead:"帶路人把草山的開發分成幾個階段來看，眼前的地景就是一層一層疊上去的結果。",
+table:[["時期","大致年代","發生了什麼"],["自然穩定期","1900～1920 年代初","山區匪首簡大獅曾聚眾威脅臺北城，1900 年前後被捕處決後治安轉好；1913 年起出現公共浴場，日本人開始上山泡湯"],["公園蓬勃期","1920 年代","1923 年皇太子行啟；台北州把草山當成九州雲仙般的山間遊園地來經營"],["國立公園期","1930 年代","眾樂園落成；1937 年公告「大屯國立公園」，是日本帝國最小的國立公園（最大的是次高タロコ，也在臺灣）"],["戰爭期","1940 年代","對美開戰後「國立公園」被視為美國的東西，實際作用有限"],["管理局時期","1949～1974","陽明山管理局時代，種梅花、蓋中式庭園，草山改名陽明山"],["國家公園時期","1985 年後","陽明山國家公園成立"]],
+b:[
+"<b>被埋起來的磺溪</b>：兩座山之間原本有一條小溪，今天就埋在陽明路底下。從廣場走到對面的草山派出所，以前要過一座小橋。溪水含硫，管子容易結晶堵塞，政府每一兩年就要挖出來清一次。",
+"<b>從櫻花到梅花</b>：日本人在山上種櫻花、琉球松、黑松；戰後政府特別愛種國花梅花，用環境來培養愛國情操。"],
+ph:[["101440","對面的草山派出所，近年修復完成"],["101501","雨開始下大，在研習中心門口的小亭邊聽講"]]},
+{t:"第一代公共浴場與新園橋",short:"新園橋",at:"10:22",lead:"眾樂園其實不是草山第一座公共浴場。1913 年，與北投公共浴場（今北投溫泉博物館）同年，台北州在附近先蓋了一座只有三間、茅草搭的小澡堂。",b:[
+"<b>第一代浴場</b>：1920 年代改成正式的日式木造房屋，主屋是 L 型的三棟。眾樂園開幕後它暫時歇業。今天位在私人土地內，只能從圍牆外遠遠看一眼。",
+"<b>消失的石佛</b>：帶路人幾年前在這塊地上還看得到一尊臺北四國八十八所的石佛，這次勘查時已不知去向。",
+"<b>磺溪與「磺水」</b>：新園橋下就是舊磺溪的河道，早年居民一定得繞過這座橋才能走到御賓館。山上人講台語，溫泉不說「溫泉」，而說「磺水」，因為這裡的熱水都和硫磺有關。",
+"<b>河的左右岸</b>：面向下游，右手邊是右岸、左手邊是左岸。",
+"<b>東宮行啟紀念碑</b>：帶路人用平板展示舊照片。橋旁原本有一座紀念 1923 年皇太子行啟的石碑，戰後被拆除，據說埋在原地附近。在國家圖書館的舊照片資料庫搜尋「草山」就找得到。"],
+ph:[["102615","新園橋上，橋下就是舊磺溪河道"],["102718","新園橋的舊橋欄與河道"],["102918","帶路人用平板展示東宮行啟紀念碑的舊照"]]},
+{t:"草山御賓館（修復中）",short:"御賓館",at:"10:31",lead:"從新園橋邊可以望見正在修復的草山御賓館。它分成兩棟：一棟日式的和館，一棟仿照當時日本人想像中歐美住宅的洋館。",b:[
+"<b>皇太子只待了兩個小時</b>：1923 年 4 月皇太子（後來的昭和天皇）來臺，上草山時只有和館蓋好，可以住的洋館是他走後才完工的。他在這裡用餐、聽完台北州與總督府官員的簡報就下山了。",
+"<b>為了他把路修好</b>：上山走的是今天仰德大道的前身（士林草山道路），下山走今天的紗帽路。路其實早就有，但要讓汽車能開，是因為皇太子要來。更早以前日本人上山泡湯，是在士林下火車，再雇轎子花兩個半小時抬上來。",
+"<b>一座山區治理的樣板</b>：總督府在理蕃戰爭後，很想讓皇太子看看他們如何把山地改造成有下水道、有衛生、宜居的地方，但皇室不讓他進原住民山區，於是改帶到草山。戰後政府在外交宣傳上也把陽明山當成「自由中國」的山區樣板。",
+"<b>戰後</b>：蔣中正曾短暫住過，之後由孫中山之子孫科一家居住。孫科過世後長年閒置，房子幾乎全倒；文化部撥款修復，預計年底完工，開放時間未定。"],
+ph:[["103244","從新園橋邊望見修復中的草山御賓館"],["103048","御賓館修復工程的告示牌"]]},
+{t:"湖山路：郵局、公訓中心與國際大旅社",short:"國際大旅社",at:"10:40",lead:"往前山公園的路上，每一棟房子都有一段故事。",b:[
+"<b>消失的郵局</b>：國家公園看板的位置原本是日本時代蓋的木造陽明山郵局。據在地居民說，1960 年代一位在革命實踐研究院進修的軍官酒駕把房子撞壞，郵局就沒修，直接搬到今天公車總站一帶。",
+"<b>新北市的公訓中心為何在臺北市</b>：右手邊是新北市公務人員訓練中心，日本時代是水道管理單位。士林、北投在臺北升格直轄市前屬於臺北縣，這塊地就一直由縣（後來的新北市）留用。",
+"<b>國際大旅社</b>：至少 1947 年就已存在，經營者一直是同一家人。外牆是漂亮的安山岩亂石砌，和眾樂園同一路數。中南部山區原住民多用板岩蓋石板屋，北部火山區則用安山岩，房子的樣子取決於地質。",
+"<b>檔案裡的花酒</b>：二二八事件前後，管山上森林的官員曾在這裡喝花酒，連派出所警察都請來同飲，事後被檢舉一路查辦。從檔案看得出這裡過去提供的服務相當「複合」。",
+"<b>冷知識</b>：路旁那家超商，是整個陽明山國家公園範圍內唯一的一家便利商店。"],
+ph:[["104532","國際大旅社的安山岩立面"],["104505","從林間望向國際大旅社"]]},
+{t:"前山公園與陽明湖",short:"前山公園",at:"10:50",lead:"穿過居民巷弄進入前山公園（陽明公園），映入眼簾的是假山、亭台與水池，是戰後政府刻意營造的江南庭園風格。",b:[
+"<b>原本是水田</b>：常有人說這裡是日本時代的庭園，但日本時代地圖上標的是樹林和水田。這一帶山泉多，非常適合種田。",
+"<b>什麼都想蓋的公園</b>：除了今天還在的游泳池（山泉水，只在夏天開放），原本還有籃球場，甚至規劃過網球場、高爾夫練習道與大圖書館；今天種滿櫻花的空地以前是小賣部。",
+"<b>傍晚清場</b>：蔣中正在世時，每天傍晚約五點到五點半公園會清場，因為總統與夫人要來散步。附近居民也常在半夜被叫起來查戶口，比一般地方頻繁得多。山上長輩笑說，以前治安當然好。",
+"<b>陽明湖不是日本人挖的</b>：林務檔案記載，是蔣中正請陽明山管理局局長改造環境，局方以地上物查估的方式徵收私人土地，挖出這座湖。居民曾在公園外看到總統夫婦在湖上划船。",
+"<b>紗帽山的毒蛇傳說</b>：在地長輩都說日本軍方在紗帽山做過毒蛇實驗，交代孩子別去爬。軍部資料戰後交接複雜，目前無法證實。"],
+ph:[["110607","陽明湖與倒映的山景"],["105240","前山公園的林間草地"]]},
+{t:"中山路與新匯坊",short:"新匯坊",at:"11:12",lead:"往巴旅館的路上，兩旁多是 1960～80 年代臺北人口爆炸後，有錢人上山蓋的別墅與企業會館。公園旁的小牌樓附近，以前還有一座眷村「中山新村」。",b:[
+"<b>新匯坊站牌</b>：站牌旁那幾棟像廢墟的建築，就是以前的新匯坊溫泉旅館。",
+"<b>草山唯一的台灣人溫泉旅館</b>：前身是 1935 年前後、趁台灣博覽會觀光熱潮開設的「草山ホテル」。經營者是台灣人，和北投的新匯坊（別館）同一個老闆，以台灣菜為號召。1960～70 年代老闆出事被捕，旅館就此歇業，但站名留了下來。",
+"這一段是居民住宅區，經過時請放低音量。"],
+ph:[["111327","「新匯坊」公車站牌"],["111729","沿著中山路下坡，路旁老樹成蔭"]]},
+{t:"多喜之湯、福壽橋與白雲瀑布",short:"白雲瀑布",at:"11:17",lead:"步道一帶是日本時代「多喜之湯」的基地，進入草山溫泉區最先看到的就是這家旅館。",b:[
+"<b>多喜就是「瀧」</b>：「たき」寫作多喜，也可以寫成「瀧」，就是瀑布。旁邊的白雲瀑布在日本時代稱為草山瀧，是重要的觀光景點，水色白濁，往下接到磺溪。",
+"<b>從日本料理改賣台灣菜</b>：多喜之湯原本主打日本料理，後來發現公共浴場太有競爭力，賺台灣人的錢比較容易，也學新匯坊改賣台灣料理。",
+"<b>福壽橋</b>：原名多喜橋，戰後因蔣中正上山都會經過，改名福壽橋祝他福壽雙全。橋寬原本只有現在的一半，上山車道那側是日本時代的舊橋，下山那側是後來拓寬的。",
+"<b>對面的涼亭</b>：今天是銀行會館，日本時代是松田氏的別莊。他隨日軍來臺擔任近衛師團書記，退伍後留在臺北，也是倡導上草山泡湯的重要人物。",
+"<b>八十八所石佛</b>：多喜之湯旁的山坡上還有一尊四國八十八所靈場的石佛，刻有弘法大師與不動明王，因位在私有地又很狹窄，這次沒有帶大家上去。",
+"<b>溫泉區夾在兩條路、兩條溪之間</b>：陽明路、往菁山的路，以及磺溪與另一條溪。"],
+ph:[["111857","白雲瀑布，日本時代稱為草山瀧"]]},
+{t:"草山溫泉紀念碑",short:"溫泉紀念碑",at:"11:24",lead:"經過「聯勤」公車站，爬上一段長滿雜草、蚊子很多的小徑，林中藏著一座草山溫泉紀念碑。",b:[
+"<b>誰立的碑</b>：巴旅館創辦人菅野氏過世後，家族依遺囑立碑，紀念他對草山溫泉的貢獻。這片山坡原本都是巴旅館的範圍。",
+"<b>最早的觀光巴士</b>：他在 1918 年取得特許，經營台北到草山的巴士，是臺北最早的觀光巴士路線之一。他早年在新竹做生意失敗，後來到台北開料理屋起家，事業擴及交通、旅館與娛樂。",
+"<b>碑前的香爐</b>：日本人原本可能只插線香；香爐是後來的台灣人擺上的，把石碑當成像土地公一樣的神明來拜。",
+"<b>溫泉業為什麼沒落</b>：戰後這裡的溫泉旅館幾乎都收歸公有，交給政府機關自己使用，和北投轉手民間經營不同。巴旅館先給管理局、後給聯勤；落草屋成了陽明山國小分校；三元旅館一半改成禮拜堂（因宋美齡要做禮拜而設），警官療養所也有入會門檻。一般人不能再來泡湯，溫泉業就慢慢消失了。"],
+ph:[["112406","鑽進樹林小徑去找紀念碑"],["112432","林中的草山溫泉紀念碑前"]]},
+{t:"巴旅館：修復中的溫泉小鎮",short:"巴旅館",at:"11:40",lead:"陽明路一段 12 號的巴旅館正在修復，由修復設計團隊的建築師帶大家走進工地。巴旅館專做日本高級客人的生意，夏天晚上辦納涼會，旅客搭巴士上山吃冰淇淋、西餐、喝小酒，再被送下山，是一套完整的行程。",b:[
+"<b>1928 年的草山遊園地計畫</b>：建築師展示日本時代的規劃圖，眾樂園、巴旅館、草山派出所與警察療養所、今天中山樓園區裡的溫泉露頭與林間學校，都在同一張溫泉小鎮的藍圖上。",
+"<b>原本的配置</b>：入口的日式主館（入母屋造）、兩棟住宿房、石砌拱門的「西洋館」、鋪榻榻米的大餐廳「大廣間」，以及藏在後面的八角浴室。戰後主館與大廣間都已消失，西洋館只剩外牆。",
+"<b>兩種石牆</b>：附屬建築用「亂石砌」，挑剩下的石材，但仍遵守一塊主石、四周石頭圍著它的原則；八角浴室與駁坎則用較規整的「一丁一順」砌法。原本的觀音山石已取得不到，只能用接近的石材補。",
+"<b>聯勤時代的改建</b>：聯勤陽明山招待所把多數建物拆掉，改成兩層樓的鋼筋混凝土建築。這次修復新增一道通廊，讓輪椅也能到達，外觀做出接近日式雨淋板的質感，但不假裝是原物。",
+"<b>文化資產不只看日本時代</b>：草山同時疊著日本時代與戰後的建築，修復時會依不同時期的歷史價值分別考量。"],
+ph:[["113906","抵達巴旅館修復工地"],["114027","西洋館的安山岩牆與拱門，前方是約兩公尺高的台度"],["114136","建築師以 1928 年的草山遊園地規劃圖說明位置"],["115009","日本時代巴旅館的舊照片"],["115650","西洋館亂石砌牆與木窗"],["120050","修復中的園區，新舊建物並陳"]]},
+{t:"八角浴室：留下來的歷史建築",short:"八角浴室",at:"12:03",lead:"整個巴旅館只有八角浴室被登錄為歷史建築，其他建物則列為再利用的必要設施。修復完成後，它預計做為家庭式的包湯使用。",b:[
+"<b>先調查再動手</b>：修復前先由匠師判斷每一根構件能不能留，畫出每一處斷面、榫口與接點。舊料能用就用，顏色較深的是經過藥劑處理的新料，較淺的是日本時代留下的原料。",
+"<b>八角屋架</b>：木料最長只有六到八公尺，跨距大就得靠續接。屋架是有中柱的洋小屋，通廊則用和小屋；全部用榫接，不用一根釘子。天花板刻意不封，讓大家看見屋架與屋頂上的八角通氣塔，溫泉的熱氣可以往上排出。",
+"<b>為什麼是八角形</b>：每一面都能採光通風；從外面看，它被西洋館擋住，藏在建築群裡。",
+"<b>男湯女湯</b>：原本中間有隔間分男女，這次沒有復原隔牆，讓參觀的人看得見整個空間。牆面的白瓷磚與收邊，是比對老照片（例如御賓館浴室）後選的；窗台用整塊石頭做出排水溝。",
+"<b>修一棟古蹟要多久</b>：從登錄到修復、找營運單位，大概至少六年。這個案子 2023 年（民國 112 年）開工，今年初竣工、正在驗收。匠師越來越少，山上又常下雨，以前一年半的工程現在常要兩年以上。文化資產法也要求定期維護、裝白蟻防治設施，木料改用透氣的護木漆。"],
+ph:[["120347","八角浴室的外牆，比附屬建築更規整的石砌"],["120512","建築師展示「八角澡堂木屋架現況損壞調查」"],["120939","通廊的和小屋木屋架"],["121227","八角浴室內部與不封的八角天花"],["121547","重新鋪設的浴池與木扶手"],["122226","抬頭看八角通氣塔的屋架"]]}];
+const flat=[],stopOf=[];
+document.getElementById("nav").innerHTML=S.map((x,i)=>`<a href="#s${i+1}"><span>${i+1}</span>${x.short}</a>`).join("");
+document.getElementById("stops").innerHTML=S.map((x,i)=>{
+  const g=x.ph.map(([p,c])=>{flat.push([p,c]);stopOf.push(i);return `<figure><button data-i="${flat.length-1}" aria-label="放大：${c}"><img loading="lazy" src="img/${p}.jpg" alt="${c}"></button><figcaption>${c}</figcaption></figure>`}).join("");
+  const tb=x.table?`<table><thead><tr>${x.table[0].map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${x.table.slice(1).map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table>`:"";
+  return `<section class="stop" id="s${i+1}"><div class="when"><span class="n">${i+1}</span><div><b>${x.short}</b><i>約 ${x.at}</i></div></div>
+  <div><h2>${x.t}</h2><p class="lead">${x.lead}</p>${tb}<ul>${x.b.map(l=>`<li>${l}</li>`).join("")}</ul>
+  ${g?`<div class="grid">${g}</div>`:""}</div></section>`}).join("");
+const lb=document.getElementById("lb"),im=document.getElementById("lbi"),cap=document.getElementById("lbc");let cur=0;
+const show=i=>{cur=(i+flat.length)%flat.length;const [p,c]=flat[cur];im.src=`img/${p}.jpg`;im.alt=c;cap.textContent=`${c}　第 ${stopOf[cur]+1} 站　${cur+1}/${flat.length}`};
+document.getElementById("stops").addEventListener("click",e=>{const b=e.target.closest("button[data-i]");if(b){show(+b.dataset.i);lb.classList.add("on");document.getElementById("lbx").focus()}});
+document.getElementById("lbp").onclick=()=>show(cur-1);
+document.getElementById("lbn").onclick=()=>show(cur+1);
+const close=()=>lb.classList.remove("on");
+document.getElementById("lbx").onclick=close;
+lb.addEventListener("click",e=>{if(e.target===lb)close()});
+document.addEventListener("keydown",e=>{if(!lb.classList.contains("on"))return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+}
+</script>
+</body>
+</html>

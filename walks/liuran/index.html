@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>新竹六燃石油產業文化路徑走讀筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 安靜的田野筆記，像攤在桌上的施工圖與老照片
+   COLOUR and TYPE: 鏽橘 #b4532a、苔綠 #3f5b3a、混凝土灰；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 單欄閱讀，左側掛時間；照片網格點開可放大左右切換 */
+:root{color-scheme:light dark;
+--bg:light-dark(#f6f4ef,#151614);--card:light-dark(#fffefb,#1e201d);--ink:light-dark(#20211e,#e8e6df);
+--mute:light-dark(#66665f,#a4a299);--rust:light-dark(#b4532a,#e58a60);--moss:light-dark(#3f5b3a,#9cbf94);
+--tint:light-dark(#ece9e1,#262824);--line:light-dark(#dfdbd0,#2f322d)}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.75 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+html{scroll-padding-top:16px}
+h1,h2,h3{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.12;font-weight:800}
+h2{font-size:clamp(22px,3vw,28px);line-height:1.3;font-weight:800}
+h3{font-size:18px;margin-bottom:4px}
+.hero{background:#2b3329;color:#f3f1ea}
+.hero .ph{position:relative;height:clamp(280px,52vh,520px);overflow:hidden}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(20,26,18,.9))}
+.hero .tx{position:absolute;left:max(5vw,16px);right:max(5vw,16px);bottom:24px;z-index:1}
+.hero p{margin:.5em 0 0;font-size:17px;max-width:64ch;opacity:.93}
+.meta{display:flex;flex-wrap:wrap;gap:8px 24px;padding:16px max(5vw,16px);font-size:14px;background:#1f261d;color:#dbe3d8}
+.meta b{color:#fff}
+nav:not(.yr-pn){max-width:1040px;margin:22px auto 0;padding:0 max(4vw,14px)}
+nav:not(.yr-pn) .scroll{display:flex;flex-wrap:wrap;gap:8px}
+nav:not(.yr-pn) a{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:14px;min-height:36px;background:var(--card)}
+nav:not(.yr-pn) a:hover{border-color:var(--moss)}
+nav:not(.yr-pn) a span{color:var(--rust);font-weight:700}
+a:focus-visible,button:focus-visible{outline:3px solid var(--rust);outline-offset:2px}
+main{max-width:1040px;margin:0 auto;padding:12px max(4vw,14px) 60px}
+.note{font-size:14px;color:var(--mute);margin:14px 0 0}
+.uniq{margin:26px 0 8px;padding:22px 22px 18px;background:var(--tint);border-radius:14px;border-left:5px solid var(--rust)}
+.uniq ol{margin:12px 0 0;padding-left:1.3em}
+.uniq li{margin:.55em 0}
+.uniq li::marker{color:var(--rust);font-weight:700}
+.stop{display:grid;grid-template-columns:118px minmax(0,1fr);gap:0 26px;padding:34px 0;border-bottom:1px solid var(--line)}
+.when{font-size:14px;color:var(--mute);line-height:1.5;padding-top:4px}
+.when .n{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--rust);color:#fff;font:800 17px "Noto Serif TC",serif;margin-bottom:8px}
+.when b{display:block;color:var(--ink);font-size:16px}
+.when i{font-style:normal}
+ul.b{margin:12px 0 0;padding-left:1.2em}
+ul.b li{margin:.3em 0}
+ul.b li::marker{color:var(--rust)}
+ul.b li b{color:var(--moss)}
+ul.b li b.r{color:var(--rust)}
+.only{margin-top:14px;padding:10px 14px;border-radius:10px;background:var(--tint);border-left:4px solid var(--rust);font-size:15px}
+.only b{color:var(--rust)}
+.flow{display:flex;flex-wrap:wrap;gap:6px 4px;margin-top:16px;align-items:center;font-size:14px}
+.flow span{padding:4px 10px;border-radius:8px;background:var(--tint);border:1px solid var(--line)}
+.flow span.hl{background:var(--rust);color:#fff;border-color:var(--rust)}
+.flow em{font-style:normal;color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;margin-top:18px}
+.grid button{all:unset;cursor:pointer;position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--line)}
+.grid button:focus-visible{outline:3px solid var(--rust);outline-offset:2px}
+.grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.grid button:hover img{transform:scale(1.04)}
+.grid small{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font-size:12.5px;line-height:1.35;padding:14px 8px 5px}
+#lb{position:fixed;inset:0;z-index:20;background:rgba(10,12,10,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:14px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:10px;align-items:center;color:#eee;margin-top:10px;font-size:15px;flex-wrap:wrap;justify-content:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 0 12px}
+.pager a,.back{display:block;padding:14px 18px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);text-decoration:none}
+.pager a:hover,.back:hover{border-color:var(--moss)}
+.pager small{display:block;color:var(--mute);font-size:13px}.pager .nx{text-align:right}
+.pager b{font:700 16.5px/1.4 "Noto Serif TC",serif}
+.back{text-align:center;margin-bottom:8px}
+@media(max-width:640px){.pager{grid-template-columns:1fr}.pager .nx{text-align:left}}
+footer{max-width:1040px;margin:0 auto;padding:0 max(4vw,14px) 40px;color:var(--mute);font-size:14px}
+@media(max-width:640px){.stop{grid-template-columns:minmax(0,1fr)}.when{display:flex;gap:12px;align-items:center;margin-bottom:6px}.when .n{margin:0}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.grid img{transition:none}}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・51 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html" aria-current="page"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html" aria-current="page"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></details><span>2025/09/22</span></div>
+<header class="hero">
+  <div class="ph"><img src="img/154036.jpg" alt="施工鷹架包覆的大煙囪廠房與 60 公尺高的煙囪">
+    <div class="tx"><h1>新竹六燃<br>石油產業文化路徑走讀筆記</h1>
+    <p>一座二戰時趕工蓋成的軍用燃料廠，戰後長出「屋中屋」眷村，如今大煙囪裡住著蝙蝠、鷹架正包著廠房。一天走完將軍村、封閉的地下油庫與大煙囪下的家，看一整片 280 公頃的歷史現場怎麼被拆開、被記得、被慢慢修回來。</p></div>
+  </div>
+</header>
+<div class="meta">
+  <span><b>日期</b> 2025/09/22（一）09:00 起</span>
+  <span><b>路線</b> 高鐵新竹站 → 將軍村 → 地下油庫 → 大煙囪下的家</span>
+  <span><b>活動</b> 文化部文化資產局「臺灣文化路徑整合推動平台執行計畫（第三期）」114 年度第 4 場次・潛力路徑訪視暨人才培訓</span>
+  <span><b>承辦</b> 中原大學文化資產保存研究中心</span>
+  <span><b>分享與導覽</b> 賴雯淑教授（陽明交大）、林雅萍建築師、瘋城部落、六燃博物館團隊</span>
+</div>
+<nav><div class="scroll" id="nav"></div></nav>
+<main>
+<p class="note">依當天行程整理的筆記，每站附上現場拍的照片，點圖可放大、用方向鍵切換。簡章說明這場是邀請制、預計只招收 20 位路徑團隊、導覽培訓學員與潛力錨點經營者。</p>
+
+<section class="uniq">
+  <h2>這一天特別在哪</h2>
+  <ol>
+    <li><b>走進平常封閉的「地下」油庫。</b>它其實不在地下，而是覆土偽裝的地上油庫；整區目前無人營運、門是關著的，進去要彎身從輸油管的洞口鑽進去，裡面漆黑一片，只靠手電筒。</li>
+    <li><b>大煙囪正在修，你看得到的是「施工中」。</b>廠房被鷹架包住、裡面進不去，但聽得到修復才挖出來的秘密：被眷戶填平的 29 個大小漏斗、被切斷的梁柱、被當成豬圈的除塵室。這些施工中的樣貌，修完就不會再有了。</li>
+    <li><b>現場說明稱「目前只在這裡發現」的霜毛蝠繁殖群。</b>每年約清明前後飛來、中秋前後離開，白天躲在煙囪與附近頂樓鐵皮屋，要看牠們得挑季節、等天黑。</li>
+    <li><b>施工時意外出土的「閃電型」防空洞。</b>將軍村 2018 年整地時才挖到，展板稱它是罕見的類型，現在做成可以走下去坐一坐的階梯。</li>
+    <li><b>聽建築師講「還在進行中」的現場。</b>從 1930 年代日本工業書籍裡找出吻合九成五的鍋爐圖，是修復現場邊挖邊考證出來的，不是寫在書上的結論。</li>
+  </ol>
+</section>
+
+<div id="stops"></div>
+</main>
+<footer>2025/09/22 參加「新竹六燃石油產業文化路徑」潛力路徑訪視暨人才培訓的走讀筆記。活動資訊取自活動簡章，內容整理自現場分享、導覽與展板。
+<div class="pager"><a href="https://claude.ai/artifact/SugpFXH4h97FNbGHkFig1z"><small>‹ 較新的一場・2025/09/26</small><b>「唱 我們的歌」流行音樂故事展</b></a><a class="nx" href="https://claude.ai/artifact/3AiGqrMaFhdm1fh6iENvE6"><small>較早的一場・2025/09/06 ›</small><b>花園新城走讀</b></a></div>
+<a class="back" href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz">回到全部走讀筆記</a></footer><nav class="yr-pn" aria-label="其他走讀"><a href="../song/index.html"><small>‹ 較新的一場・2025/09/26</small>「唱 我們的歌」流行音樂故事展</a><a class="nx" href="../jingmei/index.html"><small>較早的一場・2025/09/20 ›</small>尋找修澤蘭：景美女中</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar"><button id="lbp" aria-label="上一張">‹</button><span id="lbc"></span><button id="lbn" aria-label="下一張">›</button><button id="lbx" aria-label="關閉">✕</button></div>
+</div>
+<script>
+{
+const S=[
+{short:"集合出發",time:"09:00",t:"高鐵新竹站集合，搭專車往將軍村",b:[
+"09:00 在高鐵新竹站 4 號出口集合，專車載往將軍村，車程約 20 分鐘。",
+"這場屬於「<b>潛力路徑訪視</b>」：新竹六燃石油產業文化路徑還在被建構，今天走的是它的雛形。簡章把六燃的價值歸納成四種：戰爭史、科技史、產業史與社會史。",
+"六燃全名「<b>日本第六海軍燃料廠新竹支廠</b>」，占地<b>約 280 公頃</b>，涵蓋今天的陽明交大、清華大學、工研院與周邊油庫群。"],
+ph:[["090212","集合處立著「參與共築 臺灣文化路徑」的立牌"],["091325","專車上，準備前往將軍村"]]},
+{short:"專題分享",time:"09:40",t:"專題：新竹六燃大煙囪的再造經驗",b:[
+"上午在將軍村室內活動館，由陽明交大賴雯淑教授分享藝術介入工業遺產的做法。",
+"先講為什麼難：六燃是<b>多元族群、物種交織、都市開發</b>的場域，不同關係人的期待不同；歷史地景消失很快，不少地方因工程圍牆連指認都做不到，所以團隊盡力做空拍紀錄。",
+"2018 年起分工：林雅萍建築師團隊修繕歷史建築硬體，大學團隊用「軟體」（內容）把歷史現場活化。",
+"核心概念是「<b>活隱喻．活博物館</b>」：每三年辦一次六燃文件展，2019「戰爭歷史．記憶缺口」、2022「移動的六燃，移動的博物館」、2025「泅游六燃，泅游頭前溪」，還到日本做四座海軍燃料廠的田野踏查。",
+"2019 年的六燃國際互動劇場拋出兩個「困難歷史」的問題：<b>台灣為什麼沒有二戰紀念碑？沒有記起，原諒可能嗎？</b>",
+"另有多語有聲繪本《新竹六燃大煙囪》；日本夥伴曾用日文在<b>保溫基地</b>為社區小朋友表演。",
+"和雞與蝙蝠一起生活的做法，讓團隊拿下 <b>2023 年日本 GOOD DESIGN</b>：邀請社區大學與學生一起在大煙囪廠房搭雞舍、養雞，再用物聯網與人工智慧辨識進入雞舍的其他物種。",
+"收尾的提問很直接：<b>臺灣是誰？我們要如何治理六燃？</b>"],
+ph:[["093810","將軍村室內活動館的專題分享"],["101139","簡報：背景交織、故事複雜，所以藝術介入的方式「複數且迂迴」"],["101705","2018 年以來的實踐：文件展、田野踏查、互動劇場"],["103243","以雞和蝙蝠為學伴的永續都市新生活（2023 日本 GOOD DESIGN）"],["104407","多語有聲繪本《新竹六燃大煙囪》"],["104605","「臺灣是誰？」：以藝術實踐再造歷史現場"]]},
+{short:"將軍村",time:"11:00",t:"將軍村：從台籍員工宿舍到將軍的家",b:[
+"由瘋城部落導覽園區與常設展。1945 年美軍航照圖上，這一帶是六燃的台籍員工宿舍。",
+"<b>金城新村</b>在 1959 年設置，住的是團長級以上的幹部與眷屬，所以得名「將軍村」；展板稱它是「<b>百顆星星的家</b>」。",
+"1976 年航照圖上有 89 戶眷舍，另有<b>竹人托兒所</b>、診療所與村自治會；1996 年眷改條例公布後，周邊眷村陸續改建。",
+"<b>2015 年 15 棟眷舍登錄為歷史建築</b>；2019 年第一期修復完成營運，2023 年第二期完工、常設展開幕。",
+"走在園區裡，門柱上還掛著原住戶的名牌，爬滿藤蔓；清水模與老磚牆之間，有鋼構遮棚把老設施保護起來。"],
+ph:[["111910","磚鋪道路與老樹，進入將軍村園區"],["111856","門柱上保留著原住戶的姓名牌"],["113953","眷舍之間的磚造老設施與鋼構遮棚"],["115636","修復後的眷舍與清水模牆面"]]},
+{short:"防空洞",time:"11:44",t:"食地景下的「<b>閃電型</b>」防空洞",b:[
+"園區裡的食地景，前身是單調的停車場，更早是將軍村的醫務所與竹人托兒所，也就是眷村生活的公共集合場域。",
+"2018 年 4 月一期工程進行時，意外挖到一座地下混凝土掩體，展板稱它是罕見的「閃電型」防空洞。",
+"依文史老師初步判斷，建造時間約在<b>日治末期</b>，規格不像政府蓋的，疑為民間自建：牆體厚實、主體區能站人、頂蓋有換氣孔，入口是斜坡、出口是窄踏階。",
+"文化局決定保留，請建築師改設計：沿著防空洞外形用擋土牆隔出土壤，做成可以繞行、可以坐的階梯，上方加鋼架與玻璃。"],
+only:["意外出土","這座防空洞不在任何預先規劃裡，是施工時才被挖到。現在能在這裡走下階梯、近看它的拱形頂蓋，是整修時臨機應變留下來的結果。"],
+ph:[["114401","導覽員在防空洞旁解說"],["114544","說明牌：地下掩體（防空洞）"],["114850","可走下去的階梯與玻璃護欄"],["114853","一旁的食地景"]]},
+{short:"故事館",time:"12:00",t:"將軍村故事館與午餐",b:[
+"常設展「轉個彎，走入將軍村」以原住戶與後代的生命經驗為經緯，由下而上梳理歷史，強調場域的開放性、公共性、常民性與生活性。",
+"展間有老照片牆、1945 與 1976 年的航照對照、園區模型與大事記。竹人托兒所的名字，是 1959 年兩位創辦人名字中的「竹」與「人」；它營運超過 40 年，2003 年結束。",
+"故事館同樣由六燃博物館團隊參與製作。園區的正式名稱是「<b>開放圖書資訊園區</b>」，現在進駐的多是餐飲店，下午的講者也拿它當例子：修復後的實際使用，常和當初規劃有落差。",
+"午餐在園區內的<b>八二親食</b>，飯後可以再繞一圈：紅磚小屋裡掛著一件鉤織的裝置藝術。"],
+ph:[["120055","導覽員在「轉個彎，走入將軍村」展牆前解說"],["120304","園區模型與航照展示"],["161038","將軍村大事記：1959 設村，2023 常設展開幕"],["161131","地景變遷：1945 年的台籍員工宿舍到眷舍群"],["121610","午餐便當"],["123759","紅磚小屋裡的鉤織裝置藝術"]]},
+{short:"油庫外觀",time:"13:05",t:"到油庫邊：它其實是「地上」的地下油庫",b:[
+"午後專車前往油庫。站在邊緣往下看，是一個被樹林與藤蔓吞沒的凹地。",
+"為什麼叫「地下」？它不是真的往地底挖，而是地上的油庫，<b>上方覆土、種樹</b>，做成公園的樣貌，從空中看以為在地下。日治時期這裡是<b>精製油槽</b>，把燃料藏起來，是怕被美軍轟炸。",
+"現在看到的是戰後中油改建的。中油接收六燃後用不了那麼多空間，實際在用的就只有這座油庫；<b>公道五路</b>對面則是和高雄一樣的地上油庫。",
+"整區有<b>四座圓形油槽，直徑約 70 公尺</b>，外圍有土牆，中間有一條通道，左右各兩座，用 <b>H 型鋼柱</b>支撐。",
+"現況：中油退出後交給市府都市發展處。市府擔心 H 型鋼撐不住上方的覆土、樹木與雨水，一旦開放怕坍塌，所以不整修、也不找單位營運，門就關著。名義上已被列管為文化資產，但沒有實質經費。",
+"曾委託<b>空氣槍協會</b>在這裡玩生存遊戲，園內還看得到當年留下的輪胎與廢車；每年只編十幾萬元的除草費。"],
+ph:[["130515","站在邊緣俯瞰，被藤蔓與樹林包覆的油庫"],["131217","圍牆爬滿藤蔓，中央是一片荒草地"]]},
+{short:"走進油庫",time:"13:11",t:"走進油庫：彎身鑽進去的黑暗",b:[
+"入口是一道窄階梯與紅色鐵門，下去之後是被藤蔓包住的庭院，對面混凝土牆上有一幅大尺寸塗鴉。",
+"真正進入油槽的方式不是走階梯（年久失修），而是走當年輸油的路徑：一隻腳先跨進<b>輸油管的洞口</b>，頭再鑽進去，另一隻腳再跟上。",
+"裡面幾乎全黑，大家靠<b>手電筒和手機燈</b>。一根根鏽色的 H 型鋼柱撐起高聳的空間，頂部斑駁的紋理在燈光下一塊一塊浮現。",
+"以前中油營運時，是沿著樹林間繞整區的步道走，再下去測油品、裝卸油。如今當年的小樹已長成密林。"],
+only:["平常進不去","整區目前封閉、無人營運，一般民眾不易進入。這次行程才有機會親眼看到內部，也是行程裡最難複製的一段。"],
+ph:[["131105","窄階梯與紅色鐵門"],["131341","庭院對面牆上的大幅塗鴉"],["131912","油庫內：鏽色鋼柱林立"],["132042","隊員在柱列間拍攝"],["132531","藤蔓牆上的拱形洞口，就是進出口"]]},
+{short:"六燃全貌",time:"13:35",t:"大煙囪下的家：六燃的來龍去脈",b:[
+"下午回到大煙囪旁的「大煙囪下的家」，先由六燃博物館團隊帶大家把視野拉到整座六燃。",
+"<b>1895 年</b>的地圖上這裡只有田園，種甘蔗、也有荒地，所以日本人好收地。選在新竹，是因為這是西半部離中國最近的城市，前面又有<b>海軍航空隊</b>的機場，需要轟炸機的燃料。",
+"原本的設想有兩條路：把苗栗的天然氣轉成液態燃料，另一條用<b>甘蔗做酒精燃料</b>。天然氣轉化廠還沒蓋好，戰爭就結束了，後期才改以中南部的甘蔗為主。",
+"日本投降時<b>把許多文書燒掉</b>，今天只能靠圖面和零星照片拼湊當年的機器與製程。",
+"附屬設施有<b>海軍醫護部</b>（日本人常有的水土不服）與消防湖。日籍軍官宿舍旁有消防水池，台籍員工宿舍（今將軍村一帶）只有零星小水塘。",
+"歷史建築身分分三次登錄：<b>2010 年新竹支廠、2014 年煉油廠遺存建築群、2019 年觸媒工廠</b>。"],
+flow:["鐵道運入原料","原料倉庫","大煙囪：燒煤產生蒸氣與動力","發酵工場：甘蔗→糖蜜→酒精","異辛烷合成區與觸媒工廠","精製油槽（藏起來）","包裝工廠裝桶","新竹車站","航空支線","機場"],
+ph:[["134714","活動資料裡的空照圖，標出油庫、大煙囪、地下油庫與觸媒工廠"],["141831","簡報：六燃範圍的空照圖對照"],["141944","簡報：大煙囪的建築現況照片"]]},
+{short:"原動廠",time:"14:03",t:"量身訂做的「原動廠」",b:[
+"由林雅萍建築師分享。大煙囪廠房 <b>1943 年動工、1944 年完工</b>，不到一年，是為特定設備量身快速蓋出來的。",
+"團隊翻到 1930 年代日本的工業書籍，找到鍋爐圖，套在現場平面圖上，系統原理與尺度<b>吻合約九成五</b>。",
+"功能：把煤磨成粉、送進鍋爐燃燒，產生蒸氣，再做熱交換，煙氣經除塵集塵後從 <b>60 公尺的煙囪</b>排出。有兩套系統，一套供蒸氣、一套作緊急發電。留存的設備交接清冊記著 <b>7 組磨煤機、3 座鍋爐</b>。",
+"蒸氣主要送往發酵區，也供生活區洗澡用水。",
+"地理上，六燃選在兩條水圳之間，取水方便；以大煙囪為中心，500 公尺內涵蓋主要六燃遺構，800 公尺連將軍村都到得了，是步行可達的<b>一公里生活圈</b>。"],
+ph:[["143403","簡報：把 1930 年代的鍋爐圖疊到現場平面圖上"],["143613","簡報：磨煤、鍋爐、除塵到煙囪的流程"]]},
+{short:"修復發現",time:"14:25",t:"修復中挖出來的秘密",b:[
+"一樓比外面的地面低，會淹水，柱子鏽蝕、混凝土中性化，所以第一期做了大量結構補強。",
+"天花板下一顆顆金屬錨定盤、成雙成對的孔洞，一開始沒人知道是什麼，後來對上了：那是當年固定大型機具與管線的痕跡。",
+"樓板上原來有大大小小<b>共 29 個漏斗</b>，分布在不同高度；許多被眷戶填平，成了自家的樓板。把填土清開，才又看見它們。",
+"支撐發電機組的 <b>6 根巨型柱</b>本來被隔間封住，變成某戶的廚房與房間。為了搬走機具，梁和柱被切斷，鋼筋裸露。",
+"日治時期還沒有竹節鋼筋，用的是<b>圓鋼筋</b>，成了判斷年代的證據；鏽蝕嚴重的地方後來再補強。"],
+only:["稍縱即逝","這些「被填起來又被挖開」的洞，是修復期才看得到的現場。修好後，它們會被玻璃樓板、新的動線重新詮釋，不再是今天這個樣子。"],
+ph:[["142626","簡報：第一期工程的特色構造新發現"],["143131","簡報：樓板上所有孔洞與錨定盤的清查圖"],["144439","簡報：修復分階段推進"]]},
+{short:"<b>屋中屋</b>",time:"14:36",t:"屋中屋：把家蓋進工廠裡",b:[
+"1949 年起，大煙囪旁的第一廠房（日治時期異辛烷合成工廠）被提供給軍官眷屬，因多是亡故、失聯軍官的遺孀，地方人稱它「<b>寡婦樓</b>」。眷戶在廠房裡用簡陋建材自己搭小屋，形成大屋包小屋的「屋中屋」。寡婦樓已在 2014 年被拆毀。",
+"大煙囪廠房同樣有屋中屋：用工字鋼、角鋼、鋼板自行搭建，地板墊高；漏斗被切掉，換成房間。一個除塵室曾被拿來養豬，二樓有人養雞，也有人在家做聖誕燈泡的家庭代工。",
+"現場找得到 <b>15 種以上的馬賽克地磚</b>，各家都不一樣。有一戶的屋頂漏水了幾十年，家裡永遠有水桶在接。",
+"原本的屋頂 1964 年某一天突然垮了，沒人看過原貌，所以修復採用<b>當代屋頂</b>，抬高、引進側光，不去假裝它是舊的。"],
+only:["當場決定保留","外牆整理時，團隊發現某戶的牆其實是原廠房的厚牆，模板寬度和廠房內一致，連被切斷的鐵梯都還在，緊急決定把整段牆完整保留作為見證。"],
+ph:[["152217","模型：二戰時期第六燃料廠第一廠房（寡婦樓）"],["152233","1945 年國民政府接收時的老照片與紅磚"]]},
+{short:"修復後",time:"14:25",t:"未來的大煙囪長什麼樣",b:[
+"完工目標訂在 <b>115 年底</b>，外圍景觀預計 116 年底。1 樓規劃為特展區，2 樓以上是常設展與參觀動線。",
+"屋頂用當代材料，希望陽光從側面進來，讓一天的光線在室內產生戲劇性的變化。新增的空中步道與樓板用玻璃或鋼板，與舊構造清楚區分。",
+"部分漏斗不會再被填起來，而是改用<b>強化玻璃樓板</b>，讓人從上面看得到過去的尺度。",
+"現場提到的對照是<b>倫敦泰特現代美術館</b>（前身是發電廠）與巴特西電廠，都是把發電廠變成公共空間的例子。",
+"簡報最後一頁分階段列出各期工程；大煙囪外圍的建功路與古道，則是第二階段的目標。"],
+ph:[]},
+{short:"保溫基地",time:"14:46",t:"大煙囪下的家：活隱喻．活博物館",b:[
+"「保溫」的意思：大煙囪修復期間，先在旁邊的老屋裡把社群、資料、故事養著，等廠房修好再交棒，所以叫「保溫基地」。",
+"現場的展有雞舍與蝙蝠的展板、1945 年到近年的空照圖對照、寡婦樓模型。從屋內抬頭，屋頂開了一道窗，窗外就是大煙囪廠房斑駁的混凝土牆。",
+"<b>2014 年居民搬出</b>，到 2018 年才開始修復，中間荒廢了四年：治安疑慮、雜草叢生、遊民進出，鄰居擔心房價，一度有人主張拆掉，甚至有里長帶頭。團隊進駐後養雞、讓居民把剩菜帶來餵，慢慢建立感情；現在社區端午、中秋活動，都來借這裡當場地。",
+"資料與內容先做起來：影片、導覽系統、網站，即使未來的營運單位不一定需要這麼多層次，學生與民眾想深入了解，也有知識庫可用。"],
+ph:[["144646","「活隱喻．活博物館」的入口與庭院"],["145125","從屋內窗口仰望：廠房斑駁的混凝土牆"],["145128","雞舍與蝙蝠的展板和手作貼紙"],["153858","展板：新竹大煙囪的蝙蝠俠們"]]},
+{short:"<b>霜毛蝠</b>",time:"15:40",t:"大煙囪的蝙蝠住戶",b:[
+"煙囪裡住著霜毛蝠，每年大約<b>清明前後飛來、中秋前後離開</b>，都是媽媽來生寶寶；爸爸去了哪座山還沒人知道。眷村時期曾有上千隻，近年逐漸減少；展板記載 2010 年 7 月才在大煙囪發現<b>約 700 隻</b>的繁殖群。",
+"牠們也住進煙囪旁社區頂樓的鐵皮屋，因為那裡比較暖，剛出生沒有毛的寶寶需要「保溫箱」。疫情後大家怕蝙蝠，團隊與荒野保護協會、蝙蝠學會合作，推廣怎麼和蝙蝠共處。",
+"展板介紹六燃周邊的四種蝙蝠：霜毛蝠、高頭蝠、堀川氏棕蝠、東亞家蝠。",
+"和其他糖廠的煙囪不同，這裡讓人在看建築與產業之外，多了一層生態。"],
+only:["要挑季節，也要等天黑","蝙蝠只在清明到中秋之間回來，而且夜間才出來活動；白天能看到的，是展板、標本與雞。"],
+ph:[["153858","展板：六燃周邊的四種蝙蝠"],["154036","鷹架中的廠房與 60 公尺煙囪"]]},
+{short:"走出六燃",time:"15:41",t:"走出六燃：巷弄、老宿舍與水圳",b:[
+"沿巷往外走，路邊有荒廢老屋，圍籬後一棟日式老宿舍被樹叢包覆，圍籬上寫著市府的「<b>永續安居 竹步前行</b>」。",
+"導覽提到，日治時期的日籍軍官宿舍在眷村時期還有一百多棟，現在<b>只剩兩棟</b>。",
+"路旁的綠帶與水圳至今仍有水流。六燃當年就選在水圳之間，取水方便；公道五路本身也是都市計畫中的綠廊。"],
+ph:[["154309","圍籬與市府告示牌後的樹叢"],["154312","樹叢間露出的老宿舍屋頂與磚牆"],["154538","綠帶旁仍在流動的水圳"]]},
+{short:"帶回家",time:"15:50",t:"結束前的<b>三個問題</b>",b:[
+"行程最後預留了討論時間，留下三個問題給大家帶回自己的工作：",
+"1. 今天參訪中，哪些經驗可以應用到自身工作或社群？",
+"2. 自身計畫中，有哪些元素可與新竹六燃石油產業文化路徑對話、互補或延伸？",
+"3. 如何讓文化路徑具備跨域合作潛力？",
+"一路走下來，最留下來的是：先把資料、故事與社群「保溫」起來，比等空間修好再說更重要；而路徑要成立，靠的是步行一公里內彼此看得到的場域，以及願意接手的人。"],
+ph:[]}
+];
+const flat=[],stopOf=[];
+document.getElementById("nav").innerHTML=S.map((x,i)=>`<a href="#s${i+1}"><span>${i+1}</span>${x.short}</a>`).join("");
+document.getElementById("stops").innerHTML=S.map((x,i)=>{
+  const g=x.ph.map(p=>{flat.push(p);stopOf.push(i);return `<button data-i="${flat.length-1}" aria-label="${p[1]}"><img loading="lazy" src="img/${p[0]}.jpg" alt="${p[1]}"><small>${p[1]}</small></button>`}).join("");
+  const fl=x.flow?`<div class="flow">${x.flow.map((f,k)=>`<span${f.startsWith("大煙囪")?' class="hl"':''}>${f}</span>${k<x.flow.length-1?'<em>→</em>':''}`).join("")}</div>`:"";
+  return `<section class="stop" id="s${i+1}"><div class="when"><span class="n">${i+1}</span><div><b>${x.short}</b><i>${x.time}</i></div></div>
+  <div><h2>${x.t}</h2><ul class="b">${x.b.map(l=>`<li>${l}</li>`).join("")}</ul>${fl}${x.only?`<div class="only"><b>${x.only[0]}</b>　${x.only[1]}</div>`:""}
+  ${g?`<div class="grid">${g}</div>`:""}</section>`}).join("");
+const lb=document.getElementById("lb"),im=document.getElementById("lbi"),cap=document.getElementById("lbc");let cur=0;
+const show=i=>{cur=(i+flat.length)%flat.length;const p=flat[cur];im.src=`img/${p[0]}.jpg`;im.alt=p[1];cap.textContent=`${p[1]}　${cur+1}/${flat.length}`};
+document.getElementById("stops").addEventListener("click",e=>{const b=e.target.closest("button[data-i]");if(b){show(+b.dataset.i);lb.classList.add("on");document.getElementById("lbx").focus()}});
+document.getElementById("lbp").onclick=()=>show(cur-1);
+document.getElementById("lbn").onclick=()=>show(cur+1);
+const close=()=>lb.classList.remove("on");
+document.getElementById("lbx").onclick=close;
+lb.addEventListener("click",e=>{if(e.target===lb)close()});
+document.addEventListener("keydown",e=>{if(!lb.classList.contains("on"))return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+}
+</script>
+</body>
+</html>

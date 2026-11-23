@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>遠任的走讀筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 安靜的個人田野筆記本，跟各場筆記同一套字與語氣
+   IDEA: 走讀護照的目錄頁：每場一張封面照片，依日期由新到舊排成一本冊子
+   PICTURE: 封面照片網格本身就是畫面，按月份分段
+   COLOUR and TYPE: 墨綠 #17262a 抬頭帶、紙白 #f6f5f1、苔綠 #2c6e63 點綴；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 抬頭帶 → 篩選列 → 月份分段的卡片網格（桌機三欄、平板兩欄、手機一欄） */
+:root{color-scheme:light dark;
+--bg:light-dark(#f6f5f1,#111719);--card:light-dark(#fffefb,#192125);--ink:light-dark(#1b2326,#e6e9e7);
+--mute:light-dark(#5d6669,#9fa9a8);--acc:light-dark(#2c6e63,#7cc1b3);--line:light-dark(#dcdad3,#2a3337)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.7 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Noto Serif TC",serif;margin:0;text-wrap:balance}
+header{background:#17262a;color:#eef2f0;padding:clamp(36px,6vw,72px) max(5vw,16px) clamp(26px,4vw,44px)}
+.wrap{max-width:1240px;margin:0 auto}
+header h1{font-size:clamp(36px,6vw,56px);line-height:1.05;font-weight:800}
+header p{margin:14px 0 0;max-width:62ch;opacity:.9;font-size:17px}
+.stats{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:22px;font-size:15px;opacity:.95}
+.stats b{font:800 26px/1 "Noto Serif TC",serif;color:#9fd8ca;margin-right:4px}
+.strip{display:flex;height:10px}
+.strip i{flex:1}
+.tools{position:sticky;top:0;z-index:4;background:var(--bg);border-bottom:1px solid var(--line)}
+.tools .wrap{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:10px max(5vw,16px)}
+.tools input{flex:1 1 220px;max-width:380px;font:16px "Noto Sans TC",sans-serif;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);min-height:44px}
+.tools input:focus-visible,a:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.months{display:flex;gap:6px;overflow-x:auto}
+.months a,.months span{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font:800 18px "Noto Serif TC",serif;display:grid;place-items:center}
+.months a{border-color:var(--sc);color:var(--sc)}.months a:hover{background:var(--sc);color:#fff}
+.months span.off{opacity:.35;cursor:default}
+section.m .sn{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--sc);color:#fff;font-size:24px;align-self:center}
+main{padding:8px max(5vw,16px) 60px}
+section.m{padding-top:30px}
+section.m h2{font-size:clamp(22px,3vw,28px);display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;border-bottom:1px solid var(--line);padding-bottom:8px}
+section.m h2 small{font:500 14px "Noto Sans TC",sans-serif;color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:22px;margin-top:20px}
+.card{display:flex;flex-direction:column;background:var(--card);border-radius:12px;overflow:hidden;color:inherit;text-decoration:none;border:1px solid var(--line);transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.12)}
+.ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--line)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.card:hover .ph img{transform:scale(1.04)}
+.date{position:absolute;left:12px;top:12px;background:rgba(17,24,26,.82);color:#fff;border-radius:8px;padding:4px 10px;font-size:13.5px;line-height:1.35;text-align:center}
+.date b{display:block;font:800 22px/1.1 "Noto Serif TC",serif}
+.tx{padding:14px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.tx .o{font-size:13.5px;color:var(--acc);font-weight:500}
+.tx h3{font-size:21px;line-height:1.3;font-weight:800}
+.tx p{margin:0;color:var(--mute);font-size:15px;line-height:1.65}
+.tx .c{margin-top:auto;padding-top:8px;font-size:14px;color:var(--mute);display:flex;justify-content:space-between;gap:10px}
+.tx .c span:last-child{color:var(--acc);font-weight:700;white-space:nowrap}
+.empty{padding:40px 0;color:var(--mute)}
+footer{padding:0 max(5vw,16px) 40px;color:var(--mute);font-size:14px}
+@media(prefers-reduced-motion:reduce){.card,.ph img{transition:none}.card:hover{transform:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>遠任的走讀筆記</h1>
+<p>從 2025 年春天到 2026 年秋天，跟著導覽老師在臺北、新北、桃園與基隆的街巷、廟埕、校園、劇場和機房裡走了一場又一場。每一場都依錄音與現場照片整理成一頁筆記，點封面就能翻開那一天。</p>
+<div class="stats"><span><b>{{N}}</b>場走讀</span><span><b>{{STOPS}}</b>個停留點</span><span><b>{{PH}}</b>張照片</span></div>
+</div></header>
+<div class="strip" aria-hidden="true" id="strip"></div>
+<div class="tools"><div class="wrap">
+<input id="q" type="search" placeholder="找地點或主題，例如：眷村、古蹟日、林家" aria-label="篩選走讀">
+<div class="months" id="months"></div>
+</div></div>
+<main><div class="wrap" id="list"></div></main>
+<footer><div class="wrap">遠任的走讀筆記・2025/04–2026/11・照片皆為現場自行拍攝</div></footer>
+<script>
+{
+const W=/*DATA*/[];
+const HERE=/*HERE*/"A",URL=/*URL*/{};
+const TH=window.YR_THUMBS||{};
+const go=w=>`walks/${w.k}/index.html`;
+const SE=[{n:"春",r:"三月到五月",c:"#5f8f4e"},{n:"夏",r:"六月到八月",c:"#2f7fa3"},{n:"秋",r:"九月到十一月",c:"#c0702e"},{n:"冬",r:"十二月到二月",c:"#5a6c8a"}];
+const seasonKey=d=>{let y=+d.slice(0,4),m=+d.slice(5,7);if(m<=2)y--;const i=m>=3&&m<=5?0:m<=8&&m>=6?1:m>=9&&m<=11?2:3;return `${y}${i}`};
+const strip=document.getElementById("strip");
+strip.innerHTML=["#2c6e63","#7a9a5b","#c58b3a","#b5543c","#3d5f86"].map(c=>`<i style="background:${c}"></i>`).join("");
+const card=w=>{const [y,m,d]=w.d.split("-");return `<a class="card" href="${go(w)}">
+<div class="ph"><img loading="lazy" src="thumbs/${w.k}.jpg" alt="${w.t} 封面照片"><span class="date"><b>${+d}</b>${+m} 月・${w.wd}</span></div>
+<div class="tx"><span class="o">${w.o}</span><h3>${w.t}</h3><p>${w.s}</p>
+<div class="c"><span>${w.n} 站・${w.p} 張照片</span><span>翻開 ›</span></div></div></a>`};
+const render=q=>{
+  q=q.trim().toLowerCase();
+  const f=W.filter(w=>!q||(w.t+w.o+w.s+w.d).toLowerCase().includes(q));
+  const groups={};f.forEach(w=>{const k=seasonKey(w.d);(groups[k]=groups[k]||[]).push(w)});
+  const keys=Object.keys(groups).sort().reverse();
+  const have=new Set(keys.map(k=>k.slice(-1)));
+  const first={};keys.forEach(k=>{const i=k.slice(-1);if(!first[i])first[i]=k});
+  document.getElementById("months").innerHTML=SE.map((x,i)=>have.has(String(i))?`<a href="#s${first[i]}" style="--sc:${x.c}"><b>${x.n}</b></a>`:`<span class="off" title="這一季還沒有走讀"><b>${x.n}</b></span>`).join("");
+  document.getElementById("list").innerHTML=keys.length?keys.map(k=>{const x=SE[+k.slice(-1)];return `<section class="m" id="s${k}" style="--sc:${x.c}"><h2><span class="sn">${x.n}</span>${x.n==="冬"?`${k.slice(0,4)}–${String(+k.slice(0,4)+1).slice(2)} 年`:`${k.slice(0,4)} 年`}${x.n}天<small>${x.r}・${groups[k].length} 場</small></h2><div class="grid">${groups[k].map(card).join("")}</div></section>`}).join(""):`<p class="empty">沒有符合「${q.replace(/[<>&"]/g,"")}」的走讀。</p>`;
+};
+render("");
+document.getElementById("q").addEventListener("input",e=>render(e.target.value));
+}
+</script>
+</body>
+</html>

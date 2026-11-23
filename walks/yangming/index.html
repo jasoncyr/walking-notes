@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>尋找修澤蘭：陽明高中走讀筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 一本隨身的校園建築筆記，像拿著舊圖紙邊走邊讀
+   IDEA: 沿著 1967 年的校園與今日新館走一圈，每一站有筆記與當天拍的照片
+   COLOUR and TYPE: 欄杆朱紅 #b8352b、竹節綠 #2f6b57、紙色 #f6f3ec；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 單欄閱讀，左側掛站序；照片網格可點開放大、左右切換 */
+:root{color-scheme:light dark;
+--bg:light-dark(#f6f3ec,#141715);--card:light-dark(#fffdf8,#1d211f);--ink:light-dark(#1f201d,#e9e6df);
+--mute:light-dark(#66645c,#a5a298);--red:light-dark(#b8352b,#e57c6f);--green:light-dark(#2f6b57,#86bfa8);
+--tile:light-dark(#e1ece8,#20332d);--line:light-dark(#e1dccf,#2d332f)}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.78 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+html{scroll-padding-top:16px}
+h1,h2{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,6vw,54px);line-height:1.12;font-weight:800}
+h2{font-size:clamp(22px,3vw,28px);line-height:1.3;font-weight:800}
+.hero{background:#24483b;color:#f4f1e8}
+.hero .ph{position:relative;height:clamp(280px,50vh,500px);overflow:hidden}
+.hero .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(18,40,32,.9))}
+.hero .tx{position:absolute;left:max(5vw,16px);right:max(5vw,16px);bottom:24px;z-index:1}
+.hero p{margin:.5em 0 0;font-size:17px;max-width:64ch;opacity:.94}
+.meta{display:flex;flex-wrap:wrap;gap:8px 24px;padding:16px max(5vw,16px);font-size:14px;background:#1b382e;color:#dbe8e2}
+.meta b{color:#fff}
+nav:not(.yr-pn){max-width:1040px;margin:22px auto 0;padding:0 max(4vw,14px)}
+nav .scroll{display:flex;flex-wrap:wrap;gap:8px}
+nav a{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:14px;min-height:36px;background:var(--card)}
+nav a span{color:var(--red);font-weight:700}
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+main{max-width:1040px;margin:0 auto;padding:12px max(4vw,14px) 50px}
+.intro{margin:26px 0 8px;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+.box h3{margin:0 0 6px;font:800 18px "Noto Serif TC",serif;color:var(--green)}
+.box.rare{background:var(--tile);border-color:transparent}
+.box.rare h3{color:var(--red)}
+.box ul{margin:6px 0 0;padding-left:1.2em;font-size:15px}
+.stop{display:grid;grid-template-columns:104px minmax(0,1fr);gap:0 26px;padding:36px 0;border-bottom:1px solid var(--line)}
+.when{font-size:14px;color:var(--mute);line-height:1.5;padding-top:4px}
+.when .n{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--red);color:#fff;font:800 18px "Noto Serif TC",serif;margin-bottom:8px}
+.when b{display:block;color:var(--ink);font-size:15px}
+ul{margin:12px 0 0;padding-left:1.2em}
+li{margin:.3em 0}
+li::marker{color:var(--red)}
+.q{background:var(--tile);border-radius:10px;padding:10px 14px;margin-top:16px;font-size:15px}
+.q b{color:var(--red)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:20px}
+.grid figure{margin:0}
+.grid button{all:unset;cursor:pointer;display:block;width:100%;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--line)}
+.grid button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.grid button:hover img{transform:scale(1.04)}
+.grid figcaption{font-size:13.5px;color:var(--mute);margin-top:6px;line-height:1.5}
+.links{border-left:3px solid var(--red);padding:8px 16px;margin-top:28px;font-size:15px;background:var(--card)}
+.links a{color:var(--green)}
+#lb{position:fixed;inset:0;z-index:20;background:rgba(10,12,11,.95);display:none;align-items:center;justify-content:center;flex-direction:column;padding:14px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 120px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:10px;align-items:center;color:#eee;margin-top:10px;font-size:15px}
+#lb p{color:#ddd;margin:8px 0 0;font-size:15px;text-align:center;max-width:70ch}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer}
+footer{max-width:1040px;margin:0 auto;padding:0 max(4vw,14px) 40px;color:var(--mute);font-size:14px}
+@media(max-width:640px){.stop{grid-template-columns:minmax(0,1fr)}.when{display:flex;gap:12px;align-items:center;margin-bottom:6px}.when .n{margin:0}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.grid img{transition:none}}
+#stops ul li b{color:var(--green);font-weight:700}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・51 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html" aria-current="page"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html" aria-current="page"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></details><span>2025/11/01</span></div>
+<header class="hero">
+  <div class="ph"><img src="img/095142.jpg" alt="陽明高中校門口的燈座與宮殿式行政大樓">
+    <div class="tx"><h1>尋找修澤蘭：<br>陽明高中走讀筆記</h1>
+    <p>1967 年完成的校園，與十多年前落成的新館，隔著半世紀對話。由新館的設計者林欣蘋建築師親自帶路，從校門口的燈座走到球場看台，一邊看實的建築，一邊學著看「虛」的留白。</p></div>
+  </div>
+</header>
+<div class="meta"><span><b>日期</b> 2025/11/01（六）10:00–12:00</span><span><b>地點</b> 臺北市立陽明高級中學（士林區中正路 510 號）</span><span><b>導覽</b> 林欣蘋（戴嘉惠建築師事務所協同主持人）</span><span><b>活動</b> 家—城 II《另一種現場：建築講座×走讀》</span></div>
+<nav><div class="scroll" id="nav"></div></nav>
+<main>
+<div class="intro">
+  <div class="box"><h3>關於這場走讀</h3>
+    <p style="margin:0;font-size:15px">這是台灣女建築家學會（WAT）與臺北市大安社區大學合辦的「家—城 II」系列中的一場，結合《另一種現場：修澤蘭》特展與《島嶼煉石記：修澤蘭 建築山河》的出版，從家園、校園一路追尋建築師修澤蘭的腳步。陽明高中是她在民國 56 年完成的校園作品；導覽林欣蘋畢業於美國南加州大學建築碩士，也是臺北科技大學建築系兼任講師。</p>
+  </div>
+  <div class="box rare"><h3>只有走這一趟才遇得到</h3>
+    <ul>
+      <li>導覽者正是新館的設計者：同一座校園裡，聽第二代建築師解釋她如何回應第一代。</li>
+      <li>一張從學校倉庫翻出的藍晒圖草稿，證實了修澤蘭當年畫過一座圓形量體。</li>
+      <li>圓月門的「知行樓」平日難得入內，這天一度深鎖，後來才打開。</li>
+      <li>從二樓暖身跑道俯瞰女籃隊練球，這是一般人看不到的角度。</li>
+      <li>校園安靜，導覽透過耳機傳進每個人的耳朵，連鳥叫都聽得清楚。</li>
+    </ul>
+  </div>
+</div>
+<div id="stops"></div>
+<div class="links"><b>延伸閱讀</b><br>
+・<a href="https://event.culture.tw/mocweb/reg/NTM/Detail.init.ctr?actId=40282&utm_source=moc&utm_medium=query" target="_blank" rel="noopener">《另一種現場：修澤蘭 ON-SITE MATTERS: HSIU TSE-LAN》特展</a><br>
+・<a href="https://www.youtube.com/watch?v=bII7xbTO7CA&t=573s" target="_blank" rel="noopener">《島嶼煉石記》系列新書發表會影片</a><br>
+・《島嶼煉石記：修澤蘭 建築山河》</div>
+</main>
+<footer>2025/11/01 陽明高中走讀筆記・文中細節為導覽現場所聞，如有疏漏，以建築與校史資料為準。</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../yejintu/index.html"><small>‹ 較新的一場・2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a><a class="nx" href="../taoyuan/index.html"><small>較早的一場・2025/10/16 ›</small>桃園車站遺跡大解密</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <p id="lbt"></p>
+  <div class="bar"><button id="lbp" aria-label="上一張">‹</button><span id="lbc"></span><button id="lbn" aria-label="下一張">›</button><button id="lbx" aria-label="關閉">✕</button></div>
+</div>
+<script>
+{
+const S=[
+{short:"校門口",t:"民國 56 年的校門口：一所學校的出發點",b:[
+"站在校門口，腳下的校園比外面的馬路低。這正是城市變化的痕跡：<b>1967 年</b>完成的校園，後來被一再抬高的都市基礎設施包圍。",
+"<b>1967 年</b>是九年國民義務教育開辦的年份，美援遞減、美軍退出，教育成了翻轉階層最重要的管道，同時也肩負塑造國家認同與<b>「中華文化復興」</b>的期待。導覽提到，陽明高中被視為台灣第一所九年義務教育示範學校，小學銜接國中。",
+"所以才有這棟宮殿式的行政大樓：它是政策的載體。但導覽想讓大家看見的，是在要求<b>「貫徹政策」</b>的公共工程裡，建築師仍悄悄放進自己的人文關懷與空間判斷。",
+"校門兩座燈與基座，是依修澤蘭的舊圖說重做的。學校有一條 <b>400 公尺</b>的標準跑道，讓它今天成為以體育見長的學校；但修澤蘭設計時，跑道並沒有這麼大。"],
+q:"集合時拿到的活動小卡印著校舍舊影，站在校門口，把舊照片與眼前景象對著看，是這場走讀的第一個小遊戲。",
+ph:[["100518","導覽在校門口說明 1967 年的時代背景，背後是宮殿式的行政大樓"],["095159","活動小卡上的舊校舍照片，與今日校門口對照"]]},
+{short:"退縮",t:"退後三十公尺，走進來就開始安靜",b:[
+"修澤蘭原圖說裡，入口後有一座圓形運動中心（當時沒有興建）、承德路側有規模更大的國中運動場，中間則是三座平台的水景<b>「天地人」</b>，成為進校後最主要的視覺面向。",
+"現任校長是國文老師，他曾說<b>最喜歡這所學校</b>的原因：一走進來就安靜，沒有吵鬧、服儀檢查的氛圍，有一種文人氣質。",
+"入口到行政大樓退縮超過 <b>30 公尺</b>。今天許多學校把行政放在最前面，方便服務；這裡反過來，進了校門先走一段，<b>「進來就開始你的學習與休息」</b>。穿過行政大樓之後，幾乎聽不到城市的雜音，回頭一看，已離馬路有段距離。"],
+ph:[["100841","從入口望向宮殿式行政大樓，前方是刻意留白的廣場"],["101131","行政大樓的紅白欄杆與琉璃瓦屋簷"]]},
+{short:"雁行留白",t:"雁行排列，與比建築更精彩的留白",b:[
+"口字型圍著中庭的配置，其實是歐洲監獄的原型，方便管理者一眼看盡所有人。修澤蘭的校舍不是這樣：她強調的是<b>「學習聚落」</b>，同一年級、一個一個班級彼此相鄰，教學棟以雁行方式排列。",
+"每棟建築之間留白的地方，比建築實體更精彩，是生活、交流、學習，也是減輕壓力的場所，五十多年後仍然好用。",
+"建築高度沒有超過當初設計的植栽樹高，所以整體和諧。校園裡難得看到竹子，這裡刻意種植並保留；兩棵松則是過去軍隊的迎賓樹。植栽和建築都帶著那個年代的政治語言，但抽掉這一層，剩下的仍是建築師對友善環境的用心。",
+"<b>學校維護原貌並不容易</b>：除行政大樓是斜屋頂，其餘都是現代語彙的平屋頂，更新年限與修繕經費都是負擔。校史館裡一定有修澤蘭的資料，學生也都知道，他們的建築師就是設計中山樓（百元鈔票上那棟）的建築師。"],
+ph:[["101336","榕樹下的涼亭與磚砌圓形鋪面"],["101227","雁行排列的教學棟與樹蔭下的步道，遠處可見旋轉梯"]]},
+{short:"梁與竹",t:"白梁、黑樓板、冰裂紋與竹：用新材料說中華文化",b:[
+"結構都是鋼筋混凝土，但白色的梁外露、樓板塗成黑色，呈現出中式木構造的語彙，也就是用 <b>1967 年</b>的新材料，詮釋<b>「中華文化現代化」</b>。",
+"欄杆中間是冰裂紋，象徵寒窗苦讀；竹子代表清高。這些符號在校園裡不斷重複。",
+"簡潔的現代主義，搭配華夏的裝飾符號，經過後現代等風潮之後，今天看依然好讀。"],
+ph:[["101529","仰望旋轉梯與紅白冰裂紋欄杆"]]},
+{short:"知行樓",t:"知行樓：尺度像園林的小量體",b:[
+"圓月門下掛著<b>「知行樓」</b>匾。導覽說，這是校內特別小的一座量體，原本為教師設計，像縮小版的合院，內有更小的庭院，尺度接近中國園林，是修澤蘭營造文人空間的具體實踐。",
+"導覽認為，這一棟最貼近修澤蘭自身的核心價值：建築師在小尺度的房子裡，往往更貼近本意。",
+"我們上午抵達時，圓門前的鐵捲門仍拉下，導覽也很意外。繞完一圈回來才看到門打開（見第 10 站）。"],
+ph:[["102016","圓月門前的走讀團"],["102026","圓月門上方是一排綠色竹節狀的裝飾"]]},
+{short:"旋轉梯",t:"兩座旋轉梯：原本的大門就在這裡",b:[
+"<b>這裡是學校</b>最初的出入口，兩座圓形樓梯就設計在大門兩側。走上去很舒服，階梯不累。",
+"<b>校園歷經多次增改建</b>：欄杆高度因現行法規而加高（原本更低），不少表面材料也是後來換的。原本的小馬賽克磁磚已經停產，修復時改用接近的顏色，保留原有的色彩，這是公有建築修復很務實的做法。",
+"留下來的關鍵元素，是綠色、白色欄杆與冰裂紋花窗。導覽說，修澤蘭對現代教育與中國人文教育，有一種很浪漫的想像。",
+"這一帶安靜得聽得到鳥叫，後面那一棟更靜。"],
+ph:[["102405","旋轉梯下方的走廊，樓梯底面圓潤優美"],["102454","綠色牆面與白色窗框的走廊"]]},
+{short:"新館",t:"兩代建築師的對話：新館怎麼長出來",b:[
+"導覽林欣蘋，正是新建體育館兼演藝廳的設計者，新館落成至今超過十年。",
+"基地原本是四座籃球場。校方的需求包括 300 席的演藝廳、符合國際規格的籃球場，再加兩層行政辦公室與上層專科教室（雁行排列的舊教室裝不下科學實驗的特殊設備，樓高也不夠）。她把需求拆成兩棟：一棟大空間，一棟辦公與教學。",
+"評選時，多數建築師想把量體蓋在正面，因為教育局認為退縮的 30 米可以利用。她們是唯一把建築配置在操場與水池之間的，保留修澤蘭的<b>「合院」</b>概念，最後因此勝出。",
+"<b>為什麼不蓋在天地人那一塊？</b>因為蓋下去，就毀了修澤蘭的設計條件。所以基地向跑道方向拉長，承德路側逐步退縮、壓低量體。體育場本來就不怕噪音，位置也合理。量體若硬往上疊，兩個 8 米加起來約 16 米，差不多五層樓，中庭就消失了。",
+"語彙上延續柱與梁外露，但梁斷面不重複兩次；學校淨高要三米以上，整棟高度約 3.6 到 4 米，比住家高，要維持原有比例很辛苦。也不再複製長廊：現在更重視同儕之間的交流，所以做成大露台、大平台，當作戶外教室，學生對著鏡面不鏽鋼練舞，也是一種學習。"],
+q:"圓形的來歷：她們研讀基地時，覺得這裡「應該少了一棟」，推測當年可能沒蓋，便提案復原；得標之後回學校倉庫翻舊資料，竟真的找到一張修澤蘭的藍晒圖草稿，上面畫著一個正圓。新館是橢圓，因為要配合 400 公尺跑道與校門口的基地條件。",
+ph:[["103731","走讀團在跑道旁聽新館的設計故事"],["103826","新館的弧形外牆與籃框"],["124314","新館與教學棟，前方是天地人水景"]]},
+{short:"天地人",t:"天地人三座平台，與一百一十公分的欄杆",b:[
+"三座水中平台是修澤蘭設計的<b>「天地人」</b>，原樣保留，希望這個故事能繼續被講下去。唯一的差別，是周邊改以石材與地景融合，邊界感淡化。",
+"三座平台以斬石子工法修復，找來老師傅重新整理，過程粉塵很大，還被環保局開單，只好在周邊圍擋。如今這門手藝的師傅多已退休。",
+"水是簡單的循環，以自來水補水，不靠雨水。噴泉的噴法也維持原樣，不華麗，但水形很漂亮。竣工那天，學校擺了一棵聖誕樹，在這裡辦了點燈派對。",
+"學校地勢因城市不斷墊高而下陷，最後一棟的地下室曾淹水、一直抽水，所以把地形墊高、增設排水孔。地形拉高後就有防護欄杆的問題：如果照一般 110 公分的欄杆做，天地人就毀了。<b>後來學校</b>把這件事當成課程，讓學生學這份文化，欄杆就沒有做 110。導覽說，這就是公民共識：學校與公務人員也是市民，公共工程有趣的地方，就在大家一起討論怎麼建構文化。"],
+ph:[["105031","水中的天地人平台，後方是繪有壁畫的校舍"],["105034","三座平台與水面倒影，遠處是人行天橋"]]},
+{short:"配置",t:"配置的判斷，像醫生開處方",b:[
+"對照修澤蘭手繪的平面圖與後來的現況：<b>400 公尺</b>跑道蓋下去之後，原本的圓形量體被吃掉，基地變得很緊。",
+"直覺上，看到空地就覺得房子該蓋在這裡；但放大視野、用歷史脈絡來讀，才知道這裡其實要留白。導覽說，配置的判斷像醫生：關鍵時刻的處方，會決定病人之後怎麼過日子。",
+"<b>一則趣事</b>：有朋友傳來一張圖，原來是建築師考試補習班的老師，正拿這個案子在教基地配置。",
+"當年事務所很年輕，對手是前輩大師，校方對<b>「資歷」</b>也有意見，但她們用校園文理而非商業判斷來配置，最後得到認同。",
+"這塊基地凹下去，以前開車經過路口，根本看不到陽明高中，大家還以為整片是鄰近的學校。多數建築師想著在立面<b>「舉手」</b>，讓人知道這是陽明高中；而校方要的並不是在城市裡舉手。"],
+ph:[]},
+{short:"再訪知行樓",t:"再訪知行樓：預鑄竹節與消失的手藝",b:[
+"約一小時後再次回到圓月門前，這次門開了，大家魚貫走進。",
+"欄杆的竹節柱是鋼筋混凝土預鑄品：當年先塑出竹節的造型，翻模、澆鑄，再一根根裝上去，每一件都像定製品。導覽推想，那是先用陶土做模，再灌入混凝土。今天機具大量製造的年代，很難再找到做這種工藝的師傅。",
+"磁磚是當年的小馬賽克，色彩與先前教室牆面相近；花格磚也是<b>民國 56 年</b>的產品，現在買不到。導覽說起臺北科大的例子：花紋壞掉的部分，改以 3D 列印的水泥補回去，還成了學生的專題。"],
+ph:[["110534","再次來到知行樓，圓門已經打開"],["110707","竹節狀的欄杆柱"],["110710","二樓迴廊，紅白欄杆與竹節柱並列"]]},
+{short:"中庭",t:"中庭、弧形樓梯與花格磚",b:[
+"走上二樓迴廊俯瞰中庭，棕櫚葉茂密，紅白欄杆與弧形樓梯優雅地繞過庭園。這就是修澤蘭想像中，讓學生穿梭、停留、交談的學習場所。",
+"校舍已逾五十年，學校定期進行結構檢查與補強，並利用寒暑假施工，這點比住宅公寓容易。住宅的麻煩常出在漏水與裝修敲打，卻沒有人能統一管理。",
+"樓梯間的小馬賽克地磚、牆上的花格磚，都是當年的材料，導覽說，修復時盡量以接近色與接近樣式保留。"],
+ph:[["110934","二樓迴廊向中庭眺望，導覽站在對面的迴廊"],["111027","弧形樓梯優雅地繞過中庭綠意"],["111033","花格磚牆與走廊地磚"],["111101","樓梯間的小馬賽克地磚與色塊"]]},
+{short:"體育館",t:"走進體育館：為高中生量身的場地",b:[
+"這座場館是女子籃球隊國手的訓練基地，也是高中聯賽的比賽場地。座椅是活動式的，可收可拉；中間是正式比賽場地，另外三面是練習場。",
+"<b>舞台設計成開放式</b>：紅色布幕拉開就與後場完全連通。一般學校的舞台深度約 8 米，這裡更深，避免舞台常態閒置。畢業典禮、班級合唱比賽換場容易，用比較輕鬆的形式，學校才敢借給學生使用。",
+"二樓的環廊原是維修走道，改成暖身跑道，旁邊是重訓教室，目的是給人一個<b>「上來」</b>的理由，避免形成死角與閒置空間。",
+"<b>看台的位置很重要</b>：一定要看得到邊線，因為最後一分的關鍵球都在那條線上。許多學校的看台閒置，常常因為看不到那條線，學生擠在前面。",
+"採光則來自上方的天窗，因為球場要漫射光，側邊的小窗留給環廊維修使用。國手住校訓練，晚上燈亮時的樣子，也在設計考量裡。"],
+q:"當天女籃隊正在練球。從二樓暖身跑道往下看，球員在場上奔跑，是平常難得的視角。",
+ph:[["112905","導覽在場邊說明活動座椅與舞台"],["113135","二樓環廊，原本是維修走道，現在是暖身跑道"],["113147","重訓教室與跑步機"],["113245","紅色布幕後方是球員後場，環廊繞著球場"],["113332","活動座椅與看台，視線正對關鍵邊線"],["113435","從看台俯瞰全場，女籃隊正在練習"],["113636","球場全景與紅色布幕"]]},
+{short:"演藝廳",t:"尾聲：階梯式演藝廳與留白的功課",b:[
+"新館下層有階梯式的演藝廳，導覽說，教育局大致把北區的訓練活動安排在這裡使用。",
+"走完一圈，導覽留下的功課是：大家看建築外觀的時候，也要注意配置，也要看「虛」的空間。留白不是配角，而是人真正活動的地方；城市裡人行道難走、街角不漂亮，往往是因為留白沒有被當作主體來設計。",
+"修澤蘭在 <b>1967 年</b>留下的是一座有留白的校園，五十多年後的新館，則是在那份留白之上，往前再走一步。"],
+ph:[["113954","新館下層的階梯式演藝廳"]]}
+];
+const flat=[],stopOf=[];
+document.getElementById("nav").innerHTML=S.map((x,i)=>`<a href="#s${i+1}"><span>${i+1}</span>${x.short}</a>`).join("");
+document.getElementById("stops").innerHTML=S.map((x,i)=>{
+ const g=x.ph.map(([p,c])=>{flat.push([p,c]);stopOf.push(i);return `<figure><button data-i="${flat.length-1}" aria-label="放大：${c}"><img loading="lazy" src="img/${p}.jpg" alt="${c}"></button><figcaption>${c}</figcaption></figure>`}).join("");
+ return `<section class="stop" id="s${i+1}"><div class="when"><span class="n">${i+1}</span><div><b>${x.short}</b></div></div>
+ <div><h2>${x.t}</h2><ul>${x.b.map(l=>`<li>${l}</li>`).join("")}</ul>${x.q?`<div class="q"><b>現場才有</b>　${x.q}</div>`:""}
+ ${g?`<div class="grid">${g}</div>`:""}</div></section>`}).join("");
+const lb=document.getElementById("lb"),im=document.getElementById("lbi"),cap=document.getElementById("lbc"),tt=document.getElementById("lbt");let cur=0;
+const show=i=>{cur=(i+flat.length)%flat.length;const [p,c]=flat[cur];im.src=`img/${p}.jpg`;im.alt=c;tt.textContent=c;cap.textContent=`第 ${stopOf[cur]+1} 站　${cur+1}/${flat.length}`};
+document.getElementById("stops").addEventListener("click",e=>{const b=e.target.closest("button[data-i]");if(b){show(+b.dataset.i);lb.classList.add("on");document.getElementById("lbx").focus()}});
+document.getElementById("lbp").onclick=()=>show(cur-1);
+document.getElementById("lbn").onclick=()=>show(cur+1);
+const close=()=>lb.classList.remove("on");
+document.getElementById("lbx").onclick=close;
+lb.addEventListener("click",e=>{if(e.target===lb)close()});
+document.addEventListener("keydown",e=>{if(!lb.classList.contains("on"))return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+}
+</script>
+</body>
+</html>

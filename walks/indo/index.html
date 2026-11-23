@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Little Indonesia！我在台北小印尼走讀</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 安靜的個人走讀筆記，像夾在印尼商店購物袋裡的一張收據背面
+   IDEA: 從台北車站大廳走到北平西路的路線冊，每站附當天的照片
+   PICTURE: 頂部大幅照片（北平西路的印尼小街），下方 15 站路線條
+   COLOUR and TYPE: 國旗紅 #b8202e、蠟染褐 #5a3b26、斑斕綠 #2f6b45、薑黃 #d9a21b；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 單欄閱讀，左側掛時間；照片網格點開可放大左右切換 */
+:root{color-scheme:light dark;
+--bg:light-dark(#f8f4ee,#151311);--card:light-dark(#fffdf9,#1e1b18);--ink:light-dark(#211c18,#ebe5dd);
+--mute:light-dark(#6a6159,#a59c92);--red:light-dark(#b8202e,#f08690);--green:light-dark(#2f6b45,#8cc7a0);
+--tint:light-dark(#f6ead0,#2c2516);--line:light-dark(#e7ddd0,#332e29)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.75 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+html{scroll-padding-top:16px}
+h1,h2{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.1;font-weight:800}
+h2{font-size:clamp(22px,3vw,28px);line-height:1.3;font-weight:800}
+.flag{height:8px;background:linear-gradient(#b8202e 50%,#fff 50%)}
+.hero{background:#3a2618;color:#f8f1e8}
+.hero .ph{position:relative;height:clamp(320px,56vh,540px);overflow:hidden}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(40,22,12,.92))}
+.hero .tx{position:absolute;left:max(5vw,16px);right:max(5vw,16px);bottom:24px;z-index:1}
+.hero .kick{font-size:15px;opacity:.9;margin:0 0 6px;letter-spacing:.04em}
+.hero p{margin:.5em 0 0;font-size:17px;max-width:66ch;opacity:.94}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;padding:16px max(5vw,16px);font-size:14px;background:#5a3b26;color:#f1e4d4}
+.meta b{color:#fff;font-weight:700;margin-right:4px}
+.band{background:var(--card);border-bottom:1px solid var(--line)}
+.band>div{max-width:1040px;margin:0 auto;padding:22px max(4vw,14px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center}
+.band .yr{font:800 clamp(34px,6vw,54px)/1 "Noto Serif TC",serif;color:var(--red);white-space:nowrap}
+.band .yr small{display:block;font:500 13px "Noto Sans TC",sans-serif;color:var(--mute);margin-top:6px}
+.band p{margin:0;font-size:15.5px}
+nav:not(.yr-pn){max-width:1040px;margin:22px auto 0;padding:0 max(4vw,14px)}
+nav .scroll{display:flex;flex-wrap:wrap;gap:8px}
+nav a{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:14px;min-height:36px;background:var(--card)}
+nav a span{color:var(--red);font-weight:700}
+nav a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+main{max-width:1040px;margin:0 auto;padding:12px max(4vw,14px) 60px}
+.note{font-size:14px;color:var(--mute);margin:14px 0 0}
+.stop{display:grid;grid-template-columns:118px minmax(0,1fr);gap:0 26px;padding:34px 0;border-bottom:1px solid var(--line)}
+.when{font-size:14px;color:var(--mute);line-height:1.5;padding-top:4px}
+.when .n{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--red);color:#fff;font:800 17px "Noto Serif TC",serif;margin-bottom:8px}
+.when b{display:block;color:var(--ink);font-size:16px}
+.when i{font-style:normal;white-space:nowrap}
+.place{font-size:14px;color:var(--green);font-weight:500;margin:4px 0 0}
+ul{margin:12px 0 0;padding-left:1.2em}
+li{margin:.25em 0}
+li::marker{color:var(--red)}
+.q{background:var(--tint);border-radius:10px;padding:10px 14px;margin-top:14px;font-size:15px}
+.q b{color:var(--red)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;margin-top:18px}
+.grid button{all:unset;cursor:pointer;position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--line)}
+.grid button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.grid button:hover img{transform:scale(1.04)}
+.grid small{position:absolute;left:6px;bottom:5px;background:rgba(0,0,0,.6);color:#fff;font-size:12px;padding:0 6px;border-radius:4px}
+.fix{border-left:3px solid var(--red);padding:8px 14px;margin-top:24px;font-size:15px;background:var(--card)}
+#lb{position:fixed;inset:0;z-index:20;background:rgba(14,11,9,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:14px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 90px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:10px;align-items:center;color:#eee;margin-top:10px;font-size:15px;flex-wrap:wrap;justify-content:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer}
+footer{max-width:1040px;margin:0 auto;padding:0 max(4vw,14px) 40px;color:var(--mute);font-size:14px}
+@media(max-width:640px){.stop{grid-template-columns:minmax(0,1fr)}.when{display:flex;gap:12px;align-items:center;margin-bottom:6px}.when .n{margin:0}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.band>div{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){.grid img{transition:none}}
+#stops ul li b{color:var(--green);font-weight:700}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・51 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html" aria-current="page"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html" aria-current="page"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></details><span>2026/03/14</span></div>
+<div class="flag" aria-hidden="true"></div>
+<header class="hero">
+  <div class="ph"><img src="img/152808.jpg" alt="北平西路印尼小街，藍色遮雨棚下掛滿印尼料理的看板，參加者在店門口聽講解">
+    <div class="tx"><p class="kick">臺北市婦女館・新住民文化走讀</p><h1>Little Indonesia！<br>我在台北小印尼走讀</h1>
+    <p>假日的台北車站，常看到戴著頭巾的女性三三兩兩坐在大廳地板上聊天、吃東西——那是印尼移工和新住民跟同鄉相聚、排解思鄉的地方。這一場跟著印尼籍的吳小文老師，從車站大廳走到地下的祈禱室、印尼商店，再到北平西路的印尼小街，從頭巾、齋戒、香料、甜醬油和月亮餅，認識這些我們天天擦肩而過、卻所知不多的鄰居。</p></div>
+  </div>
+</header>
+<div class="meta"><span><b>日期</b>2026/3/14（六）14:00–16:00</span><span><b>講師</b>吳小文老師・新住民家庭服務中心培力文化講師</span><span><b>主辦</b>臺北市婦女館（委由台北 YWCA 經營管理）</span><span><b>路線</b>臺北車站大廳 → 地下祈禱室 → 地下街印尼商店 → 北平西路攤車 → 印尼小街 → Day Day JAMU</span></div>
+<section class="band"><div><div class="yr">68,262<small>人・臺北市新住民（114 年底）</small></div><p>依臺北市主計處統計，到 114 年 12 月底，臺北市的新住民已有 68,262 人，約占全市人口 2.8%。移工和新住民早已是許多家庭裡不可或缺的「重要他人」。這場走讀想做的事很簡單：走進他們假日的生活圈，看看他們吃什麼、怎麼祈禱、在異鄉面對哪些壓力，打破一點刻板印象。</p></div></section>
+<nav><div class="scroll" id="nav"></div></nav>
+<main>
+<p class="note">這天剛好落在伊斯蘭的齋戒月裡，白天的印尼小街比平常安靜許多，很多店要等傍晚開齋才熱鬧起來。出發前大家先填了五題小測驗，答案就散落在這一路的介紹裡。以下照著走的順序整理，每站附當天拍的照片，點圖可放大、用方向鍵切換。</p>
+<div id="stops"></div>
+<div class="fix"><b>想自己去走走</b><br>・最好挑週六、週日下午：車站大廳最熱鬧，北平西路的月亮餅攤、賣斑斕葉的小販也多半只在假日出現。<br>・從台北車站北側出來沿北平西路走，攤車、印尼小街、巷子裡的 Day Day JAMU 都在幾分鐘的步行範圍。<br>・地下街的印尼商店什麼都有：泡麵、甜醬油、天貝、香料包、白千層油，想試做印尼菜可以從醬料包開始。<br>・遇到齋戒月，白天別在穆斯林面前大吃大喝；不少店家會在門口掛布簾，也是同樣的體貼。<br>・在印尼人面前遞東西、握手、吃飯，記得用右手。</div>
+</main>
+<footer>2026/3/14 參加臺北市婦女館「Little Indonesia！我在台北小印尼走讀」的走讀筆記</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../tamsui/index.html"><small>‹ 較新的一場・2026/04/11</small>淡水女路：女力綻放 Her Story</a><a class="nx" href="../tnua/index.html"><small>較早的一場・2026/03/01 ›</small>打開北藝：21 世紀的劇場</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar"><button id="lbp" aria-label="上一張">‹</button><span id="lbc"></span><button id="lbn" aria-label="下一張">›</button><button id="lbx" aria-label="關閉">✕</button></div>
+</div>
+<script>
+{
+const S=[
+{t:"14:13",short:"認識小文老師",title:"來台二十五年的東爪哇女兒",place:"臺北車站一樓・集合處",ph:["140453","141322"],b:[
+"在車站一樓報到、戴上導覽耳機，先做五題小測驗——不公布成績，答錯了也沒人知道，走完就會知道正確答案。",
+"小文老師來自東爪哇。印尼有五個大島，爪哇島人口最多，首都雅加達在西爪哇。",
+"<b>她是華裔第三代</b>：當年祖父從中國一路坐船南下，先後到過泰國、菲律賓，最後在印尼落腳。安定下來後寫信叫祖母來，接下來半年天天跑港口，等愛人的船。",
+"二十五年前來<b>台灣讀淡江大學</b>，畢業後就留下來生活，現在住台灣的時間已經比住印尼還久。",
+"現在在國小教新住民語文的印尼語課。"]},
+{t:"14:16",short:"蠟染與國旗",title:"從身上的蠟染、胸針和小國旗說起",place:"臺北車站一樓",ph:["141327"],b:[
+"老師身上穿的是蠟染（<b>Batik</b>）。傳統手工蠟染很費工、也比較貴，現在多半是機器印的。",
+"Batik 幾乎是印尼的<b>「國民服裝」</b>，從出生就離不開：媽媽用它把嬰兒背在身上，在家可以當睡衣，男生穿 Batik 襯衫就等於正式服裝，總統出訪、接待外賓也常穿。",
+"胸前的別針是印尼國徽上的神鳥 Garuda，是神話裡的鳥，不是真的有這種鳥。這枚是在南港展覽館國際展覽交換來的，戴著它就等於告訴大家<b>「我來自印尼」</b>。",
+"印尼國旗上紅下白，跟摩納哥幾乎一樣，只是紅色深淺略有不同。紅色代表勇氣，白色代表聖潔。",
+"民間有個說法：被荷蘭殖民約三百五十年，荷蘭國旗是紅白藍，獨立時把藍色撕掉，就成了印尼國旗。<b>1945 年 8 月 17 日</b>，印尼宣布獨立。"]},
+{t:"14:21",short:"頭巾",title:"戴頭巾的就是印尼人嗎？",place:"臺北車站大廳",ph:["142231"],b:[
+"很多人看到戴頭巾的女生就以為是印尼人。其實頭巾是穆斯林女性的穿著，戴頭巾的不一定是印尼人；只是印尼確實是全世界穆斯林人口最多的國家。",
+"<b>老師當場示範怎麼戴</b>：頭髮要全部收好，連耳朵都要蓋住，最好一根頭髮都不露出來；裡面可以先戴一頂小內帽，固定後才不會塌。",
+"顏色會刻意搭配衣服，有比較簡單、方便工作的戴法，也有用別針固定的一整塊布。很多人戴頭巾也是一種造型。",
+"戴久就習慣了，她們不太會覺得熱；風大的時候，戴著反而很舒服。"]},
+{t:"14:26",short:"車站大廳",title:"假日的大廳地板，是她們的自由",place:"臺北車站大廳",ph:["142233"],b:[
+"週六、週日放假的移工常來這裡。一群一群坐在地上的，不一定是同鄉，有時只是剛好在休息、<b>想來車站</b>逛逛，看到聊得來的就坐在一起。",
+"臺北市新住民最多的是萬華區；在臺移工則以印尼人最多，約占 <b>37%</b>，而且一年內就增加了兩萬多人。",
+"有人二十出頭就來，也有人已婚、孩子還小就離家。印尼結婚普遍很早，男生上門拜訪女方家，對方就會直接問<b>「什麼時候結婚」</b>；不少女生十七歲左右就成家，老師同年紀的朋友已經有五個孫子了。",
+"來台前要先在訓練中心學照顧老人，很多人其實沒什麼經驗。一開始就背了大筆仲介費，來了之後每天辛苦工作，薪水還要先拿去還，總覺得<b>「怎麼沒拿到多少」</b>。",
+"最大的障礙是語言，遇到講台語的雇主更是雪上加霜。有人不知道自己有什麼權利，不敢休假，一個月三十天都在工作，壓力很大。",
+"離家多年，看不到孩子結婚、抱不到孫子，跟家人的感情也可能變淡。回國後有人很幸運：老師的朋友把在台賺的錢買了地租出去，中文好到回<b>國後馬上有工廠</b>請她當翻譯；也有人回去才發現先生、房子都沒了。",
+"所以老師說，這片地板就是她們的自由：不用面對工作，想聊什麼就聊什麼，可以吃飯，甚至可以躺下來睡個午覺。"],
+q:"平常的假日人更多，地板會坐得滿滿的。這天剛好在齋戒月裡，大廳顯得冷清許多。"},
+{t:"14:34",short:"祈禱室",title:"廁所旁的小房間：先洗淨，再祈禱",place:"臺北車站地下一樓・穆斯林祈禱室",ph:["142713","142834","143003","143012"],b:[
+"台灣近年努力對穆斯林友善，車站裡就設了祈禱室。在廁所旁邊，門口有月亮和星星的標誌。",
+"<b>祈禱前一定要先淨身</b>：洗臉、洗手、洗腳，脫了鞋才進房間；淨身的地方不能拿來上廁所。穆斯林其實非常愛乾淨。",
+"祈禱室很小，大概只容得下三個人同時祈禱，大約早上六點半到晚上九點半開放。",
+"男生祈禱時常換上紗籠（sarong），像穿裙子一樣套上綁好。因為祈禱時要站、要跪、要額頭貼地，穿褲子不方便，而且上班穿過的褲子也被認為不夠乾淨。",
+"不管在世界哪個角落都能祈禱，只要方向對準麥加的天房（<b>Kaaba</b>，一座黑色的正方體建築）。從台灣看大致朝西，不確定的話可以用 Google 地圖找天房的位置；不少飯店房間也會貼上方向標示。"]},
+{t:"14:40",short:"齋戒月",title:"一整個月，太陽下山才吃第一口",place:"臺北車站地下一樓",ph:["143016"],b:[
+"今年的齋戒月大約在二月到三月。整整一個月，從日出前到日落都不吃不喝；媽媽們通常凌晨三點就起床做早餐，一定要在太陽出來前吃完。",
+"小朋友很可愛，怕餓就偷偷把吃剩的東西藏起來。孩子從小就開始練習，可以只做半天，例如撐到中午就好。",
+"在印尼，白天大約十四個小時不能進食；越靠近極地的國家白天越長，各地不一樣。",
+"不只是不吃東西，也是心靈的鍛鍊：這段期間不能生氣、不能貪心，有不好的念頭就不算完整。",
+"女生生理期、或當天工作量太大的人可以不做，記下來之後再補；也可以改做善事，例如發米給需要幫助的人。",
+"<b>最開心的是開齋</b>：時間一到，跟家人朋友一起吃飯，又解餓又能分享，好像每天都在聚餐。",
+"伊斯蘭曆跟著月亮走，一年只有 354 天，所以開齋節每年都往前移。開齋節必吃的米粽（ketupat）是四方形的，等一下在北平西路就看得到。",
+"有能力的人一生要去一次麥加朝聖，繞天房七圈，而且是逆時針繞——就像行星繞太陽，跟宇宙一起運轉。人很多、擠來擠去，所以最好趁年輕去。",
+"一天祈禱五次，時間看太陽的位置決定。"]},
+{t:"14:49",short:"寧靜日・六大宗教",title:"巴里島的寧靜日，和身分證上的宗教欄",place:"臺北車站地下街",ph:["145007"],b:[
+"巴里島信的是印度教，新年叫<b>「寧靜日」</b>（Nyepi）。除夕夜非常熱鬧，到了寧靜日，所有人都不能出門、不能開燈、不能生火，連外國人和不是印度教徒的人都要遵守，出門會被地方上的守衛抓回去。",
+"有朋友想開燈，只好把窗戶整個蓋起來。但大家其實很期待這一天：整座島安靜下來，會聽到平常聽不到的鳥叫聲。從太空往下看，那天只有巴里島是一片黑。",
+"<b>印尼官方承認六個宗教</b>：伊斯蘭教、印度教、天主教、基督教、佛教，還有近年才加入的孔教，所以印尼也有孔廟。",
+"印尼的身分證上一定有宗教欄。結婚時兩人必須是同一個宗教，所以婚前要先談好<b>「誰跟誰」</b>——老師是天主教徒，先生原本是基督徒，後來改跟她一樣，才能拿到結婚證書。"]},
+{t:"14:54",short:"印尼商店",title:"地下街的印尼商店：家鄉的味道都在這裡",place:"臺北車站地下街・東南亞商店",ph:["145012","151128"],b:[
+"白千層油（minyak kayu putih）幾乎是印尼家庭必備：嬰兒洗完澡抹一點，想吐、累了、脹氣都擦，還能防蚊。老師說走在路上聞到這個味道，就知道附近有印尼人。",
+"這類商店最賺錢的其實是寄包裹和匯款：印尼人很愛寄東西回家，幾公斤的包裹不貴，大約一個月就到。",
+"<b>Nastar</b> 是印尼版的鳳梨酥，源自荷蘭點心：一口一個、皮比較薄，要用印尼奶油才道地，餡一定是真的土鳳梨；開齋節家家必備。老師有朋友就在嘉義用當地鳳梨做。",
+"天貝（tempe）是黃豆發酵做的，表面那層白白的就是發酵。切片撒鹽、加蒜末煎一下就很好吃，常配辣椒醬；蛋白質豐富，可以當素食的肉。要在又熱又悶的地方才做得出來。",
+"印尼菜是<b>「香料之國」</b>的料理：薑黃、南薑、香茅、檸檬葉……每道菜都要香料，所以醬料包最好用。很多人說得出越南有春捲、河粉，泰國有涼拌青木瓜，卻說不出印尼菜，其實炒飯的味道也很不一樣。",
+"甜醬油（kecap manis）是台灣沒有的，炸雞沾著吃也好吃。每種菜都配自己的辣椒醬，炸餅（kerupuk）更是印尼餐桌少不了的。",
+"印尼泡麵賣到全世界，老師說銷量僅次於韓國；一包 <b>12 元</b>。她最愛 Soto 口味的雞湯麵，湯裡有香茅、薑黃、大蒜，再擠點檸檬。另一個招牌是乾拌的炒泡麵（Mi Goreng）。",
+"還有薑糖、一包包可以直接沖泡的草本飲料（jamu）、黑色牛肉湯 <b>Rawon</b> 的醬料（配鹹蛋吃）、Gado-gado 的花生醬——青菜、豆芽、馬鈴薯燙熟淋上去就好。"],
+q:"大家在店裡逛了十分鐘，有人當場買了天貝和泡麵回家試做。"},
+{t:"15:19",short:"北平西路攤車",title:"從車站聚會到一條街：北平西路的攤車",place:"北平西路・臺北車站北側",ph:["151753","151821","151926","152006","152109"],b:[
+"<b>為什麼是北平西路？</b>先是車站成了假日的聚會點，有人就開始擺攤賣吃的；後來有移工留在台灣、也有像老師一樣來讀書的人看到商機，店一家接一家開，慢慢就成了一條印尼商店街。",
+"<b>這裡其實不便宜</b>：兩個人吃十串沙爹、配飲料就要七百元，一碗牛肉丸湯（bakso）兩百多元。但大家還是願意花錢——想念的是家鄉的味道。",
+"印尼人每餐一定要有飯，早餐沒吃飯，就覺得<b>「還沒吃」</b>。有湯的話也會配飯。",
+"<b>很多人用手吃飯</b>：進餐廳前先洗手，沒有洗手台的店家會準備一碗加了檸檬的水。很多菜要沾醬，用手反而方便，也有人說不用手吃就少了一味。",
+"吃飯、握手都用右手，左手是上廁所用的。印尼人見面、道別都習慣握手。",
+"攤車上的 <b>HALAL</b>（清真）標誌不只代表沒有豬肉，從屠宰（要先祈禱）到整個料理過程都要符合規範。",
+"攤上的燒賣（siomay）裡有魚漿、豆腐，淋花生醬吃，一盤就飽；牛肉丸湯配甜醬油和自家做的辣椒醬，再撒點油蔥酥。老師說剛來台灣最不習慣的就是台灣辣椒——甜甜的，一點都不辣。",
+"幾乎每家餐廳都有紅茶，算是印尼的<b>「國民飲料」</b>。"]},
+{t:"15:26",short:"斑斕葉・香蕉葉",title:"路邊的菜攤：斑斕葉、米粽殼和香蕉葉",place:"北平西路・路邊小販",ph:["152651"],b:[
+"開齋節的米粽（ketupat）是用椰葉編成四方形的小籃，裡面放米去煮；台北沒有這種葉子，多半是從嘉義、南部來的。",
+"斑斕葉做甜點、煮飯都用得到，想自己種的話，小販還連土一起賣。這攤只有週六、週日才來。",
+"還有炸香蕉專用的香蕉、檸檬葉、茄子、香蕉花、鹹魚、香茅……想做印尼菜，來這裡就買得齊。",
+"<b>香蕉葉在印尼用途很多</b>：台灣餐廳為了少洗碗會在盤子上套塑膠袋，印尼是蓋一張香蕉葉，防水又防油；外帶的飯也用葉子或紙包起來，不太用餐盒。"]},
+{t:"15:28",short:"印尼小街",title:"齋戒月午後，安靜的印尼小街",place:"北平西路・印尼餐廳一帶",ph:["152813","153042"],b:[
+"<b>看板上的菜名</b>：Nasi Pecel、Nasi Tumpeng、Mie Ayam、Ayam Geprek、Gulai Kambing、Soto Ayam、Bakso、Nasi Goreng。Ayam 就是雞——印尼人不吃豬，雞肉料理特別多。",
+"也有巴東牛肉（<b>Rendang</b>）和咖哩羊肉（Gulai Kambing），印尼人很會做羊肉，燉得很香。",
+"店裡多是自助餐式，自己拿，老闆會看你拿了什麼算錢。穆斯林在台灣最怕吃到豬油，因為台灣什麼菜都可能用，一定要問清楚。",
+"<b>齋戒月多少影響白天的生活</b>：在印尼，連看醫生都要先打電話問今天有沒有開診。這裡的餐廳白天也很安靜，要到傍晚開齋才熱鬧。",
+"很多店會在門口用布簾遮起來，讓禁食中的人不會一直看到別人吃東西。不是穆斯林的我們不用跟著禁食，但可以這樣互相尊重。",
+"路上遇到<b>一位來台讀大學</b>的印尼學生，靠獎學金免學費，生活費和機票自己出。問他喜不喜歡台灣？他說很喜歡，因為很方便。"]},
+{t:"15:40",short:"印尼盾",title:"一張十萬，只換兩百塊",place:"北平西路",ph:["153247"],b:[
+"印尼盾和台幣大約 500 比 1。一千盾的鈔票只值台幣兩塊錢，五千盾是十塊。",
+"在老師住的城市，停車一整天給五千盾就好；印尼地大，家裡多是獨棟，很少有買車位的煩惱。",
+"最大面額是十萬盾，也才台幣兩百元左右。老師笑說錢包裡隨便都是幾十萬，回印尼就變大富翁了。"]},
+{t:"15:44",short:"月亮餅",title:"一整片月亮餅，和一家想念父親的店",place:"北平西路・月亮餅攤與印尼雜貨店",ph:["153626","153657","153714","153909"],b:[
+"月亮餅（<b>Martabak Manis</b>，也叫 Terang Bulan）是又大又厚的甜煎餅，對折後切塊。剛剛商店裡賣的只是一半大小。",
+"口味從黑糯米、巧克力、花生、椰子到起司都有，綠色的是斑斕口味。老師最推巧克力配起司，現點現做大約十五分鐘。",
+"這攤也只在週六、週日開。旁邊另一家月亮餅的店名，是老闆為了紀念生前很愛笑、也很會做月亮餅的父親取的。",
+"老師的媽媽來台灣時，她會請媽媽特地從印尼帶月亮餅來，冰起來、用烤箱熱一下就好。",
+"<b>順便學一句</b>：謝謝是「Terima kasih」。印尼文的字母照拼音念，A 就念「阿」，十分鐘就能學會怎麼念；裡面還有不少來自阿拉伯文、荷蘭文和閩南語的外來字。",
+"印尼餐廳常常可以唱歌。印尼的流行音樂（dangdut）旋律一下就讓人想跳舞，在這裡唱一唱，也是一種發洩。"]},
+{t:"15:50",short:"Day Day JAMU",title:"印尼的草本飲料，和要大家一起合奏的竹琴",place:"北平西路巷內・Day Day JAMU",ph:["154232","154159","154227","154252"],b:[
+"<b>Jamu</b> 是印尼的草本飲料，就像台灣的中藥，都是用植物做的；想要什麼功效都有，例如女生生理痛時喝，可以暖身。老師說這是她知道附近唯一在賣 jamu 的店。",
+"在印尼到現在還看得到「揹 jamu 的人」（jamu gendong）：把一瓶瓶飲料裝在籃子裡揹著走，聽到有人叫就停下來，依你要的口味倒一杯。店裡就準備了竹籃讓大家揹揹看。",
+"門口的竹琴是安格隆（<b>Angklung</b>）：每一支只發一個音，一個人沒辦法演奏一首歌，要大家分工、記好自己負責的音，一起合作才能完成。",
+"店裡也賣印尼餐點、千層糕等點心，旁邊有位子可以坐；也能用文化幣，偶爾還有店家自己帶的走讀和料理體驗。",
+"店門口的看板寫著「印尼草本，給努力工作的你」（<b>Jamu untuk</b> pekerja keras）。"]},
+{t:"15:54",short:"散場前",title:"散場前的問答：會講中文就不會餓肚子",place:"Day Day JAMU 前的巷子",ph:["154254","154108"],b:[
+"老師小時候長輩跟她講閩南語，她其實聽不太懂。現在印尼會講中文的人很多，她笑說在印尼<b>「只要會中文就不會餓肚子」</b>。",
+"她曾帶孩子回印尼想學印尼語，結果每個人都搶著跟他們講中文，一個月下來沒學到多少。",
+"印尼人的英文普遍不錯，上班族聊天常常英文、印尼文混著講。印尼文和馬來文同源，都屬於馬來語系；印尼文化也混合了印度、佛教等許多元素。",
+"印尼的面積大約是台灣的五十多倍。老師在台灣已經環島好幾次，在印尼卻從沒環島成功過——地方太大，交通也不方便。",
+"雅加達人口、房子都太擠了，印尼正在推動遷都，大家都很期待。",
+"想買東南亞食材，<b>除了車站</b>附近的商店，很多地區的傳統市場旁邊也常有印尼小店。",
+"巷口貼著<b>「南風漫城」</b>的海報：<b>2026 年</b> 4 到 8 月還有一系列移工與國人多元文化共融走讀，想繼續認識東南亞的人可以留意。"]}];
+const flat=[],stopOf={};
+const fmtP=p=>`${p.slice(0,2)}:${p.slice(2,4)}`;
+document.getElementById("nav").innerHTML=S.map((x,i)=>`<a href="#s${i+1}"><span>${i+1}</span>${x.short}</a>`).join("");
+document.getElementById("stops").innerHTML=S.map((x,i)=>{
+  const g=x.ph.map(p=>{flat.push(p);stopOf[p]=i;return `<button data-i="${flat.length-1}" aria-label="照片 ${fmtP(p)}"><img loading="lazy" src="img/${p}.jpg" alt=""><small>${fmtP(p)}</small></button>`}).join("");
+  return `<section class="stop" id="s${i+1}"><div class="when"><span class="n">${i+1}</span><div><b>${x.short}</b><i>約 ${x.t}</i></div></div>
+  <div><h2>${x.title}</h2><p class="place">${x.place}</p><ul>${x.b.map(l=>`<li>${l}</li>`).join("")}</ul>${x.q?`<div class="q"><b>附記</b>　${x.q}</div>`:""}
+  ${g?`<div class="grid">${g}</div>`:""}</div></section>`}).join("");
+const lb=document.getElementById("lb"),im=document.getElementById("lbi"),cap=document.getElementById("lbc");let cur=0;
+const show=i=>{cur=(i+flat.length)%flat.length;const p=flat[cur];im.src=`img/${p}.jpg`;cap.textContent=`${fmtP(p)}　第 ${stopOf[p]+1} 站　${cur+1}/${flat.length}`};
+document.getElementById("stops").addEventListener("click",e=>{const b=e.target.closest("button[data-i]");if(b){show(+b.dataset.i);lb.classList.add("on");document.getElementById("lbx").focus()}});
+document.getElementById("lbp").onclick=()=>show(cur-1);
+document.getElementById("lbn").onclick=()=>show(cur+1);
+const close=()=>lb.classList.remove("on");
+document.getElementById("lbx").onclick=close;
+lb.addEventListener("click",e=>{if(e.target===lb)close()});
+document.addEventListener("keydown",e=>{if(!lb.classList.contains("on"))return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+}
+</script>
+</body>
+</html>
