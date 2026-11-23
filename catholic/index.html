@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>踏查天主教臺灣北部之路</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 安靜的個人走讀筆記，像夾在彌撒經本裡的一張紙條
+   IDEA: 一條從主教座堂走到聖多福的路線冊，每站附當天的照片
+   PICTURE: 頂部大幅照片（主教座堂前集合），下方 14 站路線條
+   COLOUR and TYPE: 海報的深綠 #2f5f43、彩窗藍 #2f5d8a、玫瑰紅 #b8405e；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 單欄閱讀，左側掛時間；照片網格點開可放大左右切換 */
+:root{color-scheme:light dark;
+--bg:light-dark(#f8f4f2,#131615);--card:light-dark(#fffdfc,#1c201e);--ink:light-dark(#1e211f,#e8e5e1);
+--mute:light-dark(#65625e,#a19e98);--rose:light-dark(#b8405e,#e98aa2);--green:light-dark(#2f5f43,#8cc09f);
+--glass:light-dark(#e3ecf4,#1f2c38);--line:light-dark(#e6dedb,#2d3230)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.75 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+html{scroll-padding-top:16px}
+h1,h2{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.1;font-weight:800}
+h2{font-size:clamp(22px,3vw,28px);line-height:1.3;font-weight:800}
+.hero{background:#24402f;color:#f6f2ee}
+.hero .ph{position:relative;height:clamp(300px,52vh,520px);overflow:hidden}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(18,36,26,.9))}
+.hero .tx{position:absolute;left:max(5vw,16px);right:max(5vw,16px);bottom:24px;z-index:1}
+.hero .kick{font-size:15px;opacity:.9;margin:0 0 6px}
+.hero p{margin:.5em 0 0;font-size:17px;max-width:64ch;opacity:.93}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;padding:16px max(5vw,16px);font-size:14px;background:#2f5f43;color:#e2eee6}
+.meta b{color:#fff;font-weight:700;margin-right:4px}
+.bg400{background:var(--card);border-bottom:1px solid var(--line)}
+.bg400 div{max-width:1040px;margin:0 auto;padding:22px max(4vw,14px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center}
+.bg400 .yr{font:800 clamp(34px,6vw,54px)/1 "Noto Serif TC",serif;color:var(--rose);white-space:nowrap}
+.bg400 .yr small{display:block;font:500 13px "Noto Sans TC",sans-serif;color:var(--mute);margin-top:6px}
+.bg400 p{margin:0;font-size:15.5px}
+nav:not(.yr-pn){max-width:1040px;margin:22px auto 0;padding:0 max(4vw,14px)}
+nav .scroll{display:flex;flex-wrap:wrap;gap:8px}
+nav a{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:14px;min-height:36px;background:var(--card)}
+nav a span{color:var(--rose);font-weight:700}
+nav a:focus-visible,button:focus-visible{outline:3px solid var(--rose);outline-offset:2px}
+main{max-width:1040px;margin:0 auto;padding:12px max(4vw,14px) 60px}
+.note{font-size:14px;color:var(--mute);margin:14px 0 0}
+.stop{display:grid;grid-template-columns:118px minmax(0,1fr);gap:0 26px;padding:34px 0;border-bottom:1px solid var(--line)}
+.when{font-size:14px;color:var(--mute);line-height:1.5;padding-top:4px}
+.when .n{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--green);color:#fff;font:800 17px "Noto Serif TC",serif;margin-bottom:8px}
+.when b{display:block;color:var(--ink);font-size:16px}
+.when i{font-style:normal;white-space:nowrap}
+.place{font-size:14px;color:var(--green);font-weight:500;margin:4px 0 0}
+ul{margin:12px 0 0;padding-left:1.2em}
+li{margin:.25em 0}
+li::marker{color:var(--rose)}
+.q{background:var(--glass);border-radius:10px;padding:10px 14px;margin-top:14px;font-size:15px}
+.q b{color:var(--rose)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;margin-top:18px}
+.grid button{all:unset;cursor:pointer;position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--line)}
+.grid button:focus-visible{outline:3px solid var(--rose);outline-offset:2px}
+.grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.grid button:hover img{transform:scale(1.04)}
+.grid small{position:absolute;left:6px;bottom:5px;background:rgba(0,0,0,.6);color:#fff;font-size:12px;padding:0 6px;border-radius:4px}
+.fix{border-left:3px solid var(--rose);padding:8px 14px;margin-top:24px;font-size:15px;background:var(--card)}
+#lb{position:fixed;inset:0;z-index:20;background:rgba(10,12,11,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:14px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 90px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:10px;align-items:center;color:#eee;margin-top:10px;font-size:15px;flex-wrap:wrap;justify-content:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer}
+footer{max-width:1040px;margin:0 auto;padding:0 max(4vw,14px) 40px;color:var(--mute);font-size:14px}
+@media(max-width:640px){.stop{grid-template-columns:minmax(0,1fr)}.when{display:flex;gap:12px;align-items:center;margin-bottom:6px}.when .n{margin:0}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bg400 div{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){.grid img{transition:none}}
+#stops ul li b{color:var(--green);font-weight:700}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px;letter-spacing:.05em}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:18px 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 14px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-top{position:relative;z-index:8}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><a class="yr-home" href="../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・47 場</p><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html" aria-current="page"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-beimen"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-lin"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-chanchu"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="https://claude.ai/artifact/95wuwgCrKEXAnExtHkVFkk"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-kala"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-ztd"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-keelung"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-caoshan"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-monga"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-eastmall"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-power"><small>2026/09/05</small>走進臺灣用電百年</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-shiji"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li class="yr-se">2026 夏</li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-zhongshan"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-danjiang"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-pts"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-budai"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-tamsui"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-indo"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-tnua"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-honglou"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-sifen"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-haoshi"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="https://claude.ai/artifact/3rxuSEq62oCWNJnDoSKGJB"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="https://claude.ai/artifact/ErdGLDUJjBaWgQ9BcaZtSX"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="https://claude.ai/artifact/4AcyAY393iT2ewAYAykXNT"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-minzu"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="https://claude.ai/artifact/JTkdTVFPUT1FRaBLCnnR16"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="https://claude.ai/artifact/GmEQmofCcAXE6RCHh3wCUW"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="https://claude.ai/artifact/U29QJ3BkTrW2yfDM9iCV8f"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-wangdh"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="https://claude.ai/artifact/PgTtARRKUL6fmLY2WZ9V6b"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-renwen"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="https://claude.ai/artifact/AduQtdPYTfgdmPrDgfV2g5"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="https://claude.ai/artifact/QS1YAAuFs1uzFhMXfrVB8d"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="https://claude.ai/artifact/XJhpMo4QegYPAnjCA9PPH7"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="https://claude.ai/artifact/QCe8QF9SzU99JV8hxAVGUj"><small>2025/11/12</small>自來水博物館</a></li><li><a href="https://claude.ai/artifact/Eug6tZcjB2bnwLu5CXXTD4"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="https://claude.ai/artifact/T48PGFFZK9DK6CoC1BHdZ8"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="https://claude.ai/artifact/UBJsp4jwx1iX5AKUbzEwVg"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="https://claude.ai/artifact/9fX2FTMwi5oVUMBJY11Nhu"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="https://claude.ai/artifact/SugpFXH4h97FNbGHkFig1z"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-huayuan"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-shuiyuan"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-fuyou"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-guangci"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-dashen"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></aside><script>try{document.querySelector(".yr-side [aria-current]").scrollIntoView({block:"center"})}catch(e){}</script><div class="yr-top"><a href="../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html" aria-current="page"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-beimen"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-lin"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-chanchu"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="https://claude.ai/artifact/95wuwgCrKEXAnExtHkVFkk"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-kala"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-ztd"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-keelung"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-caoshan"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-monga"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-eastmall"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-power"><small>2026/09/05</small>走進臺灣用電百年</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-shiji"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li class="yr-se">2026 夏</li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-zhongshan"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-danjiang"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-pts"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-budai"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-tamsui"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-indo"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-tnua"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-honglou"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-sifen"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-haoshi"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="https://claude.ai/artifact/3rxuSEq62oCWNJnDoSKGJB"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="https://claude.ai/artifact/ErdGLDUJjBaWgQ9BcaZtSX"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="https://claude.ai/artifact/4AcyAY393iT2ewAYAykXNT"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-minzu"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="https://claude.ai/artifact/JTkdTVFPUT1FRaBLCnnR16"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="https://claude.ai/artifact/GmEQmofCcAXE6RCHh3wCUW"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="https://claude.ai/artifact/U29QJ3BkTrW2yfDM9iCV8f"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-wangdh"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="https://claude.ai/artifact/PgTtARRKUL6fmLY2WZ9V6b"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-renwen"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="https://claude.ai/artifact/AduQtdPYTfgdmPrDgfV2g5"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="https://claude.ai/artifact/QS1YAAuFs1uzFhMXfrVB8d"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="https://claude.ai/artifact/XJhpMo4QegYPAnjCA9PPH7"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="https://claude.ai/artifact/QCe8QF9SzU99JV8hxAVGUj"><small>2025/11/12</small>自來水博物館</a></li><li><a href="https://claude.ai/artifact/Eug6tZcjB2bnwLu5CXXTD4"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="https://claude.ai/artifact/T48PGFFZK9DK6CoC1BHdZ8"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="https://claude.ai/artifact/UBJsp4jwx1iX5AKUbzEwVg"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="https://claude.ai/artifact/9fX2FTMwi5oVUMBJY11Nhu"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="https://claude.ai/artifact/SugpFXH4h97FNbGHkFig1z"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-huayuan"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-shuiyuan"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-fuyou"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-guangci"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="https://claude.ai/artifact/JtbgCyVj5bKSvcwetnWQ2D#w-dashen"><small>2025/04/12</small>大神百貨・城中走讀</a></li></ul></details><span>2026/11/22</span></div>
+<header class="hero">
+  <div class="ph"><img src="img/101333.jpg" alt="聖母無原罪主教座堂前的階梯，參加者在入口集合">
+    <div class="tx"><p class="kick">海風無界來遠客・信仰相逢山水間</p><h1>踏查天主教<br>臺灣北部之路</h1>
+    <p>國立臺灣博物館「天主教來臺400年」系列走讀的一場。跟著王善卿博士，從民生西路的主教座堂出發，經過道明會的修女會院、靜修女中，沿著中山北路一路走到聖多福天主堂。兩個小時裡聽到修會怎麼來、教堂為什麼長這樣、聖像怎麼認，也看到今天臺北的天主教堂裡，週日坐滿的是誰。</p></div>
+  </div>
+</header>
+<div class="meta"><span><b>日期</b>2026/11/22（日）10:00–12:00</span><span><b>講師</b>王善卿博士・天主教臺北總教區天主教初傳臺灣400年委員會委員</span><span><b>主辦</b>國立臺灣博物館</span><span><b>集合</b>聖母無原罪主教座堂（民生西路天主堂，民生西路 245 號）</span><span><b>路線</b>主教座堂 → 道明修女會 → 靜修女中 → 馬偕醫院 → 雙連教會 → 中山北路 → 聖多福天主堂</span></div>
+<section class="bg400"><div><div class="yr">1626<small>→ 2026・四百年</small></div><p>1626 年，道明會傳教士隨西班牙船隊抵達北臺灣，開啟天主教在臺灣的早期傳播。四百年來，天主教和臺灣的地方社會、文化交織出許多痕跡。這場走讀把展覽裡的「教堂」與「文化地景」帶到博物館外：從建築、街區、移動人口、社會服務和地方記憶，看宗教怎麼和臺北一起長成今天的樣子。</p></div></section>
+<nav><div class="scroll" id="nav"></div></nav>
+<main>
+<p class="note">當天剛好是天主教的「基督君王節」，各堂從早到晚彌撒一場接一場，主教座堂和長安堂都沒能進去，聖多福也只能在空檔溜進去看一眼。以下照著走的順序整理，每站附當天拍的照片，點圖可放大、用方向鍵切換。</p>
+<div id="stops"></div>
+<div class="fix"><b>想自己去走走</b><br>・主教座堂、聖多福天主堂、靜修女中都在步行可到的距離：民生西路 → 中山北路一路往北，邊走邊看馬偕醫院的拱廊壁畫和雙連教會。<br>・想進教堂裡看，建議挑平日去；週日（特別是大節日）彌撒一場接一場，安靜站在後面看就好，不要在禮儀中走動。<br>・聖多福的院子裡就有整排聖像，平日也看得到；認聖像的訣竅：先看手上拿什麼、腳邊有什麼、穿什麼鞋。<br>・沒去成的長安堂、板橋的中華殉道聖人堂、士林的基督君王堂，都可以排進下一次。</div>
+</main>
+<footer>2026/11/22 參加國立臺灣博物館「天主教來臺400年」系列走讀「踏查天主教臺灣北部之路」的走讀筆記</footer><nav class="yr-pn" aria-label="其他走讀"><a class="nx" href="https://claude.ai/artifact/7G8iiD2CKw13FXeXZE6WGz#w-beimen"><small>較早的一場・2026/11/14 ›</small>北門城中的商街歲月</a><a class="home" href="../index.html">回到全部走讀筆記</a></nav>
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar"><button id="lbp" aria-label="上一張">‹</button><span id="lbc"></span><button id="lbn" aria-label="下一張">›</button><button id="lbx" aria-label="關閉">✕</button></div>
+</div>
+<script>
+{
+const S=[
+{t:"10:03",short:"主教座堂",title:"為什麼主教座堂在民生西路",place:"聖母無原罪主教座堂・正門前",ph:["101333","100315","101121"],b:[
+"<b>出發前老師先做了個小調查</b>：大部分人不是教友，所以今天少講教義、多講歷史和看得到的東西，有問題隨時插話。",
+"<b>「主教座堂」</b>是一個教區的主教所在的教堂，可以想成地方首長辦公的地方。天主教有主教層級，基督新教相對民主，就沒有這種一人管一區的設計。",
+"一般想像主教座堂應該又大又華麗，但臺北的狀況不一樣：最早在這裡蓋堂時臺灣還沒成立正式教區，教廷只派代表監管。當年蓋的是一<b>座很漂亮的教堂</b>，二戰時被炸毀。",
+"<b>為什麼選在這裡？</b>19 世紀開港後，大稻埕一帶是外國人可以活動的繁榮商區。道明會從馬尼拉先到高雄，再一路北上到蘆洲，接著往大稻埕發展。",
+"現在這棟是戰後重建的，在當時算前衛的現代建築：十字架不是凸出來，而是「框」在立面裡；裡面仍保留尖尖的三角形結構。"]},
+{t:"10:14",short:"佘山聖母",title:"庭園裡的佘山聖母，和「無原罪」三個字",place:"主教座堂・側面庭園與奠基石",ph:["101319","101722","101727"],b:[
+"天主教和多數基督新教一個很大的差別，是瑪利亞的地位：她是人、不是神，但在天主教裡特別受敬重。",
+"教堂獻給聖母時，名字有兩種：一種是<b>「顯現」</b>，像法蒂瑪聖母、露德聖母；另一種講的是瑪利亞的<b>「特質」</b>，像這裡的「無原罪」——她生而沒有原罪，是天主教正式的教理。",
+"庭園裡高舉小耶穌的白色雕像是<b>「佘山聖母」</b>，源自上海佘山，是給華人教友的聖母形象，和平常看慣的樣子不同。",
+"天主教的聖像大多有一套<b>「公版」</b>，所以認得出來：看拿著什麼、身邊有什麼——拿骷髏頭的、身旁有狗的、抱小耶穌的，各是不同的人。",
+"老師指給大家看牆上的奠基石，上面就寫著這座堂獻給無原罪聖母。"]},
+{t:"10:21",short:"道明修女會",title:"修女會院的一樓，是全聯",place:"道明傳教修女會會院（主教座堂旁）",ph:["102029","102359","102403"],b:[
+"隔壁是道明傳教修女會的會院，也是靜修女中的董事會；這個修女會橫跨臺灣、韓國、菲律賓。",
+"臺灣的天主教和菲律賓關係非常密切，這份淵源算起來也有四百年：不少修女去菲律賓留學，很多聖像也是從菲律賓訂的，因為那邊做得比較漂亮。",
+"一樓原本是修女們的小聖堂，原來的大理石祭台已搬到淡水。現在一、二樓租給全聯和文具店。",
+"<b>為什麼租給超市？</b>修女們年紀大了，買菜要方便。奉獻一輩子的修女老了，家人可能都不在了，修會要照顧她們——這也是歐洲許多漂亮修道院被空下來的原因：大家得搬到離醫院近、有電梯的地方。",
+"樓上仍是修女的住處，不開放參觀。"]},
+{t:"10:27",short:"靜修女中",title:"從頂樓的會徽，認出道明會",place:"靜修女中・校舍外",ph:["102627","102830","102826","103311"],b:[
+"天主教裡有非常多修會，各有不同使命和特質：耶穌會、道明會學術色彩濃，有的修會專做社會服務；個性不同的人，就去不同的修會。",
+"抬頭看頂樓，還看得到道明會的會徽：黑白相間的十字，旁邊常有拉丁文，只出現一個字時通常是 <b>VERITAS</b>（真理）。不同的道明會團體，盾牌的樣子還會略有不同。",
+"<b>這類標誌對研究者很有用</b>：博物館裡一只聖爵上的刻記，就能看出是哪個修會留下的。",
+"這棟後來中間加蓋過一層，仔細看才看得出來。",
+"牆上有<b>「臺灣文化協會創始地」</b>的牌子。蔣渭水當年借這裡的場地開成立大會——他和傳教士們對<b>「現代化」</b>的想像比較接近，而在殖民政府眼皮下借場地，其實也需要勇氣。",
+"為什麼傳教士來臺灣都先蓋女學堂？男孩家裡有點錢就能讀書，女孩在漢人社會原則上不受教育；日本明治維新後也推動新式女子教育，宗教團體和政府在這件事上剛好不衝突。"]},
+{t:"10:33",short:"真福伊美黛",title:"一個小女孩當學校的榜樣",place:"靜修女中・川堂",ph:["103200","103240"],b:[
+"學校英文名是 Blessed Imelda's School。<b>「真福」</b>還不是最高的<b>「聖人」</b>，差最後一個奇蹟；伊美黛一直沒等到，所以一直是真福。",
+"道明會有很多有名的聖女，像七百年前敢寫信要教宗回羅馬的那一位，但學校選了一個小女孩當榜樣——因為這裡一開始就是讓小女生讀書的地方。",
+"在道明會影響大的地區（菲律賓、拉丁美洲），<b>「Imelda」</b>這名字就特別多。",
+"川堂裡的聖道明像其實有點<b>「不標準」</b>：道明會士照例穿涼鞋，這尊卻穿了包鞋；身後配上中文書法和書本，表現道明會重視讀書、宣講的特質。",
+"<b>老師補充</b>：聖像不只是給不識字的人看的，圖像學是另一套知識系統。宗教改革後有些教派拒絕圖像，就把力氣花在音樂上，巴哈就是一例。"],
+q:"原本約好進校內參觀，但當天學校沒收到通知，只在川堂看了一下。"},
+{t:"10:39",short:"路上問答",title:"路上聊：牌位、龍柱、修會和教區",place:"民生西路往中山北路途中",ph:[],b:[
+"有人問教堂裡的<b>「祖先牌位」</b>。這牽涉到<b>「禮儀之爭」</b>：道明會在閩東看到的牌位跟神主、靈魂儀式綁在一起，所以反對；耶穌會在北方看到的情況不同，態度較寬鬆。",
+"<b>最後的折衷</b>：把牌位跟原有的宗教系統切開，只當紀念，可以放進教堂、可以上香——其實天主教和東正教本來就會用香。",
+"天主教本來就有紀念亡者的傳統（電影《可可夜總會》講的就是），所以 11 月是追思已亡的月份，神父們都很忙著去墓園。",
+"<b>龍柱一說</b>：老師引述實踐大學陳文忠老師的看法，認為廟裡螺旋盤繞的龍柱，可能和傳教士、西班牙交流帶進來的做法有關；老師也說這點他沒有考證，聽聽就好。",
+"<b>修會和教區不同</b>：教區是在地的行政組織；道明會這類國際修會直屬羅馬，不歸臺北教區管。向修會「借」神父，要修會同意才行。",
+"主教座堂最早是道明會蓋的。戰後大批神父、修女和教友從大陸來臺，教友多到可以成立教區，現在臺灣有 7 個教區；<b>「總主教區」</b>只是規模大，並不能管其他教區。",
+"神父的薪水要繳回修會或教區，但退休有保障、統一照顧，比較像公務員；韓國教會願意投入資源培養神父，臺灣則常是一位神父兼好幾份工作。"]},
+{t:"10:54",short:"馬偕醫院",title:"蘆洲的故事，和拱廊裡的壁畫",place:"中山北路・馬偕紀念醫院",ph:["105433","105615","105631"],b:[
+"<b>道明會怎麼回到臺北？</b>第二次來臺時從高雄北上，一直想回到四百年前到過的淡水，但不久美西戰爭爆發，西班牙也幫不上忙，資源很少。",
+"<b>轉機來自馬偕</b>：淡水的信徒裡有人不和，跑去找神父想另起爐灶；道明會就在邀請下來到蘆洲。某種程度上，天主教能回到臺北，得益於這場分裂。",
+"馬偕當年坐船到各地傳教，像三角埔教會明年就滿 <b>150 年</b>。相較之下，馬偕背後是富強的國家，道明會在羅厝好不容易弄到一台印刷機就高興得不得了。",
+"拱廊裡一格格的馬賽克壁畫，照理說位置應該是透光的窗，不知為何做成了壁畫。拱、柱這些是新古典主義的小元素，總統府、建中都看得到。",
+"教堂建築後來的改變：梵二大公會議的禮儀改革，讓神父從背對教友轉為面向教友，教堂也從長條形變成較寬、大家圍著祭台的配置——從<b>「望彌撒」</b>到<b>「參與彌撒」</b>。"]},
+{t:"11:02",short:"雙連・中山北路",title:"雙連教會，和一條美軍的路",place:"中山北路二段・雙連教會到晴光一帶",ph:["110206","110613","110934","111059"],b:[
+"雙連教會屬於長老教會系統，是馬偕時代就容易坐船到的那幾個點之一，至今仍是台語教會。戰後 <b>YMCA</b> 相關的服務社團，不少創始人就來自雙連；後來也分出講國語的團體。",
+"現在走的這一帶到處是美軍的痕跡：<b>花博公園</b>一帶曾是美軍單位所在，光點台北是以前的美國大使官邸。",
+"美軍在臺灣蓋過一些天<b>主堂和基督教堂</b>，給軍中有信仰的人用。像台大的雅頌坊原本就是教堂；陽明山天主堂也是給美軍的，長成一副外國人想像中的中國建築樣子。",
+"越戰時臺灣是美軍度假休息的地方，帶來大量消費；晴光商圈一帶的生意，就是這樣做起來的。",
+"<b>順帶一提</b>：菲律賓、墨西哥的獨立運動裡，都有神父或與耶穌會親近的人帶頭——基督宗教其實有很強的反叛精神，也因此威權政府多半不太喜歡。"]},
+{t:"11:15",short:"聖多福",title:"美軍蓋的教堂，週日坐滿了移工",place:"聖多福天主堂・正門與院子",ph:["111530","111541","111626"],b:[
+"聖多福一開<b>始就是美軍教堂</b>，從頭到尾都不是蓋給本地人的。由隨軍神父請美國建築師設計，約十年後同一位建築師又重新整修；這位建築師幾乎只留下名字，資料非常少。",
+"美軍撤離後，土地屬臺北教區、建築是美軍蓋的，產權處理牽涉很多外交角力。這座堂很特別，幾乎沒用過中文或台語做彌撒。",
+"現在週日的彌撒有英語、越南語、他加祿語，一場接一場，坐滿的多是移工。老師說得有點感傷：今天臺灣的天主教徒，一大半是原住民和菲律賓人，還有越南人。",
+"門口的瓜達露佩聖母瓷磚，下面一小行字不是西班牙文，而是墨西哥原住民仍在使用的語言。",
+"今天是基督君王節，人特別多，只能先在院子裡看。"]},
+{t:"11:21",short:"聖像長廊（一）",title:"一整面牆的聖像：先認幾個",place:"聖多福・院子裡的聖像架",ph:["112420","112520","113314"],b:[
+"有的聖母全世界知名，有的只在一個國家、甚至一個小地方才有人知道。這面牆上就有一尊菲律賓地方性的聖母，傳說在麥哲倫抵達前就存在；<b>1980 年</b>代有人請藝術家做了一尊漂亮的、帶著巡迴到羅馬，才紅起來。",
+"瓜達露佩聖母的特別處：她的膚色略黑、衣服上是當地花紋，是一個<b>「去歐洲化」</b>的聖母——老師提醒，瑪利亞本來就不會是金髮白人。",
+"<b>聖嬰（Santo Niño）</b>：菲律賓有三種造型，兩個短髮、一個長髮。手持的球代表掌握世界、權杖代表君王——和今天的基督君王節剛好呼應。長髮那種以前會用鳳梨、香蕉纖維做頭髮，是菲律賓的工藝。",
+"黑色拿撒勒人（<b>Black Nazarene</b>）幾乎只在菲律賓流行，就像法國和耶穌聖心、墨西哥和瓜達露佩綁在一起。",
+"也有扛著小耶穌過河的聖多福本尊，和意大利系統的聖人——美國天主教有德語、意大利、愛爾蘭三大支，這座堂就帶著美國的影子。"]},
+{t:"11:29",short:"聖像長廊（二）",title:"菲律賓的兩位聖人、拜占庭式的永援聖母",place:"聖多福・院子裡的聖像架",ph:["113344","113311","112511"],b:[
+"菲律賓這麼大、歷史這麼久的天主教國家，只有兩位聖人：聖羅倫佐（與道明會有關，在長崎殉道）和聖伯多祿・加龍松（隨耶穌會到關島殉道）。在菲律賓本國反而很難<b>「為道而死」</b>。",
+"各修會出的聖人曆，除了全教會共同的聖人，其他都會放自家的聖人。",
+"剛剛在靜修沒看清楚的聖道明這裡也有：正統造型身邊會有一隻狗——據說他母親懷他時夢見一隻狗咬著火炬。",
+"這幾張平面、扁扁的聖像是拜占庭風格。東西教會分裂前，大家的聖像都長這樣；東正教規定嚴格的畫法，所以到今天還差不多。",
+"後來聖方濟帶來新的神學，西方的畫開始有身體、有肌肉、畫的是人間現實，喬托就是代表，也開啟了文藝復興。",
+"其中的永援聖母，就是等一下沒去成的長安堂的主保。"]},
+{t:"11:39",short:"香與新聖人",title:"香、顏色，和一位照顧移民的新聖人",place:"聖多福・側門與辦公室",ph:["113950","114626"],b:[
+"剛好有香，大家站在門口聞了一下：多半是乳香類的樹脂。天主教、東正教都燒香，東正教每場儀式都燒，天主教多在重要日子。有些修道院還會自己調配香，就像他們也釀啤酒、做香檳。",
+"<b>信仰經驗是全身的</b>：光影、色彩、香味、音樂一起。神父衣服的顏色會換——紫色是準備聖誕的將臨期，綠色是平常的日子。",
+"這裡供奉的是不久前才封聖的斯卡拉布里尼主教（<b>2022 年</b>封聖）。意大利移民到美國過得很苦，他派神父去幫忙語言、法規、和政府交涉；後來他的團體變成只要有移民處境不好的地方就去，現在就是他們在照顧聖多福。",
+"<b>封聖要有民意基礎</b>：先有一堆人連署申請，教廷才受理，最後還要一個奇蹟。殉道者證據明確就快；淡水那兩位殉道者，只剩當年幾行字的紀錄，所以很辛苦。",
+"天主教團體這麼多、不合一，老師反而覺得是好事：每個人個性、興趣、想為世界做的事本來就不一樣。"]},
+{t:"11:46",short:"教堂裡",title:"彩繪玻璃、越南聖母、最早的小木像",place:"聖多福・主堂（彌撒空檔）",ph:["114727","114839","114915"],b:[
+"一樓的彩繪玻璃是幾何色塊，上層才有人物；從玻璃上的聖人看得出這是一座很<b>標準的美式教堂</b>。",
+"<b>空檔時大家安靜進去看越南聖母</b>：放在白色神龕裡、戴著越南斗笠的那一尊，一眼就認得出來。越南的天主教是法國系（巴黎外方傳教會），菲律賓是西班牙系，建築、聖像、音樂都很不一樣。",
+"正中間那尊小小的木頭聖多福和小十字架，是建堂初期最早的聖像；現在中庭玻璃上有一尊比較大的。",
+"老師提醒：這些不是<b>「神像」</b>，是幫你聯想的媒介——復活節和聖誕節用的花不一樣，就是要讓你往不同的方向去想。"]},
+{t:"11:53",short:"沒去成的長安堂",title:"沒去成的長安堂，留給下一次",place:"聖多福・院子裡收尾",ph:["115550"],b:[
+"原本要走到長安堂，但時間和彌撒都卡住了。長安堂是主徒會的：剛恆毅樞機（恆毅中學的名字由來）推動中國教會由中國人自己治理、培養自己的神父和主教，主徒會就是這樣的國籍修會。",
+"戰後主教座堂被炸，長安堂成了接待外國訪客的<b>「門面」</b>。地上有一頂樞機紅帽的圖樣，下次經過可以找找。建築是部分中國風，但沒有陽明山天主堂那麼<b>「穿古裝」</b>。",
+"它原本的主保是<b>「中保之后」</b>，梵二後這個節日被刪，就改成永援聖母——因為主徒會成立時，請來幫忙的正是推廣永援聖母的贖世主會。",
+"板橋的中華殉道聖人堂則是真正的宮殿式大空間，還有讓人整個浸下去的洗禮池，但在華人社會幾乎用不到；士林基督君王堂的洗禮池做成地面上的十字形，平常用玻璃蓋著。",
+"新教堂現在都不蓋太高，理由很實際：換一顆燈泡就要叫吊車。",
+"約 12:03 解散。老師說今天日子沒選好，每座堂都進不去，但也剛好讓大家看到，天主教的大日子就是這樣熱鬧。"]}];
+const flat=[],stopOf={};
+const fmtP=p=>`${p.slice(0,2)}:${p.slice(2,4)}`;
+document.getElementById("nav").innerHTML=S.map((x,i)=>`<a href="#s${i+1}"><span>${i+1}</span>${x.short}</a>`).join("");
+document.getElementById("stops").innerHTML=S.map((x,i)=>{
+  const g=x.ph.map(p=>{flat.push(p);stopOf[p]=i;return `<button data-i="${flat.length-1}" aria-label="照片 ${fmtP(p)}"><img loading="lazy" src="img/${p}.jpg" alt=""><small>${fmtP(p)}</small></button>`}).join("");
+  return `<section class="stop" id="s${i+1}"><div class="when"><span class="n">${i+1}</span><div><b>${x.short}</b><i>約 ${x.t}</i></div></div>
+  <div><h2>${x.title}</h2><p class="place">${x.place}</p><ul>${x.b.map(l=>`<li>${l}</li>`).join("")}</ul>${x.q?`<div class="q"><b>附記</b>　${x.q}</div>`:""}
+  ${g?`<div class="grid">${g}</div>`:""}</div></section>`}).join("");
+const lb=document.getElementById("lb"),im=document.getElementById("lbi"),cap=document.getElementById("lbc");let cur=0;
+const show=i=>{cur=(i+flat.length)%flat.length;const p=flat[cur];im.src=`img/${p}.jpg`;cap.textContent=`${fmtP(p)}　第 ${stopOf[p]+1} 站　${cur+1}/${flat.length}`};
+document.getElementById("stops").addEventListener("click",e=>{const b=e.target.closest("button[data-i]");if(b){show(+b.dataset.i);lb.classList.add("on");document.getElementById("lbx").focus()}});
+document.getElementById("lbp").onclick=()=>show(cur-1);
+document.getElementById("lbn").onclick=()=>show(cur+1);
+const close=()=>lb.classList.remove("on");
+document.getElementById("lbx").onclick=close;
+lb.addEventListener("click",e=>{if(e.target===lb)close()});
+document.addEventListener("keydown",e=>{if(!lb.classList.contains("on"))return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+}
+</script>
+</body>
+</html>
