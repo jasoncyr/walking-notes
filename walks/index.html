@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>形色質美：漢寶德的建築特展策展人導覽｜2025.02.21 臺博館走讀筆記</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #faf6f0;
+      --surface: #ffffff;
+      --surface-warm: #f3ece1;
+      --ink: #231f1d;
+      --ink-muted: #5c534c;
+      --brick: #b54a32;
+      --brick-soft: #f5e6e1;
+      --moss: #48634c;
+      --moss-soft: #e9f0ea;
+      --gold: #a67c37;
+      --border: #e3dbd0;
+      --shadow: 0 10px 30px rgba(35, 31, 29, 0.06);
+      --radius: 14px;
+      --serif: "Noto Serif TC", "Source Han Serif TC", "PMingLiU", Georgia, serif;
+      --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.85;
+      font-size: 16.5px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Progress bar */
+    .read-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--brick), var(--gold));
+      z-index: 100;
+      transition: width 0.1s linear;
+    }
+
+    /* Top sticky nav */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 246, 240, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .top-nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0.7rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.55rem 1rem;
+    }
+
+    .nav-brand {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: var(--brick);
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink-muted);
+      font-size: 0.85rem;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--brick-soft);
+      color: var(--brick);
+      font-weight: 500;
+    }
+
+    /* Hero */
+    .hero {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 2rem;
+    }
+
+    .hero-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      background: var(--brick-soft);
+      color: var(--brick);
+    }
+
+    .badge.moss {
+      background: var(--moss-soft);
+      color: var(--moss);
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.3vw, 3.05rem);
+      line-height: 1.28;
+      margin: 0 0 1rem;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-lead {
+      font-size: 1.12rem;
+      color: var(--ink-muted);
+      max-width: 820px;
+      margin: 0 0 2rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.55fr 1fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .hero-cover {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #ddd;
+      min-height: 320px;
+      cursor: zoom-in;
+    }
+
+    .hero-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .hero-cover:hover img {
+      transform: scale(1.02);
+    }
+
+    .hero-cover-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 2.4rem 1.25rem 1rem;
+      background: linear-gradient(transparent, rgba(16, 13, 11, 0.88));
+      color: #f7f3ed;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .hero-cover-caption strong {
+      color: #fff;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-card h2 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      margin: 0 0 0.85rem;
+      color: var(--brick);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.55rem;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.7rem;
+      font-size: 0.93rem;
+    }
+
+    .info-list li {
+      display: flex;
+      gap: 0.6rem;
+      align-items: baseline;
+    }
+
+    .info-label {
+      color: var(--ink-muted);
+      font-weight: 500;
+      min-width: 4.5rem;
+      flex-shrink: 0;
+    }
+
+    .hero-quote {
+      margin-top: 1.25rem;
+      padding: 0.9rem 1rem;
+      background: var(--surface-warm);
+      border-left: 3px solid var(--brick);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+    }
+
+    /* Route Timeline Strip */
+    .timeline-wrap {
+      max-width: 1080px;
+      margin: 1rem auto 2.5rem;
+      padding: 0 1.25rem;
+    }
+
+    .timeline-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      margin: 0 0 1rem;
+      font-weight: 700;
+    }
+
+    .route-steps {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.75rem;
+      position: relative;
+    }
+
+    .route-step {
+      text-decoration: none;
+      color: inherit;
+      padding: 0.75rem 0.7rem;
+      border-radius: 10px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .route-step:hover {
+      border-color: var(--brick);
+      transform: translateY(-2px);
+      background: #fff;
+      box-shadow: 0 6px 16px rgba(181, 74, 50, 0.1);
+    }
+
+    .step-time {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--brick);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .step-name {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 0.88rem;
+      line-height: 1.38;
+      letter-spacing: -0.01em;
+    }
+
+    .step-sub {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      line-height: 1.4;
+    }
+
+    /* Main Article Container */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    section.chapter {
+      margin-bottom: 4rem;
+      scroll-margin-top: 72px;
+    }
+
+    .chapter-header {
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .chapter-kicker {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--brick);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.35rem;
+    }
+
+    .chapter-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.35;
+      margin: 0;
+      font-weight: 900;
+    }
+
+    h3 {
+      font-family: var(--serif);
+      font-size: 1.24rem;
+      margin: 2rem 0 0.75rem;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h3::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 1.1em;
+      background: var(--brick);
+      border-radius: 3px;
+    }
+
+    p {
+      margin: 0 0 1.15rem;
+    }
+
+    strong {
+      color: #161311;
+      font-weight: 700;
+    }
+
+    main p strong,
+    main li strong {
+      color: var(--brick);
+      font-weight: 700;
+    }
+
+    /* Photo Figures */
+    figure.photo-card {
+      margin: 1.85rem 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .photo-frame {
+      position: relative;
+      overflow: hidden;
+      cursor: zoom-in;
+      background: #e9e3da;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+
+    .photo-frame:hover img {
+      transform: scale(1.015);
+    }
+
+    .photo-tag {
+      position: absolute;
+      top: 0.85rem;
+      left: 0.85rem;
+      background: rgba(35, 31, 29, 0.78);
+      backdrop-filter: blur(4px);
+      color: #fff;
+      font-size: 0.78rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    figure.photo-card figcaption {
+      padding: 1rem 1.25rem;
+      font-size: 0.94rem;
+      color: var(--ink-muted);
+      line-height: 1.65;
+      border-top: 1px solid var(--border);
+    }
+
+    figcaption strong {
+      color: var(--ink);
+      margin-right: 0.35rem;
+    }
+
+    /* Two-column Photo Comparison */
+    .photo-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.15rem;
+      margin: 1.85rem 0;
+    }
+
+    .photo-pair figure.photo-card {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .photo-pair .photo-frame img {
+      height: 290px;
+      object-fit: cover;
+    }
+
+    .photo-pair figcaption {
+      flex: 1;
+    }
+
+    /* Callout & Vocabulary Boxes */
+    .callout {
+      background: var(--surface-warm);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--brick);
+      border-radius: 10px;
+      padding: 1.15rem 1.35rem;
+      margin: 1.6rem 0;
+    }
+
+    .callout.moss {
+      background: var(--moss-soft);
+      border-left-color: var(--moss);
+    }
+
+    .callout-title {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1rem;
+      margin: 0 0 0.45rem;
+      color: var(--brick);
+    }
+
+    .callout.moss .callout-title {
+      color: var(--moss);
+    }
+
+    .callout p:last-child,
+    .callout ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .fact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .fact-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.05rem 1.15rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .fact-item .fact-k {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--brick);
+      margin-bottom: 0.25rem;
+    }
+
+    .fact-item .fact-v {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .fact-item p {
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    ul.clean-list {
+      padding-left: 1.25rem;
+      margin: 0.6rem 0 1.2rem;
+    }
+
+    ul.clean-list li {
+      margin-bottom: 0.45rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      background: var(--surface-warm);
+      padding: 2.5rem 1.25rem;
+      text-align: center;
+      color: var(--ink-muted);
+      font-size: 0.9rem;
+    }
+
+    footer .footer-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    footer strong {
+      color: var(--ink);
+    }
+
+    .back-top {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--brick);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.88rem;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 15, 14, 0.92);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-content {
+      max-width: 1100px;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 78vh;
+      border-radius: 10px;
+      object-fit: contain;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-caption {
+      color: #f3ece1;
+      font-size: 0.95rem;
+      text-align: center;
+      max-width: 760px;
+      line-height: 1.6;
+    }
+
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+      position: fixed;
+      background: rgba(255, 255, 255, 0.14);
+      border: none;
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 1.35rem;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: background 0.2s;
+    }
+
+    .lightbox-close:hover,
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .lightbox-close {
+      top: 1.2rem;
+      right: 1.2rem;
+    }
+    .lightbox-prev {
+      left: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .lightbox-next {
+      right: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .top-nav-inner {
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .route-steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .photo-pair {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .route-steps {
+        grid-template-columns: 1fr;
+      }
+      .lightbox-prev,
+      .lightbox-next {
+        display: none;
+      }
+    }
+
+    @media print {
+      .top-nav,
+      .read-progress,
+      .lightbox,
+      .back-top {
+        display: none !important;
+      }
+      body {
+        background: #fff;
+      }
+      figure.photo-card,
+      .hero-card,
+      .timeline-box {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・59 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li><a href="../hanbaode/index.html" aria-current="page"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li class="yr-se">2024 秋</li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li><a href="../hanbaode/index.html" aria-current="page"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li class="yr-se">2024 秋</li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></details><span>2025/02/21</span></div>
+  <div class="read-progress" id="readProgress"></div>
+
+  <nav class="top-nav" aria-label="章節導覽">
+    <div class="top-nav-inner">
+      <a href="#top" class="nav-brand">形色質美：漢寶德的建築</a>
+      <div class="nav-links">
+        <a href="#sec-1">古蹟的觸感</a>
+        <a href="#sec-2">不只是建築師</a>
+        <a href="#sec-3">文化保存與研究</a>
+        <a href="#sec-4">適當的幾何形</a>
+        <a href="#sec-5">大乘的建築</a>
+        <a href="#sec-6">關門導覽尾聲</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-meta-top">
+      <span class="badge">2025.02.21 策展人導覽紀錄</span>
+      <span class="badge moss">國立臺灣博物館本館・2F 迴廊展區</span>
+    </div>
+    <h1>形色質美：漢寶德的建築<br />一場距離閉幕只剩兩天的關門導覽</h1>
+    <p class="hero-lead">
+      週五午後的臺博館一樓大廳，被世界棒球 12 強冠軍獎盃特展的排隊人潮擠得水洩不通；順著中央大理石階梯走上二樓迴廊，卻是另一方安靜而熱烈的建築宇宙。在「形色質美：漢寶德的建築」特展迎來 2 月 23 日閉幕前的倒數第三天，策展人林一宏副研究員領著限定 40 人的隊伍，從親手觸摸百年前的真假大理石牆面開始，打開漢寶德先生生前捐贈的 6,200 餘張手繪建築圖說，在兩個小時裡走完一場橫跨半世紀的臺灣現代建築與古蹟保存巡禮。
+    </p>
+
+    <div class="hero-grid">
+      <div class="hero-cover" data-lightbox="0">
+        <img src="img/01-ntm-facade.jpg" alt="國立臺灣博物館本館立面懸掛棒球冠軍展與形色質美特展直幅" />
+        <div class="hero-cover-caption">
+          <strong>臺博館本館正立面｜11:43 雙展並陳的歷史時刻</strong><br />
+          科林斯柱廊上同時懸掛著一樓「冠軍之路」棒球展與二樓「形色質美：漢寶德的建築」直幅——這座 1915 年落成的國定古蹟本身，正是漢寶德主持修護的代表作。
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div>
+          <h2>導覽基本資訊</h2>
+          <ul class="info-list">
+            <li><span class="info-label">活動時間</span><span>2025 年 2 月 21 日（五）14:00 – 16:05</span></li>
+            <li><span class="info-label">領路講師</span><span>林一宏｜國立臺灣博物館展示企劃組副研究員</span></li>
+            <li><span class="info-label">展區範圍</span><span>臺博館本館大廳 → 2F 迴廊展區（四大主題）</span></li>
+            <li><span class="info-label">活動規模</span><span>網路報名限額 40 名・全程配戴導覽機</span></li>
+            <li><span class="info-label">展覽核心</span><span>6,200 餘張漢光事務所手繪圖說・14 件現代設計＋2 件古蹟研究</span></li>
+          </ul>
+        </div>
+        <div class="hero-quote">
+          「再過兩天展覽就要落幕了，今天算是一場關門導覽——歡迎大家發問挑戰，把我考倒才是最開心的事。」
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section class="timeline-wrap" aria-label="導覽時間軸">
+    <div class="timeline-box">
+      <p class="timeline-title">午後展場節點｜點擊跳轉章節</p>
+      <div class="route-steps">
+        <a class="route-step" href="#sec-1">
+          <span class="step-time">14:00 – 14:18</span>
+          <span class="step-name">本館大廳・迴廊</span>
+          <span class="step-sub">雙展人潮・摸牆辨別真假大理石</span>
+        </a>
+        <a class="route-step" href="#sec-2">
+          <span class="step-time">14:18 – 14:32</span>
+          <span class="step-name">不只是建築師</span>
+          <span class="step-sub">1934–2014 年表・6,200 張手繪原圖</span>
+        </a>
+        <a class="route-step" href="#sec-3">
+          <span class="step-time">14:32 – 15:05</span>
+          <span class="step-name">文化保存與研究</span>
+          <span class="step-sub">臺博換屋架論戰・勸業銀行舊廈</span>
+        </a>
+        <a class="route-step" href="#sec-4">
+          <span class="step-time">15:05 – 15:40</span>
+          <span class="step-name">適當的幾何形</span>
+          <span class="step-sub">福音新村・洛韶・東海・溪頭與天祥</span>
+        </a>
+        <a class="route-step" href="#sec-5">
+          <span class="step-time">15:40 – 16:00</span>
+          <span class="step-name">大乘的建築</span>
+          <span class="step-sub">金龍頭・墾丁・民族所・南園與南藝大</span>
+        </a>
+        <a class="route-step" href="#sec-6">
+          <span class="step-time">16:00 – 16:20</span>
+          <span class="step-name">尾聲與跨時空對話</span>
+          <span class="step-sub">2008 訪談復活・以管窺豹的策展觀</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Chapter 1 -->
+    <section class="chapter" id="sec-1">
+      <div class="chapter-header">
+        <span class="chapter-kicker">PROLOGUE｜從腳下與掌心讀建築</span>
+        <h2>親手摸一遍 1915 年的真石與假石：臺博館的建築溫度</h2>
+      </div>
+
+      <p>
+        活動才剛開場，策展人<strong>林一宏</strong>副研究員便先笑著替大夥兒「錯開預期」——一樓大廳擠得水洩不通，絕大多數觀眾其實是衝著「BEHIND THE CHAMPION 冠軍之路」棒球特展而來；也正因如此，配戴導覽機走上二樓迴廊的這 40 位聽眾，反倒擁有了一段難得從容、不必人擠人的建築時光。
+      </p>
+      <p>
+        進到展場看別人畫的圖之前，林一宏先要大家把腳下與身旁的「博物館本體」當成第一件展品。我們腳下踩的灰白大理石與黑板岩地坪，正是 1915 年（大正 4 年）建築落成時的<strong>臺灣產石材</strong>，只因早年曾被兩公尺半高的木頭展示櫃壓住，直到 1990 年代拆櫃修護後才重見天日，至今仍能看出櫃底與走道之間微小的色澤明暗。
+      </p>
+
+      <figure class="photo-card" data-lightbox="1">
+        <div class="photo-frame">
+          <img src="img/02-rotunda-marble.jpg" alt="林一宏副研究員於臺博館二樓迴廊導覽，身後為挑高科林斯柱與石材牆面" />
+          <span class="photo-tag">14:16｜臺博館二樓中央大廳迴廊</span>
+        </div>
+        <figcaption>
+          <strong>用掌心分辨一百一十年前的預算秘密：</strong>
+          「看建築可以用眼睛，也可以用手感受溫度。」林一宏邀請大家輪流觸摸兩側牆面——哪一邊比較涼，答案當場揭曉。
+        </figcaption>
+      </figure>
+
+      <h3>為什麼「人造大理石」反而比天然石材更貴重？</h3>
+      <p>
+        這是走進現場才能親手驗證的彩蛋：大廳兩側牆面看似相同，實際用手一摸，一邊冰涼刺骨，是當年從日本岐阜縣進口的天然<strong>岡崎大理石</strong>；另一邊觸感明顯偏溫，竟然是以石膏揉入鐵骨料製成的<strong>「人造大理石」</strong>（scagliola）——手法就像做翻糖蛋糕，把不同顏色的石膏揉在一起模擬石紋，絕非表面畫上去的。
+      </p>
+      <p>
+        1915 年適逢第一次世界大戰爆發，天然石材昂貴，總督府在預算限制下只得採「半真半假」的折衷工法。沒想到一百一十年過去，當年為了省錢的替代工藝如今在臺灣幾近失傳，過去甚至曾有修復案找來留歐畫師用筆「畫」假石紋而修錯方向。時空翻轉，<strong>材料昔貴今賤、人工昔賤今貴</strong>，人造大理石的保存難度與稀缺價值，反倒高過了真石頭。
+      </p>
+
+      <div class="callout moss">
+        <div class="callout-title">折頁上的幾何密碼：不只是現代藝術</div>
+        <p>
+          導覽開頭發下的展覽折頁主視覺，表面看來像一幅繽紛的抽象幾何構成，實則每一個圓圈、弧線、方格與八角形，全都直接取自展場內展出的 <strong>14 件漢寶德建築作品</strong>——從土銀中壢分行的圓窗、東海建築系館的四分之一圓陽台，到中研院民族所的葫蘆裝飾，像一張藏寶圖般等著觀眾在展間裡一一對號入座。
+        </p>
+      </div>
+    </section>
+
+    <!-- Chapter 2 -->
+    <section class="chapter" id="sec-2">
+      <div class="chapter-header">
+        <span class="chapter-kicker">CHAPTER 01｜不只是建築師</span>
+        <h2>6,200 張手繪圖說與跨界人生：從山東少年到國策顧問</h2>
+      </div>
+
+      <p>
+        一個以人類學、動物學、植物學與地球科學為核心的自然史博物館，為什麼要花十幾年蒐集建築設計圖？林一宏給了一個乾脆的答案：無論自然史還是建築學，臺博館紀錄的都是<strong>臺灣邁向現代化的軌跡</strong>。自推動「二次戰後臺灣現代建築圖說徵集數位化計畫」以來，館方已累積徵集近 60 位個人或團體、共約 <strong>14 萬件</strong> 1945 至 1990 年代的手繪建築圖說與文獻。
+      </p>
+      <p>
+        其中最重量級的一批，便是 2008 年漢寶德先生生前親自捐贈給臺博館的 <strong>6,200 餘張建築圖說</strong>（涵蓋約 220 多件委託案），經過十餘年數位化掃描與整理，終於在漢先生逝世十周年之際，化為這場特展的骨幹。
+      </p>
+
+      <div class="photo-pair">
+        <figure class="photo-card" data-lightbox="2">
+          <div class="photo-frame">
+            <img src="img/03-timeline-table.jpg" alt="展場中央漢寶德 1934 至 2014 年表長桌與 4K 高畫質圖說螢幕" />
+            <span class="photo-tag">14:20｜1934–2014 年表長桌</span>
+          </div>
+          <figcaption>
+            <strong>血汗交織的四十年精華：</strong>
+            長桌以紅、灰、橘三色標記現代建築設計、古蹟調查研究與修復工程，可見漢光事務所在 1970 至 1990 年代同時多線並進的驚人產量。
+          </figcaption>
+        </figure>
+        <figure class="photo-card" data-lightbox="3">
+          <div class="photo-frame">
+            <img src="img/04-interview-2008.jpg" alt="展間小螢幕播放 2008 年漢寶德訪談影像" />
+            <span class="photo-tag">15:40｜2008 年珍貴訪談影像</span>
+          </div>
+          <figcaption>
+            <strong>「這才是我們記憶中的漢先生」：</strong>
+            導覽初段一度「罷工」黑屏的小螢幕，後半段終於重現生機，播映臺博館於 2008 年搶先錄下的三小時訪談，留住漢先生辭世前仍神采奕奕的模樣。
+          </figcaption>
+        </figure>
+      </div>
+
+      <h3>因肺結核自學英文、為了追隨偶像轉赴東海</h3>
+      <p>
+        站在 1934 至 2014 年的生平長桌前，林一宏把建築史講成了鮮活的人物誌：1934 年生於山東的漢寶德，戰後隨家人經澎湖來臺，1952 年考入<strong>臺南工學院建築系</strong>（今成功大學）——當時全臺高等建築教育僅此大學一脈與北部的臺北工專。有趣的是，漢寶德原本的第一志願其實是當文學家；大學期間又因罹患肺結核休學靜養，反倒在病榻上靠讀英文報紙練就過人外語能力，並因病免役留校任助教。
+      </p>
+      <p>
+        至於為何沒有留在母校成大，而是在 1960 年轉赴剛創校不久的東海大學？林一宏笑言，年輕人總是追隨偶像——就像自己當年也模仿恩師喻肇青的穿著與談吐，漢寶德當年正是衝著東海建築系主任<strong>陳其寬</strong>而去。隨後他赴哈佛大學攻讀建築碩士、普林斯頓大學取得藝術碩士，博士還沒唸完就被東海校長請回臺灣接任系主任，展開徹底翻轉臺灣建築教育的改革。
+      </p>
+
+      <div class="fact-grid">
+        <div class="fact-item">
+          <div class="fact-k">文化媒體人</div>
+          <div class="fact-v">從《百葉窗》到《境與象》</div>
+          <p>大二、大三便主編學生刊物《百葉窗》，日後接連創辦《建築與計劃》、《境與象》，以翻譯與評論推動「建築報國」。</p>
+        </div>
+        <div class="fact-item">
+          <div class="fact-k">博物館推手</div>
+          <div class="fact-v">科博館 → 省博 → 臺史博</div>
+          <p>一手籌建臺中自然科學博物館後，反過來為省博總體檢，並參與臺史博與世界宗教博物館籌備。</p>
+        </div>
+        <div class="fact-item">
+          <div class="fact-k">美學與地位</div>
+          <div class="fact-v">國策顧問・行政院文化獎</div>
+          <p>晚年致力推廣大眾美學與書法創作，是臺灣建築界少見同時具備設計、教育、文資與公共政策高度的跨界巨擘。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 3 -->
+    <section class="chapter" id="sec-3">
+      <div class="chapter-header">
+        <span class="chapter-kicker">CHAPTER 02｜文化保存與研究</span>
+        <h2>拆掉木桁架的 1995 論戰，與差點變身「臺北羅浮宮」的計畫</h2>
+      </div>
+
+      <p>
+        談起臺灣古蹟保存運動的源頭，林一宏先將時間線拉回 1919 年日本本土施行的《史蹟名勝天然紀念物保存法》（1922 年在臺施行，1933–1941 年間分五次指定史蹟名勝），戰後卻因政權更迭與經濟起飛而一度中斷。直到 1960 年代，臺北土地暴漲、老屋紛紛被拆，先有歷史學者<strong>林衡道</strong>以中華文化復興論述呼應官方，後有藝術家<strong>席德進、施翠峰</strong>從鄉愁與美感發聲；但光靠文史與畫家喊保留，房子還是會倒——真正扛起修護技術後盾的，正是 1971 年投入板橋林家花園調查的<strong>漢寶德</strong>。
+      </p>
+      <p>
+        當時的住宅短缺荒唐到什麼程度？1970 年代林家花園裡擠進超過一千名住戶；就連我們腳下的省博地下室，1950 年代也曾住著三戶、五十多位館員與家屬，「每天五點閉館後，地下室窗戶就冒出嫋嫋炊煙」。漢寶德與他所創立的<strong>漢光建築師事務所</strong>（取漢寶德之「漢」與合夥建築師<strong>潘友光</strong>之「光」），就這樣一邊蓋新建築，一邊在全臺各地修起老房子。
+      </p>
+
+      <div class="photo-pair">
+        <figure class="photo-card" data-lightbox="4">
+          <div class="photo-frame">
+            <img src="img/05-ntm-truss-report.jpg" alt="慶仁營造製作的木桁架模型與 1992 年展示計畫及修護報告書" />
+            <span class="photo-tag">14:36｜木桁架模型與修護報告書</span>
+          </div>
+          <figcaption>
+            <strong>營造廠老闆自費留下的見證：</strong>
+            1994–1996 年負責修護的慶仁營造，將拆下的原木桁架製成紀念模型，一旁則是 1992 年《臺灣省立博物館之研究與展示計劃》。
+          </figcaption>
+        </figure>
+        <figure class="photo-card" data-lightbox="5">
+          <div class="photo-frame">
+            <img src="img/06-ntm-model.jpg" alt="1990 年代製作的臺灣省立博物館修護模型" />
+            <span class="photo-tag">14:37｜三十年前的省博修護模型</span>
+          </div>
+          <figcaption>
+            <strong>找不找得出模型與現況的差異？</strong>
+            模型兩側翼樓呈現「兩坡落水」屋頂，後來修護時才恢復成 1915 年最初的階梯金字塔造型；前方圍牆內的新公園，當年還是庶民擺攤算命的廟埕日常。
+          </figcaption>
+        </figure>
+      </div>
+
+      <h3>「有屋無地」的宿命，與跑在時代前面的屋架爭議</h3>
+      <p>
+        1991 年，漢寶德帶著科博館團隊回來為省博做總體檢，曾提出一個極具前瞻性的大膽構想：效法巴黎羅浮宮金字塔的「地下化」概念，將二二八公園地底下往下挖三層，串聯當時正在興建的捷運臺大醫院站，把教室、辦公與庫房全數移入地下，讓百年古蹟專心作展場。可惜計畫最終破局，原因無他——臺博館<strong>「有屋無地」</strong>，建築歸博物館，土地產權卻屬臺北市政府（至今每年仍須支付數百萬元租金），公園管理單位不同意，夢幻藍圖只能收進檔案櫃。
+      </p>
+      <p>
+        緊接著在 1994–1996 年的館舍修護工程中，更引爆臺灣文資界著名的<strong>「臺博屋架論戰」</strong>。兩側翼樓跨距超過 14 公尺的舊木桁架（日本進口杉木）因長期漏水與白蟻侵蝕，高達八成以上腐朽，且桁架密布導致閣樓無法使用。漢光團隊決定將其更換為 H 型鋼架，在不改變屋頂外觀高度的前提下，硬是多出一層展示空間，同時首度系統化地將現代消防、空調、機電與無障礙電梯整合進八十歲的老建築。
+      </p>
+      <p>
+        此舉當年遭夏鑄九、李乾朗等 <strong>27 位學者連署登報批判</strong>，認為減損古蹟價值。但回頭來看，臺博館直到 1998 年才正式指定為國定古蹟；漢寶德早在沒有文資法強制約束的年代，便以「建築是承載不同時代需求的容器」思考修復倫理——「如果真要修回 1915 年原貌，難道要撤掉冷氣、網路與抽水馬桶，點回五燭光電燈嗎？」這套邏輯，甚至比 1999 年強調保留各時期歷史層疊的《布拉憲章》（Burra Charter）還要早了好幾年。
+      </p>
+
+      <figure class="photo-card" data-lightbox="6">
+        <div class="photo-frame">
+          <img src="img/07-landbank-study.jpg" alt="勸業銀行舊廈修護調查研究展區" />
+          <span class="photo-tag">14:37｜勸業銀行舊廈（今土銀古生物館）</span>
+        </div>
+        <figcaption>
+          <strong>一句預言十一年後成真：</strong>
+          1933 年落成的勸業銀行舊廈曾多次面臨拆除改建危機，漢寶德不僅在報端疾呼保存，更於修護調查報告中率先建議將其改為展示空間與對面省博合作——十一年後，這座建築果真成了今日的古生物館。
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- Chapter 4 -->
+    <section class="chapter" id="sec-4">
+      <div class="chapter-header">
+        <span class="chapter-kicker">CHAPTER 03｜適當的幾何形</span>
+        <h2>白派、薄殼與青年活動中心：年輕建築師的理想國</h2>
+      </div>
+
+      <p>
+        走進第三展區「適當的幾何形」，時間回到 1960 至 1970 年代漢寶德剛從美國學成歸國、意氣風發的時期。受現代主義與歐美「白派」建築影響，他相信建築應背負永恆的價值，而圍塑空間最純粹的工具，就是圓、方、三角形與曲線等<strong>幾何形式</strong>。
+      </p>
+
+      <div class="photo-pair">
+        <figure class="photo-card" data-lightbox="7">
+          <div class="photo-frame">
+            <img src="img/08-fuyin-model.jpg" alt="林一宏導覽高雄福音新村模型" />
+            <span class="photo-tag">15:09｜高雄福音新村模型</span>
+          </div>
+          <figcaption>
+            <strong>像沙漠帳篷的社會住宅：</strong>
+            受基督教衛理會委託的難民住宅案，以 6×6 公尺（或切半 3×6 公尺）為模矩單元，頂著薄殼混凝土屋頂省材又通風，是極具理想性格的早期實驗。
+          </figcaption>
+        </figure>
+        <figure class="photo-card" data-lightbox="8">
+          <div class="photo-frame">
+            <img src="img/09-chungli-bank.jpg" alt="臺灣土地銀行中壢分行建築模型" />
+            <span class="photo-tag">15:22｜土銀中壢分行（1971）</span>
+          </div>
+          <figcaption>
+            <strong>圓窗底下的小方塊秘密：</strong>
+            三角窗基地層層退縮挑出，看似純粹裝飾的幾何方孔，其實是為了排掉潑進圓窗裡的雨水——機能與幾何就這樣精準咬合。
+          </figcaption>
+        </figure>
+      </div>
+
+      <h3>中橫山莊、已拆除的 V 大樓，以及東海神聖的「評圖階梯」</h3>
+      <p>
+        除了住宅與銀行，漢寶德職業生涯中最具代表性的委託方之一，便是當年的<strong>救國團</strong>。憑藉學界聲望與李煥、宋時選等高層的信任，漢光事務所承接了多座青年活動中心。1972 年花蓮中橫上的<strong>洛韶山莊</strong>，透過現場製作的「炸開」模型，能清楚看見半圓、方體與切角三角形如何咬合出一座螺旋梯；林一宏笑著點評，這棟房子因地處偏遠、營造水準有限而「幾乎沒有細部」，卻無損它在漢氏幾何時期第一把交椅的地位（如今歸太魯閣國家公園管理，仍可依規定專案申請包棟入住）。
+      </p>
+
+      <div class="photo-pair">
+        <figure class="photo-card" data-lightbox="9">
+          <div class="photo-frame">
+            <img src="img/10-tunghai-v.jpg" alt="已拆除的東海大學視聽大樓 V 大樓模型" />
+            <span class="photo-tag">15:35｜東海視聽大樓（V 大樓）</span>
+          </div>
+          <figcaption>
+            <strong>只能從模型重溫的校園記憶：</strong>
+            1973 年落成的「V 大樓」為呼應當年電化教育而設，成排圓形天窗極具辨識度；如今原建築已拆除改建為人文大樓，唯有展場模型留住舊影。
+          </figcaption>
+        </figure>
+        <figure class="photo-card" data-lightbox="10">
+          <div class="photo-frame">
+            <img src="img/11-tunghai-arch.jpg" alt="東海大學建築系館模型，可見折板採光與反樑結構" />
+            <span class="photo-tag">16:19｜東海大學建築系館</span>
+          </div>
+          <figcaption>
+            <strong>把空間變成教育革命：</strong>
+            一至五年級工作室依樓層拾級而上，朝北折板引進穩定畫室天光，屋頂採用結構創新的「反樑」，中央大階梯則是建築系生畏又愛的「評圖」聖殿。
+          </figcaption>
+        </figure>
+      </div>
+
+      <p>
+        在東海大學，漢寶德不只留下建築，更把美國帶回來的<strong>「評圖制度」</strong>刻進了新建築系館的骨子裡——貼圖、簡報、被師長與同儕質問到撕圖丟出窗外，全都在這座階梯空間上演。展場還藏了一張溫馨卻帶點烏龍的家族舊照：漢寶德與夫人蕭宗瑩女士（正巧是土地銀行董事長的女兒）及一雙兒女在四分之一圓陽台的合影，連漢先生晚年自己都記錯以為是天祥，其實全系列作品裡只有東海系館做了這個少見的四分之一圓！
+      </p>
+
+      <div class="photo-pair">
+        <figure class="photo-card" data-lightbox="11">
+          <div class="photo-frame">
+            <img src="img/12-hsitou-wood.jpg" alt="救國團溪頭青年活動中心剖面大木模型" />
+            <span class="photo-tag">15:36｜溪頭青年活動中心剖面模型</span>
+          </div>
+          <figcaption>
+            <strong>為業主轉彎的森林木屋：</strong>
+            原本也想蓋「白盒子」的漢寶德，順應李煥「融入臺大實驗林」的期待，將在地柳杉剖半作外牆，營造出北美林間木屋般的度假質感。
+          </figcaption>
+        </figure>
+        <figure class="photo-card" data-lightbox="12">
+          <div class="photo-frame">
+            <img src="img/13-tianxiang-tour.jpg" alt="林一宏於天祥青年活動中心展板前導覽" />
+            <span class="photo-tag">15:36｜天祥青年活動中心</span>
+          </div>
+          <figcaption>
+            <strong>把廣場搬進室內的設計起點：</strong>
+            從天祥開始，漢寶德愛上在建築內部開出挑空中庭、頭頂開天窗、四周繞著半圓陽台走道，讓人在高低樓層間產生視線與聲音的對話。
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Chapter 5 -->
+    <section class="chapter" id="sec-5">
+      <div class="chapter-header">
+        <span class="chapter-kicker">CHAPTER 04｜大乘的建築</span>
+        <h2>雅俗共賞的轉身：從金龍頭、民族所到南園與南藝大</h2>
+      </div>
+
+      <p>
+        1980 年代初，隨著 1982 年《文化資產保存法》公告施行，漢光建築師事務所長年投入全臺古蹟測繪與修護的養分，終於反過來滲透進新建築的創作之中。漢寶德在為恩師賀陳詞七十歲壽誕撰寫的論文集裡，首度提出<strong>「大乘的建築」</strong>——建築不像畫作可以捲起來收進倉庫，一旦蓋出來就必須面對社會大眾，因此不能只求建築師自己過癮或拿獎，而要做到最難的四個字：<strong>「雅俗共賞」</strong>。
+      </p>
+
+      <div class="photo-pair">
+        <figure class="photo-card" data-lightbox="13">
+          <div class="photo-frame">
+            <img src="img/14-jinlongtou-model.jpg" alt="澎湖馬公金龍頭青年活動中心模型" />
+            <span class="photo-tag">15:43｜澎湖金龍頭青年活動中心</span>
+          </div>
+          <figcaption>
+            <strong>大乘之路的第一塊試金石：</strong>
+            雖仍保留幾何語彙與挑空天窗，卻大膽換上契合澎湖風土的紅磚色面磚；可惜落成後不久即被軍方接收為海巡營區，至今雖登錄歷史建築卻仍未對外開放。
+          </figcaption>
+        </figure>
+        <figure class="photo-card" data-lightbox="14">
+          <div class="photo-frame">
+            <img src="img/15-ethnology-model.jpg" alt="中研院民族學研究所三十年前建築模型" />
+            <span class="photo-tag">16:19｜中研院民族學研究所</span>
+          </div>
+          <figcaption>
+            <strong>巡迴展也帶不走的唯一展件：</strong>
+            適逢中研院民族所 40 週年，臺博館特地借來這座三十年前為二期工程製作的舊模型修復展出——馬背、雲牆與傅弘仁繪製的葫蘆細部一次看盡，下一站移展臺南時便無緣同行。
+          </figcaption>
+        </figure>
+      </div>
+
+      <h3>記憶裡的青春票價，與照片裡的建築偵探題</h3>
+      <p>
+        這個時期的作品總能精準勾起臺灣人的集體記憶：<strong>彰化縣立文化中心</strong>以傳統「金包玉」古厝牆面轉化當代立面；澎湖第二代的<strong>觀音亭青年活動中心</strong>（1984）將咾咕石、白灰牆與八角形大膽拼貼在高聳海崖上；而 1983 年的<strong>墾丁青年活動中心</strong>，更直接以鋼筋混凝土再現十座全臺知名傳統民居，並在四百人集會廳裡造出一座源自鹿港龍山寺的八角藻井。林一宏笑著分享一段私人往事：大一還沒去成功嶺前，他曾獨自騎單車環島來到墾丁，翻出當年留下的價目表發現「根本住不起」，最後只好睡在鵝鑾鼻燈塔的白色圍牆下露宿。
+      </p>
+
+      <div class="photo-pair">
+        <figure class="photo-card" data-lightbox="15">
+          <div class="photo-frame">
+            <img src="img/16-kenting-model.jpg" alt="墾丁青年活動中心與集會廳白模" />
+            <span class="photo-tag">16:20｜墾丁青年活動中心（1983）</span>
+          </div>
+          <figcaption>
+            <strong>鋼筋混凝土蓋出的傳統聚落：</strong>
+            前排白模重現八角形集會廳內的華麗藻井，後方則是至今仍營業中、承載無數人青春旅行記憶的閩南式紅瓦院落。
+          </figcaption>
+        </figure>
+        <figure class="photo-card" data-lightbox="16">
+          <div class="photo-frame">
+            <img src="img/17-nanyuan-photo.jpg" alt="漢寶德與兒子漢述朝於南園的合影" />
+            <span class="photo-tag">15:57｜新竹新埔南園舊影</span>
+          </div>
+          <figcaption>
+            <strong>策展人的現場考題：</strong>
+            漢寶德父子究竟站在南園哪一處？循著欄杆高低差、背後涼亭與雙層高樓屋頂的線索，轉頭對照鳥瞰圖就能瞬間破案。
+          </figcaption>
+        </figure>
+      </div>
+
+      <p>
+        在漢寶德自己心中，「蓋得最愉快」的案子當屬 1985 年受《聯合報》創辦人王惕吾之託設計的新竹新埔<strong>南園</strong>——「愛怎麼蓋就怎麼蓋，預算不是問題」，遇到如此信任建築師的「天使業主」，成就了這座融合江南園林與閩南語彙的經典。而他建築生涯的最後一塊拼圖，則是受教育部之託在臺南官田臺糖土地上籌設<strong>臺南藝術學院</strong>（今臺南藝術大學）。在那個後來以「小橋流水」聞名的校園裡，漢寶德最初畫下的核心其實是象徵知識與美感起點的<strong>圖書館與藝廊</strong>；雖然日後姚仁喜接手校舍興建時有所調整，這份以「書與美」為本的辦學精神，仍長存於南藝大校園裡的漢寶德紀念館之中。
+      </p>
+    </section>
+
+    <!-- Chapter 6 -->
+    <section class="chapter" id="sec-6">
+      <div class="chapter-header">
+        <span class="chapter-kicker">EPILOGUE｜以管窺豹的跨時空對話</span>
+        <h2>樓下沸騰的冠軍人潮，樓上靜謐的建築餘韻</h2>
+      </div>
+
+      <p>
+        兩個小時的導覽在熱絡的問答中步入尾聲。林一宏坦承，這檔展覽從未企圖「蓋棺論定」漢寶德在臺灣建築史上的地位；相反地，他邀請了一群四、五十歲的中壯代建築史研究者各自認領案例，像<strong>「以管窺豹」</strong>般，從各自求學的空間記憶與研究專長出發，完成一場跨時空的對話。
+      </p>
+      <p>
+        或許正因為如此，走完展場才驚覺：原來我們住過的山莊、走進的博物館、經過的銀行與校園，背後竟然都藏著同一雙手的痕跡。即使這場「形色質美」特展在兩天後便要卸下展板（隨後將移師臺南新營與南藝大續展），但只要下次走進臺博館大廳、忍不住伸手摸向那面溫熱的人造大理石牆時，漢寶德先生留給臺灣的形、色、質、美，就依然還在我們身邊。
+      </p>
+
+      <figure class="photo-card" data-lightbox="17">
+        <div class="photo-frame">
+          <img src="img/18-rotunda-closing.jpg" alt="從二樓迴廊俯瞰臺博館一樓大廳棒球冠軍獎盃展人潮" />
+          <span class="photo-tag">16:20｜二樓迴廊俯瞰一樓大廳</span>
+        </div>
+        <figcaption>
+          <strong>同一座古蹟裡的兩種熱度：</strong>
+          一樓大廳的棒球冠軍獎盃前排滿了歡呼拍照的民眾，二樓迴廊則剛送走這場「關門導覽」的最後一批聽眾——百年建築依舊安靜地把所有時代的故事收容在內。
+        </figcaption>
+      </figure>
+
+      <div class="callout">
+        <div class="callout-title">導覽後記：那些只有現場才聽得到的細節</div>
+        <ul class="clean-list">
+          <li><strong>「漢先生畫不畫施工圖？」</strong>——現場觀眾最常好奇的問題，林一宏的回答很直接：漢先生屬於概念型大師，總會親自畫下關鍵草圖（如天祥山莊的設計草圖），定調空間方向後便放手讓事務所團隊發展，如民族所的雲牆葫蘆正是由金門出身的傅弘仁建築師細心繪製。</li>
+          <li><strong>只有這次看得到的驚喜：</strong>除了因 40 週年慶而無法隨展南下的民族所模型，還包括「2008 年訪談影像修復重現」與「東海 V 大樓實體模型」，讓這場倒數三天的週五午後更顯難得。</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>
+        <strong>形色質美：漢寶德的建築特展策展人導覽｜2025.02.21 臺博館走讀筆記</strong><br />
+        策展導覽：林一宏（國立臺灣博物館展示企劃組副研究員） &nbsp;·&nbsp; 地點：國立臺灣博物館本館 2F 迴廊展區
+      </p>
+      <a href="#top" class="back-top">↑ 回到頁首</a>
+    </div>
+  </footer><nav class="yr-pn" aria-label="其他走讀"><a href="../dashen/index.html"><small>‹ 較新的一場・2025/04/12</small>大神百貨・城中走讀</a><a class="nx" href="../miaoyu/index.html"><small>較早的一場・2024/09/07 ›</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="相片檢視">
+    <button class="lightbox-close" id="lbClose" aria-label="關閉">&times;</button>
+    <button class="lightbox-prev" id="lbPrev" aria-label="上一張">&#8249;</button>
+    <div class="lightbox-content">
+      <img id="lbImg" src="" alt="" />
+      <div class="lightbox-caption" id="lbCaption"></div>
+    </div>
+    <button class="lightbox-next" id="lbNext" aria-label="下一張">&#8250;</button>
+  </div>
+
+  <script>
+    const gallery = [
+      {
+        src: "img/01-ntm-facade.jpg",
+        caption: "【11:43 臺博館本館正立面】科林斯柱廊上並排懸掛著一樓棒球冠軍展與二樓「形色質美：漢寶德的建築」直幅，這座 1915 年落成的國定古蹟本身，正是漢寶德主持修護的代表作。"
+      },
+      {
+        src: "img/02-rotunda-marble.jpg",
+        caption: "【14:16 臺博館二樓迴廊】林一宏副研究員邀請大家親手觸摸大廳牆面，現場感受 1915 年日本天然大理石與「人造大理石」截然不同的溫度。"
+      },
+      {
+        src: "img/03-timeline-table.jpg",
+        caption: "【14:20 1934–2014 年表長桌】觀眾俯身細讀漢寶德跨足現代建築設計、古蹟調查研究與修護工程的年表，見證漢光事務所在壯年時期的高產量。"
+      },
+      {
+        src: "img/04-interview-2008.jpg",
+        caption: "【15:40 2008 年珍貴訪談影像】導覽初段一度黑屏的小螢幕於後半段恢復播放，讓眾人得以看見 2008 年仍神采奕奕、暢談建築理想的漢先生。"
+      },
+      {
+        src: "img/05-ntm-truss-report.jpg",
+        caption: "【14:36 木桁架模型與修護報告書】1994–1996 年負責修護的慶仁營造自費製作的原木桁架紀念模型，與 1992 年省博展示計畫報告書並列展出。"
+      },
+      {
+        src: "img/06-ntm-model.jpg",
+        caption: "【14:37 省博修護研究模型】三十年前製作的建築模型呈現當時兩坡落水的翼樓屋頂，後來修護時才恢復成 1915 年原有的階梯金字塔造型。"
+      },
+      {
+        src: "img/07-landbank-study.jpg",
+        caption: "【14:37 勸業銀行舊廈修護研究】漢寶德在 1990 年代便呼籲保存這座 1933 年落成的銀行，並預言它可改為展示館與對面省博合作——十一年後成真為今日的古生物館。"
+      },
+      {
+        src: "img/08-fuyin-model.jpg",
+        caption: "【15:09 高雄福音新村模型】以 6×6 公尺為模矩單元的社會住宅實驗，薄殼混凝土屋頂在高雄陽光下宛如一頂頂白色帳篷。"
+      },
+      {
+        src: "img/09-chungli-bank.jpg",
+        caption: "【15:22 土銀中壢分行模型】1971 年作品以三角窗退縮量體與幾何立面聞名，圓窗底下看似裝飾的小方塊其實是實用的雨水排水孔。"
+      },
+      {
+        src: "img/10-tunghai-v.jpg",
+        caption: "【15:35 東海視聽大樓（V 大樓）模型】1973 年為電化教育而建的階梯視聽教室，成排圓形天窗極具特色；原樓已拆除改建，唯有模型留存記憶。"
+      },
+      {
+        src: "img/11-tunghai-arch.jpg",
+        caption: "【16:19 東海建築系館模型】依年級拾級而上的工作室、朝北折板天窗、反樑結構與中央評圖大階梯，將現代建築教育革命具體化為空間。"
+      },
+      {
+        src: "img/12-hsitou-wood.jpg",
+        caption: "【15:36 溪頭青年活動中心剖面模型】順應林場自然環境而將在地柳杉剖半作外牆，營造出北美森林木屋般的溫潤度假氛圍。"
+      },
+      {
+        src: "img/13-tianxiang-tour.jpg",
+        caption: "【15:36 天祥青年活動中心】從天祥開始，漢寶德熱衷於在室內開出挑空中庭與天窗，讓半圓陽台之間產生視線與聲音的廣場對話。"
+      },
+      {
+        src: "img/14-jinlongtou-model.jpg",
+        caption: "【15:43 澎湖金龍頭青年活動中心模型】「大乘的建築」初期嘗試，運用紅磚面磚呼應澎湖風土；後來轉作海巡營區，至今仍未對外開放。"
+      },
+      {
+        src: "img/15-ethnology-model.jpg",
+        caption: "【16:19 中研院民族學研究所模型】適逢民族所 40 週年特地借展並修復的三十年前模型，將馬背、雲牆與葫蘆語彙立體呈現，亦是巡迴展無法帶走的限定展件。"
+      },
+      {
+        src: "img/16-kenting-model.jpg",
+        caption: "【16:20 墾丁青年活動中心模型】1983 年以鋼筋混凝土重現十座傳統民居聚落，前排白模則展示了結合八角形平面與鹿港龍山寺藻井意象的集會廳。"
+      },
+      {
+        src: "img/17-nanyuan-photo.jpg",
+        caption: "【15:57 新竹新埔南園舊影】漢寶德與兒子漢述朝在剛落成的南園合影——循著欄杆高低差、亭台與雙層屋頂，成了現場版建築偵探小考題。"
+      },
+      {
+        src: "img/18-rotunda-closing.jpg",
+        caption: "【16:20 2F 迴廊俯瞰一樓大廳】樓下是棒球冠軍獎盃前沸騰的排隊人潮，樓上則剛結束一場在閉幕前兩天登場的靜謐「關門導覽」。"
+      }
+    ];
+
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lbImg");
+    const lbCaption = document.getElementById("lbCaption");
+    let currentIdx = 0;
+
+    function openLightbox(idx) {
+      currentIdx = (idx + gallery.length) % gallery.length;
+      lbImg.src = gallery[currentIdx].src;
+      lbCaption.textContent = gallery[currentIdx].caption;
+      lb.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lb.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll("[data-lightbox]").forEach((el) => {
+      el.addEventListener("click", () => {
+        openLightbox(parseInt(el.dataset.lightbox, 10));
+      });
+    });
+
+    document.getElementById("lbClose").addEventListener("click", closeLightbox);
+    document.getElementById("lbPrev").addEventListener("click", (e) => {
+      e.stopPropagation();
+      openLightbox(currentIdx - 1);
+    });
+    document.getElementById("lbNext").addEventListener("click", (e) => {
+      e.stopPropagation();
+      openLightbox(currentIdx + 1);
+    });
+    lb.addEventListener("click", (e) => {
+      if (e.target === lb) closeLightbox();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (!lb.classList.contains("open")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") openLightbox(currentIdx - 1);
+      if (e.key === "ArrowRight") openLightbox(currentIdx + 1);
+    });
+
+    // Reading progress & active nav highlight
+    const progressEl = document.getElementById("readProgress");
+    const sections = document.querySelectorAll("section.chapter");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+      const h = document.documentElement;
+      const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      progressEl.style.width = Math.min(100, Math.max(0, pct)) + "%";
+
+      let activeId = "";
+      sections.forEach((sec) => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top <= 140) activeId = sec.id;
+      });
+      navLinks.forEach((a) => {
+        a.classList.toggle("active", a.getAttribute("href") === "#" + activeId);
+      });
+    }, { passive: true });
+  </script>
+</body>
+</html>
