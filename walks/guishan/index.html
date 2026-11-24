@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>紅土台地上的時間摺頁｜2024.03.09 龜山坪頂走讀筆記</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #faf6f0;
+      --surface: #ffffff;
+      --surface-warm: #f3ece1;
+      --ink: #231f1d;
+      --ink-muted: #5c534c;
+      --brick: #b54a32;
+      --brick-soft: #f5e6e1;
+      --moss: #48634c;
+      --moss-soft: #e9f0ea;
+      --gold: #a67c37;
+      --border: #e3dbd0;
+      --shadow: 0 10px 30px rgba(35, 31, 29, 0.06);
+      --radius: 14px;
+      --serif: "Noto Serif TC", "Source Han Serif TC", "PMingLiU", Georgia, serif;
+      --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.85;
+      font-size: 16.5px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Progress bar */
+    .read-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--brick), var(--gold));
+      z-index: 100;
+      transition: width 0.1s linear;
+    }
+
+    /* Top sticky nav */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 246, 240, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .top-nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0.7rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: var(--brick);
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.35rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink-muted);
+      font-size: 0.85rem;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--brick-soft);
+      color: var(--brick);
+      font-weight: 500;
+    }
+
+    /* Hero */
+    .hero {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 2rem;
+    }
+
+    .hero-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      background: var(--brick-soft);
+      color: var(--brick);
+    }
+
+    .badge.moss {
+      background: var(--moss-soft);
+      color: var(--moss);
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.3vw, 3.1rem);
+      line-height: 1.28;
+      margin: 0 0 1rem;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-lead {
+      font-size: 1.12rem;
+      color: var(--ink-muted);
+      max-width: 780px;
+      margin: 0 0 2rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.55fr 1fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .hero-cover {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #ddd;
+      min-height: 320px;
+      cursor: zoom-in;
+    }
+
+    .hero-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .hero-cover:hover img {
+      transform: scale(1.02);
+    }
+
+    .hero-cover-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 2.4rem 1.25rem 1rem;
+      background: linear-gradient(transparent, rgba(16, 13, 11, 0.88));
+      color: #f7f3ed;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .hero-cover-caption strong {
+      color: #fff;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-card h2 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      margin: 0 0 0.85rem;
+      color: var(--brick);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.55rem;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.7rem;
+      font-size: 0.93rem;
+    }
+
+    .info-list li {
+      display: flex;
+      gap: 0.6rem;
+      align-items: baseline;
+    }
+
+    .info-label {
+      color: var(--ink-muted);
+      font-weight: 500;
+      min-width: 4.5rem;
+      flex-shrink: 0;
+    }
+
+    .hero-quote {
+      margin-top: 1.25rem;
+      padding: 0.9rem 1rem;
+      background: var(--surface-warm);
+      border-left: 3px solid var(--brick);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+    }
+
+    /* Route Timeline Strip */
+    .timeline-wrap {
+      max-width: 1080px;
+      margin: 1rem auto 2.5rem;
+      padding: 0 1.25rem;
+    }
+
+    .timeline-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      margin: 0 0 1rem;
+      font-weight: 700;
+    }
+
+    .route-steps {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.75rem;
+      position: relative;
+    }
+
+    .route-step {
+      text-decoration: none;
+      color: inherit;
+      padding: 0.75rem 0.7rem;
+      border-radius: 10px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .route-step:hover {
+      border-color: var(--brick);
+      transform: translateY(-2px);
+      background: #fff;
+      box-shadow: 0 6px 16px rgba(181, 74, 50, 0.1);
+    }
+
+    .step-time {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--brick);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .step-name {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 0.88rem;
+      line-height: 1.38;
+      letter-spacing: -0.01em;
+    }
+
+    .step-sub {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      line-height: 1.4;
+    }
+
+    /* Main Article Container */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    section.chapter {
+      margin-bottom: 4rem;
+      scroll-margin-top: 72px;
+    }
+
+    .chapter-header {
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .chapter-kicker {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--brick);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.35rem;
+    }
+
+    .chapter-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.35;
+      margin: 0;
+      font-weight: 900;
+    }
+
+    h3 {
+      font-family: var(--serif);
+      font-size: 1.24rem;
+      margin: 2rem 0 0.75rem;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h3::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 1.1em;
+      background: var(--brick);
+      border-radius: 3px;
+    }
+
+    p {
+      margin: 0 0 1.15rem;
+    }
+
+    strong {
+      color: #161311;
+      font-weight: 700;
+    }
+
+    /* Photo Figures */
+    figure.photo-card {
+      margin: 1.85rem 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .photo-frame {
+      position: relative;
+      overflow: hidden;
+      cursor: zoom-in;
+      background: #e9e3da;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+
+    .photo-frame:hover img {
+      transform: scale(1.015);
+    }
+
+    .photo-tag {
+      position: absolute;
+      top: 0.85rem;
+      left: 0.85rem;
+      background: rgba(35, 31, 29, 0.78);
+      backdrop-filter: blur(4px);
+      color: #fff;
+      font-size: 0.78rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    figure.photo-card figcaption {
+      padding: 1rem 1.25rem;
+      font-size: 0.94rem;
+      color: var(--ink-muted);
+      line-height: 1.65;
+      border-top: 1px solid var(--border);
+    }
+
+    figcaption strong {
+      color: var(--ink);
+      margin-right: 0.35rem;
+    }
+
+    /* Two-column Photo Comparison */
+    .photo-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.15rem;
+      margin: 1.85rem 0;
+    }
+
+    .photo-pair figure.photo-card {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .photo-pair .photo-frame img {
+      height: 270px;
+      object-fit: cover;
+    }
+
+    .photo-pair figcaption {
+      flex: 1;
+    }
+
+    /* Callout & Vocabulary Boxes */
+    .callout {
+      background: var(--surface-warm);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--brick);
+      border-radius: 10px;
+      padding: 1.15rem 1.35rem;
+      margin: 1.6rem 0;
+    }
+
+    .callout.moss {
+      background: var(--moss-soft);
+      border-left-color: var(--moss);
+    }
+
+    .callout-title {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1rem;
+      margin: 0 0 0.45rem;
+      color: var(--brick);
+    }
+
+    .callout.moss .callout-title {
+      color: var(--moss);
+    }
+
+    .callout p:last-child,
+    .callout ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .fact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .fact-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.05rem 1.15rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .fact-item .fact-k {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--brick);
+      margin-bottom: 0.25rem;
+    }
+
+    .fact-item .fact-v {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .fact-item p {
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    ul.clean-list {
+      padding-left: 1.25rem;
+      margin: 0.6rem 0 1.2rem;
+    }
+
+    ul.clean-list li {
+      margin-bottom: 0.45rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      background: var(--surface-warm);
+      padding: 2.5rem 1.25rem;
+      text-align: center;
+      color: var(--ink-muted);
+      font-size: 0.9rem;
+    }
+
+    footer .footer-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    footer strong {
+      color: var(--ink);
+    }
+
+    .back-top {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--brick);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.88rem;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 15, 14, 0.92);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-content {
+      max-width: 1100px;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 78vh;
+      border-radius: 10px;
+      object-fit: contain;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-caption {
+      color: #f3ece1;
+      font-size: 0.95rem;
+      text-align: center;
+      max-width: 760px;
+      line-height: 1.6;
+    }
+
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+      position: fixed;
+      background: rgba(255, 255, 255, 0.14);
+      border: none;
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 1.35rem;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: background 0.2s;
+    }
+
+    .lightbox-close:hover,
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .lightbox-close {
+      top: 1.2rem;
+      right: 1.2rem;
+    }
+    .lightbox-prev {
+      left: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .lightbox-next {
+      right: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .top-nav-inner {
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .route-steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .photo-pair {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .route-steps {
+        grid-template-columns: 1fr;
+      }
+      .lightbox-prev,
+      .lightbox-next {
+        display: none;
+      }
+    }
+
+    @media print {
+      .top-nav,
+      .read-progress,
+      .lightbox,
+      .back-top {
+        display: none !important;
+      }
+      body {
+        background: #fff;
+      }
+      figure.photo-card,
+      .hero-card,
+      .timeline-box {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・58 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024 秋</li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html" aria-current="page"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024 秋</li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html" aria-current="page"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></details><span>2024/03/09</span></div>
+  <div class="read-progress" id="readProgress"></div>
+
+  <nav class="top-nav" aria-label="章節導覽">
+    <div class="top-nav-inner">
+      <a href="#top" class="nav-brand">龜山坪頂走讀筆記</a>
+      <div class="nav-links">
+        <a href="#sec-1">地名與邊界</a>
+        <a href="#sec-2">紅土與八卦窯</a>
+        <a href="#sec-3">醫療與飛行場</a>
+        <a href="#sec-4">公西與戲院</a>
+        <a href="#sec-5">大湖與校園</a>
+        <a href="#sec-6">聖蹟亭與福德宮</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-meta-top">
+      <span class="badge">2024.03.09 地方走讀紀錄</span>
+      <span class="badge moss">桃園・龜山坪頂地區</span>
+    </div>
+    <h1>紅土台地上的時間摺頁：<br />龜山坪頂走讀紀行</h1>
+    <p class="hero-lead">
+      提起龜山，外地人常誤以為是宜蘭外海的龜山島，或把這座台地算進林口、新莊的生活圈。三月初春微雨的午後，從機場捷運 A7 站旁的八卦窯煙囪出發，搭乘捷運穿過長庚聚落，再一路步行經公西老街、大湖埤塘與百年校牆，最後鑽進快炒店旁的防火巷——在一座被排煙管緊貼的 1935 年紅磚古亭前，讀出桃園東北角最被低估的百年身世。
+    </p>
+
+    <div class="hero-grid">
+      <div class="hero-cover" data-lightbox="0">
+        <img src="img/01-bagua-kiln.jpg" alt="龜山樟腦寮協和磚廠八卦窯遺址與半世紀前空拍圖對照" />
+        <div class="hero-cover-caption">
+          <strong>龜山坪頂起點｜14:15 協和磚廠八卦窯遺址</strong><br />
+          荒草背後兩座高聳煙囪仍佇立於重劃區高樓之間，對照半世紀前的黑白空拍圖，曾有七十餘座磚窯在此吐煙生財。
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div>
+          <h2>走讀基本資訊</h2>
+          <ul class="info-list">
+            <li><span class="info-label">日期天候</span><span>2024 年 3 月 9 日（六）午後微雨</span></li>
+            <li><span class="info-label">領路團隊</span><span>桃園回龜山陣線／微光生活設計室</span></li>
+            <li><span class="info-label">步行路線</span><span>A7 體育大學站周邊 → 機捷 A9 林口站 → 公西老街 → 坪頂大湖 → 大崗國小 → 大湖福德宮（近 A8 站）</span></li>
+            <li><span class="info-label">關鍵詞</span><span>龜崙社、八卦窯、樹林口飛行場、苓林戲院、鐵觀音、詔安客聖蹟亭</span></li>
+          </ul>
+        </div>
+        <div class="hero-quote">
+          「這趟是龜山走讀距離最長的一條路線——正因坪頂離市區最遠、鄰近雙北邊界，才保留下台灣工業、軍事、族群與宗教交會的獨特切片。」
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section class="timeline-wrap" aria-label="走讀時間軸">
+    <div class="timeline-box">
+      <p class="timeline-title">午後路線節點｜點擊跳轉章節</p>
+      <div class="route-steps">
+        <a class="route-step" href="#sec-2">
+          <span class="step-time">14:00 – 14:30</span>
+          <span class="step-name">八卦窯遺址</span>
+          <span class="step-sub">龜崙由來・七十座磚窯的紅磚時代</span>
+        </a>
+        <a class="route-step" href="#sec-3">
+          <span class="step-time">14:40 – 15:10</span>
+          <span class="step-name">機捷 A9 林口站</span>
+          <span class="step-sub">長庚買地・竹林山寺・樹林口飛行場</span>
+        </a>
+        <a class="route-step" href="#sec-4">
+          <span class="step-time">15:15 – 15:35</span>
+          <span class="step-name">公西老街・永樂巷</span>
+          <span class="step-sub">苓林戲院・李家老宅・軍營外繁華</span>
+        </a>
+        <a class="route-step" href="#sec-4">
+          <span class="step-time">15:35 – 15:44</span>
+          <span class="step-name">憲訓外牆與廠房</span>
+          <span class="step-sub">軍事限高・種茶變「種鐵觀音」</span>
+        </a>
+        <a class="route-step" href="#sec-5">
+          <span class="step-time">15:45 – 16:05</span>
+          <span class="step-name">坪頂大湖・大崗國小</span>
+          <span class="step-sub">構樹・撿彈殼童年・1922 百年校史</span>
+        </a>
+        <a class="route-step" href="#sec-6">
+          <span class="step-time">16:08 – 16:30</span>
+          <span class="step-name">聖蹟亭・大湖福德宮</span>
+          <span class="step-sub">北桃園詔安客・1935 紅磚古亭真身</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Chapter 1 -->
+    <section class="chapter" id="sec-1">
+      <div class="chapter-header">
+        <span class="chapter-kicker">CHAPTER 01｜地名身世與群山邊界</span>
+        <h2>從「龜崙嶺」到「龜山不是島」：總被錯認的台地日常</h2>
+      </div>
+
+      <p>
+        「坪頂」這個地名十分直白——在台語裡長輩慣稱這裡為「山頂（suann-tíng）」或「坪頂（pînn-tíng）」，指的是龜山區地勢最高、卻又難得平坦開闊的台地。與今日捷運直達、大樓林立的都會印象不同，若把視角拉回整個桃園地圖，會發現龜山其實位在桃園最東北角，境內幾乎全是丘陵山坡，與新北的林口、泰山、新莊、樹林、鶯歌緊密相連。
+      </p>
+
+      <h3>一隻大龜的傳說，以及「龜崙族」的真實後裔</h3>
+      <p>
+        清代《淡水廳志》曾記載一則地方傳說：淡水河南岸有隻巨龜怪獸在河畔喝水，鄭成功於士林見狀下令部將將其擊殺，巨龜死後化為「龜崙嶺」——正如鶯歌石傳說一樣，都是後人附會的故事（歷史上鄭成功並未北上至中部以北）。更貼近史實的地名來源，其實是早年棲居於此的平埔族群<strong>「龜崙族（龜崙社）」</strong>。
+      </p>
+      <p>
+        龜崙社與八德霄裡社、蘆竹南崁社等並稱為「南崁四社」。由於龜崙族漢化極早，傳統服飾與語言早已融入閩南生活圈，但族群記憶仍藏在姓氏密碼裡：凡見姓<strong>「永」</strong>（永遠的永）、姓<strong>「干」</strong>（天干地支的干），以及部分姓<strong>「柯」</strong>、姓<strong>「傅」</strong>的在地家族（如龜山國小少棒教練、龜山後街老字號「永豐／和豐麵包」家族），許多正是龜崙社的後裔。
+      </p>
+      <p>
+        至於「龜崙口」為何演變成「龜山」？日本時代總督府慣於將台灣地名雅化或套用日本本土熟悉的地名——如同新竹鹹菜甕因台語讀音近似而改名「關西」，日本三重縣恰有一座「龜山市（Kameyama）」，設有龜山小學與龜山中學，於是原來的龜崙口便定名為「龜山」。地方刊物《龜山不是島》曾做過一次清查，發現全台灣叫「龜山」的地名至少就有八處：從宜蘭龜山島、屏東車城射寮旁龜山、高雄蓮池潭大小龜山，到苗栗龜山大橋與大湖小龜山、新竹山凹處、嘉義梅山吊橋尾端，以及新店龜山發電廠（後改稱桂山發電廠）與楊梅貴山。其中，唯有桃園龜山面積最大、人口也最多。
+      </p>
+
+      <div class="fact-grid">
+        <div class="fact-item">
+          <div class="fact-k">1926 歷史檔案</div>
+          <div class="fact-v">四天四場家長會</div>
+          <p>日本時代報紙記載，龜山庄舉辦家長會因山路崎嶇、交通難行，只能分四區接力連辦四天：坪頂、塔寮坑（迴龍）、南崁頂、新路坑（市區）。</p>
+        </div>
+        <div class="fact-item">
+          <div class="fact-k">A7 新里名由來</div>
+          <div class="fact-v">文青里＝文化＋青山</div>
+          <p>龜山原為 30 里，隨人口移入增為 32 里（新增文青里、楓福里）。文青里從樂善里分出時，便直接取「文化一路」與「青山路」首字命名。</p>
+        </div>
+        <div class="fact-item">
+          <div class="fact-k">行政邊界的錯覺</div>
+          <div class="fact-v">地址在龜山，招牌寫雙北</div>
+          <p>迴龍的連鎖速食與飲料店常掛「新莊龍華／迴龍店」，用 02 電話區碼與台北電網；A8 長庚聚落與體大則常被誤認在林口，形成微妙的地方認同。</p>
+        </div>
+      </div>
+
+      <div class="callout moss">
+        <div class="callout-title">有趣的邊界現象：被誤會的「林口檢疫所」與「林口體育館」</div>
+        <p>
+          許多地標明明座落於桃園龜山境內，卻習慣冠上「林口」之名——例如舉辦大型演唱會的國立體育大學體育館，常被新聞稱為「林口體育館」；疫情期間位於龜山台地的集中檢疫所被稱作「林口檢疫所」，還曾引來林口民意代表急忙澄清「其實在龜山啦」。甚至有些新建案門牌明明登記龜山，銷售話術卻主打「林口生活圈」，道盡台地邊界土地價值與城市認同的角力。
+        </p>
+      </div>
+    </section>
+
+    <!-- Chapter 2 -->
+    <section class="chapter" id="sec-2">
+      <div class="chapter-header">
+        <span class="chapter-kicker">CHAPTER 02｜紅土台地的火與土</span>
+        <h2>從茶葉到七十座磚窯：桃園僅存八卦窯的興衰</h2>
+      </div>
+
+      <p>
+        攤開 1973 年（民國 62 年）前後的黑白空拍圖，如今 A7 重劃區滿布的高樓大廈，半世紀前還是一片寬闊紅土與農地。早期坪頂人主要靠<strong>種茶</strong>維生，這是土地逼出來的選擇——在地有句生動的台語俗諺：<strong>「好天釘，雨來黏（hó-thinn tiàm, hōo-lâi liâm）」</strong>。紅土只要放晴就硬如釘刺，踩起來扎腳；一旦下雨卻又黏稠泥濘到難以耕作稻米，反倒適合耐旱的茶樹生長。
+      </p>
+
+      <h3>黑煙往外擠：造就七十座磚窯的紅磚經濟</h3>
+      <p>
+        民國五、六十年代，雙北都會區快速起飛、市區建築需求暴增，但雙北隨即禁止都市內設窯燒磚排煙。於是製磚產業順勢外移，看上龜山豐富的紅土原料與低廉土地，在坪頂、兔子坑與塔寮坑一帶築起窯場。全盛時期大龜山地區多達七十餘座磚窯廠，許多原先種茶的茶農也「斜槓」走進窯場，同時吸引嘉義北上討生活的勞工，以及花東地區的阿美族、泰雅族原住民朋友一個拉一個前來打拚，讓龜山至今仍保有豐富的原住民族群人口。
+      </p>
+      <p>
+        當時磚頭搶手到什麼程度？老磚窯廠老闆回憶，經濟起飛最狂熱時，工地急著用磚，甚至會有黑道兄弟直接守在窯場大門口「攔貨搶磚」，整批載走以確保建案如期施工。
+      </p>
+
+      <figure class="photo-card" data-lightbox="0">
+        <div class="photo-frame">
+          <img src="img/01-bagua-kiln.jpg" alt="桃園僅存八卦窯遺址與歷史空拍圖對照" />
+          <span class="photo-tag">14:15｜協和磚廠八卦窯遺址</span>
+        </div>
+        <figcaption>
+          <strong>雙煙囪與新市鎮的對望：</strong>
+          荒草後方仍挺立著桃園最後一座八卦窯（樟腦寮協和磚廠，2021 年登錄為歷史建築）。對照手上的 1970 年代空拍影像，昔日成排燒窯曬坯的紅土台地，如今已被重劃區大樓包圍。
+        </figcaption>
+      </figure>
+
+      <h3>從手切曬坯到隧道窯：磚窯業的最後轉身</h3>
+      <p>
+        早年八卦窯製磚全靠體力與看天吃飯：泥坯先在場內以細線手工切塊，再運到屋外大廣場日曬，旁邊永遠備著大量帆布，天色一變就得飛奔蓋布——只要磚坯還帶水分就送進窯燒，高溫下立刻爆裂報廢。
+      </p>
+      <p>
+        如今空污管制與鋼筋、鋼構新工法興起，整個北台灣（北北基桃宜蘭）除了鶯歌尚有一間磚廠，桃園境內僅餘的三間磚窯全在龜山（兩間在迴龍方向、一間在兔坑往鶯歌方向），且都已改採自動化「隧道窯」。這僅存的產業仍面臨嚴峻挑戰：不能隨意開採紅土、外縣市工程土方亦不得輸入，業者一方面試著研發中間開孔的輕量化環保磚，一方面甚至探討以石門水庫清淤淤泥製磚的可能性，讓水庫清淤與傳統磚業共生續命。
+      </p>
+      <p>
+        至於眼前的這座八卦窯，其實原址與鄰近「第三公墓」外圍曾被劃入 A7 聯外道路工程線內，在文史團體與地方奔走下，2021 年終獲登錄為歷史建築保留下來；而聯外道路究竟改走高架繞道或地下穿越，至今仍是地方持續關注的課題。
+      </p>
+    </section>
+
+    <!-- Chapter 3 -->
+    <section class="chapter" id="sec-3">
+      <div class="chapter-header">
+        <span class="chapter-kicker">CHAPTER 03｜跨過高速公路的線</span>
+        <h2>長庚聚落、竹林山寺與消失的「樹林口飛行場」</h2>
+      </div>
+
+      <p>
+        搭乘機場捷運從 A7 體育大學站來到 A9 林口站，短短幾分鐘車程，卻恰好跨越了龜山與林口、農業與軍事、近代與現代的幾條關鍵界線。
+      </p>
+
+      <h3>長庚買地與龜山、林口的「換地切齊」</h3>
+      <p>
+        民國六十年代，長庚集團從坪頂一路購地至兔坑一帶，孕育出林口長庚醫院、桃園長庚、長庚養生村、長庚大學與長庚科大等龐大園區——這座常被稱作「林口長庚」的醫療重鎮，大本營全數落在龜山區。其中「長庚里」居民幾乎皆為長庚醫護與教職員，社區設有門禁閘門與長庚國小，里內修繕甚至得同時通報區公所與集團。過去高速公路開通後，龜山與林口邊界原本犬牙交錯，地方老鄉長還曾協議彼此「換地」，乾脆直接以高速公路為界將版圖切齊。
+      </p>
+
+      <h3>十八坪位巡境：竹林山寺如何串起龜山的信仰版圖</h3>
+      <p>
+        山下的龜山有三大傳統信仰中心：嶺頂的<strong>壽山巖觀音寺</strong>、市區的<strong>仁德宮（三界公廟）</strong>，以及南崁頂居民常前往的<strong>南崁五福宮</strong>。但對早年路途遙遠的坪頂人來說，林口的<strong>竹林山觀音寺</strong>才是生活裡真正的依靠。
+      </p>
+      <p>
+        竹林山寺原名「林口龍山寺」，為免與艋舺龍山寺混淆，遂取「蘆<strong>竹</strong>、<strong>林</strong>口、龜<strong>山</strong>」三地各一字改名。每年廟中「二媽」都會巡迴輪駐昔日祭祀圈的十八（現已擴至二十）個「坪位」駐駕，約每九年便輪值龜山、鶯歌一次（如 2011 年、2020 年皆曾在龜山駐駕）。每逢輪值，在地信眾與店家甚至會騰出店面供奉二媽，香火盛況空前。回顧日本時代皇民化運動推行神道教、曾欲集中焚毀地方神像時，竹林山寺與壽山巖皆機智地以複製品應付繳交，將真正的神尊藏於民宅之中，這才保留下延續至今的百年香火。
+      </p>
+
+      <h3>藏在重劃區大樓底下的「樹林口飛行場」</h3>
+      <p>
+        林口舊稱「樹林口」。對照 1970 年代空拍圖，今天 A9 林口站周邊、高樓櫛比鱗次的繁華街區，早年曾是一座長條形的軍用機場——日本時代為推動南進政策而興建的<strong>「樹林口飛行場」</strong>（作為桃園飛行場之外的中繼補給站）。戰後國軍接管改作通訊站並有美軍駐紮，周邊更聚集憲兵、飛彈營與海軍陸戰隊等單位。曾駐紮於此的美國大兵在網路上留下許多老照片，也讓許多老居民的記憶裡，多了一段「美軍俱樂部」與美式娛樂滲入台地日常的獨特年代。
+      </p>
+    </section>
+
+    <!-- Chapter 4 -->
+    <section class="chapter" id="sec-4">
+      <div class="chapter-header">
+        <span class="chapter-kicker">CHAPTER 04｜軍營外的繁華縮影</span>
+        <h2>公西老街的「十間戲院」，與種茶改種「鐵觀音」</h2>
+      </div>
+
+      <p>
+        走下機捷步入公西（「公西」二字取自鄰近的「菜<strong>公</strong>堂」與「<strong>西</strong>勢湖」），眼前看似安靜尋常的巷弄與老透天，在 1960 至 1970 年代卻是極為熱鬧的不夜街區。
+      </p>
+
+      <figure class="photo-card" data-lightbox="1">
+        <div class="photo-frame">
+          <img src="img/02-gongxi-street.jpg" alt="公西街區現貌" />
+          <span class="photo-tag">15:15｜公西聚落街景</span>
+        </div>
+        <figcaption>
+          <strong>巷弄裡的昔日不夜城：</strong>
+          曾經冰菓室、撞球間、照相館、理髮廳與洗衣店接連林立的公西街區，如今退回安靜日常，只餘街道尺度仍隱約留著軍營外圍聚落的輪廓。
+        </figcaption>
+      </figure>
+
+      <h3>永樂巷與苓林戲院：前門放映、後門客廳的李家歲月</h3>
+      <p>
+        當時全台 60 多萬軍眷中僅十萬餘戶住進正式眷村，其餘官兵與榮民便在各處營區外自行租屋落腳，加上大量阿兵哥休假消費，使公西的<strong>永樂巷</strong>一帶瞬間繁盛。撞球間熱鬧到南崁年輕人願意徒步兩小時上山打球；早年台灣人看病多靠掛在家裡的「寄藥包」，在公西卻早早出現了退伍外省軍醫開設的西醫診所；巷弄間更一度聚集了供應軍人娛樂的「軍中樂園」（私娼寮）。
+      </p>
+      <p>
+        全盛時期，整個龜山區竟多達<strong>十間戲院</strong>（今日全數歇業）：平地市區有大明、樂宮、大進、奇觀、華寶五間；坪頂一帶除了軍中的中山堂、中正堂，還有玲／苓林（取自舊地名「苦苓林」）、宏生、大湖三大民營戲院。
+      </p>
+
+      <div class="photo-pair">
+        <figure class="photo-card" data-lightbox="2">
+          <div class="photo-frame">
+            <img src="img/03-linglin-cinema.jpg" alt="苓林戲院舊址斑駁鐵捲門入口" />
+            <span class="photo-tag">15:18｜苓林戲院舊址</span>
+          </div>
+          <figcaption>
+            <strong>生鏽捲門與垂落多肉：</strong>
+            昔日《阿嬤的情人夢》亦曾在此取景，早年常見明星隨片登台辦見面會，散場時人潮總把巷口擠得水洩不通。
+          </figcaption>
+        </figure>
+        <figure class="photo-card" data-lightbox="3">
+          <div class="photo-frame">
+            <img src="img/04-cinema-courtyard.jpg" alt="苓林戲院後方連接李家老宅的天井院落" />
+            <span class="photo-tag">15:23｜戲院後門・李家宅院</span>
+          </div>
+          <figcaption>
+            <strong>只隔一道門檻的公私空間：</strong>
+            戲院後門穿過這方小院，正對著經營者李總集家族的客廳玄關——前門賣票放映、後門即是自家飯廳，將娛樂事業與家族生活徹底縫合在一起。
+          </figcaption>
+        </figure>
+      </div>
+
+      <p>
+        曾任龜山鄉長與農田水利會長的<strong>李總集</strong>家族，幾乎撐起了當年龜山的半壁戲院江山（除了苓林戲院，也投資大湖、樂宮與三峽戲院）。走進戲院後方靜謐的小天井，仍可見屋內保留舊時座椅，而戲院正中後門竟筆直通往李家客廳玄關，成了這段地方娛樂史最生動的一筆。
+      </p>
+
+      <h3>圍牆內外與時代轉彎：憲兵限高與「鐵觀音」廠房</h3>
+      <p>
+        轉出老街，沿著<strong>憲兵訓練中心</strong>高聳的灰色圍牆行走，上頭蛇籠依舊。過去因為軍事禁建與限高管制，這一帶始終無法如長庚或 A7 周邊般蓋起摩天住宅，雖然居民曾自嘲有如「次等公民」，卻也意外留住了老街區低矮開闊的天際線。路旁老字號的「真讚羊肉店」一帶，早年則因外省族群聚集，曾有數家專賣「香肉（狗肉）」的店家，還留下街坊打趣「掛羊頭賣狗肉」的時代軼聞。
+      </p>
+
+      <div class="photo-pair">
+        <figure class="photo-card" data-lightbox="4">
+          <div class="photo-frame">
+            <img src="img/05-mp-camp-wall.jpg" alt="憲兵營區圍牆與公西站牌" />
+            <span class="photo-tag">15:30｜憲兵營區外牆</span>
+          </div>
+          <figcaption>
+            <strong>限高線下的老屋輪廓：</strong>
+            軍營圍牆與公西公車站牌並立。軍事管制雖然限制了建築高度，卻也為坪頂保留下難得透氣的街道尺度。
+          </figcaption>
+        </figure>
+        <figure class="photo-card" data-lightbox="5">
+          <div class="photo-frame">
+            <img src="img/06-iron-factories.jpg" alt="道路旁一整排鐵皮廠房與高爾夫練習場網" />
+            <span class="photo-tag">15:38｜廠房街景</span>
+          </div>
+          <figcaption>
+            <strong>茶農改種「鐵觀音」：</strong>
+            茶葉與紅磚退場後，在地長輩幽默戲稱自己改種「鐵觀音（鐵皮廠房）」——一片片鐵皮屋出租給物流與工廠，支撐起新一代的台地經濟。
+          </figcaption>
+        </figure>
+      </div>
+
+      <p>
+        這趟產業鏈的轉換，也寫在當地長輩一生的生計裡：最早是清晨撿牛糞、午後採茶葉；五、六十年代改靠磚窯賺取工資；到了近代不再種茶，農地紛紛蓋起鐵皮廠房出租給企業倉儲——地方長輩便自嘲，以前種茶，現在改種「<strong>鐵觀音</strong>（鐵皮屋）」，從艱苦務農走向收租度日，見證台灣半世紀的經濟變遷。
+      </p>
+    </section>
+
+    <!-- Chapter 5 -->
+    <section class="chapter" id="sec-5">
+      <div class="chapter-header">
+        <span class="chapter-kicker">CHAPTER 05｜大湖水畔的童年與校園</span>
+        <h2>構樹、靶場小蜜蜂與百年大崗國小</h2>
+      </div>
+
+      <p>
+        來到<strong>大湖紀念公園</strong>，先解開許多初訪者的疑問：這座公園其實沒有紀念任何政治事件或名人，純粹是為了留住昔日地名「<strong>坪頂大湖</strong>」的埤塘記憶而命名。過去這口大湖比今日所見更加遼闊，是台地聚落仰賴灌溉與取水的命脈。
+      </p>
+
+      <figure class="photo-card" data-lightbox="6">
+        <div class="photo-frame">
+          <img src="img/07-dahu-pond.jpg" alt="大湖紀念公園湖畔席地聆聽導覽" />
+          <span class="photo-tag">15:44｜大湖紀念公園水岸</span>
+        </div>
+        <figcaption>
+          <strong>水岸長椅上的百年故事：</strong>
+          落羽松與灌木圍繞著縮減後的坪頂大湖。坐在湖畔吹風，很難想像半世紀前不遠處正是軍隊打靶的轟隆靶場。
+        </figcaption>
+      </figure>
+
+      <h3>湖畔一棵「構樹」與靶場邊的「小蜜蜂」童年</h3>
+      <p>
+        公園旁長著台灣極常見的原生植物<strong>「構樹」</strong>（又名鹿仔樹，因早期常採嫩葉餵鹿），樹皮纖維自古便是優質的造紙原料。構樹分雌雄異株，雄花像毛毛蟲般垂墜，雌株則結出一顆顆鮮紅多汁的球形果實，能熬成果醬，成熟落果常把公園路面染成一片紅點。
+      </p>
+      <p>
+        坐在湖畔談起上一代的台地童年，故事卻一點也不悠閒。1960 年代住在大崗靶場邊的孩童（民國 50 年代初出生的一輩），家中田地緊貼著軍隊靶場，流彈偶爾直接打進菜園。孩子們下課後常趁機鑽進靶場撿拾遺落彈殼變賣貼補家用；甚至騎著腳踏車當起「小蜜蜂」，冒險騎進碉堡或靶場邊向阿兵哥兜售食物，有時還得騎遠路到虎頭山環保公園附近的電影外景片場，賣點心給劇組人員。
+      </p>
+      <p>
+        有趣的是，同一代人若住在僅二十分鐘車程外的桃園大廟（景福宮）後方市區，童年記憶卻是理髮廳姐姐帶著去戲院看片、去冰果室吃冰——短短二十分鐘的坡度差距，在當年幾乎是兩個截然不同的世界。
+      </p>
+
+      <figure class="photo-card" data-lightbox="7">
+        <div class="photo-frame">
+          <img src="img/08-dagang-school.jpg" alt="大崗國小外牆日治時期創立沿革歷史牆" />
+          <span class="photo-tag">16:03｜大崗國小外牆校史</span>
+        </div>
+        <figcaption>
+          <strong>百年坪頂第一校：</strong>
+          大崗國小外牆記錄著 1922 年（民國 11 年）創立「龜山公學校坪頂分教場」、1928 年獨立為坪頂公學校的起點，是坪頂地區最早的現代教育搖籃。
+        </figcaption>
+      </figure>
+
+      <p>
+        沿復興一路續行，路過創立於 1922 年的<strong>大崗國小</strong>與坪頂唯一一所公立國中<strong>大崗國中</strong>（由文昌國中分出），街對面則是四代傳承、以古法榨製苦茶油聞名的「文化茶農場」，靜靜守著台地最後一抹農村手藝。
+      </p>
+    </section>
+
+    <!-- Chapter 6 -->
+    <section class="chapter" id="sec-6">
+      <div class="chapter-header">
+        <span class="chapter-kicker">CHAPTER 06｜紅磚巷底的惜字密碼</span>
+        <h2>北桃園的客家印記：1935 聖蹟亭與坪頂大湖福德宮</h2>
+      </div>
+
+      <p>
+        走讀的壓軸，是氣勢恢宏、規模僅次於屏東車城福安宮的<strong>坪頂大湖福德宮</strong>。在廟埕左前方，矗立著一座雕刻精美的石造<strong>「聖蹟亭」</strong>，正面匾額刻著「聖蹟」二字，並留有「昭和十年（1935 年）」的歷史落款。
+      </p>
+
+      <h3>「南客北閩」之外的龜山詔安客</h3>
+      <p>
+        桃園常被簡化為「南客北閩」——南桃園講客語、北桃園講台語，但龜山卻處處藏著打破刻板印象的線索。<strong>聖蹟亭（敬字亭）</strong>正是台灣客家聚落極具代表性的文化建築：先民敬惜文字，凡帶字紙張絕不隨意丟棄，必彙集於亭中焚化，待特定時節再舉行「送聖蹟」儀式將紙灰送入溪流大海。
+      </p>
+      <p>
+        不僅於此，龜山過往亦保有數座聖蹟亭記錄（如早年壽山巖一帶亦曾有敬字亭，至今全桃園留存下來的聖蹟亭多位於中壢、龍潭、大溪與蘆竹五福宮等地，龜山即占其一）。加上地方口述與家族記憶顯示，早年開墾龜山的漢人中，實有大批來自福建<strong>詔安</strong>的客家人（「詔安客」）。因周邊閩南語人口佔多數，許多後代漸趨「福佬化」而不再會說詔安客語，但老輩至今仍清楚交代家訓：「我們是詔安人（kheh-lâng），不是閩南人。」這座 1935 年立下的聖蹟亭，便成了北桃園罕見的客家拓墾鐵證。
+      </p>
+
+      <div class="photo-pair">
+        <figure class="photo-card" data-lightbox="8">
+          <div class="photo-frame">
+            <img src="img/09-shengji-new.jpg" alt="大湖福德宮前公元兩千年重建之石雕聖蹟亭" />
+            <span class="photo-tag">16:08｜福德宮前重建聖蹟亭</span>
+          </div>
+          <figcaption>
+            <strong>留住名號的石雕新亭：</strong>
+            2000 年大湖福德宮重建的石雕聖蹟亭，保留「昭和十年」立亭紀年，刻滿雙龍與文雅聯句，提醒路人龜山深藏的敬字傳統。
+          </figcaption>
+        </figure>
+        <figure class="photo-card" data-lightbox="9">
+          <div class="photo-frame">
+            <img src="img/10-shengji-original.jpg" alt="隱身可莉快炒店後巷的1935年紅磚原座聖蹟亭與餐廳排煙管" />
+            <span class="photo-tag">16:20｜巷底 1935 年原座紅磚古亭</span>
+          </div>
+          <figcaption>
+            <strong>排煙管旁的歷史真身：</strong>
+            鑽進忠義路快炒店旁極窄的防火巷底，才見 1935 年紅磚聖蹟亭本尊——葫蘆寶頂依然完整，爐身卻緊貼著不鏽鋼抽油煙管與方形排風扇，成了全場最震撼的新舊對照。
+          </figcaption>
+        </figure>
+      </div>
+
+      <p>
+        最令走讀隊伍屏息的一幕，發生在轉進「可莉快炒店」旁的極窄小巷之後：原來福德宮前那座雕工華麗的石亭是 2000 年廟方為紀念而重建的複刻亭；<strong>真正建於 1935 年（龜山庄坪頂大湖時期）的紅磚原座聖蹟亭，依然靜靜立在店家後方的狹窄巷弄裡</strong>。斑駁紅磚塔頂端還完整留著錐形寶頂，一旁卻被餐廳的外牆與銀色排煙風管緊緊包夾——近九十年的地方文化史與當代庶民煙火，就這樣在幾十公分的防火巷裡安靜共存。
+      </p>
+
+      <figure class="photo-card" data-lightbox="10">
+        <div class="photo-frame">
+          <img src="img/11-dahu-temple.jpg" alt="坪頂大湖福德宮華麗剪黏飛簷" />
+          <span class="photo-tag">16:24｜坪頂大湖福德宮</span>
+        </div>
+        <figcaption>
+          <strong>紅土台地上的信仰收束：</strong>
+          僅次於屏東車城福安宮的全台第二大土地公廟，華麗剪黏飛簷之下，承載了坪頂從清代開墾、茶園磚窯到現代都會的百年守護。
+        </figcaption>
+      </figure>
+
+      <div class="callout">
+        <div class="callout-title">走讀尾聲：台地的新一代敘事</div>
+        <p>
+          從清代龜崙社、1922 年的坪頂分教場、1935 年的紅磚聖蹟亭、1960 年代吐煙的八卦窯與軍營戲院，到今日高樓林立的 A7、A8 捷運生活圈，龜山坪頂從來不是地圖上空白的邊緣地帶。而在紅磚與高樓的縫隙之間，依然有桃園在地青年與小農持續行動——從文史保存、地方刊物《龜山不是島》，到楓樹坑推動友善農業與食農教育的「三三三市集」（象徵龜山的「三個山」），這片紅土台地的故事，正繼續被細心書寫下去。
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>
+        <strong>紅土台地上的時間摺頁｜2024.03.09 龜山坪頂走讀筆記</strong><br />
+        領路導覽：桃園回龜山陣線／微光生活設計室 &nbsp;·&nbsp; 路線：A7 八卦窯遺址 → A9 → 公西老街 → 坪頂大湖 → 大崗國小 → 大湖福德宮與 1935 聖蹟亭
+      </p>
+      <a href="#top" class="back-top">↑ 回到頁首</a>
+    </div>
+  </footer><nav class="yr-pn" aria-label="其他走讀"><a href="../anken/index.html"><small>‹ 較新的一場・2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="相片檢視">
+    <button class="lightbox-close" id="lbClose" aria-label="關閉">&times;</button>
+    <button class="lightbox-prev" id="lbPrev" aria-label="上一張">&#8249;</button>
+    <div class="lightbox-content">
+      <img id="lbImg" src="" alt="" />
+      <div class="lightbox-caption" id="lbCaption"></div>
+    </div>
+    <button class="lightbox-next" id="lbNext" aria-label="下一張">&#8250;</button>
+  </div>
+
+  <script>
+    const gallery = [
+      {
+        src: "img/01-bagua-kiln.jpg",
+        caption: "【14:15 協和磚廠八卦窯遺址】荒草後方雙支煙囪仍佇立於高樓之間，對照半世紀前的空拍影像，曾有七十餘座磚窯在此見證龜山紅磚年代。"
+      },
+      {
+        src: "img/02-gongxi-street.jpg",
+        caption: "【15:15 公西聚落街景】曾經冰菓室、撞球間、照相館林立的軍營旁街區，如今靜靜退回日常巷弄，只待放慢腳步辨認老屋紋理。"
+      },
+      {
+        src: "img/03-linglin-cinema.jpg",
+        caption: "【15:18 苓林戲院舊址】斑駁鐵捲門與牆緣垂落的植物，記錄了公西「十間戲院」時代的一頁；昔日軍民同擠一廳看片，星光散場後便走進巷弄夜色。"
+      },
+      {
+        src: "img/04-cinema-courtyard.jpg",
+        caption: "【15:23 戲院後門與李家宅院】戲院後門穿過小天井直通李總集家族的客廳玄關——公私領域只隔一道門檻，是早期地方產業與家族情感緊密相依的縮影。"
+      },
+      {
+        src: "img/05-mp-camp-wall.jpg",
+        caption: "【15:30 憲兵營區外牆】蛇籠圍牆內外曾是截然不同的兩個世界：營區帶動周邊商機，也讓今日街廓因軍事限高而留著低矮開闊的天際線。"
+      },
+      {
+        src: "img/06-iron-factories.jpg",
+        caption: "【15:38 廠房街景】當年的紅土茶園與磚窯陸續退場，道路兩側換成整排鐵皮廠房——在地長輩幽默口中「改種鐵觀音」的產業轉身。"
+      },
+      {
+        src: "img/07-dahu-pond.jpg",
+        caption: "【15:44 大湖紀念公園】坐在落羽松環抱的坪頂大湖水岸長椅上，細聽昔日茶農、靶場撿彈殼童年與廠房地主的百年生活史。"
+      },
+      {
+        src: "img/08-dagang-school.jpg",
+        caption: "【16:03 大崗國小外牆校史】創立於 1922 年（龜山公學校坪頂分教場），坪頂第一所小學把台地的百年變遷刻進了紅磚外牆的時間軸裡。"
+      },
+      {
+        src: "img/09-shengji-new.jpg",
+        caption: "【16:08 大湖福德宮前重建聖蹟亭】刻著「聖蹟」與「昭和十年（1935）」落款的敬字亭，見證北桃園鮮為人知的詔安客家文化脈絡。"
+      },
+      {
+        src: "img/10-shengji-original.jpg",
+        caption: "【16:20 巷底 1935 年原座紅磚聖蹟亭】鑽進快炒店旁防火巷底才見真身：1935 年紅磚古亭與現代餐廳排煙管緊貼共存，成了全場最難忘的歷史切片。"
+      },
+      {
+        src: "img/11-dahu-temple.jpg",
+        caption: "【16:24 坪頂大湖福德宮】全台僅次於屏東車城福安宮的第二大土地公廟，華麗剪黏飛簷之下，收束了一整場橫跨百年的坪頂生活記憶。"
+      }
+    ];
+
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lbImg");
+    const lbCaption = document.getElementById("lbCaption");
+    let currentIdx = 0;
+
+    function openLightbox(idx) {
+      currentIdx = (idx + gallery.length) % gallery.length;
+      lbImg.src = gallery[currentIdx].src;
+      lbCaption.textContent = gallery[currentIdx].caption;
+      lb.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lb.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll("[data-lightbox]").forEach((el) => {
+      el.addEventListener("click", () => {
+        openLightbox(parseInt(el.dataset.lightbox, 10));
+      });
+    });
+
+    document.getElementById("lbClose").addEventListener("click", closeLightbox);
+    document.getElementById("lbPrev").addEventListener("click", (e) => {
+      e.stopPropagation();
+      openLightbox(currentIdx - 1);
+    });
+    document.getElementById("lbNext").addEventListener("click", (e) => {
+      e.stopPropagation();
+      openLightbox(currentIdx + 1);
+    });
+    lb.addEventListener("click", (e) => {
+      if (e.target === lb) closeLightbox();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (!lb.classList.contains("open")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") openLightbox(currentIdx - 1);
+      if (e.key === "ArrowRight") openLightbox(currentIdx + 1);
+    });
+
+    // Reading progress & active nav highlight
+    const progressEl = document.getElementById("readProgress");
+    const sections = document.querySelectorAll("section.chapter");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+      const h = document.documentElement;
+      const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      progressEl.style.width = Math.min(100, Math.max(0, pct)) + "%";
+
+      let activeId = "";
+      sections.forEach((sec) => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top <= 140) activeId = sec.id;
+      });
+      navLinks.forEach((a) => {
+        a.classList.toggle("active", a.getAttribute("href") === "#" + activeId);
+      });
+    }, { passive: true });
+  </script>
+</body>
+</html>
