@@ -74,16 +74,15 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--crimson);outline-of
 .etym{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);font-size:13.2px;color:var(--mute)}
 .etym strong{color:var(--gold)}
 
-/* 互動式雙場域解剖盤 */
+/* 雙場域垂直對照盤 */
 .blueprint{margin:34px 0 18px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px}
-.bp-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+.bp-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px;margin-bottom:18px}
 .bp-head h2{font-size:clamp(21px,2.7vw,27px)}
-.bp-tabs{display:flex;flex-wrap:wrap;gap:8px}
-.bp-tabs button{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:8px 16px;border-radius:999px;font:700 13.5px "Noto Sans TC",sans-serif;cursor:pointer;min-height:38px;transition:all .18s}
-.bp-tabs button[aria-selected="true"]{background:var(--crimson);color:#fff;border-color:var(--crimson)}
-.bp-tabs button[data-tab="mosque"][aria-selected="true"]{background:var(--teal);border-color:var(--teal)}
+.bp-head p{margin:0;color:var(--mute);font-size:14.5px}
+.bp-group + .bp-group{margin-top:24px;padding-top:22px;border-top:1px dashed var(--line)}
+.bp-label{display:inline-flex;align-items:center;gap:8px;font:700 14px/1.4 "Noto Sans TC",sans-serif;padding:4px 14px;border-radius:999px;background:var(--soft-r);color:var(--crimson);margin-bottom:12px}
+.bp-group.mosque .bp-label{background:var(--soft-t);color:var(--teal)}
 .bp-panel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.bp-panel[hidden]{display:none}
 .bp-cell{background:var(--bg);border:1px solid var(--line);border-top:3px solid var(--crimson);border-radius:10px;padding:14px 15px}
 .bp-panel.is-mosque .bp-cell{border-top-color:var(--teal)}
 .bp-cell small{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--crimson);margin-bottom:4px}
@@ -275,59 +274,62 @@ footer{max-width:1140px;margin:26px auto 12px;padding:16px max(4vw,18px) 10px;bo
     </aside>
   </section>
 
-  <!-- 互動式雙場域剖面切換盤 -->
-  <section class="blueprint" aria-label="雙場域空間解剖切換">
+  <!-- 雙場域垂直對照盤 -->
+  <section class="blueprint" aria-label="雙場域空間解剖">
     <div class="bp-head">
       <h2>行前對照盤：兩棟建築怎麼讀？</h2>
-      <div class="bp-tabs" role="tablist" aria-label="選擇場館空間結構">
-        <button role="tab" aria-selected="true" data-tab="tibet">蒙藏文化館・1F–4F 垂直動線</button>
-        <button role="tab" aria-selected="false" data-tab="mosque">臺北清真寺・四大建築與信仰密碼</button>
+      <p>蒙藏文化館依樓層垂直展開，臺北清真寺則繞著四個建築與生活密碼運作。</p>
+    </div>
+
+    <div class="bp-group">
+      <div class="bp-label">蒙藏文化館・1F–4F 垂直動線</div>
+      <div class="bp-panel" id="panel-tibet">
+        <div class="bp-cell">
+          <small>1F・TEAS &amp; SYMBOLS</small>
+          <h3>大稻埕茶史 × 轉經輪</h3>
+          <p>當期特展《茶鄉茶香》從大稻埕紅磚洋樓「新芳春茶行」出發，看茶籌、外銷茶箱與龍罐，並與大廳「八吉祥」、「如來八塔」及順時針轉動的五座轉經輪並置。</p>
+        </div>
+        <div class="bp-cell">
+          <small>2F・NOMADIC LIFE</small>
+          <h3>蒙古包 × 西藏黑帳篷</h3>
+          <p>一側是白氈紅紋、四至六人共居且依「北神、東女、西男」分區的白蒙古包與蒙古馬標本；另一側是以黑氂牛毛、點綴稀有白氂牛毛織成的西藏黑帳篷與酥油茶具。</p>
+        </div>
+        <div class="bp-cell">
+          <small>3F・SANCTUARY</small>
+          <h3>章嘉大師紀念堂</h3>
+          <p>脫鞋進入的清淨殿堂：供奉六百年宗喀巴大師牙舍利、七世達賴喇嘛頭髮舍利與「八供」，並展出 2021 年清點佛龕發現的 48 件百年修持法器與玄奘靈骨手札。</p>
+        </div>
+        <div class="bp-cell">
+          <small>4F・EXPERIENCE</small>
+          <h3>蒙藏服飾換裝教室</h3>
+          <p>走讀特別保留半小時換穿體驗：解開藏袍腰帶如何變成移動「大口袋」、已婚婦女腰間的橫條紋「邦典」圍裙，以及一排扣子的蒙古袍。</p>
+        </div>
       </div>
     </div>
 
-    <div class="bp-panel" id="panel-tibet" role="tabpanel">
-      <div class="bp-cell">
-        <small>1F・TEAS &amp; SYMBOLS</small>
-        <h3>大稻埕茶史 × 轉經輪</h3>
-        <p>當期特展《茶鄉茶香》從大稻埕紅磚洋樓「新芳春茶行」出發，看茶籌、外銷茶箱與龍罐，並與大廳「八吉祥」、「如來八塔」及順時針轉動的五座轉經輪並置。</p>
-      </div>
-      <div class="bp-cell">
-        <small>2F・NOMADIC LIFE</small>
-        <h3>蒙古包 × 西藏黑帳篷</h3>
-        <p>一側是白氈紅紋、四至六人共居且依「北神、東女、西男」分區的白蒙古包與蒙古馬標本；另一側是以黑氂牛毛、點綴稀有白氂牛毛織成的西藏黑帳篷與酥油茶具。</p>
-      </div>
-      <div class="bp-cell">
-        <small>3F・SANCTUARY</small>
-        <h3>章嘉大師紀念堂</h3>
-        <p>脫鞋進入的清淨殿堂：供奉六百年宗喀巴大師牙舍利、七世達賴喇嘛頭髮舍利與「八供」，並展出 2021 年清點佛龕發現的 48 件百年修持法器與玄奘靈骨手札。</p>
-      </div>
-      <div class="bp-cell">
-        <small>4F・EXPERIENCE</small>
-        <h3>蒙藏服飾換裝教室</h3>
-        <p>走讀特別保留半小時換穿體驗：解開藏袍腰帶如何變成移動「大口袋」、已婚婦女腰間的橫條紋「邦典」圍裙，以及一排扣子的蒙古袍。</p>
-      </div>
-    </div>
-
-    <div class="bp-panel is-mosque" id="panel-mosque" role="tabpanel" hidden>
-      <div class="bp-cell">
-        <small>DOME・QUBBA</small>
-        <h3>無樑柱奧圖曼穹頂</h3>
-        <p>阿拉伯語稱「Qubba」，圓頂將屋頂重力向四周均勻分散，使可容納 600 人的大殿內部毫無樑柱遮擋，在沒有麥克風的年代也能讓頌禱聲自然迴盪。屋頂黃銅更因歲月氧化成銅綠色。</p>
-      </div>
-      <div class="bp-cell">
-        <small>QIBLAH・MIHRAB &amp; MINBAR</small>
-        <h3>米哈拉布 × 敏拜爾</h3>
-        <p>全球清真寺一律朝向聖城麥加。大殿前方中央凹室為「米哈拉布（Mihrab）」，標示禮拜方位；一旁階梯講壇則稱「敏拜爾（Minbar）」，是伊瑪目／教長演講宣教之處。</p>
-      </div>
-      <div class="bp-cell">
-        <small>MINARET・AZAN</small>
-        <h3>20 公尺喚拜塔</h3>
-        <p>一天五次禮拜前，由聲音洪亮悅耳的喚拜者（Muezzin）高聲吟唱全球統一的阿拉伯語「喚拜詞」，提醒周邊穆斯林放下手邊工作前來禮拜。</p>
-      </div>
-      <div class="bp-cell">
-        <small>DIN・LIFE SOP</small>
-        <h3>從生活細節到 24 小時土葬</h3>
-        <p>伊斯蘭在阿拉伯文稱「Din（生活方式）」，規範食衣住行與生死平等：不食豬肉與血液、男廁不設站立小便斗、過世後 24 小時內裹三層白布土葬且墓碑不超過手掌高。</p>
+    <div class="bp-group mosque">
+      <div class="bp-label">臺北清真寺・四大建築與信仰密碼</div>
+      <div class="bp-panel is-mosque" id="panel-mosque">
+        <div class="bp-cell">
+          <small>DOME・QUBBA</small>
+          <h3>無樑柱奧圖曼穹頂</h3>
+          <p>阿拉伯語稱「Qubba」，圓頂將屋頂重力向四周均勻分散，使可容納 600 人的大殿內部毫無樑柱遮擋，在沒有麥克風的年代也能讓頌禱聲自然迴盪。屋頂黃銅更因歲月氧化成銅綠色。</p>
+        </div>
+        <div class="bp-cell">
+          <small>QIBLAH・MIHRAB &amp; MINBAR</small>
+          <h3>米哈拉布 × 敏拜爾</h3>
+          <p>全球清真寺一律朝向聖城麥加。大殿前方中央凹室為「米哈拉布（Mihrab）」，標示禮拜方位；一旁階梯講壇則稱「敏拜爾（Minbar）」，是伊瑪目／教長演講宣教之處。</p>
+        </div>
+        <div class="bp-cell">
+          <small>MINARET・AZAN</small>
+          <h3>20 公尺喚拜塔</h3>
+          <p>一天五次禮拜前，由聲音洪亮悅耳的喚拜者（Muezzin）高聲吟唱全球統一的阿拉伯語「喚拜詞」，提醒周邊穆斯林放下手邊工作前來禮拜。</p>
+        </div>
+        <div class="bp-cell">
+          <small>DIN・LIFE SOP</small>
+          <h3>從生活細節到 24 小時土葬</h3>
+          <p>伊斯蘭在阿拉伯文稱「Din（生活方式）」，規範食衣住行與生死平等：不食豬肉與血液、男廁不設站立小便斗、過世後 24 小時內裹三層白布土葬且墓碑不超過手掌高。</p>
+        </div>
       </div>
     </div>
   </section>
@@ -842,19 +844,6 @@ footer{max-width:1140px;margin:26px auto 12px;padding:16px max(4vw,18px) 10px;bo
 
 <script>
 {
-  /* 雙場域對照盤分頁切換 */
-  const tabs=[...document.querySelectorAll('.bp-tabs button')];
-  const pT=document.getElementById('panel-tibet');
-  const pM=document.getElementById('panel-mosque');
-  tabs.forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      tabs.forEach(b=>b.setAttribute('aria-selected',String(b===btn)));
-      const showMosque=btn.dataset.tab==='mosque';
-      pT.hidden=showMosque;
-      pM.hidden=!showMosque;
-    });
-  });
-
   /* 燈箱檢視 */
   const btns=[...document.querySelectorAll('main button[data-ph]')];
   const items=btns.map((b,idx)=>{
