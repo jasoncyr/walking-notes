@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>蒙藏文化大揭密 × 臺北清真寺：多元文化走讀（2024/11/07 打開台大）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 立冬上午跟著「打開台大」從青田街八巷三號的藏傳佛教駐錫地，步行十分鐘走進新生南路二段六十年的奧圖曼式清真寺，在不到三個小時內跨越高原與沙漠兩座文化現場
+   IDEA: 以「高原朱砂 × 清真寺銅綠」雙境對照為主軸，用互動式樓層／空間密碼盤、六格立冬限定現場卡與四種節奏交替的策展版型，記下每一個只有親自走進現場才遇得到的瞬間
+   PICTURE: 臺北清真寺禮拜大殿全景（130223.jpg）——金色條紋紅地毯一路延伸至面向麥加的米哈拉布與敏拜爾
+   COLOUR and TYPE: 藏袍朱砂紅 #a83824（文章關鍵詞主色）、清真寺銅綠 #1e6b63、法器赭金 #9f6a20、石灰岩紙白 #f5f3ee；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 雙境徽記全景 Hero ＋ 路線參數帶 → 雙欄導言與雙殿時空座標卡 → 互動式「蒙藏 4F 剖面 × 清真寺空間 SOP」切換盤 → 六格立冬限定巧合矩陣 → 10 站四種創意交替版型 → 文化詞彙小辭典與後記 */
+:root{
+  color-scheme:light dark;
+  --bg:light-dark(#f5f3ee,#121516);
+  --card:light-dark(#fdfcf8,#191e20);
+  --ink:light-dark(#1a1e20,#ece9e1);
+  --mute:light-dark(#5b6266,#9ba3a7);
+  --crimson:light-dark(#a83824,#eb8873);
+  --teal:light-dark(#1e6b63,#6dc2b7);
+  --gold:light-dark(#9f6a20,#dfb163);
+  --soft-r:light-dark(#fae9e5,#2c1c19);
+  --soft-t:light-dark(#e3f1ef,#172927);
+  --soft-g:light-dark(#f6efe1,#282217);
+  --line:light-dark(#ddd6c9,#2b3235);
+}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:18px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.82 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,h4{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+a{color:var(--crimson)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--crimson);outline-offset:2px}
+
+/* Hero：禮拜大殿全景 + 雙色徽記 */
+.hero{position:relative;min-height:clamp(420px,64vh,620px);display:flex;align-items:flex-end;background:#141b1c;color:#f7f4ec;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,20,21,.22) 0%,rgba(14,20,21,.56) 46%,rgba(12,16,18,.95) 100%)}
+.hero-in{position:relative;z-index:1;width:100%;max-width:1140px;margin:0 auto;padding:48px max(4vw,18px) 36px}
+.dual-seal{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:14px;font-size:12.5px;font-weight:700;letter-spacing:.08em}
+.dual-seal span{padding:4px 12px;border-radius:999px;background:rgba(168,56,36,.88);color:#fff}
+.dual-seal span.t{background:rgba(30,107,99,.9)}
+.dual-seal span.d{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#f3dfc0}
+.hero h1{font-size:clamp(30px,5.2vw,52px);line-height:1.14;font-weight:800}
+.hero h1 small{display:block;font-size:clamp(18px,2.7vw,27px);font-weight:600;color:#ebd8b8;margin-top:8px}
+.hero-sub{margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.74;color:rgba(247,244,236,.92)}
+
+/* 路線參數條 */
+.telemetry{background:#121a1b;color:#d6dede;border-top:1px solid rgba(255,255,255,.1)}
+.tel-in{max-width:1140px;margin:0 auto;padding:15px max(4vw,18px);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px 22px;font-size:14px}
+.tel-in b{display:block;font-size:11.5px;letter-spacing:.09em;color:#8ad4ca;margin-bottom:2px}
+.tel-in a{color:#f5f2ea;text-decoration:underline;text-underline-offset:3px}
+
+.wrap{max-width:1140px;margin:0 auto;padding:0 max(4vw,18px)}
+
+/* 雙軸導言＋雙殿座標卡 */
+.prologue{display:grid;grid-template-columns:1.16fr .84fr;gap:30px;padding:40px 0 30px;border-bottom:1px solid var(--line)}
+.prose-lead h2{font-size:clamp(22px,3vw,30px);line-height:1.3;margin-bottom:14px}
+.prose-lead p{margin:.7em 0;font-size:16.2px}
+.prose-lead b,.copy b,.copy strong,.note b,.panel-body b{color:var(--crimson);font-weight:700}
+
+.sanctuaries{display:grid;gap:14px;align-self:start}
+.sanc-card{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--crimson);border-radius:12px;padding:18px 20px}
+.sanc-card.mosque{border-left-color:var(--teal)}
+.sanc-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}
+.sanc-top h3{font-size:18.5px}
+.sanc-top span{font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--soft-r);color:var(--crimson)}
+.sanc-card.mosque .sanc-top span{background:var(--soft-t);color:var(--teal)}
+.sanc-card p{margin:0;font-size:14.2px;color:var(--mute);line-height:1.68}
+.sanc-card p b{color:var(--ink)}
+.etym{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);font-size:13.2px;color:var(--mute)}
+.etym strong{color:var(--gold)}
+
+/* 互動式雙場域解剖盤 */
+.blueprint{margin:34px 0 18px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px}
+.bp-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+.bp-head h2{font-size:clamp(21px,2.7vw,27px)}
+.bp-tabs{display:flex;flex-wrap:wrap;gap:8px}
+.bp-tabs button{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:8px 16px;border-radius:999px;font:700 13.5px "Noto Sans TC",sans-serif;cursor:pointer;min-height:38px;transition:all .18s}
+.bp-tabs button[aria-selected="true"]{background:var(--crimson);color:#fff;border-color:var(--crimson)}
+.bp-tabs button[data-tab="mosque"][aria-selected="true"]{background:var(--teal);border-color:var(--teal)}
+.bp-panel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.bp-panel[hidden]{display:none}
+.bp-cell{background:var(--bg);border:1px solid var(--line);border-top:3px solid var(--crimson);border-radius:10px;padding:14px 15px}
+.bp-panel.is-mosque .bp-cell{border-top-color:var(--teal)}
+.bp-cell small{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--crimson);margin-bottom:4px}
+.bp-panel.is-mosque .bp-cell small{color:var(--teal)}
+.bp-cell h3{font-size:17px;margin-bottom:6px;line-height:1.35}
+.bp-cell p{margin:0;font-size:14px;color:var(--mute);line-height:1.62}
+
+/* 本場限定巧合矩陣 */
+.moments{padding:26px 0 18px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 18px;margin-bottom:16px}
+.sec-head h2{font-size:clamp(22px,2.9vw,28px)}
+.sec-head p{margin:0;color:var(--mute);font-size:14.8px}
+.mom-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.mom{display:flex;flex-direction:column;gap:5px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--crimson);border-radius:12px;padding:15px 17px;transition:transform .2s,box-shadow .2s}
+.mom:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.07)}
+.mom.t{border-top-color:var(--teal)}
+.mom.g{border-top-color:var(--gold)}
+.mom i{align-self:flex-start;font-style:normal;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--soft-r);color:var(--crimson)}
+.mom.t i{background:var(--soft-t);color:var(--teal)}
+.mom.g i{background:var(--soft-g);color:var(--gold)}
+.mom b{font-family:"Noto Serif TC",serif;font-size:16.8px;line-height:1.4}
+.mom span{font-size:13.8px;color:var(--mute);line-height:1.6}
+
+/* 10 站跳轉列 */
+.route-pills{margin:24px 0 12px;padding:16px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.rp-title{font-size:13px;font-weight:700;letter-spacing:.07em;color:var(--mute);margin-bottom:10px}
+.rp-list{display:flex;flex-wrap:wrap;gap:8px}
+.rp-list a{display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);text-decoration:none;font-size:13.5px;min-height:36px;transition:border-color .16s}
+.rp-list a:hover{border-color:var(--crimson)}
+.rp-list a span{font-weight:700;color:var(--crimson)}
+.rp-list a.m span{color:var(--teal)}
+
+/* 篇章抬頭 */
+.chapter{margin:46px 0 8px;padding:18px 22px;border-radius:12px;background:var(--soft-r);border-left:5px solid var(--crimson);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 20px}
+.chapter.mosque{background:var(--soft-t);border-left-color:var(--teal)}
+.chapter.walk{background:var(--soft-g);border-left-color:var(--gold)}
+.chapter small{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--crimson)}
+.chapter.mosque small{color:var(--teal)}
+.chapter.walk small{color:var(--gold)}
+.chapter h2{font-size:clamp(22px,3vw,29px)}
+.chapter p{margin:0;font-size:14.5px;color:var(--mute);max-width:46ch}
+
+/* 共用站點元件與照片按鈕 */
+.station{padding:36px 0;border-bottom:1px solid var(--line)}
+.kicker{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px}
+.s-no{font-family:"Noto Serif TC",serif;font-weight:800;font-size:13.5px;color:#fff;background:var(--crimson);padding:2px 10px;border-radius:4px}
+.station.is-mosque .s-no{background:var(--teal)}
+.station.is-walk .s-no{background:var(--gold)}
+.s-time{font-size:13.5px;color:var(--mute);font-weight:500}
+.s-tag{font-size:12px;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--soft-r);color:var(--crimson)}
+.station.is-mosque .s-tag{background:var(--soft-t);color:var(--teal)}
+.station.is-walk .s-tag{background:var(--soft-g);color:var(--gold)}
+
+.copy h3{font-size:clamp(21px,2.8vw,27px);line-height:1.32;margin-bottom:12px}
+.copy p{margin:.72em 0;font-size:16.2px}
+.copy ul{margin:10px 0;padding-left:1.25em}
+.copy li{margin:.42em 0}
+.copy li::marker{color:var(--crimson)}
+.station.is-mosque .copy li::marker{color:var(--teal)}
+
+.note{margin-top:16px;padding:14px 17px;background:var(--soft-r);border-left:4px solid var(--crimson);border-radius:0 10px 10px 0;font-size:14.8px;line-height:1.7}
+.note.t{background:var(--soft-t);border-left-color:var(--teal)}
+.note.t b{color:var(--teal)}
+.note.g{background:var(--soft-g);border-left-color:var(--gold)}
+.note.g b{color:var(--gold)}
+
+.fig{margin:0}
+.fig button{all:unset;cursor:pointer;display:block;width:100%;border-radius:10px;overflow:hidden;background:var(--line);box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.fig img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;transition:transform .35s ease}
+.fig.wide img{aspect-ratio:16/10}
+.fig.tall img{aspect-ratio:3/4;object-position:center 22%}
+.fig button:hover img{transform:scale(1.025)}
+.fig figcaption{margin-top:9px;font-size:13.8px;line-height:1.6;color:var(--mute)}
+.fig figcaption b{color:var(--ink);font-weight:700}
+
+/* 四種創意版型 */
+/* 1. 雙欄圖文對照（可翻轉） */
+.lay-duo{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:start}
+.lay-duo.flip > :first-child{order:2}
+.lay-duo.flip > :last-child{order:1}
+.duo-photos{display:grid;gap:18px;margin-top:22px;grid-template-columns:repeat(2,minmax(0,1fr))}
+
+/* 2. 策展三聯陳列板 + 雙欄深度筆記 */
+.lay-trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:20px}
+.lay-two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;align-items:start}
+
+/* 3. 全景大橫幅 + 左右雙極對比卡（蒙古包 vs 西藏黑帳篷） */
+.pano-top{margin-bottom:22px}
+.compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:20px}
+.compare-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.compare-card h4{font-size:19px;margin-bottom:10px;color:var(--crimson)}
+.compare-card.tibetan h4{color:var(--gold)}
+
+/* 4. 直式紀實膠片框 + 引言牆 */
+.lay-tall-feature{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:start}
+.quote-wall{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:12px;padding:18px 20px;margin-top:16px}
+.quote-wall blockquote{margin:0;font-family:"Noto Serif TC",serif;font-size:18px;line-height:1.6;color:var(--ink)}
+.quote-wall cite{display:block;margin-top:8px;font-style:normal;font-size:13px;color:var(--teal);font-weight:700}
+
+/* 詞彙小辭典 + 結語 */
+.glossary{margin:40px 0 22px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
+.glossary h2{font-size:clamp(21px,2.8vw,27px);margin-bottom:6px}
+.glossary > p{margin:0 0 18px;color:var(--mute);font-size:14.8px}
+.gl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.gl-item{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.gl-item dt{font-family:"Noto Serif TC",serif;font-weight:800;font-size:17px;color:var(--crimson);margin-bottom:4px}
+.gl-item.t dt{color:var(--teal)}
+.gl-item dd{margin:0;font-size:14px;color:var(--mute);line-height:1.65}
+
+.coda{margin:24px 0 20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.coda-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.coda-card h3{font-size:18.5px;color:var(--crimson);margin-bottom:8px}
+.coda-card.t h3{color:var(--teal)}
+.coda-card p{margin:0;font-size:15px;line-height:1.72}
+
+footer{max-width:1140px;margin:26px auto 12px;padding:16px max(4vw,18px) 10px;border-top:1px solid var(--line);color:var(--mute);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 18px}
+
+/* Lightbox */
+#lb{position:fixed;inset:0;z-index:40;background:rgba(10,12,15,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:16px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:12px;align-items:center;color:#eee;margin-top:12px;font-size:15px;max-width:900px;text-align:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer;flex:none}
+#lb button:hover{background:#333}
+
+@media(max-width:900px){
+  .prologue,.bp-panel,.mom-grid,.lay-duo,.lay-two-col,.compare-grid,.lay-tall-feature,.coda{grid-template-columns:1fr;gap:20px}
+  .lay-duo.flip > :first-child,.lay-duo.flip > :last-child{order:initial}
+  .lay-trio,.duo-photos{grid-template-columns:1fr}
+  .fig.tall img{aspect-ratio:4/3;object-position:center}
+}
+@media(prefers-reduced-motion:reduce){
+  .fig img,.mom{transition:none}
+  .mom:hover,.fig button:hover img{transform:none}
+}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・73 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html" aria-current="page"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html" aria-current="page"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></details><span>2024/11/07</span></div>
+
+<header class="hero" id="top">
+  <img class="hero-bg" src="img/130223.jpg" alt="臺北清真寺禮拜大殿全景，鋪滿條紋紅色地毯指向米哈拉布與敏拜爾講壇">
+  <div class="hero-in">
+    <div class="dual-seal">
+      <span>蒙藏文化館・青田街</span>
+      <span class="t">臺北清真寺・新生南路</span>
+      <span class="d">2024.11.07 立冬 · 打開台大</span>
+    </div>
+    <h1>蒙藏文化大揭密 × 臺北清真寺<small>從高原駐錫地到奧圖曼穹頂的兩小時四十五分鐘跨文化走讀</small></h1>
+    <p class="hero-sub">離臺大不遠的大安森林公園周邊，藏著兩個平常難得同時推開門的平行世界：上午十點在青田街八巷三號脫鞋走進七世章嘉大師紀念堂、踩在特展《茶鄉茶香》倒數四天的展期尾巴體驗藏袍；正午步行跨過新生南路，正好撞見臺大印尼博士生在全臺最大清真寺高聲喚拜，以及一場依伊斯蘭法舉行的亡人禮拜。</p>
+  </div>
+</header>
+
+<div class="telemetry">
+  <div class="tel-in">
+    <div><b>日期與時間</b>2024 年 11 月 7 日（四・立冬）10:00–12:45</div>
+    <div><b>活動規模</b>20 人小團（國立臺灣大學學生會「打開台大」主辦）</div>
+    <div><b>第一站集合點</b><a href="https://www.google.com/maps/search/%E8%92%99%E8%97%8F%E6%96%87%E5%8C%96%E9%A4%A8" target="_blank" rel="noopener">蒙藏文化館正門（青田街 8 巷 3 號）</a></div>
+    <div><b>第二站終點</b><a href="https://www.google.com/maps/search/%E8%87%BA%E5%8C%97%E6%B8%85%E7%9C%9F%E5%AF%BA" target="_blank" rel="noopener">臺北清真寺（新生南路二段 62 號）</a></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <!-- 雙軸導言與雙殿空間故事 -->
+  <section class="prologue">
+    <div class="prose-lead">
+      <h2>距離臺大不到十分鐘路程，卻從高原草原一路走到阿拉伯</h2>
+      <p>臺灣是個多元族群共居的島嶼，而緊鄰大安森林公園的青田街與新生南路一帶，正是最意想不到的微縮樣本。從<b>浩瀚的蒙古草原</b>、<b>高峻的西藏高原</b>，到高聳<b>20 公尺喚拜塔</b>與壯闊禮拜堂的<b>伊斯蘭世界</b>，若不是跟隨著導覽推開大門，多數路人每天經過這兩棟建築，卻少有機會真正看清裡面保存了什麼樣的生活與信仰。</p>
+      <p>這場「<b>多元文化走讀</b>」由臺大學生會「<b>打開台大 Open House NTUs</b>」串聯兩個極具分量的文化現場：前半場進入四層樓的<b>蒙藏文化館</b>，依序拆解「茶文化特展」、蒙古包與西藏氂牛黑帳篷、不輕易對外細述的<b>七世章嘉大師紀念堂</b>，再到四樓親自換穿蒙藏傳統服飾；後半場沿著街廓散步十分鐘抵達<b>臺北清真寺</b>，在專業導覽帶領下聽懂一神信仰的生活律法、外交史密辛，並剛巧在正午時刻站上大殿門檻見證現場禮拜。</p>
+    </div>
+
+    <aside class="sanctuaries" aria-label="兩大空間身世卡">
+      <div class="sanc-card">
+        <div class="sanc-top">
+          <h3>蒙藏文化館</h3>
+          <span>藏傳佛教駐錫地</span>
+        </div>
+        <p>前身為藏傳佛教<b>七世章嘉大師</b>戰後隨國民政府來臺時的<b>駐錫地</b>，門牌「<b>青田街 8 巷 3 號</b>」巧合對應藏傳佛教的「八吉祥」與「三寶」。而後由蒙藏委員會連同庭園整建為三層以上、揉合西藏紅白藍黃語彙的文化館，典藏蒙古包、藏族文物與大師遺留法器。</p>
+        <div class="etym"><strong>詞源註解・駐錫：</strong>原指懸掛「錫杖」——僧人巡歷步行時用以驅趕禽獸或叩門乞食之杖，後引申為僧人停留居住之處。</div>
+      </div>
+
+      <div class="sanc-card mosque">
+        <div class="sanc-top">
+          <h3>臺北清真寺</h3>
+          <span>1960 年外交地標</span>
+        </div>
+        <p>落成於 <b>1960 年</b>，採<b>奧圖曼式伊斯蘭建築</b>設計並揉合臺灣本土幾何花磚與鏤空窗花。1957 年時任外交部長<b>葉公超</b>於聯合國大會期間與<b>沙烏地阿拉伯國王紹德</b>同住一間飯店，深感中東元首訪臺須有合適禮拜空間，返臺後結合白崇禧等穆斯林官員於三年內極速完工，長期肩負外交窗口角色。</p>
+        <div class="etym"><strong>詞源註解・阿訇（音：轟，Akhund）：</strong>古波斯語彙，直譯為宣教師、老師或學者，是伊斯蘭教對宗教場所首領的尊稱；早年臺北清真寺阿訇甚至長期由外交部官員兼任。</div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- 互動式雙場域剖面切換盤 -->
+  <section class="blueprint" aria-label="雙場域空間解剖切換">
+    <div class="bp-head">
+      <h2>行前對照盤：兩棟建築怎麼讀？</h2>
+      <div class="bp-tabs" role="tablist" aria-label="選擇場館空間結構">
+        <button role="tab" aria-selected="true" data-tab="tibet">蒙藏文化館・1F–4F 垂直動線</button>
+        <button role="tab" aria-selected="false" data-tab="mosque">臺北清真寺・四大建築與信仰密碼</button>
+      </div>
+    </div>
+
+    <div class="bp-panel" id="panel-tibet" role="tabpanel">
+      <div class="bp-cell">
+        <small>1F・TEAS &amp; SYMBOLS</small>
+        <h3>大稻埕茶史 × 轉經輪</h3>
+        <p>當期特展《茶鄉茶香》從大稻埕紅磚洋樓「新芳春茶行」出發，看茶籌、外銷茶箱與龍罐，並與大廳「八吉祥」、「如來八塔」及順時針轉動的五座轉經輪並置。</p>
+      </div>
+      <div class="bp-cell">
+        <small>2F・NOMADIC LIFE</small>
+        <h3>蒙古包 × 西藏黑帳篷</h3>
+        <p>一側是白氈紅紋、四至六人共居且依「北神、東女、西男」分區的白蒙古包與蒙古馬標本；另一側是以黑氂牛毛、點綴稀有白氂牛毛織成的西藏黑帳篷與酥油茶具。</p>
+      </div>
+      <div class="bp-cell">
+        <small>3F・SANCTUARY</small>
+        <h3>章嘉大師紀念堂</h3>
+        <p>脫鞋進入的清淨殿堂：供奉六百年宗喀巴大師牙舍利、七世達賴喇嘛頭髮舍利與「八供」，並展出 2021 年清點佛龕發現的 48 件百年修持法器與玄奘靈骨手札。</p>
+      </div>
+      <div class="bp-cell">
+        <small>4F・EXPERIENCE</small>
+        <h3>蒙藏服飾換裝教室</h3>
+        <p>走讀特別保留半小時換穿體驗：解開藏袍腰帶如何變成移動「大口袋」、已婚婦女腰間的橫條紋「邦典」圍裙，以及一排扣子的蒙古袍。</p>
+      </div>
+    </div>
+
+    <div class="bp-panel is-mosque" id="panel-mosque" role="tabpanel" hidden>
+      <div class="bp-cell">
+        <small>DOME・QUBBA</small>
+        <h3>無樑柱奧圖曼穹頂</h3>
+        <p>阿拉伯語稱「Qubba」，圓頂將屋頂重力向四周均勻分散，使可容納 600 人的大殿內部毫無樑柱遮擋，在沒有麥克風的年代也能讓頌禱聲自然迴盪。屋頂黃銅更因歲月氧化成銅綠色。</p>
+      </div>
+      <div class="bp-cell">
+        <small>QIBLAH・MIHRAB &amp; MINBAR</small>
+        <h3>米哈拉布 × 敏拜爾</h3>
+        <p>全球清真寺一律朝向聖城麥加。大殿前方中央凹室為「米哈拉布（Mihrab）」，標示禮拜方位；一旁階梯講壇則稱「敏拜爾（Minbar）」，是伊瑪目／教長演講宣教之處。</p>
+      </div>
+      <div class="bp-cell">
+        <small>MINARET・AZAN</small>
+        <h3>20 公尺喚拜塔</h3>
+        <p>一天五次禮拜前，由聲音洪亮悅耳的喚拜者（Muezzin）高聲吟唱全球統一的阿拉伯語「喚拜詞」，提醒周邊穆斯林放下手邊工作前來禮拜。</p>
+      </div>
+      <div class="bp-cell">
+        <small>DIN・LIFE SOP</small>
+        <h3>從生活細節到 24 小時土葬</h3>
+        <p>伊斯蘭在阿拉伯文稱「Din（生活方式）」，規範食衣住行與生死平等：不食豬肉與血液、男廁不設站立小便斗、過世後 24 小時內裹三層白布土葬且墓碑不超過手掌高。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 本場限定亮點 -->
+  <section class="moments" aria-label="立冬當天限定現場">
+    <div class="sec-head">
+      <h2>要這一天推開門，才看得到、聽得到的現場巧合</h2>
+      <p>活動流程表上只寫著兩座館舍，但 2024 年 11 月 7 日立冬這天，現場接連發生了六個無法複製的瞬間。</p>
+    </div>
+    <div class="mom-grid">
+      <a class="mom" href="#s1"><i>展期最後四天</i><b>只剩這週的《茶鄉茶香》實景茶行</b><span>半年一換的特展 11/10 便撤展，這天剛好壓線看見大稻埕「新芳春茶行」窗景與蒙藏茶具同堂。</span></a>
+      <a class="mom g" href="#s5"><i>平日難得解鎖</i><b>週四上午直上四樓試穿＋立冬「吉祥結」</b><span>免費服飾體驗平日限特定週六午後並需預約，走讀破例加開；桌面月曆在 11/7 立冬恰好對上「吉祥結」。</span></a>
+      <a class="mom" href="#s4"><i>48 件百年法器</i><b>2021 年清點佛龕才現世的宗喀巴牙舍利</b><span>弟子長年護持使三樓紀念堂一塵不染，還聽見董顯光大使致函迎請玄奘靈骨與第八世轉世的秘辛。</span></a>
+      <a class="mom t" href="#s8"><i>剛好差一點就錯過</i><b>正午撞見臺大印尼博士生現場「喚拜」</b><span>導覽才剛說完一天五拜，12:08 晌禮時間一到，就讀臺大博班的印尼籍喚拜者便站上大殿前方吟唱喚拜詞。</span></a>
+      <a class="mom t" href="#s8"><i>極罕見的現場見證</i><b>巧遇依 24 小時律法舉行的「亡人禮拜」</b><span>「你們來得很巧也很不巧」——當天正好有穆斯林教親辭世，現場直擊不分貧富、24 小時內下葬前的送行儀式。</span></a>
+      <a class="mom g" href="#s7"><i>佈告欄的真實張力</i><b>「十個回回九個馬」與五屆董事連任傳單</b><span>大廳佈告欄貼著質疑中國回教協會「閉門操作」的匿名表格，上頭五屆名單一字排開，竟有五位董事姓馬。</span></a>
+    </div>
+  </section>
+
+  <!-- 10 站路線索引 -->
+  <nav class="route-pills" aria-label="走讀 10 站索引">
+    <div class="rp-title">青田街 8 巷 3 號 → 新生南路二段 62 號｜10 站走讀動線（點選跳轉）</div>
+    <div class="rp-list">
+      <a href="#s1"><span>01</span>藏式門牌「8 巷 3 號」與開場問候</a>
+      <a href="#s2"><span>02</span>1F 大稻埕茶史、茶籌與轉經輪</a>
+      <a href="#s3"><span>03</span>2F 蒙古包 × 西藏黑氂牛帳篷</a>
+      <a href="#s4"><span>04</span>3F 脫鞋進章嘉大師紀念堂</a>
+      <a href="#s5"><span>05</span>4F 蒙藏服飾換裝 × 立冬吉祥結</a>
+      <a href="#s6"><span>06</span>十分鐘步行：告別藏式立面</a>
+      <a class="m" href="#s7"><span>07</span>清真寺大廳與佈告欄爭議</a>
+      <a class="m" href="#s8"><span>08</span>正午晌禮喚拜 × 亡人禮拜</a>
+      <a class="m" href="#s9"><span>09</span>無樑柱大穹頂與米哈拉布</a>
+      <a class="m" href="#s10"><span>10</span>1960 年外交臺階與三十國縮影</a>
+    </div>
+  </nav>
+
+  <!-- PART I -->
+  <div class="chapter">
+    <div>
+      <small>PART I · 10:00–11:45 · 蒙藏文化館（青田街 8 巷 3 號）</small>
+      <h2>推開青田街紅藍白門樓：從一碗酥油茶走到活佛紀念堂</h2>
+    </div>
+    <p>原為七世章嘉大師駐錫的日式宅邸，改建後四層樓各有乾坤，連門牌數字都藏著吉祥密碼。</p>
+  </div>
+
+  <!-- STOP 1: 雙欄開篇 -->
+  <article class="station" id="s1">
+    <div class="lay-duo">
+      <div class="copy">
+        <div class="kicker">
+          <span class="s-no">STOP 01</span>
+          <span class="s-time">10:00–10:12 · 蒙藏文化館正門與一樓大廳</span>
+          <span class="s-tag">展期倒數四天</span>
+        </div>
+        <h3>「札西德勒」與「賽音白努」：青田街 8 巷 3 號的吉祥密碼</h3>
+        <p>十點整在青田街的紅白藍黃藏式建築前集合。「打開台大」團隊先破題：不同於以往帶大家進臺大總圖地下書庫或試題闈場，這條多元文化走讀特意把視野拉出校園圍牆，鎖定鄰近卻極少走入的兩座文化館舍。</p>
+        <p>一進門，館方導覽老師便教大家兩句在地問候語——藏語的「<b>札西德勒</b>」（吉祥如意），以及蒙古語的「<b>賽音白努</b>」（你好）。老師笑指門牌「<b>青田街 8 巷 3 號</b>」，這對數字在藏傳佛教裡恰好大吉大利：「<b>8</b>」象徵八吉祥與如來八塔，「<b>3</b>」代表佛、法、僧三寶；這塊當年由<b>七世章嘉大師</b>親挑的風水寶地，在民國 38 年（1949）他隨國民政府來臺後便是駐錫之處，原址為日式樓房，大師圓寂後為了妥善典藏遺物，才改建為今日所見的三層以上藏式建築。</p>
+        <div class="note"><b>這週來才剛好壓線看到：</b>館內一、二樓展廳半年換展一次，11/7 這天剛好是特展《<b>茶鄉茶香——從臺灣到蒙古・西藏</b>》（2024/6/15–11/10）的<b>最後四天展期</b>。再晚幾天來，整層大稻埕老茶行布景就會全部撤換。</div>
+      </div>
+      <figure class="fig">
+        <button data-ph="094338" aria-label="放大照片：青田街 8 巷 3 號蒙藏文化館外觀">
+          <img loading="lazy" src="img/094338.jpg" alt="蒙藏文化館白牆、藍色梯形窗框與紅檐立面">
+        </button>
+        <figcaption><b>藏在青田街日式宿舍群裡的藏式建築</b>：白牆搭配梯形藍窗框與紅色廊柱，路牌清清楚楚寫著「青田街八巷三號」。</figcaption>
+      </figure>
+    </div>
+    <div class="duo-photos">
+      <figure class="fig">
+        <button data-ph="095542" aria-label="放大照片：一樓茶鄉茶香特展紅磚拱門入口">
+          <img loading="lazy" src="img/095542.jpg" alt="茶鄉茶香特展入口紅磚拱門與展期海報">
+        </button>
+        <figcaption><b>倒數四天的特展拱門</b>：海報寫著展期只到 2024/11/10，穿過仿大稻埕亭仔腳的紅磚拱門，左旁便是五座轉經輪。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="101329" aria-label="放大照片：導覽員在一樓展廳講解臺灣茶史">
+          <img loading="lazy" src="img/101329.jpg" alt="穿紅背心的館方導覽員在仿新芳春茶行窗景前為走讀學員導覽">
+        </button>
+        <figcaption><b>蒙藏文化館裡的大稻埕茶行</b>：紅背心導覽老師先從四百年前荷蘭時期講起，把臺灣茶如何賣到全世界講成一樓序曲。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 2: 三聯陳列板 -->
+  <article class="station" id="s2">
+    <div class="kicker">
+      <span class="s-no">STOP 02</span>
+      <span class="s-time">10:13–10:28 · 一樓《茶鄉茶香》與宗教文物走廊</span>
+      <span class="s-tag">三聯策展陳列</span>
+    </div>
+    <div class="lay-two-col">
+      <div class="copy">
+        <h3>「茶籌」當大稻埕代幣，與不可直接碰觸的轉經輪</h3>
+        <p>為什麼蒙藏文化館一樓要大費周章仿建<b>大稻埕紅磚洋樓</b>與<b>六角紅磚地面</b>？導覽老師指著取材自<b>新芳春茶行</b>的木格窗景解釋，從清代烏龍茶外銷的黃金時代（1862 年英商杜德來臺設精製廠以 <b>Formosa Oolong Tea</b> 銷往歐美）到日治與民國時期，茶葉曾是臺灣與高原民族共同的日常語言。</p>
+        <p>展櫃裡最特別的一枚小小鐵片叫「<b>茶籌</b>」（籌碼的籌）——早年茶行女工與臨時工並非天天上工，每天下工領一片茶籌，月底再憑籌領薪水；鼎盛時期的大稻埕，這片「茶籌」甚至可以直接在街區商家<b>當作代幣兌換日用品</b>。一旁還有配有鎖匙、依歐洲貴族要求畫上家徽與姓氏縮寫的高級木胎漆器茶箱，主人平日鎖著不讓人輕易泡喝，只有貴賓上門才開箱調和數種茶葉款待。</p>
+      </div>
+      <div class="copy">
+        <p>穿出茶行區回到走廊，一側是代表釋迦牟尼佛從誕生到涅槃八大事蹟的「<b>如來八塔</b>」與「<b>八吉祥</b>」圖樣，另一側則是五座銅製「<b>轉經輪</b>」。老師特別提醒轉經輪的禮儀：經輪內部裝藏著卷軸經文，每轉一圈等同誦念一次經文，但許多人習慣用手直接拍轉經輪筒身——「<b>其實不能直接碰上面的金屬經輪，要轉動下方這截木頭手柄，而且只能順時針轉</b>。」</p>
+        <div class="note g"><b>現場才注意到的時間感：</b>如來八塔展櫃下方的小電子鐘定格在 <b>10:25</b>，距離換展撤櫃僅剩數日，讓這些原本各自獨立的茶器與法器只在這一季短暫並肩。</div>
+      </div>
+    </div>
+    <div class="lay-trio">
+      <figure class="fig">
+        <button data-ph="102221" aria-label="放大照片：大稻埕茶行木窗與磚造茶灶">
+          <img loading="lazy" src="img/102221.jpg" alt="復刻大稻埕老茶行木格窗與磚造茶灶、茶壺">
+        </button>
+        <figcaption><b>茶灶與大稻埕木門窗</b>：重現早年茶行精製茶葉與試茶的日常角落。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="102517" aria-label="放大照片：外銷歐美附鎖匙的訂製茶箱">
+          <img loading="lazy" src="img/102517.jpg" alt="印有 Formosa Oolong 的訂製漆器茶箱與錫罐">
+        </button>
+        <figcaption><b>帶鎖的 Formosan Oolong 茶箱</b>：專替海外貴賓客製，家徽與鎖匙缺一不可。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="102738" aria-label="放大照片：復刻新芳春茶行紅磚牆與外銷木箱">
+          <img loading="lazy" src="img/102738.jpg" alt="新芳春茶行 since 1934 匾額與 Formosa Pouchong Tea 外銷茶箱">
+        </button>
+        <figcaption><b>新芳春茶行實景復刻</b>：六角磚地與「曼谷芳泰棧」舊牌見證臺茶跨海網。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="102701" aria-label="放大照片：五座銅製轉經輪">
+          <img loading="lazy" src="img/102701.jpg" alt="蒙藏文化館大廳木格架上的五座轉經輪">
+        </button>
+        <figcaption><b>只能握木柄順時針輕轉的轉經輪</b>：內部裝藏經文，轉動時不碰金屬筒身。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="102710" aria-label="放大照片：金光閃閃的如來八塔">
+          <img loading="lazy" src="img/102710.jpg" alt="陳列於玻璃櫃中的如來八塔與電子鐘顯示 10:25">
+        </button>
+        <figcaption><b>如來八塔與 10:25</b>：從聚蓮塔到涅槃塔，記錄佛陀一生的八大事蹟。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="113516" aria-label="放大照片：藏式酥油茶具、茶桶與茶磚">
+          <img loading="lazy" src="img/113516.jpg" alt="二樓展出的藏式木質打酥油茶桶、茶磚與金屬茶具">
+        </button>
+        <figcaption><b>藏族生活的必需品：酥油茶具</b>：高身打茶桶與茶磚，在缺乏蔬果的高原補充維生素。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 3: 雙境對照全景（蒙古包 vs 西藏黑帳篷） -->
+  <article class="station" id="s3">
+    <div class="kicker">
+      <span class="s-no">STOP 03</span>
+      <span class="s-time">10:30–10:50 · 二樓蒙古與西藏生活展廳</span>
+      <span class="s-tag">雙遊牧空間對照</span>
+    </div>
+    <h3>蒙古包裡的「左女右男」，與西藏帳篷罕見的白氂牛毛</h3>
+    <figure class="fig wide pano-top">
+      <button data-ph="104819" aria-label="放大照片：二樓蒙古包與成吉思汗同種蒙古馬標本">
+        <img loading="lazy" src="img/104819.jpg" alt="白色紅紋蒙古包與右側站立的蒙古馬標本">
+      </button>
+      <figcaption><b>草原上的移動城堡</b>：四至六人居住的白色蒙古包，一旁站著體型矮小但耐力極強的蒙古馬標本（原本看馬齒能判年齡，這匹因嘴部封閉成了謎）。</figcaption>
+    </figure>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h4>蒙古包：白天不開頂窗，代表家裡出了大事</h4>
+        <div class="copy">
+          <p>走進為防寒而壓低門框的蒙古包，空間配置嚴謹得像一座小型羅盤：<b>正北方擺放神明桌與成吉思汗像</b>，<b>東邊歸女生</b>、放滿鍋碗廚具，<b>西邊歸男生</b>、懸掛馬具獵具。每一片網格牆壁稱作一個「哈納」，一家通常依人數搭起四到六片，一年隨水草遷徙約四次，並收集馬糞曬乾當燃料。</p>
+          <p>導覽老師指著最頂端的天窗說出一個草原暗號：「白天頂窗一定要打開通風；<b>如果大白天頂窗卻蓋起來，就表示這戶人家裡有不好的事或喪事</b>，經過的客人遠遠看見就會自動繞道不打擾。」一旁牆上的百年風俗巨畫《<b>蒙古人的一天</b>》更把生小孩、天葬禿鷹、打獵、煮茶與搭帳篷全畫進同一個草原全景。</p>
+        </div>
+        <div class="duo-photos" style="margin-top:16px">
+          <figure class="fig">
+            <button data-ph="103706" aria-label="放大照片：蒙古包內部擺設">
+              <img loading="lazy" src="img/103706.jpg" alt="蒙古包內部北方神桌與成吉思汗畫像、東側茶具">
+            </button>
+            <figcaption><b>北神、東女、西男</b>：連敬茶都得先敬佛、再給一家之主，依順時針奉茶。</figcaption>
+          </figure>
+          <figure class="fig">
+            <button data-ph="103741" aria-label="放大照片：百年畫作蒙古人的一天">
+              <img loading="lazy" src="img/103741.jpg" alt="細密描繪草原生活生老病死與天葬的百年蒙古風俗畫">
+            </button>
+            <figcaption><b>《蒙古人的一天》</b>：生老病死全在一幅畫中，甚至找得到天葬與禿鷹。</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="compare-card tibetan">
+        <h4>西藏黑帳篷：以氂牛毛織就的黑色高原方舟</h4>
+        <div class="copy">
+          <p>轉往展廳另一頭的藍天雪山背板下，五色經幡垂掛在半空，底下蹲伏著一頂深褐近黑的<b>西藏帳篷</b>。老師讓大家仔細看布面質感——整頂帳篷是用<b>黑氂牛掉下來的毛</b>收集曬乾織成的，唯有正中央脊頂縫進一小條十幾年前留下、如今略微泛黃的<b>白氂牛毛</b>，「因為白氂牛極為稀少，整頂帳篷裡也只用得上這麼一點點。」</p>
+          <p>進門同樣分出左右男女，正中供奉觀世音菩薩與法器，地上是高大修長的木製<b>酥油桶</b>與藏毯（晚上睡覺時得先把中間這組茶桌移開才有空間躺平）。而這座帳篷的藏式木門相當厚重，十幾年前從西藏帶回臺北後不得不換上鐵柱支撐，才扛得住整頂氂牛毛帳篷的重量。</p>
+        </div>
+        <div class="duo-photos" style="margin-top:16px">
+          <figure class="fig">
+            <button data-ph="104156" aria-label="放大照片：五色經幡與西藏黑帳篷前導覽">
+              <img loading="lazy" src="img/104156.jpg" alt="導覽老師站在五色經幡與雪山背板前為大家介紹西藏黑帳篷">
+            </button>
+            <figcaption><b>五色經幡下的高原背板</b>：現場還能站在圓圈感應區伸手體驗「打酥油茶」。</figcaption>
+          </figure>
+          <figure class="fig">
+            <button data-ph="104300" aria-label="放大照片：西藏黑帳篷內部陳設">
+              <img loading="lazy" src="img/104300.jpg" alt="黑帳篷內部擺設酥油茶桶、金屬茶壺與藏式神龕">
+            </button>
+            <figcaption><b>夜晚會移開的中央茶桌</b>：白天打酥油茶、揉糌粑，入夜收起便成臥榻。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- STOP 4: 三樓章嘉大師紀念堂 -->
+  <article class="station" id="s4">
+    <div class="kicker">
+      <span class="s-no">STOP 04</span>
+      <span class="s-time">10:50–11:10 · 三樓「章嘉大師紀念堂」（脫鞋入內）</span>
+      <span class="s-tag">48 件百年法器出土</span>
+    </div>
+    <div class="lay-duo">
+      <div class="copy">
+        <h3>脫鞋踏進無塵聖殿：宗喀巴牙舍利與迎請玄奘靈骨的幕後推手</h3>
+        <p>十點五十分，隊伍脫下鞋子沿著樓梯爬上三樓「<b>章嘉大師紀念堂</b>」。門框外掛著銅製轉經輪與五色圓筒幡，牆上則是立體金字藏文六字真言「<b>嗡嘛呢叭咪吽</b>」。這裡的導覽員神情更顯莊重，因為清代藏傳佛教共有四大活佛系統——前藏<b>達賴喇嘛</b>、後藏<b>班禪喇嘛</b>、外蒙古<b>哲布尊丹巴</b>，而內蒙古與青海甘肅一帶正是由<b>章嘉呼圖克圖</b>領袖群倫，清朝多代皇帝甚至直接拜章嘉為國師。</p>
+        <p>1949 年七世章嘉大師隨國民政府來臺，八年後在臺圓寂。牆面史料記錄了大師在臺灣留下最深遠的兩件大事：一是 <b>1952 年</b>赴日參加世界佛教徒友誼會時，意外得知二戰期間日本從中國帶走的<b>玄奘大師頂骨舍利</b>供奉於埼玉，返臺後他結合時任駐日大使<b>董顯光</b>持續交涉，終於在 <b>1955 年 11 月 25 日</b>迎回玄奘靈骨安奉於日月潭（今玄光寺、玄奘寺）；二是在 1955 年夏以中國佛教會理事長身分乘火車展開 <b>25 天環島弘法</b>，走遍西部 14 縣市 40 餘座寺院。</p>
+        <ul>
+          <li><b>佛龕正中的 600 年牙舍利與「八供」</b>：正殿佛龕中供奉著格魯派創始人<b>宗喀巴大師</b>的牙舍利（保存約六百年），前方供桌依藏傳規矩左右對稱擺出「<b>水、水、花、香、燈、塗、果、樂</b>」八供——前兩杯水一杯請佛菩薩飲用、一杯洗足；「果」用酥油與糌粑捏成的「多瑪」象徵，「樂」則是一枚法螺。</li>
+          <li><b>2021 年清點佛龕意外現世的 48 件高僧遺物</b>：展櫃中陳列著 2021 年 4 月清點佛龕時才整理的 48 件大師隨身修持聖物，年代推估距今 300 餘年至 <b>1,000 年</b>不等，包含千年歷史的<b>普巴杵</b>、泥土模印護身小佛像「<b>擦擦</b>」、裝入擦擦隨身佩帶的「<b>噶烏</b>」金盒，以及<b>七世達賴喇嘛的頭髮舍利</b>。</li>
+          <li><b>為什麼整座展廳一塵不染？</b>面對學員好奇提問，導覽老師揭開原因：七世章嘉大師 1957 年圓寂後（曾遺囑待國民政府重返大陸後再轉世，但流亡印度宗教體系仍認證了第八世），這座駐錫地數十年來一直有大師弟子默默守護、定期舉辦法會，直到近年正式成立紀念堂並由文化部共同維護，「<b>不是公家擺著好看的展品，而是至今仍有人持續供奉與擦拭的法座</b>」。</li>
+        </ul>
+      </div>
+      <div class="fig tall">
+        <button data-ph="104950" aria-label="放大照片：三樓章嘉大師紀念堂入口門廊">
+          <img loading="lazy" src="img/104950.jpg" alt="章嘉大師紀念堂雕花門框、銅轉經輪與懸掛經幡">
+        </button>
+        <figcaption><b>三樓入口的紅藍門扉</b>：脫鞋穿過這道門，便從展覽館走進七世章嘉大師生前真實修持的靜謐佛堂。</figcaption>
+      </div>
+    </div>
+
+    <div class="lay-trio">
+      <figure class="fig">
+        <button data-ph="105020" aria-label="放大照片：牆上金色藏文六字真言">
+          <img loading="lazy" src="img/105020.jpg" alt="白色牆面上立體金字藏文六字真言嗡嘛呢叭咪吽">
+        </button>
+        <figcaption><b>六字真言牆</b>：簡潔白牆上的立體藏文，為整個三樓定下安靜的基調。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="110506" aria-label="放大照片：正殿佛龕與宗喀巴大師牙舍利">
+          <img loading="lazy" src="img/110506.jpg" alt="章嘉大師紀念堂佛龕正中宗喀巴牙舍利與前排八供、法輪護欄">
+        </button>
+        <figcaption><b>六百年牙舍利與對稱「八供」</b>：法輪護欄之後是水、花、香、燈、塗、果、樂。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="110509" aria-label="放大照片：唐卡與章嘉大師法座">
+          <img loading="lazy" src="img/110509.jpg" alt="牆上懸掛的釋迦牟尼佛、文殊菩薩與宗喀巴唐卡及大師法座">
+        </button>
+        <figcaption><b>唐卡與法座</b>：法座下方保存大師袈裟，右方另供奉大師部分舍利（其餘在北投）。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="110857" aria-label="放大照片：章嘉大師在臺事蹟與董顯光信函">
+          <img loading="lazy" src="img/110857.jpg" alt="章嘉大師年表與 1955 年董顯光大使致函迎請玄奘靈骨信封複本">
+        </button>
+        <figcaption><b>迎回玄奘靈骨的往來信封</b>：展櫃裡躺著 1955 年駐日大使董顯光寫給大師的航空信。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="110859" aria-label="放大照片：48 件佛龕古物與修持法器展櫃">
+          <img loading="lazy" src="img/110859.jpg" alt="玻璃櫃中展出普巴杵、噶烏、擦擦與七世達賴頭髮舍利">
+        </button>
+        <figcaption><b>千年普巴杵與噶烏</b>：2021 年清點佛龕才重見天日的 48 件高僧隨身遺物。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="110524" aria-label="放大照片：七世章嘉大師畫像與文獻">
+          <img loading="lazy" src="img/110524.jpg" alt="牆上懸掛的七世章嘉大師肖像畫">
+        </button>
+        <figcaption><b>七世章嘉大師肖像</b>：走遍西部四十餘座寺院、為臺灣佛教界留下深厚法脈。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 5: 四樓體驗 + 立冬吉祥結 -->
+  <article class="station" id="s5">
+    <div class="lay-duo flip">
+      <div class="copy">
+        <div class="kicker">
+          <span class="s-no">STOP 05</span>
+          <span class="s-time">11:12–11:45 · 四樓蒙藏服飾換裝教室</span>
+          <span class="s-tag">立冬日破例開放</span>
+        </div>
+        <h3>平日限週六預約的試穿體驗，藏袍腰帶一拉居然變出大口袋</h3>
+        <p>最後半小時，大夥搭電梯直上四樓體驗傳統蒙藏服飾。牆上的館方公告寫得明白：這項免費體驗平日只開放於特定週六（如 10/5、11/2 下午 14:00–16:00）且須事前報名；能在週四立冬上午直接開門試穿、甚至穿著長袍下到二樓蒙古包與黑帳篷裡打卡，正是「打開台大」這場走讀才享有的專屬時段。</p>
+        <p>工作人員在教室前端示範穿法，細節全是高原智慧：西藏男裝三件式、一律「<b>左襟壓右襟</b>」（若反過來便錯了），先把兩側衣襟對齊拉高到膝蓋，再用腰帶在腰際繞一圈綁出活結，多出的布料往前一放——<b>寬鬆的前襟立刻變成天然口袋，藏人出門的茶碗、念珠或乾糧全塞在胸懷裡</b>；女性穿過長袍後還得在腰間繫上一塊彩色橫條紋圍裙「<b>邦典</b>」，代表已婚婦女身分。相比之下，一排扣到底的蒙古袍穿脫俐落得多，還能讓人在馬上行動自如。</p>
+        <div class="note g"><b>立冬這天的小驚喜：</b>教室服務台上的「113 年 11 月」八吉祥印章月曆，在 11 月 7 日立冬這一格蓋的正好是象徵圓滿無盡的「<b>吉祥結</b>」。</div>
+      </div>
+      <div class="duo-photos" style="margin-top:0">
+        <figure class="fig">
+          <button data-ph="113408" aria-label="放大照片：四樓蒙藏服飾換裝體驗現場">
+            <img loading="lazy" src="img/113408.jpg" alt="學員們在四樓教室挑選各色蒙古袍與西藏服飾試穿">
+          </button>
+          <figcaption><b>四樓變身試衣間</b>：一排鮮豔織錦長袍掛在衣架上，大家輪流比對腰帶與帽子顏色。</figcaption>
+        </figure>
+        <figure class="fig">
+          <button data-ph="114239" aria-label="放大照片：113 年 11 月八吉祥印章月曆">
+            <img loading="lazy" src="img/114239.jpg" alt="展示臺上的 11 月手繪印章月曆，11 月 7 日立冬印著吉祥結">
+          </button>
+          <figcaption><b>11 月 7 日立冬・吉祥結</b>：每天對應一枚藏傳吉祥紋飾，替這天留下剛好對上的印記。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <!-- PART II: 步行轉場 -->
+  <div class="chapter walk">
+    <div>
+      <small>PART II · 11:45–11:55 · 青田街 → 和平東路 → 新生南路二段</small>
+      <h2>十分鐘的時空折疊：從藏傳密境走進「臺北天際線」</h2>
+    </div>
+    <p>不必搭車、不必換場，走出巷弄穿過幾個紅綠燈，迎面而來的便是圓頂與喚拜塔。</p>
+  </div>
+
+  <article class="station is-walk" id="s6">
+    <div class="lay-duo">
+      <div class="copy">
+        <div class="kicker">
+          <span class="s-no">STOP 06</span>
+          <span class="s-time">11:47 · 蒙藏文化館正門出發</span>
+          <span class="s-tag">跨街步行 900 公尺</span>
+        </div>
+        <h3>從白牆藍窗的青田巷弄，迎向大安森林公園對面的銅綠穹頂</h3>
+        <p>上午 11:47，大家在蒙藏文化館正門外重新整隊。回頭再看一眼這棟三層高的建築：一樓大窗上漆著金色幾何紋飾，二樓深紅色立柱撐起陽台，三樓則是一整排細密格窗——方才剛在裡面見過茶箱、草原帳篷、六百年牙舍利與織錦藏袍，此刻只要沿著青田街穿過和平東路、跨進大安森林公園對面的新生南路二段，短短十分鐘步程，城市信仰就要徹底換頁。</p>
+      </div>
+      <figure class="fig">
+        <button data-ph="114707" aria-label="放大照片：學員步出蒙藏文化館正門">
+          <img loading="lazy" src="img/114707.jpg" alt="走讀隊伍於 11:47 步出蒙藏文化館正門，準備步行前往臺北清真寺">
+        </button>
+        <figcaption><b>11:47 告別青田街</b>：隊伍踏出蒙藏文化館正門，十分鐘後就要站進截然不同的文化現場。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- PART III -->
+  <div class="chapter mosque">
+    <div>
+      <small>PART III · 11:55–12:45 · 臺北清真寺（新生南路二段 62 號）</small>
+      <h2>走進全臺最大清真寺：在三十國的信仰現場聽見生命禮儀</h2>
+    </div>
+    <p>落成於 1960 年的市定古蹟，不只有奧圖曼穹頂與外交記憶，更在這個正午敞開了意想不到的一課。</p>
+  </div>
+
+  <!-- STOP 7: 集會大廳與佈告欄爭議 -->
+  <article class="station is-mosque" id="s7">
+    <div class="lay-tall-feature">
+      <div class="copy">
+        <div class="kicker">
+          <span class="s-no">STOP 07</span>
+          <span class="s-time">11:55–12:07 &amp; 12:35 · 一樓大廳與走廊佈告欄</span>
+          <span class="s-tag">真實社群張力</span>
+        </div>
+        <h3>一樓大廳裡的「Din 生活規範」，與佈告欄上的匿名質問單</h3>
+        <p>推開臺北清真寺大門，大夥先在黑白水磨石棋盤地板的集會大廳坐定。導覽老師開場便語氣直率、幽默又犀利地打破隔閡——在伊斯蘭文化裡，「宗教」在阿拉伯文稱作「<b>Din</b>」，意思不是週末才去拜一下的儀式，而是「<b>一套從出生到死亡的生活方式（SOP）</b>」。</p>
+        <p>他舉了個全場女士立刻會心一笑的例子：早在七世紀阿拉伯半島，先知穆罕默德便規定穆斯林男性小便時「<b>不準站著上廁所，只能蹲著或坐著</b>」，所以走進清真寺男廁，絕對找不到任何站立式小便斗。「你們覺得現代很衛生前衛的規矩，我們一千四百年前就定在生活裡了。」談到全球伊斯蘭人口從 1949 年二戰後的約三億人成長至今日近二十億人，他也特別點出臺灣現況：<b>全臺超過 26 萬名印尼移工與學生</b>，再加上馬來西亞與中亞來客，讓這座島嶼此刻能讀懂阿拉伯文的人口其實超過二十萬。</p>
+        <p>而走到大殿外的走廊佈告欄前，玻璃櫃裡還夾著一張只有來現場才看得到的張貼傳單——〈<b>「財團法人中國回教協會」究竟是服務台灣穆斯林的官方組織還是私人俱樂部？</b>〉，上頭列著民國 101 年第 7 屆至 113 年第 11 屆連續五屆的董事長與董事名單，質疑長期「閉門操作」連任；更微妙的是，這份十人名單裡赫然有五位姓「<b>馬</b>」，正好印證導覽老師方才提到的中國回教老諺語：「<b>十個回回九個馬，剩下那個姓哈！</b>」（從明代馬皇后到今日臺灣回族後裔皆然）。</p>
+        <figure class="fig" style="margin-top:18px">
+          <button data-ph="122249" aria-label="放大照片：臺北清真寺集會大廳與阿拉伯文書法掛軸">
+            <img loading="lazy" src="img/122249.jpg" alt="臺北清真寺集會大廳綠白棋盤水磨石地板、尖拱花窗與牆上阿拉伯文掛軸">
+          </button>
+          <figcaption><b>集會大廳的棋盤格與幾何窗花</b>：牆上懸著阿拉伯文《古蘭經》開篇「奉至仁至慈的真主之名」與麥加、麥地那照片。</figcaption>
+        </figure>
+      </div>
+      <figure class="fig tall">
+        <button data-ph="123558" aria-label="放大照片：清真寺佈告欄上的中國回教協會董事名單爭議傳單">
+          <img loading="lazy" src="img/123558.jpg" alt="清真寺佈告欄張貼的財團法人中國回教協會五屆董事會連任質疑傳單">
+        </button>
+        <figcaption><b>走廊佈告欄的真實溫度</b>：連續五屆（101–113 年）董監事名單裡五人姓馬，讓走讀者在認識歷史之餘，也看見臺灣穆斯林社群當下的公共治理討論。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 8: 正午喚拜與亡人禮拜 -->
+  <article class="station is-mosque" id="s8">
+    <div class="lay-tall-feature">
+      <div class="copy">
+        <div class="kicker">
+          <span class="s-no">STOP 08</span>
+          <span class="s-time">12:07–12:30 · 禮拜大殿門檻</span>
+          <span class="s-tag">極罕見現場巧合</span>
+        </div>
+        <h3>正午「晌禮」喚拜聲響起：一場剛巧遇上的「亡人禮拜」</h3>
+        <p>導覽老師一開口就說：「<b>你們來的時間很巧，也很不巧——剛好碰上我們一天五次禮拜中的第二次『晌禮』，更巧的是今天剛好有一位亡人過世，大殿馬上要替他舉行『亡人禮拜』</b>。」對多數這輩子第一次踏進清真寺的非穆斯林參加者來說，這幾乎是可遇不可求的震撼時刻。</p>
+        <p><b>12:08 分</b>，大殿裡的時鐘一到，一位就讀<b>臺灣大學博士班的印尼籍穆斯林</b>（喚拜者）準時站到大殿前方、雙手掩耳，對著麥克風用飽滿共鳴的阿拉伯語高聲吟唱「<b>喚拜詞（Azan）</b>」。全團二十人靜靜站在大殿門檻邊，看著陽光穿過彩繪方格玻璃窗灑在紅毯上，門外是繁忙的新生南路車流，門內卻彷彿隔出一座莊嚴的時空膠囊。</p>
+        <p>趁著等候禮拜的空檔，導覽老師順勢拋出一個令全場驚呼的事實：「<b>全臺灣只有一個族群，讓殯葬業、生命禮儀公司一塊錢都賺不到——就是我們穆斯林</b>。」</p>
+        <div class="quote-wall">
+          <blockquote>「先知交代三件事不要拖延：禮拜時間到不要拖、結婚年齡到不要拖、人過世了埋葬不要拖。無論你是億萬富翁還是平民，一律在 24 小時之內洗淨、裹上三層白布送到清真寺舉行亡人禮拜，然後送上六張犁山上的穆斯林公墓土葬；墓碑高度不能超過一個手掌，不鋪張、不看風水、絕不因爭產而把遺體放上好幾年。」</blockquote>
+          <cite>—— 臺北清真寺現場導覽實錄</cite>
+        </div>
+        <p style="margin-top:14px">他更點出「人造宗教」與「普世一神教」的差異：全世界不論身在倫敦、米蘭、南非德班、莫斯科或臺北，《古蘭經》只有一本 604 頁（現場他還當場以優美韻律吟誦了第一章〈開端章〉七節，並笑說此刻全世界能不看書把整本《古蘭經》從頭背到尾的人口超過一百萬），禮拜動作與方位完全無縫接軌，絕不會「跨了縣市就走不出去」。</p>
+      </div>
+      <figure class="fig tall">
+        <button data-ph="120855" aria-label="放大照片：12:08 臺大印尼博士生於大殿前方吟唱喚拜詞">
+          <img loading="lazy" src="img/120855.jpg" alt="走讀學員靜立禮拜大殿門前，聆聽臺大印尼籍博士生雙手掩耳高聲喚拜">
+        </button>
+        <figcaption><b>12:08 的現場喚拜時刻</b>：遠方站立於米哈拉布前雙手掩耳吟唱的，是來自印尼的臺大博士生；走讀隊伍則屏息站在門檻外聆聽。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 9: 穹頂與禮拜大殿空間密碼 -->
+  <article class="station is-mosque" id="s9">
+    <div class="kicker">
+      <span class="s-no">STOP 09</span>
+      <span class="s-time">12:30–13:02 · 禮拜大殿內部</span>
+      <span class="s-tag">建築結構與神學</span>
+    </div>
+    <div class="lay-duo">
+      <div class="copy">
+        <h3>抬頭不見一根樑柱：奧圖曼式穹頂裡的回音與零偶像空間</h3>
+        <p>禮拜結束後，大家脫鞋踏進可容納<b>六百人</b>的禮拜大殿。一抬頭，整座高達十餘公尺的白色半球形穹頂（阿拉伯語稱「<b>Qubba</b>」）順著二十四道金色放射肋線收束於頂心，底緣開著一圈採光高窗，將室外天光均勻灑落——大殿內卻<b>看不見任何一根支撐屋頂的樑柱</b>。這套源自羅馬帝國、由奧圖曼建築師發揚光大的力學設計，把頂蓋重量往外牆均勻分散，不只讓六百人並肩禮拜時視線毫無阻礙，在沒有電力與擴音器的年代，更能充當天然共鳴箱，把阿訇講道與誦經的聲音清晰送往每個角落。</p>
+        <p>環顧四壁潔白牆面，與剛才在蒙藏文化館看見的滿牆唐卡、佛龕與舍利形成極端強烈的對比：<b>伊斯蘭教沒有任何神像或繪像</b>，「我們是最純正的一神教，只崇拜獨一的造物主」。導覽老師帶大家認出大殿最核心的兩個建築語彙：</p>
+        <ul>
+          <li><b>米哈拉布（Mihrab）</b>：正前方三連拱門中央的半圓形凹室，精準指向沙烏地阿拉伯聖城<b>麥加</b>的方向（臺灣位處麥加東方偏北，全臺清真寺一律朝西祈禱）。導覽員幽默解釋：「其實我們也信耶穌基督與聖母瑪利亞，只是在我們教義裡，耶穌是真主派遣的先知之一，而非神本身。」</li>
+          <li><b>敏拜爾（Minbar）</b>：位於米哈拉布右側的木雕階梯講壇，每逢週五「主麻日」或開齋節大禮拜時，阿訇／伊瑪目便會走上階梯向大眾講道。</li>
+        </ul>
+      </div>
+      <div class="duo-photos" style="margin-top:0;grid-template-columns:1fr">
+        <figure class="fig">
+          <button data-ph="130216" aria-label="放大照片：臺北清真寺奧圖曼式無樑柱大穹頂">
+            <img loading="lazy" src="img/130216.jpg" alt="仰望臺北清真寺白色半球形穹頂，金色放射肋線與環形採光小窗">
+          </button>
+          <figcaption><b>沒有樑柱的天際圓弧</b>：二十四道金線從頂心垂落，外牆上的高窗替整座大殿保留了極純淨的自然採光。</figcaption>
+        </figure>
+        <figure class="fig">
+          <button data-ph="130223" aria-label="放大照片：可容納六百人的臺北清真寺禮拜大殿全景">
+            <img loading="lazy" src="img/130223.jpg" alt="鋪滿條紋禮拜地毯的禮拜大殿，兩側彩色玻璃高窗與正前方米哈拉布、敏拜爾">
+          </button>
+          <figcaption><b>六百人並肩禮拜的空間</b>：地毯上一道道金紋是信眾肩並肩排齊的基準線，正前方中央凹室便是朝向麥加的米哈拉布。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <!-- STOP 10: 外交臺階與三十國縮影 -->
+  <article class="station is-mosque" id="s10">
+    <div class="lay-duo flip">
+      <div class="copy">
+        <div class="kicker">
+          <span class="s-no">STOP 10</span>
+          <span class="s-time">13:05 · 清真寺正門三連拱門與臺階</span>
+          <span class="s-tag">全臺最國際化的瞬間</span>
+        </div>
+        <h3>1957 年飯店巧遇催生的外交大階梯，與 30 個國籍同聚的週五中午</h3>
+        <p>導覽進入尾聲時，老師帶大家走出大殿，指著正門三連拱門下方那排寬闊的石砌臺階：「<b>你們今天一定要在這裡拍張合照！</b>」</p>
+        <p>原來 <b>1960 年</b>這座清真寺之所以能以如此驚人的效率在三年內拔地而起，全因 <b>1957 年</b>外交部長<b>葉公超</b>出席聯合國大會時，恰巧與<b>沙烏地阿拉伯國王紹德</b>同住一家飯店；加上當年許多外省軍政官員如<b>白崇禧</b>將軍等本來就是虔誠穆斯林，政府遂借銀行款項由外交部支持興建，取代原先過於狹小的麗水街清真寺。自落成以來，沙烏地國王費瑟、約旦國王胡笙、伊朗國王巴勒維、伊拉克王儲與土耳其總理等中東領袖訪臺時，全都在這座清真寺留下身影，而<b>正門臺階正是當年接見外交貴賓大合照的歷史舞臺</b>。</p>
+        <p>老師語重心長地感嘆：1949 年隨國民政府來臺的回族後裔，如今「長得跟我們一樣的華人穆斯林，還固定來禮拜的可能不到一千人」，反倒是每逢<b>星期五中午主麻禮拜</b>或一年兩度的<b>開齋節</b>，大殿裡湧進 <b>95% 來自超過 30 個國家的外國朋友</b>——從臺大外籍碩博士生、印尼移工、新住民到來自巴基斯坦與北非的旅人，整齊劃一地抬手、鞠躬、跪地、磕頭，「這座臺北市定古蹟，其實是全臺灣在同一秒鐘內最多元、最國際化的地方。」</p>
+      </div>
+      <figure class="fig">
+        <button data-ph="130602" aria-label="放大照片：臺北清真寺正門三連拱門與歷史臺階">
+          <img loading="lazy" src="img/130602.jpg" alt="臺北清真寺正門三連拱門、金色清真寺匾額與幾何鏤空花磚、外交合照臺階">
+        </button>
+        <figcaption><b>曾接待多國元首的外交臺階</b>：三連拱門上方鑲著「清真寺」與金色阿拉伯文，兩側揉合了臺灣本地的幾何鏤空花磚。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- 詞彙小辭典 -->
+  <section class="glossary" aria-label="走讀文化小辭典">
+    <h2>帶得走的兩個世界小辭典</h2>
+    <p>把這場跨文化走讀聽見的專有名詞收進筆記本裡，下次經過青田街或新生南路時便能一眼看懂。</p>
+    <dl class="gl-grid">
+      <div class="gl-item">
+        <dt>駐錫</dt>
+        <dd>原指懸掛僧人巡行攜帶的「錫杖」，後引申為高僧停留居住之所；蒙藏文化館現址正是七世章嘉大師來臺駐錫地。</dd>
+      </div>
+      <div class="gl-item">
+        <dt>噶烏（Gau）與擦擦（Tsatsa）</dt>
+        <dd>「擦擦」是以泥土模印的高僧加持小佛像；將擦擦裝入金屬製的隨身小佛龕裡配戴，便稱為「噶烏」。</dd>
+      </div>
+      <div class="gl-item">
+        <dt>八供</dt>
+        <dd>藏傳佛教供桌常採左右對稱擺設：水（飲用）、水（洗足）、花、香、燈、塗（香膏）、果（多瑪）、樂（法螺）。</dd>
+      </div>
+      <div class="gl-item t">
+        <dt>阿訇（Akhund）</dt>
+        <dd>古波斯語彙，原意為宣教師、老師或學者，在華人穆斯林社群中是對清真寺教長與宗教領袖的尊稱。</dd>
+      </div>
+      <div class="gl-item t">
+        <dt>米哈拉布（Mihrab）＆ 敏拜爾</dt>
+        <dd>米哈拉布是清真寺大殿前方指向麥加的半圓凹室；敏拜爾則是右側階梯狀講壇，供教長演講與宣教使用。</dd>
+      </div>
+      <div class="gl-item t">
+        <dt>主命拜 ＆ 亡人禮拜</dt>
+        <dd>主命拜為造物主規定每日五次（晨、晌、晡、昏、宵）必行的禮拜；亡人禮拜則是穆斯林辭世後 24 小時內下葬前舉行的追思禮儀。</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- 雙視角後記 -->
+  <section class="coda" aria-label="走讀後記">
+    <div class="coda-card">
+      <h3>高原到城市：有些事物要站到現場才對得起來</h3>
+      <p>翻資料或許能查到章嘉大師生平與蒙古包結構，但只有親自在<b>立冬這天</b>脫鞋踏進三樓紀念堂，才會發現玻璃櫃外幾乎一塵不染的背後，是弟子跨越半世紀仍在維持的法脈；也只有在四樓親手綁上藏袍腰帶，才會真正明白高原遊牧民族怎麼把衣服前襟變成隨身置物袋。</p>
+    </div>
+    <div class="coda-card t">
+      <h3>900 公尺外的另一種虔誠與日常</h3>
+      <p>從蒙藏文化館滿屋的唐卡與法器，步行十分鐘跨進沒有任何偶像繪畫、卻能聽見三十國語言在門外響起的臺北清真寺。正午那陣穿透大殿彩窗的阿拉伯語喚拜聲，與走廊佈告欄上「十個回回九個馬」的真實公共討論，讓這場 165 分鐘的走讀成了大安區街頭最難忘的一堂多元文化課。</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>2024/11/07 參加「多元文化走讀——蒙藏文化大揭密 × 臺北清真寺」（國立臺灣大學學生會「打開台大 Open House NTUs」主辦・蒙藏文化館＆臺北清真寺導覽）的走讀筆記</span>
+  <a href="#top">回到頁首 ↑</a>
+</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../bangka/index.html"><small>‹ 較新的一場・2024/11/08</small>走讀艋舺信仰、美食與街區故事</a><a class="nx" href="../weichang/index.html"><small>較早的一場・2024/11/04 ›</small>教師監獄？揭開台大闈場秘辛</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar">
+    <button id="lbp" aria-label="上一張">‹</button>
+    <span id="lbc"></span>
+    <button id="lbn" aria-label="下一張">›</button>
+    <button id="lbx" aria-label="關閉">✕</button>
+  </div>
+</div>
+
+<script>
+{
+  /* 雙場域對照盤分頁切換 */
+  const tabs=[...document.querySelectorAll('.bp-tabs button')];
+  const pT=document.getElementById('panel-tibet');
+  const pM=document.getElementById('panel-mosque');
+  tabs.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      tabs.forEach(b=>b.setAttribute('aria-selected',String(b===btn)));
+      const showMosque=btn.dataset.tab==='mosque';
+      pT.hidden=showMosque;
+      pM.hidden=!showMosque;
+    });
+  });
+
+  /* 燈箱檢視 */
+  const btns=[...document.querySelectorAll('main button[data-ph]')];
+  const items=btns.map((b,idx)=>{
+    const img=b.querySelector('img');
+    const fig=b.closest('figure');
+    const cap=fig?fig.querySelector('figcaption').textContent:img.alt;
+    b.dataset.idx=idx;
+    return {src:img.getAttribute('src'),alt:img.alt,cap};
+  });
+  const lb=document.getElementById('lb'),im=document.getElementById('lbi'),cp=document.getElementById('lbc');
+  let cur=0;
+  const show=i=>{
+    cur=(i+items.length)%items.length;
+    const x=items[cur];
+    im.src=x.src;
+    im.alt=x.alt;
+    cp.textContent=`${x.cap}　（${cur+1}/${items.length}）`;
+  };
+  document.querySelector('main').addEventListener('click',e=>{
+    const b=e.target.closest('button[data-ph]');
+    if(b){show(+b.dataset.idx);lb.classList.add('on');document.getElementById('lbx').focus();}
+  });
+  document.getElementById('lbp').onclick=()=>show(cur-1);
+  document.getElementById('lbn').onclick=()=>show(cur+1);
+  const close=()=>lb.classList.remove('on');
+  document.getElementById('lbx').onclick=close;
+  lb.addEventListener('click',e=>{if(e.target===lb)close();});
+  document.addEventListener('keydown',e=>{
+    if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')show(cur-1);
+    if(e.key==='ArrowRight')show(cur+1);
+  });
+}
+</script>
+</body>
+</html>
