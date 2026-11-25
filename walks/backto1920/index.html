@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>回到 1920：臺北最華美宮殿 × 醫學知識殿堂（2024/11/29 打開台大）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 秋末晴朗的週五早晨，跟著臺大學生會「打開台大 Open House NTUs」二十人小團，持證踏入前一夜才剛舉辦副總統晚宴的臺北賓館，再步入曾逢祝融與十年閒置而重生的臺大醫學人文博物館，觸摸臺北城內 1920 年代黃金十年的權力與知識雙核心
+   IDEA: 以「帝國紅絨深緋 × 賓館真金箔 × 醫學院鵝黃銅綠」為視覺軸線，打造可切換「總督官邸／醫學校／建築基因密碼」的 1920 雙殿時空對照儀、七格本場限定現場矩陣，並以五種交錯策展版型串起三小時十站紀實
+   PICTURE: 臺北賓館新巴洛克正立面與馬薩式石板斜屋頂（091428.jpg）——藍天白雲映照著森山松之助設計的百年迎賓殿堂
+   COLOUR and TYPE: 文章關鍵詞主色深緋紅 #9a2c2c、賓館箔金 #9a6718、醫館銅綠 #1d5e59、檔案紙白 #f6f2ea；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 建築全景 Hero ＋ 4 格參數帶 → 1920 黃金十年導言與互動雙殿對照儀 → 七個現場限定瞬間（不對稱拼貼） → 路線快跳列 → 兩篇章 10 站五種交替策展版型 → 建築人物小檔案與雙視角後記 */
+:root{
+  color-scheme:light dark;
+  --bg:light-dark(#f6f2ea,#121517);
+  --card:light-dark(#fffdf8,#191e21);
+  --ink:light-dark(#1c2023,#ece8df);
+  --mute:light-dark(#5a6267,#9fa7ac);
+  --crimson:light-dark(#9a2c2c,#ee8c82);
+  --brass:light-dark(#9a6718,#dfb160);
+  --teal:light-dark(#1d5e59,#6ec2b9);
+  --soft-c:light-dark(#faeaea,#2d1c1c);
+  --soft-b:light-dark(#fbf3e2,#282115);
+  --soft-t:light-dark(#e3f1ef,#172826);
+  --line:light-dark(#ddd5c6,#2c3337);
+}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:18px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.82 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,h4{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+a{color:var(--crimson)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--crimson);outline-offset:2px}
+
+/* 關鍵詞主色加粗標記 */
+.lead-prose b,.lead-prose strong,
+.station-copy b,.station-copy strong,
+.callout b,.panel-prose b,.coda-box b{color:var(--crimson);font-weight:700}
+
+/* Hero */
+.hero{position:relative;min-height:clamp(430px,64vh,630px);display:flex;align-items:flex-end;background:#14181b;color:#f7f3eb;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:contrast(1.04)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,18,21,.22) 0%,rgba(14,18,21,.56) 46%,rgba(13,16,18,.96) 100%)}
+.hero-in{position:relative;z-index:1;width:100%;max-width:1140px;margin:0 auto;padding:48px max(4vw,18px) 36px}
+.hero-tags{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:14px;font-size:12.5px;font-weight:700;letter-spacing:.08em}
+.hero-tags span{padding:4px 12px;border-radius:999px;background:rgba(154,44,44,.9);color:#fff}
+.hero-tags span.t{background:rgba(29,94,89,.92)}
+.hero-tags span.d{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#f3dfc0}
+.hero h1{font-size:clamp(30px,5.2vw,52px);line-height:1.14;font-weight:800}
+.hero h1 small{display:block;font-size:clamp(18px,2.7vw,27px);font-weight:600;color:#ebd6b4;margin-top:8px}
+.hero-sub{margin:14px 0 0;max-width:66ch;font-size:16.4px;line-height:1.74;color:rgba(247,243,235,.93)}
+
+/* 參數帶 */
+.telemetry{background:#12171a;color:#d6dede;border-top:1px solid rgba(255,255,255,.1)}
+.tel-in{max-width:1140px;margin:0 auto;padding:15px max(4vw,18px);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 22px;font-size:14px}
+.tel-in b{display:block;font-size:11.5px;letter-spacing:.09em;color:#e7ba71;margin-bottom:2px}
+.tel-in a{color:#f7f3eb;text-decoration:underline;text-underline-offset:3px}
+
+.wrap{max-width:1140px;margin:0 auto;padding:0 max(4vw,18px)}
+
+/* 序章雙欄：左敘事 + 右互動時空對照儀 */
+.prologue{display:grid;grid-template-columns:1.08fr .92fr;gap:30px;padding:42px 0 30px;border-bottom:1px solid var(--line)}
+.lead-prose h2{font-size:clamp(22px,3vw,30px);line-height:1.3;margin-bottom:14px}
+.lead-prose p{margin:.7em 0;font-size:16.2px}
+.gate-callout{margin-top:16px;padding:14px 18px;border-radius:0 12px 12px 0;background:var(--soft-b);border-left:4px solid var(--brass);font-size:14.8px;line-height:1.7}
+.gate-callout strong{display:block;color:var(--brass);margin-bottom:3px;font-size:15px}
+
+/* 互動雙殿對照儀 */
+.chronicle{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--crimson);border-radius:16px;padding:22px;align-self:start;box-shadow:0 8px 24px rgba(0,0,0,.04)}
+.chr-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:12px}
+.chr-head h3{font-size:19px}
+.chr-head span{font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--mute)}
+.chr-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chr-tabs button{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:7px 13px;border-radius:999px;font:600 13.5px "Noto Sans TC",sans-serif;cursor:pointer;min-height:38px;transition:all .16s}
+.chr-tabs button[aria-pressed="true"]{background:var(--crimson);color:#fff;border-color:var(--crimson)}
+.chr-panel{display:none;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.chr-panel.is-on{display:block}
+.chr-panel small{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.07em;color:var(--teal);margin-bottom:4px}
+.chr-panel h4{font-size:18px;margin-bottom:8px}
+.chr-panel p{margin:0 0 10px;font-size:14.6px;line-height:1.7;color:var(--mute)}
+.chr-panel ul{margin:0;padding-left:1.2em;font-size:14.2px;line-height:1.68}
+.chr-panel li{margin:.35em 0}
+.chr-panel li b{color:var(--crimson)}
+
+/* 七個現場限定瞬間（不對稱拼貼） */
+.moments{padding:30px 0 16px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 18px;margin-bottom:16px}
+.sec-head h2{font-size:clamp(22px,2.9vw,28px)}
+.sec-head p{margin:0;color:var(--mute);font-size:14.8px}
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:13px}
+.b-card{grid-column:span 2;display:flex;flex-direction:column;gap:5px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--crimson);border-radius:12px;padding:15px 17px;transition:transform .2s,box-shadow .2s}
+.b-card.wide{grid-column:span 3}
+.b-card.b{border-top-color:var(--brass)}
+.b-card.t{border-top-color:var(--teal)}
+.b-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.07)}
+.b-card i{align-self:flex-start;font-style:normal;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--soft-c);color:var(--crimson)}
+.b-card.b i{background:var(--soft-b);color:var(--brass)}
+.b-card.t i{background:var(--soft-t);color:var(--teal)}
+.b-card b{font-family:"Noto Serif TC",serif;font-size:16.8px;line-height:1.4}
+.b-card span{font-size:13.8px;color:var(--mute);line-height:1.6}
+
+/* 10 站跳轉列 */
+.route-rail{margin:24px 0 10px;padding:16px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.rr-title{font-size:13px;font-weight:700;letter-spacing:.07em;color:var(--mute);margin-bottom:10px}
+.rr-list{display:flex;flex-wrap:wrap;gap:8px}
+.rr-list a{display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);text-decoration:none;font-size:13.5px;min-height:36px;transition:border-color .16s}
+.rr-list a:hover{border-color:var(--crimson)}
+.rr-list a span{font-weight:700;color:var(--crimson)}
+.rr-list a.m span{color:var(--teal)}
+
+/* 篇章抬頭 */
+.chapter{margin:48px 0 8px;padding:18px 22px;border-radius:12px;background:var(--soft-c);border-left:5px solid var(--crimson);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 20px}
+.chapter.med{background:var(--soft-t);border-left-color:var(--teal)}
+.chapter small{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--crimson)}
+.chapter.med small{color:var(--teal)}
+.chapter h2{font-size:clamp(22px,3vw,29px)}
+.chapter p{margin:0;font-size:14.5px;color:var(--mute);max-width:48ch}
+
+/* 站點共用架構 */
+.station{padding:36px 0;border-bottom:1px solid var(--line)}
+.kicker{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:12px}
+.s-no{font-family:"Noto Serif TC",serif;font-weight:800;font-size:13.5px;color:#fff;background:var(--crimson);padding:2px 10px;border-radius:4px}
+.station.is-med .s-no{background:var(--teal)}
+.s-time{font-size:13.5px;color:var(--mute);font-weight:500}
+.s-tag{font-size:12px;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--soft-b);color:var(--brass)}
+.station.is-med .s-tag{background:var(--soft-t);color:var(--teal)}
+
+.station-copy h3{font-size:clamp(21px,2.8vw,27px);line-height:1.32;margin-bottom:12px}
+.station-copy p{margin:.72em 0;font-size:16.2px}
+.station-copy ul{margin:10px 0;padding-left:1.25em}
+.station-copy li{margin:.42em 0}
+.station-copy li::marker{color:var(--crimson)}
+.station.is-med .station-copy li::marker{color:var(--teal)}
+
+.callout{margin-top:16px;padding:14px 17px;background:var(--soft-b);border-left:4px solid var(--brass);border-radius:0 10px 10px 0;font-size:14.8px;line-height:1.7}
+.callout.c{background:var(--soft-c);border-left-color:var(--crimson)}
+.callout.t{background:var(--soft-t);border-left-color:var(--teal)}
+.callout.t b{color:var(--teal)}
+
+.fig{margin:0}
+.fig button{all:unset;cursor:pointer;display:block;width:100%;border-radius:10px;overflow:hidden;background:var(--line);box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.fig img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;transition:transform .35s ease}
+.fig.wide img{aspect-ratio:16/10}
+.fig.tall img{aspect-ratio:3/4;object-position:center 22%}
+.fig button:hover img{transform:scale(1.025)}
+.fig figcaption{margin-top:9px;font-size:13.8px;line-height:1.6;color:var(--mute)}
+.fig figcaption b{color:var(--ink);font-weight:700}
+
+/* 五種創意策展版型 */
+/* 1. 雙欄雜誌跨頁（左文右圖／可翻轉）+ 底部兩圖拼盤 */
+.lay-spread{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:start}
+.lay-spread.flip > :first-child{order:2}
+.lay-spread.flip > :last-child{order:1}
+.sub-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:22px}
+.sub-grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}
+
+/* 2. 雙主圖壓陣 + 階級雙欄註解卡 */
+.dual-hero-photos{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-bottom:22px}
+.rank-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
+.rank-card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--brass);border-radius:12px;padding:16px 18px}
+.rank-card.servant{border-top-color:var(--teal)}
+.rank-card h4{font-size:17.5px;margin-bottom:6px}
+.rank-card p{margin:0;font-size:14.5px;color:var(--mute);line-height:1.68}
+
+/* 3. 三聯器物陳列板 + 雙欄深度文章 */
+.artifact-trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:20px}
+.two-col-prose{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;align-items:start}
+
+/* 4. 寬幅大廳壓底 + 引言牆與結構標籤 */
+.pano-lead{margin-bottom:20px}
+.quote-strip{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--crimson);border-radius:12px;padding:18px 20px;margin:16px 0}
+.quote-strip.t{border-left-color:var(--teal)}
+.quote-strip blockquote{margin:0;font-family:"Noto Serif TC",serif;font-size:18px;line-height:1.62;color:var(--ink)}
+.quote-strip cite{display:block;margin-top:8px;font-style:normal;font-size:13px;color:var(--brass);font-weight:700}
+.quote-strip.t cite{color:var(--teal)}
+
+/* 5. 直式人物紀實框 + 右側文字 */
+.portrait-feature{display:grid;grid-template-columns:.84fr 1.16fr;gap:30px;align-items:start}
+
+/* 雙殿建築與人物檔案 + 結語 */
+.glossary{margin:40px 0 22px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
+.glossary h2{font-size:clamp(21px,2.8vw,27px);margin-bottom:6px}
+.glossary > p{margin:0 0 18px;color:var(--mute);font-size:14.8px}
+.gl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.gl-item{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.gl-item dt{font-family:"Noto Serif TC",serif;font-weight:800;font-size:17px;color:var(--crimson);margin-bottom:4px}
+.gl-item.t dt{color:var(--teal)}
+.gl-item dd{margin:0;font-size:14px;color:var(--mute);line-height:1.65}
+
+.coda{margin:24px 0 20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.coda-box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.coda-box h3{font-size:18.5px;color:var(--crimson);margin-bottom:8px}
+.coda-box.t h3{color:var(--teal)}
+.coda-box p{margin:0;font-size:15px;line-height:1.72}
+
+footer{max-width:1140px;margin:26px auto 12px;padding:16px max(4vw,18px) 10px;border-top:1px solid var(--line);color:var(--mute);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 18px}
+
+/* Lightbox */
+#lb{position:fixed;inset:0;z-index:40;background:rgba(10,12,15,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:16px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:12px;align-items:center;color:#eee;margin-top:12px;font-size:15px;max-width:900px;text-align:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer;flex:none}
+#lb button:hover{background:#333}
+
+@media(max-width:900px){
+  .prologue,.lay-spread,.dual-hero-photos,.rank-compare,.two-col-prose,.portrait-feature,.coda{grid-template-columns:1fr;gap:20px}
+  .lay-spread.flip > :first-child,.lay-spread.flip > :last-child{order:initial}
+  .bento{grid-template-columns:1fr}
+  .b-card,.b-card.wide{grid-column:span 1}
+  .sub-grid-2,.sub-grid-3,.artifact-trio{grid-template-columns:1fr}
+  .fig.tall img{aspect-ratio:4/3;object-position:center}
+}
+@media(prefers-reduced-motion:reduce){
+  .fig img,.b-card{transition:none}
+  .b-card:hover,.fig button:hover img{transform:none}
+}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・75 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../backto1920/index.html" aria-current="page"><small>2024/11/29</small>回到 1920：臺北最華美宮殿 × 醫學知識殿堂</a></li><li><a href="../bethany/index.html"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../backto1920/index.html" aria-current="page"><small>2024/11/29</small>回到 1920：臺北最華美宮殿 × 醫學知識殿堂</a></li><li><a href="../bethany/index.html"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></details><span>2024/11/29</span></div>
+
+<header class="hero" id="top">
+  <img class="hero-bg" src="img/091428.jpg" alt="秋陽藍天下臺北賓館新巴洛克式正立面與馬薩式石板屋頂">
+  <div class="hero-in">
+    <div class="hero-tags">
+      <span>臺北賓館・原臺灣總督官邸</span>
+      <span class="t">臺大醫學人文博物館・原醫學校二號館</span>
+      <span class="d">2024.11.29 週五 · 打開台大 Open House NTUs</span>
+    </div>
+    <h1>回到 1920：臺北最華美宮殿 × 醫學知識殿堂<small>從五位長官限定的金箔迎賓廳，走進經歷祝融與十年閒置重生的百年醫學院講堂</small></h1>
+    <p class="hero-sub">星期五上午九點，二十位取得預約資格的走讀者在臺北賓館鐵門外逐一查驗身分證件。前一天晚上，這裡才剛剛結束一場大型副總統晚宴；緊接著跨過公園路與景福門街廓，走進 1913 年竣工的鵝黃色生化學藥理教室。三小時內，親手觸及 1920 年代臺北城內政權穩定與專業教育並肩矗立的雙核心。</p>
+  </div>
+</header>
+
+<div class="telemetry">
+  <div class="tel-in">
+    <div><b>日期與時間</b>2024 年 11 月 29 日（五）09:00–12:10</div>
+    <div><b>活動規模</b>20 人小團（國立臺灣大學學生會「打開台大」主辦）</div>
+    <div><b>第一站場域</b><a href="https://www.google.com/maps/search/%E8%87%BA%E5%8C%97%E8%B3%93%E9%A4%A8" target="_blank" rel="noopener">臺北賓館（凱達格蘭大道 1 號）</a></div>
+    <div><b>第二站終點</b><a href="https://www.google.com/maps/search/%E8%87%BA%E5%A4%A7%E9%86%AB%E5%AD%B8%E4%BA%BA%E6%96%87%E5%8D%9A%E7%89%A9%E9%A4%A8" target="_blank" rel="noopener">臺大醫學人文博物館（仁愛路一段 1 號）</a></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <!-- 序章雙欄 ＋ 互動雙殿對照儀 -->
+  <section class="prologue">
+    <div class="lead-prose">
+      <h2>為何重返 1920？臺北城內的黃金十年與雙重現代性</h2>
+      <p><b>1920 年代</b>，興許是臺灣史上極為輝煌的一頁。臺北城內的市區改正已告一段落，<b>週休二日</b>的作息概念與<b>十字路口</b>交通規劃逐漸導入街頭，有志之士亦在島內外鼓吹文化思潮，社會風氣空前活躍。當時陸續落成的<b>臺灣總督府</b>（今總統府）、靜謐坐落一旁的<b>臺北新公園</b>（今二二八和平公園），以及官邸與功能性官舍群，共同勾勒出當時對於現代城市的想像。</p>
+      <p>而這場由「<b>打開台大 Open House NTUs</b>」策劃的走讀，特意把兩棟同在 <b>1913 年</b>定型、且同樣隸屬臺大城中校區周邊生活圈的代表建築放在同一天上午對讀：一邊是象徵政權氣派、專供接待皇族與外賓的<b>臺北賓館</b>；一邊則是象徵專業教育最高殿堂的<b>總督府醫學校二號館</b>（今<b>臺大醫學人文博物館</b>）。</p>
+      <div class="gate-callout">
+        <strong>只有專案預約才推得開的平日清晨門禁</strong>
+        「打開台大」致力於推開校園與城市裡平時得通過重重審核才能進入的空間——從本校區大考中心闈場、總圖地下書庫到城中區古蹟。由於臺北賓館平時每月僅配合總統府開放一日，這天上午能在非開放日持證入內、並由退休外交官<b>范老師</b>與醫學院藥局資深志工<b>吳老師</b>接力帶路，是專屬這二十人的限定席次。
+      </div>
+    </div>
+
+    <aside class="chronicle" aria-label="1920 雙殿時空對照儀">
+      <div class="chr-head">
+        <h3>1920 雙殿時空對照儀</h3>
+        <span>點擊切換建築檔案</span>
+      </div>
+      <div class="chr-tabs" role="tablist" aria-label="雙館檔案切換">
+        <button type="button" role="tab" aria-pressed="true" data-tab="palace">臺北最華美宮殿</button>
+        <button type="button" role="tab" aria-pressed="false" data-tab="medical">醫學知識殿堂</button>
+        <button type="button" role="tab" aria-pressed="false" data-tab="compare">建築密碼比一比</button>
+      </div>
+
+      <div class="chr-panel is-on" id="tab-palace" role="tabpanel">
+        <small>凱達格蘭大道 1 號 · 原臺灣總督官邸</small>
+        <h4>兩代官邸改建，至今只為五位長官敞開</h4>
+        <p>由第四任總督<b>兒玉源太郎</b>下令興建，<b>1901 年</b>初代新文藝復興式建築僅撐了十年便遭白蟻與潮濕侵蝕；<b>1911 年</b>由總督府建築師<b>森山松之助</b>改建為華麗<b>新巴洛克式</b>，<b>1913 年</b>落成。戰後歸外交部管轄，<b>柯林頓、李光耀到近年訪臺的裴洛西</b>皆曾為座上賓。</p>
+        <ul>
+          <li><b>產權與使用權分離</b>：財產屬總統府，管理與使用歸外交部。</li>
+          <li><b>五位長官限定</b>：僅<b>總統、副總統、行政院長、總統府秘書長、外交部長</b>能申請設宴或接待國賓。</li>
+          <li><b>2002–2006 整建</b>：耗時四年、約 1,250 萬美元重貼真金箔與修復屋頂石板。</li>
+        </ul>
+      </div>
+
+      <div class="chr-panel" id="tab-medical" role="tabpanel">
+        <small>仁愛路一段 1 號 · 原總督府醫學校二號館</small>
+        <h4>從補習班起家，撐過大火與十年閒置</h4>
+        <p>前身為臺灣總督府醫學校的<b>生化學與藥理學教室</b>，藥理棟於 <b>1907 年</b>先成、生化學棟與大講堂於 <b>1913 年</b>竣工。歷經 <b>1930 年大火</b>燒毀衛樓與屋頂、戰後又曾<b>閒置十年（1985–1994）</b>幾近拆除改建，終在校友搶救修復後轉型重生。</p>
+        <ul>
+          <li><b>音響極佳的大講堂</b>：中山堂落成前，全臺北重要音樂會與蔣渭水募款演講皆在此舉行。</li>
+          <li><b>1936 年併入臺北帝大</b>：醫專師生曾堅守專業自治八年，最終併為臺北帝國大學醫學部。</li>
+          <li><b>1998–2008 博物館化</b>：1997 年整修竣工，1998 年成立人文館，2008 年併入臺大博物館群。</li>
+        </ul>
+      </div>
+
+      <div class="chr-panel" id="tab-compare" role="tabpanel">
+        <small>ARCHITECTURAL DNA · 1913 同年竣工的兩種語言</small>
+        <h4>辰野派皇家氣勢 vs. 熱帶殖民地在地轉譯</h4>
+        <p>兩棟建築皆受明治維新留英建築師<b>辰野金吾</b>（「辰野派」）歐式折衷語彙影響，卻依身分位階演化出截然不同的細節表情。</p>
+        <ul>
+          <li><b>屋頂與排氣</b>：賓館採法式<b>馬薩式（Mansard）石板斜屋頂</b>；醫館原亦有衛樓與牛眼窗，並以屋頂<b>燈籠窗</b>排出熱氣。</li>
+          <li><b>柱頭雕刻</b>：賓館大廳見梅花鹿灰泥與鮑魚飾；醫館愛奧尼克柱頭竟然刻著<b>臺灣鳳梨、蓮霧與葡萄</b>。</li>
+          <li><b>動線密碼</b>：賓館以中央紅毯梯與僕役螺旋鐵梯區分階級；醫館以高架地下室、深迴廊與圓角磁磚防潮、避西曬又防撞。</li>
+        </ul>
+      </div>
+    </aside>
+  </section>
+
+  <!-- 七個現場限定瞬間 -->
+  <section class="moments" aria-label="本場走讀限定瞬間">
+    <div class="sec-head">
+      <h2>要走進這扇門，才看得到的七個現場秘密</h2>
+      <p>有些歷史書查不到、假日開放也聽不完的線索，只在跟著導覽老師的步伐時悄悄浮現。</p>
+    </div>
+    <div class="bento">
+      <a class="b-card wide" href="#s1">
+        <i>專案限定・前夜剛辦晚宴</i>
+        <b>五位長官才能動用的迎賓宮殿，平日上午持證破例開門</b>
+        <span>11 月 28 日晚間才剛舉行大型副總統晚宴，隔天清晨九點隨「打開台大」通過大門查驗，踩進還帶著典禮氣息的紅毯玄關。</span>
+      </a>
+      <a class="b-card wide b" href="#s2">
+        <i>不能觸碰的真相</i>
+        <b>「不用懷疑，這就是真的金箔」與比賓館還老的 200 年水晶吊燈</b>
+        <span>二樓樓梯轉角貼滿亮燦真金箔，仰頭那盞華麗水晶燈更曾被嫌維修費太貴而深鎖倉庫，直到總務處長翻出試修才重見天日。</span>
+      </a>
+      <a class="b-card t" href="#s2">
+        <i>階級分流建築學</i>
+        <b>總督走紅毯大樓梯，僕役隱身船艙螺旋鐵梯</b>
+        <span>兩座窄陡鑄鐵螺旋梯藏在東西兩側角落，確保服侍人員絕不會在中央樓梯與主人迎面相撞；頂樓小陽臺更曾讓 1923 年來臺的皇太子揮手致意。</span>
+      </a>
+      <a class="b-card" href="#s3">
+        <i>外交搶運秘辛</i>
+        <b>1992 年臺韓斷交前搶救回臺的袁世凱古董家具</b>
+        <span>清末袁世凱駐韓商務專員時期留在駐韓大使館的桌椅，外交部總務司在斷交撤館時搶在沒收前運回臺灣，至今安放二樓展室。</span>
+      </a>
+      <a class="b-card b" href="#s5">
+        <i>廢物利用百年石構</i>
+        <b>庭園裡的清代府城牆石、天后宮石獅，與寫著「心」字的黑天鵝池</b>
+        <span>拆掉臺北府城牆的石塊墊在賓館與臺大醫院圍牆裡；二二八公園原臺北天后宮拆下的石獅石鼓，則悄悄守在臺灣第一座日式庭園橋邊。</span>
+      </a>
+      <a class="b-card t" href="#s7">
+        <i>希臘柱頭上的臺灣水果</i>
+        <b>「愛我立刻」愛奧尼克柱旁，藏著鳳梨與蓮霧浮雕</b>
+        <span>1907 年建的單方柱對照 1913 年較精細的雙圓柱，山牆勳章裡竟把在地鳳梨、蓮霧與葡萄刻進西方古典語彙裡。</span>
+      </a>
+      <a class="b-card wide" href="#s7">
+        <i>藥局志工的私房視角</i>
+        <b>1930 年大火為何沒能重建屋頂？與西址二樓藥局那道看不見的陡梯</b>
+        <span>醫學院屋頂衛樓燒毀後，總督府正好將經費全數抽調去籌辦 1935 年臺灣博覽會；而同款通風「燈籠窗」的狹陡維修梯，至今仍藏在臺大醫院西址藥局後方。</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 10 站路線索引 -->
+  <nav class="route-rail" aria-label="10 站走讀動線索引">
+    <div class="rr-title">三小時雙殿動線總覽（點擊跳至各站實錄）</div>
+    <div class="rr-list">
+      <a href="#s1"><span>01</span>09:00 鐵門查驗與 1920 破題</a>
+      <a href="#s2"><span>02</span>09:17 真金箔階梯 × 僕役螺旋梯</a>
+      <a href="#s3"><span>03</span>09:27 17 座壁爐與斷交搶運家具</a>
+      <a href="#s4"><span>04</span>09:45 1952 和約大廳與菊換梅</a>
+      <a href="#s5"><span>05</span>09:55 心字池庭園與天后宮石獅</a>
+      <a class="m" href="#s6"><span>06</span>10:13 步行街廓與二號館新生</a>
+      <a class="m" href="#s7"><span>07</span>10:37 鳳梨柱頭與 1930 大火之謎</a>
+      <a class="m" href="#s8"><span>08</span>10:57 大禮堂挑高穹頂與募款買飛機</a>
+      <a class="m" href="#s9"><span>09</span>11:45 高木友枝「先成為人」與校友拼貼</a>
+      <a class="m" href="#s10"><span>10</span>12:05 醫師之像、切膚之愛與楓城長廊</a>
+    </div>
+  </nav>
+
+  <!-- ==================== 第一篇：臺北賓館 ==================== -->
+  <div class="chapter">
+    <div>
+      <small>CHAPTER I · 09:00–10:10</small>
+      <h2>臺北最華美的宮殿：臺北賓館</h2>
+    </div>
+    <p>從「二十五萬日圓值不值得」的國會舌戰走進真金箔迴廊，聽退休外交官范老師拆解百年前的階級動線、斷交文物與花園裡的城牆遺石。</p>
+  </div>
+
+  <!-- STOP 01 -->
+  <article class="station" id="s1">
+    <div class="kicker">
+      <span class="s-no">STOP 01</span>
+      <span class="s-time">09:00–09:16 · 凱達格蘭大道一號正門與玄關門廊</span>
+      <span class="s-tag">專案查驗入內</span>
+    </div>
+    <div class="lay-spread">
+      <div class="station-copy">
+        <h3>「不讓殖民地看見天皇如何生活，怎麼讓他們尊敬天皇？」</h3>
+        <p>早上九點整，二十名參與者在臺北賓館厚重的鑄鐵大門外掏出證件、領取導覽手冊。入內前志工隊長語氣鄭重地提醒：館內隨處都有管理單位的監控鏡頭，上樓後切莫因風景太美而脫隊，且「<b>看到牆面金箔絕對不能伸手檢驗真假——不用懷疑，全部都是真的金箔</b>」。</p>
+        <p>領路的是曾在外交部服務多年、退休後回來擔任志工的<b>范老師</b>（恰好也是臺大校友）。他先將時鐘撥回 <b>1895 年</b>：清日簽訂《馬關條約》後，首任總督最初棲身臨時處所，直到第四任總督<b>兒玉源太郎</b>決定在此興建正式官邸，<b>1901 年</b>第一代官邸落成。然而臺灣氣候潮濕、白蟻肆虐，木構件撐不到十年便嚴重受損；<b>1911 年</b>總督府決定拆除重建，耗時兩年於 <b>1913 年</b>完成今日所見的第二代新巴洛克式官邸。</p>
+        <p>這座第二代官邸共耗資<b>二十五萬日圓</b>——在當時一位教師月薪僅約<b>十七日圓</b>的年代，堪稱天文數字。預算案送到東京國會時，議員痛批：「一個小小的殖民地總督，為何要蓋這麼豪華的官邸？」據說當時的民政長官只回了一句話：「<b>如果不讓殖民地的人民看見皇室與天皇如何生活，你要如何讓他們尊敬天皇？</b>」一句話立刻讓東京議會無從反駁，預算順利過關。</p>
+      </div>
+      <figure class="fig">
+        <button data-ph="090050" aria-label="放大照片：09:00 臺北賓館鐵門外集合與證件查驗">
+          <img loading="lazy" src="img/090050.jpg" alt="早上九點參與者於臺北賓館大門外手持資料與證件準備查驗入內">
+        </button>
+        <figcaption><b>09:00 平日上午的門禁現場</b>：非每月例行開放日，須憑事先審核名冊與證件才能跨進這道鐵門。</figcaption>
+      </figure>
+    </div>
+
+    <div class="sub-grid-3">
+      <figure class="fig">
+        <button data-ph="091428" aria-label="放大照片：臺北賓館新巴洛克式外觀與馬薩式屋頂">
+          <img loading="lazy" src="img/091428.jpg" alt="秋日藍天下臺北賓館正立面、成排綠樹與馬薩式黑瓦斜屋頂">
+        </button>
+        <figcaption><b>森山松之助的皇家舞台</b>：高聳馬薩式石板斜屋頂與雙柱陽臺，與總統府、三處州廳同出一人之手。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="091617" aria-label="放大照片：跨過臺北賓館車寄門廊紅毯入內">
+          <img loading="lazy" src="img/091617.jpg" alt="從臺北賓館玄關石柱門廊望向鋪著紅地毯的室內通道">
+        </button>
+        <figcaption><b>踏上迎賓紅毯</b>：穿過花崗岩柱列下的「車寄」門廊，前一晚這裡才剛迎接副總統晚宴的賓客。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="091624" aria-label="放大照片：門廊天花板幾何線條與中央玫瑰花飾">
+          <img loading="lazy" src="img/091624.jpg" alt="仰望臺北賓館玄關天花板白色線板與中央墨綠金色圓形雕花">
+        </button>
+        <figcaption><b>進門先抬頭</b>：門廊天花板中央精緻的輻射狀花飾，揭開一樓迎賓序列的序幕。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 02 -->
+  <article class="station" id="s2">
+    <div class="kicker">
+      <span class="s-no">STOP 02</span>
+      <span class="s-time">09:17–09:26 &amp; 09:35 · 一樓柱廳、中央金箔樓梯與角落螺旋梯</span>
+      <span class="s-tag">兩百年吊燈 × 階級分流</span>
+    </div>
+    <div class="dual-hero-photos">
+      <figure class="fig wide">
+        <button data-ph="092147" aria-label="放大照片：中央大樓梯轉折處真金箔壁面與兩百年水晶吊燈">
+          <img loading="lazy" src="img/092147.jpg" alt="仰望臺北賓館中央樓梯間，金色巴洛克灰泥貼金箔牆面、拱門與水晶吊燈">
+        </button>
+        <figcaption><b>最耀眼的樓梯轉角</b>：牆面貼滿貨真價實的金箔，而懸在頭頂的水晶吊燈竟比整棟臺北賓館還要古老。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="091714" aria-label="放大照片：一樓愛奧尼克雙柱門廳與范老師解說">
+          <img loading="lazy" src="img/091714.jpg" alt="一樓挑高大廳成對白色雙柱與水晶吊燈，導覽志工范老師站在紅毯中央">
+        </button>
+        <figcaption><b>辰野派的對稱門廳</b>：四組高大柱列撐起一樓主廳，視線一路貫穿前後庭院。</figcaption>
+      </figure>
+    </div>
+
+    <div class="station-copy">
+      <h3>比房子還老的倉庫水晶燈，與「絕不讓主人撞見僕役」的兩座樓梯</h3>
+      <p>順著鋪滿紅毯的中央大樓梯拾級而上，范老師指著頭頂垂降的璀璨水晶吊燈說起一段外交部內部流傳已久的趣聞：這盞吊燈的歷史據傳<b>超過兩百年</b>，比 1913 年完工的臺北賓館本身還要老！早年官邸移交給外交部管理時，修復古董吊燈的預算高得嚇人，原本幾乎無力處理；直到有位總務處長在倉庫角落翻出這盞蒙塵吊燈，心想「看起來這麼漂亮，不如拿出來試修看看能不能用？」沒想到整理點亮後竟驚為天人，才重新懸回這座全館最氣派的樓梯上方。</p>
+      <p>而 <b>2002 年至 2006 年</b>間，臺北賓館曾被帆布整棟包覆整修長達四年，總經費高達<b>一千兩百五十萬美元</b>（當時在對面外交部上班的范老師每天隔街望著整修進度），連馬薩式屋頂每一片石板都曾敲起以銅片包覆重鋪，室內的巴洛克灰泥金箔與彩繪玻璃（在歐式框架中悄悄融入東方元素）也一併重現光華。</p>
+      <div class="rank-compare">
+        <div class="rank-card">
+          <h4>總督之路｜中央金箔大理石梯</h4>
+          <p>階梯寬闊平緩、牆面貼滿真金箔，專供<b>總督、總督夫人、皇族與國賓</b>上下。范老師笑著說：「各位今天走的，全是當年總督與總督夫人走的路。」</p>
+        </div>
+        <div class="rank-card servant">
+          <h4>僕役之路｜東西兩側船艙螺旋梯</h4>
+          <p>走進二樓角落，竟藏著兩座造形源自<b>船艙設計</b>的極窄鑄鐵螺旋梯（東西各一座），專供<b>僕役端茶送水</b>上下穿梭，徹底實現嚴密的階級分流。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-grid-3">
+      <figure class="fig">
+        <button data-ph="092152" aria-label="放大照片：團員於樓梯轉角拍下真金箔牆面">
+          <img loading="lazy" src="img/092152.jpg" alt="范老師站在樓梯木欄杆旁解說，團員舉起手機拍攝滿牆巴洛克金箔浮雕">
+        </button>
+        <figcaption><b>最佳取景機位</b>：范老師特意停在轉台提示大家回頭拍，後方的金箔灰泥雕花曾入選官方攝影首選角度。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="092330" aria-label="放大照片：二樓梯廳解說 2002 至 2006 年大修史">
+          <img loading="lazy" src="img/092330.jpg" alt="二樓樓梯口平臺，范老師面向團員細數 2002 年四年整修往事">
+        </button>
+        <figcaption><b>隔街守望四年修復</b>：當年就在對面外交部上班的范老師，如今退而不休回來替人講故事。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="093534" aria-label="放大照片：二樓角落專供僕役使用的鑄鐵螺旋梯">
+          <img loading="lazy" src="img/093534.jpg" alt="淺綠色鑄鐵船艙式螺旋樓梯緊貼牆角盤旋向上，旁側為深色木門與百葉窗">
+        </button>
+        <figcaption><b>階級的垂直暗道</b>：僕役走下層螺旋梯服侍，而通往屋頂小陽臺的更上方窄梯平常完全封閉，1923 年裕仁皇太子曾登頂向群眾揮手。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 03 -->
+  <article class="station" id="s3">
+    <div class="kicker">
+      <span class="s-no">STOP 03</span>
+      <span class="s-time">09:27–09:45 · 二樓第一、二寢室與大會客廳</span>
+      <span class="s-tag">17 座壁爐 × 斷交搶運家具</span>
+    </div>
+    <div class="two-col-prose station-copy">
+      <div>
+        <h3>一樓待客、二樓生活：17 座進口大理石壁爐與透心磚</h3>
+        <p>一跨上二樓，空間性格立刻轉換——這層樓既是當年總督與家人的起居室，也承擔私密宴客機能。二樓起居區最耐人尋味的一件器物，是樓梯旁那座四面木框皆可拉開的<b>風景展示櫃</b>：內藏富士山等日本名勝畫片，頂端竟整齊環繞著<b>四十餘隻飛禽雕刻</b>（可惜原本立在最上方的兩座主雕塑，如今已一損一失）。</p>
+        <p>往東廂走入總督夫人的<b>第一寢室與附設化妝間</b>，目光馬上被那座純白雕花壁爐吸住。整座臺北賓館竟設有高達 <b>17 座壁爐</b>，每座紋樣無一重複。由於百年前花蓮大理石尚未開採，全數皆為<b>海外進口大理石</b>；壁爐旁鋪貼著百年前原裝進口的<b>維多利亞釉面花磚</b>，而室內走廊地面則採用顏色貫穿整塊磚體的「<b>透心磚</b>」——就算被無數雙鞋踩踏了一百多年，色彩依然不會磨褪。壁爐上方必裝高大鏡面，正是歐式官邸用來折射燭光與天光、瞬間放大空間感的巧思。</p>
+      </div>
+      <div>
+        <h3>皇太子住過就不敢再睡的臥室，與 1992 年搶運回來的袁世凱家具</h3>
+        <p>談到總督原本的寢室為何後來空出來？這就得提到 <b>1923 年 4 月</b>來臺行啟訪問 12 天的日本皇太子（後來的<b>昭和天皇</b>）。出於對皇室的極度尊崇，凡皇族下榻過的房間便不再供總督日常睡臥；總督乾脆在建築北側庭園旁另蓋了一棟黑瓦木造的「<b>和館</b>」自住，從此形成「洋館辦公宴客、和館起居生活」的雙館格局。</p>
+        <p>走進氣派的<b>大會客廳與第二寢室</b>，天花板換成白金交錯的幾何線板、腳下踩的是四種木材拼成的<b>櫸木拼花地板</b>，柯林斯柱頭旁竟還點綴著<b>臺灣梅花鹿</b>灰泥塑像——總督府當年「工業日本、農業臺灣」的統治與物產意象就這樣融進巴洛克穹頂裡。而一旁展示的清末木作家具組更是來頭不小：那是<b>袁世凱</b>年輕時派駐朝鮮擔任商務專員時在使館使用的古董桌椅；<b>1992 年臺韓斷交</b>撤館之際，外交部總務司怕館產被沒收轉交中華人民共和國，硬是在時間壓力下把這套清末家具搶運回臺保存！</p>
+      </div>
+    </div>
+
+    <div class="artifact-trio">
+      <figure class="fig">
+        <button data-ph="092731" aria-label="放大照片：二樓玄關四十餘隻飛禽雕飾神秘木櫃">
+          <img loading="lazy" src="img/092731.jpg" alt="二樓廊道旁深色木雕展示櫃，頂緣環繞數十隻飛鳥浮雕">
+        </button>
+        <figcaption><b>謎樣的飛禽風景櫃</b>：四面木板可抽出觀看日本名勝圖繪，來歷雖已成謎，雕工卻盡顯大師水準。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="093304" aria-label="放大照片：東廂總督夫人第一寢室與進口大理石壁爐">
+          <img loading="lazy" src="img/093304.jpg" alt="范老師站在總督夫人寢室白色大理石壁爐前解說，上方鑲有大型木框鏡面">
+        </button>
+        <figcaption><b>房間的心臟</b>：每座壁爐上方必配大鏡子放大採光；當時花蓮尚未產石，石材全自海外進口。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="093917" aria-label="放大照片：二樓大會客廳全貌">
+          <img loading="lazy" src="img/093917.jpg" alt="鋪著藍底花紋地毯與法式沙發組的二樓大會客廳，落地窗掛著暗紅垂簾">
+        </button>
+        <figcaption><b>大會客廳</b>：白金灰泥天花板、梅花鹿泥塑與柯林斯柱頭，重現總督舉辦大型酒會的華麗場景。</figcaption>
+      </figure>
+    </div>
+
+    <div class="sub-grid-2">
+      <figure class="fig">
+        <button data-ph="094243" aria-label="放大照片：維多利亞百年釉面壁爐磁磚與櫸木拼花地板">
+          <img loading="lazy" src="img/094243.jpg" alt="近拍壁爐底部黃白花卉維多利亞磁磚與四種木材交織的櫸木拼花地板">
+        </button>
+        <figcaption><b>腳下的百年工藝</b>：陽臺磁磚於 2002 年重換，但室內這排維多利亞花磚與四木拼花地板皆為百年前原件。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="094446" aria-label="放大照片：1992 年臺韓斷交搶運回臺的清末袁世凱家具">
+          <img loading="lazy" src="img/094446.jpg" alt="二樓房間中央陳列清末中式嵌大理石太師椅與茶几組，團員舉手機拍攝">
+        </button>
+        <figcaption><b>斷交搶運的清末記憶</b>：每逢撤館最怕館產落入對岸手中，這套駐韓大使館遺留的袁世凱家具成為歷史見證。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 04 -->
+  <article class="station" id="s4">
+    <div class="kicker">
+      <span class="s-no">STOP 04</span>
+      <span class="s-time">09:45–09:55 · 總統秘室與一樓大宴會廳（1952 和約簽訂處）</span>
+      <span class="s-tag">菊花換梅花 × 藏輪座椅</span>
+    </div>
+    <div class="lay-spread flip">
+      <div class="station-copy">
+        <h3>《中日和約》現場的梅花與鮑魚飾，和一張「會走路」的木椅</h3>
+        <p>穿過極為隱密、門一關便連隨扈也難窺探的<b>總統接見外賓會客室</b>（牆上掛著書法家<b>董陽孜</b>於 2004 年整修落成時題寫的「<b>美意延年</b>」與「<b>日新無疆</b>」兩幅大字，范老師笑稱看完賓館就像每天自我升級成 2.0 版），一行人順著另一側回到一樓最核心的<b>西式大宴會廳</b>。</p>
+        <p>這座高挑、垂掛多盞金色枝形吊燈的紅毯大廳，正是 <b>1952 年簽訂《中日和約》（臺北和約）</b>、正式終結二戰後長達七年國際角力與戰爭狀態的歷史現場（當年的簽約桌椅與銅像現已移往國史館典藏）。</p>
+        <div class="quote-strip">
+          <blockquote>「你看門楣正中央那朵梅花，其實戰前原本是代表日本皇室的菊花；國民政府接收後把菊花換成了梅花，但旁邊那一整圈『鮑魚飾』徽章，卻一點都沒動過。」</blockquote>
+          <cite>—— 范老師於一樓大宴會廳門廊前指點政權更迭的建築細節</cite>
+        </div>
+        <p>大廳裡還藏著兩個只有辦過國宴的人才懂的小細節：若辦國慶酒會或自助餐會，走廊與鄰室會擺滿餐點，而眼前看似沉重的木椅底下其實全暗藏了<b>小輪子</b>，方便工作人員推著迅速清空或排陣；這天清晨，大夥剛好輪流站到紅絲絨講台前，當了一分鐘「歷史的臨時主人」。</p>
+      </div>
+      <div class="sub-grid-2" style="margin-top:0;grid-template-columns:1fr">
+        <figure class="fig">
+          <button data-ph="095102" aria-label="放大照片：大宴會廳內部與范老師張手介紹空間尺度">
+            <img loading="lazy" src="img/095102.jpg" alt="深色木護牆板與紅地毯大宴會廳，范老師展開雙臂介紹 1952 年簽約歷史與藏輪座椅">
+          </button>
+          <figcaption><b>曾是 1952 年《中日和約》簽約現場</b>：木護牆板、八角藻井天花板與金色吊燈，至今仍是國宴核心舞台。</figcaption>
+        </figure>
+        <figure class="fig">
+          <button data-ph="095437" aria-label="放大照片：大宴會廳紅絲絨拱窗主舞台">
+            <img loading="lazy" src="img/095437.jpg" alt="雙白柱框出半圓形落地窗與暗紅金邊絲絨垂簾主舞台">
+          </button>
+          <figcaption><b>紅絲絨拱窗舞台</b>：過去是樂隊演奏與貴賓致詞席，如今每逢開放日便輪番上映賓館修復紀錄影片。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <!-- STOP 05 -->
+  <article class="station" id="s5">
+    <div class="kicker">
+      <span class="s-no">STOP 05</span>
+      <span class="s-time">09:55–10:07 · 北側日式庭園與東側塔樓正門告別</span>
+      <span class="s-tag">臺灣第一座日本庭園</span>
+    </div>
+    <div class="station-copy">
+      <h3>前庭歐洲對稱、後院「心」字日本池：石獅、城牆石與黑天鵝</h3>
+      <p>推開大廳後門，整座賓館最迷人的反差瞬間展開：建築南側前院是完全對稱的法式幾何花園與巴洛克噴泉，北側後院卻是<b>臺灣第一座日本式庭園</b>！水池據傳勾勒成草書「<b>心</b>」字，寓意「<b>心向天皇</b>」；當年日本總督在此放養的是象徵吉祥的<b>白鶴</b>，如今卻成了外交部十多年前引進、越養越旺的十幾隻<b>黑天鵝</b>。</p>
+      <p>走下迴廊欄杆，只見一對飽經風霜的<b>清代石獅</b>與小橋兩端用來壓住廟門門柱的圓形<b>石鼓</b>——原來日治時期興建「新公園」（今二二八和平公園）時拆除了城內知名的<b>臺北天后宮</b>，這批廟宇石構便悄悄搬進總督官邸庭園當景觀石。更別誤會石牆上咖啡色痕跡是「外交部沒刷乾淨」：那是石塊裡的鐵礦經百年雨水自然滲出的鏽色；而賓館與對面臺大醫院圍牆底部的許多大石塊，正是日本政府拆掉清代<b>臺北府城牆</b>後省錢再利用的遺石！</p>
+    </div>
+
+    <div class="sub-grid-2">
+      <figure class="fig wide">
+        <button data-ph="095557" aria-label="放大照片：臺北賓館北側臺灣第一座日式庭園全景">
+          <img loading="lazy" src="img/095557.jpg" alt="從二樓迴廊側方望向北側日式庭園「心」字水池、木造涼亭與棕櫚樹">
+        </button>
+        <figcaption><b>臺灣第一座日本式庭園</b>：不同於英式或中式庭園，日式庭園以修剪細緻的松柏盆栽與迴游式水池涼亭供皇族遊賞。</figcaption>
+      </figure>
+      <figure class="fig wide">
+        <button data-ph="095631" aria-label="放大照片：仰望臺北賓館北側雙層拱廊立面">
+          <img loading="lazy" src="img/095631.jpg" alt="臺北賓館北面一樓半圓拱圈與二樓愛奧尼克雙柱迴廊立面">
+        </button>
+        <figcaption><b>二樓開放迴廊</b>：日治時期第二代改建加入鋼骨核心外包磚石的複合結構，每間二樓臥室推窗都能俯瞰這片綠意。</figcaption>
+      </figure>
+    </div>
+
+    <div class="sub-grid-2">
+      <figure class="fig">
+        <button data-ph="095843" aria-label="放大照片：庭園欄杆上源自臺北天后宮的石獅">
+          <img loading="lazy" src="img/095843.jpg" alt="石砌陽臺欄杆轉角蹲坐著一尊源自舊臺北天后宮的清代石獅，背景可見弧形書房窗與棕櫚樹">
+        </button>
+        <figcaption><b>流落宮殿的天后宮石獅</b>：原在今二二八公園內的臺北天后宮拆除後，石獅與石鼓被安放於這座西洋官邸的階梯與橋頭。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="100337" aria-label="放大照片：臺北賓館側翼塔樓與修剪圓潤的樹叢">
+          <img loading="lazy" src="img/100337.jpg" alt="藍天下臺北賓館側翼高塔、層疊柱廊與門前修剪如雲朵的綠色灌木">
+        </button>
+        <figcaption><b>東側翼與和館方向</b>：右側便是昔日專供總督自住的木造黑瓦「和館」所在，與豪華洋館相依百餘年。</figcaption>
+      </figure>
+    </div>
+
+    <div class="sub-grid-2">
+      <figure class="fig">
+        <button data-ph="100600" aria-label="放大照片：仰望臺北賓館正門雙柱車寄與牛眼窗山牆">
+          <img loading="lazy" src="img/100600.jpg" alt="由正門下方仰望臺北賓館高聳車寄門廊、牛眼窗與巴洛克山牆">
+        </button>
+        <figcaption><b>十點鐘準時道別</b>：因後續仍有公務使用，十點出頭走出正門車寄，最後回望一次屋頂上的圓形牛眼窗。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="100642" aria-label="放大照片：與退休外交官范老師於臺北賓館正門前合影">
+          <img loading="lazy" src="img/100642.jpg" alt="臺北賓館正門玄關前與身穿紫色導覽背心的范老師合影留念">
+        </button>
+        <figcaption><b>門前的謝幕合影</b>：范老師細數半世紀外交往事與建築工法，替這趟難得的平日開門留下最溫暖的句點。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- ==================== 第二篇：臺大醫學人文博物館 ==================== -->
+  <div class="chapter med">
+    <div>
+      <small>CHAPTER II · 10:13–12:10</small>
+      <h2>城中區的醫學知識殿堂：臺大醫學人文博物館</h2>
+    </div>
+    <p>步行穿過景福門街廓來到仁愛路一段一號。在經歷 1930 年大火與十年閒置而重生的 1913 年鵝黃色二號館裡，跟著吳老師讀懂臺灣醫界的精神系譜。</p>
+  </div>
+
+  <!-- STOP 06 -->
+  <article class="station is-med" id="s6">
+    <div class="kicker">
+      <span class="s-no">STOP 06</span>
+      <span class="s-time">10:13–10:35 · 仁愛路一段一號校區步道、大廳與竣工誌銘</span>
+      <span class="s-tag">從宮殿走進醫學校</span>
+    </div>
+    <div class="lay-spread">
+      <div class="station-copy">
+        <h3>跨出迎賓宮殿，走入醫學院區僅存的 1907–1913 古蹟二號館</h3>
+        <p>上午 10:13，隊伍沿著公園路轉往仁愛路與中山南路交會處，穿過綠樹夾道的臺大醫學院舊館區車道。這棟溫潤的鵝黃色建築，最早是 <b>1907 年</b>興建的臺灣總督府醫學校藥理學教室，並於 <b>1913 年</b>增建生化學教室與大講堂，在戰後臺大醫學院編制裡稱作「<b>二號館</b>」。</p>
+        <p>然而它曾差點永遠消失。<b>1985 年至 1994 年間，二號館整整閒置十年</b>，校方與醫院一度評估拆除改建新大樓；幸好當年拆下的構件與文物全數收入地下室妥善保存，最終由陳維昭校長、謝博生院長與戴東原院長等醫界師長力挽狂瀾，自 1995 年起展開兩年古蹟修復（<b>1997 年 12 月 20 日竣工</b>），於 1998 年成立醫學人文館，<b>2008 年</b>正式併入臺大博物館群，成為全臺醫學生與市民共同的醫學記憶庫。</p>
+      </div>
+      <figure class="fig wide">
+        <button data-ph="101306" aria-label="放大照片：走讀隊伍步入臺大醫學院舊館區綠蔭車道">
+          <img loading="lazy" src="img/101306.jpg" alt="參與者一行沿著臺大醫學院舊區大樹成蔭的柏油路走向鵝黃色二號館">
+        </button>
+        <figcaption><b>轉場仁愛路一段一號</b>：幾分鐘步程便從國家級外交宮殿跨進百年醫學教育發源地。</figcaption>
+      </figure>
+    </div>
+
+    <div class="sub-grid-3">
+      <figure class="fig">
+        <button data-ph="102101" aria-label="放大照片：博物館大廳感應燈光告示與解剖學展示館海報">
+          <img loading="lazy" src="img/102101.jpg" alt="大廳服務台展示解剖學教育展示館海報、臺大博物館群簡介與感應式展間燈光提醒">
+        </button>
+        <figcaption><b>邊教學、邊典藏的活建築</b>：告示牌提醒「二樓仍為行政與教學區域」，展間燈光採人靠近才會自動亮起的感應裝置。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="102105" aria-label="放大照片：服務台木桌上的醫學人文博物館紀念章">
+          <img loading="lazy" src="img/102105.jpg" alt="服務台木桌擺放著圓形與方形館徽紀念章與印泥盒">
+        </button>
+        <figcaption><b>博物館群的集章角落</b>：圓柱拱廊的館徽化作木柄紀念章，替這場上午的雙殿之旅蓋下印記。</figcaption>
+      </figure>
+      <figure class="fig tall">
+        <button data-ph="102445" aria-label="放大照片：臺大醫學院二號館整修竣工誌銘碑文">
+          <img loading="lazy" src="img/102445.jpg" alt="黑色花崗岩金字碑文《國立台灣大學醫學院二號館整修竣工誌銘》">
+        </button>
+        <figcaption><b>《二號館整修竣工誌銘》</b>：民國 86 年刻石記下這棟 1907 年老建築「僅存之古老建築……決意懷古思源」的搶救經過。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 07 -->
+  <article class="station is-med" id="s7">
+    <div class="kicker">
+      <span class="s-no">STOP 07</span>
+      <span class="s-time">10:37–10:56 · 二號館戶外廣場與建築立面</span>
+      <span class="s-tag">鳳梨柱頭 × 1930 大火之謎</span>
+    </div>
+    <div class="portrait-feature">
+      <figure class="fig tall">
+        <button data-ph="103726" aria-label="放大照片：吳老師站在二號館門口手舉歷史圖卡戶外導覽">
+          <img loading="lazy" src="img/103726.jpg" alt="白髮吳老師揹著臺大博物館群帆布袋，站在鵝黃色二號館門口舉起老地圖與舊照講解">
+        </button>
+        <figcaption><b>道具滿滿的吳老師</b>：在門廊前一張接一張抽出昭和十年地圖與 1930 年大火前後對比照，把建築拆解得像標本一樣精準。</figcaption>
+      </figure>
+
+      <div class="station-copy">
+        <h3>「愛我立刻（Ionic）！」柱頭上的臺灣鳳梨，與被博覽會吸走的重建預算</h3>
+        <p>自稱「口天吳」的<b>吳老師</b>，既是這裡的資深志工，平常也在臺大醫院藥局當志工。她掏出一張<b>昭和十年（1935 年）</b>臺北地圖與清末東門照片破題：站在這裡望向路口，<b>景福門（東門）</b>原是清代閩南式單檐歇山城樓，戰後國民政府為強調北方宮殿正統才改建上層屋頂，如今只有石頭底座是真古蹟；而中正紀念堂原址在日治時期是<b>山砲隊營區</b>，當年拆除臺北城牆的石材一點也沒浪費，全拿去砌築臺大醫院圍牆與臺北賓館基座。</p>
+        <p>接著吳老師把鏡頭拉近到我們身後的建築立面，點出四個不跟著老志工看絕對會錯過的建築密碼：</p>
+        <ul>
+          <li><b>「愛我立刻」與臺灣水果柱飾</b>：希臘三柱式裡，<b>愛奧尼克式（Ionic）</b>柱身修長帶有捲渦花紋，吳老師傳授獨門記憶法：「<b>愛我立刻，不要遲疑，要馬上愛！</b>」對比左側 <b>1907 年藥理棟</b>較樸素的方形單柱，右側 <b>1913 年主棟</b>換成更細緻的愛奧尼克雙圓柱，山牆勳章與柱頭旁竟然還刻著用稻草綁縛的<b>臺灣鳳梨、蓮霧與葡萄</b>！這與公館自來水博物館柱頭刻水稻一樣，是日本建築師將西方古典語彙在地化的巧思。</li>
+          <li><b>1930 年大火與「消失的馬薩式屋頂」</b>：二號館正門原本也有跟臺北賓館一樣氣派的<b>馬薩式屋頂、牛眼窗與高聳衛樓</b>，卻在 <b>1930 年一場大火</b>燒毀！為何後來沒按原樣重建？吳老師解密：總督府當時正傾全國之力籌備 <b>1935 年「始政四十週年臺灣博覽會」</b>（忙著蓋公會堂／中山堂、放送局、整理植物園與圓山會場），所有經費與技術工匠全被抽調一空，屋頂只好草草收平。</li>
+          <li><b>熱帶殖民地的防衛與散熱智慧</b>：來自高緯度的日本人吃盡臺灣潮濕悶熱與白蟻的苦（1898 年木造舊醫院三年就被白蟻蛀壞改建西址紅磚樓），於是把大航海時代從印度學來的經驗用在這棟建築——<b>高架地下室</b>防淹防潮、<b>內縮深迴廊</b>遮擋西曬、<b>圓角磁磚</b>避免醫護碰撞受傷；而地下室窗口裝設的鐵欄杆，竟不是為了防小偷，而是「<b>防止野狗、野貓和鳥鑽進來破壞解剖標本！</b>」</li>
+          <li><b>藥局志工才知道的秘密「燈籠窗」</b>：屋頂上方設有專供熱氣上升排出的「<b>燈籠窗</b>」；臺大醫院西址二樓藥局後方至今仍保留著極為陡峭的狹窄木梯（和臺北賓館二樓往屋頂那座一樣險峻），每天在藥局拆藥盒做分類回收的吳老師天天經過，卻笑說自己「太陡了真的不敢爬」。</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- STOP 08 -->
+  <article class="station is-med" id="s8">
+    <div class="kicker">
+      <span class="s-no">STOP 08</span>
+      <span class="s-time">10:57–11:44 · 二號館挑高中庭大廳與主展間</span>
+      <span class="s-tag">昔日臺北第一大講堂</span>
+    </div>
+    <div class="sub-grid-2" style="margin-top:0;margin-bottom:22px">
+      <figure class="fig wide">
+        <button data-ph="105718" aria-label="放大照片：挑高兩層的中庭大講堂與二樓迴廊高窗">
+          <img loading="lazy" src="img/105718.jpg" alt="仰望醫學人文博物館挑高兩層中庭大廳，二樓木欄杆迴廊與上方弧形採光窗環繞四周">
+        </button>
+        <figcaption><b>中山堂落成前，全臺北最大的集會殿堂</b>：上方現已封閉的圓形穹頂原本用來採光並把室內熱氣抽上屋頂。</figcaption>
+      </figure>
+      <figure class="fig wide">
+        <button data-ph="105722" aria-label="放大照片：一樓拱門大廳空間與學員自由瀏覽">
+          <img loading="lazy" src="img/105722.jpg" alt="潔白拱門列柱、水磨石地板構成的寬敞一樓中庭，學員散落各展區閱覽">
+        </button>
+        <figcaption><b>站在昔日大講堂中央</b>：腳下踩的水磨石地與背後這排拱門，見證了百年來臺灣無數場公民演講與醫學典禮。</figcaption>
+      </figure>
+    </div>
+
+    <div class="lay-spread">
+      <div class="station-copy">
+        <h3>蔣渭水在這裡募款買飛機，與「來來來，來臺大；去去去，去美國」</h3>
+        <p>走進館內挑高兩層的中庭大廳，很難想像我們腳下正踩在 1920 年代全臺北最重要的大講堂（大禮堂）中心。在 1936 年中山堂尚未完工前，全城最盛大的音樂會與公民演講都在這裡舉行——甚至臺灣文化協會核心人物<b>蔣渭水</b>（正是這所醫學校出身的校友！），當年也曾在大講堂內替臺灣第一位飛行員<b>謝文達</b>發起募款，要集資購買一架真正屬於臺灣人、性能比日方試飛更佳的飛機，只因「開日本飛機老是摔機，命大才活下來！」</p>
+        <p>而館外這片庭園在戰後也曾歷經政治劇變：一旁原屬醫學院系統的舊赤十字會建物曾被國民黨長期借用直到 1970–80 年代爆發黨產買賣與歸還爭議；另一側舊校區大禮堂則因 1981 年前後<b>蔣經國</b>路過時說了一句「我們最大的醫院怎麼這麼破舊」，隨後全面拆建為新醫療大樓。如今中庭的<b>楓香樹</b>（在亞熱帶氣候下不會轉黃，卻促成了醫學院「楓城」之名，校友會則以鄰近東門命名為「景福校友會」），仍由醫學系每一屆畢業校友接力認養。</p>
+        <div class="callout t">
+          <b>醫學生體制的時代轉折</b>
+          吳老師回憶自己那代人朗朗上口的順口溜：「<b>來來來，來臺大；去去去，去美國</b>」。戰前臺灣醫學受德國體系影響極深（醫學生得同時苦讀日文與德文、病歷也用德文書寫）；1950 年代韓戰後美援湧入並提供優渥獎學金，全臺醫界才全面轉向美制、改用英文寫病歷。直到 SARS 與 COVID-19 衝擊後，醫學教育更從七年制改為六年制，強調「<b>主動學習</b>」與「<b>全人社區醫療</b>」。
+        </div>
+      </div>
+      <figure class="fig">
+        <button data-ph="120910" aria-label="放大照片：臺灣現代醫學歷史主展廳年表與文物玻璃櫃">
+          <img loading="lazy" src="img/120910.jpg" alt="明亮展廳四周牆面陳列醫學史年表與人物肖像，中央玻璃櫃展出醫療文物">
+        </button>
+        <figcaption><b>由教授領著醫學生親手編撰的展場</b>：所有展板文字與早期翻譯整理，幾乎都由臺大醫師帶領醫學生與住院醫師共同完成。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 09 -->
+  <article class="station is-med" id="s9">
+    <div class="kicker">
+      <span class="s-no">STOP 09</span>
+      <span class="s-time">11:45–12:04 · 高木友枝胸像與《醫師之像》校友馬賽克牆</span>
+      <span class="s-tag">成為醫師前先成為人</span>
+    </div>
+    <div class="lay-spread flip">
+      <div class="station-copy">
+        <h3>高木友枝的做人哲學、杜聰明巧合避劫，與五音不全的醫學生也要學藝術</h3>
+        <p>轉進拱廊轉角，一座潔白胸像靜靜佇立，底座寫著臺灣現代醫學奠基者之一<b>高木友枝（1858–1943）</b>的名言：「<b>成為醫師前先成為人</b>」。吳老師說，早年日本人剛來臺時因懼怕蚊蟲帶來的瘧疾、傷寒與下痢而不願久留，是初代院長山口秀高在醫院開起宛如「補習班」的醫學講習所，加上具醫學背景的民政長官<b>後藤新平</b>以「生物學原則」全力支持，才在 <b>1899 年</b>正式成立總督府醫學校（早期招生還得找漢醫子弟且略通漢字者，用畫圖與筆談教學）。</p>
+        <p>而後來接手戰後臺大醫學院的首任院長<b>杜聰明</b>（臺灣第一位醫學博士），不僅在戰時研究如何以科學方法驗證漢方草藥、創立漸進式減量兼提高售價的鴉片專賣斷癮制度，更藏著一段驚險巧合：<b>1945 年</b>杜聰明負責接收醫學院（本校區則是林茂生接收），卻在 <b>1947 年 1 月</b>因理念不合遭當局調離職務——正因這場免職，讓他在一個月後的「<b>二二八事件</b>」爆發時意外避開受難名單（林茂生則不幸遇難），日後才能於 1954 年南下創辦高雄醫學院並設立原住民保障名額。</p>
+        <p>抬頭看走廊牆上那幅巨大的馬賽克拼貼畫，遠看是一張名畫輪廓，走近才驚覺裡頭全是<b>歷屆醫學系校友的生活照</b>！吳老師笑說，這所學校從日治時期起就規定醫學生「不只會開刀開藥，還要懂藝術人文」——大家得學鋼琴、小提琴或繪畫，「<b>就算真的五音不全，也得去學畫畫或學唱平劇！</b>」展間甚至還曾展出同班同學畢業 35 年、40 年後一人交五張生活照拼成的展覽（白袍是醫師袍、黑袍是學士照），讓看診病人認出自己的主治醫師，也讓校友在牆上與同窗重逢。</p>
+      </div>
+      <div class="sub-grid-2" style="margin-top:0;grid-template-columns:1fr">
+        <figure class="fig">
+          <button data-ph="120924" aria-label="放大照片：高木友枝胸像與「成為醫師前先成為人」銘牌">
+            <img loading="lazy" src="img/120924.jpg" alt="白色拱廊柱旁陳列高木友枝半身胸像，牌面刻有「成為醫師前先成為人」">
+          </button>
+          <figcaption><b>「成為醫師前先成為人」</b>：高木友枝把人格養成與醫學倫理刻進總督府醫學校最早的校訓裡。</figcaption>
+        </figure>
+        <figure class="fig">
+          <button data-ph="115028" aria-label="放大照片：吳老師於校友生活照拼貼而成的巨幅馬賽克前講解">
+            <img loading="lazy" src="img/115028.jpg" alt="吳老師站在白牆前持圖卡解說，身後懸掛由數百張醫學生照片拼成的《醫師之像》馬賽克">
+          </button>
+          <figcaption><b>一張由千張人生拼成的名畫</b>：近看全是不同世代醫學生、醫師的生活照，共同拼出守候病童的醫師剪影。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <!-- STOP 10 -->
+  <article class="station is-med" id="s10">
+    <div class="kicker">
+      <span class="s-no">STOP 10</span>
+      <span class="s-time">12:05–12:12 · 115 簡報室門前《醫師之像》與《楓城交誼廳》</span>
+      <span class="s-tag">醫病信任的最終課</span>
+    </div>
+    <div class="station-copy">
+      <h3>《The Doctor》黎明窗光下的守候、《切膚之愛》與「Formosa」門牌</h3>
+      <p>走讀的最後一站停在 117 簡報室門前的深色銅雕《<b>醫師之像</b>》旁。這座雕塑由臺北帝大附屬醫學專門部第十一屆畢業校友於 <b>1969 年</b>捐贈，藍本來自 19 世紀末英國畫家 <b>Sir Luke Fildes</b> 經典名畫《<b>The Doctor</b>》（現藏倫敦泰德美術館）：畫家在幼子病逝 14 年後拒絕繪製皇室肖像，執意畫下當年在貧困農舍裡看見的民間醫師——窗外透出黎明微光，老醫師依然托腮專注守在鋪著椅墊的高燒病童旁，母親伏案掩面，父親的手輕輕搭在妻子肩上望向醫師。當年臺大醫學院<b>邱孝震教授</b>在雜誌上看見這幅畫後感動不已，將它化作提醒後輩「<b>醫者為病人生命健康之所寄</b>」的精神座標。</p>
+      <p>吳老師接著說起中部「彰化媽祖」<b>蘭大衛醫師</b>與妻子<b>連瑪玉女士</b>的《<b>切膚之愛</b>》：在沒有抗生素的年代，連瑪玉毅然從自己腿上割下四塊皮膚移植給瀕臨截肢壞死的少年周金耀（日後成為牧師）；而當蘭大衛夫妻高齡退休返回英國後，彰化基督教醫院同工跨海登門拜訪，竟看見他們英國老家大門口掛著的門牌寫著「<b>Formosa</b>」——「他說他自己就是臺灣人啊！」</p>
+      <p>午間十二點十分，走讀在拱門長廊盡頭的《<b>楓城交誼廳 Café Musée</b>》木門旁畫下句點。走出鵝黃色校舍，路口對面便是正午車流穿梭的景福門與不遠處的臺北賓館——三個小時前在金箔階梯聽見的權力故事，此刻與這座殿堂裡的仁心故事，恰好拼完整座城中區 1920 年代的立體地圖。</p>
+    </div>
+
+    <div class="sub-grid-2">
+      <figure class="fig wide">
+        <button data-ph="114514" aria-label="放大照片：吳老師在《醫師之像》銅雕前為團員導覽">
+          <img loading="lazy" src="img/114514.jpg" alt="團員圍立於醫學人文博物館廊道，《醫師之像》銅雕前聆聽吳老師解說《The Doctor》典故">
+        </button>
+        <figcaption><b>圍在銅雕旁的最後幾堂課</b>：吳老師講到早期醫師下鄉看診，病人沒錢只能送雞、送米與雞蛋，所以診所後面一定要有大院子。</figcaption>
+      </figure>
+      <figure class="fig wide">
+        <button data-ph="121034" aria-label="放大照片：1969 年第十一屆校友捐贈銅雕《醫師之像》正面">
+          <img loading="lazy" src="img/121034.jpg" alt="木質基座上托腮審視高燒病童的《醫師之像》銅雕，前方立有白色說明牌">
+        </button>
+        <figcaption><b>醫病溝通的立體教材</b>：1969 年畢業二十週年校友依《The Doctor》鑄像贈予母校，提醒每一代醫學生「責任之重，不容疏忽」。</figcaption>
+      </figure>
+    </div>
+
+    <div class="sub-grid-2">
+      <figure class="fig">
+        <button data-ph="120930" aria-label="放大照片：臺大醫學人文博物館白色圓拱長廊">
+          <img loading="lazy" src="img/120930.jpg" alt="貫穿展館的對稱半圓拱門長廊，牆面掛滿醫界校友畫作與馬賽克作品">
+        </button>
+        <figcaption><b>光影穿行的百年拱廊</b>：昔日總督府醫學校師生穿梭講堂的廊道，如今成了收藏醫界繪畫與人文故事的藝廊。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="121042" aria-label="放大照片：長廊盡頭《楓城交誼廳 Café Musée》與沉思銅雕">
+          <img loading="lazy" src="img/121042.jpg" alt="深色木格玻璃門旁懸掛「楓城交誼廳 Café Musée」指示牌與一尊坐姿銅雕">
+        </button>
+        <figcaption><b>楓城交誼廳的溫柔收尾</b>：歷經祝融與十年閒置險遭拆除，百年鵝黃色建築依然敞開大門，迎來下一批好奇的走讀者。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- 雙殿建築與歷史小檔案 -->
+  <section class="glossary" aria-label="1920 雙殿建築與詞彙小檔案">
+    <h2>帶得走的 1920 建築與歷史密碼</h2>
+    <p>把這趟跨過「政權宮殿 × 醫學殿堂」的專有名詞收進口袋，下次行經凱道或仁愛路一段，便能一眼認出街角背後的百年身世。</p>
+    <dl class="gl-grid">
+      <div class="gl-item">
+        <dt>辰野派（Tatsuno Style）</dt>
+        <dd>明治維新留英建築師辰野金吾開創的折衷主義語彙，以紅磚、灰白飾帶、古典柱式與對稱山牆為特色，深刻影響森山松之助在臺作品。</dd>
+      </div>
+      <div class="gl-item">
+        <dt>馬薩式屋頂（Mansard Roof）</dt>
+        <dd>源自法國的雙折陡斜屋頂，坡度陡峭可創造出高挑閣樓空間並常開設「牛眼窗」採光通風；臺北賓館屋頂至今仍一片片以石板與銅片修復。</dd>
+      </div>
+      <div class="gl-item">
+        <dt>透心磚 ＆ 鮑魚飾</dt>
+        <dd>「透心磚」指整塊磚體貫穿同色、百年踩踏不褪色；「鮑魚飾」則是巴洛克建築常見的捲渦貝殼浮雕徽章，大宴會廳門楣與迪化街洋樓皆可見。</dd>
+      </div>
+      <div class="gl-item t">
+        <dt>燈籠窗</dt>
+        <dd>設置於日治時期醫院或公共建築屋頂頂脊的狹長排氣高窗，利用熱空氣上升原理替挑高室內自然散熱。</dd>
+      </div>
+      <div class="gl-item t">
+        <dt>高木友枝 ＆ 杜聰明</dt>
+        <dd>高木友枝出任總督府醫學校校長十餘年，留下「成為醫師前先成為人」校訓；杜聰明則為臺灣首位醫學博士、戰後醫學院首任院長與高醫創辦人。</dd>
+      </div>
+      <div class="gl-item t">
+        <dt>《醫師之像》＆ 切膚之愛</dt>
+        <dd>前者源自英國畫家 Luke Fildes《The Doctor》，刻畫徹夜守候病童的醫德；後者為蘭大衛之妻連瑪玉女士跨海割皮救治彰化少年周金耀的真實故事。</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- 雙視角後記 -->
+  <section class="coda" aria-label="走讀後記">
+    <div class="coda-box">
+      <h3>臺北賓館：華美袍子下的政治與階級現場</h3>
+      <p>從 1901 年的潮濕白蟻、1913 年的 25 萬日圓國會論戰、1952 年《中日和約》的梅花替換菊花，到 1992 年斷交搶運家具與五位長官專屬門禁——只有站在現場跟著范老師走過那兩條絕不交會的樓梯，才會讀懂這襲「華美之袍」其實處處縫著臺灣百年外交與權力史。</p>
+    </div>
+    <div class="coda-box t">
+      <h3>醫學人文博物館：救活一棟老屋，也留住一個世代的風骨</h3>
+      <p>比起許多只講建築線條的古蹟導覽，吳老師帶著滿手老地圖與照片，從防野狗的地下室鐵窗、鳳梨蓮霧柱頭講到杜聰明與高木友枝的風骨，讓這棟差點在 1985–1994 年間被拆掉的鵝黃色二號館，真正變回一座有溫度的知識殿堂。</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>2024/11/29 參加「回到 1920：臺北最華美宮殿 × 醫學知識殿堂」（國立臺灣大學學生會「打開台大 Open House NTUs」主辦・臺北賓館范老師、臺大醫學人文博物館吳老師導覽）的實地走讀筆記</span>
+  <a href="#top">回到頁首 ↑</a>
+</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../wanhuafilm/index.html"><small>‹ 較新的一場・2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a><a class="nx" href="../bethany/index.html"><small>較早的一場・2024/11/09 ›</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar">
+    <button id="lbp" aria-label="上一張">‹</button>
+    <span id="lbc"></span>
+    <button id="lbn" aria-label="下一張">›</button>
+    <button id="lbx" aria-label="關閉">✕</button>
+  </div>
+</div>
+
+<script>
+{
+  /* 1920 雙殿時空對照儀切換 */
+  const tabs=[...document.querySelectorAll('.chr-tabs button')];
+  const panels=[...document.querySelectorAll('.chr-panel')];
+  tabs.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      tabs.forEach(t=>t.setAttribute('aria-pressed',t===btn?'true':'false'));
+      panels.forEach(p=>p.classList.toggle('is-on',p.id==='tab-'+btn.dataset.tab));
+    });
+  });
+
+  /* 燈箱檢視 */
+  const btns=[...document.querySelectorAll('main button[data-ph]')];
+  const items=btns.map((b,idx)=>{
+    const img=b.querySelector('img');
+    const fig=b.closest('figure');
+    const cap=fig?fig.querySelector('figcaption').textContent:img.alt;
+    b.dataset.idx=idx;
+    return {src:img.getAttribute('src'),alt:img.alt,cap};
+  });
+  const lb=document.getElementById('lb'),im=document.getElementById('lbi'),cp=document.getElementById('lbc');
+  let cur=0;
+  const show=i=>{
+    cur=(i+items.length)%items.length;
+    const x=items[cur];
+    im.src=x.src;
+    im.alt=x.alt;
+    cp.textContent=`${x.cap}　（${cur+1}/${items.length}）`;
+  };
+  document.querySelector('main').addEventListener('click',e=>{
+    const b=e.target.closest('button[data-ph]');
+    if(b){show(+b.dataset.idx);lb.classList.add('on');document.getElementById('lbx').focus();}
+  });
+  document.getElementById('lbp').onclick=()=>show(cur-1);
+  document.getElementById('lbn').onclick=()=>show(cur+1);
+  const close=()=>lb.classList.remove('on');
+  document.getElementById('lbx').onclick=close;
+  lb.addEventListener('click',e=>{if(e.target===lb)close();});
+  document.addEventListener('keydown',e=>{
+    if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')show(cur-1);
+    if(e.key==='ArrowRight')show(cur+1);
+  });
+}
+</script>
+</body>
+</html>
