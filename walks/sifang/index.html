@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>天水路上的時代治癒所：四方醫院現地導覽（2026/01/17）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 2026 年 1 月 17 日週六上午，走進天水路 25 號與首度打開鐵門的 27 號四方醫院舊址，跟著台灣歷史資源經理學會與和樂城市開發團隊讀懂磚石結構與施江南醫師家族記憶
+   IDEA: 病歷檔案 × 建築剖面誌（Clinical Case Dossier & Structural Cross-Section）——以窯燒磚紅為主色標記關鍵詞、X 光片青灰為醫療歷史輔色、深炭灰暗房段呈現未開放二三樓的原始砌體現場
+   PICTURE: 轉角三開間的四方醫院全貌（120503.jpg）——27 號黃色面磚、25 號「四方醫院」匾額、天水路紅磚與李火增攝影壁畫，以及上方懸掛的都更建案帆布
+   COLOUR and TYPE: 病歷紙白 #f6f3ec、暖紙面 #fdfbf7、磚墨灰 #1d1e20、窯磚朱紅 #a33b2a（關鍵詞主色）、診間青灰 #29525a、唭哩岸石灰 #ebe5d9；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 雙欄病歷表頭封頁＋四格檔案資訊帶＋四張「唯一與第一次」現場卡＋浮動動線導引條＋七種結構變奏章節（對照雙聯、暗房剖面、對話階梯、結構解剖格、家族手稿牆）＋尾聲筆記 */
+:root{
+  color-scheme:light dark;
+  --bg:light-dark(#f6f3ec,#131517);
+  --paper:light-dark(#fdfbf7,#1b1e21);
+  --stone:light-dark(#ebe5d9,#24272b);
+  --ink:light-dark(#1d1e20,#eae7e0);
+  --mute:light-dark(#5e6064,#9ca1a8);
+  --accent:light-dark(#a33b2a,#e68372);
+  --teal:light-dark(#29525a,#7db8c4);
+  --tint-red:light-dark(#f7e9e6,#2b1c19);
+  --tint-teal:light-dark(#e6eff1,#17272b);
+  --line:light-dark(#dad2c4,#2f343a);
+  --dark-panel:#191d20;
+  --dark-card:#22272b;
+  --dark-ink:#ede9e0;
+  --dark-mute:#a8aeb5;
+}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.85 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,h4{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+p b,p strong,li b,li strong,.prose b,.prose strong,.unique-card b,.fact-note b,.anatomy-card b,.dialogue-line b{color:var(--accent);font-weight:700}
+
+/* Clinical Dossier Cover */
+.cover{background:var(--paper);border-top:6px solid var(--accent);border-bottom:2px solid var(--ink)}
+.cover-in{max-width:1120px;margin:0 auto;padding:26px max(4vw,18px) 36px}
+.case-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px;padding-bottom:12px;border-bottom:1px solid var(--line);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:700}
+.case-bar .case-id{color:var(--accent);display:inline-flex;align-items:center;gap:8px}
+.case-bar .case-id::before{content:"";width:18px;height:2px;background:var(--accent)}
+.cover-grid{display:grid;grid-template-columns:1.02fr 1.08fr;gap:32px;margin-top:24px;align-items:center}
+.cover-copy .kicker-pill{display:inline-block;padding:3px 10px;border-radius:4px;background:var(--tint-teal);color:var(--teal);font-size:12.5px;font-weight:700;letter-spacing:.08em;margin-bottom:10px}
+.cover-copy h1{font-size:clamp(31px,4.8vw,50px);line-height:1.12;font-weight:800;letter-spacing:.01em}
+.cover-copy h1 span{display:block;font-size:clamp(18px,2.4vw,24px);font-weight:600;color:var(--teal);margin-top:10px;line-height:1.4}
+.cover-lead{margin:16px 0 0;font-size:16px;line-height:1.82;color:var(--ink)}
+.cover-frame{position:relative;padding:12px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 14px 32px rgba(0,0,0,.08)}
+.cover-stamp{position:absolute;top:22px;left:22px;z-index:2;background:rgba(25,29,32,.86);color:#f6f3ec;border:1px solid rgba(230,131,114,.55);padding:4px 10px;border-radius:4px;font-size:12px;letter-spacing:.08em;font-weight:700;pointer-events:none}
+
+/* Four-Column Dossier Strip */
+.dossier-strip{background:var(--stone);border-bottom:1px solid var(--line)}
+.ds-in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.ds-cell{padding:14px 18px;border-right:1px solid var(--line);font-size:14px;line-height:1.6}
+.ds-cell:last-child{border-right:none}
+.ds-cell b{display:block;font-size:11.5px;letter-spacing:.1em;color:var(--teal);margin-bottom:2px;text-transform:uppercase}
+.ds-cell a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+
+/* Container & Section Headers */
+.wrap{max-width:1120px;margin:0 auto;padding:0 max(4vw,18px)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 20px;margin-bottom:18px}
+.sec-head h2{font-size:clamp(22px,3vw,29px)}
+.sec-head p{margin:0;color:var(--mute);font-size:15px}
+
+/* Unique / First-Time Grid */
+.unique-sec{padding:38px 0 28px;border-bottom:1px solid var(--line)}
+.unique-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.unique-card{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:10px;padding:16px 18px}
+.unique-card.t{border-left-color:var(--teal)}
+.u-tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.08em;padding:2px 8px;border-radius:4px;background:var(--tint-red);color:var(--accent);margin-bottom:6px}
+.unique-card.t .u-tag{background:var(--tint-teal);color:var(--teal)}
+.unique-card h3{font-size:18px;line-height:1.38;margin-bottom:6px}
+.unique-card p{margin:0;font-size:14.5px;line-height:1.72;color:var(--mute)}
+
+/* Sticky Route Nav */
+.route-nav{position:sticky;top:8px;z-index:10;margin:22px 0 12px;padding:10px 14px;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(8px);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.06);display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.rn-title{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--teal);margin-right:4px}
+.route-nav a{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);text-decoration:none;font-size:13px;transition:border-color .15s}
+.route-nav a:hover{border-color:var(--accent)}
+.route-nav a span{color:var(--accent);font-weight:700;font-size:12px}
+
+/* Figures */
+.fig{margin:0}
+.fig button{all:unset;cursor:pointer;display:block;width:100%;border-radius:8px;overflow:hidden;background:var(--stone);box-shadow:0 6px 20px rgba(0,0,0,.07)}
+.fig img{width:100%;display:block;object-fit:cover;transition:transform .35s ease}
+.fig.land img{aspect-ratio:16/10}
+.fig.port img{aspect-ratio:3/4}
+.fig.auto img{aspect-ratio:auto;max-height:520px}
+.fig button:hover img{transform:scale(1.02)}
+.fig figcaption{margin-top:8px;font-size:13.8px;line-height:1.62;color:var(--mute)}
+.fig figcaption b{color:var(--ink);font-weight:700}
+
+/* Chapter Modules */
+.chapter{padding:38px 0;border-bottom:1px solid var(--line)}
+.ch-kicker{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-bottom:12px}
+.ch-no{font-family:"Noto Serif TC",serif;font-weight:800;font-size:13.5px;padding:2px 10px;border-radius:4px;background:var(--ink);color:var(--bg)}
+.ch-floor{font-size:13px;font-weight:700;color:var(--teal);letter-spacing:.04em}
+.ch-badge{font-size:12px;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--tint-red);color:var(--accent)}
+.ch-badge.t{background:var(--tint-teal);color:var(--teal)}
+.chapter h2{font-size:clamp(22px,3vw,30px);line-height:1.28;margin-bottom:14px}
+.prose p{margin:.75em 0}
+.prose ul{margin:10px 0;padding-left:1.2em}
+.prose li{margin:.4em 0}
+.prose li::marker{color:var(--accent)}
+
+/* Layout Variants */
+.split-wide{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:start}
+.split-rev{display:grid;grid-template-columns:.95fr 1.05fr;gap:28px;align-items:start}
+.duo-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.trio-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:20px}
+.port-land-mix{display:grid;grid-template-columns:.72fr 1.28fr;gap:22px;margin-top:20px;align-items:start}
+.land-port-mix{display:grid;grid-template-columns:1.28fr .72fr;gap:22px;margin-top:20px;align-items:start}
+
+/* Anatomy / Recycle Comparison Strip */
+.anatomy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:20px 0}
+.anatomy-card{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:8px;padding:15px 16px}
+.anatomy-card.r{border-top-color:var(--accent)}
+.anatomy-card small{display:block;font-size:11.5px;font-weight:700;color:var(--teal);letter-spacing:.08em;margin-bottom:4px}
+.anatomy-card.r small{color:var(--accent)}
+.anatomy-card h3{font-size:17px;margin-bottom:6px}
+.anatomy-card p{margin:0;font-size:14.2px;line-height:1.68;color:var(--mute)}
+
+/* Callouts & Fact Notes */
+.fact-note{margin-top:16px;padding:14px 18px;background:var(--tint-teal);border-left:4px solid var(--teal);border-radius:0 8px 8px 0;font-size:14.8px;line-height:1.74}
+.fact-note.r{background:var(--tint-red);border-left-color:var(--accent)}
+.fact-note .fn-lbl{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--teal);margin-bottom:4px;text-transform:uppercase}
+.fact-note.r .fn-lbl{color:var(--accent)}
+
+/* Staircase Night Dialogue Band */
+.stair-wrap{display:grid;grid-template-columns:.76fr 1.24fr;gap:26px;align-items:start;margin-top:16px}
+.dialogue-steps{display:grid;gap:10px;margin:14px 0}
+.dialogue-line{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:11px 15px;font-size:15px;line-height:1.65}
+.dialogue-line span{display:block;font-size:12px;color:var(--mute);margin-bottom:2px}
+
+/* Dark Architectural Section (Upper Unopened Floors) */
+.dark-band{background:var(--dark-panel);color:var(--dark-ink);margin:14px calc(50% - 50vw);padding:44px max(4vw,18px);border-top:3px solid var(--accent);border-bottom:3px solid var(--accent)}
+.dark-in{max-width:1120px;margin:0 auto}
+.dark-band .ch-no{background:var(--accent);color:#fff}
+.dark-band .ch-floor{color:#8ad0de}
+.dark-band .ch-badge{background:rgba(230,131,114,.18);color:#f3a799}
+.dark-band p{color:#dcd7ce}
+.dark-band p b,.dark-band li b{color:#f39c8c}
+.dark-band .fig button{background:#2a3036;box-shadow:0 10px 26px rgba(0,0,0,.35)}
+.dark-band .fig figcaption{color:var(--dark-mute)}
+.dark-band .fig figcaption b{color:#fff}
+.dark-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:22px 0}
+.dark-card{background:var(--dark-card);border:1px solid rgba(255,255,255,.12);border-top:3px solid #f39c8c;border-radius:10px;padding:16px 18px}
+.dark-card h3{font-size:17.5px;color:#fff;margin-bottom:6px}
+.dark-card p{margin:0;font-size:14.5px;line-height:1.72;color:var(--dark-mute)}
+
+/* Family Quotes & Epilogue */
+.quote-ribbon{margin:18px 0;padding:18px 22px;background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:10px;font-family:"Noto Serif TC",serif;font-size:17.5px;line-height:1.8}
+.quote-ribbon cite{display:block;margin-top:8px;font-family:"Noto Sans TC",sans-serif;font-style:normal;font-size:13.5px;color:var(--mute)}
+
+.after-sec{margin:40px 0 24px;padding:28px;background:var(--paper);border:1px solid var(--line);border-top:5px solid var(--teal);border-radius:12px}
+.after-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+.after-card{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:16px 18px}
+.after-card h3{font-size:17px;color:var(--accent);margin-bottom:7px}
+.after-card p{margin:0;font-size:14.5px;line-height:1.72}
+
+footer{max-width:1120px;margin:20px auto 12px;padding:16px max(4vw,18px) 10px;border-top:1px solid var(--line);color:var(--mute);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 18px}
+
+/* Lightbox */
+#lb{position:fixed;inset:0;z-index:40;background:rgba(10,12,14,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:16px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:12px;align-items:center;color:#eee;margin-top:12px;font-size:15px;max-width:900px;text-align:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer;flex:none}
+#lb button:hover{background:#333}
+
+@media(min-width:1180px){
+  .dark-band{margin:14px calc(50% - 50vw + 130px) 14px calc(50% - 50vw + 130px);padding:44px max(4vw,24px)}
+}
+@media(max-width:880px){
+  .cover-grid,.ds-in,.unique-grid,.split-wide,.split-rev,.duo-grid,.trio-grid,.port-land-mix,.land-port-mix,.anatomy-grid,.stair-wrap,.dark-cards,.after-grid{grid-template-columns:1fr;gap:18px}
+  .ds-cell{border-right:none;border-bottom:1px solid var(--line)}
+  .ds-cell:last-child{border-bottom:none}
+  .dark-band{margin:14px -4vw;padding:32px 4vw}
+}
+@media(prefers-reduced-motion:reduce){
+  .fig img{transition:none}
+  .fig button:hover img{transform:none}
+}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・81 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../zhongyuan/index.html"><small>2026/09/27</small>神在其中，味蕾交會：中原文創園區《匯流城市・文化共生》走讀</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../dadaotea/index.html"><small>2026/01/25</small>茶香與紅磚的時光漫步：淡水河流域大稻埕走讀</a></li><li><a href="../sifang/index.html" aria-current="page"><small>2026/01/17</small>天水路上的時代治癒所：四方醫院現地導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../huozi/index.html"><small>2025/10/25</small>鐵道與活版印刷的百年物語</a></li><li><a href="../fuyou1025/index.html"><small>2025/10/25</small>孚佑百年・大稻埕文化走讀史蹟導覽</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../metamotion/index.html"><small>2024/11/29</small>無用之用：從松菸展場走進遠雄工地再生現場</a></li><li><a href="../backto1920/index.html"><small>2024/11/29</small>回到 1920：臺北最華美宮殿 × 醫學知識殿堂</a></li><li><a href="../bethany/index.html"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../zhongyuan/index.html"><small>2026/09/27</small>神在其中，味蕾交會：中原文創園區《匯流城市・文化共生》走讀</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../dadaotea/index.html"><small>2026/01/25</small>茶香與紅磚的時光漫步：淡水河流域大稻埕走讀</a></li><li><a href="../sifang/index.html" aria-current="page"><small>2026/01/17</small>天水路上的時代治癒所：四方醫院現地導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../huozi/index.html"><small>2025/10/25</small>鐵道與活版印刷的百年物語</a></li><li><a href="../fuyou1025/index.html"><small>2025/10/25</small>孚佑百年・大稻埕文化走讀史蹟導覽</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../metamotion/index.html"><small>2024/11/29</small>無用之用：從松菸展場走進遠雄工地再生現場</a></li><li><a href="../backto1920/index.html"><small>2024/11/29</small>回到 1920：臺北最華美宮殿 × 醫學知識殿堂</a></li><li><a href="../bethany/index.html"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></details><span>2026/01/17</span></div>
+<header class="cover" id="top">
+  <div class="cover-in">
+    <div class="case-bar">
+      <span class="case-id">CASE DOSSIER · 2026.01.17 週六上午</span>
+      <span>臺北市大同區天水路 25、27 號｜四方醫院《時代治癒所》現地導覽</span>
+    </div>
+    <div class="cover-grid">
+      <div class="cover-copy">
+        <span class="kicker-pill">2026 年重返天水路・首度公開展區外空間</span>
+        <h1>天水路上的時代治癒所<span>四方醫院：從 1930 年代磚石結構到 1947 年未歸醫師</span></h1>
+        <p class="cover-lead">由<b>和樂城市開發股份有限公司</b>主辦、<b>台灣歷史資源經理學會</b>合辦的週六上午小團導覽（十人成團、二十人額滿），在建成圓環旁這棟差點進都更的轉角老屋裡展開。不同於平日僅開放的 <b>25 號</b>展間，這天策展與建築修復團隊首度拉開隔壁 <b>27 號</b>鐵門，一路走上平常封閉的<b>二、三樓夾層與天井</b>，也把自 <b>2023 年籌劃策展《時代治癒所》</b>以來的建築偵探線索、家族尋根回信與街區變遷一次打開。</p>
+      </div>
+      <div class="cover-frame">
+        <span class="cover-stamp">天水路 25–27 號・街角現況</span>
+        <figure class="fig land">
+          <button data-ph="120503" aria-label="放大照片：天水路與重慶北路口轉角的四方醫院舊址全貌">
+            <img src="img/120503.jpg" alt="天水路與重慶北路口轉角的三層樓老屋，左側為 27 號黃色面磚與藍色鐵捲門，中央為四方醫院匾額與 25 號入口，右側為紅磚騎樓與上方綠色建案帆布">
+          </button>
+          <figcaption><b>轉角留下的三開間時代切面</b>：左半邊 27 號面向幹線留著黃色面磚與藍色鐵門，中央懸起右向左讀的「四方醫院」匾額，右轉天水路則是紅磚與建案帆布交錯的今日街景。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="dossier-strip">
+  <div class="ds-in">
+    <div class="ds-cell"><b>日期與時段</b>2026 年 1 月 17 日（六）10:00–11:30（加碼深度導覽至 12:10）</div>
+    <div class="ds-cell"><b>帶領團隊</b>四方醫院《時代治癒所》策展團隊（台灣歷史資源經理學會 張先生 × 和樂城市開發 阮總）</div>
+    <div class="ds-cell"><b>主辦／合辦</b>和樂城市開發股份有限公司主辦・台灣歷史資源經理學會合辦</div>
+    <div class="ds-cell"><b>集合地點</b><a href="https://www.google.com/maps/search/%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A4%A7%E5%90%8C%E5%8D%80%E5%A4%A9%E6%B0%B4%E8%B7%AF25%E8%99%9F" target="_blank" rel="noopener">四方醫院舊址（臺北市大同區天水路 25 號）</a>，鄰近捷運北門站與中山站</div>
+  </div>
+</div>
+
+<main class="wrap">
+  <!-- UNIQUE HIGHLIGHTS -->
+  <section class="unique-sec" id="unique">
+    <div class="sec-head">
+      <h2>要這天走進現場，才看得見的四個「第一次與唯一」</h2>
+      <p>許多建築細節與原始傷痕會在未來正式修復後重新封平或消失，這場導覽正好站在「修復前夕」的臨界點</p>
+    </div>
+    <div class="unique-grid">
+      <article class="unique-card">
+        <span class="u-tag">FIRST TIME OPEN・首次公開</span>
+        <h3>展場以外的 27 號與二、三樓，這天第一次打開</h3>
+        <p>平時參觀只進得去 25 號一、二樓展區；這天團隊特地拉開 <b>27 號</b>藍色鐵門，再帶隊鑽進未整理完畢的<b>二、三樓結構空間</b>，把平常作為辦公室與倉儲的老屋骨幹直接攤在眼前。</p>
+      </article>
+      <article class="unique-card t">
+        <span class="u-tag">LAST-SECOND RESCUE・僅此一次的縫隙</span>
+        <h3>樓板已經鑽探開孔，卻在最後一刻被買下停拆</h3>
+        <p>隔壁早已被建商收購改建成十幾層新大樓，這棟轉角老屋也一度走到<b>地質鑽探開孔</b>階段；最終在最後一刻談妥產權交易停下怪手，與新大樓之間只隔著<b>不到十公分的伸縮縫</b>。</p>
+      </article>
+      <article class="unique-card">
+        <span class="u-tag">ARCHITECTURAL RARITY・唯一混構造</span>
+        <h3>連看過百棟老屋的結構學者都驚訝的「跨代混血」</h3>
+        <p>一樓牆體藏著 <b>1919 年拆臺北城牆</b>回收的唭哩岸石與兩層紅磚調水平工法，頭頂卻有少見的<b>板梁（反梁）</b>，三樓更用 <b>1930 年代 RC 梁</b>直接承載兩組木桁架，記錄臺灣最初實施「<b>建築代願人</b>」制度的實驗期。</p>
+      </article>
+      <article class="unique-card t">
+        <span class="u-tag">FLEETING MOMENT・修復前夕的最後原貌</span>
+        <h3>未來正式整修後將復原牆面，眼前裸露肌理稍縱即逝</h3>
+        <p>目前還看得到打除磁磚後露出的<b>溝槽磚</b>、產權分戶封砌的紅磚痕跡、壁面剝落的復古壁紙與 <b>212 號</b>木作病房夾層；等到正式啟動文資修復並依原貌復原後，這些剖面就會被重新包進牆裡。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- STICKY ROUTE NAV -->
+  <nav class="route-nav" aria-label="導覽動線">
+    <span class="rn-title">空間動線</span>
+    <a href="#s1"><span>01</span>天水路外觀與街區身世</a>
+    <a href="#s2"><span>02</span>萊卡李與 1935 候診室</a>
+    <a href="#s3"><span>03</span>25 號一樓：博士與四方連鎖</a>
+    <a href="#s4"><span>04</span>首開 27 號：城牆石與反梁</a>
+    <a href="#s5"><span>05</span>樓梯間：1947.03.11 那一夜</a>
+    <a href="#s6"><span>06</span>未開放二三樓：天井與 212 房</a>
+    <a href="#s7"><span>07</span>陳焦桐夫人與 74 年後的回信</a>
+    <a href="#s8"><span>08</span>3.64 公尺騎樓與建成圓環</a>
+  </nav>
+
+  <!-- CHAPTER 01 -->
+  <section class="chapter" id="s1">
+    <div class="ch-kicker">
+      <span class="ch-no">STATION 01</span>
+      <span class="ch-floor">天水路對街 · 10:02–10:19</span>
+      <span class="ch-badge">城市剖面</span>
+    </div>
+    <h2>八開間街屋剩下的三開間：躲過空襲、疏開與捷運，卻在都更旁險些落幕</h2>
+    <div class="split-wide">
+      <div class="prose">
+        <p>集合後，<b>台灣歷史資源經理學會張先生</b>沒有急著把大家帶進室內，而是先請眾人退到天水路對面，抬頭看整棟建築在街廓裡的位置。當年這棟建築其實是一整排氣派的<b>八個開間</b>街屋——約一半為<b>四方醫院</b>，另一半則作「<b>蓬萊旅館</b>」使用。戰後隨著鄰地改建為現代大樓與周邊開發，原本相連的街屋被切去大半，今天站在<b>天水路 25、27 號</b>看到的，僅是轉角倖存下來的一半空間。</p>
+        <p><b>和樂城市開發阮總</b>接著補充，建成町之所以在 1930 年代繁盛起來，是因為淡水線鐵路通車帶動圓環與周邊商業，熱鬧程度「就像現在的信義計畫區」。然而這棟房子能活到今天，幾乎經歷過四道生死關卡：</p>
+        <ul>
+          <li><b>二戰末期「疏開空地」</b>：美軍轟炸前，總督府為防火與防空預先拆除對面與周邊木造屋舍，四方醫院卻因本身具備<b>醫療機能</b>而獲保留。</li>
+          <li><b>戰後「天水路拓寬與重慶北路計畫」</b>：日治時期已將圓環周邊納入都市計畫，拓寬線刻意往門面較少的對側退縮，讓這一排得以留存。</li>
+          <li><b>捷運建成圓環站改線</b>：早年捷運原本曾規劃在此設站並劃定聯合開發區，後來路線與站點調整才免於徵收拆除。</li>
+          <li><b>民間都更開發</b>：隔壁半排已被建商整合拆除、蓋起新大樓，這棟轉角老屋甚至一度做完前置探勘，直到團隊接手才從推土機前搶回來。</li>
+        </ul>
+      </div>
+      <div>
+        <figure class="fig land">
+          <button data-ph="100634" aria-label="放大照片：從天水路對面望向四方醫院舊址側面與大型黑白老照片">
+            <img loading="lazy" src="img/100634.jpg" alt="學員站在天水路對面人行道，台灣歷史資源經理學會張先生手持資料指著對街的四方醫院紅磚立面、李火增老照片輸出與上方建案帆布">
+          </button>
+          <figcaption><b>對街才看得見的比例尺</b>：張先生指著對面的老屋牆面——下層是 1940 年代大雨後的街景，上層直接被巨幅「光合織森」建案帆布覆蓋。</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="trio-grid">
+      <figure class="fig port">
+        <button data-ph="120608" aria-label="放大照片：新落成的高層住宅大樓緊鄰三層樓四方醫院舊址">
+          <img loading="lazy" src="img/120608.jpg" alt="新建高層白色與深灰立面大樓緊挨著僅三層高的四方醫院舊址，街道上一名騎士正踩著 YouBike 經過">
+        </button>
+        <figcaption><b>八開間切半的見證</b>：左邊高聳的新建案所在地，正是當年八連棟街屋被拆除的那一半；右邊三層樓老屋成了街角最後的孤島。</figcaption>
+      </figure>
+      <figure class="fig port">
+        <button data-ph="121306" aria-label="放大照片：新大樓花崗岩外牆與四方醫院紅磚牆之間不到十公分的伸縮縫">
+          <img loading="lazy" src="img/121306.jpg" alt="仰望新大樓淺灰花崗岩外牆與四方醫院紅磚黃磁磚牆面之間極窄的垂直縫隙">
+        </button>
+        <figcaption><b>不到十公分的時代距離</b>：右邊是 1930 年代清水磚與小口磚，左邊是當代花崗岩幕牆，兩棟建築僅隔著一條細縫對峙。</figcaption>
+      </figure>
+      <figure class="fig land">
+        <button data-ph="121340" aria-label="放大照片：斜對角另一棟留存的 1930 年代弧形轉角街屋">
+          <img loading="lazy" src="img/121340.jpg" alt="天水路街口斜對角一棟三層樓圓弧轉角老街屋，立面開著長窗與洗石子線腳">
+        </button>
+        <figcaption><b>圓環旁的同時期鄰居</b>：街口斜對角的弧形轉角街屋，保留了天水路當年尚未被大樓包圍時的天際線高度，也是這條「臺北最短街道之一」化工街的縮影。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHAPTER 02 -->
+  <section class="chapter" id="s2">
+    <div class="ch-kicker">
+      <span class="ch-no">STATION 02</span>
+      <span class="ch-floor">騎樓壁畫前 · 10:19–10:24</span>
+      <span class="ch-badge t">攝影史考證</span>
+    </div>
+    <h2>跟著「萊卡李」破案：從沒寫註記的捲裝底片盒裡，認出 1935 年的候診室</h2>
+    <div class="port-land-mix">
+      <figure class="fig land">
+        <button data-ph="121001" aria-label="放大照片：李火增拍攝的雨過天青老照片細節，小女孩撐傘與背景四方醫院招牌">
+          <img loading="lazy" src="img/121001.jpg" alt="黑白老照片近景，小女孩撐著傘站在積水的天水路上回頭微笑，右後方二樓立面掛著清楚的「內科小兒科 四方醫院」垂直招牌與鄰近「蓬萊旅館」字樣">
+        </button>
+        <figcaption><b>「雨過天青」裡的精準座標</b>：李火增在小女孩涉水一瞬回頭按下快門，背景右上方清楚寫著「內科・小兒科 四方醫院」，再往左則是「蓬萊旅館」與滿滿的騎樓弧拱。</figcaption>
+      </figure>
+      <div class="prose">
+        <p>做歷史調查有時像寫偵探劇——口述記憶往往模糊，必須靠一張張線索拼起來。策展團隊初期接手這棟被多層馬賽克與外推鐵窗包覆的普通三層樓時，若非網路上零星提及，幾乎看不出文化價值。真正的突破，來自住在對面的日治時期攝影家<b>李火增</b>（「萊卡李」）。</p>
+        <p>李火增留下了大量以女兒為主角的街拍作品，團隊於是前往負責保管與維護李火增底片的<b>夏門攝影企劃研究室（簡永彬老師團隊）</b>。許多老底片當年被整捲塞在底片盒裡，背面毫無註記；研究團隊把與「天水路」歸在同一檔案夾裡的照片一張張攤開比對，意外找到一張未標註地點的<b>診所候診室照片</b>——雖然無法百分百用文字證明，但無論格局、光線與病患候診神情，都與這棟建築高度吻合。</p>
+        <p>再比對史料與施家女兒的回憶：<b>施江南醫師</b>於 <b>1935 年</b>在建成町開設四方醫院，主攻<b>內科與小兒科</b>；更驚人的是，他在廣告裡主打當時私人醫院罕見的 <b>X 光機</b>設備（日治時期肺結核極為盛行，X 光是高階診斷利器），一樓設候診區、診間、藥局與 X 光室，二樓為病房，三樓則是施家自己的住居。</p>
+      </div>
+    </div>
+
+    <div class="duo-grid">
+      <figure class="fig land">
+        <button data-ph="101940" aria-label="放大照片：張先生與阮總站在騎樓下李火增候診室老照片輸出前講解">
+          <img loading="lazy" src="img/101940.jpg" alt="左側和樂城市開發阮總與右側台灣歷史資源經理學會張先生站在天水路騎樓下，旁邊是貼有 1935 年候診室老照片的透明展窗">
+        </button>
+        <figcaption><b>騎樓下的雙人說書</b>：張先生（右）與阮總（左）站在 25 號與 27 號交界處，指著窗上那張來自同一批天水路檔案匣的候診室照片。</figcaption>
+      </figure>
+      <figure class="fig land">
+        <button data-ph="121107" aria-label="放大照片：騎樓紅磚牆上的「跟著萊卡李 看見四方吧！」展牌">
+          <img loading="lazy" src="img/121107.jpg" alt="紅磚牆面與白色牆面上方掛著「跟著萊卡李 看見四方吧！」木質導覽牌與展覽說明">
+        </button>
+        <figcaption><b>把李火增的鏡頭釘回原地</b>：騎樓壁面設了「跟著萊卡李 看見四方吧！」導覽牌，讓路過的行人站在同一段街角就能對照九十年前的水路街景。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHAPTER 03 -->
+  <section class="chapter" id="s3">
+    <div class="ch-kicker">
+      <span class="ch-no">STATION 03</span>
+      <span class="ch-floor">25 號一樓展場 · 10:00–10:25</span>
+      <span class="ch-badge t">人物與時代</span>
+    </div>
+    <h2>25 號一樓：京都帝大最年輕的臺灣人博士，與施家三兄弟的「四方」連鎖版圖</h2>
+    <div class="port-land-mix">
+      <figure class="fig port">
+        <button data-ph="120439" aria-label="放大照片：天水路 25 號時代治癒所玻璃大門與門外 27 號門牌">
+          <img loading="lazy" src="img/120439.jpg" alt="時代治癒所四方醫院特展的霧面玻璃大門，門上印有候診室老照片與導覽海報，左側牆柱釘著天水路 27 號新舊門牌">
+        </button>
+        <figcaption><b>兩扇門，兩個世界</b>：右邊玻璃門是常態開放的 25 號展場入口，左邊緊鄰的 27 號門牌後方則長年拉下鐵門，直到這場導覽才對外開啟。</figcaption>
+      </figure>
+      <div class="prose">
+        <p>走進 25 號一樓展間，迎面而來的是施江南醫師的學術與家族起點。他生於彰化鹿港書香門第，祖父施善述為秀才，父親施瑞呈經商育有四子——除了么兒習法，其餘三兄弟皆走上醫途，且約定日後無論在哪裡開業，一律命名為「<b>四方醫院</b>」：</p>
+        <ul>
+          <li><b>1922 年代｜鹿港起點</b>：大哥<b>施江東</b>與二哥<b>施江西</b>於鹿港城隍廟附近開設首間四方醫院。</li>
+          <li><b>1933 年代｜跨足嘉義與台北</b>：施江東赴嘉義開設眼科與小兒科專科的四方醫院，名噪中南部；鹿港由施江西續營後遷往臺北羅斯福路。</li>
+          <li><b>1935 年｜建成町開花</b>：三弟<b>施江南</b>於此開設臺北四方醫院，三兄弟堪稱臺灣現代<b>連鎖醫院</b>的先聲。</li>
+        </ul>
+        <p>展覽桌上陳列著復刻史料：<b>1924 年臺北醫學專門學校畢業紀念冊</b>、昭和時期施江南親自記帳的《<b>麻藥受拂簿</b>》，以及他赴日本<b>京都帝國大學醫學部</b>專攻內科的博士論文複本——<b>1930 年 9 月</b>，年僅二十八歲的他獲得京都大學醫學博士學位，是該校獲得博士學位<b>最年輕的臺灣人</b>。1931 年返臺後，經臺南第二女高校長介紹，迎娶該校第一名畢業的<b>陳焦桐女士</b>，婚後育有五女。</p>
+      </div>
+    </div>
+
+    <div class="duo-grid">
+      <figure class="fig land">
+        <button data-ph="095804" aria-label="放大照片：25 號一樓展場全貌與樓梯間牆面對話木牌">
+          <img loading="lazy" src="img/095804.jpg" alt="25 號一樓展場內部，左側木樓梯牆面掛著深色對話牌，右側展示桌前幾位早到的學員正閱讀施江南文獻">
+        </button>
+        <figcaption><b>開講前的一樓展間</b>：簡潔的白牆、外露的紅磚唭哩岸石壁面與上二樓的木梯，把一樓定調為施江南行醫與求學的時代。</figcaption>
+      </figure>
+      <figure class="fig land">
+        <button data-ph="095838" aria-label="放大照片：麻藥受拂簿、1924 年臺北醫專畢業紀念冊與京都帝大博士論文複本">
+          <img loading="lazy" src="img/095838.jpg" alt="展桌上陳列三件復刻文獻，左起為醫師施江南麻藥受拂簿、中間為 1924 畢業紀念冊、右為實驗消化器病學京都帝大博士論文">
+        </button>
+        <figcaption><b>桌面上的醫者履歷</b>：《麻藥受拂簿》寫著「臺北市建成町」，1924 畢業紀念冊與膽囊研究博士論文排在一起，勾勒出一位頂尖內科醫者的養成。</figcaption>
+      </figure>
+    </div>
+
+    <div class="duo-grid">
+      <figure class="fig port">
+        <button data-ph="095754" aria-label="放大照片：1931 年施江南醫師與陳焦桐女士結婚照">
+          <img loading="lazy" src="img/095754.jpg" alt="框裝的 1931 年施江南與陳焦桐黑白結婚照，施江南穿西裝、陳焦桐披白紗">
+        </button>
+        <figcaption><b>1931 年的結婚照</b>：京都帝大最年輕的臺灣人博士，與臺南第二高女榜首陳焦桐結為連理；誰也沒想到十六年後她得獨力撐起整個家。</figcaption>
+      </figure>
+      <figure class="fig port">
+        <button data-ph="095946" aria-label="放大照片：「志在四方」展板說明鹿港、嘉義與臺北三兄弟的四方醫院">
+          <img loading="lazy" src="img/095946.jpg" alt="一樓「志在四方」黃白展板，記錄 1922 鹿港、1933 嘉義與 1935 臺北建成町四方醫院的連鎖脈絡">
+        </button>
+        <figcaption><b>「志在四方」的兄弟約定</b>：施家四子除么兒習法外，三兄弟從鹿港、嘉義到臺北開枝散葉，一律掛起「四方醫院」招牌。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHAPTER 04 -->
+  <section class="chapter" id="s4">
+    <div class="ch-kicker">
+      <span class="ch-no">STATION 04</span>
+      <span class="ch-floor">首度開放：27 號一樓 · 10:25–10:50</span>
+      <span class="ch-badge">現場限定・首次公開</span>
+    </div>
+    <h2>鐵門首度拉起！走進 27 號看 1919 年臺北城牆石、循環建材與「反過來」的板梁</h2>
+    <div class="split-rev">
+      <figure class="fig land">
+        <button data-ph="102755" aria-label="放大照片：阮總在首度開放的 27 號一樓指著唭哩岸石與雙層紅磚混合承重牆">
+          <img loading="lazy" src="img/102755.jpg" alt="穿黑色皮衣的阮總站在 27 號一樓室內，伸手指著身後整面露出的灰白唭哩岸石與夾層紅磚砌成的承重牆">
+        </button>
+        <figcaption><b>一堵牆裡的臺北城牆記憶</b>：27 號鐵門拉開後，最震撼的不是裝潢，而是整面未經粉刷的唭哩岸石與紅磚混砌牆——每砌一層大小不一的舊石頭，就夾兩道紅磚把水平調回來。</figcaption>
+      </figure>
+      <div class="prose">
+        <p>這天最讓老屋迷屏息的時刻，是團隊拉開隔壁 <b>27 號</b>平常緊閉的藍色鐵門，讓大家踏進這座幾乎原封不動的工地檔案庫。據施家後代與老照片考證，當年一樓門診主入口應在已改建的那一側（面攤隔壁精緻木門），25 與 27 號則涵蓋候診、藥局、X 光室與後來連通的病房空間。</p>
+        <p>阮總指著眼前粗獷卻秩序井然的牆面，揭開了這棟房子真正的出生年份之謎：最初連前來協助調研的學者都誤以為這是戰後建築，因為一般人對迪化街一帶的印象都是木桁架街屋；但追進<b>1929–1930 年臺灣建築構造法令</b>與營造史才發現，這正是<b>1930 年代初由臺灣第一屆「建築代願人」（後來成為甲級建築師）設計的新式結構建築</b>！更令人驚訝的是，它在物資匱乏的年代把「<b>Recycle（材料循環再利用）</b>」做到極致。</p>
+      </div>
+    </div>
+
+    <div class="anatomy-grid">
+      <article class="anatomy-card r">
+        <small>RECYCLE 01 · 城牆石二次利用</small>
+        <h3>1919 年前屋拆牆石＋兩層紅磚調水平</h3>
+        <p>總督府拆臺北城牆後，破損或零散的<b>唭哩岸石</b>流入民間。這塊基地在 <b>1919 年</b>曾蓋過一層瓦屋，1930 年代改建三層時，師傅把舊屋拆下的唭哩岸石與火頭磚、尺寸不一的舊紅磚全數重砌：因為石頭歪斜大小不一，便<b>每疊一排石頭就砌兩層紅磚與石灰把水平調平</b>，一樓石頭用完了，二樓起改用紅磚（僅底部兩三層保留石材防潮）。</p>
+      </article>
+      <article class="anatomy-card">
+        <small>ANATOMY 02 · 正面 vs 側面成本哲學</small>
+        <h3>貼面磚給路人看，窄巷那面靠清水磚防水</h3>
+        <p>面對重慶北路的<b>正面貼上昂貴黃色面磚</b>；當年僅兩三米寬的天水路側面則捨棄面磚，改用極紮實密合的「<b>清水磚交丁砌法</b>」——好磚與密實灰縫本身就能防水，不像戰後老磚屋容易滲水得再刷一層漆。室內混用舊磚的部分則直接抹上白灰遮醜，呈現「裡面講結構、外面講美學」的務實分工。</p>
+      </article>
+      <article class="anatomy-card r">
+        <small>ANATOMY 03 · 罕見「板梁／反梁」</small>
+        <h3>梁不垂在天花板下，而是坐在樓板上面</h3>
+        <p>抬頭看二樓樓板結構，會發現這裡出現了現代設計也罕見的「<b>板梁（反梁）</b>」——一般建築的梁都凸出在天花板下方，這裡卻把梁<b>往上做到樓板上方</b>，再把結構載重傳回兩側承重牆。在活動鐵支撐還沒普及的 1930 年代，單單想像當時木模板支撐的施作難度，就能體會代願人的專業手路。</p>
+      </article>
+    </div>
+
+    <div class="duo-grid">
+      <figure class="fig land">
+        <button data-ph="103727" aria-label="放大照片：27 號一樓後方樓梯間、白灰剝落天花板梁與磚牆上方通氣孔">
+          <img loading="lazy" src="img/103727.jpg" alt="27 號一樓內部往後方樓梯望去，右側紅磚牆頂部整齊留有一排矩形通氣孔，左牆與右牆皆為唭哩岸石與紅磚混砌">
+        </button>
+        <figcaption><b>27 號內部的透氣磚孔</b>：磚牆上方特意留出整排通氣孔道，左側則是通往二樓的陡直階梯。</figcaption>
+      </figure>
+      <figure class="fig land">
+        <button data-ph="111234" aria-label="放大照片：二樓仰望特殊板梁結構與後續旅社時期的管線與花紋壁紙殘跡">
+          <img loading="lazy" src="img/111234.jpg" alt="抬頭看見白色油漆剝落的 RC 梁與天花板、密佈的白色管線，左下角牆面還留著早期玫瑰花樣壁紙">
+        </button>
+        <figcaption><b>層層疊加的使用痕跡</b>：結構梁體屬於 1930 年代醫院時期，密集的冷氣排水管與左下角剝落的花紋壁紙，則是戰後「東亞旅社」留下的時代切片。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHAPTER 05 -->
+  <section class="chapter" id="s5">
+    <div class="ch-kicker">
+      <span class="ch-no">STATION 05</span>
+      <span class="ch-floor">25 號樓梯與二樓前區 · 10:52–11:10</span>
+      <span class="ch-badge t">1947.03.11</span>
+    </div>
+    <h2>踏上樓梯的那一夜：從「醫生生病不看患者」到《大溪檔案》裡的最後名單</h2>
+    <div class="stair-wrap">
+      <figure class="fig land">
+        <button data-ph="120417" aria-label="放大照片：25 號通往二樓的樓梯、三月十一日夜半對話木牌與「時代治癒所」木牌">
+          <img loading="lazy" src="img/120417.jpg" alt="木樓梯左側牆面逐階掛著 1947 年 3 月 11 日晚間軍警帶走施江南前的三段對話木牌，右側懸掛「時代治癒所」木牌與施江南公益事蹟展板">
+        </button>
+        <figcaption><b>一步一階走回 1947 年春夜</b>：沿著樓梯往上走，牆面左側依序釘著當年軍警夜半敲門時的真實對話，右側還可見「施江南與社會公益」展板（記載他與杜聰明創辦臺灣理工學會並擔任臺北州議員、北一女中家長會長）。</figcaption>
+      </figure>
+      <div>
+        <div class="prose">
+          <p>從一樓走上二樓的這段樓梯，策展團隊沒有放冰冷的年表，而是把 <b>1947 年 3 月 11 日深夜</b>軍警敲門帶走施江南醫師前的對話，逐字掛在階梯牆上。據<b>陳焦桐女士</b>與大女兒後來的口述，那晚敲門聲響起時，施醫師其實在家中卻推託生病，未料軍警仍將人強行押走——從此人間蒸發，沒有留下審判或處決紀錄。</p>
+        </div>
+        <div class="dialogue-steps">
+          <div class="dialogue-line"><span>施家母女應門</span>「<b>今天醫生生病，不看患者…</b>」</div>
+          <div class="dialogue-line"><span>門外軍警回話</span>「<b>長官要施江南去問兩句話！</b>」</div>
+          <div class="dialogue-line"><span>最後留下的話</span>「<b>警務處胡處長說你們臺灣人搞得太不像話…</b>」</div>
+        </div>
+        <div class="prose">
+          <p>為什麼是他？直到近年<b>蔣中正檔案（大溪檔案）</b>等機密文書陸續解密，家屬與研究者才在一份「<b>叛亂首要名單</b>」裡看見施江南的名字，後方註記的理由是參與「<b>臺灣政治建設協會</b>」——這是蔣渭水過世後，其弟<b>蔣渭川</b>在戰後無法組黨的情況下，為延續臺灣民眾黨精神而成立的政治結社（連蔣渭川自己的女兒都在這場搜捕中遭誤殺）。此外，施江南也曾被推舉為二二八事件處理委員會委員，更在協助救援<b>臺籍日本兵</b>時為此找陳儀理論拍桌；那天回家時，他連平日紳士必戴的帽子都不見了，陳焦桐心頭一沉，成了不祥預兆。</p>
+          <p>施江南失蹤後，同為臺大醫學體系的<b>許強醫師</b>曾短暫前來代診支撐；未料許強（曾被日本教授盛讚有<b>諾貝爾醫學獎潛力</b>的醫學才子）也在隨後的<b>白色恐怖</b>中與郭琇琮等人遭槍決，醫院不得不走入歷史，轉手成為後來的「<b>東亞旅社</b>」（由曾任彰化縣議員的投資者經營，家族至今在附近仍保有另一間旅社）。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="duo-grid">
+      <figure class="fig land">
+        <button data-ph="115406" aria-label="放大照片：二樓「那一夜 1947.03.11」黃底展板">
+          <img loading="lazy" src="img/115406.jpg" alt="二樓展場黃白斜切底色的「那一夜 1947.03.11」展板，說明施江南被列入《大溪檔案》「二二八事變」首謀之名單">
+        </button>
+        <figcaption><b>遲來的檔案答案</b>：家屬尋找半世紀始終「查無此人」，直到《大溪檔案》公開，才確認他被列在首謀名單之列。</figcaption>
+      </figure>
+      <figure class="fig land">
+        <button data-ph="115417" aria-label="放大照片：陳焦桐陳情書手稿與警備總司令部回覆複製品">
+          <img loading="lazy" src="img/115417.jpg" alt="玻璃展櫃內整齊陳列四件手寫毛筆陳情書複本與官方公文回覆">
+        </button>
+        <figcaption><b>四處投書的石沉大海</b>：玻璃櫃裡陳列著施夫人四處奔走的手書，大女兒甚至曾趁當局重視學生聲音時直接具狀向蔣中正陳情，得到的回覆始終只有「查無實事」。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHAPTER 06: DARK ARCHITECTURAL SECTION -->
+  <section class="dark-band" id="s6">
+    <div class="dark-in">
+      <div class="ch-kicker">
+        <span class="ch-no">STATION 06</span>
+        <span class="ch-floor">未開放二、三樓結構現場 · 11:12–11:48</span>
+        <span class="ch-badge">首度深入・修復前原貌</span>
+      </div>
+      <h2>鐵門之後的二、三樓秘境：鑽探機孔、212 號病房夾層與五邊形天井</h2>
+      <p>穿越一道平時掛著「來賓止步」的隔離門，整團走進完全未經美化包裝的二、三樓空間。這裡沒有展板與投射燈，只有剝落漆皮、裸露紅磚、陳年鐵支架與斜屋頂的木桁架——卻是整場導覽含金量最高、也最有可能在未來修復後被重新包覆起來的建築現場。</p>
+
+      <div class="duo-grid">
+        <figure class="fig land">
+          <button data-ph="115204" aria-label="放大照片：二樓樓板為地質鑽探機開出的矩形孔洞">
+            <img loading="lazy" src="img/115204.jpg" alt="樓梯旁的二樓水泥樓板被切出一個矩形大洞露出下方空間，牆面留著淡黃色復古幾何壁紙">
+          </button>
+          <figcaption><b>怪手前夕的剎車印記</b>：這塊被切穿的樓板矩形洞，是當年前手建設公司為了讓高大的<b>地質鑽探機</b>施工所鑿開的孔——走到這一步幾乎註定拆除，卻在最後一刻被買下喊停。</figcaption>
+        </figure>
+        <figure class="fig land">
+          <button data-ph="114843" aria-label="放大照片：三戶轉角建物共用的五邊形天井">
+            <img loading="lazy" src="img/114843.jpg" alt="站在狹長走道仰望三戶共同夾出的五邊形天井，中央有洗石子弧形護欄與上方鐵皮採光口，牆面爬滿冷氣室外機與管線">
+          </button>
+          <figcaption><b>轉角才長得出來的「五邊形天井」</b>：一般長條型大稻埕街屋只有矩形小天井，這棟因為位在轉角，三戶竟然在中間夾出一個罕見的<b>五邊形共用天井</b>。</figcaption>
+        </figure>
+      </div>
+
+      <div class="dark-cards">
+        <article class="dark-card">
+          <h3>產權拆賣留下的磚牆「暗門」</h3>
+          <p>原本二樓多間房是相通的（據耆老回憶，巷內早年還另有一支樓梯直上二樓病房），後來三個原始大股東分戶出售，各賣各的，為了不讓彼此互通，才在地界線上砌出新紅磚牆封死門口。阮總特地指給大家看新舊磚色的落差：「未來修復要還原原貌，這些後來補上的新磚牆就會拆掉。」</p>
+        </article>
+        <article class="dark-card">
+          <h3>打除馬賽克後重見天日的溝槽磚</h3>
+          <p>為了摸清原始立面長相，團隊一點一點把戰後貼上去的馬賽克磁磚敲掉，果然在底層找到漂亮完整的<b>菱格紋溝槽磚</b>與印有工廠標記「<b>A</b>」字的早期紅磚——這也是未來還原修復時最重要的材料樣本。</p>
+        </article>
+      </div>
+
+      <div class="trio-grid">
+        <figure class="fig port">
+          <button data-ph="110804" aria-label="放大照片：阮總站在二樓因產權分割而用新紅磚封起來的舊門口前">
+            <img loading="lazy" src="img/110804.jpg" alt="阮總雙手張開站在二樓室內，背後一面門框被後來砌上的橘紅色新磚封死，與周圍陳舊白灰牆面形成對比">
+          </button>
+          <figcaption><b>一堵磚封住兩段產權史</b>：新舊紅磚色澤一比就明白，當初三戶分家賣給高雄遠洋漁業買家與其他鄰居時，就是從這個門口砌磚隔開。</figcaption>
+        </figure>
+        <figure class="fig port">
+          <button data-ph="112653" aria-label="放大照片：二樓 212 號純木構造病房與夾層儲藏空間">
+            <img loading="lazy" src="img/112653.jpg" alt="木柱上釘著「212」藍色門牌，上方可見木窗與向下掀開的夾層木板、榻榻米底層與歪斜木結構">
+          </button>
+          <figcaption><b>212 號病房的「偷空間」巧思</b>：醫院開了十幾年病房不夠用，只好利用老屋挑高硬生生隔出兩層木夾層（下面鋪榻榻米還能塞棉被），甚至把改建拆下的<b>大門窗框木料回收</b>拿來當梁柱。</figcaption>
+        </figure>
+        <figure class="fig port">
+          <button data-ph="114531" aria-label="放大照片：敲除後期馬賽克磁磚後露出的原始菱格紋溝槽磚與 A 字磚印">
+            <img loading="lazy" src="img/114531.jpg" alt="磚柱敲開表層水泥與磁磚後，露出凹凸菱格紋的紅褐色溝槽面磚與灰漿上印著 A 字的磚痕">
+          </button>
+          <figcaption><b>敲開之後才看見的原始皮膚</b>：把後來貼上去的磁磚慢慢剔除，底層居然完整保留了當年的溝槽面磚與窯廠壓紋。</figcaption>
+        </figure>
+      </div>
+
+      <div class="duo-grid">
+        <figure class="fig land">
+          <button data-ph="114739" aria-label="放大照片：三樓裸露的紅磚隔間牆與上方整排通氣孔">
+            <img loading="lazy" src="img/114739.jpg" alt="三樓光影穿透的清水紅磚牆面，可見連續門洞與牆頂整排方形通氣窗孔">
+          </button>
+          <figcaption><b>陽光穿進紅磚牆</b>：三樓這道與樓下同材質卻砌得極為乾淨漂亮的清水磚牆，在修復前仍維持著最原始的呼吸感。</figcaption>
+        </figure>
+        <figure class="fig land">
+          <button data-ph="114822" aria-label="放大照片：三樓以鋼筋混凝土梁直接承載兩組木桁架的罕見結構">
+            <img loading="lazy" src="img/114822.jpg" alt="仰望三樓斜屋頂的深色原木桁架，下方直接坐落在一根長條型鋼筋混凝土 RC 梁上">
+          </button>
+          <figcaption><b>結構學者也看呆的一根梁</b>：一般磚木街屋跨距約四米八，這棟為了撐起樓上退縮露臺與轉角大空間，竟直接用一根 <b>RC 鋼筋混凝土梁去承載兩組木桁架</b>——據阮總轉述，看過一百多棟老屋的結構老師從未見過這種混構造法。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 07 -->
+  <section class="chapter" id="s7">
+    <div class="ch-kicker">
+      <span class="ch-no">STATION 07</span>
+      <span class="ch-floor">二樓後段展間 · 11:48–12:04</span>
+      <span class="ch-badge t">家族記憶與回信</span>
+    </div>
+    <h2>悲慟中的堅毅與昇華：考取藥劑生的母親，與闊別 74 年重返舊址的四封回信</h2>
+    <div class="split-wide">
+      <div class="prose">
+        <p>從滿是灰塵的木屋架退回潔淨溫暖的二樓展覽室，氣氛忽然安靜下來。策展團隊在這裡擺了一張黑色書桌，主角不再只是施江南，而是撐起整個家的<b>陳焦桐女士</b>。</p>
+        <p>1947 年丈夫失蹤時，她獨自面對五個年幼女兒（長女僅十五歲、最小的還沒上學），外頭還要承受鄰里異樣眼光與特務監視。那個年代若家境撐不住，往往面臨改嫁、送養或讓孩子做工；她卻咬牙憑著在四方醫院累積的醫藥經驗，<b>自己考取藥劑生執照</b>，在<b>民樂街</b>獨立開藥房養活五個女兒——最後四位女兒畢業於臺大醫學院、一位畢業於臺大藥學系，全數赴美執業。之所以去美國，女兒們後來坦承並非只因政治因素，而是母親當時心疼她們：「<b>臺灣那時對女醫師並不信任，到外國才有發揮的空間。</b>」</p>
+        <p>晚年陳焦桐陪孫子學書法，孫子不學了，她自己卻一筆一畫寫了二十多年。桌上攤開的 2000 年二二八美展特刊《<b>悲慟中的堅毅與昇華</b>》，正是她一生的寫照——一生未再踏進政治，直到 <b>2002 年</b>（二二八事件 55 週年之際），高齡將近九十的她才終於點頭讓家族後輩（包含家族裡的施建築師）重新設計<b>鹿港施家墓園</b>，以衣冠塚與紀念碑形式讓施江南落葉歸根。</p>
+      </div>
+      <div>
+        <figure class="fig port">
+          <button data-ph="115628" aria-label="放大照片：陳焦桐女士書法「惟有相思似春色，江南江北送君歸」與 2000 年展覽特刊">
+            <img loading="lazy" src="img/115628.jpg" alt="黑色展桌上擺放陳焦桐女士毛筆作品「惟有相思似春色，江南江北送君歸」、毛筆竹簾與《悲慟中的堅毅與昇華》畫冊">
+          </button>
+          <figcaption><b>藏在詩句裡的丈夫名字</b>：「惟有相思似春色，江南江北送君歸」——她一輩子很少在女兒面前哭，卻在書法裡寫進了「江南」二字。</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="quote-ribbon">
+      「回到久別 74 年的四方醫院舊址，心情激動、快樂又悲傷。快樂的是回憶和爸、媽在一起生活的美麗時光，悲傷的是父親不在家，從此離開人間……爸爸、媽媽在天之靈一定感到欣慰。」
+      <cite>—— 施玲玉、施淑娟、施安雅、施雅美（施江南四位女兒致台灣歷史資源經理學會與和樂城市開發親筆信）</cite>
+    </div>
+
+    <div class="trio-grid">
+      <figure class="fig land">
+        <button data-ph="115439" aria-label="放大照片：陳焦桐女士晚年書法「無礙」">
+          <img loading="lazy" src="img/115439.jpg" alt="二樓展牆上框裝的陳焦桐女士毛筆橫幅「無礙」二字">
+        </button>
+        <figcaption><b>歷經半世紀的「無礙」心境</b>：阮總在展場最有感觸的正是這幅「無礙」——走過恐懼與漫長沉默後，能做到心無罣礙地提筆寫字，是為母則強的終極重量。</figcaption>
+      </figure>
+      <figure class="fig land">
+        <button data-ph="120401" aria-label="放大照片：施家女兒們、施性忠與各界留下的親筆信箋與《時代治癒所》專書">
+          <img loading="lazy" src="img/120401.jpg" alt="展架上陳列四張親筆卡片，上方左側為施家四位女兒致爸媽信箋、下方包含鹿港宗親施性忠手書，右側為時代治癒所專書">
+        </button>
+        <figcaption><b>從 2023 年籌展一路累積的真實回響</b>：牆上不僅有施家四位女兒寫給父母的信，還有鹿港施家最年長族人、前新竹市長<b>施性忠</b>留下的親筆字條。</figcaption>
+      </figure>
+      <figure class="fig land">
+        <button data-ph="095934" aria-label="放大照片：曾孫女吳亭樺寫給阿祖的英文親筆卡片">
+          <img loading="lazy" src="img/095934.jpg" alt="壓克力框內的手寫卡片「致 阿祖」，以英文寫著站在曾祖父曾經生活、工作與救人的同一棟建築裡感到不可思議，署名曾孫女吳亭樺">
+        </button>
+        <figcaption><b>第四代站在同一片地板上</b>：曾孫女吳亭樺寫給「阿祖」的英文便條——站在你曾生活、工作、救人的同一棟樓裡，字句成了最溫柔的跨代對話。</figcaption>
+      </figure>
+    </div>
+
+    <div class="trio-grid">
+      <figure class="fig land">
+        <button data-ph="115459" aria-label="放大照片：時代的傷所展板與鹿港施家墓園紀念碑介紹">
+          <img loading="lazy" src="img/115459.jpg" alt="「時代的傷所」展板貼在裸露紅磚牆前，說明陳焦桐女士考取藥劑生執照與 2002 年施家墓園立碑經過">
+        </button>
+        <figcaption><b>2002 年點頭立下的那座碑</b>：直到九十歲前後，施夫人才同意由家族後輩替施江南在鹿港墓園設立衣冠塚與二二八意象紀念碑。</figcaption>
+      </figure>
+      <figure class="fig land">
+        <button data-ph="115508" aria-label="放大照片：鹿港施家墓園二二八紀念碑建築設計圖">
+          <img loading="lazy" src="img/115508.jpg" alt="框裝的建築平面設計圖，畫出鹿港施家墓園與二二八紀念碑的空間配置">
+        </button>
+        <figcaption><b>家族建築師畫下的歸途</b>：墓園重新設計圖就掛在展場牆上，與四方醫院的老屋圖說遙遙呼應。</figcaption>
+      </figure>
+      <figure class="fig land">
+        <button data-ph="115607" aria-label="放大照片：二樓展場安靜的閱讀角落與老屋窗景">
+          <img loading="lazy" src="img/115607.jpg" alt="二樓展室一角，溫暖吊燈照亮木桌與翻開的展覽手冊，四周是裸露磚牆與木格窗">
+        </button>
+        <figcaption><b>留給下一個人的治療室</b>：從一樓歷史、樓梯傷痕走到二樓靜室，最後還能把讀後感投進角落的「<b>醫療站 POST 四方醫院</b>」木箱。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHAPTER 08 -->
+  <section class="chapter" id="s8">
+    <div class="ch-kicker">
+      <span class="ch-no">STATION 08</span>
+      <span class="ch-floor">重返騎樓與街角 · 11:48–12:12</span>
+      <span class="ch-badge">城市冷知識</span>
+    </div>
+    <h2>3.64 公尺的騎樓密碼、柱子上的綠鐵箱，與「圓形公園」變成的建成圓環</h2>
+    <div class="split-rev">
+      <figure class="fig land">
+        <button data-ph="121142" aria-label="放大照片：天水路騎樓與左側柱子上保留的綠色保險套販賣鐵箱">
+          <img loading="lazy" src="img/121142.jpg" alt="從四方醫院騎樓望向重慶北路口，左側黃色面磚柱上掛著一只綠色小鐵箱，上方可見老木樑與寬闊的標準騎樓">
+        </button>
+        <figcaption><b>騎樓柱子上的雙重時代線索</b>：頭上是標準寬度的騎樓天花板，左手邊柱子還掛著戰後旅社與風月年代遺留的「保險套販賣綠鐵箱」。</figcaption>
+      </figure>
+      <div class="prose">
+        <p>導覽尾聲回到騎樓下，學建築出身的阮總突然考了大家一個街頭冷知識：「<b>為什麼臺灣都市法規裡的標準騎樓深度是 3.64 公尺，不是 3.5 或 3.8 公尺？那多出來的 4 公分到底從哪來？</b>」</p>
+        <p>答案藏在尺規轉換裡——日治時期建築法規延續傳統尺制（<b>1 尺約 30.3 公分</b>），標準騎樓（停仔腳）採用<b>十二台尺（一丈二，即「二間」幅寬）</b>，乘起來正好是 <b>363.6 公分</b>，四捨五入就是今天建管法規沿用至今的 <b>3.64 公尺</b>！（至於轉角另一側比較窄，則是早期街廓形成的「窄騎樓」。）</p>
+        <p>而柱子上那只不起眼的<b>綠色小鐵箱</b>，是當年旅社時期用來販售保險套的販賣機外殼——誠實記錄著建成圓環周邊曾歷經特種行業與酒家林立的複雜歲月。臨散場前，兩位講者也聊起斜前方的<b>建成圓環</b>：當年在總督府都市計畫圖上，它起初只是隨手畫的一個圓圈，設計成給居民散步乘涼的「<b>圓公園</b>」，後來才演變成全臺知名的圓環夜市地標；而團隊這幾年也同步打完兩年官司、收回迪化街同樣與醫界家族有關的「<b>兩江醫院</b>」並啟動修復——臺北市不缺一棟新大樓，真正缺的，是能讓人站到原地觸摸記憶的老房子。</p>
+        <div class="fact-note">
+          <span class="fn-lbl">尺制補充筆記</span>
+          <p>導覽現場快節奏講解時曾口誤將 3.64 公尺算成「十尺（約 3.03 公尺）」，實務與現行《臺北市建築管理自治條例》之 3.64 公尺沿革，係自日治時期之 <b>12 臺尺（1 丈 2 尺 × 30.303 公分 ≈ 363.64 公分）</b>換算而來。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="port-land-mix">
+      <figure class="fig port">
+        <button data-ph="115547" aria-label="放大照片：展場「醫療站 POST 四方醫院」木質意見投遞箱">
+          <img loading="lazy" src="img/115547.jpg" alt="印有十字標誌與「醫療站 POST 四方醫院」字樣的木頭信箱">
+        </button>
+        <figcaption><b>時代治癒所的回音箱</b>：策展團隊放了這只「醫療站」信箱收集參觀者的卡片，為下一階段建築修復留存公共對話。</figcaption>
+      </figure>
+      <section class="after-sec" style="margin:0" aria-label="走讀後記">
+        <div class="sec-head" style="margin-bottom:6px">
+          <h2>走讀後記：在怪手停下來的那 10 公分裡</h2>
+          <p>一棟差點消失的街角建物，靠底片盒、公文檔案與一次推開鐵門的導覽重新長出血肉</p>
+        </div>
+        <div class="after-grid">
+          <article class="after-card">
+            <h3>專業度極高的「實務派」導覽</h3>
+            <p>學會研究員補齊施江南與二二八文史，開發與修復負責人直接從結構與產權拆解「為什麼沒被拆、未來怎麼修」，兩條線交織出少見的立體現場。</p>
+          </article>
+          <article class="after-card">
+            <h3>只屬於修復前夕的限定畫面</h3>
+            <p>鑽探孔、封門磚牆、溝槽磚樣本與 212 號病房夾層，都是未來正式修繕完成後未必再能這樣赤裸看見的剖面——來過這天，才算真正看進它的骨子裡。</p>
+          </article>
+          <article class="after-card">
+            <h3>從一座醫院串回一條醫療街區</h3>
+            <p>從李火增門前的積水街景，到陳焦桐在民樂街開藥房撐起五個醫藥人才女兒，再到鄰近的兩江醫院，大稻埕與建成町的醫者網絡仍在持續被找回來。</p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>2026/01/17 參加「2026 年歡迎重新回到天水路四方醫院」導覽（和樂城市開發股份有限公司主辦、台灣歷史資源經理學會合辦）的走讀筆記</span>
+  <a href="#top">回到頁首 ↑</a>
+</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../dadaotea/index.html"><small>‹ 較新的一場・2026/01/25</small>茶香與紅磚的時光漫步：淡水河流域大稻埕走讀</a><a class="nx" href="../sifen/index.html"><small>較早的一場・2026/01/07 ›</small>四分溪畔的空間故事</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar">
+    <button id="lbp" aria-label="上一張">‹</button>
+    <span id="lbc"></span>
+    <button id="lbn" aria-label="下一張">›</button>
+    <button id="lbx" aria-label="關閉">✕</button>
+  </div>
+</div>
+
+<script>
+{
+  const btns=[...document.querySelectorAll('main button[data-ph], header button[data-ph]')];
+  const items=btns.map((b,idx)=>{
+    const img=b.querySelector('img');
+    const fig=b.closest('figure');
+    const cap=fig?fig.querySelector('figcaption').textContent:img.alt;
+    b.dataset.idx=idx;
+    return {src:img.getAttribute('src'),alt:img.alt,cap};
+  });
+  const lb=document.getElementById('lb'),im=document.getElementById('lbi'),cp=document.getElementById('lbc');
+  let cur=0;
+  const show=i=>{
+    cur=(i+items.length)%items.length;
+    const x=items[cur];
+    im.src=x.src;
+    im.alt=x.alt;
+    cp.textContent=`${x.cap}　（${cur+1}/${items.length}）`;
+  };
+  document.addEventListener('click',e=>{
+    const b=e.target.closest('button[data-ph]');
+    if(b){show(+b.dataset.idx);lb.classList.add('on');document.getElementById('lbx').focus();}
+  });
+  document.getElementById('lbp').onclick=()=>show(cur-1);
+  document.getElementById('lbn').onclick=()=>show(cur+1);
+  const close=()=>lb.classList.remove('on');
+  document.getElementById('lbx').onclick=close;
+  lb.addEventListener('click',e=>{if(e.target===lb)close();});
+  document.addEventListener('keydown',e=>{
+    if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')show(cur-1);
+    if(e.key==='ArrowRight')show(cur+1);
+  });
+}
+</script>
+</body>
+</html>
