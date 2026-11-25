@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>土火與微光的垂直串門：爿爿花手工瓷磚 × 真真鑲嵌玻璃研究所（2025/11/22）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 2025 年 11 月 22 日週六夜晚，走進士林中興街「藝響空間」前國稅局宿舍，先在一樓摸著濕胚陶土、3D 壓模與 1230°C 窯燒的復刻馬賽克，再循窄小紅磚樓梯爬上二樓，鑽進平時只接預約的鑲嵌玻璃製作現場與暗房藝廊。
+   IDEA: 雙層工坊垂直剖面誌（Two-Story Craft Atelier Cross-Section）——一樓是窯火陶磚橘紅與青瓷釉綠的明亮實驗室，跨過紅磚窄梯轉入二樓的黃銅焊錫琥珀金與暗房光影；以工序流水帶、時代三部曲、局部深色沉浸藝廊與昭和壓花玻璃檔案櫃，重現同一棟老宿舍裡兩種手工時間的對話。
+   PICTURE: 頂部滿版英雄圖為二樓真真鑲嵌玻璃工作室全景（200143.jpg），老紅磚山牆與桁架下垂吊著手工鑲嵌玻璃燈具，職人正在工作桌前專注焊錫。
+   COLOUR and TYPE: 素坯暖白 #f6f3ed、紙白 #fcfaf6、墨炭灰 #1b1a18、窯火陶磚紅 #b5492b（關鍵詞主色）、青瓷釉綠 #2b6b5f、黃銅琥珀 #9a6c1e、暗房夜炭 #16181c；Noto Serif TC 標題 + Noto Sans TC 內文。
+   LAYOUT: 比照北門場滿版英雄圖＋橫排 .meta 資訊條＋雙欄 .intro-band 導言段 → 夜間限定密碼四格 → 黏貼垂直樓層導航 → Part I 1F 泥土與窯火（百年三部曲、7 道濕式成型工序長廊、手工與量產對比）→ 窄梯轉折過場 → Part II 2F 銅箔與微光（4 道不打磨玻璃工序、深色沉浸奇幻藝廊、昭和壓花玻璃年表櫃）→ 夜間餘韻收尾四卡 */
+:root{
+  color-scheme:light dark;
+  --bg:light-dark(#f6f3ed,#131312);
+  --paper:light-dark(#fcfaf6,#1c1b19);
+  --panel:light-dark(#ede8de,#252320);
+  --ink:light-dark(#1c1b19,#ede9e1);
+  --mute:light-dark(#615b53,#a7a096);
+  --accent:light-dark(#b5492b,#e78769);
+  --celadon:light-dark(#2b6b5f,#78c2b3);
+  --brass:light-dark(#9a6c1e,#dfb25e);
+  --tint-red:light-dark(#f8eae5,#2a1c17);
+  --tint-cel:light-dark(#e6f0ed,#172824);
+  --tint-brs:light-dark(#f6efe0,#282114);
+  --line:light-dark(#dcd5c8,#33302b);
+}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.82 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,h4{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+p b,p strong,li b,li strong,.prose b,.prose strong,.clue-card b,.step-card b,.callout b,.era-card b,.showa-card b{color:var(--accent);font-weight:700}
+
+/* Hero (beimen-style full-width banner + meta bar) */
+.hero{background:#1b1917;color:#f6f3ed}
+.hero .ph{position:relative;height:clamp(280px,50vh,500px);overflow:hidden}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:center 44%;display:block}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,16,14,.12) 0%,transparent 30%,rgba(18,16,14,.92) 100%)}
+.hero .tx{position:absolute;left:max(5vw,16px);right:max(5vw,16px);bottom:24px;z-index:1;max-width:1120px;margin:0 auto}
+.hero .kick{font-size:14px;letter-spacing:.06em;color:#f3cfa9;margin:0 0 6px;font-weight:700}
+.hero h1{font-size:clamp(28px,5vw,48px);line-height:1.14;font-weight:800}
+.hero p{margin:.5em 0 0;font-size:16.5px;max-width:66ch;opacity:.93}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;padding:15px max(5vw,16px);font-size:14px;background:#262320;color:#ebe5db;border-bottom:3px solid var(--accent)}
+.meta span{display:inline-flex;flex-wrap:wrap;gap:5px}
+.meta b{color:#fff;font-weight:700}
+.meta a{color:#f5cfa9;text-decoration:underline;text-underline-offset:3px}
+
+/* Layout Container */
+.wrap{max-width:1120px;margin:0 auto;padding:0 max(4vw,18px)}
+
+/* Intro Band */
+.intro-band{padding:32px 0 26px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1.25fr .75fr;gap:26px;align-items:start}
+.intro-band .intro-prose p{margin:0 0 14px;font-size:16.5px;line-height:1.84}
+.intro-band .intro-prose p:last-child{margin-bottom:0}
+.atelier-card{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--celadon);border-radius:12px;padding:18px 20px}
+.atelier-card h2{font-size:18px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:baseline}
+.atelier-card h2 small{font:700 11.5px "Noto Sans TC",sans-serif;letter-spacing:.08em;color:var(--celadon)}
+.atelier-row{padding:10px 0;border-top:1px dashed var(--line);font-size:14px;line-height:1.65}
+.atelier-row:first-of-type{border-top:none;padding-top:2px}
+.atelier-row .tag{display:inline-block;font-size:11.5px;font-weight:700;padding:1px 7px;border-radius:4px;margin-bottom:4px}
+.atelier-row .tag.f1{background:var(--tint-red);color:var(--accent)}
+.atelier-row .tag.f2{background:var(--tint-brs);color:var(--brass)}
+.atelier-row strong{display:block;font-family:"Noto Serif TC",serif;font-size:15.5px;color:var(--ink)}
+.atelier-row span{color:var(--mute);display:block}
+.atelier-note{margin-top:10px;padding:10px 12px;border-radius:8px;background:var(--panel);font-size:13px;color:var(--mute);line-height:1.6}
+
+/* Night Clues (Unique Moments) */
+.clues-band{padding:32px 0 26px;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 20px;margin-bottom:18px}
+.sec-head h2{font-size:clamp(22px,3vw,29px)}
+.sec-head p{margin:0;color:var(--mute);font-size:15px}
+.clue-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.clue-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px;position:relative;display:flex;flex-direction:column;gap:6px;transition:transform .2s}
+.clue-card:hover{transform:translateY(-2px)}
+.clue-card::before{content:"";height:3px;border-radius:3px;background:var(--accent);margin-bottom:4px}
+.clue-card.c::before{background:var(--celadon)}
+.clue-card.b::before{background:var(--brass)}
+.clue-card .badge{align-self:flex-start;font-size:11.5px;font-weight:700;padding:1px 8px;border-radius:4px;background:var(--tint-red);color:var(--accent)}
+.clue-card.c .badge{background:var(--tint-cel);color:var(--celadon)}
+.clue-card.b .badge{background:var(--tint-brs);color:var(--brass)}
+.clue-card h3{font-size:17px;line-height:1.38}
+.clue-card p{margin:0;font-size:14px;line-height:1.68;color:var(--mute)}
+
+/* Sticky Floor Nav */
+.floor-nav{position:sticky;top:8px;z-index:12;margin:20px 0 10px;padding:10px 14px;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;box-shadow:0 8px 22px rgba(0,0,0,.06);display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.fn-lbl{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--accent);margin-right:4px}
+.floor-nav a{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);text-decoration:none;font-size:13px;transition:border-color .15s}
+.floor-nav a:hover{border-color:var(--accent)}
+.floor-nav a span{font-weight:700;font-size:11.5px;color:var(--celadon)}
+.floor-nav a.f2 span{color:var(--brass)}
+
+/* Floor Banners */
+.floor-banner{margin:38px 0 10px;padding:22px 24px;border-radius:14px;border:1px solid var(--line);background:var(--paper);display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.floor-banner.f1{border-left:6px solid var(--celadon);background:linear-gradient(120deg,var(--tint-cel) 0%,var(--paper) 45%)}
+.floor-banner.f2{border-left:6px solid var(--brass);background:linear-gradient(120deg,var(--tint-brs) 0%,var(--paper) 45%)}
+.floor-pill{display:grid;place-items:center;min-width:68px;padding:10px 12px;border-radius:10px;background:var(--celadon);color:#fff;font-family:"Noto Serif TC",serif;text-align:center}
+.floor-banner.f2 .floor-pill{background:var(--brass)}
+.floor-pill b{font-size:24px;line-height:1}
+.floor-pill small{font-size:11px;letter-spacing:.1em;opacity:.9;margin-top:3px}
+.floor-banner h2{font-size:clamp(22px,3vw,29px);line-height:1.28}
+.floor-banner p{margin:6px 0 0;font-size:15px;color:var(--mute);max-width:64ch}
+
+/* Shared Figures */
+.fig{margin:0}
+.fig button{all:unset;cursor:pointer;display:block;width:100%;border-radius:10px;overflow:hidden;background:var(--panel);box-shadow:0 6px 20px rgba(0,0,0,.08)}
+.fig img{width:100%;display:block;object-fit:cover;transition:transform .35s ease}
+.fig.land img{aspect-ratio:16/9}
+.fig.port img{aspect-ratio:9/14}
+.fig.tall34 img{aspect-ratio:3/4}
+.fig button:hover img{transform:scale(1.025)}
+.fig figcaption{margin-top:8px;font-size:13.8px;line-height:1.6;color:var(--mute)}
+.fig figcaption b{color:var(--ink);font-weight:700}
+
+/* Station Section */
+.station{padding:34px 0;border-bottom:1px solid var(--line)}
+.st-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-bottom:12px}
+.st-no{font-family:"Noto Serif TC",serif;font-weight:800;font-size:13.5px;padding:2px 10px;border-radius:4px;background:var(--ink);color:var(--bg)}
+.st-time{font-size:13.5px;font-weight:700;color:var(--celadon)}
+.st-time.f2{color:var(--brass)}
+.st-chip{font-size:12px;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--tint-red);color:var(--accent)}
+.station h3{font-size:clamp(21px,2.8vw,28px);line-height:1.32;margin-bottom:14px}
+.prose p{margin:.75em 0}
+
+/* Layouts inside Stations */
+.split-lr{display:grid;grid-template-columns:1.06fr .94fr;gap:28px;align-items:start}
+.split-rl{display:grid;grid-template-columns:.94fr 1.06fr;gap:28px;align-items:start}
+.diptych{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.asym-duo{display:grid;grid-template-columns:1.38fr .62fr;gap:20px;margin-top:20px;align-items:start}
+.stack-2{display:grid;gap:18px}
+
+/* Era Triptych */
+.era-triptych{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:20px 0 8px}
+.era-card{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--celadon);border-radius:10px;padding:16px}
+.era-card:nth-child(2){border-top-color:var(--brass)}
+.era-card:nth-child(3){border-top-color:var(--accent)}
+.era-card .era-y{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--celadon)}
+.era-card:nth-child(2) .era-y{color:var(--brass)}
+.era-card:nth-child(3) .era-y{color:var(--accent)}
+.era-card h4{font-size:17.5px;margin:4px 0 8px}
+.era-card p{margin:0;font-size:14.5px;line-height:1.7;color:var(--mute)}
+
+/* 7-step Wet-Pressing Process Strip */
+.process-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:18px 0 22px}
+.step-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 15px;display:flex;flex-direction:column;gap:5px}
+.step-top{display:flex;align-items:center;gap:8px}
+.step-n{display:grid;place-items:center;width:26px;height:26px;border-radius:6px;background:var(--celadon);color:#fff;font:800 12.5px "Noto Serif TC",serif;flex:none}
+.step-card h4{font-size:15.5px;line-height:1.35}
+.step-card p{margin:2px 0 0;font-size:13.8px;line-height:1.65;color:var(--mute)}
+
+/* Photo Mosaic (3-col mixed portrait/landscape for Station 3) */
+.tile-mosaic{display:grid;grid-template-columns:1.1fr 1.1fr .68fr;gap:16px;margin-top:20px;align-items:start}
+
+/* Compare Cards (Custom vs Mass) */
+.compare-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.cmp-box{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px}
+.cmp-box.left{border-left:4px solid var(--celadon)}
+.cmp-box.right{border-left:4px solid var(--accent)}
+.cmp-box h4{font-size:17px;margin-bottom:8px}
+.cmp-box p{margin:0;font-size:14.8px;line-height:1.72}
+
+/* Callout */
+.callout{margin-top:16px;padding:14px 18px;border-radius:0 10px 10px 0;background:var(--tint-cel);border-left:4px solid var(--celadon);font-size:15px;line-height:1.72}
+.callout.brs{background:var(--tint-brs);border-left-color:var(--brass)}
+.callout.red{background:var(--tint-red);border-left-color:var(--accent)}
+
+/* Stair Transition Bridge */
+.stair-bridge{margin:34px 0;padding:24px;border-radius:16px;background:var(--panel);border:1px solid var(--line);display:grid;grid-template-columns:280px 1fr;gap:26px;align-items:center}
+.stair-bridge .fig img{aspect-ratio:3/4}
+.stair-bridge .st-chip{background:var(--brass);color:#fff}
+
+/* 4-step Stained Glass Cards */
+.glass-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0 22px}
+.g-step{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--brass);border-radius:10px;padding:15px}
+.g-step .gs-n{font:800 12px "Noto Sans TC",sans-serif;letter-spacing:.1em;color:var(--brass)}
+.g-step h4{font-size:16.5px;margin:4px 0 7px}
+.g-step p{margin:0;font-size:14px;line-height:1.68;color:var(--mute)}
+.g-step p b{color:var(--accent)}
+
+/* Dark Gallery Immersive Section */
+.gallery-dark{margin:34px 0;padding:34px 28px;border-radius:18px;background:#16181c;color:#ebe7de;box-shadow:0 18px 44px rgba(0,0,0,.22)}
+.gallery-dark .st-no{background:#dfb25e;color:#16181c}
+.gallery-dark .st-time{color:#f0ca7d}
+.gallery-dark .st-chip{background:rgba(223,178,94,.18);color:#f3d28f;border:1px solid rgba(223,178,94,.35)}
+.gallery-dark h3{color:#faf7f0}
+.gallery-dark .prose p{color:#dcd7cc}
+.gallery-dark .prose b,.gallery-dark .prose strong{color:#f2be63}
+.gallery-dark .fig button{background:#23262c;box-shadow:0 10px 26px rgba(0,0,0,.45)}
+.gallery-dark .fig figcaption{color:#aaa498}
+.gallery-dark .fig figcaption b{color:#f4efe4}
+.dark-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:22px}
+.dark-port-row{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;margin-top:22px;align-items:start}
+
+/* Showa Glass Specimen Grid */
+.showa-sec{padding:32px 0;border-bottom:1px solid var(--line)}
+.showa-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:10px;margin-top:18px}
+.showa-card{background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:12px 13px}
+.showa-card .yr{font:800 12px "Noto Sans TC",sans-serif;color:var(--brass);letter-spacing:.06em}
+.showa-card h4{font-size:17px;margin:2px 0 3px}
+.showa-card small{display:block;font-size:12.5px;color:var(--mute)}
+
+/* Closing Afterword */
+.afterword{margin:38px 0 24px;padding:28px;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+.afterword-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:26px;align-items:start;margin-top:18px}
+.af-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.af-card{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:16px}
+.af-card h4{font-size:16.5px;color:var(--accent);margin-bottom:6px}
+.af-card p{margin:0;font-size:14.5px;line-height:1.7}
+
+footer{max-width:1120px;margin:16px auto 12px;padding:16px max(4vw,18px) 10px;border-top:1px solid var(--line);color:var(--mute);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 18px}
+
+/* Lightbox */
+#lb{position:fixed;inset:0;z-index:40;background:rgba(10,12,15,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:16px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:12px;align-items:center;color:#eee;margin-top:12px;font-size:15px;max-width:900px;text-align:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer;flex:none}
+#lb button:hover{background:#333}
+
+@media(max-width:920px){
+  .intro-band,.split-lr,.split-rl,.asym-duo,.stair-bridge,.afterword-grid,.dark-port-row{grid-template-columns:1fr;gap:20px}
+  .clue-grid,.glass-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .era-triptych,.tile-mosaic{grid-template-columns:1fr}
+  .fig.port img,.fig.tall34 img{aspect-ratio:4/3}
+  .stair-bridge .fig img{aspect-ratio:4/3}
+}
+@media(max-width:620px){
+  .clue-grid,.glass-steps,.diptych,.compare-2,.dark-grid,.af-cards{grid-template-columns:1fr}
+  .gallery-dark{padding:24px 18px}
+}
+@media(prefers-reduced-motion:reduce){
+  .fig img,.clue-card{transition:none}
+  .clue-card:hover,.fig button:hover img{transform:none}
+}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・82 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../zhongyuan/index.html"><small>2026/09/27</small>神在其中，味蕾交會：中原文創園區《匯流城市・文化共生》走讀</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../dadaotea/index.html"><small>2026/01/25</small>茶香與紅磚的時光漫步：淡水河流域大稻埕走讀</a></li><li><a href="../sifang/index.html"><small>2026/01/17</small>天水路上的時代治癒所：四方醫院現地導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../tileglass/index.html" aria-current="page"><small>2025/11/22</small>土火與微光的垂直串門：爿爿花手工瓷磚 × 真真鑲嵌玻璃研究所</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../huozi/index.html"><small>2025/10/25</small>鐵道與活版印刷的百年物語</a></li><li><a href="../fuyou1025/index.html"><small>2025/10/25</small>孚佑百年・大稻埕文化走讀史蹟導覽</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../metamotion/index.html"><small>2024/11/29</small>無用之用：從松菸展場走進遠雄工地再生現場</a></li><li><a href="../backto1920/index.html"><small>2024/11/29</small>回到 1920：臺北最華美宮殿 × 醫學知識殿堂</a></li><li><a href="../bethany/index.html"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../zhongyuan/index.html"><small>2026/09/27</small>神在其中，味蕾交會：中原文創園區《匯流城市・文化共生》走讀</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../dadaotea/index.html"><small>2026/01/25</small>茶香與紅磚的時光漫步：淡水河流域大稻埕走讀</a></li><li><a href="../sifang/index.html"><small>2026/01/17</small>天水路上的時代治癒所：四方醫院現地導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../tileglass/index.html" aria-current="page"><small>2025/11/22</small>土火與微光的垂直串門：爿爿花手工瓷磚 × 真真鑲嵌玻璃研究所</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../huozi/index.html"><small>2025/10/25</small>鐵道與活版印刷的百年物語</a></li><li><a href="../fuyou1025/index.html"><small>2025/10/25</small>孚佑百年・大稻埕文化走讀史蹟導覽</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../metamotion/index.html"><small>2024/11/29</small>無用之用：從松菸展場走進遠雄工地再生現場</a></li><li><a href="../backto1920/index.html"><small>2024/11/29</small>回到 1920：臺北最華美宮殿 × 醫學知識殿堂</a></li><li><a href="../bethany/index.html"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></details><span>2025/11/22</span></div>
+
+<header class="hero" id="top">
+  <div class="ph">
+    <img src="img/200143.jpg" alt="二樓真真鑲嵌玻璃研究所製作區，老紅磚山牆下垂吊著各色手工鑲嵌玻璃燈具，製作夥伴正在工作桌前焊錫">
+    <div class="tx">
+      <p class="kick">打開台北 2025・傳承創生｜雙場域預約限定夜場</p>
+      <h1>土火與微光的垂直串門：爿爿花手工瓷磚 × 真真鑲嵌玻璃研究所</h1>
+      <p>從士林前國稅局宿舍一樓的 1230°C 窯火與濕式復刻馬賽克磚出發，踏過燈光微暗的狹窄紅磚階梯，推開二樓預約制鑲嵌玻璃工作室與暗房藝廊——一棟老宅、兩組同期駐村團隊，在週六夜裡串起半世紀建材記憶與兩百年手感微光。</p>
+    </div>
+  </div>
+</header>
+
+<div class="meta">
+  <span><b>日期時間</b> 2025/11/22（六）19:30–20:25</span>
+  <span><b>地點</b> <a href="https://www.google.com/maps/search/%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A3%AB%E6%9E%97%E5%8D%80%E4%B8%AD%E8%88%88%E8%A1%9724%E8%99%9F" target="_blank" rel="noopener">臺北市士林區・藝響空間（中興街 24 號 1F → 28 號 2F）</a></span>
+  <span><b>場次性質</b> 打開台北 2025・雙場域串聯預約限定</span>
+  <span><b>駐村團隊</b> C04 爿爿花手工瓷磚 × C03 真真鑲嵌玻璃研究所</span>
+</div>
+
+<main class="wrap">
+  <section class="intro-band" aria-label="雙場域導言與空間檔案">
+    <div class="intro-prose">
+      <p>隱身在士林中興街巷內的「<b>藝響空間</b>」，前身是<b>國稅局員工宿舍與配財室</b>，後來交由臺北市文化局託管為藝術家駐村與工作空間，以三年一期合約開放創作團隊申請進駐。2023 年，原本就相識的「<b>爿爿花手工瓷磚</b>」與「<b>真真鑲嵌玻璃研究所</b>」以同一期合約分別住進一樓與二樓，各自在老建築裡研究幾乎在臺灣斷鏈的傳統工藝。</p>
+      <p>這場「<b>打開台北 2025</b>」夜間限定場次，是少見的「<b>一次預約、雙場域垂直串聯</b>」。動線從 24 號 1 樓的瓷磚桌邊出發，聽完<b>濕式成型手工磚</b>的復興故事與七道工序，再循著樓間狹窄陡峭的階梯直上 28 號 2 樓——先抬頭看見老宿舍原始的<b>紅磚山牆與木梁結構</b>，接著走進平時只採預約制的玻璃製作現場，最後在壓暗燈光的奇幻藝廊裡，看兩百年前的鑲嵌玻璃如何化為當代光影與聲音裝置。</p>
+    </div>
+
+    <aside class="atelier-card" aria-label="雙場域空間檔案">
+      <h2>雙場域串聯檔案 <small>C04 × C03</small></h2>
+      <div class="atelier-row">
+        <span class="tag f1">1F｜報到起點</span>
+        <strong>C04｜爿爿花手工瓷磚</strong>
+        <span>士林區中興街 24 號 1 樓｜從 2013 年臺灣瓷磚田野與 2021 年《爿爿花—臺灣傳統瓷磚圖鑑》起步，專注復刻 1970 年代停產的拼花馬賽克磚與客製釉料。</span>
+      </div>
+      <div class="atelier-row">
+        <span class="tag f2">2F｜垂直延續</span>
+        <strong>C03｜真真鑲嵌玻璃研究所</strong>
+        <span>士林區中興街 28 號 2 樓｜一個創造「靈光」的工藝研究專案，延續「慢」、「惜」、「新」的姿態，將百年老窗壓花玻璃轉化為燈具與當代裝置。</span>
+      </div>
+      <div class="atelier-note">
+        <b>空間現場須知</b>：因館內燈光刻意壓暗、樓梯窄小且遍布易碎玻璃、電窯與焊接器材，本場次<b>恕不接待 12 歲以下孩童</b>，也正因這份真實的工作室尺度，讓夜間造訪多了一層儀式感。
+      </div>
+    </aside>
+  </section>
+
+  <section class="clues-band" aria-label="本場夜間限定亮點">
+    <div class="sec-head">
+      <h2>要走進這一夜，才碰得到的現場細節</h2>
+      <p>相較於白天的例行開放或線上圖錄，這場串聯夜訪藏著四個只有親身跨過一、二樓才看得到的切片。</p>
+    </div>
+    <div class="clue-grid">
+      <article class="clue-card">
+        <span class="badge">僅此一線</span>
+        <h3>同期駐村的「垂直串門」動線</h3>
+        <p>兩團隊簽下同個三年合約進駐上下樓，平時各自專注接案與研究；唯有這晚把內部樓梯打開，一氣呵成從<b>陶土跨到玻璃</b>。</p>
+      </article>
+      <article class="clue-card c">
+        <span class="badge">觸覺現場</span>
+        <h3>摸得到的 3D 壓模與素燒毛細孔</h3>
+        <p>長桌上直接攤開<b>扁平射出口鐵件</b>、3D 列印壓模、未上釉的 800°C 素燒磚與 1230°C 成品，指尖一摸就懂何謂兩面均勻散水。</p>
+      </article>
+      <article class="clue-card b">
+        <span class="badge">平時預約制</span>
+        <h3>現場直擊「不打磨」的焊錫邊條</h3>
+        <p>真真平時不隨意開門營業；這晚工作桌邊夥伴正在實作，親眼看懂<b>融錫表面張力</b>自然成形、不做打磨的「工藝內涵」。</p>
+      </article>
+      <article class="clue-card b">
+        <span class="badge">稍縱即逝</span>
+        <h3>黑膠唱盤刮昭和玻璃的靈光</h3>
+        <p>剛從日本愛媛縣停業玻璃廠扛回的<b>昭和絕版壓花玻璃</b>，被裁成黑膠尺寸架在唱盤旁——上個時代的兩件器物在此發出新聲。</p>
+      </article>
+    </div>
+  </section>
+
+  <nav class="floor-nav" aria-label="樓層站點導覽">
+    <span class="fn-lbl">樓層動線</span>
+    <a href="#s1"><span>1F・01</span>圖鑑起步</a>
+    <a href="#s2"><span>1F・02</span>百年瓷磚史</a>
+    <a href="#s3"><span>1F・03</span>濕式成型七工序</a>
+    <a href="#s4"><span>1F・04</span>訂製與弧面磚</a>
+    <a href="#s5" class="f2"><span>梯間・05</span>紅磚窄梯上二樓</a>
+    <a href="#s6" class="f2"><span>2F・06</span>研究所的初心</a>
+    <a href="#s7" class="f2"><span>2F・07</span>銅箔與表面張力</a>
+    <a href="#s8" class="f2"><span>2F・08</span>奇幻藝廊與昭和玻璃</a>
+  </nav>
+
+  <!-- PART I: 1F -->
+  <div class="floor-banner f1">
+    <div class="floor-pill"><b>1F</b><small>C04 爿爿花</small></div>
+    <div>
+      <h2>泥土、釉漿與 1230°C 窯火：替停產半世紀的拼花馬賽克續命</h2>
+      <p>19:30–19:59｜中興街 24 號 1 樓。從兩位平面設計師的大學畢製開始，把消失於 1970 年代的臺灣街角馬賽克，一顆一顆用手工壓回來。</p>
+    </div>
+  </div>
+
+  <!-- STOP 1 -->
+  <section class="station" id="s1">
+    <div class="st-head">
+      <span class="st-no">01</span>
+      <span class="st-time">約 19:30 · 24 號 1 樓長桌前</span>
+      <span class="st-chip">從一本畢製圖鑑出發</span>
+    </div>
+    <h3>巷弄門面與十年田野：平面設計師為什麼跳進來做瓷磚？</h3>
+    <div class="split-lr">
+      <div class="prose">
+        <p>夜裡七點半走進士林中興街，一樓玻璃門內透出乾淨的暖白燈光，門面上貼著「<b>打開台北 2025・傳承創生・限時開放 48 HRS</b>」的黃色海報，門旁牆角還留著老宿舍時期的電表箱與「26」號門牌。進門後，大家圍著兩張擺滿各色樣板的長桌站定。</p>
+        <p>拿起手邊厚實的《<b>爿爿花—臺灣傳統瓷磚圖鑑</b>》，主理人笑著說出意想不到的起點：團隊成員<b>並非陶瓷工業本科，也不是瓷磚廠二代</b>，最初只是就讀視覺／平面設計系時的大學畢業製作專題。從 <b>2013 年</b>起，他們跑遍全臺北中南街區進行田野調查、翻爬論文史料，把臺灣建築立面上百年來的瓷磚圖樣重新繪製成數位 Pattern，最後在 <b>2021 年透過群眾募資</b>出版這本圖鑑。</p>
+        <p>沒想到在跑訪冠軍磁磚、合成磁磚等大型建材廠時，他們卻碰上一個讓人惋惜的事實：圖鑑裡最常出現在五、六〇年代老宅牆面與浴廁的<b>拼花馬賽克磚</b>，其實早在約 <b>1970 年代就已停產，算一算消失將近半個世紀</b>。「既然它作為工業建材已經被淘汰，但視覺表現上又這麼有臺灣的獨特性，那我們就自己來復刻吧。」於是在 2023 年進駐藝響空間，從零開始摸索手工製磚。</p>
+      </div>
+      <div class="stack-2">
+        <figure class="fig land">
+          <button data-ph="192230" aria-label="放大照片：夜晚點燈的爿爿花一樓門面與打開台北黃色海報">
+            <img loading="lazy" src="img/192230.jpg" alt="夜色中點亮的爿爿花手工瓷磚玻璃門面，門上貼著打開台北 2025 黃色海報，左側可見老電表與 26 號門牌">
+          </button>
+          <figcaption><b>中興街夜裡的報到入口</b>：透明玻璃門貼著 48 小時限時開放海報，左側牆上還留著老國稅局宿舍的雙電表與 26 號門牌。</figcaption>
+        </figure>
+        <figure class="fig land">
+          <button data-ph="193258" aria-label="放大照片：主理人手持《爿爿花—臺灣傳統瓷磚圖鑑》開場導覽">
+            <img loading="lazy" src="img/193258.jpg" alt="兩位主理人站在滿牆瓷磚樣板與長桌前，左方講者手持翻開的《爿爿花—臺灣傳統瓷磚圖鑑》向參加者介紹">
+          </button>
+          <figcaption><b>平面設計轉行製磚的起點</b>：講者手裡拿的正是 2013 年田野起步、2021 年募資成書的《爿爿花—臺灣傳統瓷磚圖鑑》。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- STOP 2 -->
+  <section class="station" id="s2">
+    <div class="st-head">
+      <span class="st-no">02</span>
+      <span class="st-time">約 19:32 · 牆面標本與老磚對照</span>
+      <span class="st-chip">百年建材演變</span>
+    </div>
+    <h3>臺灣瓷磚百年三部曲：為什麼以前的小磚總是小小一顆？</h3>
+    <div class="prose">
+      <p>順著牆面高處一排老房子搶救下來的實物標本，主理人把臺灣一百多年來的瓷磚歷史壓縮成三個清楚的轉折。最常被問的問題是：「<b>為什麼早期瓷磚都做成小顆的，現在大樓卻越貼越大片？</b>」答案不是審美偏好，而是<b>窯燒物理限制</b>——早年燒製技術尚未成熟，大片胚體在高溫下極易變形、翹曲或失去水平，做成單邊 <b>8 公分以內</b>的小顆馬賽克，貼附牆面反而最穩定。</p>
+    </div>
+    <div class="era-triptych">
+      <article class="era-card">
+        <span class="era-y">1920s–30s｜第 1 幕</span>
+        <h4>馬約利卡花磚（Majolica）</h4>
+        <p>日本明治維新後學習西班牙製磚技術並加以復刻，引進臺灣貼於古蹟與民宅立面。圖像性強、色彩極為繽紛，如嘉義花磚博物館搶救的便是這一時期的日式花磚。</p>
+      </article>
+      <article class="era-card">
+        <span class="era-y">戰後初期｜第 2 幕</span>
+        <h4>從紅磚到鋼筋混凝土面磚</h4>
+        <p>鋼筋混凝土建築取代紅磚後，民眾一時不習慣灰色水泥柱「光禿禿」的模樣，遂燒製尺寸如紅磚的<b>外牆面磚</b>；高溫瓷化既美觀，也替多雨的臺灣增加結構<b>防水性</b>。</p>
+      </article>
+      <article class="era-card">
+        <span class="era-y">1950s–70s｜第 3 幕</span>
+        <h4>拼花馬賽克、小口磚與印花磚</h4>
+        <p>遠看以為髒舊的老屋小口磚，近看才發現竟混用<b>霧面與亮面兩種釉</b>！因拼花極度仰賴人工排磚貼網，隨著臺灣工資上漲、工廠外移東南亞與中國大陸，這門工藝漸被全自動印刷大磚取代而停產五、六十年。</p>
+      </article>
+    </div>
+    <figure class="fig land" style="margin-top:16px">
+      <button data-ph="193615" aria-label="放大照片：長桌上鋪滿不同時期的老磚與復刻拼花馬賽克樣板">
+        <img loading="lazy" src="img/193615.jpg" alt="兩位主理人在白牆層架前導覽，桌上排開清綠方磚、雙色拼花馬賽克與未燒製素胚">
+      </button>
+      <figcaption><b>牆上是老房子，桌上是不服輸的復刻</b>：上排層架保留 50、60 年代的實物老磚，下排與桌面則是團隊調整釉色與比例後的新一代作品。</figcaption>
+    </figure>
+  </section>
+
+  <!-- STOP 3 -->
+  <section class="station" id="s3">
+    <div class="st-head">
+      <span class="st-no">03</span>
+      <span class="st-time">約 19:37 · 煉土機與窯室實作區</span>
+      <span class="st-chip">濕式成型完整工法</span>
+    </div>
+    <h3>七道工序直擊：當「烤魷魚定律」遇上 3D 列印壓模</h3>
+    <div class="prose">
+      <p>大廠商業瓷磚用的是「<b>乾式成型</b>」——將乾陶瓷粉倒進鋼鐵模具高壓壓出；爿爿花則參考西班牙與義大利手工磚，自行研發出適合少量多樣的「<b>濕式成型（Wet-pressing）</b>」。從一塊濕軟的陶土到貼上牆面的 30×30 公分單元，共要經過七道精密卻充滿手工溫度的關卡：</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="step-card">
+        <div class="step-top"><span class="step-n">01</span><h4>特製陶板射出口與背溝</h4></div>
+        <p>一般陶藝工作室的煉土機抽真空後擠出圓柱土團；團隊特製了扁平金屬射出口，直接擠出<b>一面平、一面刻有背溝</b>的陶板，既防翹曲也利於水泥咬合。</p>
+      </div>
+      <div class="step-card">
+        <div class="step-top"><span class="step-n">02</span><h4>3D 列印模具「壓餅乾」</h4></div>
+        <p>刮平陶板後，用 <b>3D 列印</b>製作的「上寬下窄」客製模具垂直壓切。人力壓製讓樹脂模相當耐用，濕土收縮造成的微弧邊角反倒留住手工氣韻。</p>
+      </div>
+      <div class="step-card">
+        <div class="step-top"><span class="step-n">03</span><h4>雙面夾板陰乾（防捲曲）</h4></div>
+        <p>濕胚擺在透氣吸水的瓷板上層疊陰乾一天。唯有正反兩面同時平均散水，收縮率才一致；若單面乾燥，就會像<b>烤魷魚一樣捲起來</b>。</p>
+      </div>
+      <div class="step-card">
+        <div class="step-top"><span class="step-n">04</span><h4>800°C 電窯素燒</h4></div>
+        <p>送進後方窯室的電窯進行第一次 <b>800°C 素燒</b>，燒乾水分並讓胚體堅固，同時保留無數細微毛細孔以便後續吸釉。</p>
+      </div>
+      <div class="step-card">
+        <div class="step-top"><span class="step-n">05</span><h4>5～8 秒人工浸釉配方學</h4></div>
+        <p>以高嶺土、骨灰與發色金屬礦物自調釉漿，將素燒磚倒扣浸入釉箱，依配方精算 <b>5 秒或 8 秒</b>。太薄不顯釉感，過厚則流淌，能做出霧面、亮面、緞面與<b>冰裂釉</b>。</p>
+      </div>
+      <div class="step-card">
+        <div class="step-top"><span class="step-n">06</span><h4>1230°C 電窯高溫釉燒</h4></div>
+        <p>第二次進電窯燒至 <b>1230°C</b> 完成瓷化。即便同一台電窯，上下層仍有微溫差，每窯色澤皆有細微變化，貼牆時刻意混拼才顯自然韻律。</p>
+      </div>
+      <div class="step-card">
+        <div class="step-top"><span class="step-n">07</span><h4>倒扣貼網成「一才」</h4></div>
+        <p>出貨前將成品正面朝下排入格板，背面刷白膠貼上纖維網，組成 <b>30×30 公分（一才）</b>標準單位（一坪約 36 才），讓工地師傅直接對齊貼牆。</p>
+      </div>
+    </div>
+
+    <div class="tile-mosaic">
+      <div class="stack-2">
+        <figure class="fig land">
+          <button data-ph="194954" aria-label="放大照片：復刻馬賽克磚與金屬射出口、3D 列印壓模一覽">
+            <img loading="lazy" src="img/194954.jpg" alt="桌面上同時陳列清綠方磚、鈴蘭拼花馬賽克、木框釉色拼板，以及右下的金屬陶板射出口與 3D 列印壓模">
+          </button>
+          <figcaption><b>製程解密都在這張桌面</b>：左方是完成貼網的清綠磚與花卉拼花，右下則是帶背溝的金屬射出口，以及壓有「pan pan hua」字樣的透明與不透明釉試片。</figcaption>
+        </figure>
+        <figure class="fig land">
+          <button data-ph="195004" aria-label="放大照片：層疊在吸水瓷板上的未燒製濕胚與素燒磚">
+            <img loading="lazy" src="img/195004.jpg" alt="左側層層堆疊的吸水瓷板上擺滿待陰乾的造型濕胚，右側則是綠釉色磚排列">
+          </button>
+          <figcaption><b>不讓瓷磚變「烤魷魚」的秘密</b>：上下夾著透氣瓷板平均散水，這排「磚塔」得乖乖靜置一天才能進窯素燒。</figcaption>
+        </figure>
+      </div>
+      <div class="stack-2">
+        <figure class="fig port">
+          <button data-ph="194947" aria-label="放大照片：手持 3D 列印手工壓磚模具">
+            <img loading="lazy" src="img/194947.jpg" alt="講者手指拿著灰色 3D 列印製作的造型切磚模具展示">
+          </button>
+          <figcaption><b>像壓餅乾一樣切磚</b>：上寬下窄的 3D 列印模具，讓設計師客戶也能快速客製專屬造型。</figcaption>
+        </figure>
+      </div>
+      <div class="stack-2">
+        <figure class="fig port">
+          <button data-ph="200051" aria-label="放大照片：一樓後方小窯室裡的不鏽鋼電窯與釉料箱">
+            <img loading="lazy" src="img/200051.jpg" alt="狹小窯室裡的不鏽鋼電窯與整排標示釉藥配方的收納箱">
+          </button>
+          <figcaption><b>藏在走廊盡頭的火源</b>：整面層架收滿測試配方箱，所有 800°C 與 1230°C 燒製都在這台電窯裡進行。</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="callout">
+      <b>行家才知道的釉料冷知識</b>：傳統陶瓷廠把「<b>冰裂紋</b>」當成胚胎與釉料膨脹係數不合的瑕疵（會加料消除以防吃色），但在裝飾壁磚上卻成了迷人肌理；而用「<b>透明釉 vs. 不透明釉</b>」蓋過同一顆壓有品牌 Logo 的試片，更能一眼看穿光線穿透釉層的深度差別。
+    </div>
+  </section>
+
+  <!-- STOP 4 -->
+  <section class="station" id="s4">
+    <div class="st-head">
+      <span class="st-no">04</span>
+      <span class="st-time">約 19:52 · 商業應用與工作坊</span>
+      <span class="st-chip">跨出純建材邊界</span>
+    </div>
+    <h3>從 SOGO 轉角弧面磚到居家吧台：手工訂製與千才量產的分工</h3>
+    <div class="prose">
+      <p>談到現代應用，主理人很坦白地劃出工藝邊界：小顆馬賽克中間滿布填縫劑（含水泥與乳膠成分，雖防潑水但仍有毛細孔、容易吃色），因此比起戶外外牆或高油污地板，手工復刻磚更適合用在<b>室內吧台、玄關落塵區、開放式廚房或茶水區立面</b>，作為空間畫龍點睛的視覺焦點。</p>
+    </div>
+    <div class="compare-2">
+      <div class="cmp-box left">
+        <h4>少量客製手工線（士林工作室）</h4>
+        <p>運用 3D 列印模與人工浸釉，專做獨一無二的小面積訂製。例如<b>復興 SOGO 的 Aesop 門市</b>轉角處，便由團隊精算濕胚成型後的回彈與收縮率，反覆測試才燒出精準貼合曲面的<b>弧面磚</b>；此外每月也開辦三週制工作坊（壓土 → 上釉 → 填縫），讓一般人也能帶回 20 公分或一才掛畫。</p>
+      </div>
+      <div class="cmp-box right">
+        <h4>千才級商業量產線（南部協作廠）</h4>
+        <p>若業主需要整間店面或建案等級（動輒 <b>1,000 才以上</b>，相當於近 28 坪牆面），工作室會先在士林完成造型比例與釉色配方確認，再委由南部傳統工廠開立<b>金屬模具</b>進行量產——把平面設計轉譯成建築立面的最後一哩路。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSITION -->
+  <section class="stair-bridge" id="s5" aria-label="從一樓走上二樓的空間轉折">
+    <figure class="fig">
+      <button data-ph="200047" aria-label="放大照片：貼著老紅磚牆狹窄陡峭的通往二樓階梯">
+        <img loading="lazy" src="img/200047.jpg" alt="參與者依序踩上沿著老紅磚牆搭建的狹窄階梯，走往二樓真真鑲嵌玻璃研究所">
+      </button>
+      <figcaption><b>狹梯上的垂直交棒</b>：一側是裸露的老宿舍紅磚牆，往上推開門就是完全不同的暗房光景。</figcaption>
+    </figure>
+    <div class="prose">
+      <div class="st-head">
+        <span class="st-no">05</span>
+        <span class="st-time f2">約 20:00 · 樓間狹窄階梯</span>
+        <span class="st-chip">老宿舍空間現場</span>
+      </div>
+      <h3>循紅磚窄梯上二樓：為什麼這場活動謝絕 12 歲以下孩童？</h3>
+      <p>告別一樓溫暖明亮的瓷磚工作桌，一行人排隊踩上僅容一人側身通行的陡峭階梯。踩到一半就會瞬間明白活動須知那句「<b>空間燈光昏暗且樓梯窄小、12 歲以下孩童恕不接待</b>」絕非客套——這棟 1960 年代前後留下的<b>前國稅局配財室與員工宿舍</b>，沒有寬敞的觀光動線，上樓迎面就是裸露的紅磚山牆、貨架上成排銳利的古董玻璃切片，以及正在高溫加熱的電烙鐵。</p>
+      <p>但也正因為完全保留了真實工作室的尺度，雙腳踏上二樓木地板的瞬間，空氣立刻從「泥土與電窯」切換成「松香焊油與暖黃燈泡」，一場只屬於成年人夜晚的工藝探險才正要開始。</p>
+    </div>
+  </section>
+
+  <!-- PART II: 2F -->
+  <div class="floor-banner f2">
+    <div class="floor-pill"><b>2F</b><small>C03 真真</small></div>
+    <div>
+      <h2>銅箔、表面張力與光的模樣：把「鑲嵌玻璃」當成一種研究狀態</h2>
+      <p>20:00–20:37｜中興街 28 號 2 樓。平時採預約訂製的創作基地，用橫跨兩百年的工藝回應快節奏時代，延續「慢」、「惜」、「新」的靈光。</p>
+    </div>
+  </div>
+
+  <!-- STOP 6 -->
+  <section class="station" id="s6">
+    <div class="st-head">
+      <span class="st-no">06</span>
+      <span class="st-time f2">約 20:01 · 二樓工作桌製作區</span>
+      <span class="st-chip">非開放門市・預約限定</span>
+    </div>
+    <h3>從電腦螢幕走回雙手：臺灣沒有代工廠的「研究所」</h3>
+    <div class="split-rl">
+      <figure class="fig land">
+        <button data-ph="200150" aria-label="放大照片：二樓製作區長桌前主理人講解工作室理念">
+          <img loading="lazy" src="img/200150.jpg" alt="真真鑲嵌玻璃研究所主理人站在二樓工作長桌前導覽，背後可見老紅磚牆與垂吊玻璃燈">
+        </button>
+        <figcaption><b>右邊是實驗材料，左邊是訂製燈光</b>：工作區平時只接設計師或屋主預約來訪，討論牆色、空間尺度與舊窗故事。</figcaption>
+      </figure>
+      <div class="prose">
+        <p>站在挑高斜頂的紅磚山牆下，戴著黑帽的主理人先解釋工作室名稱裡「<b>研究所</b>」三個字的重量——對他而言，鑲嵌玻璃不是單純的商品買賣，而是一種持續進行的<b>實驗與思考狀態</b>。他的右手邊整面層架擺滿實驗中的玻璃料與半成品，左手邊則是待交付的訂製燈具；因為<b>平時並非一般對外營業門市</b>，能這樣直接走進工作桌旁看動線，是極為難得的體驗。</p>
+        <p>這份執著源於一段「找回身體感」的轉折。過去從事<b>當代藝術與新媒體藝術</b>的他，成天對著電腦工作，忽然驚覺「自己離身體好遠」。一次為了做玻璃裝置去學鑲嵌玻璃，竟意外愛上雙手直接與玻璃、金屬對話的真實觸感，決定送給自己兩份禮物：<b>一段雙手參與材料的過程，以及一盞溫暖的光</b>。</p>
+        <p>而這門約 <b>200 年前自 Tiffany 燈</b>發展出來的工藝（傳統一只花草蝴蝶燈罩動輒上百片玻璃），早年臺灣在「代工王國」時期其實也曾替國外代工過，卻隨著產業外移<b>在臺灣完全斷鏈</b>——沒有產業鏈、也沒有代工廠，如今幾乎只剩教堂工藝師或少數自學者還在苦撐。</p>
+      </div>
+    </div>
+    <figure class="fig land" style="margin-top:20px">
+      <button data-ph="200456" aria-label="放大照片：工作桌上攤開的玻璃刀、鉗子、銅箔與材料貨架">
+        <img loading="lazy" src="img/200456.jpg" alt="主理人站在擺滿 E14 燈泡盒、玻璃刀、U字鉗、焊錫條與藍玻璃半成品的工作桌旁">
+      </button>
+      <figcaption><b>「除了透明與磨砂是新料，其他全是老屋拆回來的」</b>：後方整排透明收納箱，裝著從臺灣老宅、日本昭和時期與歐美早期教堂蒐羅的絕版玻璃。</figcaption>
+    </figure>
+  </section>
+
+  <!-- STOP 7 -->
+  <section class="station" id="s7">
+    <div class="st-head">
+      <span class="st-no">07</span>
+      <span class="st-time f2">約 20:04 & 20:30 · 製作夥伴工作檯</span>
+      <span class="st-chip">最累的兩百年技法</span>
+    </div>
+    <h3>四道不打磨的極限手作：玻璃切割沒有第二次機會</h3>
+    <div class="prose">
+      <p>現代工業燈飾為了求快，多用鐵條模具直接框住玻璃點焊再電鍍；真真卻刻意挑了<b>最費工、沿用兩百多年的傳統銅箔法</b>。工作室另一隅，製作夥伴「<b>又</b>」正戴著藍圍裙坐在工作燈下專心焊接，讓大家近距離看清每一步的物理細節：</p>
+    </div>
+
+    <div class="glass-steps">
+      <article class="g-step">
+        <span class="gs-n">STEP 01｜聽聲辨位</span>
+        <h4>劃線與 U 字鉗掰斷</h4>
+        <p>以高硬度合金滾輪刀（早期是用鑽石尖端）垂直施力劃開表面，再用 U 字鉗順勢掰斷，發出清脆的「啪」聲。<b>玻璃切割沒有第二次機會</b>，弧線最考驗穩定度——熟手光聽刀聲就知道力道有沒有「虛掉」或歪斜。</p>
+      </article>
+      <article class="g-step">
+        <span class="gs-n">STEP 02｜安全修邊</span>
+        <h4>研磨鋒利玻璃邊緣</h4>
+        <p>剛掰斷的玻璃邊緣極為鋒利危險，必須一片一片上磨輪機修磨到手指可以安全觸碰、尺寸也嚴絲合縫的狀態。</p>
+      </article>
+      <article class="g-step">
+        <span class="gs-n">STEP 03｜手作包覆</span>
+        <h4>手工貼合黏性銅箔</h4>
+        <p>將背面帶黏性的薄銅箔膠帶，像鑲邊一樣沿著每片玻璃的輪廓一圈一圈手工包覆折平，作為後續吃錫的介質。</p>
+      </article>
+      <article class="g-step">
+        <span class="gs-n">STEP 04｜表面張力</span>
+        <h4>焊錫定型・絕不打磨</h4>
+        <p>大把焊槍將錫條融化包覆銅箔，靠<b>液態錫的表面張力</b>自然拱起圓潤邊條。焊完<b>不做任何打磨</b>，留下的微幅凹凸與手工筆觸，正是鑲嵌玻璃最誠實的內涵。</p>
+      </article>
+    </div>
+
+    <div class="asym-duo">
+      <div class="stack-2">
+        <div class="diptych" style="margin-top:0">
+          <figure class="fig land">
+            <button data-ph="200201" aria-label="放大照片：製作夥伴又在放大鏡工作燈下焊接鑲嵌玻璃">
+              <img loading="lazy" src="img/200201.jpg" alt="參與者圍觀戴藍圍裙的製作夥伴在工作燈下以焊槍焊接玻璃燈具">
+            </button>
+            <figcaption><b>與錫的表面張力對話</b>：現場示範焊錫定型，全憑雙手溫度與速度控制弧度。</figcaption>
+          </figure>
+          <figure class="fig land">
+            <button data-ph="203020" aria-label="放大照片：綠色切割墊上正試燈組裝的藍色海棠花壓花玻璃燈罩">
+              <img loading="lazy" src="img/203020.jpg" alt="藍色海棠花壓花玻璃燈罩放在切割墊上點亮測試，旁邊擺著黃銅燈頭與五金零件">
+            </button>
+            <figcaption><b>點亮老海棠花的瞬間</b>：臺灣人最熟悉的海棠花壓花玻璃，配上黃銅燈頭在切割墊上試燈。</figcaption>
+          </figure>
+        </div>
+        <figure class="fig land">
+          <button data-ph="203344" aria-label="放大照片：參與者圍在工作桌旁看老師示範切玻璃的垂直施力">
+            <img loading="lazy" src="img/203344.jpg" alt="散場前大家再度圍回工作桌，觀看切割與組裝玻璃的細節示範">
+          </button>
+          <figcaption><b>尾聲的桌邊加碼問答</b>：最後十幾分鐘大家又回到工作桌邊，追問弧線切割與掰斷「一翻兩瞪眼」的訣竅。</figcaption>
+        </figure>
+      </div>
+      <figure class="fig port">
+        <button data-ph="203115" aria-label="放大照片：真真作品 L008 的爆炸分解圖與保養須知">
+          <img loading="lazy" src="img/203115.jpg" alt="透明資料夾裡的作品 L008 構造藍圖，標示金屬燈頭、E14 燈泡與玻璃組件，左下寫著保養須知">
+        </button>
+        <figcaption><b>連舊油漆都捨不得刮除</b>：作品 <code>L008</code> 說明書寫著「古玻璃邊緣如有油漆顏色，是創作者刻意保留原本古玻璃本身既有的特點（早時使用者塗油漆窗框時刷上的）」。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- STOP 8: DARK GALLERY -->
+  <section class="gallery-dark" id="s8">
+    <div class="st-head">
+      <span class="st-no">08</span>
+      <span class="st-time">約 20:08–20:35 · 奇幻藝廊區（暗房）</span>
+      <span class="st-chip">RE-LIGHT・沉浸光影</span>
+    </div>
+    <h3>推開門進入暗房：不取名字的燈、《昭和之音》與禮物盒</h3>
+    <div class="prose">
+      <p>從製作區跨進一旁的「<b>奇幻藝廊區</b>」，室燈刻意全部關掉，只留一盞盞不同材質的玻璃作品在水泥斑駁、繪有泰國藝術家 <b>Lolay</b> 泰文塗鴉的牆邊靜靜發亮。主理人把這裡的核心字定為 <b>RE-LIGHT</b>——透過創作再次點亮老物件。而且現場<b>每一件燈具都只編上編號、不取名字</b>，因為他希望觀者直接面向光的模樣，填進自己的記憶。</p>
+      <p>桌上五盞繫著細繩蝴蝶結的方形盒燈，還有頭頂的長方吊燈 <b>L004</b>，是他給現代人的一道「慢」練習：「我們太習慣買做好的東西了，我想做一件<b>像小時候拆禮物一樣、必須花時間親手解開緞帶、把蓋子好好抬起來</b>才能換燈泡或收進私密小物的燈。」而這份「留住時間」的念頭，也表現在五金選材上：所有燈頭皆為<b>黃銅製</b>，會隨著歲月慢慢氧化變深——曾經有一家大小帶著老家拆下來的舊窗戶來找他改造成新家的燈具，讓舊光繼續陪著新生活。</p>
+      <p>藝廊另一角更藏著主理人從新媒體背景延伸出的跨界驚喜：靠在低窗邊的白色鐵三角<b>黑膠唱盤</b>，搭上他前陣子剛在<b>日本愛媛縣</b>個展發表的《<b>昭和之音</b>》——將昭和年代的壓花玻璃裁成黑膠唱片大小，直接放上唱盤讓唱針去刮擦玻璃凹凸花紋，讓兩個上個時代的器物合體發出全新聲響；牆面上則流動著與<b>臺中國家歌劇院</b>合作延伸的沉浸式投影，打出一句正好為這個夜場下註腳的字幕：「<b>用一盒窗景，收妥一段記憶</b>」。</p>
+    </div>
+
+    <div class="dark-grid">
+      <figure class="fig land">
+        <button data-ph="201414" aria-label="放大照片：暗房長桌上五盞繫著緞帶的鑲嵌玻璃禮物盒燈">
+          <img loading="lazy" src="img/201414.jpg" alt="五盞造型方正、繫上緞帶蝴蝶結的不同紋理玻璃盒燈在黑色長桌上發出暖光">
+        </button>
+        <figcaption><b>必須親手解開緞帶的燈</b>：五種紋路與色澤的老玻璃盒燈，把換燈泡變成拆禮物般充滿期待的動作。</figcaption>
+      </figure>
+      <figure class="fig land">
+        <button data-ph="200934" aria-label="放大照片：懸掛在藝廊天花下的長方星紋玻璃吊燈">
+          <img loading="lazy" src="img/200934.jpg" alt="以星點壓花玻璃與手工焊錫框成的長方吊燈懸在天花鋼架下">
+        </button>
+        <figcaption><b>把脆弱玻璃框成光盒</b>：微彎的手工焊錫邊條與壓花星紋，讓兩顆鎢絲燈泡折射出溫柔層次。</figcaption>
+      </figure>
+      <figure class="fig land">
+        <button data-ph="200842" aria-label="放大照片：藝廊裡的水泥壁畫與吊燈光影">
+          <img loading="lazy" src="img/200842.jpg" alt="觀眾在繪有泰國藝術家 Lolay 泰文筆跡與黑色人像的水泥牆前仰望各色玻璃吊燈">
+        </button>
+        <figcaption><b>品牌即平台的奇幻藝廊</b>：在斑駁老牆與泰文壁畫之間，這個暗房平時也舉辦小型音樂會與跨界分享。</figcaption>
+      </figure>
+      <figure class="fig land">
+        <button data-ph="200833" aria-label="放大照片：低窗邊的黑膠唱盤機與昭和玻璃唱片">
+          <img loading="lazy" src="img/200833.jpg" alt="不鏽鋼推車上的白色鐵三角黑膠唱盤機，下層整齊立著裁成黑膠唱片尺寸的昭和壓花玻璃">
+        </button>
+        <figcaption><b>《昭和之音》跨界實驗</b>：讓黑膠唱針直接刮過愛媛縣扛回的昭和壓花玻璃，聽見時代紋路的聲音。</figcaption>
+      </figure>
+    </div>
+
+    <div class="dark-port-row">
+      <figure class="fig land">
+        <button data-ph="200927" aria-label="放大照片：背光燈箱上的乾燥植物與玻璃標本及項鍊">
+          <img loading="lazy" src="img/200927.jpg" alt="白色光箱上整齊排列數十片封入乾燥植物與彩色老玻璃的小標本，右側掛著兩條玻璃項鍊">
+        </button>
+        <figcaption><b>把一株小草封進光箱</b>：除大型燈具外，小塊餘料與植物標本也化為細緻的隨身首飾。</figcaption>
+      </figure>
+      <figure class="fig tall34">
+        <button data-ph="201350" aria-label="放大照片：投影在藝廊白牆上的歌劇院合作影像「用一盒窗景 收妥一段記憶」">
+          <img loading="lazy" src="img/201350.jpg" alt="一盞黃銅鑲嵌玻璃吊燈前，牆面正投影著玻璃碎片影像與字幕「用一盒窗景 收妥一段記憶」">
+        </button>
+        <figcaption><b>歌劇院沉浸展的延續</b>：投影字幕「用一盒窗景 收妥一段記憶」穿過實物燈影落在牆上。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- SHOWA ARCHIVE -->
+  <section class="showa-sec" aria-label="日本昭和壓花玻璃檔案櫃">
+    <div class="sec-head">
+      <h2>附錄圖鑑：日本昭和壓花玻璃標本櫃</h2>
+      <p>為什麼臺灣老窗幾乎只有「海棠花」與「十字紋」？一櫃貼著年份的樣片給了答案。</p>
+    </div>
+    <div class="prose">
+      <p>壓花玻璃是將滾燙玻璃液經雕刻滾輪壓出「四方連續」的紋樣。主理人指出，早期大型刻花模具造價極高，臺灣玻璃廠多半只引進<b>海棠花（其實源自英國設計）與十字紋</b>兩種大量生產，成了全臺共同的記憶；反觀日本玻璃廠多自行開模印製，發展出貼近四季風情的豐富圖案。幾年前他赴日本<b>愛媛縣</b>交流，巧遇一間即將停業的老工廠，當場一口氣切下整批絕版壓花玻璃扛回臺灣。</p>
+      <p>順帶一提一個意外冷知識：別以為花紋玻璃才稀奇，在古董老料市場裡<b>最難尋的反而是「早期透明清玻璃」</b>——因為早年很難燒出完全沒有氣泡的純淨玻璃，多數老清玻璃早已碎裂換新，如今想要找到完好帶著微氣泡與水波紋的舊時代透明玻璃，往往得靠「吸引力法則」與時間去等。</p>
+    </div>
+
+    <div class="diptych">
+      <figure class="fig land">
+        <button data-ph="203528" aria-label="放大照片：1964 至 1988 年日本昭和壓花玻璃標本（雲井、夜空、竹葉、綠葉）">
+          <img loading="lazy" src="img/203528.jpg" alt="展示櫃陳列標有雲井 1964s、夜空 1988s、竹葉 1968s、綠葉 1971s 的日本昭和壓花玻璃殘片">
+        </button>
+        <figcaption><b>從 1964 到 1988 的玻璃詩意</b>：左起為雲井（1964s）、夜空（1988s）、竹葉（1968s）、綠葉（1971s）。</figcaption>
+      </figure>
+      <figure class="fig land">
+        <button data-ph="203533" aria-label="放大照片：1962 至 1968 年日本昭和壓花玻璃標本（銀河、三葉草、燕子、閃耀、銀杏）">
+          <img loading="lazy" src="img/203533.jpg" alt="展示櫃陳列標有銀河 1962s、三葉草 1967s、燕子 1968s、閃耀 1966s、銀杏 1967s 的壓花玻璃殘片">
+        </button>
+        <figcaption><b>植物、星河與飛燕</b>：左起為銀河（1962s）、三葉草（1967s）、燕子（1968s）、閃耀（1966s）、銀杏（1967s）。</figcaption>
+      </figure>
+    </div>
+
+    <div class="showa-grid">
+      <div class="showa-card"><span class="yr">1962s</span><h4>銀河</h4><small>細密星塵質感</small></div>
+      <div class="showa-card"><span class="yr">1964s</span><h4>雲井</h4><small>雲層漫開的霧紋</small></div>
+      <div class="showa-card"><span class="yr">1966s</span><h4>閃耀 きらら</h4><small>幾何交織光柵感</small></div>
+      <div class="showa-card"><span class="yr">1967s</span><h4>三葉草 クローバ</h4><small>葉瓣圓潤相接</small></div>
+      <div class="showa-card"><span class="yr">1967s</span><h4>銀杏 イチョウ</h4><small>扇形葉脈紋路</small></div>
+      <div class="showa-card"><span class="yr">1968s</span><h4>竹葉 ささ</h4><small>纖細竹枝剪影</small></div>
+      <div class="showa-card"><span class="yr">1968s</span><h4>燕子 つばめ</h4><small>飛燕掠過窗面的動態</small></div>
+      <div class="showa-card"><span class="yr">1971s</span><h4>綠葉 みどり</h4><small>圓葉枝枒錯落</small></div>
+      <div class="showa-card"><span class="yr">1988s</span><h4>夜空 よぞら</h4><small>點點星花散落</small></div>
+    </div>
+  </section>
+
+  <!-- AFTERWORD -->
+  <section class="afterword" aria-label="走讀後記">
+    <div class="sec-head" style="margin-bottom:6px">
+      <h2>散場時分的夜色印記：留給雙手的時間證明</h2>
+      <p>八點半左右步出中興街，花台邊的拼花馬賽克立牌還亮著餘溫；這一夜沒有華麗展櫃，只有兩個團隊把「不完美」留給工藝本身。</p>
+    </div>
+    <div class="afterword-grid">
+      <div class="af-cards">
+        <article class="af-card">
+          <h4>同期進駐的雙樓層默契</h4>
+          <p>一樓把 1970 年代停產的馬賽克救回牆面，二樓把老宅窗戶拆下的玻璃重新點亮；同一座前國稅局宿舍，成了老屋與老材料一起續命的基地。</p>
+        </article>
+        <article class="af-card">
+          <h4>不抹去痕跡的「慢與惜」</h4>
+          <p>電窯上下層的微色差、故意留著舊油漆邊緣的古玻璃、不做打磨的焊錫邊條、會隨歲月變深的黃銅燈頭——它們都在提醒我們，手作的價值在於不可複製。</p>
+        </article>
+        <article class="af-card">
+          <h4>一次預約才懂的真實尺度</h4>
+          <p>親眼踩過窄到得側身的紅磚樓梯、聽見玻璃一刀掰斷的脆響，才會理解為何這兩間工作室選擇保留小尺度預約制與工作坊，讓材料自己說話。</p>
+        </article>
+        <article class="af-card">
+          <h4>把街區舊記憶帶進新生活</h4>
+          <p>無論是幫老家舊窗做一盞新燈，還是替玄關貼上三週親手壓製的拼花磚，傳統工藝沒有被鎖進博物館，而是重新回到日常牆角。</p>
+        </article>
+      </div>
+      <figure class="fig port">
+        <button data-ph="203745" aria-label="放大照片：散場時門外盆栽旁擺放的拼花馬賽克 A 字立牌">
+          <img loading="lazy" src="img/203745.jpg" alt="夜色中盆栽間立著貼滿紅白拼花馬賽克磚的木製 A 字招牌">
+        </button>
+        <figcaption><b>門外盆栽間的馬賽克立牌</b>：回到士林夜色裡，把方才手心摸過的陶土與眼睛看進的微光一起收進口袋。</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>2025/11/22 參加打開台北 2025「C04 爿爿花手工瓷磚 × C03 真真鑲嵌玻璃研究所」雙場域預約場的走讀筆記</span>
+  <a href="#top">回到頁首 ↑</a>
+</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../wangdh/index.html"><small>‹ 較新的一場・2025/11/25</small>王大閎與中研院</a><a class="nx" href="../hospital/index.html"><small>較早的一場・2025/11/20 ›</small>醫院街的仕紳之路</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar">
+    <button id="lbp" aria-label="上一張">‹</button>
+    <span id="lbc"></span>
+    <button id="lbn" aria-label="下一張">›</button>
+    <button id="lbx" aria-label="關閉">✕</button>
+  </div>
+</div>
+
+<script>
+{
+  const btns=[...document.querySelectorAll('main button[data-ph]')];
+  const items=btns.map((b,idx)=>{
+    const img=b.querySelector('img');
+    const fig=b.closest('figure');
+    const cap=fig?fig.querySelector('figcaption').textContent:img.alt;
+    b.dataset.idx=idx;
+    return {src:img.getAttribute('src'),alt:img.alt,cap};
+  });
+  const lb=document.getElementById('lb'),im=document.getElementById('lbi'),cp=document.getElementById('lbc');
+  let cur=0;
+  const show=i=>{
+    cur=(i+items.length)%items.length;
+    const x=items[cur];
+    im.src=x.src;
+    im.alt=x.alt;
+    cp.textContent=`${x.cap}　（${cur+1}/${items.length}）`;
+  };
+  document.querySelector('main').addEventListener('click',e=>{
+    const b=e.target.closest('button[data-ph]');
+    if(b){show(+b.dataset.idx);lb.classList.add('on');document.getElementById('lbx').focus();}
+  });
+  document.getElementById('lbp').onclick=()=>show(cur-1);
+  document.getElementById('lbn').onclick=()=>show(cur+1);
+  const close=()=>lb.classList.remove('on');
+  document.getElementById('lbx').onclick=close;
+  lb.addEventListener('click',e=>{if(e.target===lb)close();});
+  document.addEventListener('keydown',e=>{
+    if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')show(cur-1);
+    if(e.key==='ArrowRight')show(cur+1);
+  });
+}
+</script>
+</body>
+</html>
