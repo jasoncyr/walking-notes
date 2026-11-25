@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>伯大尼來樓：在城市角落點亮一盞「家」的燈塔（2024/11/09 打開台北空間培力）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 走進台北文山區木柵「伯大尼來樓」在《打開台北》開門迎賓前夕的志工空間培力，聽院長、建築師與家園同工把 15 年築屋歷程與 65 年守護轉型一次攤開
+   IDEA: 以建築外觀標誌性的「紅磚積木量體 × 抽象來字斜牆」為骨幹，打造可點擊的 12F–B3F 垂直機能剖面圖，並以四種策展版型依序走過從一樓廣場、九樓諮商、七樓副堂、四樓 401 示範小家到地下主堂的空間動線
+   PICTURE: 下沉式開放階梯廣場與舊教堂意象拱門（112554.jpg）——綠意盎然植生牆與紅磚住宅量體同框
+   COLOUR and TYPE: 紅磚陶土 #b24c34（文章關鍵詞主色）、植生青瓷 #246a62、燈塔暖金 #a47228、石灰岩紙白 #f6f3ed；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 下沉廣場全景 Hero ＋ 場域座標帶 → 雙欄起源敘事與互動式 12F–B3F 積木剖面盤 → 六格本場限定亮點矩陣 → 8 站四種創意交替版型 → 走讀後記四格卡 */
+:root{
+  color-scheme:light dark;
+  --bg:light-dark(#f6f3ed,#131618);
+  --paper:light-dark(#fcfaf6,#1b2023);
+  --ink:light-dark(#1c2023,#ebe8e0);
+  --mute:light-dark(#5b6166,#9da4aa);
+  --brick:light-dark(#b24c34,#ea8d76);
+  --moss:light-dark(#246a62,#74c4ba);
+  --ochre:light-dark(#a47228,#dfb36a);
+  --soft-b:light-dark(#faeae6,#2c1d19);
+  --soft-m:light-dark(#e4f1ef,#182927);
+  --soft-o:light-dark(#f6efe2,#282218);
+  --line:light-dark(#ded7ca,#2c3236);
+}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:18px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.82 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,h4{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+a{color:var(--brick)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--brick);outline-offset:2px}
+
+/* Hero：下沉廣場與拱門全景 */
+.hero{position:relative;min-height:clamp(420px,64vh,610px);display:flex;align-items:flex-end;background:#161c1e;color:#f6f3ed;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 48%;filter:saturate(.96)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,22,24,.18) 0%,rgba(16,22,24,.58) 48%,rgba(13,17,19,.95) 100%)}
+.hero-in{position:relative;z-index:1;width:100%;max-width:1140px;margin:0 auto;padding:48px max(4vw,18px) 36px}
+.hero-badges{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:14px;font-size:12.5px;font-weight:700;letter-spacing:.08em}
+.hero-badges span{padding:4px 12px;border-radius:999px;background:rgba(178,76,52,.9);color:#fff}
+.hero-badges span.m{background:rgba(36,106,98,.92)}
+.hero-badges span.o{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#f2dfbf}
+.hero h1{font-size:clamp(30px,5.3vw,52px);line-height:1.14;font-weight:800}
+.hero h1 span{display:block;font-size:clamp(19px,2.8vw,28px);font-weight:600;color:#ebd8c5;margin-top:8px}
+.hero-sub{margin:14px 0 0;max-width:66ch;font-size:16.4px;line-height:1.74;color:rgba(246,243,237,.93)}
+
+/* 場域座標帶 */
+.meta-bar{background:#141a1c;color:#d6dede;border-top:1px solid rgba(255,255,255,.1)}
+.meta-in{max-width:1140px;margin:0 auto;padding:15px max(4vw,18px);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 22px;font-size:14px}
+.meta-item b{display:block;font-size:11.5px;letter-spacing:.09em;color:#f0ab97;margin-bottom:2px}
+.meta-item a{color:#f6f3ed;text-decoration:underline;text-underline-offset:3px}
+
+.wrap{max-width:1140px;margin:0 auto;padding:0 max(4vw,18px)}
+
+/* 開篇雙欄：起源敘事 + 互動式 12F–B3F 積木剖面圖 */
+.prologue{display:grid;grid-template-columns:1.12fr .88fr;gap:32px;padding:42px 0 32px;border-bottom:1px solid var(--line)}
+.lead-copy h2{font-size:clamp(22px,3vw,30px);line-height:1.3;margin-bottom:14px}
+.lead-copy p{margin:.72em 0;font-size:16.3px}
+.lead-copy b,.prose b,.prose strong,.callout b,.af-card b,.stack-detail b{color:var(--brick);font-weight:700}
+
+.privacy-pill{margin-top:18px;padding:13px 16px;background:var(--soft-m);border-left:4px solid var(--moss);border-radius:0 10px 10px 0;font-size:14.8px;line-height:1.7}
+.privacy-pill strong{color:var(--moss);display:block;margin-bottom:2px;font-size:15px}
+
+/* 積木剖面互動模組 */
+.stack-card{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--brick);border-radius:14px;padding:20px 20px 18px;align-self:start}
+.stack-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding-bottom:10px;margin-bottom:12px;border-bottom:1px dashed var(--line)}
+.stack-head h3{font-size:18.5px}
+.stack-head span{font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--mute)}
+.stack-hint{margin:0 0 12px;font-size:13.5px;color:var(--mute)}
+.stack-blocks{display:grid;gap:6px}
+.blk{all:unset;cursor:pointer;display:grid;grid-template-columns:76px 1fr auto;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);font-size:13.8px;transition:transform .16s,border-color .16s,background .16s}
+.blk:hover{border-color:var(--brick);transform:translateX(2px)}
+.blk.is-brick{border-left:5px solid var(--brick)}
+.blk.is-moss{border-left:5px solid var(--moss)}
+.blk.is-ochre{border-left:5px solid var(--ochre)}
+.blk[aria-pressed="true"]{background:var(--soft-b);border-color:var(--brick)}
+.blk.is-moss[aria-pressed="true"]{background:var(--soft-m);border-color:var(--moss)}
+.blk.is-ochre[aria-pressed="true"]{background:var(--soft-o);border-color:var(--ochre)}
+.blk .fl{font:800 13px "Noto Serif TC",serif;color:var(--ink)}
+.blk .nm{font-weight:700}
+.blk .tg{font-size:11.5px;color:var(--mute);white-space:nowrap}
+.stack-detail{margin-top:12px;padding:13px 15px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:14.2px;line-height:1.68}
+.stack-detail h4{font-size:16px;color:var(--brick);margin-bottom:4px}
+.stack-detail p{margin:0;color:var(--ink)}
+
+/* 本場限定亮點矩陣 */
+.moments{padding:32px 0 18px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 18px;margin-bottom:16px}
+.sec-head h2{font-size:clamp(22px,2.9vw,28px)}
+.sec-head p{margin:0;color:var(--mute);font-size:14.8px}
+.mom-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.mom{display:flex;flex-direction:column;gap:5px;text-decoration:none;color:inherit;background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--brick);border-radius:12px;padding:15px 17px;transition:transform .2s,box-shadow .2s}
+.mom:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.07)}
+.mom.m{border-top-color:var(--moss)}
+.mom.o{border-top-color:var(--ochre)}
+.mom i{align-self:flex-start;font-style:normal;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--soft-b);color:var(--brick)}
+.mom.m i{background:var(--soft-m);color:var(--moss)}
+.mom.o i{background:var(--soft-o);color:var(--ochre)}
+.mom b{font-family:"Noto Serif TC",serif;font-size:16.5px;line-height:1.4}
+.mom span{font-size:13.8px;color:var(--mute);line-height:1.6}
+
+/* 8 站動線跳轉列（避開 .yr-pn 樣式） */
+.jump-nav{margin:24px 0 12px;padding:18px 20px;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+.jump-title{font-size:13.2px;font-weight:700;letter-spacing:.06em;color:var(--mute);margin-bottom:10px}
+.jump-list{display:flex;flex-wrap:wrap;gap:8px}
+.jump-list a{display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);text-decoration:none;font-size:13.5px;min-height:36px;transition:border-color .16s}
+.jump-list a:hover{border-color:var(--brick)}
+.jump-list a span{font-weight:700;color:var(--brick)}
+.jump-list a.m span{color:var(--moss)}
+
+/* 篇章分隔 */
+.chapter{margin:46px 0 8px;padding:18px 22px;border-radius:0 12px 12px 0;background:var(--soft-b);border-left:5px solid var(--brick);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 20px}
+.chapter.m{background:var(--soft-m);border-left-color:var(--moss)}
+.chapter.o{background:var(--soft-o);border-left-color:var(--ochre)}
+.chapter small{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--brick)}
+.chapter.m small{color:var(--moss)}
+.chapter.o small{color:var(--ochre)}
+.chapter h2{font-size:clamp(22px,3vw,29px)}
+.chapter p{margin:0;font-size:14.5px;color:var(--mute);max-width:46ch}
+
+/* 共用站點元件 */
+.stop{padding:38px 0;border-bottom:1px solid var(--line)}
+.kicker{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px}
+.stop-no{font-family:"Noto Serif TC",serif;font-weight:800;font-size:13.5px;color:#fff;background:var(--brick);padding:2px 10px;border-radius:4px}
+.stop.is-m .stop-no{background:var(--moss)}
+.stop.is-o .stop-no{background:var(--ochre)}
+.stop-time{font-size:13.5px;color:var(--mute);font-weight:500}
+.badge{font-size:12px;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--soft-b);color:var(--brick)}
+.stop.is-m .badge{background:var(--soft-m);color:var(--moss)}
+.stop.is-o .badge{background:var(--soft-o);color:var(--ochre)}
+
+.prose h3{font-size:clamp(21px,2.8vw,27px);line-height:1.32;margin-bottom:12px}
+.prose p{margin:.72em 0;font-size:16.3px}
+.prose ul{margin:10px 0;padding-left:1.25em}
+.prose li{margin:.45em 0}
+.prose li::marker{color:var(--brick)}
+.stop.is-m .prose li::marker{color:var(--moss)}
+
+.callout{margin-top:16px;padding:14px 17px;background:var(--soft-b);border-left:4px solid var(--brick);border-radius:0 10px 10px 0;font-size:15px;line-height:1.72}
+.callout.m{background:var(--soft-m);border-left-color:var(--moss)}
+.callout.o{background:var(--soft-o);border-left-color:var(--ochre)}
+
+/* 照片與圖說 */
+.fig{margin:0}
+.fig button{all:unset;cursor:pointer;display:block;width:100%;border-radius:10px;overflow:hidden;background:var(--line);box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.fig img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;transition:transform .35s ease}
+.fig.wide img{aspect-ratio:16/10}
+.fig.tall img{aspect-ratio:3/4}
+.fig button:hover img{transform:scale(1.025)}
+.fig figcaption{margin-top:9px;font-size:14px;line-height:1.6;color:var(--mute)}
+.fig figcaption b{color:var(--ink);font-weight:700}
+
+/* 四種創意版型 */
+/* 版型 A：圖文並排（可左右對調） + 下方補充圖列 */
+.lay-split{display:grid;grid-template-columns:1.06fr .94fr;gap:30px;align-items:start}
+.lay-split.flip > :first-child{order:2}
+.lay-split.flip > :last-child{order:1}
+.sub-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:24px;align-items:start}
+
+/* 版型 B：雙欄深度解說 + 大圖雙聯對照板 */
+.plate-head{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:start;margin-bottom:22px}
+.plate-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
+
+/* 版型 C：滿寬全景主照 + 下方雙欄文字與側照 */
+.pano-top{margin-bottom:22px}
+.pano-bottom{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
+.pano-side-pair{display:grid;grid-template-columns:1fr .82fr;gap:16px;align-items:start}
+
+/* 版型 D：主景大圖與引言 + 三聯細節展板 */
+.show-top{display:grid;grid-template-columns:1.12fr .88fr;gap:28px;align-items:center}
+.show-trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:24px;align-items:start}
+
+/* 後記四格卡 */
+.afterword{margin:40px 0 22px;padding:28px;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+.afterword-head{margin-bottom:18px}
+.afterword-head h2{font-size:clamp(22px,3vw,28px);margin-bottom:6px}
+.afterword-head p{margin:0;color:var(--mute);font-size:15px}
+.af-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.af-card{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:18px}
+.af-card h3{font-size:17.5px;color:var(--brick);margin-bottom:8px}
+.af-card p{margin:0;font-size:15px;line-height:1.72}
+
+footer{max-width:1140px;margin:24px auto 12px;padding:16px max(4vw,18px) 10px;border-top:1px solid var(--line);color:var(--mute);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 18px}
+
+/* Lightbox */
+#lb{position:fixed;inset:0;z-index:40;background:rgba(10,12,15,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:16px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:12px;align-items:center;color:#eee;margin-top:12px;font-size:15px;max-width:900px;text-align:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer;flex:none}
+#lb button:hover{background:#333}
+
+@media(max-width:900px){
+  .prologue,.mom-grid,.lay-split,.plate-head,.plate-grid,.pano-bottom,.show-top,.show-trio,.sub-pair,.af-grid{grid-template-columns:1fr;gap:20px}
+  .lay-split.flip > :first-child,.lay-split.flip > :last-child{order:initial}
+  .pano-side-pair{grid-template-columns:1fr}
+  .fig.tall img{aspect-ratio:4/3}
+}
+@media(prefers-reduced-motion:reduce){
+  .fig img,.mom,.blk{transition:none}
+  .mom:hover,.blk:hover,.fig button:hover img{transform:none}
+}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・74 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../bethany/index.html" aria-current="page"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../bethany/index.html" aria-current="page"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></details><span>2024/11/09</span></div>
+
+<header class="hero" id="top">
+  <img class="hero-bg" src="img/112554.jpg" alt="伯大尼來樓下沉式開放階梯廣場、舊教堂意象拱門、綠意盎然的植生牆與紅磚住宅量體">
+  <div class="hero-in">
+    <div class="hero-badges">
+      <span>OPEN HOUSE TAIPEI 2024・空間培力</span>
+      <span class="m">台灣第一所夫妻家庭式安置</span>
+      <span class="o">2024.11.09 週六上午</span>
+    </div>
+    <h1>伯大尼來樓<span>在城市角落點亮一盞「家」的燈塔</span></h1>
+    <p class="hero-sub">位於臺北文山區木柵的伯大尼，是台灣第一所嘗試以「夫妻」為照顧者的家庭式安置機構。這天上午，趁著《打開台北》正式對外開放前夕的空間培力，江秀圈院長、潘冀聯合建築師事務所設計團隊與家園同工領路走進地上十二層、地下三層的「來樓」，把一塊錢土地的故事、抽象「來」字斜牆與 401 示範小家的溫柔細節一次攤開。</p>
+  </div>
+</header>
+
+<div class="meta-bar">
+  <div class="meta-in">
+    <div class="meta-item"><b>日期與時間</b>2024 年 11 月 9 日（六）09:30–11:30（暨空間走訪）</div>
+    <div class="meta-item"><b>領路分享</b>江秀圈院長・潘冀聯合建築師事務所・家園同工</div>
+    <div class="meta-item"><b>活動性質</b>打開台北 2024・伯大尼來樓志工空間培力</div>
+    <div class="meta-item"><b>建築規模</b>地上 12 層・地下 3 層・家庭式安置與公益園區</div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="prologue">
+    <div class="lead-copy">
+      <h2>從「一塊錢愛的故事」到沒有圍牆的兒少公益園區</h2>
+      <p>五十多年前，美國世界展望會創辦人 <b>Dr. Bob Pierce（鮑伯・皮爾斯）</b>以象徵性的<b>美金一塊錢</b>，將這塊木柵土地交給小婦人<b>艾偉德</b>創辦的伯大尼，唯一的託付便是照顧弱勢的孩子。後來在<b>林治平</b>教授擔任董事長期間，正式將「育幼院」改名為「<b>伯大尼兒少家園</b>」——因為不管叫育幼院或孤兒院，都容易讓住進來的孩子背上標籤；隨著時代轉變，台灣孤兒越來越少，需要庇護的卻是來自受虐、失依或破碎家庭的兒少。</p>
+      <p>就在這場空間培力的一個月前（<b>2024 年 10 月 1 日</b>），迎向 <b>65 週年</b>的伯大尼再次跨出關鍵一步，正式更名為「<b>財團法人臺北市基督教伯大尼兒少家庭基金會</b>」。除了庇護失依、失親、受虐兒少，更進一步串聯社區關懷、心理諮商、家庭講座、志工教師培訓與復原課程；如今整棟「<b>來樓</b>」更攜手進駐五、六、八樓的<b>台灣世界展望會</b>，以及後棟的<b>天使心家族</b>，共同形成一座不為營利、卻是世代最需要的「<b>兒少家庭公益園區</b>」。</p>
+      <p>建築規劃為<b>地上十二層、地下三層</b>，外觀以<b>積木般的量體堆疊</b>對應機能分佈，主題牆面則以不同的抽象開口組成「<b>來</b>」字排列，期盼人們來到此地得安息、得豐盛生命、蒙祝福。整體空間融合「<b>基督信仰</b>」與「<b>家</b>」的概念，導入安置單元的小家住宅空間；入口處的<b>下沉式開放階梯廣場</b>，以及與綠意盎然<b>植生牆</b>相依的教堂，則成為園區裡滋養身心靈的溫馨憩所。</p>
+      <div class="privacy-pill">
+        <strong>志工培力中的守護共識：只看空間，不打擾生活</strong>
+        因為建物裡仍住著受保護的孩子與家庭，當天的培力反覆叮嚀一件事——開放參觀時若遇見孩子放學或經過，<b>請不要將鏡頭對準孩子拍攝</b>；志工導覽與動線規劃（例如訪客專用電梯分流、僅開放尚未開家的 401 單元客廳與主臥），都是為了在「向城市敞開」與「守護孩子安全感」之間守住最溫柔的界線。
+      </div>
+    </div>
+
+    <aside class="stack-card" aria-label="伯大尼來樓 12F 至 B3F 積木機能剖面">
+      <div class="stack-head">
+        <h3>「來樓」積木量體機能剖面</h3>
+        <span>點選樓層看設計</span>
+      </div>
+      <p class="stack-hint">外牆刻意以「<b>磚紅色</b>」標示居住空間，其餘樓層則容納教會、諮商與公益夥伴：</p>
+      <div class="stack-blocks" role="tablist" aria-label="來樓樓層機能">
+        <button class="blk is-brick" type="button" data-fl="top" aria-pressed="true"><span class="fl">10F–12F</span><span class="nm">宣教心公寓（八福客棧）</span><span class="tg">磚紅住宿</span></button>
+        <button class="blk is-moss" type="button" data-fl="f9" aria-pressed="false"><span class="fl">9F</span><span class="nm">芯芽諮商中心・藝術與遊戲治療</span><span class="tg">心理療癒</span></button>
+        <button class="blk is-ochre" type="button" data-fl="f58" aria-pressed="false"><span class="fl">5F, 6F, 8F</span><span class="nm">台灣世界展望會進駐</span><span class="tg">公益共融</span></button>
+        <button class="blk is-ochre" type="button" data-fl="f7" aria-pressed="false"><span class="fl">7F</span><span class="nm">帳篷副堂・兒童主日學・培訓</span><span class="tg">聚會培力</span></button>
+        <button class="blk is-brick" type="button" data-fl="f24" aria-pressed="false"><span class="fl">2F–4F</span><span class="nm">家庭式安置小家（每層五戶）</span><span class="tg">磚紅小家</span></button>
+        <button class="blk is-moss" type="button" data-fl="f1" aria-pressed="false"><span class="fl">1F</span><span class="nm">無圍牆接待大廳・光纖轉角廣場</span><span class="tg">城市對話</span></button>
+        <button class="blk is-ochre" type="button" data-fl="b13" aria-pressed="false"><span class="fl">B1–B3</span><span class="nm">自然採光主堂・機電心臟</span><span class="tg">下沉聖殿</span></button>
+      </div>
+      <div class="stack-detail" id="stackDetail" aria-live="polite">
+        <h4>10F–12F｜宣教心公寓（Missions Heart Apt）／八福客棧</h4>
+        <p>紀念創辦人小婦人艾偉德而設的頂層<b>磚紅色住宿單元</b>，每層八間套房皆附陽台與洗衣機，並搭配頂樓「<b>禱告亭</b>」的光影雕塑十字架。經主管機關核可轉化為公益長短租公寓，歡迎有服事心志者入住，所有收入全數贊助弱勢事工。</p>
+      </div>
+    </aside>
+  </section>
+
+  <!-- 本場獨特亮點 -->
+  <section class="moments" aria-label="本場空間培力限定亮點">
+    <div class="sec-head">
+      <h2>這一場才聽得到、看得到的六個現場片刻</h2>
+      <p>在對公眾開門之前，志工與建築師先行對表的兩個小時裡，藏著一般導覽不會展開的真話與時間切片。</p>
+    </div>
+    <div class="mom-grid">
+      <a class="mom" href="#s6"><i>全台第一</i><b>不用看著門口的鞋子決定怎麼活</b><span>打破輪班制機構的「早晚不同照顧者」，首創夫妻同住的家庭式安置，讓孩子睡醒與回家見到同一張臉。</span></a>
+      <a class="mom m" href="#s1"><i>剛滿月的新名字</i><b>更名基金會滿月、65 週年前夕</b><span>就在 2024/10/01 正式轉型為「伯大尼兒少家庭基金會」，要把守護一路延伸到 18 歲離院之後。</span></a>
+      <a class="mom o" href="#s6"><i>開門才看得到</i><b>趁 401 還沒開家，推開未來小家的門</b><span>平常居住樓層謝絕外人，唯獨趁尚未入住的空檔，才能走進約 52 坪五房兩廳的小家實景與軟墊宣洩室。</span></a>
+      <a class="mom" href="#s2"><i>15 年青春告白</i><b>20 多歲接案、近 40 歲完工的建築師</b><span>親口細數畸零地突襲停工、拆舊教堂遭反彈、找庫存建材省錢，以及從反對到支持裝上隱形鐵窗的轉折。</span></a>
+      <a class="mom m" href="#s3"><i>地上與天上對話</i><b>白天看不見的光纖點點地磚</b><span>低頭看轉角廣場地磚上的小圓點，到了夜晚會亮起星光，正好與 12 層斜牆上的「來」字點點上下呼應。</span></a>
+      <a class="mom o" href="#s7"><i>恩典經濟學</i><b>「我們還在負債，但看見的是價值」</b><span>很多人以為大樓漂亮就很有錢，其實從土地一塊錢、營造廠捐三千萬到成本價冷氣，全是靠眾人托住。</span></a>
+    </div>
+  </section>
+
+  <!-- 8 站跳轉列 -->
+  <nav class="jump-nav" aria-label="空間動線索引">
+    <div class="jump-title">跟著培力動線，從基地模型、廣場星點一路走到九樓、七樓、四樓 401 與 B1 主堂｜8 站空間筆記</div>
+    <div class="jump-list">
+      <a href="#s1"><span>1</span>一塊錢與「來」字初衷</a>
+      <a class="m" href="#s2"><span>2</span>建築模型與 15 年難題</a>
+      <a href="#s3"><span>3</span>下沉階梯與光纖星點</a>
+      <a class="m" href="#s4"><span>4</span>9F 芯芽諮商與兩扇門</a>
+      <a href="#s5"><span>5</span>7F 帳篷副堂與魚群</a>
+      <a class="m" href="#s6"><span>6</span>4F 401 示範小家格局</a>
+      <a href="#s7"><span>7</span>隱形鐵窗與綠色宣洩室</a>
+      <a class="m" href="#s8"><span>8</span>B1 自然光主堂與守護約定</a>
+    </div>
+  </nav>
+
+  <!-- CHAPTER 1 -->
+  <div class="chapter">
+    <div>
+      <small>CHAPTER 01 · 09:30–11:30 · ORIGIN &amp; ARCHITECTURE</small>
+      <h2>建築的誕生：一塊錢的託付與 15 年的空間翻譯</h2>
+    </div>
+    <p>先聽江秀圈院長談「為什麼蓋成這樣」，再由潘冀建築師事務所團隊揭開法規削線、畸零地與雙層牆背後的理性設計。</p>
+  </div>
+
+  <!-- STOP 01 -->
+  <article class="stop" id="s1">
+    <div class="lay-split">
+      <div class="prose">
+        <div class="kicker">
+          <span class="stop-no">STOP 01</span>
+          <span class="stop-time">約 09:40 · 培力教室與一樓大廳</span>
+          <span class="badge">65 年轉型關鍵字</span>
+        </div>
+        <h3>從「一塊錢愛的故事」到「來樓」：為破碎的心貼上 OK 繃</h3>
+        <p>培力一開始，江秀圈院長用一個數字拉開半個多世紀的序幕：美國世界展望會創辦人 <b>Dr. Bob Pierce</b> 當初只用<b>美金一塊錢</b>將木柵這塊土地賣給伯大尼，唯一的條件就是要一直照顧弱勢的孩子。五十多年過去，台灣從戰後缺乏親人的孤兒年代，走進受虐與破碎家庭增加的當代；一位受虐孩子曾畫下一幅畫——<b>一顆破碎的心，需要一份愛做心上的 OK 繃</b>。</p>
+        <p>前董事長<b>林治平教授</b>替這棟新建大樓命名為「<b>來樓</b>」，其實藏著雙重巧思：一方面呼應聖經「<b>讓小孩子到我這裡來</b>」，另一方面把「<b>來</b>」字拆解開來，正好是<b>一個十字架與三個人</b>。即便只做安置其實蓋四層樓就夠了，林董事長仍堅持把基地容積蓋滿十二層，讓這裡不只是安置機構，更成為跨世代的<b>兒少家庭公益園區</b>。</p>
+        <ul>
+          <li><b>剛滿月的基金會</b>：2024 年 10 月 1 日正式更名為「<b>伯大尼兒少家庭基金會</b>」，服務就能跨出 18 歲的法定離院線，繼續用獎學金與諮商接住自立青年。</li>
+          <li><b>宣教心公寓（Missions Heart Apt）</b>：原本為外縣市培訓者準備的 10–12 樓套房，在疫情衝擊與主管機關同意下，轉型為「住進來就祝福弱勢孩子」的長短租公益公寓，裡頭甚至設計了「<b>志工服務三小時換一餐</b>」的集點卡。</li>
+        </ul>
+      </div>
+      <figure class="fig">
+        <button data-ph="101416" aria-label="放大照片：宣教心公寓 Missions Heart Apt 簡報">
+          <img loading="lazy" src="img/101416.jpg" alt="培力簡報投影著宣教心公寓 MUJI 風套房與服務時數抵換餐食介紹">
+        </button>
+        <figcaption><b>宣教心公寓 Missions Heart Apt</b>：高樓層原為營會客房，疫情後轉為兼顧篩選機制與公益支持的長短租空間，所有收入皆贊助弱勢事工。</figcaption>
+      </figure>
+    </div>
+    <div class="sub-pair">
+      <figure class="fig">
+        <button data-ph="105246" aria-label="放大照片：一樓電梯廳「訪客請搭 B、C 梯」告示">
+          <img loading="lazy" src="img/105246.jpg" alt="一樓電梯廳立著木質畫架告示「訪客請搭 B、C 梯」">
+        </button>
+        <figcaption><b>把「回家」的電梯留給孩子</b>：來樓的電梯刻意分流，訪客與活動人群搭乘 B、C 梯，讓 2–4 樓居住單元的孩子放學回來仍保有安靜安全的回家動線。</figcaption>
+      </figure>
+      <div class="callout m">
+        <b>「笑容是最美的復原記號」：</b><br>
+        院長分享過一個真實日常：有次線上家會，兩個女孩對著鏡頭不停換特效笑個不停，完全沒在專心開會。結果從主任、副院長到院長都沒人叫她們安靜——因為對歷經創傷、曾經只能用尖叫防衛的孩子來說，「<b>能在家會裡開懷大笑，比把家掃乾淨更重要</b>」。來樓想長出來的，正是這份陪著孩子走進人生的「<b>軟實力</b>」。
+      </div>
+    </div>
+  </article>
+
+  <!-- STOP 02 -->
+  <article class="stop is-m" id="s2">
+    <div class="plate-head">
+      <div class="prose">
+        <div class="kicker">
+          <span class="stop-no">STOP 02</span>
+          <span class="stop-time">約 10:55 · 一樓大廳建築模型</span>
+          <span class="badge">15 年營建真話</span>
+        </div>
+        <h3>沒有圍牆的建築密碼：法規削線、畸零地與斜牆的雙層巧思</h3>
+        <p>「從二十出頭歲接下這個案子，到現在快四十歲、自己也有了小孩，才真正體會這裡每個線條有多不容易。」潘冀聯合建築師事務所的專案建築師站在大廳模型旁，把感性化作理性的空間翻譯。許多人第一眼看見來樓俐落曲折的<b>斜面造型</b>，以為是刻意炫技，其實它源自法規嚴格的<b>建築削線限制</b>；與其把屋頂切成像西門町、萬華常見的零碎階梯狀，團隊選擇順應削線拉出一道大斜面，並在西曬那一側作出<b>兩層牆體</b>：外層是帶幾何開口的斜牆，內層不開窗，中間夾出的三角形立體空間剛好拿來藏<b>分離式冷氣主機與通風散熱</b>，一舉化解西曬與設備雜亂兩大難題。</p>
+      </div>
+      <div class="prose">
+        <p>這棟樓的 <b>15 年</b>更是一連串生存考題：蓋到二樓時，原本不願合併的鄰地<b>畸零地</b>突然依規要求併入，經費原本就拮据的家園只能咬牙買下，再把後方土地分割賣出才得以復工；推倒舊的一層樓平房教堂時，教友因捨不得多年聚會記憶而反彈，建築師便把舊教堂的<b>拱門立面幾何</b>重現於新廣場入口，這才說服大家。到了發包營建，<b>三星營造</b>一標案便先捐出三千萬，許多磁磚與建材更乾脆挑工廠賣不出去的「<b>庫存尾貨</b>」——在眾人合力托舉下，依然蓋出了讓懂建築的人進來都驚呼「線條怎麼能拉得這麼直」的作品。</p>
+        <div class="callout o">
+          <b>屋頂上的隱形十字架：</b>家園與教會原本希望在樓頂放一座巨大的具象十字架，但建築師不想讓剛硬符號把建築變成刻板地標，最後以<b>雕塑切削的光影十字架</b>說服大家——隨西曬陽光移動，12 樓頂的<b>禱告亭</b>牆面就會浮現光影十字架，成為人們安靜與上帝對話的平台。
+        </div>
+      </div>
+    </div>
+    <div class="plate-grid">
+      <figure class="fig">
+        <button data-ph="122007" aria-label="放大照片：一樓大廳建築模型正面">
+          <img loading="lazy" src="img/122007.jpg" alt="伯大尼來樓建築模型正面，可見斜牆抽象來字開口、磚紅住宅塊體與底座詩篇馬太福音經文">
+        </button>
+        <figcaption><b>正立面模型：把「來」字寫進斜牆</b>：左側為下沉廣場與拱門十字架，右方斜牆上的抽象開口組成「來」字，底座玻璃則刻著《詩篇 68:5》與《馬太福音 19:14》。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="122002" aria-label="放大照片：建築模型背面與量體堆疊">
+          <img loading="lazy" src="img/122002.jpg" alt="建築模型側面與背面視角，清楚展示 2-4 樓與 10-12 樓磚紅住宿量體與頂樓禱告亭">
+        </button>
+        <figcaption><b>積木般的量體堆疊</b>：2–4 樓的小家與 10–12 樓的宣教心公寓統一披上<b>磚紅色外牆</b>，讓外觀不用文字也能讀出「哪裡是生活的家」。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 03 -->
+  <article class="stop" id="s3">
+    <div class="pano-top">
+      <figure class="fig wide">
+        <button data-ph="112554" aria-label="放大照片：下沉式開放階梯廣場與植生牆全景">
+          <img loading="lazy" src="img/112554.jpg" alt="下雨過後的伯大尼來樓下沉式開放階梯廣場、拱門十字架、左側植生牆與右側磚紅立面">
+        </button>
+        <figcaption><b>寫給城市的溫柔緩衝帶</b>：建築量體刻意往街角推進，替內部園區保留內聚安全感，同時在角地釋放出這座下沉式開放階梯廣場與綠意植生牆。</figcaption>
+      </figure>
+    </div>
+    <div class="pano-bottom">
+      <div class="prose">
+        <div class="kicker">
+          <span class="stop-no">STOP 03</span>
+          <span class="stop-time">約 11:25 · 戶外轉角廣場與下沉階梯</span>
+          <span class="badge">地下與天上對話</span>
+        </div>
+        <h3>用建築當作圍牆：下沉階梯的儀式感與地磚上的星光</h3>
+        <p>走出來樓一樓，建築師指出整塊基地最關鍵的佈局哲學：團隊沒有把大樓蓋在正中央再用高牆封死，而是將量體往街角靠攏，讓<b>建築本身就成為溫柔的圍牆</b>；對內保有不受外界視線打擾的安全中庭，對外則把轉角留給社區，做成一座<b>下沉式開放階梯廣場</b>。</p>
+        <p>這座階梯也是通往 <b>B1 主堂</b>的入口。建築師笑稱「就像安藤忠雄喜歡讓來訪者繞一點路」，人們從街角轉進拱門、沿著寬敞階梯一階階往下走，既能隔絕馬路車聲，也在步調放慢之間進入教堂的儀式感。階梯一側那面高大茂密的<b>植生牆</b>，背後其實巧妙遮蔽了地下室巨大的進排氣機電管道與舊鄰棟牆面；而低頭踩在人行道灰色地磚上時，還會發現每塊磚裡藏著一顆不起眼的<b>小圓點光纖燈</b>——入夜亮起時，腳下的微光點點正好與頭頂斜牆的「<b>來</b>」字星點相互呼應。</p>
+      </div>
+      <div class="pano-side-pair">
+        <figure class="fig">
+          <button data-ph="112559" aria-label="放大照片：俯瞰 B1 下沉天井與主堂入口">
+            <img loading="lazy" src="img/112559.jpg" alt="從一樓欄杆俯瞰 B1 下沉式採光天井與主堂落地玻璃門">
+          </button>
+          <figcaption><b>把陽光拉進地下室</b>：大片下沉天井替 B1 主堂換來充沛自然光與戶外活動舞台。</figcaption>
+        </figure>
+        <figure class="fig tall">
+          <button data-ph="113048" aria-label="放大照片：人行道地磚裡的光纖小圓點">
+            <img loading="lazy" src="img/113048.jpg" alt="廣場灰色方磚中央嵌著一顆微小圓形光纖燈點">
+          </button>
+          <figcaption><b>腳下的光纖星點</b>：白天像石磚上的小氣孔，夜晚則成為引導夜歸者的星光。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <!-- CHAPTER 2 -->
+  <div class="chapter m">
+    <div>
+      <small>CHAPTER 02 · 11:33–11:46 · HEALING &amp; CHAPEL</small>
+      <h2>垂直剖面裡的療癒與信仰：九樓諮商與七樓帳篷</h2>
+    </div>
+    <p>跟著樓層一路往上，看見這棟樓如何把最難被看見的心理復原，以及最有彈性的信仰聚會，安放進每一層陽光最好的角落。</p>
+  </div>
+
+  <!-- STOP 04 -->
+  <article class="stop is-m" id="s4">
+    <div class="lay-split flip">
+      <div class="prose">
+        <div class="kicker">
+          <span class="stop-no">STOP 04</span>
+          <span class="stop-time">約 11:34 · 九樓芯芽諮商中心</span>
+          <span class="badge">衛生局立案專業空間</span>
+        </div>
+        <h3>九樓・芯芽諮商中心：當語言還說不出口，讓畫筆與玩具先說話</h3>
+        <p>電梯直上九樓，空氣瞬間安靜下來。這裡是排了兩年才取得衛生局立案的「<b>芯芽諮商中心</b>」，配置了幾間一般諮商室，並在最左右兩側各設一間「<b>藝術治療室</b>」與「<b>遊戲治療室</b>」。因為受過創傷的孩子往往不願、也還沒準備好直視問題，與其一直追問「為什麼」，不如給他一枝畫筆或一套玩具，讓內心狀態自己浮現。</p>
+        <p>這層樓雖僅有約一點多位專職心理師人力，卻已連續兩年拿下政府評鑑<b>優等獎</b>，更在餘裕時開放社區民眾預約。抬頭仔細看，每間治療室門框上方都裝設了一顆小小的<b>紅色求救警鈴</b>——當孩子在密閉空間裡情緒突然潰堤失控時，能第一時間保護諮商師與孩子雙方的安全。</p>
+        <div class="callout m">
+          <b>窗外那棟白房子「天使心家族」：</b>從九樓往後院望去，除了伯大尼早期的舊院舍，還緊鄰著服務極重度身障兒少家庭的「<b>天使心家族</b>」。當年兩家機構執行長一碰面便決定「一起建一個公益園區」；他們相信「<b>父母先走出來，孩子才有希望</b>」，如今在後棟推動喘息日照，正好與來樓的兒少家庭服務形成最溫暖的鄰居。
+        </div>
+      </div>
+      <figure class="fig">
+        <button data-ph="113435" aria-label="放大照片：九樓芯芽諮商中心並排治療室與門上求救警鈴">
+          <img loading="lazy" src="img/113435.jpg" alt="九樓諮商中心兩扇並排木門，門框上方可見紅色求救警鈴">
+        </button>
+        <figcaption><b>溫柔背後的防護細節</b>：九樓諮商室門框上方的紅色求救按鈕，體現第一線陪伴創傷少年時不可或缺的安全機制。</figcaption>
+      </figure>
+    </div>
+    <div class="sub-pair">
+      <figure class="fig">
+        <button data-ph="113559" aria-label="放大照片：從九樓俯瞰後方舊院舍與木柵綠樹">
+          <img loading="lazy" src="img/113559.jpg" alt="從九樓窗戶俯瞰伯大尼後方舊院舍屋頂與茂密行道樹">
+        </button>
+        <figcaption><b>九樓窗外的舊院舍記憶</b>：這片如今被樹影包圍的後院，早期曾有一座善心人士捐建、兼作防洪滯洪池的室外游泳池。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="113713" aria-label="放大照片：九樓牆面手寫字句">
+          <img loading="lazy" src="img/113713.jpg" alt="九樓白牆上寫著：努力的意義就是，以後的日子裡放眼望去，全部都是自己喜歡的人和事">
+        </button>
+        <figcaption><b>牆上留給大人的打氣</b>：「努力的意義就是，以後的日子裡放眼望去，全部都是自己喜歡的人和事。」——在這裡，大人自己也要先被接住。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 05 -->
+  <article class="stop is-o" id="s5">
+    <div class="show-top">
+      <figure class="fig wide">
+        <button data-ph="114225" aria-label="放大照片：七樓斜屋頂帳篷下的副堂">
+          <img loading="lazy" src="img/114225.jpg" alt="七樓副堂的斜切屋頂結構、天花板垂掛藍色波浪布幔與木質十字架">
+        </button>
+        <figcaption><b>把法規削線變成一座山巔帳篷</b>：斜切結構讓七樓副堂自然挑高，配上藍布波浪與一整排窗景，成為最受各小家喜愛的聚會廳。</figcaption>
+      </figure>
+      <div class="prose">
+        <div class="kicker">
+          <span class="stop-no">STOP 05</span>
+          <span class="stop-time">約 11:42 · 七樓副堂與兒主教室</span>
+          <span class="badge">把削線變帳篷</span>
+        </div>
+        <h3>七樓・帳篷下的副堂：海浪、魚群與各小家的共同客廳</h3>
+        <p>往下走到七樓，整個氛圍頓時明亮活潑起來。梯廳天花板垂掛著成群游動的<b>藍綠紙魚與漁網</b>，一旁是木質書牆與橘色圓桌閱讀角；推開一整排可完全收折的<b>落地玻璃門</b>，便走進可容納一百多人的「<b>副堂</b>」。</p>
+        <p>這座空間正是前面建築師口中「把法規削線轉化成帳篷」的經典位置——兩側斜切出的幾何立體感，剛好圍出宛如曠野帳篷的溫馨庇護所。平時這裡是全院會議、寒暑假宣教團帶孩子辦音樂會與講座的基地；到了<b>禮拜五晚上</b>，所有小家會齊聚在這裡辦家庭晚會與禱告，<b>禮拜六</b>則化身青春洋溢的週末派對，<b>禮拜天</b>一早再打開隔壁「<b>701 提摩太教室</b>」，陪兒童主日學的孩子唱歌說故事。</p>
+      </div>
+    </div>
+    <div class="show-trio">
+      <figure class="fig">
+        <button data-ph="113924" aria-label="放大照片：七樓天花板紙魚吊飾">
+          <img loading="lazy" src="img/113924.jpg" alt="七樓灰色格柵天花板下垂掛著藍綠色系紙魚吊飾">
+        </button>
+        <figcaption><b>抬頭游過的魚群</b>：呼應副堂天花板的海洋藍紗，讓高樓層空間毫無機構的冰冷感。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="114038" aria-label="放大照片：701 兒主兒童班提摩太教室門牌">
+          <img loading="lazy" src="img/114038.jpg" alt="門上貼著手作風格的 701 兒主兒童班提摩太教室牌子">
+        </button>
+        <figcaption><b>701 提摩太教室</b>：主日早晨孩子們講故事、畫畫與彈琴的兒童天地。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="114547" aria-label="放大照片：七樓書牆與閱讀角">
+          <img loading="lazy" src="img/114547.jpg" alt="七樓副堂外的開放式木書架、橘色圓桌椅與漁網紙魚裝飾">
+        </button>
+        <figcaption><b>副堂外的閱讀角</b>：採光極佳的公共走廊，讓各樓層的人不只有宿舍，也有能坐下來翻書聊天的地方。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- CHAPTER 3 -->
+  <div class="chapter">
+    <div>
+      <small>CHAPTER 03 · 11:47–11:55 · UNIT 401 HOME DESIGN</small>
+      <h2>推開「家」的門：401 單元裡的溫柔細節</h2>
+    </div>
+    <p>全棟二至四樓共有 15 個小家單元；趁著四樓尚未開家，我們得以踏進 401 示範空間，讀懂建築與照顧制度如何一起接住受創的童年。</p>
+  </div>
+
+  <!-- STOP 06 -->
+  <article class="stop" id="s6">
+    <div class="plate-head">
+      <div class="prose">
+        <div class="kicker">
+          <span class="stop-no">STOP 06</span>
+          <span class="stop-time">約 11:48 · 四樓 401 示範小家</span>
+          <span class="badge">夫妻家庭式安置</span>
+        </div>
+        <h3>四樓・還沒開家的 401 號門：五房兩廳兩衛裡的生活設計</h3>
+        <p>走出四樓電梯，迎面是彩繪著藍天白雲的 <b>FAITH 壁畫</b>與牆上的平面配置圖。二、三、四樓每層都規劃為五戶：前四戶（<b>x01–x04</b>）是約 <b>50 至 52 坪</b>的標準「<b>五房兩廳兩衛</b>」住宅，靠內庭最隱蔽的角落（<b>x05</b>）則預留為約 <b>28 至 30 坪</b>的<b>緊急安置單元</b>，讓剛報到、還需要貼身陪伴適應環境的孩子有個安靜的緩衝。因為目前照顧人力可遇不可求，二、三樓已先開了<b>五個小家</b>，四樓則暫作行政與培力示範。</p>
+        <p>走進 401 客廳，面積比多數台北人家還寬敞，為的是容納一家四到六個孩子（包括常被社會局一起轉介過來的親兄弟姊妹）與同住的「<b>家爸、家媽</b>」。院長直言，許多機構孩子一早起床得先看門口「<b>今天是誰的鞋子</b>」來決定自己怎麼表現；但在伯大尼，家爸家媽就住進主臥裡，早上六點到八點準備早餐送孩子上學、下午四點到十點守在餐桌旁，讓孩子生命裡第一次擁有穩定不斷裂的依附關係。</p>
+      </div>
+      <div class="prose">
+        <ul>
+          <li><b>主臥必附獨立衛浴</b>：建築團隊堅持將主臥設計成套房，讓高壓勞心的照顧者在休息時不用和孩子搶廁所，能真正喘口氣；五房中還有一間原設定為<b>和室客房</b>，專門留給單身輪班的「<b>家老師</b>」休假替手時入住，不打擾原本家庭格局。</li>
+          <li><b>帶著親生孩子一起來</b>：像曹坤「許爸」一家就是夫妻帶著自己的兩個兒子搬進來與安置孩子同住——面試時連親生孩子都要一起談，因為他們也要預備好「把爸媽的雙手分享給不一樣的手足」。</li>
+          <li><b>中央廚房在隔壁</b>：為維持家屋潔淨少油煙，平日三餐由隔壁舊院舍的中央廚房供餐，再分送回各小家共餐；只有假日或想念家的味道時，才由家爸家媽在自家小廚房用天然瓦斯親自開火。</li>
+        </ul>
+        <div class="callout">
+          <b>為什麼四樓還沒全開滿？</b>空間早已準備好，難的是找到願意犧牲多數週末、一個月只休一次長週末的<b>家爸家媽</b>。一個小家理想收 4–6 位孩子，但受虐與難置兒的情緒張力極高，目前多收 2–4 位。「董事會都笑說這樣經營絕對不符合成本，但看見孩子越來越有笑容，那就是無可取代的價值。」
+        </div>
+      </div>
+    </div>
+    <div class="plate-grid">
+      <figure class="fig">
+        <button data-ph="114739" aria-label="放大照片：四樓梯廳 FAITH 彩繪牆">
+          <img loading="lazy" src="img/114739.jpg" alt="四樓走廊畫著藍天白雲 FAITH 字樣與馬可福音 11 章 24 節經文">
+        </button>
+        <figcaption><b>四樓的信仰風景</b>：二、三、四樓各自擁有不同主題彩繪，四樓以「FAITH（信）」迎接推開家門的人。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="114848" aria-label="放大照片：四樓 401-405 平面配置圖">
+          <img loading="lazy" src="img/114848.jpg" alt="四樓平面配置圖標示 401 至 404 標準小家與角落較小的 405 單元">
+        </button>
+        <figcaption><b>一層五戶的小社區平面圖</b>：401–404 如一般家庭公寓圍繞走廊，最裡側獨立的 405 則預留為緊鄰內庭的緊急安置或社工支援單元。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="114913" aria-label="放大照片：401 單元客廳與餐桌空間">
+          <img loading="lazy" src="img/114913.jpg" alt="401 單元寬敞明亮的客廳與餐廳空間，同工正在導覽解說">
+        </button>
+        <figcaption><b>52 坪的「家」的尺度</b>：從沙發、餐桌到採光窗面，刻意與一般住宅大樓無異，消弭安置機構的宿舍感。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="114935" aria-label="放大照片：401 主臥室內的獨立衛浴">
+          <img loading="lazy" src="img/114935.jpg" alt="401 單元主臥室附設的乾淨乾濕分離衛浴空間">
+        </button>
+        <figcaption><b>留給照顧者的喘息衛浴</b>：外頭為孩子保留足夠盥洗間以應付早起上學高峰，主臥內則給足家爸家媽私密休息空間。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 07 -->
+  <article class="stop is-m" id="s7">
+    <div class="lay-split">
+      <div class="prose">
+        <div class="kicker">
+          <span class="stop-no">STOP 07</span>
+          <span class="stop-time">約 11:51 · 401 宣洩室與紅磚陽台</span>
+          <span class="badge">創傷知情建築</span>
+        </div>
+        <h3>陽台上的隱形鐵窗與那一間綠色軟墊「宣洩室」</h3>
+        <p>走進 401 內部的一扇厚實白門，腳步聲立刻被吸乾——這裡原本是建築圖上的開放和室，後來由社會局補助約三十萬元，改裝成四面牆壁與地板全包覆著柔綠色防撞軟墊的「<b>宣洩室</b>」。裡頭靜靜躺著藍色和室椅與一把吉他袋；門扇附有一道狹長觀察窗，當過去曾受過嚴重創傷的「<b>難置兒</b>」在情緒極度緊繃或面臨失控邊緣時，這裡能成為一處不會傷及自己或他人的安全冷靜角。</p>
+        <p>接著推開客廳落地窗踏上陽台，眼前是木柵的綠意與對面學校操場，卻在欄杆與天花板之間看見一排細密的鋼索——那是全棟後來加裝的「<b>隱形鐵窗</b>」。建築師坦白分享，當年自己起初並不太願意同意加裝，因為從純建築美學來看總怕破壞立面線條；直到經歷過真實的危機時刻、聽懂孩子在青春期缺乏依附與安全感時可能出現的脆弱反應，他才徹底改觀，甚至反過來全力鼓勵家園替所有陽台裝上這道溫柔防線——<b>遠看幾乎看不見，卻在最緊要的時刻接住生命</b>。</p>
+      </div>
+      <figure class="fig">
+        <button data-ph="115123" aria-label="放大照片：401 單元的柔綠色軟墊宣洩室">
+          <img loading="lazy" src="img/115123.jpg" alt="四面牆壁包覆柔綠色防撞軟墊的宣洩室，角落放著吉他袋與藍色座墊">
+        </button>
+        <figcaption><b>為情緒留一間安全房</b>：由原和室改裝的軟墊宣洩室，不只有保護作用，平時也能當作安靜練琴或獨處的小天地。</figcaption>
+      </figure>
+    </div>
+    <div class="sub-pair">
+      <figure class="fig">
+        <button data-ph="115137" aria-label="放大照片：401 陽台的隱形鐵窗與對面綠景">
+          <img loading="lazy" src="img/115137.jpg" alt="401 單元陽台裝設細密水平鋼索的隱形鐵窗，窗外可望見木柵街景與山色">
+        </button>
+        <figcaption><b>建築師也點頭的「隱形鐵窗」</b>：不把家關進鐵籠、保留木柵陽光與視野，同時替全棟孩子築起無形的安全網。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="115456" aria-label="放大照片：陽台紅磚雙層牆與管線設備空間">
+          <img loading="lazy" src="img/115456.jpg" alt="陽台紅磚壁面內側藏納天然氣熱水器管線與冷氣空間">
+        </button>
+        <figcaption><b>藏在紅磚立面裡的設備巧思</b>：天然瓦斯管線與室外機被妥善收進陽台內側與雙層斜牆之中，外觀依舊俐落乾淨。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- CHAPTER 4 -->
+  <div class="chapter o">
+    <div>
+      <small>CHAPTER 04 · 12:00–12:20 · SANCTUARY &amp; VOLUNTEER ETHOS</small>
+      <h2>地下室的自然光與送給志工的守護約定</h2>
+    </div>
+    <p>從四樓一路下到 B1 主堂、再繞回一樓中庭與建築模型前，把整棟「來樓」從地下聖殿到雲端禱告亭的空間閉環接起來。</p>
+  </div>
+
+  <!-- STOP 08 -->
+  <article class="stop is-o" id="s8">
+    <div class="pano-top">
+      <figure class="fig wide">
+        <button data-ph="120134" aria-label="放大照片：B1 自然採光主堂全景">
+          <img loading="lazy" src="img/120134.jpg" alt="B1 主堂寬敞的木質地板大廳與舞台，高處天窗與天井引進自然光線">
+        </button>
+        <figcaption><b>不靠人工燈海的地下聖殿</b>：可容納四、五百人的 B1 主堂靠前後兩側天井與天窗引光，晴朗白天幾乎不必開大燈就明亮通透。</figcaption>
+      </figure>
+    </div>
+    <div class="pano-bottom">
+      <div class="prose">
+        <div class="kicker">
+          <span class="stop-no">STOP 08</span>
+          <span class="stop-time">約 12:01 · B1 主堂與一樓中庭</span>
+          <span class="badge">頭尾自然採光</span>
+        </div>
+        <h3>B1 主堂的陽光、新舊院舍中庭與開門這天的溫柔底線</h3>
+        <p>踏進位於地下一樓的<b>主堂</b>，完全感覺不到自己置身地底。原本舊基地上那座一層樓平房老教堂只能容納一百多人，如今下沉到 B1 之後一口氣擴充到<b>四、五百席</b>，卻刻意在前後兩端都留設了<b>下沉天井與高窗天窗</b>；天氣好時自然光直接漫進木質地板，除了主日禮拜與社區公益活動，這裡甚至已經辦過好幾場婚禮。</p>
+        <p>走出 B1 來到後方中庭，新蓋的紅磚來樓與保留下來的白色舊院舍比鄰而立。培力接近尾聲時，院長把話題帶回最實際的現實：不少人一走到這棟漂亮建築門口，常誤以為「伯大尼一定很有錢」，卻不知道機構仍揹負著建築貸款，就連給建築師事務所的設計費都還曾短缺，是靠著對方不催款又繼續支持，才一步步走到今天。</p>
+        <p>正因如此，每一次對社會敞開大門都格外珍貴——當民眾受建築之美吸引而走進來，真正的使命是透過志工的眼睛與口語，讓大家看見建築背後那群<b>願意把自己的家打開的家爸家媽</b>、看見台灣其實還有這樣一座為創傷童年守夜的公益園區。</p>
+      </div>
+      <figure class="fig">
+        <button data-ph="120909" aria-label="放大照片：來樓紅磚牆與舊白色院舍之間的中庭">
+          <img loading="lazy" src="img/120909.jpg" alt="右側紅磚來樓與左側白色舊院舍大樓之間安靜乾淨的戶外中庭">
+        </button>
+        <figcaption><b>新舊院舍的時光對話</b>：右側是 2020 年代落成的紅磚來樓，左側是承載過無數大鍋飯記憶的舊院舍，如今串聯起完整園區。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- AFTERWORD -->
+  <section class="afterword" aria-label="走讀後記">
+    <div class="afterword-head">
+      <h2>走讀後記：把「來」字留在心裡</h2>
+      <p>一場原本為志工準備的建築培力，讓我們在城市南緣看見一座把「安全感」蓋進鋼筋與紅磚裡的實驗。</p>
+    </div>
+    <div class="af-grid">
+      <article class="af-card">
+        <h3>第一與唯一：從「看鞋子」到「有人等你回家」</h3>
+        <p>台灣第一所嘗試「<b>夫妻家庭式安置</b>」的機構，為的不是追求漂亮評鑑，而是讓曾經歷七次轉介、在創傷裡反覆撕裂依附關係的孩子，早上醒來與傍晚回家能看見同一張臉、在同一張餐桌上吃一頓安穩的飯。</p>
+      </article>
+      <article class="af-card">
+        <h3>稍縱即逝的時間切片：65 週年與未開家的 401</h3>
+        <p>正好碰上<b>更名「兒少家庭基金會」滿月</b>、<b>65 週年慶典前夕</b>，又趁著四樓尚未住進小家的空檔推開 <b>401 號房</b>——一旦未來找到更多願意投入的家爸家媽，這扇門便會為孩子關上隱私，再也無法如此近距離參觀。</p>
+      </article>
+      <article class="af-card">
+        <h3>不賺錢卻最需要的「恩典經濟學」</h3>
+        <p>從美金一塊錢土地、營造廠捐款與庫存尾貨建材，到 10–12 樓「<b>宣教心公寓</b>」用住客費用反哺弱勢事工；這裡不靠「看起來很可憐」募款，而是把<b>52 坪家的尊嚴</b>實實在在蓋給受過傷的孩子。</p>
+      </article>
+      <article class="af-card">
+        <h3>下一次經過木柵這轉角，可以這樣看</h3>
+        <p>抬頭找找斜牆上由抽象開口排成的「<b>來</b>」字與頂樓禱告亭的光影變化，低頭留意廣場地磚裡的小圓點星光；若想更認識這個把家打開的公益園區，也可關注 <a href="https://www.bethany.org.tw/" target="_blank" rel="noopener">伯大尼兒少家庭基金會</a> 的日常陪伴工作。</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>2024/11/09 參加「打開台北 2024・伯大尼來樓空間培力」（財團法人臺北市基督教伯大尼兒少家庭基金會、潘冀聯合建築師事務所團隊分享）的空間筆記</span>
+  <a href="#top">回到頁首 ↑</a>
+</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../wanhuafilm/index.html"><small>‹ 較新的一場・2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a><a class="nx" href="../bangka/index.html"><small>較早的一場・2024/11/08 ›</small>走讀艋舺信仰、美食與街區故事</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar">
+    <button id="lbp" aria-label="上一張">‹</button>
+    <span id="lbc"></span>
+    <button id="lbn" aria-label="下一張">›</button>
+    <button id="lbx" aria-label="關閉">✕</button>
+  </div>
+</div>
+
+<script>
+{
+  // 互動式 12F–B3F 積木剖面說明切換
+  const FL={
+    top:{t:"10F–12F｜宣教心公寓（Missions Heart Apt）／八福客棧",d:"紀念創辦人小婦人艾偉德而設的頂層<b>磚紅色住宿單元</b>，每層八間套房皆附陽台與洗衣機，並搭配頂樓「<b>禱告亭</b>」的光影雕塑十字架。經主管機關核可轉化為公益長短租公寓，歡迎有服事心志者入住，所有收入全數贊助弱勢事工。"},
+    f9:{t:"9F｜芯芽諮商中心・藝術治療室・遊戲治療室",d:"排隊兩年取得衛生局立案的專業諮商空間，在一般諮商室兩側另設<b>藝術治療室</b>與<b>遊戲治療室</b>，讓不善言詞的受創兒少透過畫筆與玩具表達心聲；門框上方配有<b>求救警鈴</b>，並同樣開放社區預約使用。"},
+    f58:{t:"5F, 6F, 8F｜台灣世界展望會進駐・公益園區共振",d:"五十多年前以一塊錢將土地託付給伯大尼的世界展望會，如今再次回到「來樓」五、六、八樓辦公；加上後棟的<b>天使心家族</b>，讓這棟樓在兒少安置與家庭照顧之間產生強大的公益匯流。"},
+    f7:{t:"7F｜帳篷下的副堂・兒童主日學・閱讀角",d:"將法規建築削線順勢轉化成宛如曠野帳篷的挑高<b>副堂</b>，可容納百餘人聚會；週五晚間各小家在此舉辦晚會禱告，週六舉行週末派對，週日則打開「<b>701 提摩太教室</b>」成為兒童主日學空間。"},
+    f24:{t:"2F–4F｜家庭式安置小家（磚紅色立面・每層五戶）",d:"外觀統一披上<b>磚紅色外牆</b>象徵「家」。每層前四戶為 <b>50–52 坪</b>的五房兩廳兩衛標準小家，後側角落 <b>x05</b> 為 <b>28–30 坪</b>的緊急安置緩衝單元；由同住的<b>家爸家媽</b>與單身配班的<b>家老師</b>共同守望。"},
+    f1:{t:"1F｜無圍牆接待大廳・電梯分流・光纖轉角廣場",d:"量體往街角推進、讓建築本身化為守護中庭的圍牆，外緣轉角則退讓出<b>下沉式開放階梯廣場</b>與埋著<b>光纖微光點點</b>的人行道；大廳採電梯分流（訪客請搭 B、C 梯），未來一樓更期盼成為自立少年的第一個職場練習地。"},
+    b13:{t:"B1–B3｜自然採光主堂（400–500 席）與建築機電心臟",d:"取代原本僅能容納百人的平房舊教堂，靠前後兩側<b>下沉天井與天窗</b>引進自然光，晴朗白天幾乎不必開燈；除了教會主日聚會，亦對外開放婚禮與社區活動。其餘地下層則藏著全棟的機電空調設備。"}
+  };
+  const blks=[...document.querySelectorAll('.stack-blocks .blk')];
+  const det=document.getElementById('stackDetail');
+  blks.forEach(b=>{
+    b.addEventListener('click',()=>{
+      blks.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+      const item=FL[b.dataset.fl];
+      if(item) det.innerHTML=`<h4>${item.t}</h4><p>${item.d}</p>`;
+    });
+  });
+
+  // 照片放大檢視 Lightbox
+  const btns=[...document.querySelectorAll('main button[data-ph]')];
+  const items=btns.map((b,idx)=>{
+    const img=b.querySelector('img');
+    const fig=b.closest('figure');
+    const cap=fig?fig.querySelector('figcaption').textContent:img.alt;
+    b.dataset.idx=idx;
+    return {src:img.getAttribute('src'),alt:img.alt,cap};
+  });
+  const lb=document.getElementById('lb'),im=document.getElementById('lbi'),cp=document.getElementById('lbc');
+  let cur=0;
+  const show=i=>{
+    cur=(i+items.length)%items.length;
+    const x=items[cur];
+    im.src=x.src;
+    im.alt=x.alt;
+    cp.textContent=`${x.cap}　（${cur+1}/${items.length}）`;
+  };
+  document.querySelector('main').addEventListener('click',e=>{
+    const b=e.target.closest('button[data-ph]');
+    if(b){show(+b.dataset.idx);lb.classList.add('on');document.getElementById('lbx').focus();}
+  });
+  document.getElementById('lbp').onclick=()=>show(cur-1);
+  document.getElementById('lbn').onclick=()=>show(cur+1);
+  const close=()=>lb.classList.remove('on');
+  document.getElementById('lbx').onclick=close;
+  lb.addEventListener('click',e=>{if(e.target===lb)close();});
+  document.addEventListener('keydown',e=>{
+    if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')show(cur-1);
+    if(e.key==='ArrowRight')show(cur+1);
+  });
+}
+</script>
+</body>
+</html>
