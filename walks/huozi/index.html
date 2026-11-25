@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>鐵道與活版印刷的百年物語：重南 109 開幕茶會 × 城內出版與街屋走讀（2025/10/25）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 週六午後走進剛試營運的「重南 109 臺博小客廳」，在鉛字墨香與茶點裡看老師傅壓出缺字巧思「榮（田＋丁）」，再跟著高傳棋從榮町、明星咖啡、博愛路二號秘密老屋一路走到臺博館鐵道部園區硬票印刷區
+   IDEA: 活版印刷鉛字標本報紙（Letterpress Specimen Broadsheet）× 臺鐵名片式硬票（Edmondson Ticket）視覺系統
+   PICTURE: 雙拼印樣封面——高傳棋手持竹材鉛字在字庫架與七十歲老印刷機前開講，疊映現場壓印的「重南一○九／臺博小客廳／城內社區／榮田丁」硃砂紅字卡
+   COLOUR and TYPE: 活版棉紙白 #f6f1e7、鉛字墨炭 #1b1b1c、印泥硃砂紅 #b43a24（關鍵詞主色）、鐵道銅青 #224b5c、黃銅框線 #8c6b2a；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 對位十字線雙欄印樣封面＋四格木製字盤檔案帶＋開版導言與鉛字規格標本卡＋六枚缺角硬票限定亮點＋鐵道站名橫軸導覽＋三幕變奏圖文版面（單欄特寫／字體對照表／街區店屋速寫矩陣／前後景疊印）＋校對壓印後記四格 */
+:root{
+  color-scheme:light dark;
+  --bg:light-dark(#f6f1e7,#141311);
+  --paper:light-dark(#fdfaf3,#1d1b18);
+  --case:light-dark(#ece4d5,#25221d);
+  --ink:light-dark(#1b1b1c,#ede8de);
+  --mute:light-dark(#5d5852,#a39d94);
+  --accent:light-dark(#b43a24,#e87f68);
+  --rail:light-dark(#224b5c,#85b7cb);
+  --brass:light-dark(#8c6b2a,#d3b06b);
+  --tint:light-dark(#e5edf0,#1b272c);
+  --warm:light-dark(#f4e7e0,#281c18);
+  --line:light-dark(#d5cbb9,#332f29);
+}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:68px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.82 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,h4{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+p b,p strong,li b,li strong,.callout b,.prose b,.prose strong,.spec-table b,.shop-card b{color:var(--accent);font-weight:700}
+
+/* Broadsheet Specimen Cover */
+.broadsheet{background:radial-gradient(circle at 84% 18%,color-mix(in srgb,var(--accent) 9%,transparent),transparent 52%),linear-gradient(180deg,var(--case) 0%,var(--bg) 100%);border-bottom:3px double var(--ink);padding:clamp(26px,4.5vw,52px) max(4vw,18px) 34px}
+.bs-in{max-width:1120px;margin:0 auto}
+.bs-masthead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 18px;padding-bottom:12px;margin-bottom:24px;border-bottom:1px solid var(--line);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:700}
+.bs-masthead .edition{display:inline-flex;align-items:center;gap:8px;color:var(--accent)}
+.bs-masthead .edition::before{content:"✦";font-size:14px}
+.bs-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(24px,4vw,44px);align-items:center}
+.bs-copy h1{font-size:clamp(30px,4.6vw,50px);line-height:1.12;font-weight:800;letter-spacing:.01em}
+.bs-copy h1 span{display:block;font-size:clamp(19px,2.5vw,27px);font-weight:600;color:var(--rail);margin-top:8px}
+.bs-lead{margin:16px 0 0;font-size:16.5px;line-height:1.78}
+.bs-chips{margin-top:18px;display:flex;flex-wrap:wrap;gap:7px}
+.bs-chips span{font-size:13px;padding:3px 11px;border:1px solid var(--line);background:var(--paper);border-radius:4px;font-weight:500}
+.bs-chips span.em{border-color:var(--accent);color:var(--accent);background:var(--warm);font-weight:700}
+
+/* Registration-mark Specimen Frame */
+.plate-box{position:relative;padding:12px;background:var(--paper);border:1px solid var(--line);box-shadow:0 16px 36px rgba(0,0,0,.09)}
+.plate-box::before,.plate-box::after{content:"";position:absolute;width:18px;height:18px;border-color:var(--brass);border-style:solid;pointer-events:none}
+.plate-box::before{top:-5px;left:-5px;border-width:2px 0 0 2px}
+.plate-box::after{bottom:-5px;right:-5px;border-width:0 2px 2px 0}
+.plate-box .fig button{border-radius:3px;box-shadow:none}
+.plate-box .fig img{aspect-ratio:16/10}
+.plate-box .fig figcaption{margin-top:10px;font-size:13.5px;padding-top:8px;border-top:1px dashed var(--line)}
+.plate-stamp{position:absolute;right:22px;top:22px;z-index:2;background:rgba(180,58,36,.92);color:#fdfaf3;padding:5px 11px;font:700 12px/1.3 "Noto Serif TC",serif;letter-spacing:.12em;border:1px solid rgba(255,255,255,.45);transform:rotate(2deg);pointer-events:none}
+
+/* Type-Case Partitioned Meta Band */
+.typecase{background:#1b1a18;color:#e7e0d2;border-bottom:3px solid var(--brass)}
+.tc-in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.tc-cell{padding:15px 18px;border-right:1px solid rgba(255,255,255,.12);font-size:13.8px;line-height:1.58}
+.tc-cell:last-child{border-right:none}
+.tc-cell b{display:block;font-size:11.5px;letter-spacing:.12em;color:#eba08c;margin-bottom:4px;text-transform:uppercase}
+.tc-cell a{color:#f7f2e8;text-decoration:underline;text-underline-offset:3px}
+
+/* Main Container */
+.wrap{max-width:1120px;margin:0 auto;padding:0 max(4vw,18px)}
+
+/* Opening Essay + Lead Type Specimen Card */
+.specimen-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;padding:42px 0 32px;border-bottom:1px solid var(--line)}
+.essay h2{font-size:clamp(22px,3vw,30px);line-height:1.3;margin-bottom:14px}
+.essay p{margin:.72em 0}
+.salon-note{margin-top:18px;padding:15px 18px;background:var(--warm);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;font-size:14.8px;line-height:1.74}
+.salon-note h3{font-size:16.5px;color:var(--accent);margin-bottom:6px}
+
+.type-card{background:var(--paper);border:2px solid var(--ink);padding:20px 20px 16px;align-self:start;box-shadow:6px 6px 0 var(--case)}
+.type-card-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:9px;margin-bottom:12px}
+.type-card-head h3{font-size:19px}
+.type-card-head span{font-size:11.5px;letter-spacing:.12em;color:var(--accent);font-weight:700}
+.spec-table{width:100%;border-collapse:collapse;font-size:13.8px}
+.spec-table th,.spec-table td{padding:7px 6px;border-bottom:1px dashed var(--line);text-align:left;vertical-align:top}
+.spec-table th{font-size:12px;letter-spacing:.08em;color:var(--mute);font-weight:700;width:82px}
+.spec-facts{margin:12px 0 0;padding:10px 12px;background:var(--case);font-size:13.3px;line-height:1.65;color:var(--ink)}
+.spec-facts b{color:var(--rail)}
+
+/* Edmondson Railway Hard-Ticket Clues */
+.tickets{padding:36px 0 26px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 20px;margin-bottom:18px}
+.sec-head h2{font-size:clamp(22px,3vw,28px)}
+.sec-head p{margin:0;color:var(--mute);font-size:14.8px}
+.ticket-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+.ed-ticket{position:relative;display:flex;flex-direction:column;gap:6px;text-decoration:none;color:inherit;background:var(--paper);border:1px solid var(--line);padding:15px 18px 14px;transition:transform .2s,box-shadow .2s;
+  clip-path:polygon(10px 0,calc(100% - 10px) 0,100% 10px,100% calc(100% - 10px),calc(100% - 10px) 100%,10px 100%,0 calc(100% - 10px),0 10px)}
+.ed-ticket::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--accent)}
+.ed-ticket.r::before{background:var(--rail)}
+.ed-ticket:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.ed-top{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;font-weight:700;letter-spacing:.09em;color:var(--accent)}
+.ed-ticket.r .ed-top{color:var(--rail)}
+.ed-ticket b{font-family:"Noto Serif TC",serif;font-size:16.8px;line-height:1.38}
+.ed-ticket span{font-size:13.8px;line-height:1.6;color:var(--mute)}
+
+/* Sticky Station Line Route Bar */
+.route-bar{position:sticky;top:8px;z-index:10;margin:10px 0 28px;padding:10px 14px;background:color-mix(in srgb,var(--paper) 93%,transparent);backdrop-filter:blur(8px);border:1px solid var(--line);border-top:2px solid var(--rail);border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.06);display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.route-lbl{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--rail);margin-right:4px}
+.route-bar a{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:5px;border:1px solid var(--line);background:var(--bg);color:var(--ink);text-decoration:none;font-size:13px;font-weight:500;transition:border-color .15s,background .15s}
+.route-bar a:hover{border-color:var(--accent);background:var(--warm)}
+.route-bar a em{font-style:normal;font-weight:800;color:var(--accent);font-family:"Noto Serif TC",serif}
+
+/* Act Banners */
+.act-banner{margin:46px 0 12px;padding:18px 22px;background:var(--case);border-top:3px solid var(--ink);border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:10px 20px;align-items:center}
+.act-code{font-family:"Noto Serif TC",serif;font-weight:800;font-size:clamp(26px,3.6vw,36px);line-height:1;color:var(--accent);padding-right:16px;border-right:1px solid var(--line)}
+.act-banner small{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--rail);text-transform:uppercase;margin-bottom:2px}
+.act-banner h2{font-size:clamp(21px,3vw,29px);line-height:1.26}
+.act-sub{grid-column:1/-1;margin:2px 0 0;font-size:14.8px;color:var(--mute)}
+
+/* Stop Sections */
+.stop{padding:32px 0;border-bottom:1px solid var(--line)}
+.stop-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-bottom:12px}
+.st-no{font-family:"Noto Serif TC",serif;font-weight:800;font-size:13.5px;padding:2px 10px;background:var(--ink);color:var(--bg);border-radius:3px}
+.st-time{font-size:13.5px;color:var(--mute);font-weight:500}
+.st-tag{font-size:12px;font-weight:700;padding:2px 9px;border-radius:3px;background:var(--accent);color:#fff}
+.st-tag.r{background:var(--rail)}
+.stop h3{font-size:clamp(21px,2.8vw,27px);line-height:1.32;margin-bottom:14px}
+
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:start}
+.split.rev{grid-template-columns:.95fr 1.05fr}
+.split.rev .prose{order:2}
+.split.rev .media{order:1}
+.prose p{margin:.72em 0}
+.prose ul{margin:10px 0;padding-left:1.2em}
+.prose li{margin:.42em 0}
+.prose li::marker{color:var(--accent)}
+
+.callout{margin-top:16px;padding:14px 17px;background:var(--tint);border-left:4px solid var(--rail);border-radius:0 8px 8px 0;font-size:14.8px;line-height:1.72}
+.callout.red{background:var(--warm);border-left-color:var(--accent)}
+
+/* Figures */
+.fig{margin:0}
+.fig button{all:unset;cursor:pointer;display:block;width:100%;border-radius:8px;overflow:hidden;background:var(--line);position:relative;box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.fig img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;transition:transform .35s ease}
+.fig.sq img{aspect-ratio:4/3}
+.fig.tall img{aspect-ratio:3/4;object-position:center 42%}
+.fig button:hover img{transform:scale(1.025)}
+.fig figcaption{margin-top:8px;font-size:13.8px;line-height:1.58;color:var(--mute)}
+.fig figcaption b{color:var(--ink);font-weight:700}
+
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:22px;align-items:start}
+.duo-asym{display:grid;grid-template-columns:1.32fr .68fr;gap:20px;margin-top:22px;align-items:start}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px;align-items:start}
+.media-stack{display:grid;gap:20px}
+
+/* Street Shop Matrix */
+.shop-matrix{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:12px;margin-top:20px}
+.shop-card{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--brass);border-radius:6px;padding:13px 15px}
+.shop-card small{display:block;font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--rail);margin-bottom:3px}
+.shop-card h4{font-size:16.5px;margin-bottom:5px}
+.shop-card p{margin:0;font-size:13.8px;line-height:1.62;color:var(--mute)}
+
+/* Proofing / Imprint Afterword */
+.afterword{margin:40px 0 22px;padding:28px;background:var(--paper);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--case)}
+.afterword-head{margin-bottom:18px;padding-bottom:12px;border-bottom:1px dashed var(--line)}
+.afterword-head h2{font-size:clamp(22px,3vw,28px);margin-bottom:6px}
+.afterword-head p{margin:0;color:var(--mute);font-size:15px}
+.af-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.af-card{background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--accent);padding:16px 18px}
+.af-card.r{border-left-color:var(--rail)}
+.af-card h3{font-size:17px;color:var(--accent);margin-bottom:7px}
+.af-card.r h3{color:var(--rail)}
+.af-card p{margin:0;font-size:14.8px;line-height:1.72}
+
+footer{max-width:1120px;margin:20px auto 12px;padding:16px max(4vw,18px) 10px;border-top:1px solid var(--line);color:var(--mute);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 18px}
+
+/* Lightbox */
+#lb{position:fixed;inset:0;z-index:40;background:rgba(12,11,10,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:16px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:12px;align-items:center;color:#eee;margin-top:12px;font-size:15px;max-width:900px;text-align:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer;flex:none}
+#lb button:hover{background:#333}
+
+@media(max-width:900px){
+  .bs-grid,.tc-in,.specimen-grid,.split,.split.rev,.duo,.duo-asym,.trio,.af-grid{grid-template-columns:1fr;gap:20px}
+  .tc-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.12)}
+  .tc-cell:last-child{border-bottom:none}
+  .split.rev .prose,.split.rev .media{order:0}
+  .fig.tall img{aspect-ratio:4/5}
+}
+@media(prefers-reduced-motion:reduce){
+  .fig img,.ed-ticket{transition:none}
+  .ed-ticket:hover,.fig button:hover img{transform:none}
+}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body>
+<aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・78 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../huozi/index.html" aria-current="page"><small>2025/10/25</small>鐵道與活版印刷的百年物語</a></li><li><a href="../fuyou1025/index.html"><small>2025/10/25</small>孚佑百年・大稻埕文化走讀史蹟導覽</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../metamotion/index.html"><small>2024/11/29</small>無用之用：從松菸展場走進遠雄工地再生現場</a></li><li><a href="../backto1920/index.html"><small>2024/11/29</small>回到 1920：臺北最華美宮殿 × 醫學知識殿堂</a></li><li><a href="../bethany/index.html"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../huozi/index.html" aria-current="page"><small>2025/10/25</small>鐵道與活版印刷的百年物語</a></li><li><a href="../fuyou1025/index.html"><small>2025/10/25</small>孚佑百年・大稻埕文化走讀史蹟導覽</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../metamotion/index.html"><small>2024/11/29</small>無用之用：從松菸展場走進遠雄工地再生現場</a></li><li><a href="../backto1920/index.html"><small>2024/11/29</small>回到 1920：臺北最華美宮殿 × 醫學知識殿堂</a></li><li><a href="../bethany/index.html"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></details><span>2025/10/25</span></div>
+
+<header class="broadsheet" id="top">
+  <div class="bs-in">
+    <div class="bs-masthead">
+      <span class="edition">2025 活字文化祭・台日活字交流特展</span>
+      <span>OCT 25, 2025 · 13:00–17:00 · CHONGNAN 109 TO RAILWAY DEPT.</span>
+    </div>
+    <div class="bs-grid">
+      <div class="bs-copy">
+        <h1>鐵道與活版印刷的百年物語<span>重南 109 開幕茶會 × 城內出版百年走讀</span></h1>
+        <p class="bs-lead">十月底的週六午後，一場只有九天展期的台日活字交流特展，在二二八公園旁的「<b>重南 109 臺博小客廳</b>」熱鬧試營運。先在茶香與鹹派可麗露之間看東鑫活版印刷廠<b>林塗貴老師傅</b>現場檢字、把缺掉的「町」字巧手拼成「<b>田＋丁</b>」壓印在紙上；接著跟著<b>高傳棋老師</b>走出巷弄，穿過本町書店街、榮町衡陽路、明星西點咖啡館與尚未正式開館的秘密老屋「<b>博愛路 2 號</b>」，在五點閉館鐘響前踏進<b>臺博館鐵道部園區</b>，把下午的鉛字凹痕接回百年火車硬票。</p>
+        <div class="bs-chips">
+          <span class="em">重南 109 首次開放飲食茶會</span>
+          <span>東鑫老機捐贈臺博前夕亮相</span>
+          <span>博愛路 2 號未掛牌搶先開門</span>
+          <span>16:30 鐵道部動態模型＋硬票收尾</span>
+        </div>
+      </div>
+      <div class="plate-box">
+        <div class="plate-stamp">乙巳秋・試印</div>
+        <figure class="fig">
+          <button data-ph="133531" aria-label="放大照片：高傳棋老師在重南109手持竹材鉛字作品解說，背後為圓盤印刷機、字庫架與平台印刷機">
+            <img src="img/133531.jpg" alt="高傳棋老師在重南109展場手持竹材鉛字文創作品解說，旁為圓盤印刷機、字庫架與東鑫平台印刷機">
+          </button>
+          <figcaption><b>一室收進台日百年印跡</b>：從左方的圓盤手搖印刷機、手中結合臺灣竹材開發的鉛字印章，到背後滿牆鉛字架與東鑫老平台機。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="typecase" aria-label="活動檔案字盤">
+  <div class="tc-in">
+    <div class="tc-cell"><b>日期與時程</b>2025 年 10 月 25 日（六）<br>13:00–14:30 開幕茶會暨特展體驗<br>14:30–17:00 城內至鐵道部走讀</div>
+    <div class="tc-cell"><b>起點與終點</b><a href="https://www.google.com/maps/search/%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E6%AD%A3%E5%8D%80%E9%87%8D%E6%85%B6%E5%8D%97%E8%B7%AF%E4%B8%80%E6%AE%B5109%E8%99%9F" target="_blank" rel="noopener">重南 109 臺博小客廳（重慶南路一段 109 號）</a><br>經本町・榮町・京町 → 臺博館鐵道部園區</div>
+    <div class="tc-cell"><b>主辦與協辦夥伴</b>匠藏工坊主辦<br>國立臺灣博物館（鐵道部園區）× 臺北市古蹟及歷史建築保存基金會 × 榮町商圈暨城內社區發展協會</div>
+    <div class="tc-cell"><b>台日職人與文史領路</b>日本東京印刷博物館體驗工房（山田和美）× 保田卓也 × 中野豪雄 × 東鑫活版印刷廠（林塗貴師傅）× 大新圖書文具 × 科工館黃俊夫 × 高傳棋導覽</div>
+  </div>
+</section>
+
+<main class="wrap">
+  <section class="specimen-grid">
+    <div class="essay">
+      <h2>願以活字之緣，在博物館的新客廳續寫百年未完篇章</h2>
+      <p>這場「<b>2025 活字文化祭：台日活字交流特展 — 鐵道與活版印刷的百年物語</b>」展期極短，前後僅九天（2025 年 10 月 25 日至 11 月 2 日），而這天的開幕茶會更是把台日職人、在地商圈、博物館館長、老屋守護者與街區行腳全數聚在同一屋簷下的一次。</p>
+      <p>茶會一開場，來自<b>匠藏工坊</b>的主理人便播放了與<b>日本北陸</b>跨海合作的紀錄影像——把臺灣最引以為傲的<b>竹材工藝</b>與<b>傳統鉛字</b>結合，開發出竹製鉛字印章與可隨身攜帶的鉛字造型隨身碟，呼應<b>日本東京印刷博物館（體驗工房・山田和美）</b>以及<b>保田卓也</b>、<b>中野豪雄</b>等台日設計師帶來的鐵道與印刷書籍。</p>
+      <p>更令人驚喜的是空間本身的破格。長期以來，博物館展廳為了保護館藏文物，必須嚴格控制溫濕度、禁止攜帶食物與飲料；然而這回由<b>國立臺灣博物館陳登欽館長</b>與<b>臺北市古蹟及歷史建築保存基金會林崇傑執行長</b>聯手打造的「<b>重南 109 臺博小客廳</b>」，讓博物館第一次走進街屋客廳——現場不但大方端出捲餅、鹹派與可麗露招待貴賓，更宣告未來要把文化與街區日常重新縫在一起。</p>
+      <div class="salon-note">
+        <h3>為什麼說「有人才有魅力」？</h3>
+        開幕時引述日本城鎮營造大師西村幸夫的一句話點破核心：「一個地方會有魅力，是因為有一群有魅力的人在做。」從<b>東鑫活版印刷廠</b>三位合計將近 <b>250 歲</b>的老職人、<b>大新圖書文具公司</b>協力重現的字庫架，到願意出借場地與推動榮町再生的<b>洪明通理事長</b>與<b>國立科學工藝博物館黃俊夫</b>等文史同好，這午後的每一張紙、每一段街史，都是人在現場才揉得出來的溫度。
+      </div>
+    </div>
+
+    <aside class="type-card" aria-label="林塗貴師傅活版鉛字規格標本卡">
+      <div class="type-card-head">
+        <h3>活版鉛字規格標本</h3>
+        <span>TYPE SPECIMEN</span>
+      </div>
+      <table class="spec-table">
+        <tr><th>最小號數</th><td><b>七號字</b>（微縮極小字），往上為<b>六號字</b>。</td></tr>
+        <tr><th>報紙專字</th><td><b>九號字</b>——昔日報紙內文排版主力，密實耐讀。</td></tr>
+        <tr><th>日常最常用</th><td><b>五號字</b>為一般書籍最常見基準，再往上依序為四、三、二、一號。</td></tr>
+        <tr><th>中文最大</th><td><b>初號字（約 42P）</b>；另有昔日臺中印刷廠印製立法院報告專用的 <b>12P 鉛字</b>。</td></tr>
+        <tr><th>英文最大</th><td>最大可達 <b>72P</b>，比中文初號字還要醒目許多。</td></tr>
+        <tr><th>檢字與產能</th><td>全依<b>部首</b>排列分前後架；快手「順稿」一日可檢 <b>四、五千字</b>（逢字跡潦草就難辦）。</td></tr>
+      </table>
+      <div class="spec-facts">
+        <b>老職人現場筆記：</b>一組鉛字版大約可印 <b>15,000 張</b>便會磨損；壞掉的鉛字送回鑄字廠熔化重鑄，沒有廢料，被高傳棋稱作最早的「<b>綠色印刷</b>」。至於地震會不會讓字架全倒？林師傅篤定笑說：「斜靠牆面的鐵架極重，做六、七十年從沒倒過，除非遇上<b>六、七級大地震</b>！」
+      </div>
+    </aside>
+  </section>
+
+  <section class="tickets" aria-label="本場限定亮點">
+    <div class="sec-head">
+      <h2>要來這一場才看得到、聽得到的六枚硬票</h2>
+      <p>有些缺字的現場急智、老機捐贈前的最後運轉與未開館老屋的茶香，錯過這個下午就再難複製。</p>
+    </div>
+    <div class="ticket-grid">
+      <a class="ed-ticket" href="#s2">
+        <div class="ed-top"><span>NO.01 · 現場即興造字</span><span>重南 109</span></div>
+        <b>缺了「町」字，神手合排「榮（田＋丁）」</b>
+        <span>來賓點題印製「重南一○九／臺博小客廳／城內社區／榮町」，字架遍尋不著「町」字，林師傅當場拿「田」與「丁」拼成雙拼奇字！</span>
+      </a>
+      <a class="ed-ticket r" href="#s3">
+        <div class="ed-top"><span>NO.02 · 捐贈前最後登場</span><span>70 年老機</span></div>
+        <b>合計近 250 歲守住的「最後一台平台印刷機」</b>
+        <span>東鑫印刷廠三位老夥伴曾靠拆賣舊機當零件硬撐；其中這台近 70 歲的平台印刷機即將正式入藏臺博館，此刻就在眼前細數竹片彈性的秘密。</span>
+      </a>
+      <a class="ed-ticket" href="#s1">
+        <div class="ed-top"><span>NO.03 · 破格試營運</span><span>臺博小客廳</span></div>
+        <b>第一次在博物館場域裡喝茶吃可麗露</b>
+        <span>陳登欽館長笑談博物館展廳連水都難帶入，重南 109 卻能擺上鹹派、捲餅與茶點，為未來結合社區的「臺博小客廳」鳴響第一槍。</span>
+      </a>
+      <a class="ed-ticket r" href="#s7">
+        <div class="ed-top"><span>NO.04 · 尚未掛牌搶先入內</span><span>博愛路 2 號</span></div>
+        <b>不領政府一毛錢、自掏三千萬的老屋第一名</b>
+        <span>在榮獲老屋新生大獎第一名、還沒正式對外開館前，來自大溪的黃老闆先替這群走讀客推開木門泡茶，連街屋郵票明信片都搶先亮相。</span>
+      </a>
+      <a class="ed-ticket" href="#s6">
+        <div class="ed-top"><span>NO.05 · 城內活歷史</span><span>峰圃 × 天生行</span></div>
+        <b>比臺北建城早一年的茶莊與總統名片印刷廠</b>
+        <span>1883 年峰圃茶莊曾寫信給同姓「蔣」的蔣介石獲親筆回信；1948 年上海人開的「天生行」更是用檜木盒把總統名片送進後門的傳奇。</span>
+      </a>
+      <a class="ed-ticket r" href="#s9">
+        <div class="ed-top"><span>NO.06 · 16:30 準時壓軸</span><span>鐵道部園區</span></div>
+        <b>「十次未必開兩次」的動態模型與硬票印刷</b>
+        <span>趕在五點閉館前，先看耗資兩千三百萬還原清代機器局與中華商場的動態火車模型，再到一樓看名片式硬票印刷機，與下午的鉛字首尾呼應。</span>
+      </a>
+    </div>
+  </section>
+
+  <nav class="route-bar" aria-label="路線站點導覽">
+    <span class="route-lbl">百年軌跡 9 站</span>
+    <a href="#s1"><em>1</em>開幕茶會與小客廳</a>
+    <a href="#s2"><em>2</em>林師傅檢字與「田丁」</a>
+    <a href="#s3"><em>3</em>70歲平台機與竹活字</a>
+    <a href="#s4"><em>4</em>重南後院與衡陽路榮町</a>
+    <a href="#s5"><em>5</em>省城隍廟與明星咖啡</a>
+    <a href="#s6"><em>6</em>峰圃茶莊與天生行</a>
+    <a href="#s7"><em>7</em>秘密彩蛋：博愛路2號</a>
+    <a href="#s8"><em>8</em>北門郵局與修復北門</a>
+    <a href="#s9"><em>9</em>鐵道部與硬票印刷</a>
+  </nav>
+
+  <!-- ACT 1 -->
+  <div class="act-banner">
+    <div class="act-code">ACT I</div>
+    <div>
+      <small>13:00–14:30 · CHONGNAN 109 OPENING &amp; LETTERPRESS DEMO</small>
+      <h2>重南 109 臺博小客廳：當活字遇見竹工藝，老職人手搖出第一道硃砂紅</h2>
+    </div>
+    <p class="act-sub">從茶點桌、竹製鉛字到只剩一家的鑄字與老印刷廠，在字庫架與機器齒輪之間重新認識「摸得到的字」。</p>
+  </div>
+
+  <!-- STOP 1 -->
+  <article class="stop" id="s1">
+    <div class="stop-head">
+      <span class="st-no">STOP 01</span>
+      <span class="st-time">13:00–13:55 · 重慶南路一段 109 號</span>
+      <span class="st-tag">開幕茶會・首次破格開放飲食</span>
+    </div>
+    <h3>走進未來「臺博小客廳」：在白磚牆與字庫架之間端起點心與茶</h3>
+    <div class="split">
+      <div class="prose">
+        <p>這棟曾做過<b>綠色電台</b>、一度差點面臨都更的老屋，在<b>臺北市古蹟及歷史建築保存基金會</b>接手經營後，由<b>林崇傑執行長</b>與<b>國立臺灣博物館陳登欽館長</b>攜手定調為面向街區的「<b>臺博小客廳</b>」。陳館長一上台便笑著解釋為什麼這天的茶點這麼珍貴：臺博館典藏的是「國之重寶」，本館展廳連水都不敢放行，深怕引來微生物與昆蟲；唯有走進這處離 228 公園僅幾步之遙的客廳空間，才能打破禁食高牆，讓人邊吃可麗露與鹹派、邊聽一場關於字體與鐵道的故事。</p>
+        <p>除了<b>洪明通理事長</b>熱情串連榮町商圈店家，<b>高傳棋老師</b>也趁著開場把臺北城內的出版記憶先鋪了一層：昔日臺灣最精華的印刷廠——從日治時期的《<b>臺灣日日新報</b>》到戰後的《<b>新生報</b>》——全都圍繞在這幾條街上，重慶南路全盛時期更曾擠下四十多間書店。這座空間不只是特展場，更是一道把百年書店街重新接回市民生活的門檻。</p>
+      </div>
+      <div class="media">
+        <figure class="fig">
+          <button data-ph="131655" aria-label="放大照片：林崇傑執行長致詞，背後投影幕正播放匠藏工坊與日本合作的紀錄影片">
+            <img loading="lazy" src="img/131655.jpg" alt="重南109開幕茶會現場，林崇傑執行長致詞，投影幕播映日本竹材與鉛字合作影片，右側靠牆立著鉛字架">
+          </button>
+          <figcaption><b>開幕茶會第一現場</b>：林崇傑執行長致詞，背後映著台日職人竹材與活字紀錄片，右側白磚牆邊排滿了大新與東鑫支援的鉛字架。</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="duo">
+      <figure class="fig">
+        <button data-ph="135338" aria-label="放大照片：重南109開幕茶會點心桌上的捲餅、鹹派與可麗露">
+          <img loading="lazy" src="img/135338.jpg" alt="重南109開幕茶會桌上的木架生菜捲餅、法式鹹派、可麗露與茶飲桶">
+        </button>
+        <figcaption><b>博物館走進生活的第一桌茶點</b>：在「臺博小客廳」裡端上木架捲餅、可麗露與熱茶，把嚴肅展場化作人人都能坐下聊天的客廳。</figcaption>
+      </figure>
+      <div class="callout red" style="margin-top:0;align-self:center">
+        <b>「重南 109」為什麼特別？</b><br>
+        1940 年代（戰爭末期）建成的三層街屋原本一直沒人敢承租，直到基金會與臺博館合作，把原本被鎖在恆溫恆濕展櫃外頭的市民日常請進門。展期結束後，這裡也將繼續朝預約開放與社區課程的「<b>臺博小客廳</b>」前進。
+      </div>
+    </div>
+  </article>
+
+  <!-- STOP 2 -->
+  <article class="stop" id="s2">
+    <div class="stop-head">
+      <span class="st-no">STOP 02</span>
+      <span class="st-time">13:55–14:18 · 林塗貴師傅現場示範</span>
+      <span class="st-tag">入行 60 年・缺字急智神來之筆</span>
+    </div>
+    <h3>「做三年成師，做六十年成仙」：林塗貴師傅的檢字、打樣與「榮田丁」</h3>
+    <div class="split rev">
+      <div class="prose">
+        <p>高傳棋老師笑說，這場活版展真正的靈魂不是冰冷的鐵機器，而是高齡近八十歲、從學徒一路做到現在已經<b>將近六十年</b>的<b>東鑫活版印刷廠林塗貴老師傅</b>。「做三年成師，做六十年已經成仙了。」有人問林師傅一天最快能檢多少字？他謙虛地搖頭說：「現在『順稿』一天四、五千字就很多啦！遇到原稿寫得工整的，唸一行就抓一行；最怕遇到筆跡龍飛鳳舞的，得一個字一個字慢慢猜。」</p>
+        <p>大夥起鬨想印一張「<b>重南一○九／臺博小客廳／城內社區／榮町</b>」紀念卡，沒想到「博」字差點被誤拿成「臺北」，幸好印刷前都會先在桌面上「<b>打樣校對</b>」——這正是為什麼當年印書一定要先打樣看有沒有錯字或漏標點。緊接著更有趣的事發生了：整個鉛字架遍尋不著「<b>町</b>」字！眼看卡關，師傅與現場眾人靈機一動，直接抽出「<b>田</b>」與「<b>丁</b>」兩個鉛字緊密併排，當場造出一顆誰也沒見過的活字合體「<b>田丁</b>」。</p>
+        <ul>
+          <li><b>空白也要用鉛塊撐起來</b>：在手搖<b>圓盤印刷機</b>上，字與字、行與行之間必須塞滿不同寬度的鉛條與斜邊鐵塊卡緊；高傳棋笑說以前很多暢銷作家靠「留白」賺版稅，字行鬆散到手指都能伸進去，背後全是師傅塞進去的大量鉛空條。</li>
+          <li><b>摸得到的凹痕</b>：現在市面印刷多講求平版與覆膜，唯有活版印上去的字會微微<b>凹進厚磅棉紙</b>裡，留下數位印刷永遠模仿不來的手感。</li>
+        </ul>
+      </div>
+      <div class="media">
+        <figure class="fig">
+          <button data-ph="140301" aria-label="放大照片：近八十歲的林塗貴老師傅站在鉛字架前示範檢字與打樣">
+            <img loading="lazy" src="img/140301.jpg" alt="戴著鴨舌帽與口罩的林塗貴老師傅站在鉛字架前示範操作，圍觀參加者與攝影師專注記錄">
+          </button>
+          <figcaption><b>人的檢字機器</b>：近八十歲的林塗貴老師傅站在依部首排列的鉛字架前打樣，每一個動作都是六十年功力。</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="duo-asym">
+      <figure class="fig">
+        <button data-ph="141658" aria-label="放大照片：大家排隊操作紅墨滾筒的圓盤印刷機，親手壓印紀念卡">
+          <img loading="lazy" src="img/141658.jpg" alt="參加者輪流握住手搖圓盤印刷機的長柄壓印，上方圓盤塗著鮮明硃砂紅墨">
+        </button>
+        <figcaption><b>紅墨滾上圓盤的那一刻</b>：把厚紙放進定位角、雙手用力一壓到底，每個人都親手把今天的時間壓進紙纖維裡。</figcaption>
+      </figure>
+      <figure class="fig tall">
+        <button data-ph="141846" aria-label="放大照片：現場印出的白色紀念卡，直排紅字寫著重南一○九、臺博小客廳、城內社區、榮田丁">
+          <img loading="lazy" src="img/141846.jpg" alt="躺在散落鉛字上的白色紀念卡，紅墨直排印著重南一○九、臺博小客廳、城內社區、榮田丁">
+        </button>
+        <figcaption><b>這一天才有的「榮田丁」</b>：因為缺了「町」字，硬是用「田」與「丁」湊出來的限定紀念卡，底下還襯著滿桌鉛字。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 3 -->
+  <article class="stop" id="s3">
+    <div class="stop-head">
+      <span class="st-no">STOP 03</span>
+      <span class="st-time">14:18–14:30 · 台日出版桌與平台印刷機</span>
+      <span class="st-tag r">即將入藏臺博・70 歲老機最後現身</span>
+    </div>
+    <h3>三位加起來近 250 歲的守護，與那台 70 歲「用竹片當彈簧」的平台印刷機</h3>
+    <div class="split">
+      <div class="prose">
+        <p>穿過展區另一側，桌面上陳列著<b>匠藏工坊</b>與日本北陸合作的竹材鉛字文創，還有<b>保田卓也</b>、<b>中野豪雄</b>與東京印刷博物館交流的鐵道及印刷出版物；高傳棋手上翻著紀錄林師傅與臺灣老印廠的《<b>臺灣活版時代</b>》，感嘆臺灣目前仍在鑄字的不剩幾家（台北後火車站只剩日星仍在堅持），而印刷老機器更是少掉三分之二以上。</p>
+        <p>目光轉向展場中央那台龐大厚重的<b>平台活版印刷機</b>——這正是<b>東鑫活版印刷廠</b>捐贈給臺博館的鎮展之寶。高傳棋透露一段讓人鼻酸又敬佩的幕後：東鑫的洪老闆、林師傅與大哥三人<b>年紀加起來將近 250 歲</b>，靠著三台六、七十歲的老機器苦撐；因為找不到零組件，以前只要一個螺絲壞掉，根本不可能為了一顆螺絲跑去臺中彰化開模重做，只能再買一台同款舊機回來「殺肉拆零件」，拆到最後一台都快空了。所幸臺博館將它完整清理、迎回典藏，作為未來臺灣印刷特展的起點。</p>
+        <p>大家低頭細看機器上方橫排的細長條，才發現整台黑鐵怪獸裡竟然夾著一排<b>竹片</b>！原因簡單又聰明：竹子既有<b>彈性與韌性</b>、重量又輕，最重要的是「斷了隨時隨地都能替換」。而旁邊另有一台六十多年歷史、臺灣早期「仿造日本發明」的臺中製<b>自動吸紙印刷機</b>，當年靠著 220V 馬達吸紙、每小時可印 4,500 張，更是臺灣機械工藝自力拼裝的見證。</p>
+      </div>
+      <div class="media-stack">
+        <figure class="fig">
+          <button data-ph="142029" aria-label="放大照片：高傳棋老師在字庫架與台日印刷書桌前翻閱《臺灣活版時代》">
+            <img loading="lazy" src="img/142029.jpg" alt="高傳棋老師站在高大鉛字架前，手上翻開《臺灣活版時代》，前方桌面擺放台日活字書籍與竹製文創">
+          </button>
+          <figcaption><b>字架前的台日書籍對照</b>：從紀錄林塗貴師傅的《臺灣活版時代》，到桌面上的竹材鉛字印章與日本鐵道印刷出版品。</figcaption>
+        </figure>
+        <figure class="fig">
+          <button data-ph="142421" aria-label="放大照片：高傳棋老師伸手解說東鑫捐贈給臺博館的平台活版印刷機上的竹片構造">
+            <img loading="lazy" src="img/142421.jpg" alt="高傳棋老師在即將捐贈臺博館的近七十年平台印刷機旁，指著機器上方的竹片機構向眾人解說">
+          </button>
+          <figcaption><b>整台鐵器裡唯獨這排是竹子</b>：近 70 歲的東鑫平台活版印刷機，利用竹片作為送紙壓條，兼具彈性、輕巧與容易更換的現場智慧。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <!-- ACT 2 -->
+  <div class="act-banner">
+    <div class="act-code">ACT II</div>
+    <div>
+      <small>14:30–16:00 · HONMACHI, SAKAEMACHI &amp; KYOMACHI WALK</small>
+      <h2>本町、榮町到京町：走過書店街、藥房、俄式咖啡與未掛牌的秘密紅磚屋</h2>
+    </div>
+    <p class="act-sub">離開重南 109 的墨香，拐進 1940 年代老屋後院與街廓，把書局、茶莊、印刷廠與老招牌拼成城內的百年出版地圖。</p>
+  </div>
+
+  <!-- STOP 4 -->
+  <article class="stop" id="s4">
+    <div class="stop-head">
+      <span class="st-no">STOP 04</span>
+      <span class="st-time">14:30–15:20 · 重慶南路一段 → 衡陽路（榮町）</span>
+      <span class="st-tag">1940 年代雙連街屋・榮町老店列傳</span>
+    </div>
+    <h3>從重南 109 後院老樹出發：走過公園號、全祥、菊水仙與菊元百貨的街屋年代</h3>
+    <p>出發前，高傳棋特意帶大家穿過重南 109 屋後看一眼這棟「秘密格局」：原來它是<b>兩棟 1940 年代戰爭末期標準三層街屋合併</b>而成，進深極深、後院還藏著一棵高大老樹，三樓上方的大平台甚至曾是過去房地產公司進駐時留下的記憶。一跨出騎樓，左手邊就是重慶南路「<b>本町</b>」與二二八和平公園（原「<b>新公園</b>」——臺北第二座公園，僅次於圓山；近期整修水溝時還挖出許多當年日本人拿來砌下水道的清代城牆石）。</p>
+    <p>沿著重慶南路轉進<b>衡陽路（榮町）</b>，原本被看板與鐵皮遮住的百年街廓一下子立體起來：高傳棋指出，日治街屋可以從屋頂與立面看出時代分水嶺——1920 年代「市區改正」的街屋追求現代化；而在 <b>1935 年臺灣史上死傷最慘重的墩仔腳大地震</b>之後，1930 年代末期街屋轉角紛紛改採 <b>45 度斜角或圓弧</b>以強化抗震。走在街上抬頭數一數，那些戰後大撤退帶來的人潮與資本，把上海藥房、江浙菜館、大稻埕茶莊與印刷書局全擠進這短短幾百公尺裡。</p>
+
+    <div class="duo">
+      <figure class="fig">
+        <button data-ph="144802" aria-label="放大照片：重慶南路與衡陽路口的公園號酸梅湯與 1945 年創立的中華西藥行">
+          <img loading="lazy" src="img/144802.jpg" alt="高傳棋老師站在重慶南路衡陽路口解說，後方是公園號酸梅湯、1945年創立的中華西藥行與二二八公園綠蔭">
+        </button>
+        <figcaption><b>1945 大撤退的十字路口</b>：左為曾讓雙十閱兵返臺華僑排成三圈的「公園號」酸梅湯，右為西元 1945 年創立的「中華西藥行」。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="145539" aria-label="放大照片：衡陽路榮町一整排保存下來的日治紅磚與巴洛克洗石子街屋">
+          <img loading="lazy" src="img/145539.jpg" alt="衡陽路北側連棟老街屋，包含「榮町再現」白樓、三開間紅磚屋與巴洛克洗石子山牆店屋">
+        </button>
+        <figcaption><b>榮町街屋的建築標本排排站</b>：從「榮町再現」白牆、三開間紅磚立面到右方高聳山牆，一眼看盡二十世紀初城內商街的天際線。</figcaption>
+      </figure>
+    </div>
+
+    <div class="shop-matrix">
+      <article class="shop-card">
+        <small>衡陽路轉角・國慶記憶</small>
+        <h4>公園號酸梅湯 × 三葉莊</h4>
+        <p>早年從玻璃杯、塑膠袋進化到紙杯；高傳棋笑憶大學同學每年雙十節前夕必消失回店裡幫忙——民國五、六十年代閱兵大典時，華僑為了這杯酸梅湯曾在公園排了三圈。一旁消失的「<b>三葉莊</b>」曾與掬水軒本部、綠灣餐廳並列城內三大約會聖地。</p>
+      </article>
+      <article class="shop-card">
+        <small>1945–1950 年代資本街廓</small>
+        <h4>上海聯合藥局 × 伍中行 × 大三元</h4>
+        <p>重慶南路與衡陽路曾是全臺北最貴的律師、會計師寫字樓與金銀珠寶黑市聚落，更匯聚<b>1950 年代上海人</b>帶來的資本與西藥房（曾首創賣給當兵男孩的「疝氣帶」）、<b>大三元</b>與城內唯一南北貨老店<b>伍中行</b>。</p>
+      </article>
+      <article class="shop-card">
+        <small>市定古蹟・花茶先鋒</small>
+        <h4>全祥茶莊 × 掬水軒本部</h4>
+        <p>從大稻埕搬進城內的<b>全祥茶莊</b>，見證本省茶人與外省花茶口味的交會；緊鄰的<b>掬水軒</b>一樓賣店、二樓沙龍，後來還做過軍用戰備口糧與情人糖——高傳棋曾與呂大吉建築師參與修復，從廢棄堆裡搶救出五、六十桶鐵盒與手繪包裝設計稿。</p>
+      </article>
+      <article class="shop-card">
+        <small>七重天・1930 年代摩登地標</small>
+        <h4>菊元百貨 × 《文星》與李敖</h4>
+        <p>衡陽路與博愛路口的<b>菊元百貨</b>（曾高七層稱「七重天」，戰後改為國華百貨，穿上一層玻璃帷幕鐵甲）至今仍盼著重現風華；當年街上還流行一句「<b>咖啡喝明星，雜誌看文星</b>」，李敖出獄接掌《文星》後在禁書年代賣翻街頭。</p>
+      </article>
+    </div>
+
+    <div class="duo-asym">
+      <figure class="fig">
+        <button data-ph="145855" aria-label="放大照片：衡陽路與博愛路交口的菊元百貨舊址（今白色拱廊建築）與新光大樓">
+          <img loading="lazy" src="img/145855.jpg" alt="衡陽路博愛路口的原菊元百貨轉角建築與一旁圓拱門廳，遠方高聳著新光摩天大樓">
+        </button>
+        <figcaption><b>昔日全臺最高「七重天」</b>：衡陽路與博愛路交口的原菊元百貨，當年搭電梯就能遠眺淡水河，對面昔日亦為都更與文資立面保留的起點。</figcaption>
+      </figure>
+      <figure class="fig tall">
+        <button data-ph="150122" aria-label="放大照片：衡陽路上保留老立面的銀樓與店屋街景">
+          <img loading="lazy" src="img/150122.jpg" alt="衡陽路一側保留舊式洗石子立面與「街屋銀樓」招牌的窄長店屋">
+        </button>
+        <figcaption><b>毛筆書寫的看板風景</b>：高傳棋特別提醒，全世界只剩極少數街頭仍滿是正體漢字毛筆招牌，每一塊金字匾額都帶著手工溫度。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 5 -->
+  <article class="stop" id="s5">
+    <div class="stop-head">
+      <span class="st-no">STOP 05</span>
+      <span class="st-time">15:20–15:35 · 武昌街一段</span>
+      <span class="st-tag r">城內唯一大廟・文學咖啡沙龍</span>
+    </div>
+    <h3>走進城內唯一的省城隍廟，與留住周夢蝶、黃春明座位的明星西點咖啡館</h3>
+    <div class="split">
+      <div class="prose">
+        <p>穿過全天候串連街區的城中市場通道，拐進武昌街一段，迎面是香火鼎盛的<b>臺灣省城隍廟</b>。高傳棋解釋，日治時期城內多數廟宇幾乎消失，戰後靠著商圈店家一步步守護，省城隍廟成了城內少見仍屹立不搖的大廟——二樓早年還設有獎堂，在尚未出現社區大學的年代就已開始舉辦文史講座。</p>
+        <p>緊鄰不遠處便是從上海霞飛路一路遷來臺北、自 <b>1949 年</b>開業至今的<b>明星西點咖啡館（Astoria）</b>。當年幾位俄羅斯師傅跟著簡老闆在這裡烤出軟糖與俄式麵包，不僅吸引蔣經國與俄羅斯夫人青睞，樓下騎樓更成了詩人<b>周夢蝶</b>擺書攤時老闆留麵包給他吃的地方。九十多歲的<b>黃春明</b>曾在這裡回憶「以前出版社邀稿壓力大，領到第一筆稿費就先上二樓喝咖啡刺激靈感」，至今二樓仍保留著當年大家打電話找黃春明的那個專屬座位。</p>
+      </div>
+      <div class="media-stack">
+        <figure class="fig">
+          <button data-ph="152713" aria-label="放大照片：武昌街臺灣省城隍廟內燈籠高掛、香客與走讀隊伍聚集">
+            <img loading="lazy" src="img/152713.jpg" alt="臺灣省城隍廟內紅燈籠高掛，參加者在正殿旁駐足聽高傳棋講解">
+          </button>
+          <figcaption><b>商圈守護出來的城內大廟</b>：臺灣省城隍廟不僅保佑城池與良緣，也以民間捐款與文化講堂維繫著城中人的公共記憶。</figcaption>
+        </figure>
+        <figure class="fig">
+          <button data-ph="153022" aria-label="放大照片：武昌街一段 7 號明星西點咖啡館木造拱門與麵包櫥窗">
+            <img loading="lazy" src="img/153022.jpg" alt="明星西點咖啡館 Astoria Since 1949 的木造拱窗與櫥窗內滿滿西點，門前參加者駐足聆聽">
+          </button>
+          <figcaption><b>「咖啡喝明星，雜誌看文星」</b>：差點在都市更新裡消失的明星咖啡館，如今把周夢蝶與黃春明的文學位置一起守了下來。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <!-- STOP 6 -->
+  <article class="stop" id="s6">
+    <div class="stop-head">
+      <span class="st-no">STOP 06</span>
+      <span class="st-time">15:35–15:50 · 漢口街一段 → 博愛路</span>
+      <span class="st-tag">1883 老茶莊 × 1948 戰後首間印刷行</span>
+    </div>
+    <h3>比臺北城還老一歲的峰圃茶莊，與替總統用檜木盒送名片的天生行</h3>
+    <div class="split rev">
+      <div class="prose">
+        <p>沿著漢口街與博愛路走下去，巷口接連出現兩塊重量級招牌：第一家是創立於 <b>1883 年（比 1884 年臺北城建城還要早一年）</b>的<b>峰圃茶莊</b>。早從大稻埕起家，歷經三代傳承，1949 年白色恐怖與二二八氛圍緊繃時，當時的老闆曾親自寫信給同姓「蔣」的蔣介石請求照應，竟然還真收到總統親筆回信；此後從救國團旅社到各大公家機關，桌上擺的幾乎都是峰圃茶包。</p>
+        <p>接著轉往博愛路上的「<b>天生行</b>」，抬頭看見黑底金字匾額側邊刻著「<b>民國三十七年十月立・徐世瀛贈</b>」——這正是 <b>1948 年</b>上海人來臺創辦的<b>戰後全臺灣第一家印刷行</b>！高傳棋揭露一段只有行內人才知道的往事：當年天生行全盛期擁有四百多名員工，每隔幾年總統府就會把老闆叫進去印「總統名片」；老蔣總統不會親自露面，由第四局局長在後門等候，印好後還得用特製的<b>檜木盒子</b>恭敬裝妥奉上。後來老闆退休，部分員工出來自立門戶取名「大生」，象徵「再怎麼大也不能大過『天』生行」。</p>
+      </div>
+      <div class="media-stack">
+        <figure class="fig tall">
+          <button data-ph="154008" aria-label="放大照片：高傳棋老師站在峰圃茶莊門前高舉右手解說這家創於 1883 年的百年茶行">
+            <img loading="lazy" src="img/154008.jpg" alt="峰圃茶莊騎樓下，高傳棋老師指著招牌向大家訴說比臺北城早一年創立的百年茶事">
+          </button>
+          <figcaption><b>1883 年至今的茶香</b>：峰圃茶莊比臺北建城還早一年開張，門面上也留下于右任等文人書寫匾額的時代印記。</figcaption>
+        </figure>
+        <figure class="fig">
+          <button data-ph="154558" aria-label="放大照片：天生行黑底金字招牌特寫，側邊刻著民國三十七年十月立">
+            <img loading="lazy" src="img/154558.jpg" alt="天生行黑底金字招牌寫著民國三十七年十月立，旁邊接續著黃底紅字的中英文電腦排版">
+          </button>
+          <figcaption><b>民國三十七年的戰後首家印行</b>：從替總統府印製檜木盒名片到今日「中英文電腦排版」，一塊招牌就是七十多年的印刷轉型史。</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div style="margin-top:20px">
+      <figure class="fig">
+        <button data-ph="154754" aria-label="放大照片：高傳棋老師在博愛路相機街路口指著 1930 年代街屋與老字號看板解說">
+          <img loading="lazy" src="img/154754.jpg" alt="博愛路相機街路口，高傳棋老師手指向對街街屋立面，一旁可見相機店家與義美等招牌">
+        </button>
+        <figcaption><b>相機街的另一層底片史</b>：博愛路曾是全臺北第一家萊卡授權經銷據點與傳統底片相機維修重鎮，街屋斜角立面與膠卷記憶至今仍並肩站在街口。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 7 -->
+  <article class="stop" id="s7">
+    <div class="stop-head">
+      <span class="st-no">STOP 07</span>
+      <span class="st-time">15:50–16:12 · 博愛路 2 號（原撫臺街・京町三角窗）</span>
+      <span class="st-tag">隱藏彩蛋・尚未掛牌先迎客的老屋第一名</span>
+    </div>
+    <h3>推開還沒開館的「博愛路 2 號」：不靠一毛補助自費兩三千萬修回來的三角街屋</h3>
+    <div class="split">
+      <div class="prose">
+        <p>走到博愛路尾端、緊鄰國定古蹟北門與臺北郵局的三角窗，高傳棋突然神神秘秘敲開一扇厚實木門——這棟剛在當年奪下<b>臺北老屋新生大獎第一名</b>的「<b>博愛路 2 號</b>」（尚未正式掛牌命名，大家笑稱還不知道要叫「環島房」還是「博愛路 2 號」），平日根本還沒對外開放！來自大溪、早年是鳳飛飛兒時玩伴的<b>黃老闆</b>，當年靠著在鄰近鄭州路、北門一帶賣<b>牛肉麵</b>起家，在眾人看笑話的年代咬牙把這棟老屋買了下來；更驚人的是他「<b>沒拿政府一毛錢補助</b>」，自費花掉<b>兩、三千萬</b>、與匠師一點一滴「修舊如舊」，甚至從臺大圖書館調出二樓日治食堂老照片逐一復原。</p>
+        <p>踩著木梯踏上二樓，迎面是溫潤的木格窗與三角街屋罕見的三面採光——原來早在 1909 年日本政府展開「京町」市區改正時，新街道穿越清代巡撫街衙門舊址，硬是把這塊基地切成了極少見的<b>三面開店三角形街廓</b>。桌上早已悄悄擺出黃老闆還沒掛牌就先印好的街區文創郵票與明信片，黃老闆還親切地拿出一張郵票親手送給這天隊伍裡年紀最小的小朋友，讓整趟走讀平添一段最意外的溫暖彩蛋。</p>
+      </div>
+      <div class="media">
+        <figure class="fig tall">
+          <button data-ph="155117" aria-label="放大照片：高傳棋老師與參加者推開博愛路 2 號紅磚外牆木門走進屋內">
+            <img loading="lazy" src="img/155117.jpg" alt="紅磚牆與木門之間，高傳棋老師領著參加者彎腰步入尚未對外開放的博愛路二號店屋">
+          </button>
+          <figcaption><b>還沒正式掛牌先推開的紅磚門</b>：博愛路 2 號（市定古蹟店屋）在正式開館前夕特別為這場走讀開門，只有這天來才踏得進來。</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="duo">
+      <figure class="fig">
+        <button data-ph="155246" aria-label="放大照片：博愛路 2 號二樓復原後的木格窗、木樓梯與白柱空間">
+          <img loading="lazy" src="img/155246.jpg" alt="博愛路二號二樓室內寬敞明亮，保有木格天井、拱形磚牆與面向北門郵局的格子木窗">
+        </button>
+        <figcaption><b>自費兩三千萬修出的北門第一排</b>：二樓重現日治時期老食堂氛圍，木格子窗外望出去就是北門郵局與承恩門視野。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="160136" aria-label="放大照片：博愛路 2 號窗邊展桌上整齊擺放的老屋明信片與專屬文創郵票">
+          <img loading="lazy" src="img/160136.jpg" alt="木窗旁的墨綠展桌上整齊陳列著臺北市市定古蹟博愛路二號店屋的明信片與水彩手繪郵票">
+        </button>
+        <figcaption><b>還沒掛牌就先誕生的紙上文創</b>：黃老闆把這棟「三面開店」三角形街屋的百年手繪圖與老照片印成明信片與郵票，贈予最小的小參加者。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- ACT 3 -->
+  <div class="act-banner">
+    <div class="act-code">ACT III</div>
+    <div>
+      <small>16:12–17:00 · BEIMEN &amp; NTM RAILWAY DEPARTMENT PARK</small>
+      <h2>北門到臺博館鐵道部園區：趕赴 16:30 動態模型，在名片式硬票前完成百年閉環</h2>
+    </div>
+    <p class="act-sub">從郵局、修復鷹架包覆的北門與清代機器局遺構，走進臺灣最早的鐵道行政心臟，讓活版印刷與火車硬票在五點鐘響時正式合體。</p>
+  </div>
+
+  <!-- STOP 8 -->
+  <article class="stop" id="s8">
+    <div class="stop-head">
+      <span class="st-no">STOP 08</span>
+      <span class="st-time">16:12–16:25 · 忠孝西路一段・北門郵局與北門</span>
+      <span class="st-tag r">鷹架裡的北門・清代機器局遺構</span>
+    </div>
+    <h3>北門修復鷹架與雙子星的垂直對望：清代機械局為什麼後來變成了鐵道部</h3>
+    <div class="split rev">
+      <div class="prose">
+        <p>走出博愛路 2 號，轉角先與宏偉的<b>臺北郵局</b>打個照面（昔日全臺最核心的郵政與鐵路交通樞紐便並肩立於此），緊接著望向正在進行「<b>國定古蹟臺北府城－北門修復工程</b>」的承恩門。門樓暫時被層層鷹架包覆（工程看板寫著預計 115 年 6 月完工），背後則是節節長高的<b>臺北雙子星</b>鋼骨塔吊；高傳棋笑說昔日戒嚴時期前站不能蓋太高、後站沒人開發，如今雙子星一蓋起來，後站反而高過前站。</p>
+        <p>穿過馬路走進<b>國立臺灣博物館鐵道部園區</b>外緣，草地上鋪展著一段<b>清代機器局石板遺跡</b>。高傳棋用一句話點穿它的轉折：清代劉銘傳時期機器局原本在這裡打造子彈與軍械，日本人來臺後嫌清式子彈品質不佳，索性把機器局基地改造成<b>鐵道部（1918–1920 年代完工的半木構造紅磚建築，規模僅次於總統府）</b>——因為只有把全島鐵路打通，才能真正貫通臺灣經濟與資源動脈的任督二脈。</p>
+      </div>
+      <div class="media">
+        <figure class="fig tall">
+          <button data-ph="160637" aria-label="放大照片：搭起鷹架進行修復工程的北門與後方興建中的雙子星工地">
+            <img loading="lazy" src="img/160637.jpg" alt="國定古蹟臺北府城北門修復工程圍籬與鷹架包覆的城門，後方是雙子星高樓吊臂">
+          </button>
+          <figcaption><b>過渡期的北門紀念照</b>：圍籬預告 115 年 6 月完工的北門修復工程，與背後起高樓的臺北雙子星一起被收進這個陰天黃昏。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <!-- STOP 9 -->
+  <article class="stop" id="s9">
+    <div class="stop-head">
+      <span class="st-no">STOP 09</span>
+      <span class="st-time">16:25–17:00 · 臺博館鐵道部園區（壓軸終站）</span>
+      <span class="st-tag">16:30 動態模型 × 名片式硬票印刷</span>
+    </div>
+    <h3>走上 110 年木造樓梯趕看 16:30 動態模型，在「名片式硬票」印刷櫃前畫下句點</h3>
+    <div class="split">
+      <div class="prose">
+        <p>一進廳舍大門，高傳棋便催促大夥加快腳步踏上擁有將近 <b>110 年歷史的檜木造雙向樓梯</b>——因為樓上 <b>16:30</b> 準時開演全臺鐵道迷最關注的「<b>1910 年代臺北工場動態火車模型</b>」！這座耗資<b>兩千三百萬元</b>打造的比例模型，把消失的清代機器局、日治鐵道部、彰化扇形車庫與中華商場全數濃縮在同一張巨型沙盤上。最戲劇化的是高傳棋一旁打趣提醒：「這座機關常常故障維修，有時候來十次還開不到兩次！」幸運的是這天 16:30 一到，軌道上的火車頭果然準時緩緩滑出山洞，把全場大小朋友都定在了玻璃圍欄邊。</p>
+        <p>看完動態模型，沿著<b>「逢山開洞（獅球嶺隧道）」「逢河架橋」</b>、二樓鐵道部長專屬廁所（連轉角瓷磚都是圓弧收邊）與時刻表展區一路下樓，鑽進比人還高的厚重<b>鐵道部大金庫</b>看早年帳冊與老「身份證」，最後終於來到整場走讀最扣題的壓軸——<b>一樓「名片式車票印刷」展區</b>！</p>
+        <div class="callout">
+          <b>為什麼熱感應車票沒有溫度？硬票才是鐵道的活版印刷！</b><br>
+          高傳棋指著展櫃裡的「<b>行政處票務中心</b>」鋁箱、硬票底紋鋼板與全臺唯一展示中的傳統印票機解釋：過去每一張火車硬票（從日治、戰後到「永保安康」紀念票），都得經過裁紙、套印底紋、再以<b>活版鉛字與號碼機</b>壓印站名、車次、票價與流水編號——正因如此，才能留下手摸得出凹凸感、放進皮夾不會三天就褪色的「有溫度的車票」。從下午一點重南 109 的<b>手搖圓盤活版印刷</b>，走到五點鐘聲響起時的<b>鐵道名片式硬票</b>，四個小時的軌跡在此完美接軌。
+        </div>
+      </div>
+      <div class="media-stack">
+        <figure class="fig tall">
+          <button data-ph="161930" aria-label="放大照片：眾人步上臺博館鐵道部園區將近 110 年歷史的木造樓梯">
+            <img loading="lazy" src="img/161930.jpg" alt="參加者魚貫踏上鐵道部廳舍近110年歷史的木造階梯，趕赴二樓四點半的動態展演">
+          </button>
+          <figcaption><b>踩過 110 年的木頭聲音</b>：日治時期高階官廳標準的雙翼木造樓梯，正趕赴 16:30 樓上的動態鐵道模型開場。</figcaption>
+        </figure>
+        <figure class="fig tall">
+          <button data-ph="163652" aria-label="放大照片：16:30 準時啟動的 1910 年代臺北工場動態火車模型">
+            <img loading="lazy" src="img/163652.jpg" alt="二樓展廳1910年代臺北工場與中華商場動態模型，小朋友拿著相機俯身捕捉列車駛過">
+          </button>
+          <figcaption><b>幸運遇上的 16:30 列車發車</b>：兩千三百萬還原的「1910 年代臺北工場」與中華商場沙盤，小火車順利繞行引來現場驚呼。</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="duo-asym">
+      <figure class="fig">
+        <button data-ph="165322" aria-label="放大照片：鐵道部一樓名片式車票印刷展櫃，可見行政處票務中心箱子、底紋鋼板與高傳棋老師">
+          <img loading="lazy" src="img/165322.jpg" alt="高傳棋老師站在鐵道部名片式硬票展櫃旁，櫃內展示行政處票務中心銅鋁箱、硬票鋼板與松山至台北硬票">
+        </button>
+        <figcaption><b>整場活版之旅的終極呼應</b>：櫃裡擺著「行政處票務中心」送票箱、硬票底紋鋼板與松山—台北紙票，原來老火車票本身就是活版印刷的極致日常。</figcaption>
+      </figure>
+      <figure class="fig tall">
+        <button data-ph="165125" aria-label="放大照片：高傳棋老師站在鐵道部一樓大金庫門前講解庫房帳冊與身份證">
+          <img loading="lazy" src="img/165125.jpg" alt="厚實的鐵道部大金庫鐵門敞開，高傳棋老師站在門前指著裡頭的帳冊、木算盤與身份證">
+        </button>
+        <figcaption><b>大金庫裡的舊時代帳冊</b>：厚到炸藥都未必炸得開的鐵道部大金庫，裡頭鎖著的木製計費具與老「身份證」，成了建築修復後最迷人的細節。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- AFTERWORD -->
+  <section class="afterword" aria-label="走讀後記">
+    <div class="afterword-head">
+      <h2>校對與壓印：這一天才看得到的四個時刻</h2>
+      <p>五點鐘閉館音樂在鐵道部戶外草坪與清代機械局遺構旁響起，從一點鐘的手搖紅墨到五點鐘的硬票櫃台，這場只此一回的台日活字接力也在此壓下最後一枚印記。</p>
+    </div>
+    <div class="af-grid">
+      <article class="af-card">
+        <h3>唯一：用「田＋丁」合拼出來的榮町記憶</h3>
+        <p>再怎麼精準的排版軟體都不會缺字，唯有親自站在鉛字架前，才會碰上找不到「町」字的突發狀況；林塗貴老師傅靈機一動把「田」與「丁」併在一起，讓每個人帶回家的那張「重南一○九／臺博小客廳／城內社區／榮田丁」都成了絕無僅有的現場版。</p>
+      </article>
+      <article class="af-card r">
+        <h3>最後一舞：東鑫近 70 年老機入藏臺博前夕</h3>
+        <p>三位年紀加起來近 250 歲的印刷廠老師傅，用拆賣同款機器的頑固把這台平台印刷機留了下來。在它正式進駐博物館成為靜態典藏之前，能親眼看它在重南 109 展場把竹片壓條的巧思攤在眾人眼前，本身就是一段可遇不可求的見證。</p>
+      </article>
+      <article class="af-card r">
+        <h3>還沒開門就先泡茶：博愛路 2 號的彩蛋</h3>
+        <p>如果只是照表走過重慶南路與衡陽路，絕對看不到「博愛路 2 號」二樓窗外對望北門的木窗風景——多虧高傳棋與自費兩三千萬修老屋的黃老闆熟識，才讓大家在這棟老屋新生第一名還沒正式掛牌前，搶先踏進這座三角形街屋。</p>
+      </article>
+      <article class="af-card">
+        <h3>當博物館客廳接住百年硬票的溫度</h3>
+        <p>這天打破博物館禁食規範、端出茶點與捲餅的「臺博小客廳」，替九天的台日活字交流特展揭開最親切的序幕；而黃昏時分站在鐵道部「名片式車票印刷」展櫃前，更讓人突然讀懂——原來從書頁到車票，我們懷念的一直都是那道壓進紙裡、不會輕易褪色的手寫與活版印痕。</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>2025/10/25 參加「2025活字文化祭：台日活字交流特展 — 鐵道與活版印刷的百年物語」開幕茶會暨走讀（匠藏工坊主辦・國立臺灣博物館、臺北市古蹟及歷史建築保存基金會協辦・高傳棋導覽）的走讀筆記</span>
+  <a href="#top">回到頁首 ↑</a>
+</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../yangming/index.html"><small>‹ 較新的一場・2025/11/01</small>尋找修澤蘭：陽明高中</a><a class="nx" href="../fuyou1025/index.html"><small>較早的一場・2025/10/25 ›</small>孚佑百年・大稻埕文化走讀史蹟導覽</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar">
+    <button id="lbp" aria-label="上一張">‹</button>
+    <span id="lbc"></span>
+    <button id="lbn" aria-label="下一張">›</button>
+    <button id="lbx" aria-label="關閉">✕</button>
+  </div>
+</div>
+
+<script>
+{
+  const btns=[...document.querySelectorAll('button[data-ph]')];
+  const items=btns.map((b,idx)=>{
+    const img=b.querySelector('img');
+    const fig=b.closest('figure');
+    const cap=fig?fig.querySelector('figcaption').textContent:img.alt;
+    b.dataset.idx=idx;
+    return {src:img.getAttribute('src'),alt:img.alt,cap};
+  });
+  const lb=document.getElementById('lb'),im=document.getElementById('lbi'),cp=document.getElementById('lbc');
+  let cur=0;
+  const show=i=>{
+    cur=(i+items.length)%items.length;
+    const x=items[cur];
+    im.src=x.src;
+    im.alt=x.alt;
+    cp.textContent=`${x.cap}　（${cur+1}/${items.length}）`;
+  };
+  document.addEventListener('click',e=>{
+    const b=e.target.closest('button[data-ph]');
+    if(b){show(+b.dataset.idx);lb.classList.add('on');document.getElementById('lbx').focus();}
+  });
+  document.getElementById('lbp').onclick=()=>show(cur-1);
+  document.getElementById('lbn').onclick=()=>show(cur+1);
+  const close=()=>lb.classList.remove('on');
+  document.getElementById('lbx').onclick=close;
+  lb.addEventListener('click',e=>{if(e.target===lb)close();});
+  document.addEventListener('keydown',e=>{
+    if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')show(cur-1);
+    if(e.key==='ArrowRight')show(cur+1);
+  });
+}
+</script>
+</body>
+</html>
