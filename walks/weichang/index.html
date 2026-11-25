@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>教師監獄？揭開台大闈場秘辛｜走讀筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 推開普通教學館一樓紅門、走進無窗無訊號的地下密室，替只能容納 20 人的半小時限定導覽留下一份空間檔案
+   IDEA: 從古代插滿荊棘的試院「棘闈」談到當代「出題教師監獄」，把 B01 闈長室、B1F 夾題流水線、樓中樓寢室、四代遷徙史與 1F 餐廳廚房拼成一張雙層剖面
+   PICTURE: 普通教學館地下一樓闈場工作區全景（101110.jpg）
+   COLOUR and TYPE: 封條紅 #b33627（主色關鍵詞標記）、檔案紙 #f3efe6、圖紙藍灰 #284b5c、銅印褐 #9c6222；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 地下密室全景 Hero → 空間緣起與三道關防摘要 → 互動「一紙試卷的入闈動線 × 1F/B1F 雙層剖面」 → 獨特亮點矩陣 → 9 站交錯檔案版型（50/50 寬幅圖文／跨欄全景／證據圖版對照） */
+:root{color-scheme:light dark;
+--bg:light-dark(#f3efe6,#131619);--card:light-dark(#fcfaf5,#1b2024);--ink:light-dark(#1a1e22,#eae7df);
+--mute:light-dark(#5c6166,#9ea4aa);--seal:light-dark(#b33627,#ec8374);--slate:light-dark(#284b5c,#86b2c6);
+--amber:light-dark(#9c6222,#dfb070);--soft-r:light-dark(#f8eae7,#2c1c1a);--soft-b:light-dark(#e5edf1,#1c282e);
+--soft-a:light-dark(#f5eee1,#292218);--line:light-dark(#dcd6ca,#2d3339)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:18px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.8 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(30px,5.3vw,52px);line-height:1.14;font-weight:800}
+h2{font-size:clamp(22px,3vw,29px);line-height:1.3;font-weight:800}
+h3{font-size:clamp(20px,2.5vw,25px);line-height:1.34;font-weight:800}
+a:focus-visible,button:focus-visible{outline:3px solid var(--seal);outline-offset:2px}
+
+/* Hero：地下工作區全景 */
+.hero{background:#151a1e;color:#f5f2eb}
+.hero .ph{position:relative;height:clamp(360px,58vh,560px);overflow:hidden}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,20,24,.18) 0%,rgba(16,20,24,.52) 48%,rgba(16,20,24,.95) 100%)}
+.hero .tx{position:absolute;left:max(5vw,16px);right:max(5vw,16px);bottom:28px;z-index:1;max-width:1040px}
+.hero .stamp{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px;padding:4px 13px;border:1.5px solid rgba(236,131,116,.75);border-radius:4px;background:rgba(24,20,20,.78);color:#f9c9c2;font:700 12.5px/1.5 "Noto Sans TC",sans-serif;letter-spacing:.08em;margin-bottom:12px}
+.hero .stamp i{width:7px;height:7px;border-radius:50%;background:#ec8374;display:inline-block}
+.hero h1 span{display:block;font-size:clamp(18px,2.5vw,25px);font-weight:600;color:#d6e1e6;margin-top:8px}
+.hero p{margin:.65em 0 0;font-size:16.5px;max-width:66ch;opacity:.94}
+.meta{display:flex;flex-wrap:wrap;gap:10px 26px;padding:16px max(5vw,16px);font-size:14px;background:#101417;color:#d3d8dc;border-top:1px solid rgba(255,255,255,.08)}
+.meta b{color:#ec8374;font-weight:700;margin-right:6px}
+
+main{max-width:1140px;margin:0 auto;padding:24px max(4vw,14px) 64px}
+
+/* 開篇檔案：空間故事 ＋ 右側三道關防摘要卡 */
+.dossier{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(0,.78fr);gap:20px;margin:10px 0 32px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px}
+.panel h2{font-size:clamp(21px,2.5vw,26px);margin-bottom:12px}
+.panel p{margin:.6em 0;font-size:15.8px}
+.panel p b,.thorns b{color:var(--seal);font-weight:700}
+.thorns{margin-top:16px;padding:14px 18px;border-left:4px solid var(--amber);background:var(--soft-a);border-radius:0 12px 12px 0;font-size:14.8px}
+.thorns strong{color:var(--amber);display:block;margin-bottom:4px;font-size:15px}
+
+.seal-card{background:#18242b;color:#edf1f2;border-radius:16px;padding:20px 22px;border:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:12px}
+.seal-card-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.seal-card h3{font-size:18px;color:#f5b8af;letter-spacing:.03em}
+.seal-badge{font:700 11.5px "SF Mono",Consolas,monospace;color:#f5b8af;border:1px solid rgba(245,184,175,.5);padding:2px 8px;border-radius:4px;letter-spacing:.08em}
+.seal-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.12)}
+.seal-stats div{background:rgba(255,255,255,.06);border-radius:10px;padding:8px 10px;text-align:center}
+.seal-stats b{display:block;font:800 20px/1.15 "Noto Serif TC",serif;color:#fff}
+.seal-stats small{font-size:12px;color:#b8c7ce}
+.seal-rules{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.seal-rules li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:baseline;font-size:14px;border-bottom:1px dashed rgba(255,255,255,.14);padding-bottom:7px}
+.seal-rules li:last-child{border-bottom:none;padding-bottom:0}
+.seal-rules span{font:700 12px "Noto Sans TC",sans-serif;color:#18242b;background:#ec8374;padding:1px 8px;border-radius:4px;white-space:nowrap}
+.seal-rules span.b{background:#86b2c6}
+.seal-rules b{color:#fff;font-weight:700}
+.seal-tip{font-size:13px;color:#bac7ce;border-top:1px solid rgba(255,255,255,.14);padding-top:10px;margin:0}
+
+/* 互動剖面模組：1F/B1F 雙層空間與試卷動線 */
+.vault{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px;margin:0 0 32px}
+.vault-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:14px}
+.vault-head p{margin:0;color:var(--mute);font-size:14.5px}
+.vault-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.vault-tabs button{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:7px 14px;border-radius:999px;font:600 13.5px "Noto Sans TC",sans-serif;cursor:pointer;min-height:38px;transition:all .16s}
+.vault-tabs button[aria-pressed="true"]{background:var(--seal);color:#fff;border-color:var(--seal)}
+.vault-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:22px;align-items:center}
+.vault-svg{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:var(--bg)}
+.vault-svg [hidden]{display:none}
+.vault-copy{padding:18px 20px;border-radius:12px;background:var(--bg);border:1px solid var(--line)}
+.vault-copy small{display:inline-block;font-weight:700;font-size:12.5px;color:var(--slate);letter-spacing:.05em;margin-bottom:4px}
+.vault-copy h3{font-size:20px;margin-bottom:8px}
+.vault-copy p{margin:0 0 10px;font-size:15px}
+.vault-copy p b,.vault-copy li b{color:var(--seal);font-weight:700}
+.vault-copy ul{margin:0;padding-left:1.2em;font-size:14.5px;color:var(--mute)}
+.vault-copy li{margin:.32em 0}
+
+/* 獨特現場亮點 */
+.unique{margin:34px 0 18px}
+.unique > p{margin:6px 0 14px;color:var(--mute);font-size:15px}
+.uq{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px}
+.uq a{display:flex;flex-direction:column;gap:5px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--seal);border-radius:12px;padding:15px 17px;transition:transform .16s,box-shadow .2s}
+.uq a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.07)}
+.uq a.s{border-left-color:var(--slate)}
+.uq a.a{border-left-color:var(--amber)}
+.uq i{align-self:flex-start;font-style:normal;font-size:12px;font-weight:700;padding:1px 9px;border-radius:4px;background:var(--soft-r);color:var(--seal)}
+.uq a.s i{background:var(--soft-b);color:var(--slate)}
+.uq a.a i{background:var(--soft-a);color:var(--amber)}
+.uq b{font-family:"Noto Serif TC",serif;font-size:17px;line-height:1.4}
+.uq span{font-size:14px;color:var(--mute);line-height:1.6}
+
+/* 動線索引 */
+.route-nav{margin:30px 0 10px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.route-nav-title{font-size:13.5px;font-weight:700;letter-spacing:.06em;color:var(--mute);margin-bottom:10px}
+nav:not(.yr-pn) .scroll{display:flex;flex-wrap:wrap;gap:8px}
+nav:not(.yr-pn) a{display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:999px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:13.5px;min-height:36px;background:var(--bg);transition:border-color .16s}
+nav:not(.yr-pn) a:hover{border-color:var(--seal)}
+nav:not(.yr-pn) a span{color:var(--seal);font-weight:700}
+
+/* 篇章分隔與三種交錯站點版型（放大照片比例） */
+.part{margin:52px 0 8px;padding:16px 0 10px;border-top:3px solid var(--seal);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px}
+.part small{display:block;color:var(--seal);font-weight:700;letter-spacing:.08em;font-size:13px}
+.part span{font-size:14.5px;color:var(--mute)}
+
+.stop{padding:36px 0;border-bottom:1px solid var(--line)}
+.stop-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:16px}
+.stop-num{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:8px;background:var(--seal);color:#fff;font:800 17px "Noto Serif TC",serif;flex:none}
+.stop.is-pano .stop-num{background:var(--slate)}
+.stop.is-plate .stop-num{background:var(--amber)}
+.stop-meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.stop-meta .at{font-size:13.5px;font-weight:700;color:var(--seal);letter-spacing:.04em}
+.stop-meta .loc{font-size:13.5px;color:var(--mute)}
+.tag{display:inline-block;font-size:12px;font-weight:700;line-height:1.65;color:#fff;background:var(--seal);border-radius:4px;padding:0 8px;margin-bottom:8px}
+.tag.s{background:var(--slate)}.tag.a{background:var(--amber)}
+
+/* 文章關鍵詞主色加粗標記 */
+.copy p b,.copy li b,#stops ul li b{color:var(--seal);font-weight:700}
+.copy h3{margin-bottom:12px}
+.copy p{margin:0 0 11px;font-size:16px}
+ul{margin:8px 0 0;padding-left:1.25em}
+li{margin:.45em 0}
+li::marker{color:var(--seal)}
+
+.q{background:var(--soft-r);border-left:4px solid var(--seal);border-radius:0 10px 10px 0;padding:12px 16px;margin-top:16px;font-size:15px}
+.q b{color:var(--seal);font-weight:700}
+.q.s{background:var(--soft-b);border-left-color:var(--slate)}
+.q.s b{color:var(--slate)}
+.q.a{background:var(--soft-a);border-left-color:var(--amber)}
+.q.a b{color:var(--amber)}
+
+/* 版型 A：50/50 寬幅圖文並排（偶數站左右互換） */
+.split{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:24px 36px;align-items:start}
+.stop.alt .split{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+.stop.alt .split .copy{order:2}
+.stop.alt .split .lead-ph{order:1}
+
+/* 版型 B：全幅全景主照 + 雙欄圖文 */
+.pano-hero{margin-bottom:22px}
+.pano-hero .ph-btn img{aspect-ratio:16/10;max-height:560px}
+.pano-body{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:24px 36px;align-items:start}
+
+/* 版型 C：空間圖版對照（文字上方展開 ＋ 下方大尺寸 2 欄對照圖版） */
+.plate-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 24px;margin-top:22px;align-items:start}
+
+/* 照片外框與圖說 */
+.lead-ph figure,.more-ph figure,.pano-hero figure,.pano-side figure,.plate-grid figure{margin:0}
+.ph-btn{all:unset;cursor:pointer;position:relative;display:block;width:100%;border-radius:12px;overflow:hidden;background:var(--line);border:1px solid var(--line)}
+.ph-btn img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .35s}
+.ph-btn.tall img{aspect-ratio:3/4;max-height:540px}
+.ph-btn:hover img{transform:scale(1.03)}
+.ph-btn small{position:absolute;left:10px;bottom:10px;background:rgba(16,20,24,.78);color:#fff;font-size:12px;padding:2px 8px;border-radius:4px;letter-spacing:.03em}
+.ph-btn .zoom{position:absolute;right:10px;bottom:10px;background:rgba(16,20,24,.72);color:#fff;font-size:12px;padding:2px 8px;border-radius:4px;opacity:.9}
+figcaption{font-size:14.2px;line-height:1.6;color:var(--mute);margin-top:9px}
+figcaption b{color:var(--ink);font-weight:700}
+
+/* 附屬大圖列 */
+.more-ph{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 24px;margin-top:24px;align-items:start}
+.more-ph.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+/* 四代遷徙時間表（嵌於歷史站點內） */
+.lineage{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}
+.lin-card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--slate);border-radius:10px;padding:14px 15px}
+.lin-card.cur{border-top-color:var(--seal);background:var(--soft-r)}
+.lin-card small{display:block;font:700 12px "Noto Sans TC",sans-serif;color:var(--slate);letter-spacing:.05em;margin-bottom:4px}
+.lin-card.cur small{color:var(--seal)}
+.lin-card b{display:block;font-family:"Noto Serif TC",serif;font-size:16.5px;margin-bottom:4px}
+.lin-card span{font-size:13.8px;color:var(--mute);line-height:1.55;display:block}
+
+/* 走讀後記卡片 */
+.fix{border-left:4px solid var(--seal);padding:20px 24px;margin-top:42px;font-size:15.5px;background:var(--card);border-radius:0 14px 14px 0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fix h2{font-size:21px;margin-bottom:10px}
+.fix p{margin:.5em 0}
+.fix b{color:var(--seal);font-weight:700}
+
+/* 燈箱 */
+#lb{position:fixed;inset:0;z-index:20;background:rgba(10,12,15,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:14px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 98px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:10px;align-items:center;color:#eee;margin-top:10px;font-size:15px;flex-wrap:wrap;justify-content:center;text-align:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #4d545c;background:#1b2026;color:#fff;font-size:18px;cursor:pointer}
+footer{max-width:1140px;margin:0 auto;padding:0 max(4vw,14px) 40px;color:var(--mute);font-size:14px}
+
+@media(max-width:880px){
+  .dossier,.vault-grid,.split,.stop.alt .split,.pano-body{grid-template-columns:minmax(0,1fr)}
+  .stop.alt .split .copy,.stop.alt .split .lead-ph{order:unset}
+  .lineage{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .more-ph.three{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+  .more-ph,.more-ph.three,.plate-grid,.lineage{grid-template-columns:minmax(0,1fr)}
+  .seal-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(prefers-reduced-motion:reduce){.ph-btn img,.uq a{transition:none}.uq a:hover{transform:none}}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・70 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../weichang/index.html" aria-current="page"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../weichang/index.html" aria-current="page"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></details><span>2024/11/04</span></div>
+
+<header class="hero">
+  <div class="ph">
+    <img src="img/101110.jpg" alt="普通教學館地下一樓臺大闈場工作區，整排長桌與座椅望向盡頭《前赤壁賦》書法壁飾">
+    <div class="tx">
+      <div class="stamp"><i></i><span>打開台大 Open House NTUs｜2024/11/04（一）10:00–10:30・單場限額 20 人</span></div>
+      <h1>教師監獄？揭開台大闈場秘辛<span>普通教學館一樓與地下一樓：走進無網路、無 3C、貼滿封條的考試重鎮</span></h1>
+      <p>就在學生天天進出的普通教學館 101 階梯教室隔壁，藏著一扇平常深鎖的紅門。只有極少數人見過門後的世界：沒有訊號的地下工作區、印題印到凌晨兩點的快速印刷機、藏在 B1F 的樓中樓六人房，以及陪著試務人員度過無數個「加強版隔離」長夜的《赤壁賦》牆面。</p>
+    </div>
+  </div>
+</header>
+<div class="meta">
+  <span><b>日期</b>2024/11/04（一）10:00–10:30（前 15 分鐘集合）</span>
+  <span><b>活動</b>台大闈場定點導覽・2024 秋季打開臺大（Open House NTUs）</span>
+  <span><b>主辦</b>國立臺灣大學學生會</span>
+  <span><b>導覽</b>黃柏森（臺大土木所）與現場試務解說</span>
+  <span><b>空間</b>普通教學館一樓闈場外 → 地下一樓 B1F 核心區 → 一樓餐廳與廚房</span>
+  <span><b>人數</b>單場上限 20 人</span>
+</div>
+
+<main>
+  <section class="dossier" aria-label="闈場空間故事與三道關防">
+    <div class="panel">
+      <h2>從插滿荊棘的古試院，到當代「出題教師監獄」</h2>
+      <p>古時試院稱作「<b>闈</b>」，關防極嚴，考場院牆上甚至會插滿帶刺的荊棘，防範考生與外界互通訊息作弊。演變至今，「<b>入闈</b>」不再是考生應試，而是輪到選題命題的教授與印製試卷的工作人員，走進這處與外界完全隔絕的封閉空間進行試務工作。</p>
+      <p>這場由臺大學生會主辦的「<b>打開台大｜台大闈場定點導覽</b>」，限額二十人、短短半小時，卻難得推開普通教學館一樓那道掛著「<b>闈場 Examination Area</b>」牌子的入口。從<b>無網路、3C 沒收、無休閒活動、不見天日</b>的地下工作區一路走到寢室與餐廳，看懂一份考卷在發到考生手上之前，如何歷經審題、密印、夾題、人工核對、貼封條與打包的層層考驗。</p>
+      <div class="thorns">
+        <strong>為什麼大家都叫它「加強版隔離」？</strong>
+        沒有手機與網路、連通道都要貼封條，入闈四天起跳、趕工時加班到深夜十一點甚至凌晨兩點；唯有親腳踏進這層地下室，才會明白為什麼「<b>重見光明</b>」四個字對剛出闈的老師與試務人員如此真實。
+      </div>
+    </div>
+
+    <aside class="seal-card" aria-label="闈場三道防洩密關防">
+      <div class="seal-card-head">
+        <h3>闈場三道防洩密機制</h3>
+        <span class="seal-badge">SEALED B1F</span>
+      </div>
+      <div class="seal-stats">
+        <div><b>20 人</b><small>單場限定名額</small></div>
+        <div><b>30 分</b><small>非入闈時段解密</small></div>
+        <div><b>2 層樓</b><small>B1F 核心＋1F 餐廳</small></div>
+      </div>
+      <ul class="seal-rules">
+        <li><span>只進不出</span><div><b>人員完全隔離</b>・入闈期間不得擅自離場，臨時外出須有專人全程陪同與通道控管</div></li>
+        <li><span>訊號屏蔽</span><div><b>現場訊號屏蔽器＋沒收 3C</b>・斷絕手機與網路連線，室內僅留無線台數位電視與電扇</div></li>
+        <li><span class="b">逐門封籤</span><div><b>通道與試題箱雙重封條</b>・所有對外通道與驗證完畢的試卷紙箱一律貼上封條、上機打包</div></li>
+      </ul>
+      <p class="seal-tip">普通教學館每年僅在沒有考試入闈作業的空檔，才有機會配合校園導覽短暫開門；一旦進入考季，整區即刻上鎖封籤。</p>
+    </aside>
+  </section>
+
+  <section class="vault" aria-label="一張試卷的入闈旅程與空間剖面">
+    <div class="vault-head">
+      <h2>把普通教學館這角剖開來看：1F 與 B1F 怎麼協作</h2>
+      <p>點選下方五個階段，對照一樓生活後勤與地下一樓試務核心如何運轉</p>
+    </div>
+    <div class="vault-tabs" role="group" aria-label="切換闈場階段">
+      <button aria-pressed="true" data-stage="0">① 審題與密印（B01）</button>
+      <button aria-pressed="false" data-stage="1">② 夾題與核對（工作區）</button>
+      <button aria-pressed="false" data-stage="2">③ 封條與打包（出題前夕）</button>
+      <button aria-pressed="false" data-stage="3">④ 地下作息與樓中樓（寢室區）</button>
+      <button aria-pressed="false" data-stage="4">⑤ 最後午餐與四代變遷（1F）</button>
+    </div>
+    <div class="vault-grid">
+      <svg class="vault-svg" viewBox="0 0 640 310" role="img" aria-label="普通教學館一樓與地下一樓闈場空間剖面示意圖">
+        <rect width="640" height="310" fill="none"/>
+        <!-- 1F 上層 -->
+        <text x="20" y="26" fill="var(--mute)" font-size="11" font-weight="700">1F｜日常邊界與後勤（緊鄰 101 階梯教室）</text>
+        <rect x="18" y="36" width="110" height="68" rx="6" fill="var(--card)" stroke="var(--line)"/>
+        <text x="73" y="66" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700">門廳・警衛室</text>
+        <text x="73" y="84" text-anchor="middle" fill="var(--mute)" font-size="10">對外紅門／紫花遮蔽</text>
+
+        <rect x="138" y="36" width="142" height="68" rx="6" fill="var(--card)" stroke="var(--line)"/>
+        <text x="209" y="66" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700">餐廳（圓桌）</text>
+        <text x="209" y="84" text-anchor="middle" fill="var(--mute)" font-size="10">出闈最後午餐／外送便當</text>
+
+        <rect x="290" y="36" width="118" height="68" rx="6" fill="var(--card)" stroke="var(--line)"/>
+        <text x="349" y="66" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700">商用廚房</text>
+        <text x="349" y="84" text-anchor="middle" fill="var(--mute)" font-size="10">改建保留未長期啟用</text>
+
+        <rect x="418" y="36" width="204" height="68" rx="6" fill="var(--card)" stroke="var(--line)" stroke-dasharray="4 3"/>
+        <text x="520" y="66" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700">教室・教師休息室</text>
+        <text x="520" y="84" text-anchor="middle" fill="var(--mute)" font-size="10">緊貼普通館 101 講堂</text>
+
+        <!-- 樓板分隔線 -->
+        <line x1="18" y1="122" x2="622" y2="122" stroke="var(--slate)" stroke-width="2" stroke-dasharray="6 4"/>
+        <text x="320" y="138" text-anchor="middle" fill="var(--slate)" font-size="11" font-weight="700">B1F 地下一樓｜無窗、雙套抽水、訊號屏蔽核心</text>
+
+        <!-- B1F 下層 -->
+        <rect x="18" y="152" width="112" height="92" rx="6" fill="var(--card)" stroke="var(--line)"/>
+        <text x="74" y="184" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700">B01 闈長室</text>
+        <text x="74" y="203" text-anchor="middle" fill="var(--mute)" font-size="10">RISO 快速印刷機</text>
+        <text x="74" y="219" text-anchor="middle" fill="var(--mute)" font-size="10">電氣室・發電機</text>
+
+        <rect x="140" y="152" width="222" height="92" rx="6" fill="var(--card)" stroke="var(--line)"/>
+        <text x="251" y="180" text-anchor="middle" fill="var(--ink)" font-size="12" font-weight="700">B1F 中央工作區</text>
+        <text x="251" y="200" text-anchor="middle" fill="var(--mute)" font-size="10">長桌夾題・人工驗證・貼封條</text>
+        <text x="251" y="218" text-anchor="middle" fill="var(--mute)" font-size="10">《赤壁賦》牆面・儲藏室(1)~(4)</text>
+
+        <rect x="372" y="152" width="150" height="92" rx="6" fill="var(--card)" stroke="var(--line)"/>
+        <text x="447" y="184" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700">寢室區（套房）</text>
+        <text x="447" y="203" text-anchor="middle" fill="var(--mute)" font-size="10">三人房 ＆ 樓中樓六人房</text>
+        <text x="447" y="219" text-anchor="middle" fill="var(--mute)" font-size="10">空氣清淨機／洗衣間</text>
+
+        <rect x="532" y="152" width="90" height="92" rx="6" fill="var(--card)" stroke="var(--line)"/>
+        <text x="577" y="186" text-anchor="middle" fill="var(--ink)" font-size="11" font-weight="700">泵浦・清水室</text>
+        <text x="577" y="206" text-anchor="middle" fill="var(--mute)" font-size="10">兩套防淹水</text>
+        <text x="577" y="222" text-anchor="middle" fill="var(--mute)" font-size="10">吸菸區逃生梯</text>
+
+        <!-- 動態高亮層 -->
+        <g id="stage-hi-0">
+          <rect x="18" y="152" width="112" height="92" rx="6" fill="var(--soft-r)" stroke="var(--seal)" stroke-width="3"/>
+          <text x="74" y="184" text-anchor="middle" fill="var(--seal)" font-size="12" font-weight="800">B01 闈長室</text>
+          <text x="74" y="203" text-anchor="middle" fill="var(--ink)" font-size="10">RISO 快速印刷機</text>
+          <text x="74" y="219" text-anchor="middle" fill="var(--ink)" font-size="10">審題校對與大量印製</text>
+          <rect x="18" y="258" width="286" height="36" rx="8" fill="var(--soft-r)" stroke="var(--seal)" stroke-width="1.5"/>
+          <text x="161" y="281" text-anchor="middle" fill="var(--seal)" font-size="12" font-weight="800">步驟 1：釐清題意誤植，兩台 RISO 快印機全速印題</text>
+        </g>
+        <g id="stage-hi-1" hidden>
+          <rect x="140" y="152" width="222" height="92" rx="6" fill="var(--soft-r)" stroke="var(--seal)" stroke-width="3"/>
+          <text x="251" y="180" text-anchor="middle" fill="var(--seal)" font-size="12.5" font-weight="800">B1F 中央工作區</text>
+          <text x="251" y="200" text-anchor="middle" fill="var(--ink)" font-size="10">兩天 16 節、多達 450 科試題</text>
+          <text x="251" y="218" text-anchor="middle" fill="var(--ink)" font-size="10">依試場順序「夾題」與逐本核對</text>
+          <rect x="140" y="258" width="320" height="36" rx="8" fill="var(--soft-r)" stroke="var(--seal)" stroke-width="1.5"/>
+          <text x="300" y="281" text-anchor="middle" fill="var(--seal)" font-size="12" font-weight="800">步驟 2：題本與答題卷夾進試題袋，嚴防混裝錯科</text>
+        </g>
+        <g id="stage-hi-2" hidden>
+          <rect x="140" y="152" width="222" height="92" rx="6" fill="var(--soft-b)" stroke="var(--slate)" stroke-width="3"/>
+          <path d="M124,198 L368,198" stroke="var(--seal)" stroke-width="2.5" stroke-dasharray="6 4"/>
+          <text x="251" y="180" text-anchor="middle" fill="var(--slate)" font-size="12.5" font-weight="800">封條、打包機與通道封籤</text>
+          <text x="251" y="218" text-anchor="middle" fill="var(--ink)" font-size="10">一箱出錯，整批試題箱拆封重驗</text>
+          <rect x="160" y="258" width="330" height="36" rx="8" fill="var(--soft-b)" stroke="var(--slate)" stroke-width="1.5"/>
+          <text x="325" y="281" text-anchor="middle" fill="var(--slate)" font-size="12" font-weight="800">步驟 3：核對無誤後貼上封條、經過打包機封箱鎖庫</text>
+        </g>
+        <g id="stage-hi-3" hidden>
+          <rect x="372" y="152" width="150" height="92" rx="6" fill="var(--soft-a)" stroke="var(--amber)" stroke-width="3"/>
+          <rect x="532" y="152" width="90" height="92" rx="6" fill="var(--soft-a)" stroke="var(--amber)" stroke-width="2"/>
+          <text x="447" y="184" text-anchor="middle" fill="var(--amber)" font-size="12" font-weight="800">三人套房＋樓中樓</text>
+          <text x="447" y="203" text-anchor="middle" fill="var(--ink)" font-size="10">清淨機除濕・洗衣間</text>
+          <text x="447" y="219" text-anchor="middle" fill="var(--ink)" font-size="10">加班至深夜 11 點～2 點</text>
+          <rect x="278" y="258" width="344" height="36" rx="8" fill="var(--soft-a)" stroke="var(--amber)" stroke-width="1.5"/>
+          <text x="450" y="281" text-anchor="middle" fill="var(--amber)" font-size="12" font-weight="800">步驟 4：地下起居全靠空氣清淨機、不斷電與雙抽水泵</text>
+        </g>
+        <g id="stage-hi-4" hidden>
+          <rect x="138" y="36" width="270" height="68" rx="6" fill="var(--soft-r)" stroke="var(--seal)" stroke-width="3"/>
+          <text x="209" y="66" text-anchor="middle" fill="var(--seal)" font-size="12" font-weight="800">1F 餐廳（大圓桌）</text>
+          <text x="209" y="84" text-anchor="middle" fill="var(--ink)" font-size="10">校長／教務長最後午餐</text>
+          <text x="349" y="66" text-anchor="middle" fill="var(--seal)" font-size="12" font-weight="800">商用廚房</text>
+          <text x="349" y="84" text-anchor="middle" fill="var(--ink)" font-size="10">從外燴到便當的演變</text>
+          <rect x="120" y="258" width="390" height="36" rx="8" fill="var(--soft-r)" stroke="var(--seal)" stroke-width="1.5"/>
+          <text x="315" y="281" text-anchor="middle" fill="var(--seal)" font-size="12" font-weight="800">四代遷徙：校史館二樓 → 研圖 → 綜合館 → 普通教學館 B1F</text>
+        </g>
+      </svg>
+      <div class="vault-copy" id="vault-copy"></div>
+    </div>
+  </section>
+
+  <section class="unique" id="unique">
+    <h2>只有這 30 分鐘、這 20 人才撞見的現場秘密</h2>
+    <p>普通教學館每天都有成百上千名學生經過，但貼著封條的紅門裡頭長什麼樣子，全得趁沒有試務入闈的空檔親眼確認。點進去看那一站。</p>
+    <div class="uq" id="uq"></div>
+  </section>
+
+  <nav class="route-nav" aria-label="導覽站點快速跳轉">
+    <div class="route-nav-title">從 B01 闈長室走到 B1F 寢室，再爬回 1F 餐廳重見天日｜9 站空間索引（點選跳轉）</div>
+    <div class="scroll" id="nav"></div>
+  </nav>
+
+  <div id="stops"></div>
+
+  <div class="fix">
+    <h2>下次經過普通教學館，可以這樣看這座「隱藏空間」</h2>
+    <p>・<b>認出 101 階梯教室旁的那道紅門</b>：走進普通教學館一樓穿廊，注意牆上橘色平面圖裡緊貼「<b>101 教室 300 人階梯教室</b>」西側的那塊空白區域——標著「<b>闈場 Examination Area</b>」的所在，外牆紅磚上仍垂掛著臺大校徽黃牌。</p>
+    <p>・<b>想追更早的大學聯考入闈史</b>：從 1950 年代獨立招生到 2001 年（民國 90 年）大學聯考末代，全國無數考生的命運都在臺大闈場印出；想看早期沒有冷氣、只能吹電扇忍受異味的老照片與新聞片，可以去<b>臺大校史館</b>翻找「聯招重鎮：闈場在臺大」留存檔案。</p>
+    <p>・<b>讀懂一場考試背後的時間壓力</b>：一張考卷不只有命題老師的字斟句酌，還包含四天三夜的密印、<b>450 科夾題</b>與逐箱核對；下次坐進考場拿到密封試題袋時，不妨想想袋口那張曾經守到凌晨兩點的封條。</p>
+  </div>
+</main>
+
+<footer>2024/11/04 參加國立臺灣大學學生會 2024 秋季打開臺大「台大闈場定點導覽：教師監獄？揭開台大闈場秘辛」筆記</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../wanhuafilm/index.html"><small>‹ 較新的一場・2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a><a class="nx" href="../dangchan/index.html"><small>較早的一場・2024/11/02 ›</small>走讀國家寶藏：台北城中區的黨產謎團</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar"><button id="lbp" aria-label="上一張">‹</button><span id="lbc"></span><button id="lbn" aria-label="下一張">›</button><button id="lbx" aria-label="關閉">✕</button></div>
+</div>
+
+<script>
+{
+const PORTRAIT=new Set(["101135"]);
+
+const STAGES=[
+  {
+    k:"階段 01・B01 闈長室與印刷區",
+    t:"確認老師的題意，用兩台快速印刷機把考題印出來",
+    d:"闈場最核心的任務，就是把命題老師交來的試題確認無誤、印製成卷。一般校內考試多半由外圍老師事先命題，若有文意不清或明顯筆誤，就由<b>闈長室</b>透過受控專線與外部老師確認；定案後交由後方兩台 <b>RISO 快速印刷機</b>大量印製。",
+    b:["B01 闈長室內禁止連網與使用私人 3C，電視僅能透過無線數位機上盒接收基本頻道，配一台電風扇。","以前的大學聯考曾有數十位命題老師一起關在裡面現場出題；如今多數考試改為外部先出好題、入闈專責印製，大幅縮短封閉天數。"]
+  },
+  {
+    k:"階段 02・B1F 中央工作區",
+    t:"兩天 16 節、多達 450 科題目的「夾題」硬仗",
+    d:"一般學測、指考「國文對國文」很單純，但像<b>臺大碩士班考試</b>兩天共 16 堂課、要分發多達 <b>450 科題目</b>（教育部公費留學考試也有 200–300 科），同一間教室裡往往同時考十幾種不同科目，因此必須進行繁瑣的「<b>夾題</b>」。",
+    b:["工作區得把印好的各科試題與答題本分類配對、一一夾進同一個試題袋中，並逐份人工<b>驗證</b>。","最怕國文答題本混進英文試題——過去一旦發生這種失誤，已經封好的整箱試題箱<b>全部都得拆開重驗</b>。"]
+  },
+  {
+    k:"階段 03・封條與打包機",
+    t:"貼上封條、過打包機，每一扇門都有封籤守著",
+    d:"所有試題袋裝箱確認無誤後，箱面寫明科目、考試日期、節次、試場起迄與包數，隨即貼上<b>封條</b>並送入<b>打包機</b>封箱。不只試卷箱貼封條，就連人員臨時因緊急需求進出通道，沿途每一扇門都必須重新貼上封籤並做記錄。",
+    b:["通常入闈四天的行程，第二天前就得完成印製、驗證、裝袋與裝箱，時間壓力極大。","這天在工作區桌上，還能見到上個月「<b>113 年公費留學考試國文作文</b>」留下的試題紙箱實物。"]
+  },
+  {
+    k:"階段 04・B1F 寢室與機電後方",
+    t:"三人套房與樓中樓六人房：加班到凌晨兩點才睡",
+    d:"忙到深夜十一點是家常便飯，遇上題型討論與驗證最複雜的場次，甚至會做到<b>凌晨兩點多</b>。工作人員住進工作區後方改建後的套房寢室，除了<b>三人房</b>，竟還藏著一間挑高木梯的「<b>樓中樓六人房</b>」。",
+    b:["因為地下室空氣流通較差、濕氣重，每間房內與走廊都擺著大型<b>空氣清淨機／除濕機</b>與洗衣間。","地下室最怕停電與淹水：內部設有獨立<b>不斷電發電機</b>與<b>兩套抽水系統</b>（消防泵浦室與清水室），確保印刷與試務不中斷。"]
+  },
+  {
+    k:"階段 05・一樓餐廳與四代遷徙史",
+    t:"校長陪吃的最後一頓午餐，與臺大闈場的四次搬家",
+    d:"延續多年的傳統裡，<b>闈長多由臺大教授擔任</b>；在出闈前的「<b>最後一頓午餐</b>」，臺大校長或教務長會親自入闈，和大家在樓上大圓桌吃飯，隨後才宣告解封、重見光明。而這座普通教學館地下室，其實已經是臺大闈場的<b>第四代據點</b>。",
+    b:["四代脈絡：<b>校史館二樓（舊總圖）</b> → <b>圖資系館（昔日研究生圖書館）</b> → <b>綜合教學館（舊綜合教室）</b> → <b>普通教學館地下室</b>。","2001 年前所有「大闈」大學聯考都在臺大借場地舉行，直到 2002 年改制學測、指考後，大考中心獨立出專用闈場，這裡便轉為研究所「中闈」、轉學生「小闈」與教育部委託試務使用。"]
+  }
+];
+
+const vaultCopy=document.getElementById("vault-copy");
+const renderStage=idx=>{
+  const x=STAGES[idx];
+  vaultCopy.innerHTML=`<small>${x.k}</small><h3>${x.t}</h3><p>${x.d}</p><ul>${x.b.map(i=>`<li>${i}</li>`).join("")}</ul>`;
+  for(let i=0;i<5;i++){
+    const g=document.getElementById(`stage-hi-${i}`);
+    if(g)g.hidden=(i!==idx);
+  }
+  document.querySelectorAll(".vault-tabs button").forEach((b,i)=>{
+    b.setAttribute("aria-pressed",i===idx?"true":"false");
+  });
+};
+document.querySelectorAll(".vault-tabs button").forEach(b=>{
+  b.addEventListener("click",()=>renderStage(+b.dataset.stage));
+});
+renderStage(0);
+
+const S=[
+  {
+    at:"10:11",
+    mode:"split",
+    part:["第一篇章・走進無訊號的地下核心","B01 闈長室、RISO 快印機與 450 科夾題流水線"],
+    short:"B01 闈長室",
+    loc:"B1F・B01 闈長室（The Director's Office）",
+    tag:"只進不出的神經中樞",
+    t:"推開 B01 闈長室：兩台快速印刷機，與沒有網路的小電視",
+    b:[
+      "穿過門禁踏入普通教學館地下一樓，第一站就是掛著深棕色門牌的「<b>B01 闈長室</b>」。這裡不僅是整個闈場的指揮中心，裡頭還並排架設著兩台 <b>RISO 快速印刷機</b>——試題只要在外部或內部確認定案，就會立刻在這裡高速印製成堆。",
+      "門邊矮櫃上放著一台接上 <b>PX 無線數位機上盒</b> 的小電視與白色立扇，是整個密閉空間裡僅存的視聽設備。入闈後全員手機與 3C 設備一律沒收、現場開啟<b>訊號屏蔽器</b>，無法連網也收不到外頭即時訊息，只能靠這幾台離線設備確認基本新聞與時間。"
+    ],
+    q:"以前在<b>校史館二樓（舊總圖）</b>與早期聯考時期，曾有五、六十名出題與印務人員一起關在裡頭；如今普通教學館改建後空間獨立得多，卻依然守著「沒有網路、只有電扇與數位電視」的封閉紀律。",
+    qtag:"只有進來才看得到",
+    ph:["101135","101249","101208"]
+  },
+  {
+    at:"10:15",
+    mode:"panorama",
+    short:"工作區與夾題",
+    loc:"B1F 中央工作區・夾題長桌與公費留學試題箱",
+    tag:"450 科題目的分類硬仗",
+    t:"中央工作區：兩天 16 節、450 科試題的「夾題」考驗與封條",
+    b:[
+      "走出闈長室，眼前豁然開朗成一片燈火通明卻<b>沒有任何對外窗戶</b>的寬闊工作區，整齊排滿數十張長桌與黑色摺疊椅。印好的試卷從後方送出來後，全部要送到這片工作區與答題本結合，進行最考驗眼力的「<b>夾題</b>」。",
+      "導覽現場拿桌上的「<b>教育部 113 年公費留學考試試卷（題）箱</b>」當示範：紙箱藍單清楚印著「科目：國文作文、考試日期：10 月 5 日、節次：第 1 節、試場起迄：1～6、共 2 箱之第 1 箱（共 6 包）」。公費留學本身就有兩、三百科考題，而臺大<b>碩士班考試</b>更誇張——兩天 16 堂課要塞進 <b>450 科題目</b>，同一間教室裡經常混著各式各樣不同系所的考卷。",
+      "因此工作人員必須先把題目與答題本分類，逐份夾進試題袋並<b>雙重驗證</b>，深怕發生「國文答題本混到英文試題」的烏龍——據說早年曾出過類似狀況，結果已經封好的所有試題箱<b>全部拆開重驗</b>，直到確認無誤才貼上封條、推進後方<b>打包機</b>封箱。"
+    ],
+    q:"一般大考只要「國文對國文」順下去就好；臺大碩士班 450 科混編在 16 節裡，全靠工作區這排長桌與直立式多格配頁機一格格把試卷救回正確順序。",
+    qtag:"行內人才懂的眉角",
+    ph:["101110","101809","102822"]
+  },
+  {
+    at:"10:18",
+    mode:"split",
+    short:"《赤壁賦》加班夜",
+    loc:"B1F 工作區東側・《前赤壁賦》牆面與審題室",
+    tag:"全場唯一的「駐闈出題」特例",
+    t:"《赤壁賦》下加班到凌晨兩點：唯有教育部華語測驗還得把老師關進來",
+    b:[
+      "工作區最盡頭的牆面令人會心一笑——在這個講究嚴肅保密、與世隔絕的地下室裡，竟然貼著整大幅蘇軾《<b>前赤壁賦</b>》書法壁飾（「江上之清風，與山間之明月……」），彷彿替關在地下不見天日的老師留了一扇精神窗戶。",
+      "如今臺大自己的碩士班多半趁春節前後請校內老師事先命題，若印製時發現文意不清或錯字，由闈長透過受控電話聯繫外圍老師（有時老師剛好出國或找不到人，整個進度就會卡住）；但全場所有委託考試裡，目前<b>唯一</b>還會請老師真正住進闈場裡出題的，只剩<b>教育部華語文能力測驗</b>。",
+      "華語測驗一入闈就包含 <b>6 位命題老師</b>、甚至曾安排師大體系的試考人員先測驗題目難易度，老師們在裡頭反覆討論題型是否合適，等定稿印完、驗證裝箱完畢，往往已是<b>深夜十一點</b>，這一年還曾做到<b>凌晨兩點多</b>。柱子上那本 2024 年臺北日曆還停在「<b>10 月 14 日 星期一</b>」，彷彿凝結了上一批試務人員出闈那天的時間。"
+    ],
+    q:"原本以為「出題老師被關起來」只是都市傳說——原來多數考試確實已改為外圍出題，唯有教育部的華語測驗至今仍保留老師親赴入闈、挑燈審題的傳統。",
+    qtag:"唯一還在關老師的考試",
+    ph:["103202","101528","103306"]
+  },
+  {
+    at:"10:20",
+    mode:"split",
+    part:["第二篇章・教師監獄的日常生存工程","三人套房、地下樓中樓，與怕停電也怕淹水的機電角落"],
+    short:"三人套房與清淨機",
+    loc:"B1F 寢室區・三人套房走廊",
+    tag:"從沒水洗澡到獨立衛浴",
+    t:"三人套房與空氣清淨機：地下室過夜的真實條件",
+    b:[
+      "穿過工作區玻璃門往後方走，氣氛瞬間從印刷工廠切換成宿舍長廊。改建後的地下寢室全數採<b>套房設計</b>，備有獨立衛浴與床墊，主力配置是<b>三人房</b>與<b>六人房</b>；走廊與房間角落幾乎都擺著一台白色的 <b>Panasonic 空氣清淨／除濕機</b>，專門對付地下室空氣密集、不易對流的悶濕感。",
+      "把時間拉回早年的<b>大學聯考時代</b>，條件可沒這麼好。那時一入闈就是五、六十人男女分住，以前不僅沒有冷氣、只有電風扇，有時連水電供應都吃緊，工作人員整整兩天洗不了澡——等到出闈開門那一刻，外面的人走進來才驚覺：「這地方怎麼那麼臭！」"
+    ],
+    q:"導覽老師手裡舉著牛皮紙製的密封試題袋，身旁就是轟轟運轉的空氣清淨機——現代闈場雖然把「不能洗澡」變成了歷史，但地下室的空氣濕度與壓迫感依然非常真實。",
+    qtag:"對比兩代人的入闈記憶",
+    ph:["102047","102228"]
+  },
+  {
+    at:"10:25",
+    mode:"split",
+    short:"樓中樓六人房",
+    loc:"B1F 寢室區深處・樓中樓六人套房",
+    tag:"要走進來才看得到的空間奇觀",
+    t:"藏在台大地下室的「樓中樓」六人房",
+    b:[
+      "推開寢室區深處另一扇門，所有人都忍不住驚呼——在普通教學館的地下一樓裡，竟然挑高隔出了一間貨真價實的「<b>樓中樓六人房</b>」！",
+      "木質樓梯與欄杆沿著牆邊往上延伸，上層夾層整齊鋪著床墊與枕頭，下層則是雙床位、長桌與除濕機。這間為了在有限地下室容納更多工作人員而設計的複層寢室，平日完全不對外公開，也是整場導覽最讓學生感到不可思議的空間反差。"
+    ],
+    q:"平時在台北租屋才會聽到的「樓中樓」，竟然就藏在台大普通教學館地下室的考務寢室裡；如果不是這場限定導覽，根本不會知道校園腳下有這座秘密宿舍。",
+    qtag:"校園裡最神秘的樓中樓",
+    ph:["102601"]
+  },
+  {
+    at:"10:27",
+    mode:"plate",
+    short:"機電・封條・儲藏角落",
+    loc:"B1F 平面圖・電氣室・消防泵浦室・儲藏角落",
+    tag:"地下室最怕兩件事",
+    t:"不斷電發電機、兩套抽水泵浦，與角落裡的健身器材",
+    b:[
+      "牆上的「<b>地下一樓 B1F</b>」平面圖把這座地下堡壘切分得一清二楚：右側是 <b>B01 闈長室</b>與<b>電氣室</b>，中央是碩大的<b>工作區</b>與四間<b>儲藏室</b>，左側兩排對稱展開<b>寢室區</b>、<b>洗衣間</b>、吸菸區逃生梯，以及最關鍵的「<b>消防泵浦室、清水室</b>」。",
+      "在地下室印考卷，最怕遇到兩件事：<b>斷電</b>與<b>淹水</b>。因此內部特別備有不斷電設備與<b>發電機</b>，確保上萬份試題不會印到一半停擺；而臺北盆地地下水位高，現場更設了<b>兩套抽水系統</b>嚴防積水。至於活動簡介常說入闈「無休閒活動」，在堆滿折疊紙箱與沙發的儲藏角落裡，其實還能發現一台蒙塵的 <b>BROTHER 健身器材</b>，見證前人如何在漫長隔離夜裡試著排解壓力。",
+      "若入闈期間真的有人突發身體不適或臨時必須外出，整個地下室連同各處逃生梯通道都得層層控管，每扇門邊都會貼上像上次華語測驗留下的那種<b>封條</b>，確保滴水不漏。"
+    ],
+    q:"仔細看牆上「地下一樓 B1F」平面圖的英文標示，還藏著『Urgently escapes the exportation』、『LAUWDRY ROOM』等充滿年代感的校園翻譯彩蛋。",
+    qtag:"現場才看得到的細節",
+    ph:["102654","102825"]
+  },
+  {
+    at:"10:29",
+    mode:"lineage",
+    part:["第三篇章・四代遷徙、最後午餐與重見天日","從校史館到普通館：半世紀考試記憶，與一樓的圓桌廚房"],
+    short:"四代闈場演變",
+    loc:"臺大校園考試史・大闈、中闈與小闈",
+    tag:"半世紀的校園考務記憶",
+    t:"臺大闈場的四次搬家：從「大闈」聯考走進「中闈、小闈」",
+    b:[
+      "臺大之所以長期肩負全臺大型考試的闈場重鎮，原因很實際：<b>交通方便</b>，且萬一有入闈老師突發身體狀況，周邊<b>醫療資源</b>能立刻支援。從早期大學獨立招生、大學聯考一路到 2001 年（民國 90 年），臺大闈場其實在校園裡搬過四次家，直到 2002 年改採學測與指考後，大考中心獨立建置專屬闈場，這裡才卸下「<b>大闈（大學聯考）</b>」重擔。",
+      "如今的普通教學館地下室，主要承接臺大研究所入學考試的「<b>中闈</b>」、轉學生考試等規模較小的「<b>小闈</b>」，以及教育部委託辦理的公費留學與華語測驗。每次「小闈」因為考生規模較小，隔離規範與人數也相對彈性一些。"
+    ],
+    q:"只要曾經在 2001 年以前考過大學聯考的世代，手上拿到的那份全國考卷，幾乎都是從這座校園的四代闈場裡一路印出來、封箱送往全國考場的。",
+    qtag:"跨越半世紀的集體記憶",
+    ph:[]
+  },
+  {
+    at:"10:34",
+    mode:"panorama",
+    short:"一樓餐廳與廚房",
+    loc:"1F 餐廳（大圓桌）與商用廚房・一樓平面圖",
+    tag:"出闈前的隱藏儀式",
+    t:"一樓餐廳與商用廚房：校長親赴的最後一頓午餐，與外送便當的妥協",
+    b:[
+      "順著樓梯爬上一樓，光線突然柔和許多——這裡是專屬闈場人員使用的「<b>一樓餐廳</b>」與「<b>廚房</b>」。廳內擺著兩張附帶玻璃轉盤的中式大圓桌，門旁牆上的「<b>一樓 1F</b>」平面圖標示出門廳、餐廳、廚房、警衛室與教師休息室。",
+      "延續多年的慣例是：臺大闈場的<b>闈長通常由臺大教授擔任</b>，而在入闈作業全部告一段落、準備「<b>出闈</b>」前的<b>最後一頓午餐</b>，<b>臺大校長或教務長</b>會親自走進這扇門，坐上這張大圓桌陪大家吃完最後一餐，才正式解除封鎖。",
+      "一旁的商用不鏽鋼廚房配備雙口大炒鍋爐、抽油煙機與工作檯，背後還有一段折騰的演變：最初沒有廚房時，只能請<b>外燴總鋪師</b>在外面煮好合菜再送進來；後來改建普通教學館時，索性在裡面蓋了一整套專業廚房打算自己聘廚師開伙，沒想到實際用了沒多久，發現要請人駐點買菜煮合菜流程太過繁複，最後還是回歸最務實的解法——<b>叫外送與便當</b>，只把圓桌留在這裡見證每一場出闈慶功。"
+    ],
+    q:"一樓餐廳雖然還保留著氣派的雙口大廚房與合菜大圓桌，但桌上那杯朝氣十足的早餐飲料，悄悄揭露了現代入闈最後還是向便利的外送妥協。",
+    qtag:"只有走上 1F 才懂的轉折",
+    ph:["103438","103444","103454"]
+  },
+  {
+    at:"10:37",
+    mode:"plate",
+    short:"推門重見光明",
+    loc:"普通教學館 1F 出口 → 101 階梯教室旁外牆",
+    tag:"日常與密室只隔一道牆",
+    t:"推開紅門重見天日：原來「闈場」就緊貼在 300 人階梯教室隔壁",
+    b:[
+      "走過擺著三具紅色滅火器與儲藏室的一樓玄關，推開半掩的鐵門跨出戶外廊道，陽光與樹影瞬間灑滿眼前——短短半小時的地下行程，真的讓人有種跟著出題老師一起「<b>重見光明</b>」的錯覺。",
+      "站在普通教學館外頭回望建築牆面與橘色壓克力樓層導覽圖，才發現更驚人的空間對照：每天數百名大一新生進進出出上通識課的「<b>101 教室（300 人階梯教室）</b>」，在平面圖上就緊緊貼著「<b>闈場 Examination Area</b>」的牆壁；而那塊印著臺大傅鐘校徽、微微斑駁的橘黃色「<b>闈場</b>」垂掛招牌，就這樣安靜地掛在紅磚與洗石子外牆上，守著每一場不能說的試題秘密。"
+    ],
+    q:"這場只有 20 人、30 分鐘的「打開台大」導覽，不需長途跋涉，卻讓人從此每次走過普通教學館 101 教室外牆，都會忍不住多看那塊『闈場』小牌子一眼。",
+    qtag:"重見光明的一刻",
+    ph:["103450","103745","104051"]
+  }
+];
+
+const UQ=[
+  ["限額 20 人・30 分鐘","平日鎖死在普通教學館 101 講堂旁的隱藏大門",2,"沒有考季入闈、又逢「打開台大」期間才推得開這扇紅門；一場僅限 20 人，轉眼半小時就得離開。",""],
+  ["現場物證・時間凝結","113 年公費留學試題箱與停在 10/14 的日曆",2,"工作區桌上還擺著 10 月 5 日公費留學考試「國文作文」紙箱，柱上日曆停在 10 月 14 日，原汁原味保留上次入闈痕跡。","s"],
+  ["唯一例外・凌晨兩點","全場僅剩教育部華語測驗還把 6 位老師關在裡面",3,"多數校內考試已改採外圍命題，唯有教育部華語測驗至今仍讓命題老師親赴入闈、討論題型到凌晨兩點。",""],
+  ["地下室裡的反差空間","《赤壁賦》書法牆與藏在 B1F 的「樓中樓六人房」",5,"莊嚴的工作區盡頭貼滿蘇軾《前赤壁賦》，寢室深處竟還挑高隔出木梯樓中樓六人房，只有走進來才看得到。","a"],
+  ["雙重保險・角落健身","防停電發電機、兩套抽水系統與 BROTHER 健身機",6,"地下室最怕斷電淹水而設雙抽水泵浦；在堆滿紙箱的儲藏角落裡，還留著一台陪前人消磨時間的健身器材。","s"],
+  ["隱藏儀式・最後一餐","1F 圓桌廚房演變，與校長親臨的出闈午餐",8,"曾經為了自煮蓋起專業廚房最後卻回歸外送；但出闈前由校長或教務長入闈陪吃最後一頓午餐的傳統，至今仍留在大圓桌上。","a"]
+];
+
+const C={
+  "101110":"B1F 中央工作區全景：無對外窗的空間裡整齊排滿長桌與摺疊椅，盡頭牆面是整幅《前赤壁賦》壁飾。",
+  "101135":"「B01 闈長室 THE DIRECTOR'S OFFICE」門牌，從這裡統籌審題確認與聯繫外圍命題教師。",
+  "101208":"闈長室內唯一的視聽消遣：接上無線數位機上盒的小電視與白色立扇，沒有任何網路連線。",
+  "101249":"並排架設在闈長室內的兩台 RISO 快速印刷機，負責把定稿後的考卷在短時間內大量印製。",
+  "101528":"擺滿深色長桌與空書架的內部會議空間，入闈期間用來堆放分科文件、核對題意與討論試務。",
+  "101809":"工作區桌上留存的「教育部 113 年公費留學考試試卷（題）箱」——科目為國文作文、10 月 5 日第 1 節、共 6 包。",
+  "102047":"導覽人員手持牛皮紙試題袋站在寢室前講解，腳邊即是維持地下室空氣流通的除濕與空氣清淨機。",
+  "102228":"改建後的地下三人套房寢室，三張單人床墊與獨立衛浴，徹底告別早年大考入闈沒水洗澡的窘境。",
+  "102601":"最令人驚訝的 B1F「樓中樓六人房」：木造欄杆與樓梯隔出上下兩層睡眠空間，善用地下室有限坪數。",
+  "102654":"「地下一樓 B1F」平面配置圖，清楚標示闈長室、電氣室、工作區、儲藏室、寢室區、洗衣間與消防泵浦室。",
+  "102822":"直立式多格自動配頁機與「資源回收紙類」桶，協助工作人員在多達數百科的考試中精準分類與夾題。",
+  "102825":"儲藏角落一瞥：一疊疊備用的折疊試題紙箱與沙發之間，竟然藏著一台 BROTHER 居家健身器材。",
+  "103202":"《前赤壁賦》書法壁飾下的工作區，左側牆面掛著三組金屬控制箱，桌上擺著剛示範完的試卷紙箱。",
+  "103306":"固定在工作區白柱上的 2024 年臺北日曆停留在「10 月 14 日 星期一」，凝結了上一批試務人員離開的時刻。",
+  "103438":"一樓餐廳裡的中式大圓桌與玻璃轉盤——出闈前由校長或教務長陪同享用的最後一頓午餐就在這裡登場。",
+  "103444":"一樓專業不鏽鋼商用廚房配備雙口大爐灶與排油煙機，當年為自煮而建，最後因人力繁瑣仍改回叫外送便當。",
+  "103450":"一樓玄關緊鄰儲藏室與樓梯間，紅門門外就是綠意與陽光，跨出這一步即意味著「重見光明」。",
+  "103454":"「一樓 1F」空間平面圖，整合門廳、餐廳、廚房、警衛室、教師休息室與教室動線。",
+  "103745":"普通教學館一樓橘色大樓導覽圖：每天三百人上課的 101 階梯教室，隔壁正是深鎖的「闈場 Examination Area」。",
+  "104051":"普通教學館外牆紅磚上的「闈場 Examination Area」垂掛標示牌，頂上木格柵與遮蔽紫布交織出日常校園裡的神秘結界。"
+};
+
+document.getElementById("uq").innerHTML=UQ.map(u=>`<a class="${u[4]}" href="#s${u[2]}"><i>${u[0]}</i><b>${u[1]}</b><span>${u[3]}</span></a>`).join("");
+document.getElementById("nav").innerHTML=S.map((x,i)=>`<a href="#s${i+1}"><span>${i+1}</span>${x.short}</a>`).join("");
+
+const fmtP=p=>`${p.slice(0,2)}:${p.slice(2,4)}`;
+const flat=[];
+const figHtml=(p)=>{
+  flat.push(p);
+  const idx=flat.length-1;
+  const cls=PORTRAIT.has(p)?"ph-btn tall":"ph-btn";
+  return `<figure><button class="${cls}" data-i="${idx}" aria-label="放大照片 ${fmtP(p)}"><img loading="lazy" src="img/${p}.jpg" alt="${C[p]}"><small>${fmtP(p)}</small><span class="zoom">放大 ↗</span></button><figcaption>${C[p]}</figcaption></figure>`;
+};
+
+document.getElementById("stops").innerHTML=S.map((x,i)=>{
+  const part=x.part?`<div class="part"><div><small>${x.part[0]}</small><h2>${x.part[1]}</h2></div><span>約 ${x.at} 起</span></div>`:"";
+  const hasPh=x.ph && x.ph.length>0;
+  const tagCls=x.mode==="panorama"?" s":x.mode==="plate"||x.mode==="lineage"?" a":"";
+  const qCls=i%3===1?" s":i%3===2?" a":"";
+  const copyHtml=`<div class="copy">${x.tag?`<span class="tag${tagCls}">${x.tag}</span>`:""}<h3>${x.t}</h3><ul>${x.b.map(l=>`<li>${l}</li>`).join("")}</ul>${x.q?`<div class="q${qCls}"><b>${x.qtag||"這一站的獨特之處"}</b>　${x.q}</div>`:""}</div>`;
+
+  let secCls="stop", bodyHtml="";
+  if(x.mode==="panorama" && hasPh){
+    secCls+=" is-pano";
+    const lead=`<div class="pano-hero">${figHtml(x.ph[0])}</div>`;
+    const rest=x.ph.slice(1);
+    const sidePh=rest.length===1?`<div class="pano-side">${figHtml(rest[0])}</div>`:"";
+    const bottomPh=rest.length>1?`<div class="more-ph">${rest.map(p=>figHtml(p)).join("")}</div>`:"";
+    bodyHtml=rest.length===1?`${lead}<div class="pano-body">${copyHtml}${sidePh}</div>`:`${lead}${copyHtml}${bottomPh}`;
+  }else if(x.mode==="plate" && hasPh){
+    secCls+=" is-plate";
+    const cols=x.ph.length===3?" three":"";
+    const cards=`<div class="plate-grid${cols===" three"?" more-ph three":""}">${x.ph.map(p=>figHtml(p)).join("")}</div>`;
+    bodyHtml=`${copyHtml}${cards}`;
+  }else if(x.mode==="lineage"){
+    secCls+=" is-plate";
+    const lin=`<div class="lineage" aria-label="臺大闈場四代變遷">
+      <div class="lin-card"><small>第一代・早期聯招</small><b>校史館二樓</b><span>昔日臺大舊總圖書館二樓，承載民國 38 年起最早一批獨立招生與聯考記憶。</span></div>
+      <div class="lin-card"><small>第二代・擴編搬遷</small><b>圖資系館（舊研圖）</b><span>隨著應考人數大增，闈場移往當時的研究生圖書館繼續印製大考試題。</span></div>
+      <div class="lin-card"><small>第三代・1970–90 年代</small><b>綜合教學館</b><span>改建前的舊綜合教室接棒成為聯考重鎮，維持近二十年的大型試務作業。</span></div>
+      <div class="lin-card cur"><small>第四代・1992 至今</small><b>普通教學館 B1F</b><span>普通教學館落成後設為專設闈場；2001 年前辦「大闈」聯考，2002 年後轉為「中闈、小闈」與教育部考試使用。</span></div>
+    </div>`;
+    bodyHtml=`${copyHtml}${lin}`;
+  }else{
+    if(i%2===1) secCls+=" alt";
+    const lead=hasPh?`<div class="lead-ph">${figHtml(x.ph[0])}</div>`:"";
+    const rest=hasPh && x.ph.length>1?`<div class="more-ph${x.ph.length===4?" three":""}">${x.ph.slice(1).map(p=>figHtml(p)).join("")}</div>`:"";
+    bodyHtml=hasPh?`<div class="split">${copyHtml}${lead}</div>${rest}`:`<div>${copyHtml}</div>`;
+  }
+
+  return `${part}<section class="${secCls}" id="s${i+1}">
+    <div class="stop-head"><span class="stop-num">${i+1}</span><div class="stop-meta"><span class="at">約 ${x.at}</span><span class="loc">${x.loc}</span></div></div>
+    ${bodyHtml}
+  </section>`;
+}).join("");
+
+const lb=document.getElementById("lb"),im=document.getElementById("lbi"),cap=document.getElementById("lbc");
+let cur=0;
+const show=i=>{
+  cur=(i+flat.length)%flat.length;
+  const p=flat[cur];
+  im.src=`img/${p}.jpg`;
+  im.alt=C[p];
+  cap.textContent=`${C[p]}　（${cur+1}/${flat.length}）`;
+};
+document.getElementById("stops").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-i]");
+  if(b){show(+b.dataset.i);lb.classList.add("on");document.getElementById("lbx").focus()}
+});
+document.getElementById("lbp").onclick=()=>show(cur-1);
+document.getElementById("lbn").onclick=()=>show(cur+1);
+const close=()=>lb.classList.remove("on");
+document.getElementById("lbx").onclick=close;
+lb.addEventListener("click",e=>{if(e.target===lb)close()});
+document.addEventListener("keydown",e=>{
+  if(!lb.classList.contains("on"))return;
+  if(e.key==="Escape")close();
+  if(e.key==="ArrowLeft")show(cur-1);
+  if(e.key==="ArrowRight")show(cur+1);
+});
+}
+</script>
+</body>
+</html>
