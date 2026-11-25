@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>巡遊新店時代聚落｜走讀筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 一份把「百年紅磚」與「二十層新大樓」並排讀完的田野筆記，像撐著傘從十四張巷底一路穿過雨幕走到七張
+   IDEA: 從 1740 大坪林圳與 1779 斯馨祠出發，跨過十四張、二十張、十二張到七張；把「表定行程 vs 現場加碼」與「大坪林四張 × 時代地層」織進一場跨時空散步
+   PICTURE: 十四張歷史建築園區紅磚廣埕與背後拔地而起的高樓工地（141439.jpg）
+   COLOUR and TYPE: 斗子砌磚紅 #a83b28、大坪林水圳青 #246a73、雕樑金赭 #9b6b28、宣紙米底 #f6f3ec；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 滿版同框 Hero → 行前與現場對照卡 → 互動式大坪林空間與四時代剖面 → 這一場獨一無二的瞬間 → 分層篩選與 13 站時間軸 → 自走散步小記 */
+:root{color-scheme:light dark;
+--bg:light-dark(#f6f3ec,#141618);--card:light-dark(#fffdf9,#1c1f23);--ink:light-dark(#1e1d1b,#eae7e0);
+--mute:light-dark(#625f59,#a09c94);--brick:light-dark(#a83b28,#e47d68);--canal:light-dark(#246a73,#75c0c9);
+--ochre:light-dark(#9b6b28,#dfb166);--soft:light-dark(#e9f1f2,#1c2b2e);--warm:light-dark(#f6ebe6,#2b1e1b);
+--line:light-dark(#e0dad0,#2d3136)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:18px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.78 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(30px,5.8vw,52px);line-height:1.12;font-weight:800}
+h2{font-size:clamp(22px,3vw,28px);line-height:1.3;font-weight:800}
+h3{font-size:clamp(19.5px,2.5vw,23.5px);line-height:1.34;font-weight:800}
+a:focus-visible,button:focus-visible{outline:3px solid var(--brick);outline-offset:2px}
+
+/* Hero */
+.hero{background:#1d1b19;color:#f5f2eb}
+.hero .ph{position:relative;height:clamp(340px,56vh,540px);overflow:hidden}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:center 48%;display:block}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.2) 0%,rgba(20,18,16,.48) 44%,rgba(20,18,16,.93) 100%)}
+.hero .tx{position:absolute;left:max(5vw,16px);right:max(5vw,16px);bottom:28px;z-index:1;max-width:980px}
+.hero .badge{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px;padding:4px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.32);background:rgba(30,24,20,.68);backdrop-filter:blur(4px);font-size:13px;letter-spacing:.04em;margin-bottom:12px}
+.hero .badge i{width:8px;height:8px;border-radius:50%;background:#e47d68;display:inline-block}
+.hero p{margin:.55em 0 0;font-size:16.5px;max-width:65ch;opacity:.94}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;padding:15px max(5vw,16px);font-size:14px;background:#191715;color:#d9d4cb;border-top:1px solid rgba(255,255,255,.08)}
+.meta b{color:#fff;font-weight:700;margin-right:5px}
+
+main{max-width:1040px;margin:0 auto;padding:18px max(4vw,14px) 60px}
+
+/* 行前背景與表定／實際對照 */
+.brief{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:16px;margin:14px 0 28px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+.panel h2{font-size:clamp(19px,2.4vw,22px);margin-bottom:10px}
+.panel p{margin:.5em 0;font-size:15.5px}
+.quake{margin-top:12px;padding:11px 14px;border-left:4px solid var(--ochre);background:light-dark(#faf4e8,#262118);border-radius:0 10px 10px 0;font-size:14.5px}
+.quake b{color:var(--ochre)}
+.tabs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.tabs button{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:6px 13px;border-radius:999px;font:600 13.5px "Noto Sans TC",sans-serif;cursor:pointer;min-height:36px;transition:all .18s}
+.tabs button[aria-selected="true"]{background:var(--brick);color:#fff;border-color:var(--brick)}
+.cmp-list{list-style:none;margin:0;padding:0;display:grid;gap:7px;font-size:14.5px}
+.cmp-list li{display:flex;gap:10px;align-items:flex-start;padding:7px 10px;border-radius:8px;background:var(--bg);border:1px solid var(--line)}
+.cmp-list li span{flex:none;font:700 12px/1.6 "Noto Sans TC",sans-serif;padding:0 7px;border-radius:4px;background:var(--soft);color:var(--canal)}
+.cmp-list li.bonus span{background:var(--warm);color:var(--brick)}
+.cmp-list[hidden]{display:none}
+
+/* 互動式空間與四代地層圖 */
+.strata{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:0 0 34px}
+.strata-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:14px}
+.strata-head p{margin:0;color:var(--mute);font-size:14.5px}
+.era-btns{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.era-btns button{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:7px 14px;border-radius:999px;font:600 13.5px "Noto Sans TC",sans-serif;cursor:pointer;min-height:38px;transition:all .18s}
+.era-btns button[aria-pressed="true"]{background:var(--canal);color:#fff;border-color:var(--canal)}
+.strata-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:18px;align-items:center}
+.strata-svg{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:var(--bg)}
+.era-copy{padding:16px 18px;border-radius:12px;background:var(--bg);border:1px solid var(--line)}
+.era-copy small{display:inline-block;font-weight:700;font-size:12.5px;color:var(--brick);letter-spacing:.04em;margin-bottom:4px}
+.era-copy h3{font-size:19px;margin-bottom:8px}
+.era-copy p{margin:0 0 10px;font-size:15px}
+.era-copy ul{margin:0;padding-left:1.2em;font-size:14.5px;color:var(--mute)}
+.era-copy li{margin:.25em 0}
+
+/* 獨特亮點網格 */
+.unique{margin:34px 0 14px}
+.unique > p{margin:6px 0 14px;color:var(--mute);font-size:15px}
+.uq{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
+.uq a{display:flex;flex-direction:column;gap:5px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--brick);border-radius:12px;padding:14px 16px;transition:transform .16s,box-shadow .2s}
+.uq a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.07)}
+.uq a.c{border-left-color:var(--canal)}
+.uq a.o{border-left-color:var(--ochre)}
+.uq i{align-self:flex-start;font-style:normal;font-size:12px;font-weight:700;padding:1px 8px;border-radius:999px;background:var(--warm);color:var(--brick)}
+.uq a.c i{background:var(--soft);color:var(--canal)}
+.uq a.o i{background:light-dark(#f8f0df,#2d2518);color:var(--ochre)}
+.uq b{font-family:"Noto Serif TC",serif;font-size:16.5px;line-height:1.4}
+.uq span{font-size:14px;color:var(--mute);line-height:1.6}
+
+/* 站點導覽與時代篩選 */
+.navbox{margin:30px 0 8px;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.filters button{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:5px 12px;border-radius:999px;font:600 13px "Noto Sans TC",sans-serif;cursor:pointer;min-height:34px}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+nav:not(.yr-pn) .scroll{display:flex;flex-wrap:wrap;gap:7px}
+nav:not(.yr-pn) a{display:flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:13.5px;min-height:34px;background:var(--bg);transition:border-color .16s}
+nav:not(.yr-pn) a:hover{border-color:var(--brick)}
+nav:not(.yr-pn) a span{color:var(--brick);font-weight:700}
+
+/* 章節與站點 */
+.part{margin:40px 0 0;padding:14px 0 6px;border-top:3px solid var(--ink);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px}
+.part small{display:block;color:var(--brick);font-weight:700;letter-spacing:.08em;font-size:13px}
+.part span{font-size:14px;color:var(--mute)}
+.stop{display:grid;grid-template-columns:126px minmax(0,1fr);gap:0 26px;padding:30px 0;border-bottom:1px solid var(--line)}
+.stop.dim{opacity:.32}
+.when{font-size:14px;color:var(--mute);line-height:1.5;padding-top:4px}
+.when .n{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--brick);color:#fff;font:800 16px "Noto Serif TC",serif;margin-bottom:8px}
+.when b{display:block;color:var(--ink);font-size:15.5px}
+.when i{font-style:normal;white-space:nowrap}
+.when .place{display:block;font-size:12.5px;margin-top:4px;line-height:1.45;color:var(--canal)}
+.tag{display:inline-block;font-size:12px;font-weight:700;line-height:1.6;color:#fff;background:var(--brick);border-radius:4px;padding:0 8px;margin:0 6px 6px 0;vertical-align:middle}
+.tag.c{background:var(--canal)}.tag.o{background:var(--ochre)}
+ul{margin:12px 0 0;padding-left:1.25em}
+li{margin:.34em 0}
+li::marker{color:var(--brick)}
+#stops ul li b{color:var(--brick);font-weight:700}
+.q{background:var(--soft);border-left:4px solid var(--canal);border-radius:0 10px 10px 0;padding:11px 15px;margin-top:14px;font-size:15px}
+.q b{color:var(--canal)}
+.q.r{background:var(--warm);border-left-color:var(--brick)}
+.q.r b{color:var(--brick)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:10px;margin-top:18px}
+.grid figure{margin:0}
+.grid button{all:unset;cursor:pointer;position:relative;display:block;width:100%;aspect-ratio:4/3;border-radius:9px;overflow:hidden;background:var(--line)}
+.grid button:focus-visible{outline:3px solid var(--brick);outline-offset:2px}
+.grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.grid button:hover img{transform:scale(1.04)}
+.grid figcaption{font-size:13.5px;line-height:1.52;color:var(--mute);margin-top:6px}
+
+.fix{border-left:4px solid var(--brick);padding:14px 18px;margin-top:34px;font-size:15px;background:var(--card);border-radius:0 12px 12px 0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fix b{font-family:"Noto Serif TC",serif;font-size:17px;display:block;margin-bottom:6px}
+.fix p{margin:.4em 0}
+
+/* 燈箱 */
+#lb{position:fixed;inset:0;z-index:20;background:rgba(10,11,12,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:14px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 96px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:10px;align-items:center;color:#eee;margin-top:10px;font-size:15px;flex-wrap:wrap;justify-content:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer}
+footer{max-width:1040px;margin:0 auto;padding:0 max(4vw,14px) 40px;color:var(--mute);font-size:14px}
+
+@media(max-width:820px){.brief,.strata-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:640px){
+  .stop{grid-template-columns:minmax(0,1fr)}
+  .when{display:flex;gap:12px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+  .when .n{margin:0}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(prefers-reduced-motion:reduce){.grid img,.uq a{transition:none}.uq a:hover{transform:none}}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・66 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li class="yr-se">2024 秋</li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html" aria-current="page"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li class="yr-se">2024 秋</li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html" aria-current="page"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></details><span>2024/05/04</span></div>
+<header class="hero">
+  <div class="ph"><img src="img/141439.jpg" alt="十四張歷史建築園區的百年紅磚合院與背後拔地而起的新市鎮大樓">
+    <div class="tx">
+      <div class="badge"><i></i><span>新北文化之路 × 金車跨文化走讀・第一梯次（2024/05/04）</span></div>
+      <h1>巡遊新店時代聚落<br>從 1779 土地公走進高樓與神祕眷村</h1>
+      <p>從捷運十四張站出發，鑽進正在搬遷過渡期的最古土地公廟、撐過 1924 大水災的巷底紅磚門屋與「土匪莊」，走進甫開放的十四張歷史建築園區看百年三座古厝與新市鎮摩天樓同框，再於午後大雨裡一路跨過十二張咸亨宮、加碼拐進神祕的保密局炎明新村，邊聽「小白宮」原型秘辛邊搶買蔥花大餅與韭菜盒子，沿瑠公圳明德橋走到七張站。</p>
+    </div>
+  </div>
+</header>
+<div class="meta">
+  <span><b>日期</b>2024/05/04（六）13:10 集合・13:30–16:15（第一梯次）</span>
+  <span><b>主辦</b>新北市文化基金會 × 金車文教基金會</span>
+  <span><b>講師</b>周芳軍（新北市文史學會理事・新店文史館志工）</span>
+  <span><b>起訖</b>捷運十四張站民權路出口 → 捷運七張站</span>
+  <span><b>橫跨</b>十四張 → 經過二十張 → 十二張 → 七張</span>
+  <span><b>天氣</b>陰多雲轉午後大雨，近尾聲放晴</span>
+</div>
+
+<main>
+  <section class="brief" aria-label="走讀背景與路線對照">
+    <div class="panel">
+      <h2>跨越時空尋找城市記憶：一場「四張」連走的午後</h2>
+      <p>新店最早的漢人開墾聚落統稱「大坪林」，細分成七張、十二張、十四張、二十張等庄頭。「巡遊新店時代聚落」用雙腳把這四個名字串在一起：從最晚開發、卻正迎來最劇烈都市更新的<b>十四張</b>出發，一路穿行過二十張與<b>十二張</b>，最後在<b>七張</b>收尾。</p>
+      <p>這天剛好遇上幾個難得湊在一起的時間點——十四張歷史建築園區才剛在 2024 年 4 月正式對外開放；最古老的開基土地公廟「斯馨祠」正處於臨時鐵皮行宮與新建鷹架交接的空檔；而一場突如其來的大雨，反倒讓整團人在屋簷與傘下走得更緊密。</p>
+      <div class="quake">
+        <b>震後出發的特別提醒：</b>活動距 2024 年 4 月 3 日花蓮地震剛滿一個月，新北環狀線當時仍有部分路段尚未恢復通車，行前通知還特別提醒學員留意轉乘動線。集合於捷運十四張站民權路出口、領取無線導覽耳機組後，一場從水運渡口讀到保密局眷村的散步就此展開。
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>表定行程 × 第一梯次現場腳步</h2>
+      <div class="tabs" role="tablist" aria-label="行程對照切換">
+        <button role="tab" aria-selected="true" id="tab-actual" aria-controls="panel-actual">實際走了這些（13 站）</button>
+        <button role="tab" aria-selected="false" id="tab-plan" aria-controls="panel-plan">行前表定路線（6+1 站）</button>
+      </div>
+      <ul class="cmp-list" id="panel-actual" role="tabpanel" aria-labelledby="tab-actual">
+        <li><span>起點</span><div><b>捷運十四張站高架橋下</b>：大坪林渡口、郭錫瑠與《大坪林五庄》水圳合約</div></li>
+        <li><span>第 2 站</span><div><b>斯馨祠臨時行宮</b>：1779《斯馨牌》與「周方君變周君」石碑暗號</div></li>
+        <li class="bonus"><span>巷弄限定</span><div><b>劉氏明記堂與和平社區</b>：1924 大水災倖存門屋＆俗稱「土匪莊」的疊層巷弄</div></li>
+        <li><span>第 5–7 站</span><div><b>十四張歷史建築園區</b>：文記堂 18 匠師、啟文堂陳天啟交趾陶與劉廷玉、利記公厝莊武南畫龍</div></li>
+        <li class="bonus"><span>雙廟同框</span><div><b>鷹架裡的新斯馨祠＆十四張歷史公園</b>：新廟施工中實景</div></li>
+        <li><span>第 9 站</span><div><b>百忍街＆十二張咸亨宮</b>：張公藝百忍典故、道光古碑與後院九芎樹原址</div></li>
+        <li class="bonus"><span>雨中加碼</span><div><b>炎明新村</b>：行前單標「＊」的彈性秘境，全員點頭多走 80 公尺一窺保密局眷村</div></li>
+        <li class="bonus"><span>只此一家</span><div><b>小白宮原型＆巷弄美食</b>：無油乾烙韭菜盒子、中央新村白屋原型、哈爾濱千層大餅</div></li>
+        <li><span>收尾</span><div><b>民族路黃昏市場 → 明德新村 → 瑠公圳明德橋 → 捷運七張站</b></div></li>
+      </ul>
+      <ul class="cmp-list" id="panel-plan" role="tabpanel" aria-labelledby="tab-plan" hidden>
+        <li><span>13:10–13:30</span><div><b>捷運十四張站民權路出口</b>報到、領取無線導覽耳機組</div></li>
+        <li><span>預定 1</span><div><b>十四張斯馨祠</b>：守護大坪林渡河口店仔街門戶</div></li>
+        <li><span>預定 2</span><div><b>劉氏家廟園區</b>：北臺灣最大單一歷史建築群異地重組</div></li>
+        <li><span>預定 3</span><div><b>十四張歷史公園</b>：農村特色主題共融遊戲場</div></li>
+        <li><span>預定 4</span><div><b>新店咸亨宮</b>：十二張農田轉身城鎮 200 年</div></li>
+        <li><span>預定 5</span><div><b>民族路黃昏市場</b>：多樣美食與蔥花大餅飄香</div></li>
+        <li><span>預定 6</span><div><b>瑠公圳明德橋</b>：郭錫瑠開鑿水圳滋養城市歷史</div></li>
+        <li class="bonus"><span>＊彈性站</span><div><b>炎明新村</b>：隱藏在巷弄中的神祕眷村（視實際走讀時間彈性調整）</div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="strata" aria-label="大坪林空間與四代地層圖解">
+    <div class="strata-head">
+      <h2>為什麼有「十四張、十二張、七張」？切換時間地層看懂新店</h2>
+      <p>點選四個年代，看同一條新店溪畔如何疊出截然不同的聚落面貌</p>
+    </div>
+    <div class="era-btns" role="group" aria-label="選擇時代地層">
+      <button aria-pressed="true" data-era="0">① 1740–1779 清代水圳與渡口</button>
+      <button aria-pressed="false" data-era="1">② 1895–1924 劉廷玉與甲子大水</button>
+      <button aria-pressed="false" data-era="2">③ 1949–1970s 土匪莊・小白宮・保密局</button>
+      <button aria-pressed="false" data-era="3">④ 2013–2024 環狀線與異地重組</button>
+    </div>
+    <div class="strata-grid">
+      <svg class="strata-svg" viewBox="0 0 640 310" role="img" aria-label="新店溪右岸大坪林與四張聚落空間示意圖">
+        <rect width="640" height="310" fill="none"/>
+        <!-- 新店溪 -->
+        <path d="M0,56 C130,30 220,90 360,64 C470,44 550,62 640,48 L640,94 C540,108 465,88 360,106 C220,130 130,72 0,98 Z" fill="var(--soft)"/>
+        <path d="M0,76 C130,50 220,110 360,84 C470,64 550,82 640,68" fill="none" stroke="var(--canal)" stroke-width="3" stroke-dasharray="6 4"/>
+        <text x="26" y="34" fill="var(--mute)" font-size="12" font-weight="700">← 面對上游看兩岸：左岸＝中和・永和・安坑（漳州人）</text>
+        <text x="310" y="90" fill="var(--canal)" font-size="12.5" font-weight="700">新店溪（右岸＝大坪林・泉州安溪人）</text>
+
+        <!-- 水圳與路線 -->
+        <path id="svg-canal" d="M580,104 C500,150 430,195 310,210 C205,222 140,200 78,165" fill="none" stroke="var(--canal)" stroke-width="2.5" opacity=".75"/>
+        <path d="M90,152 L225,180 L365,198 L515,244" fill="none" stroke="var(--brick)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="5 5"/>
+
+        <!-- 四張節點 -->
+        <g id="node-14">
+          <circle cx="90" cy="152" r="24" fill="var(--warm)" stroke="var(--brick)" stroke-width="2.5"/>
+          <text x="90" y="149" text-anchor="middle" fill="var(--brick)" font-size="13.5" font-weight="800">十四張</text>
+          <text x="90" y="164" text-anchor="middle" fill="var(--mute)" font-size="10.5">最晚開發</text>
+        </g>
+        <g id="node-20">
+          <circle cx="225" cy="180" r="20" fill="var(--card)" stroke="var(--line)" stroke-width="2"/>
+          <text x="225" y="177" text-anchor="middle" fill="var(--ink)" font-size="12.5" font-weight="700">二十張</text>
+          <text x="225" y="191" text-anchor="middle" fill="var(--mute)" font-size="10">行經</text>
+        </g>
+        <g id="node-12">
+          <circle cx="365" cy="198" r="23" fill="var(--warm)" stroke="var(--brick)" stroke-width="2.5"/>
+          <text x="365" y="195" text-anchor="middle" fill="var(--brick)" font-size="13.5" font-weight="800">十二張</text>
+          <text x="365" y="210" text-anchor="middle" fill="var(--mute)" font-size="10.5">咸亨宮・眷村</text>
+        </g>
+        <g id="node-7">
+          <circle cx="515" cy="244" r="23" fill="var(--soft)" stroke="var(--canal)" stroke-width="2.5"/>
+          <text x="515" y="241" text-anchor="middle" fill="var(--canal)" font-size="13.5" font-weight="800">七張</text>
+          <text x="515" y="256" text-anchor="middle" fill="var(--mute)" font-size="10.5">明德橋・終點</text>
+        </g>
+
+        <!-- 動態年代標記群組 -->
+        <g id="era-layer-0">
+          <rect x="24" y="205" width="142" height="44" rx="8" fill="var(--card)" stroke="var(--canal)" stroke-width="1.5"/>
+          <text x="34" y="224" fill="var(--canal)" font-size="12" font-weight="700">大坪林渡（店仔街）</text>
+          <text x="34" y="240" fill="var(--mute)" font-size="11">1779 斯馨祠・1740 引青潭水</text>
+          <rect x="440" y="120" width="176" height="44" rx="8" fill="var(--card)" stroke="var(--canal)" stroke-width="1.5"/>
+          <text x="450" y="139" fill="var(--canal)" font-size="12" font-weight="700">郭錫瑠與「五庄合約」</text>
+          <text x="450" y="155" fill="var(--mute)" font-size="11">你護我開圳，我分青潭水給你</text>
+        </g>
+        <g id="era-layer-1" hidden>
+          <rect x="26" y="205" width="166" height="44" rx="8" fill="var(--card)" stroke="var(--brick)" stroke-width="1.5"/>
+          <text x="36" y="224" fill="var(--brick)" font-size="12" font-weight="700">明記堂倖存門屋（1924）</text>
+          <text x="36" y="240" fill="var(--mute)" font-size="11">水淹一層樓，亂石基座撐下來</text>
+          <rect x="265" y="114" width="210" height="44" rx="8" fill="var(--card)" stroke="var(--brick)" stroke-width="1.5"/>
+          <text x="275" y="133" fill="var(--brick)" font-size="12" font-weight="700">劉廷玉：清法戰功與 1895 協調</text>
+          <text x="275" y="149" fill="var(--mute)" font-size="11">劉銘傳幕僚，後派辜顯榮赴基隆引日軍</text>
+        </g>
+        <g id="era-layer-2" hidden>
+          <rect x="132" y="222" width="152" height="44" rx="8" fill="var(--card)" stroke="var(--ochre)" stroke-width="1.5"/>
+          <text x="142" y="241" fill="var(--ochre)" font-size="12" font-weight="700">和平社區（土匪莊）</text>
+          <text x="142" y="257" fill="var(--mute)" font-size="11">富國島部隊＋臺西零工兩坪疊高</text>
+          <rect x="315" y="112" width="286" height="44" rx="8" fill="var(--card)" stroke="var(--ochre)" stroke-width="1.5"/>
+          <text x="325" y="131" fill="var(--ochre)" font-size="12" font-weight="700">中央／明德「白宮」× 保密局炎明新村</text>
+          <text x="325" y="147" fill="var(--mute)" font-size="11">國代樣板白屋＋美方第三勢力遣散眷村</text>
+        </g>
+        <g id="era-layer-3" hidden>
+          <rect x="24" y="205" width="188" height="44" rx="8" fill="var(--card)" stroke="var(--brick)" stroke-width="1.5"/>
+          <text x="34" y="224" fill="var(--brick)" font-size="12" font-weight="700">央北重劃區＆歷史建築園區</text>
+          <text x="34" y="240" fill="var(--mute)" font-size="11">三座劉氏古厝異地重組，2024.04 開放</text>
+          <rect x="295" y="116" width="290" height="44" rx="8" fill="var(--card)" stroke="var(--canal)" stroke-width="1.5"/>
+          <text x="305" y="135" fill="var(--canal)" font-size="12" font-weight="700">2024.05.04 雙廟交接空檔</text>
+          <text x="305" y="151" fill="var(--mute)" font-size="11">斯馨祠暫厝鐵皮屋 × 新廟仍圍著藍色鷹架</text>
+        </g>
+      </svg>
+      <div class="era-copy" id="era-copy"></div>
+    </div>
+  </section>
+
+  <section class="unique" id="unique">
+    <h2>這一場才看得到、聽得到的</h2>
+    <p>地方隨時能自己重走，但下面這六件事，有的只在搬遷空檔短短出現，有的非得跟著周芳軍老師鑽進巷口才會遇見。點卡片跳去那一站。</p>
+    <div class="uq" id="uq"></div>
+  </section>
+
+  <div class="navbox">
+    <div class="filters" role="group" aria-label="依走讀主題篩選站點">
+      <button aria-pressed="true" data-f="all">全部 13 站</button>
+      <button aria-pressed="false" data-f="old">清代開墾與老巷</button>
+      <button aria-pressed="false" data-f="park">十四張歷史建築園區</button>
+      <button aria-pressed="false" data-f="village">眷村與十二張信仰</button>
+      <button aria-pressed="false" data-f="food">小吃、水圳與收尾</button>
+    </div>
+    <nav aria-label="站點快速跳轉"><div class="scroll" id="nav"></div></nav>
+  </div>
+
+  <div id="stops"></div>
+
+  <div class="fix">
+    <b>如果想照這條線自己散步，可以這樣看</b>
+    <p>・<b>把十四張站當起點、七張站當終點</b>：先看十四張歷史建築園區（啟文堂、利記公厝、文記堂）與旁邊的新斯馨祠，再沿央北二路走進中央新村、百忍街與咸亨宮，最後經民族路黃昏市場、明德橋走到七張站，全程約兩小時半。</p>
+    <p>・<b>廟宇與古厝看什麼？</b>斯馨祠看 1779 年《斯馨牌》與碑上被省去中間字的姓名；啟文堂看正殿前 1962 年大面積洗石子供桌與左右兩側陳天啟交趾陶；利記公厝記得讀門柱「利」「記」嵌字對聯。</p>
+    <p>・<b>巷弄裡的低調地標</b>：中正路旁巷內的「炎明新村」沒有招牌大門，只剩一塊寫在石柱上的褪色白牌；和平社區的窄巷則記得抬頭看一棟棟從兩坪往上加蓋的層數。</p>
+    <p>・<b>午後順道帶點吃的</b>：中正路上的南川麵館與無油乾烙韭菜盒子、民族路一帶的哈爾濱千層蔥花大餅與黃昏市場熟食區（下午三點後最熱鬧），以及近七張站的光復饅頭、九份湯圓，剛好一路填飽肚子回家。</p>
+  </div>
+</main>
+
+<footer>2024/05/04 參加「新北文化之路 X 金車跨文化走讀《巡遊新店時代聚落》（第一梯次）」的走讀筆記</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../luzhou/index.html"><small>‹ 較新的一場・2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a><a class="nx" href="../xinsheng/index.html"><small>較早的一場・2024/05/01 ›</small>打開新生流域：給未來「新生」的一封信</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar"><button id="lbp" aria-label="上一張">‹</button><span id="lbc"></span><button id="lbn" aria-label="下一張">›</button><button id="lbx" aria-label="關閉">✕</button></div>
+</div>
+
+<script>
+{
+const ERAS = [
+  {
+    k: "1740–1779｜大坪林的起點",
+    t: "先有渡口與水圳，才長出「幾張」聚落",
+    p: "新莊慈祐宮的石碑留有「大坪林渡」之名，證明漢人最早靠新店溪水運進入這片平原。「張」是開墾股份與耕作面積單位——七張、十二張、十四張、二十張各自與土地開發結緣，其中十四張長期被劃為農業區，反而把水田綠地留到了最後。",
+    b: [
+      "1740 年代郭錫瑠開鑿瑠公圳遇秀朗社平埔族與泰雅族抵抗，工人死傷慘重，只得與大坪林先民簽約「你護我、我分水」，自青潭溪石硿引水成大坪林圳。",
+      "面對溪水上游看兩岸：新店溪右岸（大坪林）多為泉州安溪人；左岸（中和、永和、安坑）則為漳州人。",
+      "1779 年（乾隆四十四年）在店仔街立廟的斯馨祠，見證了這波水路興起的商街。"
+    ]
+  },
+  {
+    k: "1895–1924｜家族鼎盛與大水洗禮",
+    t: "從劉廷玉的無奈抉擇，到甲子大水衝不倒的門屋",
+    p: "十四張大族劉家在清末出了位文武兼備的劉廷玉，也曾撐過 1924 年水淹一層樓的甲子大水，但在政權更迭裡背負了百年沉默。",
+    b: [
+      "1884 年清法戰爭時，劉廷玉助劉銘傳守住獅球嶺而獲賜專賣鹽權，親友慣稱他「廣文」。",
+      "1895 年唐景崧離臺後城內大亂，劉廷玉與洋商協調後派年輕的辜顯榮赴基隆引導日軍入城；戰後為避罵名，劉廷玉內渡效忠清廷、子孫遠走日本習醫。",
+      "1924 年新店溪大水衝垮不少屋舍，民生路巷內的明記堂單層門屋因採「亂石砌」防水基座得以倖存。"
+    ]
+  },
+  {
+    k: "1949–1970s｜多族群與冷戰聚落",
+    t: "「土匪莊」、國代「白宮」與保密局神祕眷村同在一個新店",
+    p: "戰後短短二十年，新店在稻田邊塞進了最底層的流離與最機密的情報系統，也誕生了全臺少見的「政治安置」社區。",
+    b: [
+      "和平社區（俗稱土匪莊）：安置富國島回臺的廣西／海南部隊與臺西建築零工，僅分 2–5 坪地，只好往上疊蓋到四五層。",
+      "中央新村與明德新村：當年為穩固國民大會代表選票而建的白色獨棟群，設計藍本竟然就來自十四張旁的一棟私宅「小白宮」。",
+      "炎明新村：直屬總統府的保密局與美方「第三勢力」塞班島撤編部隊落腳處，非陸海空任何一軍。"
+    ]
+  },
+  {
+    k: "2013–2024｜震後新市鎮與重組",
+    t: "摩天大樓圍住三座百年古厝，兩座斯馨祠短暫同框",
+    p: "捷運環狀線與央北重劃區把原本的農田換成二十幾層的新建案，也把古厝群拆解重組進歷史園區——2024 年 5 月的這一天，正好站在新舊交替的中線。",
+    b: [
+      "2013 年斯馨祠因環狀線十四張站與南機廠工程暫厝鐵皮屋；2020 年於十四張歷史公園旁動土重建。",
+      "2024 年 4 月「十四張歷史建築園區」甫開放，將相距數百至千公尺的啟文堂、利記公厝、文記堂重組在一起。",
+      "2024/05/04 這天先看了鐵皮屋裡的 1779 古碑，轉頭又看見圍在藍鷹架裡的新斯馨祠——安座之後便成絕響。"
+    ]
+  }
+];
+
+const eraBtns = document.querySelectorAll(".era-btns button");
+const eraCopy = document.getElementById("era-copy");
+const renderEra = idx => {
+  const e = ERAS[idx];
+  eraBtns.forEach((b, i) => b.setAttribute("aria-pressed", String(i === idx)));
+  for (let i = 0; i < 4; i++) {
+    const g = document.getElementById("era-layer-" + i);
+    if (g) g.hidden = i !== idx;
+  }
+  eraCopy.innerHTML = `<small>${e.k}</small><h3>${e.t}</h3><p>${e.p}</p><ul>${e.b.map(x => `<li>${x}</li>`).join("")}</ul>`;
+};
+eraBtns.forEach((b, i) => b.addEventListener("click", () => renderEra(i)));
+renderEra(0);
+
+// 表定 vs 實際 Tab
+const tActual = document.getElementById("tab-actual"), tPlan = document.getElementById("tab-plan");
+const pActual = document.getElementById("panel-actual"), pPlan = document.getElementById("panel-plan");
+const setTab = showActual => {
+  tActual.setAttribute("aria-selected", String(showActual));
+  tPlan.setAttribute("aria-selected", String(!showActual));
+  pActual.hidden = !showActual;
+  pPlan.hidden = showActual;
+};
+tActual.addEventListener("click", () => setTab(true));
+tPlan.addEventListener("click", () => setTab(false));
+
+const UQ = [
+  ["稍縱即逝・雙廟同框", "鐵皮行宮與藍色鷹架同一天看見", 2, "先在 B604 橋旁臨時鐵皮棚看緊貼滅火器的 1779《斯馨牌》，一個多小時後又在歷史公園旁看到仍在鷹架裡的新斯馨祠——安座後就再也不會並存。", ""],
+  ["剛開放不久・第一批腳步", "十四張歷史建築園區滿月現場", 5, "北臺灣最大單一歷史建築群異地重組在 2024 年 4 月剛啟用，連莊武南畫龍特展與新北 18 位匠師展都正完整展出。", "c"],
+  ["表定外加碼・只有這梯次", "全員點頭才拐進的炎明新村", 10, "行前單上標著「＊視時間彈性調整」。大雨正大時老師問大家去不去，全團異口同聲說去，才掀開這座保密局眷村的門柱秘密。", ""],
+  ["只有周老師才知道", "中央新村「小白宮」的原型本尊", 11, "躲在新大樓背後的一棟兩層老白屋——老師說當年是他連襟的父親開營造公司蓋的，被相中當成國代白屋的樣板，外頭牌子沒寫。", "o"],
+  ["鑽進巷底才看得到", "1924 大水災門屋＆「土匪莊」", 3, "不穿過民生路巷弄就找不到的百年亂石砌門屋，以及當年兩坪起家、一路往上疊成五層樓的和平社區。", "c"],
+  ["石碑上的巧合暗號", "「周方君」變「周君」的考證秘訣", 2, "1779 年《斯馨牌》為省版面把捐獻者中間名字拿掉——周芳軍老師剛好拿自己的名字舉例，讓人恍然大悟為何家譜裡常對不上人。", "o"]
+];
+document.getElementById("uq").innerHTML = UQ.map(u =>
+  `<a href="#s${u[2]}" class="${u[4]}"><i>${u[0]}</i><b>${u[1]}</b><span>${u[3]}</span></a>`
+).join("");
+
+const S = [
+  {
+    at: "13:34", cat: "old",
+    part: ["第一部・十四張與大坪林的起點", "從水運渡口讀進巷弄深處", "捷運十四張站 → 斯馨祠 → 明記堂 → 和平社區"],
+    short: "十四張集合",
+    place: "捷運十四張站民權路出口高架橋下",
+    t: "環狀線震後集合：為什麼先讀「大坪林」與十四張",
+    b: [
+      "活動距 2024 年 4 月 3 日地震剛滿一個月，新北環狀線當時仍有中斷路段；學員們克服轉乘限制在<b>捷運十四張站民權路出口</b>報到、領取無線導覽耳機組後，就在高架橋下聽周芳軍老師開場。",
+      "<b>「大坪林」的證據在新莊</b>：新莊慈祐宮（媽祖廟）留有一塊捐獻石碑，上面刻著「<b>大坪林渡</b>」，說明早年漢人從淡水河與新店溪搭船上岸，這裡最早是個碼頭聚落。",
+      "今天將橫跨<b>十四張、二十張、十二張、七張</b>。其中十四張因早年地方與政商開發關係不如七張、十二張那般密切，長年被劃為農業區，意外成了新店最後一片綠地；直到捷運南機廠與央北重劃區進駐，才成為今日眼前大翻轉的模樣。",
+      "老師教了個地理口訣——<b>站在溪邊面向水尾（下游）或看上游定左右岸</b>：面對水流方向，右手邊（右岸）是大坪林，早年由泉州安溪人占優勢；左手邊（左岸）的中和、永和一帶，則是漳州人的勢力範圍。",
+      "<b>乾隆五年的水圳換保護合約</b>：1740 年郭錫瑠開鑿瑠公圳，在今景美一帶開工五年卻遭平埔族秀朗社與泰雅族聯手攻擊、工人死傷慘重。他轉而與大坪林先民立約：「你們保護我開圳，我從青潭溪（碧潭開天宮下方石硿）引水給你們灌溉。」這便是促成大坪林聚落繁榮的大坪林圳。"
+    ],
+    ph: ["133825"]
+  },
+  {
+    at: "13:47", cat: "old",
+    tag: "稍縱即逝・雙廟空檔",
+    short: "斯馨祠暫厝",
+    place: "南機廠 B604 橋旁・民生路 126-1 號",
+    t: "鐵皮行宮裡的 1779《斯馨牌》與「順民」姓名之謎",
+    b: [
+      "走進藏在南機廠高架橋旁的紅色鐵皮暫厝屋，裡頭供奉著創建於<b>乾隆四十四年（1779 年）</b>、新店最古老的開基土地公廟<b>斯馨祠</b>。廟原在早期最熱鬧的「店仔街」（民生路 86 巷），「斯馨」既取自台語「思鄉」諧音，也源自《千字文》「似蘭斯馨」。",
+      "2013 年配合環狀線與南機廠施工拆遷暫厝於此，牆上正貼滿<b>《斯馨祠興建工程認捐項目編修圖》</b>，外頭鐵絲網掛著「大家作伙來起廟」紅布條，記錄著 2019 年獲准永久遷入十四張歷史公園、2020 年動土的漫長奔走。",
+      "<b>「人會騙人，石頭不會騙人！」</b>老師指著收在玻璃供桌下方、緊靠著紅色滅火器的乾隆四十四年<b>《斯馨牌》</b>捐獻碑——能捐錢起廟，代表 1779 年前至少已開發二十年以上。",
+      "<b>為什麼在祖譜裡找不到石碑上的人？</b>當年刻字空間有限，捐獻者姓名常把中間那個字省掉，譬如「吳○○」變成兩個字，老師順口拿自己當例子：「就像我叫周芳軍（同音），刻上去就成了『周君』。」",
+      "透過這種考證，竟還在碑上發現來自<b>漳州平和縣的吳姓家族</b>——明明四周都是泉州安溪劉家的地盤，為何有漳州人？原來在漳泉械鬥的緊繃年代，少數落單者只能低調隱身當「順民」，才能安穩活下來。"
+    ],
+    q: "2024 年 5 月這一天來訪，才看得到這塊兩百四十多歲的《斯馨牌》與區公所紅色滅火器肩並肩住在鐵皮屋裡；再過不久等新廟完工安座，這個過渡風景就會收進記憶裡。",
+    qtag: "稍縱即逝",
+    ph: ["134708", "134935", "135036", "135151"]
+  },
+  {
+    at: "13:53", cat: "old",
+    tag: "巷弄限定",
+    short: "明記堂門屋",
+    place: "民生路 126 號巷底",
+    t: "1924 甲子大水災衝不倒的「門屋」與明記堂舊宅",
+    b: [
+      "沿著斯馨祠旁小路轉進綠蔭遮蔽的窄巷（怕走泥濘路得原路折返），眼前出現一棟紅磚三合院，還留有「新店市民生路 126」的舊門牌。",
+      "老師特地停在院門前解釋名詞：<b>有兩層樓才叫「門樓」，像這樣單層的叫「門屋」</b>。這座門屋最可貴的地方，在於它撐過了<b> 1924 年（甲子年）新店溪大水災</b>——當年水淹整整一層樓高，屋後的「明記堂」主屋在昭和年間重建，門屋卻原封不動留了下來。",
+      "<b>為什麼沒被大水泡垮？</b>看底座就知道：下面用「亂石砌」加上早期水泥防潮承重，上方才砌斗子砌紅磚；若是土埆厝，泡水早就整片坍塌。"
+    ],
+    ph: ["135321", "135353"]
+  },
+  {
+    at: "14:04", cat: "old",
+    short: "土匪莊與央北",
+    place: "和平社區巷弄 → 央北重劃區",
+    t: "兩坪往上疊五層的「土匪莊」，一步跨出就是央北摩天樓",
+    b: [
+      "進入下一條窄巷前，老師先壓低音量交代背景——「等會進人家社區裡別這樣稱呼」，在地老農民過去稱這裡為<b>「土匪莊」</b>，今名卻叫相當反諷的<b>和平社區（和平里）</b>。",
+      "原來這裡安置了兩群最困苦的外來人口：1949 至 1953 年間隨黃杰自越南富國島撤回的部隊（不少操海南島方言，連一般外省人都聽不懂），以及從高雄北上、常在臺北橋頭排隊等卡車點名做工的雲林臺西臨時工。",
+      "<b>兩坪到五坪往上長</b>：當年按官階與家口只配到兩坪到五坪地，結婚生子後無處可退，只好一戶戶自己往上加蓋到四、五層樓；早年日子太苦，有人回程順手拔附近農田的菜或番薯回家煮飯，才讓農民嚇得叫他們土匪。如今社區也正面臨複雜的產權與都更難題。",
+      "走出陰暗窄巷的瞬間，視野驟然拉開——<b>央北重劃區</b>的寬闊車道與二十幾層新大樓迎面撲來，過去一片稻田經過原地主、地方建商再到上市建商轉手，成了今天每坪七十萬起跳的新市鎮。"
+    ],
+    ph: ["140511", "140751"]
+  },
+  {
+    at: "14:09", cat: "park",
+    tag: "剛開放不久・第一批腳步",
+    part: ["第二部・十四張歷史建築園區", "北臺灣最大單一歷史建築群異地重組", "文記堂（廣文宅）→ 啟文堂（劉氏家廟）→ 利記公厝 → 興建中斯馨祠"],
+    short: "園區與文記堂",
+    place: "十四張歷史建築園區（央北二路）",
+    t: "三座劉氏古厝與高樓同框：文記堂、十八匠師與家譜密碼",
+    b: [
+      "2024 年 4 月甫正式啟用開放的<b>十四張歷史建築園區</b>，把原本散落在十四張各處、相距五百到一千公尺的三棟百年古厝——<b>文記堂（廣文宅）、新店劉氏家廟（啟文堂）、利記公厝</b>——拆解並「仿舊如舊」異地重組，形成百年紅磚合院被二十幾層新大樓三面環抱的奇特景觀。",
+      "站在大門前，老師先給大家一套讀臺灣傳統民居的基本梯次：<b>一條龍（單排正身）→ 單伸手（加一側護龍）→ 三合院 → 四合院</b>；看屋子永遠先把最講究的彩繪與交趾陶擺在正面前門與屋簷下方（水車堵）。",
+      "<b>用《易經》與《中庸》命名的書香大族</b>：劉家先祖發跡於七張，買地跨入十四張與陳、林、連並列四大宗族。第一代依《易經》乾卦「元亨利貞」分成元記、亨記、利記、貞記四房；第二代再取《中庸》「寬、裕、溫、柔」；往下又衍生「博、厚、高、明、悠、久」六記（稍早巷底的明記堂正是其一）。",
+      "最先走進的<b>文記堂（原稱廣文宅）</b>，正展出「新北市 18 位匠師特展」（如細木作大師李萬財、銅鑼工藝吳宗霖、糊紙與獅頭工藝等）。屋主曾在燈樑上刻「<b>鼇魚傳甲／二如傳甲</b>」（以螃蟹甲殼喻科舉登甲）期許子孫考取功名；老師遺憾笑說，早年做導覽講出哪幾塊木雕是道光、同治年間古物，隔天就遭竊，如今重組後終於有監視器與保護框守護。"
+    ],
+    ph: ["140908", "140941", "141448", "145127"]
+  },
+  {
+    at: "14:20", cat: "park",
+    tag: "現場看門道",
+    short: "啟文堂與劉廷玉",
+    place: "新店劉氏家廟・啟文堂",
+    t: "陳天啟交趾陶、加高御路，與劉廷玉的歷史平反",
+    b: [
+      "正對大庭院的<b>新店劉氏家廟（啟文堂）</b>，門柱與門額對聯多以「啟」、「文」嵌字，叮囑後代不讀書就得不到功名。劉家當年設的私塾，更在 1898 年改制為公學校，成為今日<b>大豐國小</b>的前身。",
+      "<b>三個要低下頭又抬起頭看的建築精華</b>：其一是 1962 年（民國 51 年）大修時，剛好景美集應廟也在修，劉家便請來同一批名匠——<b>陳天啟大師</b>（洪坤福之徒兼妻舅）在現場燒製 800 度大面積龍虎堵交趾陶（今天罩上鐵絲網保護）；可惜同期<b>許連城</b>繪製的門神當年被外行人塗改，已非原作。",
+      "其二是正殿裡那張極為厚重的<b> 1962 年大面積洗石子供桌</b>，重組時幾乎原封不動整座抬過來；其三是門口那塊斜坡石雕<b>「御路」</b>（神明與祖先走的路），重組後比原本高出三十多公分，雕工與色彩相當搶眼。",
+      "<b>被歷史沉默的關鍵人物「劉廷玉」</b>：1884 年清法戰爭時，能文能武的劉廷玉助劉銘傳守住基隆獅球嶺，獲拔擢為四品官並賜予專賣鹽權，朋友都喊他「廣文」。1895 年乙未割臺、唐景崧離去後臺北城內大亂，劉廷玉協調歐美英商後派人赴基隆把日軍帶進城維持秩序——那位跑腿引路的青年就是<b>辜顯榮</b>。",
+      "事後劉廷玉為避「漢奸」罵名於三年後內渡效忠清廷，後代也赴日習醫，家族在戰後長期低調隱姓；然而當年《臺灣日日新報》早期名人錄曾把他列為第一人，連板橋林家的林衡道編纂百大名人時也將他排在第 76 位，老師感慨：「評論歷史人物，還是要將心比心。」"
+    ],
+    ph: ["142000", "142352", "143741", "143746"]
+  },
+  {
+    at: "14:36", cat: "park",
+    short: "利記公厝與莊武南",
+    place: "利記公厝・莊武南傳統彩繪特展",
+    t: "「光承天祿」與莊武南一戰成名的「活龍」",
+    b: [
+      "轉進一旁的<b>利記公厝</b>，門額藍底金字寫著「<b>光承天祿</b>」——清光緒年間山西旱災，劉家捐糧賑災而獲光緒帝賜予貢生功名，藉此提醒子孫受天子恩祿更要讀書報效；正廳內側紅色對聯則工整嵌上「<b>利</b>有攸往積財輕於積德／<b>記</b>成事業興隆繼以興仁」。",
+      "公厝內正巧展出淡水彩繪大師<b>莊武南</b>（師承洪寶真一派）的傳統彩繪與水墨特展。老師點出欣賞門道：一般「匠氣」重只見花開富貴，莊大師的作品卻充滿<b>「文氣」</b>與透視功力。",
+      "<b>一戰成名的龍年畫龍</b>：早年莊武南與同業競賽畫龍，旁人畫得像僵硬的「死龍」，唯獨他筆下的龍翻騰有勁、雙眼如電，被讚「<b>生龍活現</b>」，從此全臺廟宇指定請他畫龍。他為人憨厚，民國八十幾年曾因替人作保背債六百萬，幸靠平時收藏的文物變賣度過難關，如今在淡水還設有私人博物館。"
+    ],
+    ph: ["144553", "144626", "144239", "144244"]
+  },
+  {
+    at: "15:02", cat: "park",
+    tag: "雙廟同框",
+    short: "新斯馨祠與公園",
+    place: "央北二路 206 巷 2 號 → 十四張歷史公園",
+    t: "藍色鷹架裡的新斯馨祠，與遠眺「白宮」中央新村",
+    b: [
+      "走出歷史建築園區，綠圍籬緊鄰著的正是<b>興建中的新斯馨祠</b>——屋脊燕尾已現雛形，整棟建築卻還包在藍色鷹架裡，圍籬上掛著 2023 年 9 月剛立好的《斯馨祠歷史源流》大看板。短短一個半小時內先見證了鐵皮暫厝的 1779 古碑、又看見即將落成的新廟，這種過渡期的畫面可遇不可求。",
+      "穿越以農村水車意象打造的<b>十四張歷史公園</b>共融遊戲場，遠方整排曾以白色獨棟出名的<b>中央新村</b>正一棟棟改建為六到十層的新大樓——老師笑說當年是為了穩固國民大會代表選票，「既然你們去不了美國住白宮，我就每人送一棟白宮」，成了那個年代獨特的時代產物。"
+    ],
+    ph: ["150256", "150300", "150540"]
+  },
+  {
+    at: "15:14", cat: "village",
+    part: ["第三部・十二張與雨中加碼", "百忍堂、有求必應土地公，和「＊」號秘境", "百忍街 → 十二張咸亨宮 → 炎明新村"],
+    short: "百忍街與咸亨宮",
+    place: "百忍街 → 中正路與三民路口",
+    t: "走進百忍街聽「賜瓜」典故，在咸亨宮剛好躲進一場傾盆大雨",
+    b: [
+      "跨過大馬路進入<b>百忍街</b>，老師趁雨還沒落下前趕緊補了個地名故事：唐朝張公藝家族上萬人同居卻極和睦，唐高宗特意賜下一顆瓜試探，張先生立刻叫人把瓜切碎煮成一大鍋湯分給全族吃——高宗遂賜「百忍堂」匾額，因此民間常說「看到『百忍』二字，多半姓張」。",
+      "才剛走到中正路與三民路口、新店香火最盛的土地公廟<b>十二張咸亨宮</b>，老天突然像倒水般降下滂沱大雨！大家順勢躲進廟埕簷下喝水休息。",
+      "<b>「咸」為全部、「亨」為亨通</b>，合起來就是「有求必應」（但也得記得來還願）。因對面就是耕莘醫院，許多求平安的家屬都會來上香；神龕右側嵌著<b>道光二十一年（1841 年）</b>石碑，廟後院更留著昔日牧童汲泉水的井跡與大樹公（九芎樹旁）原始神壇。"
+    ],
+    ph: ["151458", "152501", "152720"]
+  },
+  {
+    at: "15:31", cat: "village",
+    tag: "雨中加碼・表定外秘境",
+    short: "炎明新村",
+    place: "中正路巷內・藍園門柱",
+    t: "全員點頭拐進「＊」號眷村：不屬陸海空的保密局與第三勢力",
+    b: [
+      "雨勢沒有停的意思，老師站在騎樓下徵詢大家：「這座眷村原本排在行程彈性項目裡，就在旁邊不到八十公尺——去不去？」全團異口同聲喊「去！」，我們這才撐開雨傘轉進這條不起眼的巷子。",
+      "巷口幾個橘色三角錐後面，一塊快褪成白板的石柱上寫著淡淡四個字「<b>炎明新村</b>」，裡頭還有于右任題字的「<b>藍園</b>」（主人是曾任要職的保密局張聰中將）。",
+      "<b>既非陸軍、也非海軍或空軍</b>：當年直屬總統、與國防部平行的<b>保密局</b>（戴笠系統，後來分化為調查局、情報局與外交部海工會）進駐於此；另一批住民則是 1949 年美國為扶持「第三勢力」帶到塞班島秘密受訓、後來因美國政黨輪替撤銷計畫而領了一筆遣散費的軍人，便用這筆錢買下安身立命的小屋。",
+      "後來村裡混居了原住戶、情報局高官與民間承接戶，衍生產權與違建檢舉紛爭，改建案始終推不動；國防部交給政戰局、政戰局又交給國有財產署，最後成了「既然當年承諾終身使用，就讓你們住到終身」的懸浮聚落。聽著昔日拋家棄子赴海外出任務的老兵故事，連老師也指著天空嘆了一句：「你看，老天都流眼淚了。」"
+    ],
+    q: "行前通知單上那顆「＊炎明新村（視實際時間彈性調整）」的星號，最後是靠著第一梯次的好腳程與雨中不散的興致，硬是把它走了進去。",
+    qtag: "第一梯次現場加碼",
+    ph: ["153237", "153523"]
+  },
+  {
+    at: "15:46", cat: "food",
+    tag: "只有周老師才知道",
+    part: ["第四部・巷弄味覺、小白宮與水圳終點", "從無油韭菜盒子走到明德橋", "中正路美食 → 小白宮原型 → 民族路黃昏市場 → 明德新村 → 瑠公圳明德橋 → 捷運七張站"],
+    short: "小白宮與美食",
+    place: "中正路 → 民族路一帶",
+    t: "邊啃乾烙韭菜盒子邊看「小白宮」原型，再搶買哈爾濱蔥花大餅",
+    b: [
+      "離開嚴肅的眷村故事，老師立刻切換成在地美食嚮導，帶大家沿騎樓「邊看邊買伴手禮」：先經過只賣花椒素麵（「塑椒麵」）、紅油抄手與醬雞腿的川味<b>南川麵館</b>，再經過客家家族齊心經營的傳統雜貨店。",
+      "隨後全團停在已故美食家<b>陳宏特別推薦的無油乾烙韭菜盒子</b>店口——不放一滴油乾烙的熱氣在雨天特別誘人，大家穿著雨衣排隊，買到就直接在騎樓邊走邊咬。",
+      "<b>「這只有周老師才知道的秘密！」</b>剛咬完韭菜盒子，老師在巷口突然指著一棟被新大樓層層包夾的<b>兩層老白屋</b>（原為二樓、後來略加蓋）：「你們知道中央新村為什麼整片都蓋成白色獨棟『白宮』嗎？原型就是眼前這一棟！」當年正是老師連襟的父親開營造公司在稻田裡蓋起這棟白屋，建商經過驚豔不已，直接拿去當給蔣中正看樣本的設計藍圖。",
+      "走到下一條街口時雨勢剛好停歇，全團又熱鬧湧進藍白招牌的<b>哈爾濱千層蔥花大餅</b>（一份五片 60 元），許多人現場拆開合買分食，老師還貼心叮嚀「帶回家再蒸一定要稍微噴水才香軟」。"
+    ],
+    q: "如果不是周芳軍老師親口指認，走過這條巷子一百遍也只會覺得它是棟普通老屋——不會知道它就是整個中央新村「白宮」建築群的原點。",
+    qtag: "獨家私房秘密",
+    ph: ["154638", "155038", "155712"]
+  },
+  {
+    at: "16:05", cat: "food",
+    short: "黃昏市場與明德",
+    place: "民族路黃昏市場 → 明德路 69 巷",
+    t: "「垃圾市場」變身熟食戰區，與另一座國代聚落明德新村",
+    b: [
+      "雨停後陽光微露，穿過大馬路走進<b>民族路黃昏市場</b>。老師揭開在地人才知道的舊稱——早年這裡曾被私下叫做「垃圾市場」，因為專把早上菜市場沒賣完的貨集中到下午兩三點賣給趕著下班的人。",
+      "如今的黃昏市場徹底翻身成<b>上班族最愛的熟食戰區</b>：港式鳳爪腸粉、日式生魚片、手作魚丸、永遠大排長龍的甘蔗雞，加上新住民帶來的雲南與越南菜色，買了就能直接上桌，連老師都笑說住在新店根本不必自己開伙。",
+      "一拐進<b>明德路 69 巷</b>，便進入當年同樣安置國民大會代表與立法委員的<b>明德新村</b>——早年臺北市公車「10 路」還專程從這裡發車直通城中；如今舊獨棟幾乎已改建為公寓大樓，只留街名見證過去。"
+    ],
+    ph: ["160102", "160557"]
+  },
+  {
+    at: "16:08", cat: "food",
+    short: "明德橋與七張站",
+    place: "瑠公圳明德橋 → 光復饅頭・九份湯圓 → 捷運七張站",
+    t: "跨過瑠公圳明德橋：從 1740 水圳頭走回七張終點站",
+    b: [
+      "巷尾出現一道靜靜流過公寓之間的水道，紅白塗漆的橋柱寫著「<b>明德橋</b>」——這正是起點時從乾隆五年（1740）故事講起的<b>瑠公圳</b>本尊！從無形的歷史開端出發，在終點前親眼看著水流從腳下穿過，整趟走讀剛好完成一個漂亮的圓。",
+      "經過老字號<b>光復饅頭</b>與<b>九份湯圓</b>，我們比預定時間僅多借了八分鐘，在 16:12 抵達解散地點<b>捷運七張站</b>出口的黃色大柱下。",
+      "最後工作人員還沒收走導覽機前，周老師掏出主辦單位準備的兩份大獎與小禮物現場考大家：1924 倖存的堂號（明記堂）、不屬三軍的神祕眷村（炎明新村）、最老土地公（斯馨祠）、十二張土地公（咸亨宮），以及園區三座歷史建築的名字。大家在笑聲與掌聲裡拆下電池歸還機器，把新店兩百多年的聚落層次一併帶上捷運回家。"
+    ],
+    ph: ["160833", "160836", "161513"]
+  }
+];
+
+const C = {
+  "133825": "捷運十四張站高架橋下集合，學員戴上無線導覽耳機聽周芳軍老師從「大坪林渡」講起。",
+  "134708": "斯馨祠臨時鐵皮行宮裡，周老師指著牆上的大坪林歷史圖文解說。",
+  "134935": "牆面懸掛著《斯馨祠興建工程認捐項目編修圖》，見證地方信眾合力重建新廟。",
+  "135036": "1779 年《斯馨牌》就收在供桌下方，一旁還靠著區公所紅色滅火器，形成過渡期才看得到的畫面。",
+  "135151": "鐵絲網上的「大家作伙來起廟」紅布條，寫著 2013 年拆遷暫厝與 2020 年動土的來龍去脈。",
+  "135321": "鑽進民生路巷底才看得見的紅磚三合院與前埕（明記堂）。",
+  "135353": "撐過 1924 年甲子大水災的單層紅磚「門屋」，牆上仍掛著「新店市民生路 126」舊門牌。",
+  "140511": "在地人昔稱「土匪莊」的和平社區：早期兩坪起家，後來一戶戶自己往上加蓋到四五層。",
+  "140751": "一走出老社區窄巷，眼前便是藍牆圍籬與高樓林立的央北重劃區。",
+  "140908": "十四張歷史建築園區新闢石板道旁，白牆紅瓦的古厝與後方摩天住宅形成強烈對比。",
+  "140941": "穿過文記堂的木構門廳，門框正框住對面二十幾層的新市鎮高樓。",
+  "141448": "2024 年 4 月剛啟用的紅磚廣埕上，大家圍著聽劉家從七張買地到十四張的故事。",
+  "145127": "文記堂內的「新北市 18 位匠師特展」，展出細木作大師李萬財的木椅工藝。",
+  "142000": "新店劉氏家廟（啟文堂）燕尾屋脊與背後的高層大樓同框。",
+  "142352": "啟文堂左側仍保有 1962 年陳天啟大師的大面積交趾陶，一旁則是後人重繪過的門神。",
+  "143741": "正殿前比原址加高三十多公分的石雕「御路」，是重組後的視覺焦點。",
+  "143746": "1962 年製成的大面積洗石子供桌，重組時幾乎原封不動整座搬遷進來。",
+  "144553": "利記公厝門額「光承天祿」，紀念光緒年間劉家捐糧賑山西旱災而受賜功名。",
+  "144626": "利記公厝正廳內紅底金字對聯，工整嵌進「利」「記」二字。",
+  "144239": "利記公厝內莊武南特展的水墨飛龍，帶著文人畫氣韻而少見匠氣。",
+  "144244": "彩繪金龍翻騰生動，正是當年讓莊武南被讚「生龍活現」、一戰成名的招牌。",
+  "150256": "歷史公園旁綠圍籬後的新斯馨祠工程，門牌已先掛好「央北二路 206 巷 2 號」。",
+  "150300": "包在藍色鷹架裡的新斯馨祠主體，與早上看過的鐵皮暫厝屋正好形成新舊對照。",
+  "150540": "穿過開闊的十四張歷史公園，遠望中央新村與央北重劃區天際線。",
+  "151458": "雨勢落下前走進安靜的百忍街巷弄，聽唐朝張公藝「百忍堂」典故。",
+  "152501": "午後大雨驟降，全團剛好躲進十二張咸亨宮，聽「有求必應」與道光古碑故事。",
+  "152720": "雨幕下的咸亨宮金爐與後方九芎樹蔭，老井與原始神壇位置就藏在廟後。",
+  "153237": "幾個橘色交通錐後面，褪色白牌寫著「炎明新村」的石砌門柱低調藏在巷口。",
+  "153523": "所有人撐著傘擠在雨中巷口，聽這座不屬陸海空、源自保密局與第三勢力的眷村命運。",
+  "154638": "穿著輕便雨衣排隊買陳宏推薦的無油乾烙韭菜盒子，現場吃下一口熱氣。",
+  "155038": "被高樓包圍的兩層老白屋——周老師揭曉它正是中央新村「小白宮」的原型本尊。",
+  "155712": "雨停後全團擠進藍白招牌的哈爾濱千層蔥花大餅店，買起熱騰騰的伴手禮。",
+  "160102": "雨過天青後在紅綠燈前整隊過街，準備走進最後的市場與水圳段。",
+  "160557": "午後四點的民族路街頭，往黃昏市場熟食區的人潮漸漸熱鬧起來。",
+  "160833": "紅白相間的「明德橋」橋柱旁，隊伍正一步跨過流過街區的瑠公圳。",
+  "160836": "依然靜靜流穿新店住宅巷弄的瑠公圳水道，呼應起點的乾隆五年開圳故事。",
+  "161513": "終點捷運七張站出口黃柱下：最後的有獎徵答搶答，圓滿結束這場四張連走的午後散步。"
+};
+
+const flat = [];
+document.getElementById("nav").innerHTML = S.map((x, i) =>
+  `<a href="#s${i + 1}" data-cat="${x.cat}"><span>${i + 1}</span>${x.short}</a>`
+).join("");
+
+document.getElementById("stops").innerHTML = S.map((x, i) => {
+  const g = x.ph.map(p => {
+    flat.push(p);
+    return `<figure><button data-i="${flat.length - 1}" aria-label="放大照片：${C[p]}"><img loading="lazy" src="img/${p}.jpg" alt="${C[p]}"></button><figcaption>${C[p]}</figcaption></figure>`;
+  }).join("");
+  const part = x.part ? `<div class="part" data-cat="${x.cat}"><div><small>${x.part[0]}</small><h2>${x.part[1]}</h2></div><span>${x.part[2]}</span></div>` : "";
+  const tagCls = x.tag && x.tag.includes("剛開放") ? "tag c" : x.tag && x.tag.includes("老師") ? "tag o" : "tag";
+  const qCls = x.qtag && (x.qtag.includes("稍縱即逝") || x.qtag.includes("加碼")) ? "q r" : "q";
+  return `${part}<section class="stop" id="s${i + 1}" data-cat="${x.cat}">
+    <div class="when"><span class="n">${i + 1}</span><div><b>${x.short}</b><i>約 ${x.at}</i><span class="place">${x.place}</span></div></div>
+    <div>${x.tag ? `<span class="${tagCls}">${x.tag}</span>` : ""}<h3>${x.t}</h3>
+    <ul>${x.b.map(l => `<li>${l}</li>`).join("")}</ul>
+    ${x.q ? `<div class="${qCls}"><b>${x.qtag || "現場才看得到"}</b>　${x.q}</div>` : ""}
+    ${g ? `<div class="grid">${g}</div>` : ""}</div>
+  </section>`;
+}).join("");
+
+// 時代主題篩選（高亮相關站點，讓非該區弱化但不隱藏結構）
+const fBtns = document.querySelectorAll(".filters button");
+const stopEls = document.querySelectorAll("#stops .stop");
+const navEls = document.querySelectorAll("#nav a");
+fBtns.forEach(btn => btn.addEventListener("click", () => {
+  const f = btn.dataset.f;
+  fBtns.forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
+  stopEls.forEach(el => el.classList.toggle("dim", f !== "all" && el.dataset.cat !== f));
+  navEls.forEach(a => a.style.opacity = (f === "all" || a.dataset.cat === f) ? "1" : ".38");
+}));
+
+// 燈箱
+const lb = document.getElementById("lb"), im = document.getElementById("lbi"), cap = document.getElementById("lbc");
+let cur = 0;
+const show = i => {
+  cur = (i + flat.length) % flat.length;
+  const p = flat[cur];
+  im.src = `img/${p}.jpg`;
+  im.alt = C[p];
+  cap.textContent = `${C[p]}　（${cur + 1}/${flat.length}）`;
+};
+document.getElementById("stops").addEventListener("click", e => {
+  const b = e.target.closest("button[data-i]");
+  if (b) { show(+b.dataset.i); lb.classList.add("on"); document.getElementById("lbx").focus(); }
+});
+document.getElementById("lbp").onclick = () => show(cur - 1);
+document.getElementById("lbn").onclick = () => show(cur + 1);
+const close = () => lb.classList.remove("on");
+document.getElementById("lbx").onclick = close;
+lb.addEventListener("click", e => { if (e.target === lb) close(); });
+document.addEventListener("keydown", e => {
+  if (!lb.classList.contains("on")) return;
+  if (e.key === "Escape") close();
+  if (e.key === "ArrowLeft") show(cur - 1);
+  if (e.key === "ArrowRight") show(cur + 1);
+});
+}
+</script>
+</body>
+</html>
