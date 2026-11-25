@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>中山學：九條通梅屋敷走讀｜走讀筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 戴著 3.5mm 有線耳機走在秋日午後的臺北街道，跟著吳智慶老師與在地小美里長，從條通彩繪、白天特別開門的居酒屋，一路穿過百年教會與二條通木屋，走進梅屋敷榻榻米上的靜謐光影
+   IDEA: 從 13:30 捷運中山站 4 號出口出發，沿十條通一路往一條通與市民大道推進，把清代水圳、劉銘傳鐵道、日治勅使街道與大正町、戰後 49% 日資居酒屋與當代社區疊在一張步行地圖上
+   PICTURE: 國父史蹟紀念館（梅屋敷）黑瓦木造正立面與庭園綠意（155117.jpg）
+   COLOUR and TYPE: 梅屋朱紅 #b0382e、水圳青 #28615b、檜木褐 #7d5333、和紙米底 #f6f1e7；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 滿版梅屋敷 Hero → 課程簡介與耳機視角 → 互動「一條街的五層身世」地層切片 → 「這一場才遇得到」獨特亮點 → 條通空間羅盤導覽 → 14 站 50/50 寬幅圖文交替時間軸 → 散步觀看提醒 */
+:root{color-scheme:light dark;
+--bg:light-dark(#f6f1e7,#131517);--card:light-dark(#fffdf8,#1b1e21);--ink:light-dark(#1e1b18,#ebe7df);
+--mute:light-dark(#645d54,#a39d94);--red:light-dark(#b0382e,#e78575);--teal:light-dark(#28615b,#78c2b9);
+--wood:light-dark(#7d5333,#cfa076);--soft:light-dark(#e7f0ee,#1d2a29);--warm:light-dark(#f8ece9,#2b1d1b);
+--line:light-dark(#dfd7c9,#2f3237)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:18px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.8 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(30px,5.6vw,52px);line-height:1.14;font-weight:800}
+h2{font-size:clamp(22px,3vw,29px);line-height:1.3;font-weight:800}
+h3{font-size:clamp(20px,2.5vw,25px);line-height:1.34;font-weight:800}
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+
+/* Hero：梅屋敷與九條通 */
+.hero{background:#181615;color:#f7f2e9}
+.hero .ph{position:relative;height:clamp(360px,58vh,560px);overflow:hidden}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:center 48%;display:block}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,16,15,.18) 0%,rgba(18,16,15,.46) 44%,rgba(18,16,15,.94) 100%)}
+.hero .tx{position:absolute;left:max(5vw,16px);right:max(5vw,16px);bottom:28px;z-index:1;max-width:1020px}
+.hero .badge{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px;padding:5px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.32);background:rgba(24,21,19,.72);backdrop-filter:blur(4px);font-size:13px;letter-spacing:.04em;margin-bottom:12px}
+.hero .badge i{width:8px;height:8px;border-radius:50%;background:#e78575;display:inline-block}
+.hero h1 span{display:block;font-size:clamp(19px,2.8vw,28px);font-weight:600;color:#ebd8ca;margin-top:6px}
+.hero p{margin:.6em 0 0;font-size:16.5px;max-width:66ch;opacity:.94}
+.meta{display:flex;flex-wrap:wrap;gap:8px 24px;padding:16px max(5vw,16px);font-size:14px;background:#141211;color:#ded7cb;border-top:1px solid rgba(255,255,255,.08)}
+.meta b{color:#fff;font-weight:700;margin-right:5px}
+
+main{max-width:1120px;margin:0 auto;padding:22px max(4vw,14px) 64px}
+
+/* 緣起與現場視角 */
+.intro-grid{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:18px;margin:10px 0 28px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.panel h2{font-size:clamp(20px,2.4vw,24px);margin-bottom:10px}
+.panel p{margin:.55em 0;font-size:15.5px}
+.panel p b,.note-box b{color:var(--red);font-weight:700}
+.note-box{margin-top:14px;padding:13px 16px;border-left:4px solid var(--teal);background:var(--soft);border-radius:0 10px 10px 0;font-size:14.5px}
+.note-box strong{color:var(--teal);display:block;margin-bottom:3px}
+.route-card{background:#1b1918;color:#efe9de;border-radius:14px;padding:18px 20px;border:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:12px}
+.route-card h3{font-size:18px;color:#f3c6bc;letter-spacing:.03em}
+.route-steps{display:grid;gap:9px;margin:0;padding:0;list-style:none}
+.route-steps li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:baseline;font-size:14px;border-bottom:1px dashed rgba(255,255,255,.14);padding-bottom:7px}
+.route-steps li:last-child{border-bottom:none;padding-bottom:0}
+.route-steps span{font:700 12px "Noto Sans TC",sans-serif;color:#1b1918;background:#e78575;padding:1px 8px;border-radius:999px;white-space:nowrap}
+.route-steps b{color:#fff;font-weight:700}
+.route-tip{font-size:13px;color:#c9c1b4;border-top:1px solid rgba(255,255,255,.14);padding-top:10px;margin:0}
+
+/* 互動模組：五層歷史地層 */
+.strata{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;margin:0 0 28px}
+.strata-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:14px}
+.strata-head p{margin:0;color:var(--mute);font-size:14.5px}
+.strata-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.strata-tabs button{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:7px 14px;border-radius:999px;font:600 13.5px "Noto Sans TC",sans-serif;cursor:pointer;min-height:38px;transition:all .16s}
+.strata-tabs button[aria-pressed="true"]{background:var(--red);color:#fff;border-color:var(--red)}
+.strata-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:20px;align-items:center}
+.strata-svg{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:var(--bg)}
+.strata-copy{padding:18px 20px;border-radius:12px;background:var(--bg);border:1px solid var(--line)}
+.strata-copy small{display:inline-block;font-weight:700;font-size:12.5px;color:var(--teal);letter-spacing:.05em;margin-bottom:4px}
+.strata-copy h3{font-size:20px;margin-bottom:8px}
+.strata-copy p{margin:0 0 10px;font-size:15px}
+.strata-copy p b,.strata-copy li b{color:var(--red);font-weight:700}
+.strata-copy ul{margin:0;padding-left:1.2em;font-size:14.5px;color:var(--mute)}
+.strata-copy li{margin:.3em 0}
+
+/* 這一場的獨特之處 */
+.unique{margin:34px 0 16px}
+.unique > p{margin:6px 0 14px;color:var(--mute);font-size:15px}
+.uq{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px}
+.uq a{display:flex;flex-direction:column;gap:5px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:12px;padding:15px 17px;transition:transform .16s,box-shadow .2s}
+.uq a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.07)}
+.uq a.t{border-left-color:var(--teal)}
+.uq a.w{border-left-color:var(--wood)}
+.uq i{align-self:flex-start;font-style:normal;font-size:12px;font-weight:700;padding:1px 9px;border-radius:999px;background:var(--warm);color:var(--red)}
+.uq a.t i{background:var(--soft);color:var(--teal)}
+.uq a.w i{background:light-dark(#f2e9df,#2b221b);color:var(--wood)}
+.uq b{font-family:"Noto Serif TC",serif;font-size:17px;line-height:1.4}
+.uq span{font-size:14px;color:var(--mute);line-height:1.6}
+
+/* 條通空間羅盤快速跳轉 */
+.compass{margin:30px 0 10px;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.compass-title{font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--mute);margin-bottom:10px}
+nav:not(.yr-pn) .scroll{display:flex;flex-wrap:wrap;gap:8px}
+nav:not(.yr-pn) a{display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:999px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:13.5px;min-height:36px;background:var(--bg);transition:border-color .16s}
+nav:not(.yr-pn) a:hover{border-color:var(--red)}
+nav:not(.yr-pn) a span{color:var(--red);font-weight:700}
+
+/* 四大篇章與工學式寬幅圖文交替站點 */
+.part{margin:50px 0 8px;padding:16px 0 8px;border-top:3px solid var(--ink);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px}
+.part small{display:block;color:var(--red);font-weight:700;letter-spacing:.08em;font-size:13px}
+.part span{font-size:14.5px;color:var(--mute)}
+
+.stop{padding:36px 0;border-bottom:1px solid var(--line)}
+.stop-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:16px}
+.stop-num{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--red);color:#fff;font:800 17px "Noto Serif TC",serif;flex:none}
+.stop-meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.stop-meta .at{font-size:13.5px;font-weight:700;color:var(--teal);letter-spacing:.04em}
+.stop-meta .loc{font-size:13.5px;color:var(--mute)}
+.tag{display:inline-block;font-size:12px;font-weight:700;line-height:1.65;color:#fff;background:var(--red);border-radius:4px;padding:0 8px}
+.tag.t{background:var(--teal)}.tag.w{background:var(--wood)}
+
+/* 工學博物館配比靈感：50/50 寬幅圖文並排，偶數站左右互換 */
+.split{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:24px 36px;align-items:start}
+.stop.alt .split .copy{order:2}
+.stop.alt .split .lead-ph{order:1}
+.copy h3{margin-bottom:12px}
+.copy p{margin:0 0 11px;font-size:16px}
+.copy p b,#stops ul li b{color:var(--red);font-weight:700}
+ul{margin:10px 0 0;padding-left:1.25em}
+li{margin:.42em 0}
+li::marker{color:var(--red)}
+.q{background:var(--soft);border-left:4px solid var(--teal);border-radius:0 10px 10px 0;padding:12px 16px;margin-top:16px;font-size:15px}
+.q b{color:var(--teal);font-weight:700}
+.q.r{background:var(--warm);border-left-color:var(--red)}
+.q.r b{color:var(--red)}
+
+/* 大圖展示框（不再是小縮圖！） */
+.lead-ph figure,.more-ph figure{margin:0}
+.ph-btn{all:unset;cursor:pointer;position:relative;display:block;width:100%;border-radius:12px;overflow:hidden;background:var(--line);border:1px solid var(--line)}
+.ph-btn img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .35s}
+.ph-btn.tall img{aspect-ratio:3/4;max-height:540px;object-fit:cover}
+.ph-btn:hover img{transform:scale(1.03)}
+.ph-btn small{position:absolute;left:10px;bottom:10px;background:rgba(16,15,14,.74);color:#fff;font-size:12px;padding:2px 8px;border-radius:5px;letter-spacing:.03em}
+.ph-btn .zoom{position:absolute;right:10px;bottom:10px;background:rgba(16,15,14,.68);color:#fff;font-size:12px;padding:2px 8px;border-radius:5px;opacity:.88}
+figcaption{font-size:14px;line-height:1.58;color:var(--mute);margin-top:9px}
+figcaption b{color:var(--ink);font-weight:700}
+
+/* 附屬寬幅雙欄／三欄大圖列 */
+.more-ph{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 22px;margin-top:22px}
+.more-ph.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+/* 散步後記 */
+.fix{border-left:4px solid var(--red);padding:18px 22px;margin-top:40px;font-size:15.5px;background:var(--card);border-radius:0 14px 14px 0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fix h2{font-size:21px;margin-bottom:8px}
+.fix p{margin:.48em 0}
+.fix b{color:var(--red);font-weight:700}
+
+/* 燈箱 */
+#lb{position:fixed;inset:0;z-index:20;background:rgba(10,11,12,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:14px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 96px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:10px;align-items:center;color:#eee;margin-top:10px;font-size:15px;flex-wrap:wrap;justify-content:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer}
+footer{max-width:1120px;margin:0 auto;padding:0 max(4vw,14px) 40px;color:var(--mute);font-size:14px}
+
+@media(max-width:860px){
+  .intro-grid,.strata-grid,.split{grid-template-columns:minmax(0,1fr)}
+  .stop.alt .split .copy,.stop.alt .split .lead-ph{order:unset}
+  .more-ph.three{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+  .more-ph,.more-ph.three{grid-template-columns:minmax(0,1fr)}
+}
+@media(prefers-reduced-motion:reduce){.ph-btn img,.uq a{transition:none}.uq a:hover{transform:none}}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・68 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../meiwufu/index.html" aria-current="page"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../meiwufu/index.html" aria-current="page"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></details><span>2024/10/28</span></div>
+<header class="hero">
+  <div class="ph">
+    <img src="img/155117.jpg" alt="國父史蹟紀念館（梅屋敷）黑瓦木造屋舍與庭園入口">
+    <div class="tx">
+      <div class="badge"><i></i><span>臺北市中山社區大學・113 秋季班現代公民素養週戶外走讀課程｜2024/10/28</span></div>
+      <h1>中山學：九條通梅屋敷走讀<span>從條通彩繪、白天開門的《華燈》片場，沿劉銘傳鐵道走進百年梅屋敷</span></h1>
+      <p>下午一點半在捷運中山站 4 號出口戴上耳機出發，跟著吳智慶老師與在地「小美里長」，從剛畫好的條通彩繪牆走進白天罕見開放的《華燈初上》居酒屋，穿過黑白相間的中山教會與只剩一兩間的日式木屋，跨越劉銘傳鐵道舊線，最後脫鞋踏進百年「梅屋敷」的榻榻米與梅園。</p>
+    </div>
+  </div>
+</header>
+<div class="meta">
+  <span><b>日期</b>2024/10/28（一）13:30–16:30・戶外走讀</span>
+  <span><b>課程</b>113 秋季班現代公民素養週「中山學：九條通梅屋敷走讀」</span>
+  <span><b>講師</b>吳智慶老師（山水人文學會執行長）；街區段由在地「小美里長」（大正町發展協會理事長）導覽</span>
+  <span><b>集合</b>下午 13:30 捷運中山站 4 號出口</span>
+  <span><b>路線</b>捷運中山站 → 條通彩繪圖 → 華燈初上居酒屋 → 中山教會 → 二條通日式木屋 → 劉銘傳鐵道 → 國父史蹟紀念館（梅屋敷）</span>
+</div>
+
+<main>
+  <section class="intro-grid" aria-label="課程簡介與行走方式">
+    <div class="panel">
+      <h2>用一個下午，讀懂中山區如何從沼澤走進國際大道</h2>
+      <p>這場「<b>中山學：九條通梅屋敷走讀</b>」，是臺北市中山社區大學 113 秋季班現代公民素養週的戶外課程，由長期深耕臺北文史的<b>吳智慶老師（山水人文學會執行長）</b>領路。比起把景點拆成單獨的建築來看，老師更擅長把整個街區放進大歷史裡：為什麼大稻埕平埔社的背面會長出<b>中山區</b>？為什麼這條路叫「<b>勅使街道</b>」？又為什麼原本規劃為日本公務員社區的<b>大正町九條通</b>，會在戰後搖身一變成為日本企業幹部的夜晚客廳？</p>
+      <p>這一回不光走看街廓，也走進平常白天門戶緊閉的場所：六條通為我們特別開啟日間大門的《華燈初上》實景片場、碩果僅存的二條通兩層木屋，以及百年前城外第一家高級日式旅館「<b>梅屋敷</b>」。同一塊街區，在不同時代反覆換上新身分，每轉一個彎都是一層時間的剖面。</p>
+      <div class="note-box">
+        <strong>自備 3.5mm 有線耳機的城市散步</strong>
+        課前通知特別提醒學員自備 <b>3.5mm 圓頭有線耳機</b>。穿梭在車水馬龍的中山北路、長安東路與市民大道之間，導覽機把老師的講解清楚送進耳裡，讓三十多人的隊伍不必大聲喊話，也能安靜站在巷弄與老屋前聽完一個世紀的故事。
+      </div>
+    </div>
+
+    <aside class="route-card" aria-label="走讀路線摘要">
+      <h3>今日路線・五大座標</h3>
+      <ul class="route-steps">
+        <li><span>起點</span><div><b>捷運中山站 4 號出口</b>・13:30 集合，從臺北建城 140 週年與北淡線破題</div></li>
+        <li><span>第一站</span><div><b>條通彩繪圖</b>・九條通／十條通巷口新畫作，讀懂大正町棋盤</div></li>
+        <li><span>第二站</span><div><b>華燈初上居酒屋</b>・小美里長帶路，白天獨家走進「光 ヒカリ」吧檯</div></li>
+        <li><span>第三站</span><div><b>二條通日式木屋</b>・穿過黑白哥德式中山教會，尋訪僅存木造二樓老屋</div></li>
+        <li><span>第四站</span><div><b>劉銘傳鐵道</b>・跨過市民大道，追索騰雲號蒸汽火車與大加臘往事</div></li>
+        <li><span>終點</span><div><b>國父史蹟紀念館</b>・走進百年「梅屋敷」榻榻米、緣側與靜謐梅園</div></li>
+      </ul>
+      <p class="route-tip">全場歷時約三個小時，從九條通一路往一條通與臺北車站側門前進，正好把條通由北到南串成一條連續的時間線。</p>
+    </aside>
+  </section>
+
+  <section class="strata" aria-label="中山區與條通五層歷史切片">
+    <div class="strata-head">
+      <h2>先把街道剖開來看：同一塊土地的五種身世</h2>
+      <p>點選下方五個時代，看「九條通到梅屋敷」如何在不同政權與產業之間層層疊寫</p>
+    </div>
+    <div class="strata-tabs" role="group" aria-label="切換歷史地層">
+      <button aria-pressed="true" data-layer="0">① 清代水圳與三板橋庄</button>
+      <button aria-pressed="false" data-layer="1">② 臺北建城 140 年與劉銘傳鐵道</button>
+      <button aria-pressed="false" data-layer="2">③ 勅使街道、大正町與梅屋敷</button>
+      <button aria-pressed="false" data-layer="3">④ 49% 日資合營與條通不夜城</button>
+      <button aria-pressed="false" data-layer="4">⑤ 韓國街進駐與街區新生</button>
+    </div>
+    <div class="strata-grid">
+      <svg class="strata-svg" viewBox="0 0 640 310" role="img" aria-label="九條通至梅屋敷五層歷史空間示意圖">
+        <rect width="640" height="310" fill="none"/>
+        <!-- 南北向四條幹道 -->
+        <g opacity=".35" stroke="var(--mute)" stroke-width="1.5">
+          <line x1="90" y1="24" x2="90" y2="282"/>
+          <line x1="210" y1="24" x2="210" y2="282"/>
+          <line x1="370" y1="24" x2="370" y2="282"/>
+          <line x1="530" y1="24" x2="530" y2="282"/>
+        </g>
+        <text x="90" y="18" text-anchor="middle" fill="var(--teal)" font-size="11.5" font-weight="700">中山北路（勅使街道）</text>
+        <text x="210" y="18" text-anchor="middle" fill="var(--mute)" font-size="11">天津街</text>
+        <text x="370" y="18" text-anchor="middle" fill="var(--mute)" font-size="11">林森北路</text>
+        <text x="530" y="18" text-anchor="middle" fill="var(--teal)" font-size="11.5" font-weight="700">新生北路（塯公圳）</text>
+
+        <!-- 條通橫巷 -->
+        <g id="svg-alleys">
+          <rect x="90" y="42" width="440" height="190" rx="8" fill="var(--card)" stroke="var(--line)" stroke-width="1.5"/>
+          <line x1="90" y1="74" x2="530" y2="74" stroke="var(--line)" stroke-dasharray="4 4"/>
+          <line x1="90" y1="112" x2="530" y2="112" stroke="var(--line)" stroke-dasharray="4 4"/>
+          <line x1="90" y1="150" x2="530" y2="150" stroke="var(--wood)" stroke-width="2"/>
+          <line x1="90" y1="190" x2="530" y2="190" stroke="var(--line)" stroke-dasharray="4 4"/>
+          <text x="542" y="64" fill="var(--mute)" font-size="11">九・十條通（彩繪牆）</text>
+          <text x="542" y="102" fill="var(--red)" font-size="11" font-weight="700">六條通（華燈片場）</text>
+          <text x="542" y="148" fill="var(--wood)" font-size="11" font-weight="700">四條通（長安東路・教會）</text>
+          <text x="542" y="186" fill="var(--mute)" font-size="11">二條通（日式木屋）</text>
+        </g>
+
+        <!-- 市民大道劉銘傳鐵道 & 梅屋敷 -->
+        <path d="M24,252 L616,252" stroke="var(--ink)" stroke-width="4" stroke-dasharray="10 6" opacity=".55"/>
+        <text x="310" y="244" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700">一條通／市民大道（清代劉銘傳鐵道舊線）</text>
+
+        <rect x="44" y="264" width="142" height="36" rx="8" fill="var(--warm)" stroke="var(--red)" stroke-width="2"/>
+        <text x="115" y="287" text-anchor="middle" fill="var(--red)" font-size="12.5" font-weight="800">梅屋敷（國父史蹟館）</text>
+
+        <!-- 動態強調層 -->
+        <g id="layer-hi-0">
+          <path d="M530,24 L530,282" stroke="var(--teal)" stroke-width="5"/>
+          <rect x="405" y="128" width="114" height="36" rx="6" fill="var(--soft)" stroke="var(--teal)" stroke-width="1.8"/>
+          <text x="462" y="150" text-anchor="middle" fill="var(--teal)" font-size="11.5" font-weight="700">三板橋・水圳農田</text>
+        </g>
+        <g id="layer-hi-1" hidden>
+          <path d="M24,252 L616,252" stroke="var(--red)" stroke-width="5"/>
+          <circle cx="90" cy="252" r="7" fill="var(--red)"/>
+          <text x="470" y="286" text-anchor="middle" fill="var(--red)" font-size="12" font-weight="700">1884 臺北建城 → 1887 臺灣建省修鐵道</text>
+        </g>
+        <g id="layer-hi-2" hidden>
+          <path d="M90,24 L90,282" stroke="var(--wood)" stroke-width="5"/>
+          <rect x="122" y="54" width="380" height="162" rx="8" fill="none" stroke="var(--wood)" stroke-width="2.5"/>
+          <text x="312" y="138" text-anchor="middle" fill="var(--wood)" font-size="13" font-weight="800">大正町棋盤住宅區 × 城外首家旅館梅屋敷</text>
+        </g>
+        <g id="layer-hi-3" hidden>
+          <rect x="135" y="84" width="350" height="44" rx="8" fill="var(--warm)" stroke="var(--red)" stroke-width="2.2"/>
+          <text x="310" y="111" text-anchor="middle" fill="var(--red)" font-size="13" font-weight="800">戰後 49% 日資合營・日籍幹部夜晚聚落</text>
+        </g>
+        <g id="layer-hi-4" hidden>
+          <circle cx="370" cy="64" r="24" fill="var(--soft)" stroke="var(--teal)" stroke-width="2"/>
+          <circle cx="150" cy="190" r="20" fill="var(--warm)" stroke="var(--red)" stroke-width="2"/>
+          <text x="310" y="138" text-anchor="middle" fill="var(--teal)" font-size="12.5" font-weight="800">彩繪地圖、韓式烤肉街與僅存日式木屋共存</text>
+        </g>
+      </svg>
+      <div class="strata-copy" id="strata-copy"></div>
+    </div>
+  </section>
+
+  <section class="unique" id="unique">
+    <h2>這一場才看得到、要來參加才知道的</h2>
+    <p>巷弄地圖在網路上查得到，但下面這些「白天特別開門」、「僅存一兩間」與「剛好走進那個瞬間」的驚喜，必須跟著這趟走讀才會撞見。點進去看那一站。</p>
+    <div class="uq" id="uq"></div>
+  </section>
+
+  <nav class="compass" aria-label="站點空間跳轉">
+    <div class="compass-title">從捷運中山站一路走到梅屋敷｜14 站空間座標（點選快速跳轉）</div>
+    <div class="scroll" id="nav"></div>
+  </nav>
+
+  <div id="stops"></div>
+
+  <div class="fix">
+    <h2>下次自己再走進九條通與梅屋敷，可以這樣看</h2>
+    <p>・<b>把一月到三月留給梅屋敷</b>：逸仙公園免費開放參觀，入館前記得脫鞋，先看「博愛」墨寶與緣側木廊的光影；如果想看園裡梅花盛開的模樣，務必挑冬末春初再訪。</p>
+    <p>・<b>認條通的數字規律</b>：條通從南往北數——市民大道是一條通、長安東路是四條通，一路往北到九、十條通；東西兩側則夾在中山北路（昔日勅使街道）與新生北路（昔日塯公圳）之間。</p>
+    <p>・<b>仰頭找快要消失的屋脊</b>：走進條通別只看一樓霓虹招牌，試著往大樓與鐵門縫隙裡多看一眼，還能認出僅存一、兩棟的單層日式平房，與二條通 1 號難得的兩層木屋。</p>
+    <p>・<b>看中山教會不只看尖塔</b>：站在林森北路與長安東路口，記得看看外牆上「下面寬、上面窄」的斜向扶壁（老師口中的避震牆柱），那是為地震頻繁的臺灣特別留下的結構設計。</p>
+  </div>
+</main>
+
+<footer>2024/10/28 參加臺北市中山社區大學 113 秋季班現代公民素養週戶外走讀課程「中山學：九條通梅屋敷走讀」的走讀筆記</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../dangchan/index.html"><small>‹ 較新的一場・2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a><a class="nx" href="../dangchan1026/index.html"><small>較早的一場・2024/10/26 ›</small>走讀國家寶藏：台北城中區的黨產謎團</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar"><button id="lbp" aria-label="上一張">‹</button><span id="lbc"></span><button id="lbn" aria-label="下一張">›</button><button id="lbx" aria-label="關閉">✕</button></div>
+</div>
+
+<script>
+{
+const LAYERS=[
+  {
+    k:"第 1 層・清代水鄉與拓墾（1700s–1870s）",
+    t:"大稻埕的背面：三板橋庄與郭錫瑠的塯公圳",
+    d:"在成為繁華商區之前，這一帶只是凱達格蘭人口中意為「沼澤」的<b>大加臘荒埔</b>邊緣。漳州人<b>郭錫瑠</b>從新店碧潭開鑿<b>塯公圳</b>引水北流，水來到今天新生北路一帶寬深難渡，先民架起三塊石板過水，「<b>三板橋庄</b>」的地名從此誕生。",
+    b:["更早以前，這裡緊鄰大稻埕平埔社的後方，由牛車小徑與農田組成。","同安與泉州移民在「頂下郊拚」後重塑大稻埕版圖，商業重心逐步向東推進，才開始牽動中山區一帶的命運。"]
+  },
+  {
+    k:"第 2 層・建城與火車（1884–1895）",
+    t:"中法戰爭、臺北建城 140 週年與劉銘傳鐵道",
+    d:"2024 年正好是<b>臺北建城 140 週年</b>（1884–2024）。當年法國為越南戰事進逼基隆與淡水，清軍以臺北城為指揮中心並守住戰局；戰後臺灣設省，首任巡撫<b>劉銘傳</b>修築<b>基隆—臺北—新竹鐵道</b>，「<b>騰雲號</b>」蒸汽火車就從今天市民大道一帶呼嘯而過。",
+    b:["臺北從早期官員被外放「自生自滅」的邊陲，歷經開港通商與大稻埕茶業（六館街洋行），一躍成為全臺首善之區。","清代鐵道打通的東西向軸線，正是今日一條通（市民大道）的前身。"]
+  },
+  {
+    k:"第 3 層・日治規劃社區（1895–1945）",
+    t:"勅使街道、大正町九條通與城外首家「梅屋敷」",
+    d:"為祭祀在臺辭世的北白川宮能久親王，日本在圓山興建<b>臺灣神社</b>，並把中山北路拓建為臺灣<b>第一條國際大道「勅使街道」</b>。東側規劃為中級公務人員社區「<b>大正町</b>」（一條通至九條通），同時在城外起點蓋起高級日式旅館「<b>梅屋敷</b>」。",
+    b:["一條到九條通有明確規格，並非民間隨意開發；林森公園一帶當年則是日本公墓與火葬場。","1913 年孫中山先生來臺二次革命期間曾下榻梅屋敷並留墨，寫下今日國父史蹟紀念館的起點。"]
+  },
+  {
+    k:"第 4 層・戰後重整與夜生活（1950s–1990s）",
+    t:"「日資 49%」政策復活的條通居酒屋街",
+    d:"戰後日本僑民沿鐵道赴基隆港搭船遣返，原住家區一度沉寂。直到韓戰帶動日本重工業復甦、民國五十年代臺灣中小企業起飛，政府找來山葉、鈴木、本田等日廠合作並規定「<b>日資不得超過 49%、臺資占 51%</b>」——大批日籍廠長與技術人員白天進工廠，晚上就回到留著老屋的條通解鄉愁。",
+    b:["商務應酬講究「三攤節奏」：正式餐敘、條通續攤談條件、簽約後再去青葉或欣葉吃消夜。","美軍顧問團駐防時期也帶來洋酒文化與混血記憶，讓條通和晴光商圈形成截然不同的氣質。"]
+  },
+  {
+    k:"第 5 層・當代的街區表情（2000s–今日）",
+    t:"《華燈》片場、韓國街與只剩一兩間的老木屋",
+    d:"百餘年過去，昔日整齊的日式木造住宅如今大多改建為大樓，整個條通只剩<b>一兩間平房與二條通兩層木屋</b>留存。另一方面，巷弄裡悄悄出現<b>韓國料理街</b>、新完成的<b>條通彩繪牆</b>，與因《華燈初上》再次爆紅的「光」居酒屋交織出新風景。",
+    b:["在地「小美里長」（大正町發展協會理事長）與中山社大串聯，讓外來旅人能走進夜色之外的條通日常。","只有跟著導覽在對的午後轉進巷口，才能把這五層時代一次看齊。"]
+  }
+];
+
+const strataCopy=document.getElementById("strata-copy");
+const renderLayer=idx=>{
+  const x=LAYERS[idx];
+  strataCopy.innerHTML=`<small>${x.k}</small><h3>${x.t}</h3><p>${x.d}</p><ul>${x.b.map(i=>`<li>${i}</li>`).join("")}</ul>`;
+  for(let i=0;i<5;i++){
+    const g=document.getElementById("layer-hi-"+i);
+    if(g)g.hidden=(i!==idx);
+  }
+};
+renderLayer(0);
+document.querySelector(".strata-tabs").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-layer]");
+  if(!b)return;
+  document.querySelectorAll(".strata-tabs button").forEach(btn=>btn.setAttribute("aria-pressed",btn===b?"true":"false"));
+  renderLayer(+b.dataset.layer);
+});
+
+const S=[
+  {
+    at:"13:30",
+    part:["第一篇章・出發與街道身世","從捷運出口看見臺北建城 140 週年"],
+    short:"中山站出發",
+    loc:"捷運中山站 4 號出口",
+    tag:"時空正逢 140 週年",
+    t:"戴上有線耳機集合：一場從中法戰爭與北淡線破題的散步",
+    b:[
+      "下午一點半，學員陸續在<b>捷運中山站 4 號出口</b>集合，插上自備的 <b>3.5mm 有線耳機</b>。吳智慶老師一開場沒有急著走進巷子，而是先把時間軸拉回 <b>140 年前（1884 年）的臺北建城與中法戰爭</b>。",
+      "當年法國因安南戰事進攻臺灣，從基隆港一路打到淡水港，清軍以<b>臺北城</b>作為指揮中心並守住戰線，為了應戰也順勢把城內設施全面建好——這場「光榮一戰」，讓 2024 年正好成為<b>臺北建城 140 週年</b>。",
+      "老師指著腳下的<b>捷運淡水線</b>脈絡說，日本時代修築的<b>北淡線鐵道</b>從臺北車站繞出，通往國際港口淡水港，路線幾乎與今天的捷運一致；而中山區這一帶早期屬於大稻埕平埔聚落的後方，正是隨著大稻埕繁榮外溢，才慢慢長成今天的樣貌。"
+    ],
+    q:"一出發就先把「今天走讀的特別安排」預告給大家：稍後走進六條通，幾年前紅遍全臺的《華燈初上》實景片場今天白天特別為學員開門，「你們今天就當作自己是電視台的明星」。",
+    qtag:"特別開放預告",
+    ph:["135332"]
+  },
+  {
+    at:"13:55",
+    short:"勅使街道・水圳",
+    loc:"中山北路一段一帶",
+    tag:"臺灣第一條國際大道",
+    t:"三板橋、塯公圳與「中間樟樹、兩邊楓香」的勅使街道",
+    b:[
+      "走上<b>中山北路一段</b>，車流在樹蔭下川流不息。老師提醒大家抬頭認一下這條路獨有的行道樹配置：<b>中間分隔島種樟樹，兩側人行道種楓香</b>，葉色相近卻各有姿態，是臺北街頭認識臺灣原生樹種的好教室。",
+      "這條路在清代原只是一條供牛車行走的農業小徑；1895 年明治天皇的叔叔<b>北白川宮能久親王</b>率軍來臺後病逝中南部，日本在圓山（今圓山大飯店一帶）建立全臺最高神殿<b>臺灣神社</b>。此後每年天皇派皇太子、首相或重臣來臺祭祀，必經此路前往圓山，這裡因此躍升為<b>臺灣第一條國際大道「勅使街道」</b>。",
+      "鏡頭再往東移到<b>新生北路</b>：五百五十多年前仍是荒埔的臺北，後來因漳州人<b>郭錫瑠</b>從新店碧潭引<b>塯公圳</b>進城灌溉而成農鄉。圳水來到新生北路時寬深難過，先民架起三塊石板成橋，「<b>三板橋庄</b>」便成了這裡在清代的舊名。"
+    ],
+    q:"老師也指著林森公園一側補充：日治時期這裡曾是專屬日本人的<b>公墓與火葬場</b>，甚至安葬過總督與總督家屬。清代水圳、日治墓地與皇室大道，就這樣疊在我們每天路過的十字路口上。",
+    qtag:"路牌不會寫的故事",
+    ph:["135845"]
+  },
+  {
+    at:"14:01",
+    short:"條通彩繪圖",
+    loc:"九條通／十條通巷口",
+    tag:"剛落成的新地標",
+    t:"九條通「大正町條通商圈」彩繪牆：讀懂三個天皇與棋盤格社區",
+    b:[
+      "拐進巷口，牆面上一幅剛完成不久的「<b>大正町條通商圈</b>」手繪彩繪地圖立刻吸住目光。暖米色牆面上畫出從一條通到九條通的街區紋理，夾雜著居酒屋美食與端著珍珠奶茶的小人插畫，上方掛著藍白商圈招牌。",
+      "站在彩繪圖前，老師幫大家把日本年號對回臺灣紀年：日本治臺五十年歷經<b>明治、大正、昭和</b>三個天皇——明治四十五年結束後，<b>大正元年正好是民國元年</b>；大正十五年交接<b>昭和元年，則是民國十五年</b>。這片社區就誕生在民國元年前後的大正年間，名為「<b>大正町</b>」。",
+      "老師強調，「町」相當於今天的「里」，而「條通」在日語裡就是巷弄之意。日本政府在<b>中山北路、天津街、林森北路、新生北路</b>四條南北道路之間，從市民大道一路向北劃出井然有序的一條通到九條通（民間也有十條通的說法），專供<b>總督府體系的公務人員與日本士紳居住</b>，是有規劃、有規格的新社區。"
+    ],
+    q:"學員們就站在這幅當時最新繪製的彩繪地圖前拍下第一張團體照——老社區正試著用年輕的畫筆，把一百多年的巷弄門牌重新介紹給走進來的人。",
+    qtag:"這一場才拍得到",
+    ph:["140131","140200"]
+  },
+  {
+    at:"14:06",
+    part:["第二篇章・日夜交錯的條通舞台","小美里長帶路，從白日老屋走進《華燈》酒吧"],
+    short:"七・八條通",
+    loc:"七條通、八條通街區",
+    tag:"快要消失的木屋",
+    t:"小美里長現身帶逛：像郵局一樣的新綠牆面，與只剩一兩間的平房",
+    b:[
+      "走進巷弄深處，條通最具人情味的在地嚮導現身——人稱「<b>小美里長</b>」的正義里里長兼大正町發展協會理事長（老師打趣稱她是「條通最美的里長」）。跟著里長在自己熟悉的管區散步，連轉角的最新變化都成了活教材。",
+      "經過丹迪旅店前，老師要大家抬頭看那一個個彷彿電影《羅馬假期》般向外獨立開窗的小陽台；斜對面是得獎牛肉麵與排隊抓盲盒的扭蛋機；而正在整修的<b>天津大飯店</b>外牆剛漆上一層新綠，小美里長笑說大家才剛揭開面紗就看到它「綠得像郵局一樣」，這是當天來到這裡才看得到的剛出爐街景。",
+      "但在新潮旅店與熱鬧招牌之間，老師突然停下腳步指向一堵灰牆鐵門後方——屋簷露出一截深褐色瓦頂與「16」號門牌。「當年整片大正町全部都是這種<b>一層樓的日式住宅</b>，戰後商業發達、有錢的人把房子翻高蓋大，如今<b>整個條通只剩下一兩間</b>。」"
+    ],
+    q:"如果不跟著熟悉巷弄的老師停步仰望，多數路人只會經過那扇灰色鐵門，根本不會察覺背後還躲著一座歷經百年滄海桑田的單層老木屋。",
+    qtag:"要參加才看得到",
+    ph:["140555","141015"]
+  },
+  {
+    at:"14:22",
+    short:"49% 日資密碼",
+    loc:"七條通居酒屋街",
+    tag:"招牌上沒寫的祕辛",
+    t:"為什麼條通是居酒屋街？答案藏在「日資 49%」與臺灣人的「夠禮數」",
+    b:[
+      "白天的七條通安靜得像在沉睡，兩旁緊閉的門面掛滿日文與韓文看板，包括條通最知名的排隊鰻魚飯名店「<b>肥前屋</b>」（提前領牌還能先坐著喝茶候位）。但這條原本單純的中產住宅區，為何會在戰後變成全臺最密集的日式居酒屋街？",
+      "吳老師揭開一段很少寫在旅遊書上的產業史：1945 年日本戰敗後，僑民被強制遣返，每人僅能攜帶簡單行李；然而 1950 年代<b>韓戰爆發</b>，美軍需要日本重工業支援，日本國力再次起飛。到了民國五十年代臺灣推動中小企業升級，政府邀請<b>三井、Yamaha、Suzuki、Honda</b> 等日商來臺合資，條件是<b>臺資必須占 51%、日資不得超過 49%</b>。",
+      "政策一下，大批日籍廠長、支店長與技術人員來到臺北。白天忙著輔導工廠，晚上思鄉就往留有許多日式房屋的條通「喝一杯」，還有人在異鄉遇見情人而衍生出在「小虎山（小公館）」安置外室的故事。老字號臺菜餐廳<b>梅子餐廳</b>也見證了這段黃金時代——甚至連日本天后<b>安室奈美惠</b>最紅時來臺公演，都曾特地安排整個團隊包場吃臺菜。"
+    ],
+    q:"老師生動拆解當年臺日商務應酬的「<b>三攤行規</b>」：第一攤正式晚餐、第二攤進條通酒吧談合作條件；就算隔天簽約已經搞定，臺灣人「<b>夠禮數（kàu-lé-sòo）</b>」，第三攤還要帶日本客戶去青葉、欣葉吃一頓菜脯蛋配地瓜稀飯，代表簽完約依然交情長久。臺灣中小企業的人情與訂單，有一半是在條通談出來的。",
+    qtag:"在地人才聽過",
+    ph:["142255"]
+  },
+  {
+    at:"14:25",
+    short:"六條通片場",
+    loc:"六條通「Sugar」門前",
+    tag:"六條通・條通記憶",
+    t:"六條通《華燈初上》門口：從美軍洋酒瓶到白天特別為我們打開的門",
+    b:[
+      "轉進<b>六條通</b>，黑色牆面掛著大大的「6」字街牌與「<b>シュガーベイビー（Sugar）</b>」招牌。在等大家集合進場前，老師順勢補上一段條通在民國五、六十年代的另一層記憶。",
+      "當年<b>美軍顧問團</b>仍在臺灣時，圓環與中山區一帶酒吧林立；到了臺美斷交、美軍撤離的那幾年，許多「回去之後再來娶妳」的承諾落空，後來在烏來等部落常能見到當年的混血兒身影。老師笑說自己小時候還親眼見過有人專門收集條通與林森北路喝剩的<b>高級洋酒空瓶</b>——一瓶洋酒動輒數千元、瓶身又漂亮，收破銅爛鐵的人撿去<b>圓環、承德路夜市</b>轉賣，一般家庭買回家擺著當裝飾品。",
+      "接著，小美里長帶著我們走近原本只有夜色降臨才亮燈的店門。為了這場走讀，店家特別在下午兩點多破例開門，三十幾位學員魚貫走進電視劇《<b>華燈初上</b>》的核心取景空間。"
+    ],
+    ph:["142520"]
+  },
+  {
+    at:"14:35",
+    short:"光 ヒカリ",
+    loc:"「光 ヒカリ」吧檯內部",
+    tag:"全場唯一・白天限定",
+    t:"走進「光 ヒカリ」的紅霓虹：一整排寄酒瓶與電視台明星的午后",
+    b:[
+      "跨過金框玄關與藍絲絨沙發，眼前在暗色調空間裡忽然亮起那塊再熟悉不過的紅色燈箱——「<b>光 ヒカリ</b>」。大白天站在日劇感十足的酒吧吧檯裡聽導覽，連平常不敢推門走進來的學員都興奮地舉起手機拍照。",
+      "吧檯後與陳列架上，最耐人尋味的是那一整排貼著紙條的<b>寄酒瓶（キープボトル / Keep Bottle）</b>：每一支威士忌或「二階堂」燒酎瓶頸上都用日文細細寫著客人姓名與寄放日期。這不只是省錢，更是熟客與媽媽桑之間「下次我還會再回來」的默契憑證，也讓人體會老師說的那句老條通規矩——「<b>賣藝、陪酒、不賣身</b>」。",
+      "小美里長也分享，這幾年條通正慢慢擺脫「只有卡拉 OK 與夜生活」的單一印象：巷口老店依然每晚亮燈照亮整條街（里長笑稱「只要它沒亮燈，我們整條都暗了」），同時後段六、七條通也陸續出現<b>韓式烤肉店與韓國街</b>，年輕人與藝術團體也紛紛進來尋找創作靈感，讓條通變成臺北對外文化交流的觸角。"
+    ],
+    q:"平常路過只能隔著玻璃張望的「光」酒吧，這天午後特別為這堂課點亮燈箱、敞開吧檯，讓三十位社大學員當了一回走進片場的明星——這是只有親自來到現場才擁有的限定時刻。",
+    qtag:"白天不對外開放",
+    ph:["143514","143601","143642"]
+  },
+  {
+    at:"14:57",
+    part:["第三篇章・跨語言、老商號與最後的木屋","從哥德式鐘樓走到二條通 1 號"],
+    short:"中山教會",
+    loc:"林森北路 × 長安東路（四條通）",
+    tag:"抗震設計與三語禮拜",
+    t:"黑白相間的中山基督長老教會：像砲彈一樣的尖拱窗與「避震牆柱」",
+    b:[
+      "告別條通的酒香與霓虹，隊伍來到<b>林森北路與長安東路（四條通）</b>交會口。眼前這座黑白分明、充滿英國鄉村氣息的<b>哥德式教堂</b>，建於日治後期的 <b>1935–1937 年</b>（盧溝橋事變前夕、日本國力正盛之時），由住在條通一帶的基督教徒募款興建，原名「大正町教會」，戰後由臺灣基督長老教會接手成為<b>中山基督長老教會</b>。",
+      "老師帶大家從外牆讀建築細節：整棟建築以白色牆面搭配深色石材，立面呈現鮮明的<b>黑白對比</b>；大門與兩側窗戶做成<b>像砲彈一樣的尖拱形</b>，在沒有冷氣的年代能爭取最大採光與通風；大門上方鑲嵌的<b>彩繪玻璃</b>，當自然光透進教堂內部時，耶穌事蹟圖畫便會在禮拜堂裡發亮。",
+      "最讓學員驚呼的，是老師指著轉角外牆凸出的斜向石柱說：「這叫<b>避震牆（扶壁）</b>！你看它下面比較寬、越往上越窄。」因為臺灣與日本同樣地震頻繁，建築師特別在哥德式教堂外加上這圈穩固牆柱的結構。前方還有過去用來敲鐘報訊的高聳鐘樓（鐘樓怪人就待在上面，老師笑說）。"
+    ],
+    q:"最動人的是這座教堂跨越族群的傳統：從日治時代起，就<b>不問你是日本人還是臺灣人</b>，只要信主都能進來禮拜。這個傳統延續至今——同一個空間裡，至今仍分別開設<b>日語班、臺語班與華語班</b>做禮拜。",
+    qtag:"建築與信仰細節",
+    ph:["145736"]
+  },
+  {
+    at:"15:09",
+    short:"老商號・灣生記憶",
+    loc:"長安東路至三條通周邊",
+    tag:"只有走過才聽到的故事",
+    t:"林田桶店、德泰老店與「灣生」回到建成小學校的眼淚",
+    b:[
+      "繼續往二條通移動，沿街仍能看見幾棟留著細格木窗與鐵皮雨庇的<b>戰後三層老街屋</b>，以及開業多年的「<b>德泰彈簧床行</b>」老櫥窗。老師指著周邊的<b>中山市場</b>（當年專供大正町居民日常採買的「條通市場」）與三角窗曾有的<b>滿樂門咖啡秀</b>，拼出日治中產社區的生活機能。",
+      "提到日本人愛泡澡的日常，老師說起中山北路一段一帶歷史悠久的<b>林田桶店</b>——過去街坊家裡都要買一個 <b>Hinoki（檜木）浴桶</b>，有的甚至能放進木炭替熱水保溫，把北投泡湯的享受搬進自己家。",
+      "而靠近火車站與這帶的「<b>建成小學校</b>」（今天的<b>臺北當代藝術館</b>，戰後一度作為臺北市政府辦公廳），當年是日本人孩子讀書的學校。老師回憶起民國七十年代，許多在臺灣出生的日本人（<b>灣生</b>）組團返臺尋根，其中一站就是重回母校。當時由吳老師代表市政府接待導覽，那批頭髮花白的長輩一走進教室就「一把鼻涕一把眼淚」懷念童年；行程最後，老師還陪他們一起去<b>基隆港</b>，看看當年戰敗搭船離臺的碼頭。"
+    ],
+    q:"課本裡很少寫到的「日本小孩的母校」與灣生重返基隆港的背影，透過親身接待過他們的老師口述，突然變得觸手可及。",
+    qtag:"老師的親身經歷",
+    ph:["150955","151121"]
+  },
+  {
+    at:"15:18",
+    short:"二條通木屋",
+    loc:"中山北路一段 33 巷（二條通 1 號）",
+    tag:"全區罕見兩層日式木屋",
+    t:"二條通日式木屋：在改建浪潮裡留下的兩層樓光影",
+    b:[
+      "鑽進<b>二條通</b>（中山北路一段 33 巷），一棟溫潤沉穩的<b>兩層樓日式木造建築</b>出現在水泥公寓之間——這裡正是整條行程的關鍵亮點「<b>二條通日式木屋</b>」。",
+      "老師指出，當年條通一帶原本清一色是單層日式宿舍，少部分屋主後來把部分空間<b>加高到兩層樓</b>，並且非常講究<b>採光</b>，二樓立面那扇透出暖黃燈光的圓窗就是最迷人的記號；屋前還留著一棵陪伴老屋呼吸的老<b>樟樹</b>。",
+      "戰後條通商業繁盛，木屋一間間拆除重建成鋼筋大樓，像這樣完整保存下來的兩層木造屋舍，在整個條通區已經「<b>沒有幾間了</b>」。這座空間近年由機場相關協會等單位進駐維護，才讓後來的臺北人仍有機會站在巷口，看見百年前大正町最優雅的木造輪廓。"
+    ],
+    q:"站在巷子裡仰望這棟木屋時，你會強烈感受到它的「稀有」——兩旁都是現代大樓，唯有二條通 1 號還守著大正年間的高度與木格窗影。",
+    qtag:"僅存的木構風景",
+    ph:["151809"]
+  },
+  {
+    at:"15:24",
+    part:["第四篇章・鐵道記憶與百年梅屋敷","跨過市民大道，走進梅園深處"],
+    short:"劉銘傳鐵道",
+    loc:"中山北路 × 市民大道（一條通）",
+    tag:"臺灣第一條鐵道",
+    t:"跨過市民大道：劉銘傳「騰雲號」鐵道與大加臘荒埔的逆襲",
+    b:[
+      "穿出二條通來到寬闊的<b>市民大道（一條通）</b>旁，我們剛好站上清代<b>劉銘傳鐵道</b>的歷史線。光緒十一年（1885）臺灣建省後，首任巡撫劉銘傳先修築<b>臺北—基隆鐵道</b>，隨後向南延伸到新竹，當年「<b>騰雲號</b>」蒸汽火車頭就是沿著這條路線，從大稻埕一側穿過城外駛向基隆港。",
+      "站在這條改變臺灣速度的軌道舊線上，老師為我們倒帶講完臺北如何「翻身」：清雍正年間，臺北只是淡水廳以北一片凱達格蘭人稱為「加拉（沼澤）」的<b>大加臘荒埔</b>，早年官場表現不佳的公務員才會被派來「自生自滅」。",
+      "直到嘉慶年間商業漸興，「一府二鹿三艋舺」成形；咸豐三年<b>頂下郊拚</b>讓同安人退守大稻埕，加上<b>天津條約開港</b>、英商進駐<b>六館街</b>（德記、怡記、和記等洋行）與李春生、板橋林家推動臺灣茶外銷，臺北才在<b>建府、建城（1884）、建省（1887）</b>三級跳後成為臺灣核心。而這條鐵道建好不到十年就逢乙未割臺，日治時期繼續作為縱貫線通往基隆，甚至在 1945 年送走大批被遣返的日本人。"
+    ],
+    ph:["152401"]
+  },
+  {
+    at:"15:40",
+    short:"梅屋敷登場",
+    loc:"中山北路一段 46 號（逸仙公園）",
+    tag:"城外第一家高級旅館",
+    t:"北門與東門轉角之外：城外第一家日本高級旅館「梅屋敷」",
+    b:[
+      "跨過市民大道，緊鄰臺北車站車水馬龍的轉角，一片濃綠樹影突然把城市的喇叭聲隔在門外——這裡是今天的終點<b>國父史蹟紀念館</b>，百年前名字叫「<b>梅屋敷</b>」。",
+      "老師先用一個讓人秒懂的諧音破題：梅，是因為園子裡種滿梅花；「屋敷（やしき）」則是日本傳統宅邸與高級旅館的稱呼，老師笑著開玩笑說「等一下要進去『敷臉』」。它的位置極為講究——正好落在<b>臺北城東門與北門城牆的轉彎處外</b>、臺灣第一條國際大道勅使街道起點旁，是日治時期<b>臺北城外第一家高級日本旅館</b>，當年曾接待過不少政商名流，附近宮前町（含今中山國小的前身宮前公學校）與臺灣神宮一帶曾極度繁榮。",
+      "戰後政權轉換與 1947 年二二八事件、1949 年中央政府遷臺後，這片空間一度被<b>救國團、YMCA 與函授學校</b>作為補習與青年活動場所，後來才正式保存為國父史蹟紀念館與逸仙公園。"
+    ],
+    q:"在臺灣提起孫中山，大家先想到信義區的國父紀念館；但老師特別指出，孫中山先生生前根本不曾看過那座大型建築，<b>真正來臺下榻過並留下墨寶的，正是眼前這座「國父史蹟紀念館」</b>。",
+    qtag:"唯一實景史蹟",
+    ph:["155117"]
+  },
+  {
+    at:"15:45",
+    short:"榻榻米與博愛",
+    loc:"國父史蹟紀念館室內",
+    tag:"脫鞋進入百年木屋",
+    t:"踩上榻榻米：1913 年的「博愛」墨寶與會呼吸的緣側走廊",
+    b:[
+      "在館外收起導覽耳機後，走讀並沒有就此散場，大家依著老師的提醒<b>脫鞋入館</b>。一踏進室內，腳底馬上傳來細密編織的<b>榻榻米</b>觸感，木格天花板與涼爽的空氣瞬間把秋日下午的疲憊洗去一半。",
+      "1913 年（民國二年）二次革命失敗後，<b>孫中山先生</b>曾來臺赴日途中短暫停留並募集革命經費（生前約來臺一兩次，一次造訪大稻埕與臺北故事館一帶，這次則下榻於此兩、三天），在梅屋敷留下珍貴筆墨與下榻身影。正廳中央懸掛著「<b>博愛</b>」匾額與孫中山先生銅像，四周完整復原當時的桌椅與會客配置。",
+      "最令人捨不得離開的，是沿著建築外緣延伸的<b>日式緣側長廊</b>：一格格木框玻璃拉門把外頭逸仙公園的綠意切成連續的風景框，陽光斜斜照在深色木地板與障子紙上；牆面上一枚雕成<b>梅花造型</b>的木牌，靜靜把「梅屋敷」與「國父史蹟紀念館」兩個名字扣在一起。"
+    ],
+    ph:["154520","154544","154707","154718"]
+  },
+  {
+    at:"15:48",
+    short:"梅園的約定",
+    loc:"逸仙公園・梅園水池",
+    tag:"稍縱即逝的花期約定",
+    t:"梅園與冬末的預約：在臺北車站旁等待一月到三月的梅花盛開",
+    b:[
+      "穿好鞋子從後側步出木屋，眼前的<b>逸仙公園（梅園）</b>有曲折石徑、池水、小橋與傳統涼亭，然而一抬頭，黑瓦屋脊後方正好探出臺北車站商圈的玻璃帷幕高樓——百年木屋與二十一世紀的天際線，在同一張構圖裡安靜對望。",
+      "老師在收尾時特別叮嚀大家：為什麼這棟屋子叫「梅屋敷」？因為園子裡至今依然種著整片<b>梅樹</b>。只是十月底秋意剛起，眼前看到的是一樹翠綠枝葉；想要親眼看見滿園雪白梅花與暗香浮動的模樣，得記住每年<b>一月到三月</b>再回來一趟。",
+      "下午四點左右，我們就在臺北車站與捷運中山站交界的這片靜謐庭園裡畫下句點。三個小時從水圳、彩繪牆、白天亮燈的居酒屋、哥德式教堂走到百年梅屋敷，把一整座中山區的前世今生收進腳底與鏡頭裡。"
+    ],
+    q:"十月底來梅園看到的是青翠綠蔭，一月至三月的梅花則是每年稍縱即逝的限定版。這趟走讀不只帶我們看懂街區的過去，也悄悄在行事曆上預約了明年冬天再回來的一場重逢。",
+    qtag:"季節限定・重逢的伏筆",
+    ph:["154817","154828","154840"]
+  }
+];
+
+const UQ=[
+  ["特別開放・白天限定","《華燈初上》「光 ヒカリ」日間入內",7,"原本只在夜裡營業的六條通實景片場，這天下午特別破例開門，三十位學員走進吧檯當一日明星、細看寄酒瓶文化。",""],
+  ["快要消失・全區僅存","縮水到只剩一兩間的條通日式木屋",4,"當年整齊劃一的大正町公務員宿舍群，如今幾乎全改建成高樓；只有跟著老師停步，才找得到鐵門後與二條通 1 號的木造屋脊。","w"],
+  ["時空正逢・140 週年","站在市民大道上看 1884 臺北建城與鐵道",11,"2024 年恰逢臺北建城 140 週年，站在劉銘傳「騰雲號」鐵道舊線上，把中法戰爭、大加臘荒埔與茶業開港一次串起來。","t"],
+  ["第一與唯一","勅使街道、城外首家旅館與唯一實景梅屋敷",12,"臺灣首條國際大道旁、城外第一家高級日式旅館「梅屋敷」，也是孫中山來臺確實下榻並留下墨寶的唯一史蹟木屋。",""],
+  ["招牌不會寫","「日資 49%」、三攤行規與安室奈美惠",5,"為什麼居酒屋聚在條通？從戰後 49% 合資限制、臺灣人「夠禮數」吃消夜文化，到安室奈美惠包場的老牌臺菜。","w"],
+  ["冬末才看得到","梅園十月綠蔭裡的一至三月花期約定",14,"十月底只能看見枝葉扶疏的梅樹群；想一睹「梅屋敷」真正得名的雪白梅花盛開，得等一月到三月再回來。","t"]
+];
+
+const C={
+  "135332":"下午在捷運中山站 4 號出口騎樓下，學員們戴上 3.5mm 有線耳機，聽吳智慶老師從臺北建城 140 週年破題。",
+  "135845":"停在中山北路騎樓下，從大稻埕平埔社的外緣一路講到北淡線鐵道與塯公圳的流向。",
+  "140131":"九條通巷口牆面新完成的「大正町條通商圈」彩繪地圖，把一條到九條的街廓與小吃店畫成活潑的散步導覽圖。",
+  "140200":"藍白商圈招牌下，學員們圍在彩繪牆前仰望，聽老師拆解明治、大正、昭和三個年號如何劃出這片社區。",
+  "140555":"條通街角立著多層陽台的歐風白樓，見證戰後商街與旅宿不斷疊加改建的痕跡。",
+  "141015":"夾在高樓與灰牆鐵門之間，露出一小段深褐色老屋脊——整片條通單層日式平房如今只剩一兩間。",
+  "142255":"白天的條通異常安靜，酒吧與居酒屋招牌在陽光下沉睡，唯有走讀隊伍沿著綠線緩步穿行。",
+  "142520":"六條通「6」字街牌旁、掛著「シュガーベイビー（Sugar）」招牌的店面外，小美里長向大家介紹這座傳奇片場。",
+  "143514":"推門走進《華燈初上》實景酒吧，暗色空間裡亮起經典的紅色「光 ヒカリ」燈箱。",
+  "143601":"吧檯上一整排貼著日文姓氏與日期的「寄酒瓶（Keep Bottle）」，是條通熟客與媽媽桑之間長久信任的見證。",
+  "143642":"唯有跟著這場走讀才遇得到的畫面：大白天「光 ヒカリ」燈箱下站滿拍照聽講的社大學員。",
+  "145736":"林森北路與長安東路（四條通）交會處，黑白石材拼砌的中山基督長老教會尖拱門前，學員仰望彩繪玻璃與避震牆柱。",
+  "150955":"條通外圍留存的戰後三層老街屋，細格木窗與鐵皮雨庇留著老社區商住混合的日常尺度。",
+  "151121":"老字號「德泰彈簧床行」玻璃櫥窗，與附近的林田桶店、中山市場共同寫下街區的百年生活史。",
+  "151809":"二條通 1 號的兩層樓日式木屋：二樓圓窗透出暖黃燈光，門前老樟樹與木格拉門依舊優雅。",
+  "152401":"走在市民大道（一條通）旁，吳老師指點清代劉銘傳「騰雲號」鐵道舊線與臺北從大加臘荒埔崛起的身世。",
+  "154520":"脫鞋踏進百年梅屋敷室內，腳下是寬敞的榻榻米與木格天花板，四周陳列孫中山先生與臺灣淵源的老照片。",
+  "154544":"梅屋敷最迷人的緣側木廊：一格格玻璃木拉門把庭園綠意框進室內，光影安靜地停在木地板上。",
+  "154707":"正廳高懸「博愛」匾額與孫中山先生銅像，右側拉門外便是綠樹成蔭的梅園。",
+  "154718":"牆上雕成梅花形狀的木質徽飾，把「梅屋敷」旅館的記憶與國父史蹟紀念館扣在一起。",
+  "154817":"從逸仙公園望向梅屋敷黑瓦木造屋頂，後方探出臺北市中心的玻璃高樓，新舊城市在同一張畫面裡疊合。",
+  "154828":"緊鄰臺北車站車潮卻格外清幽的梅園水池，石橋與涼亭倒映著秋日天光。",
+  "154840":"園內成排青翠的梅樹林——想看見當年「梅屋敷」得名的雪白梅花，得預約明年一月到三月再訪。",
+  "155117":"國父史蹟紀念館（梅屋敷）正面入口與黑瓦木構，正是城外第一家高級日本旅館歷經百年留下的身影。"
+};
+
+document.getElementById("uq").innerHTML=UQ.map(u=>`<a class="${u[4]}" href="#s${u[2]}"><i>${u[0]}</i><b>${u[1]}</b><span>${u[3]}</span></a>`).join("");
+document.getElementById("nav").innerHTML=S.map((x,i)=>`<a href="#s${i+1}"><span>${i+1}</span>${x.short}</a>`).join("");
+
+const fmtP=p=>`${p.slice(0,2)}:${p.slice(2,4)}`;
+const flat=[];
+const figHtml=(p)=>{
+  flat.push(p);
+  const idx=flat.length-1;
+  return `<figure><button class="ph-btn" data-i="${idx}" aria-label="放大照片 ${fmtP(p)}"><img loading="lazy" src="img/${p}.jpg" alt="${C[p]}"><small>${fmtP(p)}</small><span class="zoom">放大 ↗</span></button><figcaption>${C[p]}</figcaption></figure>`;
+};
+
+document.getElementById("stops").innerHTML=S.map((x,i)=>{
+  const part=x.part?`<div class="part"><div><small>${x.part[0]}</small><h2>${x.part[1]}</h2></div><span>${x.at} 起</span></div>`:"";
+  const altCls=(i%2===1)?" alt":"";
+  const hasPh=x.ph && x.ph.length>0;
+  const lead=hasPh?`<div class="lead-ph">${figHtml(x.ph[0])}</div>`:"";
+  const rest=hasPh && x.ph.length>1?`<div class="more-ph${x.ph.length===4?" three":""}">${x.ph.slice(1).map(p=>figHtml(p)).join("")}</div>`:"";
+  const copyHtml=`<div class="copy">${x.tag?`<span class="tag">${x.tag}</span>`:""}<h3>${x.t}</h3><ul>${x.b.map(l=>`<li>${l}</li>`).join("")}</ul>${x.q?`<div class="q${i%2===0?" r":""}"><b>${x.qtag||"這一站的獨特之處"}</b>　${x.q}</div>`:""}</div>`;
+  const bodyHtml=hasPh?`<div class="split">${copyHtml}${lead}</div>${rest}`:`<div>${copyHtml}</div>`;
+  return `${part}<section class="stop${altCls}" id="s${i+1}">
+    <div class="stop-head"><span class="stop-num">${i+1}</span><div class="stop-meta"><span class="at">約 ${x.at}</span><span class="loc">${x.loc}</span></div></div>
+    ${bodyHtml}
+  </section>`;
+}).join("");
+
+const lb=document.getElementById("lb"),im=document.getElementById("lbi"),cap=document.getElementById("lbc");
+let cur=0;
+const show=i=>{
+  cur=(i+flat.length)%flat.length;
+  const p=flat[cur];
+  im.src=`img/${p}.jpg`;
+  im.alt=C[p];
+  cap.textContent=`${C[p]}　（${cur+1}/${flat.length}）`;
+};
+document.getElementById("stops").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-i]");
+  if(b){show(+b.dataset.i);lb.classList.add("on");document.getElementById("lbx").focus()}
+});
+document.getElementById("lbp").onclick=()=>show(cur-1);
+document.getElementById("lbn").onclick=()=>show(cur+1);
+const close=()=>lb.classList.remove("on");
+document.getElementById("lbx").onclick=close;
+lb.addEventListener("click",e=>{if(e.target===lb)close()});
+document.addEventListener("keydown",e=>{
+  if(!lb.classList.contains("on"))return;
+  if(e.key==="Escape")close();
+  if(e.key==="ArrowLeft")show(cur-1);
+  if(e.key==="ArrowRight")show(cur+1);
+});
+}
+</script>
+</body>
+</html>
