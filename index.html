@@ -84,7 +84,7 @@ const seasonKey=d=>{let y=+d.slice(0,4),m=+d.slice(5,7);if(m<=2)y--;const i=m>=3
 const strip=document.getElementById("strip");
 strip.innerHTML=["#2c6e63","#7a9a5b","#c58b3a","#b5543c","#3d5f86"].map(c=>`<i style="background:${c}"></i>`).join("");
 const card=w=>{const [y,m,d]=w.d.split("-");return `<a class="card" href="${go(w)}">
-<div class="ph"><img loading="lazy" src="${(w.k==='dangchan1026'||w.k==='dangchan')?DANGCHAN_THUMB:'thumbs/'+w.k+'.jpg'}" alt="${w.t} 封面照片"><span class="date"><b>${+d}</b>${+m} 月・${w.wd}</span></div>
+<div class="ph"><img loading="lazy" src="${w.k==='dangchan1026'?DANGCHAN_THUMB:'thumbs/'+w.k+'.jpg'}" alt="${w.t} 封面照片"><span class="date"><b>${+d}</b>${+m} 月・${w.wd}</span></div>
 <div class="tx"><span class="o">${w.o}</span><h3>${w.t}</h3><p>${w.s}</p>
 <div class="c"><span>${w.n} 站・${w.p} 張照片</span><span>翻開 ›</span></div></div></a>`};
 const render=q=>{
