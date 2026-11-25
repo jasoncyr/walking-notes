@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>孚佑百年・大稻埕文化走讀史蹟導覽（2025/10/25 廖麗雯場）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 十月週六上午在大稻埕巷弄裡漫步的現場田野誌，從百年仙公廟的法會鐘磬聲出發，一路串起茶、布、藥、戲、建五種街區肌理
+   IDEA: 雙欄海報式開頭＋大稻埕五味羅盤＋四格「當日限定瞬間」＋多變節奏圖文板塊（全景俯瞰、三聯市井、暗底特寫插曲與立面檔案對照）
+   PICTURE: 真聖堂屋脊剪黏雙龍與「真・聖・堂」紅黃燈籠
+   COLOUR and TYPE: 宣紙暖白 #f6f2ea、廟宇朱砂紅 #a22d23（關鍵詞主色）、藍染靛青 #23495c、臺茶古銅金 #94631c；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 框格分欄英雄區 → 五大元素羅盤與四格限定瞬間 → 黏性章節條 → 節奏交錯的圖文站點（含黃永生藥行深色特寫帶） → 結語與光箱 */
+:root{
+  color-scheme:light dark;
+  --bg:light-dark(#f6f2ea,#13110f);
+  --paper:light-dark(#fffdf8,#1d1916);
+  --ink:light-dark(#201b18,#ebe5dc);
+  --mute:light-dark(#645b52,#a89e93);
+  --accent:light-dark(#a22d23,#e78475);
+  --indigo:light-dark(#23495c,#84b4cc);
+  --gold:light-dark(#94631c,#dfba6c);
+  --soft-red:light-dark(#f5e8e4,#2a1c19);
+  --soft-blue:light-dark(#e7eff2,#19252b);
+  --soft-gold:light-dark(#f3ebd9,#272016);
+  --line:light-dark(#dfd7ca,#302a24);
+}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.82 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,h4{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+b,strong{color:var(--accent);font-weight:700}
+
+/* Framed Hero */
+.hero{background:#231513;color:#f7f1e7;border-bottom:4px solid #a22d23}
+.hero-in{max-width:1160px;margin:0 auto;padding:38px max(4vw,18px) 36px;display:grid;grid-template-columns:1.12fr .95fr;gap:32px;align-items:center}
+.seal-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.seal{display:inline-block;padding:4px 10px;border:1.5px solid #e78475;color:#f4b3a8;font:700 12.5px/1.2 "Noto Serif TC",serif;letter-spacing:.14em;border-radius:4px}
+.hero-date{font-size:13.5px;color:#d6c7b7;letter-spacing:.08em}
+.hero h1{font-size:clamp(32px,4.8vw,52px);line-height:1.15;font-weight:800;letter-spacing:.01em}
+.hero h1 span{display:block;font-size:clamp(19px,2.5vw,27px);font-weight:600;color:#e7c27c;margin-top:8px}
+.hero-desc{margin:16px 0 0;font-size:16px;line-height:1.78;color:rgba(247,241,231,.9);max-width:56ch}
+.hero-meta{margin-top:22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.15);font-size:13.5px;color:#e6dcd0}
+.hero-meta b{display:block;color:#e7c27c;font-size:12px;letter-spacing:.06em;margin-bottom:2px}
+.hero-meta a{color:#f9ece7;text-decoration:underline;text-underline-offset:3px}
+.hero-frame{position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 40px rgba(0,0,0,.45);background:#150d0b}
+.hero-frame button{all:unset;cursor:pointer;display:block;width:100%}
+.hero-frame img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 46%;display:block;transition:transform .4s ease}
+.hero-frame button:hover img{transform:scale(1.03)}
+.hero-cap{padding:10px 14px;font-size:13px;color:#ded3c5;background:rgba(18,10,9,.88);border-top:1px solid rgba(255,255,255,.1)}
+.hero-cap b{color:#f5c589}
+
+/* Main container */
+.wrap{max-width:1160px;margin:0 auto;padding:0 max(4vw,18px)}
+
+/* Five Elements Compass + Fleeting Strip */
+.compass{padding:36px 0 26px;border-bottom:1px solid var(--line)}
+.sec-title{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 20px;margin-bottom:16px}
+.sec-title h2{font-size:clamp(22px,3vw,29px)}
+.sec-title p{margin:0;color:var(--mute);font-size:15px}
+.el-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.el-card{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:10px;padding:14px 14px 12px}
+.el-card.t{border-top-color:var(--gold)}
+.el-card.c{border-top-color:var(--indigo)}
+.el-card.m{border-top-color:var(--accent)}
+.el-card.o{border-top-color:#7b4f2b}
+.el-card.a{border-top-color:#536b4a}
+.el-tag{font:800 18px "Noto Serif TC",serif;margin-bottom:4px;display:flex;align-items:center;justify-content:space-between}
+.el-tag small{font:600 11.5px "Noto Sans TC",sans-serif;color:var(--mute)}
+.el-card p{margin:0;font-size:13.5px;line-height:1.58;color:var(--mute)}
+.el-card p b{color:var(--ink)}
+
+.unique-band{padding:30px 0 24px}
+.u-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.u-card{display:block;text-decoration:none;color:inherit;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 16px;position:relative;transition:transform .2s,border-color .2s}
+.u-card:hover{transform:translateY(-2px);border-color:var(--accent)}
+.u-pill{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--soft-red);color:var(--accent);margin-bottom:8px}
+.u-card.b .u-pill{background:var(--soft-blue);color:var(--indigo)}
+.u-card.g .u-pill{background:var(--soft-gold);color:var(--gold)}
+.u-card h3{font-size:16.5px;line-height:1.38;margin-bottom:6px;color:var(--ink)}
+.u-card p{margin:0;font-size:13.5px;line-height:1.6;color:var(--mute)}
+
+/* Sticky Chapter Nav */
+.chap-nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px 0;margin:8px 0 10px}
+.chap-in{display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin;padding:2px 0}
+.chap-in a{flex:none;display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);text-decoration:none;font-size:13.5px;min-height:36px;transition:border-color .16s}
+.chap-in a:hover{border-color:var(--accent)}
+.chap-in a span{color:var(--accent);font-weight:700}
+
+/* Stop Sections */
+.stop{padding:42px 0;border-bottom:1px solid var(--line)}
+.stop-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 16px;margin-bottom:18px}
+.stop-badge{font:800 13px/1 "Noto Serif TC",serif;letter-spacing:.1em;padding:5px 11px;border-radius:4px;background:var(--accent);color:#fff}
+.stop-badge.ind{background:var(--indigo)}
+.stop-badge.gld{background:var(--gold)}
+.stop-time{font-size:13.5px;color:var(--mute);font-weight:500}
+.stop-loc{font-size:13.5px;color:var(--indigo);font-weight:600}
+.stop h2{width:100%;font-size:clamp(24px,3.2vw,32px);line-height:1.28;margin-top:2px}
+
+.prose p{margin:.75em 0;font-size:16.5px}
+.prose ul{margin:12px 0;padding-left:1.25em}
+.prose li{margin:.42em 0}
+.prose li::marker{color:var(--accent)}
+
+.callout{margin:18px 0 0;padding:14px 18px;border-left:4px solid var(--indigo);background:var(--soft-blue);border-radius:0 10px 10px 0;font-size:15px;line-height:1.72}
+.callout.r{border-left-color:var(--accent);background:var(--soft-red)}
+.callout.g{border-left-color:var(--gold);background:var(--soft-gold)}
+
+/* Creative Layout Patterns */
+.split-2{display:grid;grid-template-columns:1.1fr .95fr;gap:32px;align-items:start}
+.split-2.rev{grid-template-columns:.95fr 1.1fr}
+.split-2.rev .prose{order:2}
+.split-2.rev .media{order:1}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:22px}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}
+.asym-3{display:grid;grid-template-columns:.78fr 1.15fr 1.07fr;gap:18px;margin-top:22px;align-items:start}
+.portrait-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.stack{display:grid;gap:18px}
+
+/* Figures */
+.fig{margin:0}
+.fig button{all:unset;cursor:pointer;display:block;width:100%;border-radius:10px;overflow:hidden;background:var(--line);box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.fig img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;transition:transform .35s ease}
+.fig.wide img{aspect-ratio:16/9}
+.fig.sq img{aspect-ratio:1/1}
+.fig.tall img{aspect-ratio:9/14}
+.fig.pano img{aspect-ratio:21/9;object-position:center 55%}
+.fig button:hover img{transform:scale(1.025)}
+.fig figcaption{margin-top:8px;font-size:13.8px;line-height:1.58;color:var(--mute)}
+.fig figcaption b{color:var(--ink)}
+
+/* Special Dark Encounter Band (黃永生藥行) */
+.encounter{margin:34px 0 8px;padding:34px clamp(18px,3.5vw,34px);border-radius:16px;background:#221815;color:#f3ece1;border:1px solid #49342c}
+.encounter .stop-time{color:#ccb9a7}
+.encounter .stop-loc{color:#f0c47a}
+.encounter h2{color:#fff9f0}
+.encounter b,.encounter strong{color:#f4a28b}
+.encounter .callout{background:rgba(255,255,255,.06);border-left-color:#e7ba73;color:#ece2d5}
+.encounter .callout b{color:#f5c589}
+.encounter .fig button{box-shadow:0 10px 26px rgba(0,0,0,.4)}
+.encounter .fig figcaption{color:#c9baab}
+.encounter .fig figcaption b{color:#fff3e2}
+.encounter-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:22px}
+
+/* Postcard Closing Stop */
+.postcard{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px;margin-top:10px}
+
+/* Afterword */
+.afterword{margin:38px 0 18px}
+.af-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.af-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px}
+.af-card h3{font-size:18px;color:var(--accent);margin-bottom:8px}
+.af-card p{margin:0;font-size:15px;line-height:1.72}
+
+footer{max-width:1160px;margin:24px auto 12px;padding:18px max(4vw,18px) 10px;border-top:1px solid var(--line);color:var(--mute);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 18px}
+
+/* Lightbox */
+#lb{position:fixed;inset:0;z-index:40;background:rgba(12,10,9,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:16px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:12px;align-items:center;color:#eee;margin-top:12px;font-size:15px;max-width:920px;text-align:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer;flex:none}
+#lb button:hover{background:#333}
+
+@media(max-width:960px){
+  .hero-in,.split-2,.split-2.rev,.asym-3{grid-template-columns:1fr;gap:22px}
+  .split-2.rev .prose,.split-2.rev .media{order:initial}
+  .el-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .u-grid,.encounter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .af-cols,.grid-3{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .el-grid,.u-grid,.grid-2,.portrait-pair,.encounter-grid,.hero-meta{grid-template-columns:1fr}
+  .fig.pano img{aspect-ratio:16/9}
+  .fig.tall img{aspect-ratio:3/4}
+}
+@media(prefers-reduced-motion:reduce){
+  .fig img,.u-card,.hero-frame img{transition:none}
+  .u-card:hover,.fig button:hover img,.hero-frame button:hover img{transform:none}
+}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・77 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../fuyou1025/index.html" aria-current="page"><small>2025/10/25</small>孚佑百年・大稻埕文化走讀史蹟導覽</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../metamotion/index.html"><small>2024/11/29</small>無用之用：從松菸展場走進遠雄工地再生現場</a></li><li><a href="../backto1920/index.html"><small>2024/11/29</small>回到 1920：臺北最華美宮殿 × 醫學知識殿堂</a></li><li><a href="../bethany/index.html"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../fuyou1025/index.html" aria-current="page"><small>2025/10/25</small>孚佑百年・大稻埕文化走讀史蹟導覽</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../metamotion/index.html"><small>2024/11/29</small>無用之用：從松菸展場走進遠雄工地再生現場</a></li><li><a href="../backto1920/index.html"><small>2024/11/29</small>回到 1920：臺北最華美宮殿 × 醫學知識殿堂</a></li><li><a href="../bethany/index.html"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></details><span>2025/10/25</span></div>
+
+<header class="hero" id="top">
+  <div class="hero-in">
+    <div>
+      <div class="seal-row">
+        <span class="seal">乙巳秋行・孚佑百年</span>
+        <span class="hero-date">2025.10.25 SAT 10:00–12:30</span>
+      </div>
+      <h1>大稻埕文化走讀史蹟導覽<span>走進百年仙公廟與五味巷弄</span></h1>
+      <p class="hero-desc">適逢<b>大稻埕仙公廟真聖堂</b>恭迎<b>孚佑帝君呂恩主</b>設堂百年，這場十月週六上午的史蹟走讀，由三重埔文史研究協會會員暨臺北市孔廟解說老師<b>廖麗雯</b>領路。從正好碰上秋季禮斗法會的真聖堂二樓佛殿出發，繞過戲窟舊巷、茶葉公園、鈕扣星夜牆、大稻埕戲苑九樓天際線與意外敞開的百年中藥行，把信仰香火對回大稻埕最立體的生活肌理。</p>
+      <div class="hero-meta">
+        <div><b>活動系列</b>大稻埕仙公廟真聖堂「孚佑百年」系列活動</div>
+        <div><b>導覽老師</b>廖麗雯（三重埔文史研究協會會員・臺北市孔廟解說老師）</div>
+        <div><b>集合地點</b><a href="https://www.google.com/maps/search/%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A4%A7%E5%90%8C%E5%8D%80%E5%BB%B6%E5%B9%B3%E5%8C%97%E8%B7%AF%E4%BA%8C%E6%AE%B561%E5%B7%B716%E8%99%9F" target="_blank" rel="noopener">大稻埕仙公廟真聖堂（延平北路二段 61 巷 16 號）</a></div>
+        <div><b>走讀主軸</b>尋根探源・史蹟活化・大稻埕五大產業與信仰網</div>
+      </div>
+    </div>
+    <figure class="hero-frame">
+      <button data-ph="102440" aria-label="放大照片：大稻埕仙公廟真聖堂屋脊剪黏與燈籠">
+        <img src="img/102440.jpg" alt="大稻埕仙公廟真聖堂廟門上方雙龍剪黏屋脊與懸掛的真、聖、堂三盞黃紅燈籠">
+      </button>
+      <figcaption class="hero-cap"><b>巷內百年的仙公廟門面</b>：屋脊四爪雙龍剪黏與「真・聖・堂」燈籠，靜靜守在延平北路二段 61 巷裡。</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="compass" aria-label="大稻埕五大元素走讀羅盤">
+    <div class="sec-title">
+      <h2>用「五個元素」重新打開大稻埕</h2>
+      <p>廖麗雯老師把這趟兩個多小時的步行，扣緊大稻埕百餘年來最具代表性的五條生命線，一路逐站找齊。</p>
+    </div>
+    <div class="el-grid">
+      <div class="el-card t">
+        <div class="el-tag">茶 <small>TEA</small></div>
+        <p>從靠河的「<b>港町</b>」移往「<b>茶葉公園</b>」一帶，聽炭火餘燼慢焙與客庄茶葉的「牽猴」仲介故事。</p>
+      </div>
+      <div class="el-card c">
+        <div class="el-tag">布 <small>TEXTILE</small></div>
+        <p>鑽進「<b>朝陽鈕扣街</b>」看鈕扣星夜牆與蒸氣熨斗老店，再從「<b>永樂市場</b>」布市讀職人手作精神。</p>
+      </div>
+      <div class="el-card m">
+        <div class="el-tag">農與藥 <small>HERBS</small></div>
+        <p>在「<b>迪化南街</b>」辨認南北貨與中藥行牌樓徽飾，更意外走進大正百年三進藥鋪摸鎮店「<b>馬寶石</b>」。</p>
+      </div>
+      <div class="el-card o">
+        <div class="el-tag">戲 <small>THEATER</small></div>
+        <p>從真聖堂對面消失的「<b>第三世界館</b>」講起，直上八樓「<b>大稻埕戲苑</b>」看布袋戲、傀儡與皮影。</p>
+      </div>
+      <div class="el-card a">
+        <div class="el-tag">建 <small>ARCHITECTURE</small></div>
+        <p>讀懂真聖堂的<b>交趾陶、剪黏、螭虎團爐</b>，也抬頭看仿巴洛克山牆與三進式閩南街屋的採光天井。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="unique-band" aria-label="這一天才遇得到的唯一瞬間">
+    <div class="sec-title">
+      <h2>要這一天親自走進巷子，才撞得見的現場</h2>
+      <p>百年慶典的儀式現場、雨前低雲的九樓視野，加上沒預約卻敞開的百年木門，拼出了無可複製的十月週六。</p>
+    </div>
+    <div class="u-grid">
+      <a class="u-card" href="#s1">
+        <span class="u-pill">一年僅兩次</span>
+        <h3>九皇禮斗法會滿壇，改上二樓佛殿聽故事</h3>
+        <p>恰好遇上農曆九月初一至初九的秋季禮斗法會，一樓正殿排滿斗燈，開場遂登上二樓東本願寺佛像前席地開講。</p>
+      </a>
+      <a class="u-card b" href="#s3">
+        <span class="u-pill">平日才開門</span>
+        <h3>巷弄尋寶「火車牌」蒸氣熨斗掀開鐵門一角</h3>
+        <p>週六原本公休的朝陽街老字號，老闆接到老師一通電話特地拉開小門，讓大家一窺成排工業級懸吊蒸氣熨斗。</p>
+      </a>
+      <a class="u-card g" href="#s4">
+        <span class="u-pill">很少人上去</span>
+        <h3>直上大稻埕戲苑高樓，俯瞰紅瓦與街廓尺度</h3>
+        <p>除了布袋戲偶與多媒體皮影台，走到九樓俯瞰陰雨前的大稻埕屋脊群，一口氣看懂河岸聚落的密集格局。</p>
+      </a>
+      <a class="u-card" href="#s6">
+        <span class="u-pill">完全沒預約的奇遇</span>
+        <h3>黃永生藥行老闆聽見門外講解，親自邀進屋摸馬寶石</h3>
+        <p>老闆推門相迎，帶看臺北市第一家小兒科舊帳本與百坪三進檜木老屋，還抱出兩顆市價十餘萬的鎮店馬寶石。</p>
+      </a>
+    </div>
+  </section>
+
+  <nav class="chap-nav" aria-label="走讀路線章節跳轉">
+    <div class="chap-in">
+      <a href="#s1"><span>01</span>真聖堂二樓佛殿</a>
+      <a href="#s2"><span>02</span>門聯・工藝・大光明戲院</a>
+      <a href="#s3"><span>03</span>茶葉公園與鈕扣街</a>
+      <a href="#s4"><span>04</span>永樂市場・戲苑・俯瞰</a>
+      <a href="#s5"><span>05</span>迪化南街・城隍・名醫世家</a>
+      <a href="#s6"><span>06</span>黃永生藥行百坪奇遇</a>
+      <a href="#s7"><span>07</span>重返真聖堂禮斗收尾</a>
+      <a href="#s8"><span>08</span>散步餘韻・十字軒與加福</a>
+    </div>
+  </nav>
+
+  <!-- STOP 1 -->
+  <article class="stop" id="s1">
+    <div class="stop-head">
+      <span class="stop-badge">STOP 01</span>
+      <span class="stop-time">10:00–10:18</span>
+      <span class="stop-loc">大稻埕仙公廟真聖堂・二樓佛殿</span>
+      <h2>從法會鐘聲裡上二樓：一間藏著東本願寺保護傘的百年鸞堂</h2>
+    </div>
+    <div class="split-2">
+      <div class="prose">
+        <p>早上九點半剛過，街口還微涼，走進延平北路二段 61 巷 16 號，卻發現一樓正殿燈火通明、誦經聲陣陣——這天正逢農曆九月初五，適值真聖堂春秋兩季各辦一次（初一至初九）的<b>朝元九皇禮斗安法會</b>，殿內擺滿信眾祈福的斗燈。於是一行人先拾級而上，坐在二樓佛殿的木牆與得獎畫作之間，聽廖麗雯老師展開真聖堂的百年身世。</p>
+        <p>很少有廟宇像真聖堂一樣「<b>一樓道教、二樓佛教</b>」：二樓正中供奉著<b>阿彌陀佛、釋迦牟尼佛與藥師佛</b>三寶佛及觀音菩薩。廖老師道出關鍵——<b>1915 年西來庵事件</b>後，日本總督府打壓臺灣民間信仰、獨尊日本佛教與神道教，真聖堂先賢遂迎入日本京都<b>東本願寺</b>布教所體系作為保護傘，這些佛像便從日治時期一路安座至今。</p>
+        <p>回溯更早的源頭，這座廟在清末至日治初年原是文雅士聚會、研習漢學並供奉<b>文昌帝君</b>的場所。附近永樂市場（老居民稱「<b>阿寮</b>」）一帶有板橋人<b>趙一山</b>開設的「<b>劍樓書塾</b>」，門下走出兩位極具分量的文人：一位是日後被日方以抗日罪名逮捕、<b>1945 年瘐死獄中並入祀忠烈祠</b>的漢醫兼劇作家<b>歐劍窗</b>（家人為避禍焚毀手稿，如今僅存廟門楹聯墨寶）；另一位則是詩人<b>杜仰山</b>（其子成為書法名家、孫女為音樂家，第四代服裝設計師<b>蔡時魯</b>甚至將先祖的書法與琴聲帶上美國時裝發表會）。</p>
+        <p>直到 <b>1925 年（大正十四年）</b>，徐純青、趙鴻賓與大稻埕仕紳林家等自板橋新埔「<b>接元堂</b>」恭請<b>孚佑帝君（呂洞賓）</b>分靈至此設立鸞堂（初稱「醒堂」，後稱真聖堂），以「<b>扶鸞</b>」方式請神降筆、再由翻譯人員抄錄成善書，在那個年代大力勸世<b>戒除鴉片、行善濟世</b>，堂內遂奉祀以呂恩主為主神的<b>五恩主</b>（呂洞賓、關聖帝君、岳武穆王、九天司命真君張恩主、先天豁落靈官王恩主）。</p>
+        <div class="callout r">
+          <b>老祖與二祖的雙尊傳奇</b>：當年出錢出力最深的同安領袖<b>林右藻家族</b>（1853 年頂下郊拚後率族人落腳大稻埕），最初親自雕刻一尊小尊「老祖」供奉於自家，再另雕一尊「二祖」安座廟中；後來後代將老祖請回廟裡，兩尊遂得以一同受香火至今。
+        </div>
+      </div>
+      <div class="stack media">
+        <figure class="fig">
+          <button data-ph="100340" aria-label="放大照片：真聖堂二樓佛殿開場講解">
+            <img loading="lazy" src="img/100340.jpg" alt="學員圍坐真聖堂二樓佛殿，聽廖麗雯老師持手冊開場導覽，牆面掛著百年慶繪畫比賽作品">
+          </button>
+          <figcaption><b>樓下法會正酣、樓上說史正熱</b>：兩側牆面懸掛著真聖堂百年系列繪畫與攝影比賽得獎作品，替二樓佛殿添上當代視角。</figcaption>
+        </figure>
+        <figure class="fig">
+          <button data-ph="100832" aria-label="放大照片：廖麗雯老師手執圖冊講解真聖堂五恩主與大稻埕移民脈絡">
+            <img loading="lazy" src="img/100832.jpg" alt="廖麗雯老師在真聖堂二樓舉起自製歷史圖冊講解五恩主與頂下郊拚">
+          </button>
+          <figcaption><b>自備圖冊裡的跨世代譜系</b>：從泉州四縣頂下郊拚地圖講到劍樓書塾，讓沒能親眼撥開法會人潮的神龕細節先在紙上對齊。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <!-- STOP 2 -->
+  <article class="stop" id="s2">
+    <div class="stop-head">
+      <span class="stop-badge">STOP 02</span>
+      <span class="stop-time">10:19–10:35</span>
+      <span class="stop-loc">真聖堂一樓廟口 ⇄ 延平北路二段 61 巷 17–19 號</span>
+      <h2>麻雀雖小的廟口工藝，與對面消失的「第三世界館」</h2>
+    </div>
+    <div class="prose">
+      <p>步下樓梯站到真聖堂門前，老師請大家先別急著走，抬頭細讀這座巷弄小廟的建築語彙。最早真聖堂僅有一層平房，位置更往前突出到如今馬路中段；後來因巷道拓寬徵收而退縮，才獲准改建為兩層樓廟宇。正因基地精巧，每一吋木雕與泥作更顯細膩：</p>
+      <ul>
+        <li><b>門神與八隻螭虎團爐</b>：側門彩繪著八隻雙雙對對的螭虎圍繞香爐，取「<b>圍爐團圓</b>」吉祥意象（在保安宮多見石雕、臺北孔廟為木雕，此處則以鮮豔彩繪呈現）；正門上方還有<b>魚躍龍門</b>與<b>鰲魚</b>（「<b>獨占鰲頭</b>」呼應早期文昌信仰）。</li>
+        <li><b>碗片敲出的交趾陶與剪黏</b>：屋脊上的四爪龍與人物「<b>剪黏</b>」，是匠師將燒至 1,200 度以上的彩色瓷碗敲碎、手工修剪磨邊後，一片片鑲嵌在養製半年以上才具黏性的灰土上；簷下更有早年支撐樑柱、如今化為華美裝飾的鏤空<b>雀替（臺語「插角」）</b>與<b>吊筒</b>，以及環繞堂匾的<b>左青龍、右白虎、南朱雀、北玄武</b>四象。</li>
+        <li><b>歐劍窗的門聯</b>：柱上刻著「<b>真道若南山……</b>」對聯，是少數逃過戰火與焚稿而留在街頭的歐劍窗墨寶。</li>
+      </ul>
+      <p>轉過身看真聖堂斜對面的 61 巷 17 至 19 號，如今已是一排尋常鐵門，昔日卻是臺北早期最老牌的戲院之一——日治時期稱「<b>第三世界館</b>」、戰後名為「<b>大光明戲院</b>」。老師翻出老照片與耆老筆記笑道：名字雖叫「大光明」，但戲院深藏窄巷、不見天日，裡面只有幾盞微弱日光燈照在坑坑巴巴的水泥地上；即便如此，民國四十年代放映《<b>梁山伯與祝英台</b>》或 1959 年李行導演的臺語喜劇《<b>王哥柳哥遊臺灣</b>》時，664 個座位依然座無虛席。老居民至今指路仍習慣說：「去『<b>大光明巷子</b>』找！」</p>
+    </div>
+    <div class="asym-3">
+      <figure class="fig tall">
+        <button data-ph="102026" aria-label="放大照片：廖麗雯老師指著歐劍窗門聯與門楣鯉魚躍龍門彩繪">
+          <img loading="lazy" src="img/102026.jpg" alt="廖麗雯老師指著真聖堂門柱上的黑色金字楹聯，上方可見鯉魚躍龍門彩繪">
+        </button>
+        <figcaption><b>歐劍窗留在巷口的筆跡</b>：詩稿已逝，唯有廟柱上的楹聯與頭頂鯉魚躍龍門彩繪，還守在門扉左右。</figcaption>
+      </figure>
+      <figure class="fig wide">
+        <button data-ph="102341" aria-label="放大照片：八隻螭虎團爐彩繪與九皇禮斗法會黃紙公告">
+          <img loading="lazy" src="img/102341.jpg" alt="真聖堂門側八隻螭虎團爐彩繪窗門，右側貼著九皇禮斗安法會黃色公告">
+        </button>
+        <figcaption><b>八隻螭虎圍起一爐團圓</b>：一旁黃紙正寫著農曆九月初一至初九「朝元九皇禮斗安法會」時程，正是今日樓上開場的由來。</figcaption>
+      </figure>
+      <figure class="fig wide">
+        <button data-ph="103015" aria-label="放大照片：大光明戲院（第三世界館）昔日風華手稿">
+          <img loading="lazy" src="img/103015.jpg" alt="廖老師手舉大光明戲院昔日風華資料與老照片，上頭手寫註記 61巷17-19號 真聖堂對面及1959年王哥柳哥遊台灣">
+        </button>
+        <figcaption><b>對街鐵門前的《昔日風華》</b>：老照片裡的拱門劇院與手寫註記，把 1959 年《王哥柳哥遊臺灣》的笑聲拉回這條窄巷。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 3 -->
+  <article class="stop" id="s3">
+    <div class="stop-head">
+      <span class="stop-badge ind">STOP 03</span>
+      <span class="stop-time">10:36–10:55</span>
+      <span class="stop-loc">茶葉公園・重慶北路一段 46 巷・南京西路 155 巷（朝陽服飾材料街）</span>
+      <h2>從「牽猴仔」的茶葉公園，鑽進鈕扣拼貼與蒸氣熨斗巷</h2>
+    </div>
+    <div class="split-2">
+      <div class="prose">
+        <p>穿出巷子來到甘州街與重慶北路一帶的「<b>茶葉公園</b>」，老師先解開大稻埕茶業的地理轉移：最初茶葉大王<b>李春生、陳天來、吳文秀</b>聚集在靠淡水河的「<b>港町</b>」（今貴德街）就近出口；後來河道淤積、改由陸運車流進出，茶葉交易與製茶工廠便東移到重慶北路這片街區。</p>
+        <p>當時桃竹苗客家庄種出茶菁後，一批批送來大稻埕精製、烘焙與薰花茶（像百年老店<b>有記名茶</b>至今仍以燒盡成餘溫微火的木炭慢慢烘茶，週六午後二樓還有免費南管北管演出；隔壁新派的 <b>Wangtea Lab</b> 則賣起氣泡茶啤酒、把茶籠變成燈罩）。只是客庄茶農講客語、大稻埕茶商講閩南語，雞同鴨講之際便誕生了居中議價翻譯的仲介——臺語稱「<b>牽猴（khang-kâu）</b>」，專指茶業仲介則常念「<b>茶猴／地猴</b>」。老師特別提醒，念這詞尾音切忌往上挑，才不至於帶有輕蔑之意。</p>
+        <p>接著隊伍拐進外地遊客極少踏足的<b>朝陽服飾材料街（鈕扣街）</b>。社區發展協會與在地店家聯手，把花邊、緞帶與拉鍊批發巷妝點成露天藝廊：重慶北路 46 巷櫥窗裡掛著以鈕扣與服飾配件拼出的<b>奧黛麗赫本</b>；轉進南京西路 155 巷，整面牆更用數以千計、還會隨光線閃爍的大小鈕扣拼成梵谷〈<b>星夜</b>〉與街屋壁畫！</p>
+        <p>路過大車電業的「<b>火車牌蒸氣熨斗</b>」時，週六原本拉下鐵門休息，老師順手撥了通電話給熟識的陳老闆，老闆竟特地前來掀開一角鐵門迎客，讓大家近距離看商業製衣專用的高壓懸吊蒸氣熨斗與皮帶配件——名字取「火車」，正是形容噴出蒸氣奔馳般的勁道。</p>
+      </div>
+      <div class="stack media">
+        <figure class="fig">
+          <button data-ph="104112" aria-label="放大照片：南京西路 155 巷鈕扣拼貼梵谷星夜牆">
+            <img loading="lazy" src="img/104112.jpg" alt="南京西路 155 巷牆面上用深淺藍色與黃色鈕扣拼貼而成的梵谷星夜壁畫">
+          </button>
+          <figcaption><b>數千顆鈕扣排出的〈星夜〉</b>：近看全是大小不一、材質反光的傳統衣物鈕扣，是這條巷子最迷人的街角彩蛋。</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="grid-2">
+      <figure class="fig">
+        <button data-ph="103928" aria-label="放大照片：重慶北路一段 46 巷櫥窗裡的奧黛麗赫本拼貼畫">
+          <img loading="lazy" src="img/103928.jpg" alt="重慶北路一段 46 巷 7-10 號綠色櫥窗內展示以服飾材料與鈕扣拼貼的奧黛麗赫本畫作與小禮服">
+        </button>
+        <figcaption><b>服飾配件店裡的赫本櫥窗</b>：蕾絲、珠飾與鈕扣不再只是配角，成了畫裡優雅的眉眼與項鍊。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="104036" aria-label="放大照片：火車牌蒸氣熨斗大車電業有限公司門前講解">
+          <img loading="lazy" src="img/104036.jpg" alt="廖麗雯老師在大車電業有限公司火車牌蒸氣熨斗招牌下講解成衣加工老店故事">
+        </button>
+        <figcaption><b>為走讀臨時拉開門的「火車牌」</b>：平日才營業的製衣蒸氣設備老店，今天破例讓大夥窺見成衣產業的幕後工具。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 4 -->
+  <article class="stop" id="s4">
+    <div class="stop-head">
+      <span class="stop-badge gld">STOP 04</span>
+      <span class="stop-time">10:56–11:18</span>
+      <span class="stop-loc">永樂市場外圍・八樓大稻埕戲苑・九樓俯瞰</span>
+      <h2>從劍窗里到戲窟天際線：上到九樓看一片紅瓦屋頂</h2>
+    </div>
+    <div class="split-2 rev">
+      <div class="prose">
+        <p>走到永樂市場旁，老師指著腳下這片「永樂里」說起一段少有人提的里名往事：戰後這裡曾一度命名為「<b>劍窗里</b>」，正是為了紀念在真聖堂書塾裡受業、為抗日殉難的歐劍窗。而眼前的永樂市場更是五個元素交會的縮影——一樓除了經典油飯、潤餅，還有被綠意包圍的手沖咖啡攤；二樓滿是布疋；三樓老師傅堅持「<b>手工做一件衣服能穿一輩子</b>」（電影《<b>刺客聶隱娘</b>》的戲服便曾委請巷內旗袍師傅縫製）；四樓早年曾是海鮮餐廳、還曾成為盧貝松電影《<b>露西 Lucy</b>》的打鬥取景樓層，如今則化身為服裝設計師發表新作的 <b>T 字伸展台</b>。</p>
+        <p>搭電梯上到一般散客鮮少走入的八樓「<b>大稻埕戲苑</b>」，這座接續辜家淡水戲館（新舞臺）、永樂座與第一劇場精神的公營劇場，仍持續上演歌仔戲、布袋戲與客家戲。展廊裡從早年小巧的傳統掌中偶，一路排到威風凜凜的霹靂大型戲偶與國寶大師<b>李天祿</b>文物，還有懸絲傀儡與掛著「<b>掌中公侯將相弄春秋</b>」的皮影戲互動戲台。</p>
+        <p>最驚喜的是走出高樓窗邊往下俯瞰——秋日陰雨將至，雲層壓得很低，整片大稻埕低矮的紅瓦斜屋頂與新式高樓在腳下鋪陳開來，比在地面仰望更直觀地看見這座百年河港的街廓密度。</p>
+        <div class="callout">
+          <b>攤開隨身秘笈的兩張紙</b>：在市場騎樓避風處，老師亮出真聖堂罕見的<b>中日文並列《靈聖真籤》</b>（第一首「大吉」、第一百首「上上」，左詩右譯日文「國語の大意」，全臺僅少數老廟留存此體例），以及她手繪標註的「<b>1853 年艋舺地域略圖</b>」，把頂郊黃阿安、下郊林佑藻如何退至大龍峒再落腳大稻埕的路線講得一清二楚。
+        </div>
+      </div>
+      <div class="portrait-pair media">
+        <figure class="fig tall">
+          <button data-ph="105834" aria-label="放大照片：真聖堂中日文並列籤詩與祭典手冊">
+            <img loading="lazy" src="img/105834.jpg" alt="手冊展示真聖堂簡介、三獻禮祭典日期表與中日文對照的第一首大吉、第一百首上上靈聖真籤">
+          </button>
+          <figcaption><b>中文詩句配日文「國語の大意」</b>：日治時期留下的雙語籤詩格式，至今仍在真聖堂抽得到。</figcaption>
+        </figure>
+        <figure class="fig tall">
+          <button data-ph="110922" aria-label="放大照片：1853年艋舺地域略圖與導覽員名牌">
+            <img loading="lazy" src="img/110922.jpg" alt="廖麗雯老師指著1853年艋舺地域略圖，身上配戴孚佑百年文化走讀導覽證">
+          </button>
+          <figcaption><b>1853 年的移民遷徙線</b>：從艋舺八甲庄與龍山寺勢力交鋒，畫出下郊人一路北退落腳大稻埕的路徑。</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <figure class="fig">
+        <button data-ph="111220" aria-label="放大照片：大稻埕戲苑掌中公侯將相弄春秋多媒體互動戲台">
+          <img loading="lazy" src="img/111220.jpg" alt="廖麗雯老師在大稻埕戲苑八樓掌中公侯將相弄春秋多媒體戲台旁示範皮影戲與布袋戲互動區">
+        </button>
+        <figcaption><b>「掌中公侯將相弄春秋」</b>：戲苑廊道裡的多媒體戲台，從前老外來訪總愛蹲在幕後對戲過癮。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="111349" aria-label="放大照片：大稻埕戲苑布袋戲偶與李天祿展廊">
+          <img loading="lazy" src="img/111349.jpg" alt="大稻埕戲苑八樓展廊兩側陳列各式布袋戲偶與李天祿生平介紹，團員專注聽講">
+        </button>
+        <figcaption><b>從小巧手偶到當代大偶</b>：一條走道串起布袋戲從廟口野台走到現代劇場的身形演變。</figcaption>
+      </figure>
+    </div>
+
+    <figure class="fig pano" style="margin-top:18px">
+      <button data-ph="111553" aria-label="放大照片：從高樓俯瞰大稻埕紅瓦屋頂與新舊天際線">
+        <img loading="lazy" src="img/111553.jpg" alt="從大稻埕戲苑高樓俯瞰下方密密麻麻的紅瓦斜屋頂與周邊現代建築群">
+      </button>
+      <figcaption><b>在雲層下讀大稻埕的屋頂幾何</b>：成排橘紅屋瓦緊挨著現代水泥大樓，一眼就能看清昔日繁華商街的窄長街屋比例。</figcaption>
+    </figure>
+  </article>
+
+  <!-- STOP 5 -->
+  <article class="stop" id="s5">
+    <div class="stop-head">
+      <span class="stop-badge">STOP 05</span>
+      <span class="stop-time">11:19–11:52</span>
+      <span class="stop-loc">迪化街一段南街・屈臣氏大藥房・霞海城隍廟・兩江醫院舊址</span>
+      <h2>迪化南街的人脈網：舊鐵軌樑柱、早期 EMBA 與 9,600 對月老傳奇</h2>
+    </div>
+    <div class="split-2">
+      <div class="prose">
+        <p>重回地面走進迪化街一段「<b>南街</b>」，仰望<b>屈臣氏大藥房</b>（<code>A.S. WATSON &amp; CO.</code>）修復後的高聳立面。廖老師點出一項少為人知的建築秘辛：這棟臺灣早期西藥房經歷大火後重修時，工程人員竟在牆體裡發現以<b>舊火車鐵軌充當樑柱</b>！原因就出在距離此處不遠、今日北門與中興醫院一帶曾是清末日初的「<b>大稻埕火車站</b>」。說到鐵路，老師也拿出珍藏的老火車「<b>撕票</b>」與三代<b>臺北橋</b>對照圖——從清代遇到大船要開合的木橋、改建鐵橋，一路講到人車分道還得向衛兵繳交過橋費的歲月。</p>
+        <p>站在屈臣氏前望向對街，恰好接近畫家<b>郭雪湖 1930 年《南街殷賑》</b>的取景視角。這條街曾培育出無數臺灣企業家的「<b>早期 EMBA</b>」：消失的糕餅名店「<b>寶香齋</b>」教出了<b>義美、十字軒、龍月堂與李亭香</b>（李家姓李，把剛出爐糕餅放在亭下吹涼散發香氣，因而得名，如今臺北孔廟 928 祭孔龜粿亦出自其手）；<b>新光吳火獅</b>當年趁五月十三城隍生擺流水席時順道出清布料庫存；<b>統一高清愿、阿瘦羅水木、聯華食品</b>與<b>臺鳳</b>皆從這幾條街起家。</p>
+        <p>巷弄裡還藏著與真聖堂緊密相連的名家身影：</p>
+        <ul>
+          <li><b>神像雕刻師潘德</b>：真聖堂二樓老文昌帝君神像正是潘德所刻。早年還沒有店面時，他就在真聖堂門口幫人刻神像，後來在旁開設「<b>求真</b>」佛像雕刻店，並把一身手藝傳給女婿——國寶級雕刻大師<b>吳榮賜</b>。</li>
+          <li><b>兩江醫院江氏兄弟</b>：昔日迪化街著名的江麗藻、江景勤兄弟，其父正是屏東內埔進士、亦曾為連橫之師的<b>江昶榮</b>；而江家後代正是曾任美國加州財務長的<b>江俊輝</b>。</li>
+        </ul>
+        <p>來到香火鼎盛的<b>霞海城隍廟</b>前，老師講起信仰背後的生活體貼：早年大家閨秀足不出戶，農曆五月十三（國曆約六月酷暑）出門看迎城隍卻常熱暈，長輩以為「煞到」城隍爺，乾脆替城隍爺迎娶<b>城隍夫人</b>（走讀前一天農曆九月初四恰是城隍夫人聖誕！拜「<b>馭夫鞋</b>」記得<b>鞋尖一定要朝內</b>放床頭，才不會讓老公往外跑）。而廟裡由蘆洲名師<b>王稻船（王道船）</b>雕刻的小尊<b>月老</b>，更曾在 <b>2008 年創下 9,600 對</b>佳偶還願的驚人紀錄；廟內同時供奉中藥業祖師<b>神農大帝</b>與布業祖師<b>嫘祖</b>，正把整條南街的商業與神明串成同一座生活圈。</p>
+      </div>
+      <div class="stack media">
+        <figure class="fig">
+          <button data-ph="112411" aria-label="放大照片：迪化街南街屈臣氏大藥房與對面街屋立面">
+            <img loading="lazy" src="img/112411.jpg" alt="右側為高聳的屈臣氏大藥房立面，左側為紅磚與洗石子巴洛克山牆街屋">
+          </button>
+          <figcaption><b>南街雙立面交會處</b>：右側屈臣氏大藥房修復時曾出土舊鐵軌樑柱，見證大稻埕火車站廢軌再利用的年代。</figcaption>
+        </figure>
+        <figure class="fig tall">
+          <button data-ph="112803" aria-label="放大照片：在迪化街頭以舊照片與手繪圖對照大稻埕火車站與臺北橋">
+            <img loading="lazy" src="img/112803.jpg" alt="廖麗雯老師舉著大稻埕火車站與臺北橋手繪圖，團員拿手機與紙本老照片比對">
+          </button>
+          <figcaption><b>把百年鐵道拉回眼前</b>：老式木橋、鐵橋與早期火車「撕票」圖樣，在人聲鼎沸的街邊一一對號。</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="grid-2">
+      <figure class="fig">
+        <button data-ph="113736" aria-label="放大照片：戴著孚佑百年藍帽的走讀隊伍行經迪化街一段">
+          <img loading="lazy" src="img/113736.jpg" alt="戴著真聖堂百年藍色紀念帽的學員們沿迪化街一段聽講前行">
+        </button>
+        <figcaption><b>戴著百年藍帽穿過南街</b>：假日人潮裡，抬頭才能看見藏在看板之上的雙柱與花草泥塑。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="115030" aria-label="放大照片：迪化街南街華麗山牆牌樓與勳章鮑魚雕飾">
+          <img loading="lazy" src="img/115030.jpg" alt="迪化街一段台灣農產企業公司與相鄰仿巴洛克山牆街屋立面，可見精緻花飾與勳章浮雕">
+        </button>
+        <figcaption><b>牌樓山牆上的業種密碼</b>：雙柱、勳章飾與花草紋樣，訴說當年南北貨與中藥商號的氣派門面。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 6: SPECIAL ENCOUNTER -->
+  <section class="encounter" id="s6" aria-label="意外推開的百年醫藥門扉">
+    <div class="stop-head">
+      <span class="stop-badge gld">STOP 06 · 意外奇遇</span>
+      <span class="stop-time">11:53–12:10</span>
+      <span class="stop-loc">迪化街一段・黃永生藥行（三進大正百年街屋）</span>
+      <h2>沒預約卻被老闆聽見的開門：百坪大正老屋與兩顆「馬寶石」</h2>
+    </div>
+    <div class="prose">
+      <p>原本行經<b>黃永生藥行</b>門口時，廖老師還向大家小聲解釋：「這家裡面保留得很美，但今天沒事先跟老闆預約，不敢擅自帶團進去。」話音剛落，屋內的<b>黃老闆</b>竟然聽見了，立刻熱情走出騎樓揮手招呼：「走進來一點沒關係，很歡迎你們參觀！」整團瞬間成了這天最幸運的訪客。</p>
+      <p>黃老闆親自當起東道主，揭開這棟<b>大正時期（近 120 年）三進三出、地坪高達百坪</b>老街屋的驚人身世：家族原本在板橋開了六十多年中藥房，民國 92 年（2003 年）他買下這棟歷經四任屋主的迪化街老屋並依原貌細心修復——光是一樓往上看，挑高就達 <b>7 公尺</b>（上層藏著兩層木構與閣樓），全棟用上 <b>800 多根不會生蟲的臺灣檜木木樑</b>，中庭天井讓自然氣流穿透一、二、三進。</p>
+      <p>更令人驚嘆的是這棟屋子的前身：經建築師與舊帳本考證，這裡竟然曾是<b>臺北市第一家小兒科診所</b>！老闆翻著留存的日治帳本算給大家聽——當年醫生打一針收三到五元、一個月能進帳一千多元；對照當時東區精華地段一棟透天厝只要八千多元，「等於一年就賺回一棟房子！」</p>
+      <p>領著大家看過收納 600 多種常用藥材的檜木「<b>百草櫃</b>」與手搖磨粉的「<b>藥碾</b>」後，黃老闆打開玻璃櫃拿出壓軸鎮店之寶——兩顆圓滾滾的「<b>馬寶石</b>」（馬的天然結石，用於潤肺化痰）。因馬身軀龐大而結石通常極小，能長到拳頭般大小可遇不可求，最高等級一顆喊價 <b>13 至 15 萬元</b>！老闆大方遞給大家輪流捧在手心觸摸，感受它沉甸甸的實心份量與層層包覆的紋理，還順口分享「猴棗」、「望月砂（兔糞）」、「夜明砂（蝙蝠糞）」與神農氏嘗百草面黑的趣談，讓原本不在行程裡的十五分鐘變成全場最難忘的高潮。</p>
+    </div>
+    <div class="encounter-grid">
+      <figure class="fig">
+        <button data-ph="120407" aria-label="放大照片：黃永生藥行一進挑高天井與堂屋空間">
+          <img loading="lazy" src="img/120407.jpg" alt="黃永生藥行屋內一進客廳空間與上方挑高七公尺的木構天井">
+        </button>
+        <figcaption><b>一進挑高七公尺的大正屋宇</b>：昔日臺北市第一家小兒科診所所在地，修復後保留完整木構格扇與採光天井。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="120419" aria-label="放大照片：黃永生藥行百草櫃長廊">
+          <img loading="lazy" src="img/120419.jpg" alt="黃永生藥行長廊兩側排列著臺灣檜木百草櫃與玻璃藥材展櫃">
+        </button>
+        <figcaption><b>檜木百草櫃裡的六百味藥材</b>：三進深長的街屋格局，走進去像走進一部活的中藥百科。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="120704" aria-label="放大照片：黃老闆雙手捧起兩顆罕見的馬寶石">
+          <img loading="lazy" src="img/120704.jpg" alt="黃永生藥行黃老闆笑容滿面雙手高舉一深一淺兩顆拳頭大的馬寶石給學員觀賞觸摸">
+        </button>
+        <figcaption><b>親手摸得到的鎮店「馬寶石」</b>：黃老闆笑著舉起罕見大顆馬結石，讓所有人第一次感受十幾萬元中藥材的重量。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="121037" aria-label="放大照片：黃永生藥行天花板臺灣檜木樑與店內匾額">
+          <img loading="lazy" src="img/121037.jpg" alt="仰望黃永生藥行深色臺灣檜木天花板木樑與店內書法黃永生標誌">
+        </button>
+        <figcaption><b>八百根檜木樑撐起百年醫香</b>：民國 92 年起一筆一劃修舊如舊，連木樑上天然防蟲的香氣都還在。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- STOP 7 -->
+  <article class="stop" id="s7">
+    <div class="stop-head">
+      <span class="stop-badge">STOP 07</span>
+      <span class="stop-time">12:11–12:32</span>
+      <span class="stop-loc">歸途折返・真聖堂一樓正殿與沿革碑</span>
+      <h2>穿過青草茶香回到原點：法會斗燈前的百年答客問</h2>
+    </div>
+    <div class="split-2 rev">
+      <div class="prose">
+        <p>告別熱情好客的黃老闆，回程順道經過古早味蚵嗲、百年<b>姚德和青草茶</b>、成排布料緞帶商行與昔日<b>大安醫院</b>（今義美門市）舊址，重新走回延平北路 61 巷的起點。</p>
+        <p>接近正午十二點二十，一樓法會上午場暫歇，大夥終於能跨過「天公壇」屏風走進正殿，近看整桌排開的<b>九皇禮斗斗燈</b>、高懸的「<b>孚佑帝君</b>」匾額，以及嵌著「<b>孚化三臺……／佑寧萬象……</b>」的廟柱。</p>
+        <p>在廟口《<b>真聖堂沿革</b>》石碑前，老師與對廟史充滿好奇的學員展開熱烈「踢館級」對答：從現任主委<b>王勝弘</b>（承接前任臺鳳謝家後代主委）積極推動百年慶文史活動，談到 1925 年自板橋新埔接元堂分靈的考證，再以「劉備封關羽為恩主」解說<b>「恩主」並非特定某位神明的專有名詞，而是凡對世人有恩惠者皆可敬稱</b>。兩個半小時欲罷不能，替這趟「從真聖堂出發、再回到真聖堂」的百年環線畫下圓滿句點。</p>
+      </div>
+      <div class="stack media">
+        <figure class="fig">
+          <button data-ph="122103" aria-label="放大照片：真聖堂一樓正殿孚佑帝君神龕與秋季禮斗法會斗燈">
+            <img loading="lazy" src="img/122103.jpg" alt="真聖堂一樓正殿孚佑帝君神龕前擺滿金色與紅色禮斗法會斗燈，兩側懸掛紅黃燈籠">
+          </button>
+          <figcaption><b>法會午歇時走進一樓正殿</b>：滿壇斗燈在「孚佑帝君」匾額下排開，是只有春秋法會期間才能見到的壯觀景象。</figcaption>
+        </figure>
+        <div class="portrait-pair">
+          <figure class="fig sq">
+            <button data-ph="121927" aria-label="放大照片：重返真聖堂廟口聽講結尾">
+              <img loading="lazy" src="img/121927.jpg" alt="廖麗雯老師站在真聖堂廟口天公爐前持手冊向學員總結大稻埕五大元素">
+            </button>
+            <figcaption><b>回到起點的圓滿句點</b>：從五個元素收束回真聖堂，廟口天公爐仍飄著細煙。</figcaption>
+          </figure>
+          <figure class="fig tall">
+            <button data-ph="122326" aria-label="放大照片：真聖堂沿革石碑">
+              <img loading="lazy" src="img/122326.jpg" alt="紅黃燈籠映照下的真聖堂沿革石碑，詳載大正初年劍樓書塾至大正十四年接元堂分靈歷史">
+            </button>
+            <figcaption><b>牆上的百年履歷表</b>：《真聖堂沿革》碑把劍樓書塾、醒堂、東本願寺到民國重建一一刻在石上。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- STOP 8 -->
+  <article class="stop" id="s8">
+    <div class="stop-head">
+      <span class="stop-badge gld">STOP 08 · 散步餘韻</span>
+      <span class="stop-time">12:33–12:40</span>
+      <span class="stop-loc">延平北路二段・十字軒糕餅舖・加福奇士蛋糕</span>
+      <h2>走出巷口的百年餅香：寶香齋弟子與昭和感謝狀</h2>
+    </div>
+    <div class="postcard">
+      <div class="split-2">
+        <div class="prose">
+          <p>導覽散場後走回延平北路二段，正好路過老師稍早點名過的「<b>寶香齋</b>」嫡傳名店——創立於 1930 年的<b>十字軒糕餅舖</b>，以及緊鄰排著買氣人龍的<b>加福奇士蛋糕專門店</b>。</p>
+          <p>推開十字軒大門，木頭層架上除了壽桃龜模，還靜靜掛著<b>昭和四十八年（1973 年）第十八回全國菓子大博覽會感謝狀</b>與中華民國糕餅展獎狀。上午才在迪化街聽完糕餅世家的系譜，中午立刻在延平北路遇見真品實物，像替這場大稻埕百年走讀補上一口最道地的甜香尾韻。</p>
+        </div>
+        <div class="grid-2" style="margin-top:0">
+          <figure class="fig">
+            <button data-ph="123438" aria-label="放大照片：延平北路二段十字軒糕餅舖與加福奇士蛋糕專門店">
+              <img loading="lazy" src="img/123438.jpg" alt="延平北路二段街景，紅色招牌十字軒糕餅舖與鄰近加福奇士蛋糕專門店">
+            </button>
+            <figcaption><b>延平北路上的糕餅雙鄰</b>：從日治老字號十字軒到老臺北人都熟悉的加福奇士蛋糕。</figcaption>
+          </figure>
+          <figure class="fig">
+            <button data-ph="124052" aria-label="放大照片：十字軒店內展示昭和四十八年全國菓子大博覽會感謝狀">
+              <img loading="lazy" src="img/124052.jpg" alt="十字軒糕餅舖展架上陳列昭和四十八年第十八回全國菓子大博覽會感謝狀與傳統糕餅模具">
+            </button>
+            <figcaption><b>展櫃裡的昭和獎狀</b>：傳統壽桃模與 1973 年日本菓子博覽會感謝狀同框。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- AFTERWORD -->
+  <section class="afterword" aria-label="走讀後記">
+    <div class="sec-title">
+      <h2>走讀後記：當百年廟宇重新走進日常街區</h2>
+      <p>一場只有兩個半小時的週末上午散步，因為現場的節氣、人情與巧合，讓書本裡的年代全部立了起來。</p>
+    </div>
+    <div class="af-cols">
+      <div class="af-card">
+        <h3>活著的百年活歷史</h3>
+        <p>真聖堂藏在 61 巷裡並不張揚，卻同時疊合了<b>漢學書塾、抗日文人、日治東本願寺、戰後民宅改建與五恩主鸞堂信仰</b>；走一趟才明白「孚佑百年」不是靜態紀念碑，而是仍在呼吸的社區中心。</p>
+      </div>
+      <div class="af-card">
+        <h3>五大元素縫合出的立體地圖</h3>
+        <p>茶、布、農產中藥、戲曲與建築原本各自散落在不同街廓，經廖麗雯老師一串，屈臣氏的舊鐵軌、朝陽巷的鈕扣壁畫、戲苑九樓的屋頂與黃永生藥行的馬寶石，全成了同一首大稻埕交響曲。</p>
+      </div>
+      <div class="af-card">
+        <h3>日後自己散步的推薦順序</h3>
+        <p>平日造訪可先到真聖堂一、二樓細看<b>中日文籤詩</b>與門柱墨寶，再拐進重慶北路 46 巷與南京西路 155 巷找鈕扣星夜牆，上<b>大稻埕戲苑</b>八樓看偶戲並俯瞰街景，最後沿迪化南街走回延平北路買份糕點。</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>2025/10/25 參加大稻埕仙公廟真聖堂「孚佑百年」系列活動・大稻埕文化走讀史蹟導覽（廖麗雯老師導覽）的走讀筆記</span>
+  <a href="#top">回到頁首 ↑</a>
+</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../yangming/index.html"><small>‹ 較新的一場・2025/11/01</small>尋找修澤蘭：陽明高中</a><a class="nx" href="../taoyuan/index.html"><small>較早的一場・2025/10/16 ›</small>桃園車站遺跡大解密</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar">
+    <button id="lbp" aria-label="上一張">‹</button>
+    <span id="lbc"></span>
+    <button id="lbn" aria-label="下一張">›</button>
+    <button id="lbx" aria-label="關閉">✕</button>
+  </div>
+</div>
+
+<script>
+{
+  const btns=[...document.querySelectorAll('header button[data-ph], main button[data-ph]')];
+  const items=btns.map((b,idx)=>{
+    const img=b.querySelector('img');
+    const fig=b.closest('figure');
+    const cap=fig?fig.querySelector('figcaption').textContent:img.alt;
+    b.dataset.idx=idx;
+    return {src:img.getAttribute('src'),alt:img.alt,cap};
+  });
+  const lb=document.getElementById('lb'),im=document.getElementById('lbi'),cp=document.getElementById('lbc');
+  let cur=0;
+  const show=i=>{
+    cur=(i+items.length)%items.length;
+    const x=items[cur];
+    im.src=x.src;
+    im.alt=x.alt;
+    cp.textContent=`${x.cap}　（${cur+1}/${items.length}）`;
+  };
+  document.body.addEventListener('click',e=>{
+    const b=e.target.closest('button[data-ph]');
+    if(b){show(+b.dataset.idx);lb.classList.add('on');document.getElementById('lbx').focus();}
+  });
+  document.getElementById('lbp').onclick=()=>show(cur-1);
+  document.getElementById('lbn').onclick=()=>show(cur+1);
+  const close=()=>lb.classList.remove('on');
+  document.getElementById('lbx').onclick=close;
+  lb.addEventListener('click',e=>{if(e.target===lb)close();});
+  document.addEventListener('keydown',e=>{
+    if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')show(cur-1);
+    if(e.key==='ArrowRight')show(cur+1);
+  });
+}
+</script>
+</body>
+</html>
