@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>萬華板橋雙北兩市水水家園走讀｜走讀筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 陰涼秋日裡沿著雙北水岸走了整整四小時的同行筆記，從公車窗外的大河一路走到巷弄裡復活的湧泉小溪
+   IDEA: 橫跨新店溪與大漢溪、連結萬華與板橋兩岸；對照河堤外的濕地、礫間地下淨水廠與市區裡的堀仔頭水道，看見「水溝與河流，一線之隔」
+   PICTURE: 重翠大橋下俯瞰淡水河「南十字水域」交會景觀（1008.jpg）
+   COLOUR and TYPE: 深水青 #0f6470（主色關鍵詞標記）、濕地苔綠 #3b6c55、光復橋磚紅 #b8422d、河霧紙白 #f2f5f3；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 跨河全景 Hero → 開篇導言與雙北座標卡 → 互動「五種留住水的方式」剖面圖 → 獨特亮點矩陣 → 三段式航路索引 → 交錯雜誌版型（全景主軸／55-45 寬幅圖文／河畔植物圖鑑條） */
+:root{color-scheme:light dark;
+--bg:light-dark(#f2f5f3,#101618);--card:light-dark(#fcfdfb,#172023);--ink:light-dark(#172224,#e7ecea);
+--mute:light-dark(#556366,#99a8ab);--accent:light-dark(#0f6470,#5ec4d0);--moss:light-dark(#3b6c55,#7ec29f);
+--brick:light-dark(#b8422d,#e68773);--soft:light-dark(#e2eff0,#182c30);--soft-g:light-dark(#e5efe9,#1a2b22);
+--warm:light-dark(#f8eae6,#2c1c19);--line:light-dark(#d5e0dd,#293538)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:18px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.8 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(30px,5.4vw,52px);line-height:1.14;font-weight:800}
+h2{font-size:clamp(22px,3vw,29px);line-height:1.3;font-weight:800}
+h3{font-size:clamp(20px,2.5vw,25px);line-height:1.34;font-weight:800}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* Hero：重翠大橋南十字水域 */
+.hero{background:#101f24;color:#f3f7f6}
+.hero .ph{position:relative;height:clamp(360px,60vh,580px);overflow:hidden}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:center 52%;display:block}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,26,30,.15) 0%,rgba(12,26,30,.46) 44%,rgba(12,26,30,.94) 100%)}
+.hero .tx{position:absolute;left:max(5vw,16px);right:max(5vw,16px);bottom:28px;z-index:1;max-width:1040px}
+.hero .badge{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px;padding:5px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.32);background:rgba(15,34,38,.74);backdrop-filter:blur(4px);font-size:13px;letter-spacing:.04em;margin-bottom:12px}
+.hero .badge i{width:8px;height:8px;border-radius:50%;background:#5ec4d0;display:inline-block}
+.hero h1 span{display:block;font-size:clamp(18px,2.6vw,26px);font-weight:600;color:#bce2e6;margin-top:8px}
+.hero p{margin:.65em 0 0;font-size:16.5px;max-width:66ch;opacity:.94}
+.meta{display:flex;flex-wrap:wrap;gap:10px 26px;padding:16px max(5vw,16px);font-size:14px;background:#0d191d;color:#d2dfe1;border-top:1px solid rgba(255,255,255,.08)}
+.meta b{color:#7ee0ec;font-weight:700;margin-right:6px}
+
+main{max-width:1140px;margin:0 auto;padding:24px max(4vw,14px) 64px}
+
+/* 開篇導言 + 右側雙北水路摘要卡 */
+.prologue{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(0,.78fr);gap:20px;margin:10px 0 30px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px}
+.panel h2{font-size:clamp(21px,2.5vw,26px);margin-bottom:12px}
+.panel p{margin:.6em 0;font-size:15.8px}
+.panel p b,.river-note b{color:var(--accent);font-weight:700}
+.river-note{margin-top:16px;padding:14px 18px;border-left:4px solid var(--moss);background:var(--soft-g);border-radius:0 12px 12px 0;font-size:14.8px}
+.river-note strong{color:var(--moss);display:block;margin-bottom:4px;font-size:15px}
+
+.ledger{background:#12252a;color:#e8f1f1;border-radius:16px;padding:20px 22px;border:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:12px}
+.ledger h3{font-size:18px;color:#8be2ec;letter-spacing:.03em}
+.ledger-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.12)}
+.ledger-stats div{background:rgba(255,255,255,.06);border-radius:10px;padding:8px 10px;text-align:center}
+.ledger-stats b{display:block;font:800 20px/1.15 "Noto Serif TC",serif;color:#fff}
+.ledger-stats small{font-size:12px;color:#b2cbce}
+.ledger-list{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.ledger-list li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:baseline;font-size:14px;border-bottom:1px dashed rgba(255,255,255,.14);padding-bottom:7px}
+.ledger-list li:last-child{border-bottom:none;padding-bottom:0}
+.ledger-list span{font:700 12px "Noto Sans TC",sans-serif;color:#0f2024;background:#7ee0ec;padding:1px 8px;border-radius:999px;white-space:nowrap}
+.ledger-list span.b{background:#e68773}
+.ledger-list b{color:#fff;font-weight:700}
+.ledger-tip{font-size:13px;color:#b6cacc;border-top:1px solid rgba(255,255,255,.14);padding-top:10px;margin:0}
+
+/* 互動模組：五種留住水的方式（跨河剖面與水綠治理圖解） */
+.hydro{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px;margin:0 0 32px}
+.hydro-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:14px}
+.hydro-head p{margin:0;color:var(--mute);font-size:14.5px}
+.hydro-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.hydro-tabs button{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:7px 14px;border-radius:999px;font:600 13.5px "Noto Sans TC",sans-serif;cursor:pointer;min-height:38px;transition:all .16s}
+.hydro-tabs button[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.hydro-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:22px;align-items:center}
+.hydro-svg{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:var(--bg)}
+.hydro-svg [hidden]{display:none}
+.hydro-copy{padding:18px 20px;border-radius:12px;background:var(--bg);border:1px solid var(--line)}
+.hydro-copy small{display:inline-block;font-weight:700;font-size:12.5px;color:var(--moss);letter-spacing:.05em;margin-bottom:4px}
+.hydro-copy h3{font-size:20px;margin-bottom:8px}
+.hydro-copy p{margin:0 0 10px;font-size:15px}
+.hydro-copy p b,.hydro-copy li b{color:var(--accent);font-weight:700}
+.hydro-copy ul{margin:0;padding-left:1.2em;font-size:14.5px;color:var(--mute)}
+.hydro-copy li{margin:.32em 0}
+
+/* 這一場才聽得到、看得到的獨特之處 */
+.unique{margin:34px 0 18px}
+.unique > p{margin:6px 0 14px;color:var(--mute);font-size:15px}
+.uq{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px}
+.uq a{display:flex;flex-direction:column;gap:5px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:15px 17px;transition:transform .16s,box-shadow .2s}
+.uq a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.07)}
+.uq a.m{border-left-color:var(--moss)}
+.uq a.r{border-left-color:var(--brick)}
+.uq i{align-self:flex-start;font-style:normal;font-size:12px;font-weight:700;padding:1px 9px;border-radius:999px;background:var(--soft);color:var(--accent)}
+.uq a.m i{background:var(--soft-g);color:var(--moss)}
+.uq a.r i{background:var(--warm);color:var(--brick)}
+.uq b{font-family:"Noto Serif TC",serif;font-size:17px;line-height:1.4}
+.uq span{font-size:14px;color:var(--mute);line-height:1.6}
+
+/* 航路快速導覽 */
+.river-nav{margin:30px 0 10px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.river-nav-title{font-size:13.5px;font-weight:700;letter-spacing:.06em;color:var(--mute);margin-bottom:10px}
+nav:not(.yr-pn) .scroll{display:flex;flex-wrap:wrap;gap:8px}
+nav:not(.yr-pn) a{display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:999px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:13.5px;min-height:36px;background:var(--bg);transition:border-color .16s}
+nav:not(.yr-pn) a:hover{border-color:var(--accent)}
+nav:not(.yr-pn) a span{color:var(--accent);font-weight:700}
+
+/* 篇章分隔與三種交錯站點版型 */
+.part{margin:52px 0 8px;padding:16px 0 10px;border-top:3px solid var(--accent);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px}
+.part small{display:block;color:var(--accent);font-weight:700;letter-spacing:.08em;font-size:13px}
+.part span{font-size:14.5px;color:var(--mute)}
+
+.stop{padding:36px 0;border-bottom:1px solid var(--line)}
+.stop-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:16px}
+.stop-num{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--accent);color:#fff;font:800 17px "Noto Serif TC",serif;flex:none}
+.stop.is-pano .stop-num{background:var(--brick)}
+.stop.is-guide .stop-num{background:var(--moss)}
+.stop-meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.stop-meta .at{font-size:13.5px;font-weight:700;color:var(--accent);letter-spacing:.04em}
+.stop-meta .loc{font-size:13.5px;color:var(--mute)}
+.tag{display:inline-block;font-size:12px;font-weight:700;line-height:1.65;color:#fff;background:var(--accent);border-radius:4px;padding:0 8px;margin-bottom:8px}
+.tag.m{background:var(--moss)}.tag.r{background:var(--brick)}
+
+/* 關鍵詞主色加粗標記 */
+.copy p b,.copy li b,#stops ul li b{color:var(--accent);font-weight:700}
+.copy h3{margin-bottom:12px}
+.copy p{margin:0 0 11px;font-size:16px}
+ul{margin:8px 0 0;padding-left:1.25em}
+li{margin:.45em 0}
+li::marker{color:var(--accent)}
+
+.q{background:var(--soft);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:12px 16px;margin-top:16px;font-size:15px}
+.q b{color:var(--accent);font-weight:700}
+.q.m{background:var(--soft-g);border-left-color:var(--moss)}
+.q.m b{color:var(--moss)}
+.q.r{background:var(--warm);border-left-color:var(--brick)}
+.q.r b{color:var(--brick)}
+
+/* 版型 A：55/45 寬幅圖文並排（照片大器，偶數站左右互換） */
+.split{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:24px 36px;align-items:start}
+.stop.alt .split{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}
+.stop.alt .split .copy{order:2}
+.stop.alt .split .lead-ph{order:1}
+
+/* 版型 B：全景主軸（大幅跨欄主照 + 下方雙欄文字與副照） */
+.pano-hero{margin-bottom:22px}
+.pano-hero .ph-btn img{aspect-ratio:16/10;max-height:560px}
+.pano-body{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:24px 36px;align-items:start}
+
+/* 版型 C：植物與水岸圖鑑條（文字說明 + 2x2 大尺寸圖鑑網格） */
+.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 24px;margin-top:22px;align-items:start}
+
+/* 大圖展示框與圖說 */
+.lead-ph figure,.more-ph figure,.pano-hero figure,.pano-side figure,.guide-grid figure{margin:0}
+.ph-btn{all:unset;cursor:pointer;position:relative;display:block;width:100%;border-radius:12px;overflow:hidden;background:var(--line);border:1px solid var(--line)}
+.ph-btn img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .35s}
+.ph-btn.tall img{aspect-ratio:3/4;max-height:560px}
+.ph-btn:hover img{transform:scale(1.03)}
+.ph-btn small{position:absolute;left:10px;bottom:10px;background:rgba(12,24,26,.78);color:#fff;font-size:12px;padding:2px 8px;border-radius:5px;letter-spacing:.03em}
+.ph-btn .zoom{position:absolute;right:10px;bottom:10px;background:rgba(12,24,26,.7);color:#fff;font-size:12px;padding:2px 8px;border-radius:5px;opacity:.9}
+figcaption{font-size:14.2px;line-height:1.6;color:var(--mute);margin-top:9px}
+figcaption b{color:var(--ink);font-weight:700}
+
+/* 附屬雙欄大圖列 */
+.more-ph{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 24px;margin-top:24px;align-items:start}
+.more-ph.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+/* 收尾觀察指南 */
+.fix{border-left:4px solid var(--accent);padding:20px 24px;margin-top:42px;font-size:15.5px;background:var(--card);border-radius:0 14px 14px 0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fix h2{font-size:21px;margin-bottom:10px}
+.fix p{margin:.5em 0}
+.fix b{color:var(--accent);font-weight:700}
+
+/* 燈箱 */
+#lb{position:fixed;inset:0;z-index:20;background:rgba(8,14,16,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:14px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 98px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:10px;align-items:center;color:#eee;margin-top:10px;font-size:15px;flex-wrap:wrap;justify-content:center;text-align:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #48585c;background:#162428;color:#fff;font-size:18px;cursor:pointer}
+footer{max-width:1140px;margin:0 auto;padding:0 max(4vw,14px) 40px;color:var(--mute);font-size:14px}
+
+@media(max-width:880px){
+  .prologue,.hydro-grid,.split,.stop.alt .split,.pano-body{grid-template-columns:minmax(0,1fr)}
+  .stop.alt .split .copy,.stop.alt .split .lead-ph{order:unset}
+  .more-ph.three{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+  .more-ph,.more-ph.three,.guide-grid{grid-template-columns:minmax(0,1fr)}
+  .ledger-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(prefers-reduced-motion:reduce){.ph-btn img,.uq a{transition:none}.uq a:hover{transform:none}}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・69 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html" aria-current="page"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html" aria-current="page"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></details><span>2024/10/28</span></div>
+<header class="hero">
+  <div class="ph">
+    <img src="img/1008.jpg" alt="從重翠大橋下望向新店溪、大漢溪與淡水河交會的南十字水域景觀">
+    <div class="tx">
+      <div class="badge"><i></i><span>臺北市萬華社區大學・113 秋季班公民週【萬華健康好生活】｜2024/10/28（一）</span></div>
+      <h1>萬華板橋雙北兩市水水家園走讀<span>跨過新店溪、大漢溪與三座橋，看見「水溝與河流」只在一線之隔</span></h1>
+      <p>陰陰涼涼最適合步行的秋日上午，跟著陳建志老師從捷運龍山寺站搭公車跨過華江橋，走進堤防外的人工濕地、重翠大橋下的「淡水河南十字水域」、江翠地底礫間淨水場，再跨光復橋回到萬華，看見把蚊蟲水溝變回清澈小溪的堀仔頭水道，最後推開平日限定的台灣公路博物館。</p>
+    </div>
+  </div>
+</header>
+<div class="meta">
+  <span><b>日期</b>2024/10/28（一）08:50 集合・約 4 小時（09:00–13:00）</span>
+  <span><b>活動</b>萬華社區大學 113 秋季班公民週【萬華健康好生活】</span>
+  <span><b>領隊</b>陳建志老師（水水萬華走讀／我家旁邊有河課程講師）</span>
+  <span><b>集合</b>捷運龍山寺站 1 號出口</span>
+  <span><b>路線</b>龍山寺站 → 245/310 公車過華江橋 → 文化路二段 → 大漢溪濕地生態廊道 → 華江自行車園區 → 重翠大橋南十字水域 → 華江碼頭 → 江翠礫間水岸公園 → 光復大橋 → 萬華綠隧道 → 銘德里陸橋 → 堀仔頭水道 → 阿寶師／日善公園 → 台灣公路博物館（幸福公路館）</span>
+</div>
+
+<main>
+  <section class="prologue" aria-label="活動簡介與雙北水路摘要">
+    <div class="panel">
+      <h2>「水溝與河流，一線之隔」——用四小時讀懂雙北的水綠家園</h2>
+      <p>這場「<b>萬華板橋雙北兩市水水家園走讀</b>」，是萬華社區大學 113 秋季班公民週【<b>萬華健康好生活</b>】的戶外課程。活動前幾日接連陰雨，這天上午卻剛好放緩成陰陰涼涼、最適合走路的天氣。整整四個小時、飽滿的知識量與行走量，<b>陳建志老師</b>刻意把路線設計成「<b>先過河到板橋，再走回萬華</b>」的雙岸對照——先走出九公尺高的堤防外，看新北市怎麼用<b>高灘地人工濕地</b>與<b>地底礫間淨水場</b>搶救水質；再跨過光復大橋回到臺北市，走進社區把臭水溝救活成活水小溪的<b>萬華堀仔頭水道</b>。</p>
+      <p>生活在高度開發的雙北盆地裡，我們往往習慣「眼不見為淨」，以為水流出抽水站就與自己無關；然而這趟走讀沿路看遍了濕地教育、河濱運動文化、塗鴉彩繪、外來種拉鋸戰與<b>水綠資源公私協力的人文故事</b>，最後留給所有人一個再清楚不過的提問：水溝與河流之間，其實只差我們願不願意多看它一眼、多關心它一點。</p>
+      <div class="river-note">
+        <strong>戴上耳機就能跟上的 LINE 群組語音導覽</strong>
+        集合時老師請大家加入 LINE 群組語音通話——習慣的戴耳機、不習慣的開小聲擴音，不用擠在隊伍最前方，就算隊伍沿著窄窄的堤防步道拉得很長，依然聽得見老師的每一個提醒（只是結束別忘按下退出，免得被留在會議室裡！）。
+      </div>
+    </div>
+
+    <aside class="ledger" aria-label="雙北跨河走讀座標">
+      <h3>今日水路・五大段落</h3>
+      <div class="ledger-stats">
+        <div><b>4 小時</b><small>知識與步行量</small></div>
+        <div><b>2 縣市</b><small>萬華 ↔ 板橋</small></div>
+        <div><b>3 座橋</b><small>跨新店・大漢溪</small></div>
+      </div>
+      <ul class="ledger-list">
+        <li><span>09:00</span><div><b>龍山寺出發・跨堤登陸</b>・搭公車過新店溪、掃文化路樟樹 QR 牌、上藍橋越過兩道門檻</div></li>
+        <li><span>09:30</span><div><b>大漢溪濕地・南十字水域</b>・週一休館看翠鳥照、自行車園區，重翠大橋下看四水交會</div></li>
+        <li><span>10:22</span><div><b>新店溪左岸・植物教室</b>・堤防塗鴉、退潮躍出的烏魚群、南島構樹與 Google Lens 實戰</div></li>
+        <li><span class="b">11:05</span><div><b>地底淨水・跨光復橋</b>・萬聖節前的江翠礫間地下廊道、雙北橋中央交界合影</div></li>
+        <li><span class="b">12:15</span><div><b>堀仔頭水道・公路博物館</b>・三百年湧泉重生、阿寶師與日善公園、週一限定幸福公路館</div></li>
+      </ul>
+      <p class="ledger-tip">行程原估 11:30 結束，實地邊走邊看、從板橋繞回萬華深處一共走了四小時，到近一點才意猶未盡地道別。</p>
+    </aside>
+  </section>
+
+  <section class="hydro" aria-label="雙北五種把水留住的空間剖面">
+    <div class="hydro-head">
+      <h2>先把雙北的水岸剖開來看：人與河之間的五道機制</h2>
+      <p>點選下方五個按鈕，對照板橋右岸與萬華左岸如何克服障礙、淨化污水、並把水帶回市民生活</p>
+    </div>
+    <div class="hydro-tabs" role="group" aria-label="切換水岸機制">
+      <button aria-pressed="true" data-layer="0">① 越過兩道障礙進河濱</button>
+      <button aria-pressed="false" data-layer="1">② 大漢溪高灘地人工濕地</button>
+      <button aria-pressed="false" data-layer="2">③ 淡水河南十字感潮水域</button>
+      <button aria-pressed="false" data-layer="3">④ 江翠礫間地底淨水場</button>
+      <button aria-pressed="false" data-layer="4">⑤ 堀仔頭三百年湧泉小溪</button>
+    </div>
+    <div class="hydro-grid">
+      <svg class="hydro-svg" viewBox="0 0 640 300" role="img" aria-label="萬華至板橋雙北水綠空間剖面示意圖">
+        <rect width="640" height="300" fill="none"/>
+        <!-- 背景區塊：板橋市區 -> 環河+堤防 -> 河濱濕地/礫間 -> 河道 -> 萬華堤防 -> 堀仔頭 -->
+        <rect x="14" y="218" width="110" height="60" rx="6" fill="var(--card)" stroke="var(--line)"/>
+        <text x="69" y="246" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700">板橋市區</text>
+        <text x="69" y="264" text-anchor="middle" fill="var(--mute)" font-size="10.5">文化路樟樹</text>
+
+        <!-- 兩道門檻：環河路 + 9m堤防 -->
+        <rect x="134" y="232" width="44" height="46" rx="4" fill="var(--line)"/>
+        <text x="156" y="258" text-anchor="middle" fill="var(--ink)" font-size="10">環河路</text>
+        <path d="M186,278 L194,158 L218,158 L226,278 Z" fill="var(--moss)" opacity=".45" stroke="var(--moss)"/>
+        <text x="206" y="148" text-anchor="middle" fill="var(--moss)" font-size="11" font-weight="700">9m 堤防</text>
+
+        <!-- 高灘地：濕地與礫間 -->
+        <rect x="234" y="206" width="138" height="72" rx="6" fill="var(--soft-g)" stroke="var(--moss)" stroke-dasharray="4 3"/>
+        <text x="303" y="228" text-anchor="middle" fill="var(--moss)" font-size="11" font-weight="700">高灘地公園帶</text>
+        <text x="303" y="248" text-anchor="middle" fill="var(--ink)" font-size="10.5">人工濕地・礫間地底槽</text>
+        <text x="303" y="266" text-anchor="middle" fill="var(--mute)" font-size="10">單車道・漫馬・塗鴉牆</text>
+
+        <!-- 河道：新店溪 / 大漢溪 / 南十字 -->
+        <path d="M380,224 Q420,214 460,224 T480,224 L480,278 L380,278 Z" fill="var(--soft)" stroke="var(--accent)"/>
+        <text x="430" y="248" text-anchor="middle" fill="var(--accent)" font-size="12" font-weight="800">新店溪 × 大漢溪</text>
+        <text x="430" y="266" text-anchor="middle" fill="var(--mute)" font-size="10">每日兩次感潮進水</text>
+
+        <!-- 跨河橋樑線 -->
+        <path d="M120,118 L496,118" stroke="var(--brick)" stroke-width="3" stroke-dasharray="7 5" opacity=".7"/>
+        <text x="308" y="108" text-anchor="middle" fill="var(--brick)" font-size="11" font-weight="700">華江橋 / 重翠大橋 / 光復大橋（雙北分界）</text>
+
+        <!-- 萬華堤防與堀仔頭 -->
+        <path d="M488,278 L496,168 L516,168 L524,278 Z" fill="var(--moss)" opacity=".45" stroke="var(--moss)"/>
+        <rect x="532" y="218" width="94" height="60" rx="6" fill="var(--card)" stroke="var(--line)"/>
+        <text x="579" y="244" text-anchor="middle" fill="var(--ink)" font-size="11.5" font-weight="700">萬華加蚋仔</text>
+        <text x="579" y="263" text-anchor="middle" fill="var(--accent)" font-size="10.5" font-weight="700">堀仔頭湧泉</text>
+
+        <!-- 動態強調層 -->
+        <g id="layer-hi-0">
+          <path d="M124,218 Q166,120 232,206" fill="none" stroke="var(--accent)" stroke-width="4.5"/>
+          <circle cx="176" cy="154" r="6" fill="var(--accent)"/>
+          <rect x="112" y="40" width="230" height="40" rx="8" fill="var(--soft)" stroke="var(--accent)" stroke-width="1.8"/>
+          <text x="227" y="65" text-anchor="middle" fill="var(--accent)" font-size="12" font-weight="800">藍色迴轉天橋：連跨環河路與九米高堤</text>
+        </g>
+        <g id="layer-hi-1" hidden>
+          <rect x="234" y="206" width="138" height="36" rx="6" fill="var(--soft-g)" stroke="var(--moss)" stroke-width="3"/>
+          <path d="M242,190 C280,190 310,190 364,205" fill="none" stroke="var(--moss)" stroke-width="2.5"/>
+          <rect x="196" y="40" width="256" height="40" rx="8" fill="var(--soft-g)" stroke="var(--moss)" stroke-width="1.8"/>
+          <text x="324" y="65" text-anchor="middle" fill="var(--moss)" font-size="12" font-weight="800">污水在濕地慢跑 5–6 天，水生植物先淨化</text>
+        </g>
+        <g id="layer-hi-2" hidden>
+          <line x1="380" y1="126" x2="480" y2="126" stroke="var(--brick)" stroke-width="6"/>
+          <path d="M430,136 L430,220 M384,178 L476,178" stroke="var(--accent)" stroke-width="3.5"/>
+          <rect x="318" y="40" width="276" height="40" rx="8" fill="var(--warm)" stroke="var(--brick)" stroke-width="1.8"/>
+          <text x="456" y="65" text-anchor="middle" fill="var(--brick)" font-size="12" font-weight="800">重翠大橋視角：新店・大漢・淡水・二重四水十字</text>
+        </g>
+        <g id="layer-hi-3" hidden>
+          <rect x="242" y="244" width="122" height="32" rx="6" fill="var(--soft)" stroke="var(--accent)" stroke-width="3"/>
+          <circle cx="268" cy="260" r="4" fill="var(--accent)"/><circle cx="286" cy="260" r="4" fill="var(--accent)"/>
+          <circle cx="304" cy="260" r="4" fill="var(--accent)"/><circle cx="322" cy="260" r="4" fill="var(--accent)"/>
+          <circle cx="340" cy="260" r="4" fill="var(--accent)"/>
+          <rect x="180" y="40" width="278" height="40" rx="8" fill="var(--soft)" stroke="var(--accent)" stroke-width="1.8"/>
+          <text x="319" y="65" text-anchor="middle" fill="var(--accent)" font-size="12" font-weight="800">地底 20–30cm 卵石＋曝氣養菌，日淨 2.85 萬噸</text>
+        </g>
+        <g id="layer-hi-4" hidden>
+          <path d="M446,274 Q515,294 576,268" fill="none" stroke="var(--accent)" stroke-width="3.5" stroke-dasharray="5 4"/>
+          <rect x="532" y="218" width="94" height="60" rx="6" fill="var(--soft)" stroke="var(--accent)" stroke-width="3"/>
+          <rect x="336" y="40" width="286" height="40" rx="8" fill="var(--soft)" stroke="var(--accent)" stroke-width="1.8"/>
+          <text x="479" y="65" text-anchor="middle" fill="var(--accent)" font-size="12" font-weight="800">新店溪伏流水湧出・階梯跌水溶氧＋大肚魚滅蚊</text>
+        </g>
+      </svg>
+      <div class="hydro-copy" id="hydro-copy"></div>
+    </div>
+  </section>
+
+  <section class="unique" id="unique">
+    <h2>要來參加才看得到、週一上午才撞見的現場時刻</h2>
+    <p>河濱步道隨時都能自己散步，但下面這六個畫面與故事，有些得踩在精準的退潮與時節上，有些甚至只有在週一上午跟對老師才推得開那扇門。點進去看那一站。</p>
+    <div class="uq" id="uq"></div>
+  </section>
+
+  <nav class="river-nav" aria-label="走讀站點快速跳轉">
+    <div class="river-nav-title">從萬華過河進板橋，再跨光復橋走回加蚋仔｜14 站航路索引（點選快速跳轉）</div>
+    <div class="scroll" id="nav"></div>
+  </nav>
+
+  <div id="stops"></div>
+
+  <div class="fix">
+    <h2>下次自己再走這條雙北水岸，可以這樣看</h2>
+    <p>・<b>把「台灣公路博物館」留給平日白天</b>：幸福公路館只在<b>週一至週五 09:00–16:00</b> 開放（例假日休息），週末假日走這條路線是進不去的；平日來訪不僅免費看展覽、吹冷氣，別忘去漂書站找找那台 10 元星巴克咖啡機。</p>
+    <p>・<b>看淡水河南十字水域的最佳站位</b>：不必走完 1.5 公里的重翠大橋到大都會公園，只要走上板橋江子翠端的<b>重翠大橋高架引道橋腹下</b>，就能把新店溪、大漢溪、淡水河與二重疏洪道四條水脈一次收進眼底。</p>
+    <p>・<b>認出江邊植物的小訣竅</b>：行道樹掃 <b>QR Code</b> 樹牌以外，在河濱拿手機對著葉片或果實打開 <b>Google Lens 智慧鏡頭</b>就是隨身講師；記得分辨葉背絨毛黏衣服的<b>山黃麻</b>、葉柄位置不同的<b>野桐與血桐</b>，以及千萬別帶去野放的<b>銅錢草</b>。</p>
+    <p>・<b>順道一探日善公園與堀仔頭夜景</b>：白天看清澈湧泉裡的大肚魚和防汛水閘門，若傍晚 18:30–21:30 再訪<b>堀仔頭水道</b>還能看見夜間燈光；走出巷口到<b>日善公園</b>，記得低頭讀讀地上那塊刻著加蚋仔六庄頭的圓形地圖。</p>
+  </div>
+</main>
+
+<footer>2024/10/28 參加臺北市萬華社區大學 113 秋季班公民週「萬華板橋雙北兩市水水家園走讀」之走讀筆記｜部分現場照片由同梯學員與隨隊攝影夥伴拍攝分享</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../dangchan/index.html"><small>‹ 較新的一場・2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a><a class="nx" href="../meiwufu/index.html"><small>較早的一場・2024/10/28 ›</small>中山學：九條通梅屋敷走讀</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar"><button id="lbp" aria-label="上一張">‹</button><span id="lbc"></span><button id="lbn" aria-label="下一張">›</button><button id="lbx" aria-label="關閉">✕</button></div>
+</div>
+
+<script>
+{
+const PORTRAIT=new Set(["0905","0926","1039","1054","1108","1205","1303"]);
+
+const LAYERS=[
+  {
+    k:"第 1 道・市區與水岸之間",
+    t:"親水城市的考題：先跨環河快速道路，再翻過九公尺高的堤防",
+    d:"都市人想親近河流，往往得先突破兩道高牆：車流高速呼嘯的<b>環河快速道路</b>，以及將近三層樓（九米多）高的<b>防洪堤防</b>。這天我們從板橋文化路二段切進<b>藍色迴轉人行天橋</b>，一口氣越過兩道障礙。",
+    b:["平面「疏洪門（水門）」與長緩坡人行天橋是基本配套；對推娃娃車或坐輪椅的朋友，設有電梯的水岸入口才真正友善。","回程萬華側則穿過彩繪成蝴蝶意象的<b>銘德里人行陸橋</b>，把被馬路與堤防切開的社區重新接回河邊。"]
+  },
+  {
+    k:"第 2 道・板橋右岸高灘地（2000s 末期至今）",
+    t:"周錫瑋 × 李鴻源時代的大漢溪人工濕地：讓污水「慢跑五、六天」",
+    d:"在 2010 年臺北縣升格新北市前，板橋與樹林、土城一帶的衛生下水道接管率仍低。當時縣長<b>周錫瑋</b>延攬水利專家<b>李鴻源</b>，利用堤外高灘地闢建<b>人工濕地</b>（甚至種過水稻），在抽水站污水排入大漢溪前，先導進濕地裡繞行五、六天。",
+    b:["利用水池裡的細菌、藻類與水生植物吸附分解<b>氮、磷</b>並讓污垢沉澱，水質就能先改善七、八成。","隨著近年衛生下水道陸續接管，濕地淨水任務逐漸退居幕後，卻留下吸引翠鳥、水鳥與<b>珍水志工</b>駐守的生態教室。"]
+  },
+  {
+    k:"第 3 道・重翠大橋下（四水匯流）",
+    t:"全臺北最壯闊的水域座標：淡水河「南十字交會」與感潮河段",
+    d:"站在<b>重翠大橋</b>下往北望，右手邊是<b>新店溪</b>、左手邊是<b>大漢溪</b>，匯流向前成為<b>淡水河</b>；對岸緊鄰新北大橋的則是 424 公頃的<b>二重疏洪道（新北大都會公園）</b>。洪水與大潮來時四道水域貫通，構成老師口中的「<b>南十字水域</b>」。",
+    b:["當年因臺北大橋段河道突然束縮、威脅大稻埕與三重安危，李登輝任省主席時徵收闢建長 8.5 公里、相當於 <b>18 個大安森林公園</b>大的二重疏洪道。","淡水河屬<b>感潮河段</b>，每天兩次漲潮從河口推進近 30 公里：新店溪可漲到秀朗橋（烏魚會追潮游進景美溪），大漢溪到浮洲橋，基隆河則直抵昔稱「水返腳」的汐止。"]
+  },
+  {
+    k:"第 4 道・新店溪左岸地底",
+    t:"江翠礫間水岸公園：在草皮與萬聖節走廊底下，日淨 2.85 萬噸污水",
+    d:"相較大面積的高灘地濕地，土地寸土寸金的江翠段選擇往「地底下」找空間——把河濱草坪開挖鋪設不透水布，填滿 <b>20–30 公分卵石</b>與曝氣管線，讓污水流過石縫並養菌分解有機物，每天可處理約 <b>28,500 噸</b>生活污水。",
+    b:["地底工程板寫著單日可去除上千公斤 BOD、懸浮固體（SS）與超過 500 公斤造成臭味的氨氮，改善七、八成水質後才排入新店溪。","地表看起來只是一座毛毛蟲與蝴蝶意象的綠地公園，其實腳下正安靜運轉著整座城市的地下腎臟。"]
+  },
+  {
+    k:"第 5 道・萬華加蚋仔巷弄",
+    t:"萬華堀仔頭水道：一線之隔，把蚊蟲水溝救回三百年湧泉小溪",
+    d:"在凱達格蘭語中意為「沼澤」的<b>加蚋仔</b>，三百多年前即有漢人開墾六大聚落，其中「<b>堀仔頭</b>」正是新店溪伏流水滲透湧出成泉的地方。過去這條緊鄰資源回收站的水溝易積水生蚊，在居民與社區協力下重新打開，成為會呼吸的活水小溪。",
+    b:["刻意設計<b>階梯跌水</b>增加水中溶氧，更放入<b>大肚魚與孔雀魚</b>專門吃掉孑孓，成功說服擔心蚊蟲的街坊。","穩定的地下水在過去曾造就加蚋仔不畏颱風的「救災菜」——<b>豆芽菜</b>產業；今天則讓城市人發現「我家旁邊真的有小河」。"]
+  }
+];
+
+const hydroCopy=document.getElementById("hydro-copy");
+const renderLayer=idx=>{
+  const x=LAYERS[idx];
+  hydroCopy.innerHTML=`<small>${x.k}</small><h3>${x.t}</h3><p>${x.d}</p><ul>${x.b.map(i=>`<li>${i}</li>`).join("")}</ul>`;
+  for(let i=0;i<5;i++){
+    const g=document.getElementById("layer-hi-"+i);
+    if(g)g.hidden=(i!==idx);
+  }
+};
+renderLayer(0);
+document.querySelector(".hydro-tabs").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-layer]");
+  if(!b)return;
+  document.querySelectorAll(".hydro-tabs button").forEach(btn=>btn.setAttribute("aria-pressed",btn===b?"true":"false"));
+  renderLayer(+b.dataset.layer);
+});
+
+const S=[
+  {
+    at:"08:50",
+    mode:"spread",
+    part:["第一篇章・萬華出發，跨河登陸板橋","從龍山寺捷運站搭公車過橋，走進堤防外的綠帶"],
+    short:"龍山寺出發",
+    loc:"捷運龍山寺站 1 號出口 → 245/310 公車",
+    tag:"用 LINE 語音教室走讀",
+    t:"龍山寺 1 號出口集合：戴上耳機，搭公車飛越華江橋",
+    b:[
+      "早上 8 點 50 分在<b>捷運龍山寺站 1 號出口</b>集合，等齊人後先拉開萬華社區大學布條拍下第一張大合照，再由<b>陳建志老師</b>請大家加入 LINE 群組語音會議室——戴耳機或開小聲擴音，哪怕隊伍在河岸拉開也能聽得一清二楚（老師還叮嚀「結束一定要按退出，不然會被鎖在會議室」）。",
+      "走進公車站牌搭上 <b>245、310 等跨河公車</b>，一路駛上華江橋跨越<b>新店溪</b>。還沒走進河濱，車窗左右已經開演：左側可見泥沙長期淤積、樹林早已長進河灘地的臺北市<b>華江雁鴨自然公園</b>，遠處白色斜張橋則是連結三重與板橋的<b>新北大橋</b>。"
+    ],
+    ph:["0900","0905"]
+  },
+  {
+    at:"09:09",
+    mode:"spread",
+    short:"會呼吸的樹牌",
+    loc:"板橋文化路二段行道樹",
+    tag:"聰明又漏拍的小秘密",
+    t:"文化路二段的「智慧綠資源」：彈性綁帶樹牌，與消失的編號",
+    b:[
+      "在板橋華江橋站下車往回走，還沒進堤防，老師先帶大家讀起馬路邊的<b>樟樹</b>身分證：新北市與臺北市同步推動<b>城市綠資源管理</b>，每棵樹都有專屬編號（如 <b>#16333</b>、<b>#1634</b>）與 <b>QR Code</b>，手機一掃就能認識樹種，樹生病或斷枝也能精準通報。",
+      "仔細摸那條固定樹牌的圓環——現在都改用<b>有彈性的綁帶</b>，不再用鐵釘或鐵絲，避免樹木長粗後被勒傷。但老師眼尖對照編號時竟發現：兩棵同齡大樟樹之間夾著一棵後來補種的小樹，旁邊甚至連續幾棵大樹都「漏掛牌」，正好見證城市數位盤點還在持續精進中。",
+      "至於馬路邊為何愛種樟樹？老師說它是標準的「<b>環保樹</b>」：長年綠油油、光合作用旺盛，能大量淨化車流廢氣；果實與落葉被車輾過還散發淡淡精油香。"
+    ],
+    q:"如果不跟著老師停在人行道逐棵核對 #16333 與 #1634，誰會發現兩棵老樟樹之間藏著一棵補植小樹、以及好幾棵漏掛牌的有趣插曲？",
+    qtag:"帶路才看得到",
+    ph:["0909","0910"]
+  },
+  {
+    at:"09:20",
+    mode:"spread",
+    short:"跨兩道障礙進河濱",
+    loc:"藍色迴轉天橋 → 堤防內外",
+    tag:"親水城市的考題",
+    t:"連過環河路與九米高堤：遇見本土水柳與小鳥最愛的茄冬大餐",
+    b:[
+      "城市要打造「親水空間」，往往得先解決兩道物理門檻：車速飛快的<b>環河快速道路</b>，與將近三層樓（九米多）高的<b>防洪堤防</b>。我們踏上迴旋拉長的<b>藍色人行天橋</b>一路跨進堤防外，老師也提醒對比平面水門與電梯式無障礙設施的便利度。",
+      "走在堤邊高處正好平視樹冠：這裡長滿葉片較短尖的本土<b>臺灣水柳</b>（有別於細長下垂的洋柳，春天會隨棉絮「風飄法」散播種子）、小鳥吃果實後拉便便「種」出來的木瓜樹，以及進入秋天便結實累累的<b>茄冬</b>。",
+      "一串串像小龍眼般的茄冬果實酸澀卻水分飽滿，在乾燥的秋冬成了枝頭小鳥的水分大餐；一旁還有雌雄異株的<b>小葉桑</b>，只有母樹才會結出紅轉黑的桑椹，一眼看出誰公誰母。"
+    ],
+    ph:["0922","0926"]
+  },
+  {
+    at:"09:30",
+    mode:"spread",
+    part:["第二篇章・大漢溪人工濕地與南十字水域","週一休館的意外收穫，與重翠大橋下四水交會"],
+    short:"濕地服務中心",
+    loc:"大漢溪濕地生態廊道服務中心",
+    tag:"週一公休限定風景",
+    t:"大漢溪濕地生態廊道：週一休館沒進門，卻在戶外看懂翠鳥辨公母",
+    b:[
+      "穿過寫著「大漢溪人工濕地」的藍色橋腹，來到橋下這座由新北市高灘地工程管理處營運的<b>濕地生態廊道服務中心</b>。老師帶大家回溯前臺北縣長<b>周錫瑋</b>與水利專家<b>李鴻源</b>當年的巧思：在板橋、樹林衛生下水道尚未普及前，先用高灘地闢建人工濕地，讓污水在池裡「慢跑五、六天」，靠細菌與水生植物分解氮磷，淨化七、八成水質後再排入大漢溪。",
+      "偏偏這天是<b>週一固定休館日</b>！鐵捲門雖沒拉開，大家卻圍在戶外長廊細看「<b>珍水志工</b>」的生態攝影展。老師特別指著兩張同樣拍到抓著大肚魚的<b>翠鳥（又稱魚狗、釣魚翁）</b>特寫考大家：一般鳥類總是公鳥豔麗、母鳥黯淡保護自己，翠鳥卻公母一樣鮮豔藍橘相間——唯一辨別秘訣看<b>下嘴喙</b>：<b>公鳥全黑，母鳥則是橘紅色</b>！"
+    ],
+    q:"雖逢週一服務中心公休、看不成室內模型，站在走廊外頭聽老師指著志工照片拆解翠鳥嘴喙與生物排污池，反而成了週一行程獨有的戶外展間。",
+    qtag:"週一才有的場面",
+    ph:["0930","0935","0937"]
+  },
+  {
+    at:"09:43",
+    mode:"spread",
+    short:"0K 與單車園區",
+    loc:"大漢溪右岸 0K → 華江自行車教育園區",
+    tag:"河濱運動與天地一幅",
+    t:"大漢溪漫馬路線、華江自行車教育園區，與遠方天際線的新地標",
+    b:[
+      "在紫色「<b>大漢溪右岸 0K</b>」圓環前拍過大合照，老師指著路邊看板介紹很少外地人注意的「<b>大漢溪漫馬路線</b>」：水利單位把河濱橋樑之間的距離精準量測出來，跑友從這裡出發到浮洲橋折返就是 5K，一路延伸出 10K、半馬 21K 到跨橋全馬 42K，同時也是端午以外全年備戰的龍舟訓練水道。",
+      "緊鄰的<b>華江自行車教育園區</b>地上畫滿 S 形與直線練習道，老師笑說一旁標示牌還貼心附上注音給小朋友讀，只是字體太小得蹲著看；旁邊貨櫃租借站提供 U-Bike 沒有的童車與協力車、也能甲租乙還跨雙北，正是河濱租車站在共享單車時代依舊屹立的理由。",
+      "抬頭往東邊臺北望去，昔日最高地標新光三越已被「<b>天地一幅（台北 101）</b>」取代，圓山大飯店後方依序則是較矮的五指山系，與遠處火山錐口明顯的大屯、七星山系。"
+    ],
+    ph:["0943","0946","0953"]
+  },
+  {
+    at:"10:02",
+    mode:"panorama",
+    short:"南十字水域",
+    loc:"重翠大橋人行引道正下方",
+    tag:"全場最震撼的空間視角",
+    t:"重翠大橋下的絕佳位置：一次看懂「淡水河南十字水域」與感潮奇觀",
+    b:[
+      "沿著引道爬上連接三重與板橋江子翠的<b>重翠大橋</b>，停在橋腹正下方——這是整場走讀最無可取代的地理教室：右手邊流過來的是<b>新店溪</b>，左手邊穿出林口台地邊緣的是<b>大漢溪</b>，兩河就在腳下夾角合流成為<b>淡水河</b>；對岸緊接新北大橋的，則是相當於 <b>18 個大安森林公園</b>（424 公頃、長 8.5 公里）的<b>二重疏洪道（新北大都會公園）</b>。",
+      "大洪水或大潮來臨時，四股水流在此交會貫通，形成老師口中的「<b>南十字水域</b>」。當年李登輝任省主席時，為了解決下游臺北大橋突然束縮帶來的淹水風險，徵收開闢這條露天分洪道；經過蘇貞昌、周錫瑋與朱立倫歷任縣市長整頓，才從垃圾堆變成今天假日 700 多攤市集、小朋友玩滑梯玩到不想回家的大都會公園。",
+      "老師更揭開淡水河「<b>感潮河段</b>」的驚奇：每天兩次大潮把海水與魚群推向內陸將近 30 公里——新店溪可一路漲到秀朗橋（<b>烏魚甚至會追著潮水游進世新大學一帶的景美溪</b>！）、大漢溪可到浮洲橋、基隆河直達清代因潮汐折返得名「<b>水返腳</b>」的汐止。"
+    ],
+    q:"大多數人只會騎車或開車在橋面上呼嘯而過，唯有跟著老師走進重翠大橋底下的行人引道，才看得到這幅四條水系在腳下交會的巨幅風景；老師也預告二重疏洪道北端五股濕地每年 <b>8 月黃昏有「賞燕季」</b>，數千隻家燕帶著今年出生的小燕子在蘆葦區操練準備南返過冬。",
+    qtag:"要走上這座橋才看得到",
+    ph:["1008","1015"]
+  },
+  {
+    at:"10:22",
+    mode:"spread",
+    part:["第三篇章・新店溪左岸的街頭畫布與自然教室","堤防塗鴉、退潮跳躍的烏魚，與用 Google Lens 讀南島植物"],
+    short:"塗鴉牆與烏魚躍",
+    loc:"江子翠橫移門 → 新店溪左岸 0K",
+    tag:"稍縱即逝的水岸驚喜",
+    t:"古人拿望遠鏡看河、街頭塗鴉專區，與退潮瞬間跳出河面的烏魚群",
+    b:[
+      "下橋轉向江子翠橫移門，灰撲撲的防洪牆突然變身露天美術館：一邊是拿著望遠鏡眺望新北河岸的諧趣古畫壁畫，旁邊則是無需申請就能揮灑的「<b>新北街頭藝術專區（NPPC）</b>」大幅動漫塗鴉，老師也分享淡水曾推動「<b>鐵門特工隊</b>」媒合藝術家彩繪店家鐵捲門，讓街頭塗鴉走進日常社區。",
+      "轉過藍色「<b>新店溪左岸 Bike 0K</b>」大合照，走到簡易碼頭水邊階梯時，隊伍突然驚呼起來——早上的大潮剛退、階梯還留著潮水線，<b>成群烏魚正順著漲潮游進這段河面覓食</b>，受驚時在水面上此起彼落跳躍逃竄，這可是踩在精準潮汐時間上才撞見的限定畫面！",
+      "水邊那道只是一條斜坡的「<b>簡易碼頭</b>」，其實是消防局救生隊倒車迅速下放水上摩托車與橡皮艇的緊急救生通道。"
+    ],
+    q:"同一條堤外步道，前幾分鐘還是動漫塗鴉與單車道，一轉身低頭竟看見成群烏魚在灰綠河面躍起——沒有剛剛好的潮汐與停下來的眼睛，很容易就擦肩而過。",
+    qtag:"稍縱即逝",
+    ph:["1023","1026","1031","1033"]
+  },
+  {
+    at:"10:36",
+    mode:"fieldguide",
+    short:"華江碼頭・植物課",
+    loc:"華江碼頭 → 河畔向陽植物帶",
+    tag:"南島語族與手機圖鑑課",
+    t:"華江碼頭與戶外植物教室：從南島「鈔票樹」到乘風飛翔的種子",
+    b:[
+      "走過極受潮汐影響而易擱淺的<b>華江碼頭</b>與夏日越夜越熱鬧的「<b>昔日咖啡</b>」貨櫃，老師把河岸荒地變成一場 <b>Google Lens 智慧鏡頭</b>實戰課——這段沒人刻意栽種的堤外邊坡，其實是先驅植物各顯神通的戰場：",
+      "・<b>構樹（鹿仔樹／鈔票樹）</b>：雌雄異株，連十月底還開著長條毛茸茸的<b>雄花序</b>（阿美族「八寶湯」就拿它入菜！）。臺大鍾國芳教授研究發現臺灣構樹基因最複雜，證實橫跨兩大洋的<b>南島語族</b>當年正是帶著容易扦插的構樹渡海遷徙。",
+      "・<b>山黃麻、野桐與血桐</b>：山黃麻葉背的細絨毛能直接黏在棉質衣料上卻黏不住尼龍風衣；野桐葉柄長在葉緣基部且有蜜腺吸引螞蟻，血桐的葉柄則退縮在葉片內側約五分之一處。",
+      "・<b>海南菜豆樹與「綠癌」拉鋸戰</b>：開黃花、結出像長菜豆般蒴果的海南菜豆樹，裂開後裡頭薄片帶翅的種子一鬆手就在空中盤旋飄飛（原來萬華社大龍山國中校門口公車亭後方也有一棵！）；同時也看見纏滿樹冠、林業署曾懸賞一公斤 5 元的「綠癌」<b>小花蔓澤蘭</b>，與一旦野放就靠地下走莖搶光本土草地的<b>銅錢草</b>。"
+    ],
+    ph:["1039","1041","1043","1054"]
+  },
+  {
+    at:"11:02",
+    mode:"spread",
+    part:["第四篇章・地底淨水廠與跨橋回萬華","萬聖節前夕的地下卵石走廊，與橋中央的雙北交界線"],
+    short:"江翠礫間淨水廠",
+    loc:"江翠礫間水岸公園（地表與地底）",
+    tag:"萬聖節前三天的地底通道",
+    t:"走進江翠礫間地底走廊：2.85 萬噸污水的無聲魔術與橋下無名英雄",
+    b:[
+      "沿著引水閘口走向<b>江翠礫間水岸公園</b>，先在草皮上撞見一張結滿雨水、閃耀如水晶項鍊的<b>草地蜘蛛網</b>；一旁高架橋下則傳來轟隆聲，兩位工程人員正吊在半空替剛保養完的鋼橋補漆——老師特別停下來致敬：「一座橋能穩穩用三、五十年，全靠這些平時不被看見的<b>無名英雄</b>。」",
+      "穿過以蝴蝶展翅步道與毛毛蟲造景呼應的公園草坪，大家推門走下階梯，進入平時鮮少人踏足的<b>地底觀察廊道</b>。原來整片草地底下鋪滿不透水帆布、<b>20–30 公分卵石</b>與曝氣管，靠石縫卡住污垢、打氣養菌分解，每天淨化高達 <b>28,500 噸</b>生活污水（單日攔截上千公斤 BOD 與懸浮物、超過 500 公斤臭味氨氮），去除七、八成污染物後才排回新店溪！",
+      "走進廊道裡還有個<b>十月底限定彩蛋</b>——天花板掛滿萬聖節橘色南瓜旗幟，大家就在充滿節慶感的卵石牆與觀察窗前拍下難得的地底大合照。"
+    ],
+    q:"地表看起來只是能踢球散步的河濱大草坪，直到推開這扇通往地底的門，才親眼看見 2.85 萬噸污水正安靜地在腳下的卵石與萬聖節彩旗後方進行淨化。",
+    qtag:"地下限定現場",
+    ph:["1108","1112","1130","1132"]
+  },
+  {
+    at:"11:42",
+    mode:"panorama",
+    short:"光復橋雙北交界",
+    loc:"光復大橋（昔日昭和橋）",
+    tag:"一腳新北・一腳臺北",
+    t:"從小花蔓澤蘭戰場走上光復橋：在雙北分界藍牌前拍下跨界合照",
+    b:[
+      "繞過河岸一處被<b>小花蔓澤蘭</b>厚厚吞沒、宛如綠色怪物般的樹冠，我們循階梯爬上紅色橋墩的<b>光復大橋</b>——日治時期它叫「<b>昭和橋</b>」，與昔稱川端橋的中正橋並列新店溪下游最早的兩座老橋。",
+      "從橋面俯瞰新店溪彎道，兩岸地貌截然不同：板橋側是受水流沖刷的「<b>攻擊坡</b>」，只留下一條窄窄的樹帶；萬華對岸則是泥沙堆積的「<b>堆積坡</b>」，長出厚實多層次的次生林。老師指著萬板大橋後方提醒：那裡因環南市場屠宰廢水從雙園抽水站排出，常吸引<b>黑鳶（老鷹）</b>盤旋覓食，他曾在華江橋上看過十幾隻老鷹盤成「鷹柱」；而每年 <b>11 月到隔年 3 月</b>，華中橋至永福橋河面還會飛來夜宿基隆新山水庫的<b>鸕鶿</b>大軍。",
+      "走到橋正中央寫著「<b>臺北市／新北市</b>」的分界牌前，老師號召住新北的站左邊、住臺北的站右邊，在滿橋迎風飄揚的國旗下，留下全場最經典的跨市合照。"
+    ],
+    q:"原來連河面上都有看不見的行政分界線——站在光復大橋正中央「臺北市／新北市」標誌下合影，成了這場雙北兩市走讀最名副其實的一刻。",
+    qtag:"雙北交界限定",
+    ph:["1154","1142"]
+  },
+  {
+    at:"12:00",
+    mode:"spread",
+    short:"萬華綠隧道・東園公園",
+    loc:"萬華堤防綠隧道 → 銘德里人行陸橋 → 東園公園",
+    tag:"冷知識大破解",
+    t:"樹梢的黑冠麻鷺、灰色地帶種樹大哥，與「不在東園的東園公園」",
+    b:[
+      "走進萬華側堤防邊的<b>榕樹與茄冬綠色隧道</b>，老師停下來觀察光線如何改變植物形貌：這裡的<b>榔榆（紅雞油）</b>因為陽光被上方高大苦楝遮擋，竟演化出迷你細小的葉片（與獨角仙愛啃汁液的白雞油／光蠟樹截然不同）；枯枝上則掛著白頭翁冬日救命糧——苦楝黃色果實「<b>金鈴子</b>」。一抬頭，枝椏間還安靜站著一隻保護色極佳的<b>黑冠麻鷺</b>！",
+      "老師笑說，這段綠隧道還有一位穿汗衫、提圓鍬的熱心大哥，常把河邊陰暗處長不大的小茄冬挖上來補種到步道缺口，「雖然沒有正式公文、算是灰色地帶的公益行為，卻讓夏天的綠蔭一路接起來」。",
+      "跨過彩繪著蝶舞意象的<b>銘德里人行陸橋</b>進入市區，來到「<b>東園公園</b>」大石碑前合影。老師此時拿出萬華次分區地圖笑破冷知識：東園與西園其實大致以<b>東園街</b>為界，眼前這座寫著『東園公園』的公園，在行政區上竟然位在<b>西園次分區</b>！"
+    ],
+    ph:["1205","1211","1217"]
+  },
+  {
+    at:"12:19",
+    mode:"panorama",
+    part:["第五篇章・萬華巷弄裡的水脈重生與隱藏終點","把蚊蟲水溝變回小溪，再到平日限定的幸福公路館"],
+    short:"堀仔頭水道",
+    loc:"萬華堀仔頭水道",
+    tag:"水溝變河流的現場奇蹟",
+    t:"萬華堀仔頭水道：放進大肚魚吃孑孓，讓三百年湧泉重新流進城市",
+    b:[
+      "轉進巷弄，整場走讀最重要的城市示範就在眼前——<b>萬華堀仔頭水道</b>。萬華南區古稱「<b>加蚋仔</b>」（凱達格蘭語意為沼澤），320 多年前漢人進駐開墾形成八張犁、下庄仔、港仔尾、堀仔頭、客仔厝、後厝仔等六個聚落；其中「<b>堀仔頭</b>」正是新店溪伏流水滲透地底後從此湧出成泉的所在。",
+      "這股甘甜豐沛的地下水，曾造就加蚋仔著名的「<b>豆芽菜</b>」產業——因為不看老天臉色、颱風天後菜價飆漲時照樣穩定出貨，成了早期臺北重要的「救災菜」。",
+      "後來湧泉一側被當成資源回收站，水溝容易積水生蚊，居民與社區決定把水面重新打開：透過<b>階梯跌水設計增加溶氧</b>讓水流動起來，更在清澈水裡放入<b>大肚魚與孔雀魚</b>專門吃掉孑孓，一舉化解街坊擔心蚊蟲的疑慮；一旁仍保留防汛閘門與古早味水溝蓋，夜晚六點半到九點半還會點亮燈光。"
+    ],
+    q:"沒有下雨的十月底，水溝裡依然清澈流淌著穩定的地下湧泉與小魚——這就是活動核心最想傳達的事：<b>水溝與河流只有一線之隔，取決於我們怎麼看待身邊的水綠資源</b>。",
+    qtag:"唯一活水湧泉示範",
+    ph:["1222","1225"]
+  },
+  {
+    at:"12:34",
+    mode:"spread",
+    short:"阿寶師・日善公園",
+    loc:"阿寶師總店 → 東園國小 → 日善公園",
+    tag:"加蚋仔老街與三寶",
+    t:"阿寶師現買咖哩餃，在日善公園圓形地圖讀出「加蚋仔三寶」",
+    b:[
+      "走進加蚋仔老街時已近中午，經過老字號「<b>阿寶師</b>」總店，剛出爐的<b>咖哩餃、咖哩滷肉與綠豆椪</b>香氣擋都擋不住，大夥瞬間排起長龍人手一袋拼地方經濟（陳老師還貼心多買一份咖哩餃，留給沒趕上隊伍的同學！），巷弄裡還順道介紹了年輕女孩接手媽媽退休理髮廳改造的預約制茶室「<b>好好喝茶</b>」。",
+      "經過昔日曾奪下威廉波特少棒世界冠軍的<b>東園國小</b>與市圖東園分館，走進最後一座街角綠地——<b>日善公園</b>。公園中央嵌著一面刻有「<b>東園百年老街及古地名</b>」的圓形石雕圓盤，老師拿著雨傘當教鞭，逐一點出加蚋仔六大庄頭與這條從清代沿用至今的<b>東園街古道</b>。",
+      "石盤旁剛好種著一叢灌木，老師笑著指認那是<b>茉莉花</b>——昔日加蚋仔農業三大產物正是<b>麻竹筍、豆芽菜，與送往大稻埕薰製花茶的茉莉花、梔子花</b>，就這樣低調地被寫進了社區公園的地景裡。"
+    ],
+    ph:["1236","1245","1246"]
+  },
+  {
+    at:"12:50",
+    mode:"spread",
+    short:"幸福公路博物館",
+    loc:"交通部公路局・台灣公路博物館（幸福公路館）",
+    tag:"週一至週五限定開放",
+    t:"意外的隱藏終點：週一才推得開的幸福公路館，與 10 元星巴克咖啡",
+    b:[
+      "壓軸來到 2013 年啟用的交通部公路局綠建築總部，推開「<b>台灣公路博物館・幸福公路館</b>」大門——這可是平日限定彩蛋！博物館只在<b>週一至週五 09:00–16:00</b> 免費開放、例假日休館，平常路過的居民與週末散步客大多只看得到門口的 77 週年可愛刺蝟吉祥物，根本進不來。",
+      "館內從 <b>1946 年公路局大事記</b>、艱辛開鑿的中橫公路、風光一時的<b>金馬號與車長小姐</b>，一路揭開令大家驚訝的冷知識：<b>臺灣第一條高速公路其實是「麥帥公路」</b>，而不是中山高！",
+      "更讓學員念念不忘的，是旁邊據稱「全臺最豪華」的<b>漂書站</b>閱讀廳——寬敞沙發與大片採光玻璃之外，牆角居然放著一台<b>投 10 元就能按出星巴克咖啡豆現磨咖啡</b>的自助咖啡機，連老師都現場向館員打聽起社區展覽場地申請方式！走出館外經過東園街 21 巷的西區少年服務中心愛心待用券牆，大家在華江高中公車站互道再見，為這趟充實的四小時雙北水水家園之旅畫下句點。"
+    ],
+    q:"本來預計 11:30 結束的走讀，一路走到下午一點依然精采不斷——能在週一中午走進平日限定的幸福公路館、在最豪華漂書站投一杯 10 元星巴克咖啡，是只有全程走完這一場才享受到的彩蛋。",
+    qtag:"平日限定・完走彩蛋",
+    ph:["1252","1301","1303"]
+  }
+];
+
+const UQ=[
+  ["週一限定・雙重巧合","濕地中心休館看翠鳥、公路博物館週一才開門",4,"大漢溪濕地服務中心週一公休，改看走廊外志工攝影展學辨翠鳥公母；終點台灣公路博物館卻只在週一至週五開放，假日走讀反而進不去。",""],
+  ["絕佳視角・四水交會","重翠大橋下一次看懂「淡水河南十字水域」",6,"站在重翠大橋人行引道正下方，同時看見新店溪、大漢溪、淡水河與二重疏洪道，聽感潮河水如何推向三十公里內陸。","r"],
+  ["潮汐與露水・稍縱即逝","退潮跳出水面的烏魚群，與草地水晶蛛網",7,"早上的大潮剛退，成群烏魚正游進新店溪水階跳躍覓食；加上陰涼早晨凝結在草地蛛網的露珠，都是過時不候的風景。","m"],
+  ["十月底限定・地底淨水","萬聖節旗幟下的江翠礫間地下卵石走廊",9,"走進平常少人下樓的 2.85 萬噸地下淨水場，剛好撞見 10 月底限定的萬聖節南瓜旗幟，在卵石牆旁拍下奇幻地底合照。",""],
+  ["唯一跨界座標","站在光復大橋正中央「臺北市／新北市」藍牌前",10,"橋面上看不見的市界就畫在光復橋中央！全團分站新北與臺北兩側，在國旗海下拍出這場雙北兩市走讀最經典的一幕。","r"],
+  ["水溝變河流・平日彩蛋","三百年堀仔頭湧泉，與 10 元星巴克漂書站",12,"看在地居民如何用跌水溶氧與大肚魚讓臭水溝復活成湧泉小溪，最後在公路博物館豪華漂書站以 10 元現磨咖啡收尾。","m"]
+];
+
+const C={
+  "0900":"上午在捷運龍山寺站 1 號出口集合，拉開萬華社大布條合影後，戴上耳機加入 LINE 群組語音導覽準備跨河。",
+  "0905":"搭上 245 公車跨越華江橋與新店溪，正式從萬華進入板橋左岸。",
+  "0909":"板橋文化路二段行道樹上的 QR Code 樹牌（#16333 樟樹），手機一掃就能認識樹種與通報修剪。",
+  "0910":"陳建志老師示範樹牌為何改用「彈性綁帶」而非鐵釘或鐵絲，避免樹木長粗後被勒傷。",
+  "0922":"走上藍色迴轉人行天橋，一口氣跨過環河快速道路與九公尺高防洪堤防，在重翠高架前合影。",
+  "0926":"堤防邊秋意正濃、結實累累的茄冬，一串串酸甜多汁的果實正是小鳥的大餐。",
+  "0930":"走進高架橋下大漢溪人工濕地入口，認識高灘地怎麼先替污水淨化七、八成再排入大河。",
+  "0935":"這天剛好碰上服務中心週一休館，大夥直接把戶外生態走廊變成露天展間。",
+  "0937":"圍著「珍水志工」攝影展細看翠鳥抓大肚魚特寫——分辨公母的秘訣就在下嘴喙是全黑還是橘紅。",
+  "0943":"在大漢溪右岸紫色 0K 圓環前合影，這裡同時也是大漢溪漫馬路線的起點。",
+  "0946":"老師指著看板拆解 5K、10K、半馬與全馬如何利用橋樑距離來分段計量。",
+  "0953":"高架橋下的華江自行車教育園區，地上畫有 S 形與直線練習道，旁邊就有提供童車與協力車的租借站。",
+  "1008":"從重翠大橋下望向「淡水河南十字水域」：新店溪、大漢溪在前景會合，遠方連著淡水河與二重疏洪道。",
+  "1015":"站在重翠大橋人行引道上俯瞰交會水脈與翠綠河灘地，留下難得的高空全景合影。",
+  "1023":"板橋側防洪牆上的諧趣彩繪，畫著古人舉起望遠鏡眺望新北水岸。",
+  "1026":"不用事先申請即可創作的「新北街頭藝術專區（NPPC）」，為灰色堤防添上動漫色彩。",
+  "1031":"轉進新店溪左岸 Bike 0K，在紅色橋腹與河景前拍下另一張 0K 紀念照。",
+  "1033":"早潮剛退的新店溪水面，成群追隨漲潮游進來的烏魚正在水裡覓食躍動。",
+  "1035":"新店溪畔的斜坡式簡易碼頭，專供消防救生隊迅速下放水上摩托車與橡皮艇。",
+  "1039":"十月底仍在開花的構樹雄花序——臺灣構樹基因最複雜，見證南島語族跨海遷徙史。",
+  "1041":"學員沿著河岸護欄紛紛打開 Google Lens 智慧鏡頭，現場掃描植物當起行動圖鑑。",
+  "1043":"受潮汐影響甚深的華江碼頭，過去曾往返大稻埕與忠孝碼頭。",
+  "1054":"老師端詳海南菜豆樹如長條菜豆般的果實，裡頭的薄翅種子一放手就能乘風盤旋飄落。",
+  "1108":"雨露凝結在草地蜘蛛網上，陽光下彷彿一串天然的水晶項鍊。",
+  "1112":"高架橋下正吊著高空作業車替鋼橋補漆的工人，是讓橋樑撐過數十年的無名英雄。",
+  "1130":"江翠礫間地下觀察廊道天花板正掛著萬聖節南瓜旗幟，老師對照海報講解日淨 2.85 萬噸污水原理。",
+  "1132":"在充滿卵石牆與萬聖節布置的地下淨水走廊裡拍下難得的地底團體照。",
+  "1142":"河岸邊被「綠癌」小花蔓澤蘭厚厚包裹的樹冠，展現強勢外來種搶光陽光的威力。",
+  "1154":"光復大橋正中央「臺北市／新北市」分界牌前，住雙北的學員分站兩側拍下跨界大合照。",
+  "1205":"萬華側綠隧道樹梢上安靜駐足的黑冠麻鷺，與周圍枝葉融為一體。",
+  "1211":"彩繪著蝴蝶與毛毛蟲意象的銘德里人行陸橋，帶大家從堤外跨回萬華街區。",
+  "1217":"在「東園公園」巨石碑前合影——其實以東園街為界，這座公園行政上屬於西園次分區。",
+  "1222":"重現天日的萬華堀仔頭水道：透過階梯跌水溶氧加上大肚魚滅蚊，讓三百年湧泉清澈流過巷弄。",
+  "1225":"站在堀仔頭水道拱架橋邊，親眼見證臭水溝如何轉身成為城市小溪。",
+  "1236":"接近中午順道經過加蚋仔名店阿寶師總店，剛出爐的咖哩餃讓同學瞬間人手一袋。",
+  "1245":"日善公園中央的「東園百年老街及古地名」圓形石雕，清楚刻畫加蚋仔六大聚落位置。",
+  "1246":"老師拿雨傘當教鞭，蹲在圓盤旁講解八張犁、堀仔頭與昔日東園古道的關係。",
+  "1252":"週一至週五才開放的交通部公路局「台灣公路博物館・幸福公路館」，門口迎賓的是 77 週年刺蝟吉祥物。",
+  "1301":"館旁寬敞明亮的「漂書站」閱讀廳，被學員笑稱是全臺最豪華的漂書站。",
+  "1303":"漂書站角落的隱藏版驚喜：投 10 元就能自取一杯星巴克咖啡豆現磨咖啡。"
+};
+
+document.getElementById("uq").innerHTML=UQ.map(u=>`<a class="${u[4]}" href="#s${u[2]}"><i>${u[0]}</i><b>${u[1]}</b><span>${u[3]}</span></a>`).join("");
+document.getElementById("nav").innerHTML=S.map((x,i)=>`<a href="#s${i+1}"><span>${i+1}</span>${x.short}</a>`).join("");
+
+const fmtP=p=>`${p.slice(0,2)}:${p.slice(2,4)}`;
+const flat=[];
+const figHtml=(p)=>{
+  flat.push(p);
+  const idx=flat.length-1;
+  const cls=PORTRAIT.has(p)?"ph-btn tall":"ph-btn";
+  return `<figure><button class="${cls}" data-i="${idx}" aria-label="放大照片 ${fmtP(p)}"><img loading="lazy" src="img/${p}.jpg" alt="${C[p]}"><small>${fmtP(p)}</small><span class="zoom">放大 ↗</span></button><figcaption>${C[p]}</figcaption></figure>`;
+};
+
+document.getElementById("stops").innerHTML=S.map((x,i)=>{
+  const part=x.part?`<div class="part"><div><small>${x.part[0]}</small><h2>${x.part[1]}</h2></div><span>約 ${x.at} 起</span></div>`:"";
+  const hasPh=x.ph && x.ph.length>0;
+  const tagCls=x.mode==="panorama"?" r":x.mode==="fieldguide"?" m":"";
+  const qCls=i%3===1?" m":i%3===2?" r":"";
+  const copyHtml=`<div class="copy">${x.tag?`<span class="tag${tagCls}">${x.tag}</span>`:""}<h3>${x.t}</h3><ul>${x.b.map(l=>`<li>${l}</li>`).join("")}</ul>${x.q?`<div class="q${qCls}"><b>${x.qtag||"這一站的獨特之處"}</b>　${x.q}</div>`:""}</div>`;
+
+  let secCls="stop", bodyHtml="";
+  if(x.mode==="panorama" && hasPh){
+    secCls+=" is-pano";
+    const lead=`<div class="pano-hero">${figHtml(x.ph[0])}</div>`;
+    const sidePh=x.ph.slice(1).map(p=>figHtml(p)).join("");
+    bodyHtml=`${lead}<div class="pano-body">${copyHtml}<div class="pano-side">${sidePh}</div></div>`;
+  }else if(x.mode==="fieldguide" && hasPh){
+    secCls+=" is-guide";
+    const cards=`<div class="guide-grid">${x.ph.map(p=>figHtml(p)).join("")}</div>`;
+    bodyHtml=`${copyHtml}${cards}`;
+  }else{
+    if(i%2===1) secCls+=" alt";
+    const lead=hasPh?`<div class="lead-ph">${figHtml(x.ph[0])}</div>`:"";
+    const rest=hasPh && x.ph.length>1?`<div class="more-ph${x.ph.length===4?" three":""}">${x.ph.slice(1).map(p=>figHtml(p)).join("")}</div>`:"";
+    bodyHtml=hasPh?`<div class="split">${copyHtml}${lead}</div>${rest}`:`<div>${copyHtml}</div>`;
+  }
+
+  return `${part}<section class="${secCls}" id="s${i+1}">
+    <div class="stop-head"><span class="stop-num">${i+1}</span><div class="stop-meta"><span class="at">約 ${x.at}</span><span class="loc">${x.loc}</span></div></div>
+    ${bodyHtml}
+  </section>`;
+}).join("");
+
+const lb=document.getElementById("lb"),im=document.getElementById("lbi"),cap=document.getElementById("lbc");
+let cur=0;
+const show=i=>{
+  cur=(i+flat.length)%flat.length;
+  const p=flat[cur];
+  im.src=`img/${p}.jpg`;
+  im.alt=C[p];
+  cap.textContent=`${C[p]}　（${cur+1}/${flat.length}）`;
+};
+document.getElementById("stops").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-i]");
+  if(b){show(+b.dataset.i);lb.classList.add("on");document.getElementById("lbx").focus()}
+});
+document.getElementById("lbp").onclick=()=>show(cur-1);
+document.getElementById("lbn").onclick=()=>show(cur+1);
+const close=()=>lb.classList.remove("on");
+document.getElementById("lbx").onclick=close;
+lb.addEventListener("click",e=>{if(e.target===lb)close()});
+document.addEventListener("keydown",e=>{
+  if(!lb.classList.contains("on"))return;
+  if(e.key==="Escape")close();
+  if(e.key==="ArrowLeft")show(cur-1);
+  if(e.key==="ArrowRight")show(cur+1);
+});
+}
+</script>
+</body>
+</html>
