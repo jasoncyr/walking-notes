@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>走讀艋舺信仰、美食與街區故事｜走讀筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 從萬華社大門口一路吃到龍山寺廟埕的午後同行筆記，既有在地第五代帶路的日常親切，也把街角巷弄裡的百年線索記成一頁街區圖鑑
+   IDEA: 從「萬華不是只有艋舺」破題，沿淡蘭古道尾段鑽進一條街兩個菜市場的東三水與新富町，再一路試吃老店、讀懂剝皮寮與騎樓密碼，最後進龍山寺找齊少了一尊的「15 尊外國人」
+   PICTURE: 傍晚晚課時分的艋舺龍山寺正殿與金光香爐（163506.jpg）
+   COLOUR and TYPE: 廟宇朱紅 #a83222（主色關鍵詞標記）、市場金黃 #b26e1a、青草靛青 #244c54、宣紙底 #f7f2ea；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 龍山寺暮色全景 Hero → 開篇導言 ＋ 萬華三大生活圈互動地圖卡 → 獨特現場亮點 → 四種交錯雜誌版型（50/50 寬幅圖文／全幅全景／市場美食圖版／街區偵探圖版） */
+:root{color-scheme:light dark;
+--bg:light-dark(#f7f2ea,#131110);--card:light-dark(#fffdf9,#1d1a18);--ink:light-dark(#1e1b18,#ece7df);
+--mute:light-dark(#645c53,#a69e94);--red:light-dark(#a83222,#e87e6c);--ochre:light-dark(#b26e1a,#e2a552);
+--indigo:light-dark(#244c54,#7cb4bf);--soft-r:light-dark(#faeae6,#2c1b18);--soft-o:light-dark(#f8efe1,#2a2116);
+--soft-i:light-dark(#e5eff1,#19282b);--line:light-dark(#dfd7ca,#302b26)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:18px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.8 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(30px,5.5vw,54px);line-height:1.12;font-weight:800}
+h2{font-size:clamp(22px,3vw,30px);line-height:1.3;font-weight:800}
+h3{font-size:clamp(20px,2.5vw,25px);line-height:1.34;font-weight:800}
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+
+/* Hero：龍山寺正殿與香火暮色 */
+.hero{background:#1b1512;color:#f7f1e7}
+.hero .ph{position:relative;height:clamp(360px,60vh,580px);overflow:hidden}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:center 42%;display:block}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,16,13,.16) 0%,rgba(22,16,13,.48) 46%,rgba(22,16,13,.94) 100%)}
+.hero .tx{position:absolute;left:max(5vw,16px);right:max(5vw,16px);bottom:28px;z-index:1;max-width:1040px}
+.hero .stamp{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px;padding:5px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.34);background:rgba(28,18,14,.78);backdrop-filter:blur(4px);font-size:13px;letter-spacing:.04em;margin-bottom:12px;color:#f6dfce}
+.hero .stamp i{width:8px;height:8px;border-radius:50%;background:#e87e6c;display:inline-block}
+.hero h1 span{display:block;font-size:clamp(18px,2.5vw,25px);font-weight:600;color:#f0cfa2;margin-top:8px}
+.hero p{margin:.65em 0 0;font-size:16.5px;max-width:66ch;opacity:.94}
+.meta{display:flex;flex-wrap:wrap;gap:10px 26px;padding:16px max(5vw,16px);font-size:14px;background:#14100e;color:#dcd3c8;border-top:1px solid rgba(255,255,255,.08)}
+.meta b{color:#f0cfa2;font-weight:700;margin-right:6px}
+
+main{max-width:1140px;margin:0 auto;padding:26px max(4vw,14px) 64px}
+
+/* 開篇導言 ＋ 萬華三大生活圈摘要卡 */
+.prologue{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:22px;margin:10px 0 30px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px}
+.panel h2{font-size:clamp(21px,2.5vw,26px);margin-bottom:12px}
+.panel p{margin:.6em 0;font-size:15.8px}
+.panel p b,.lang-note b{color:var(--red);font-weight:700}
+.lang-note{margin-top:16px;padding:14px 18px;border-left:4px solid var(--ochre);background:var(--soft-o);border-radius:0 12px 12px 0;font-size:14.8px}
+.lang-note strong{color:var(--ochre);display:block;margin-bottom:4px;font-size:15px}
+
+.ledger{background:#211915;color:#f3ece3;border-radius:16px;padding:22px;border:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:12px}
+.ledger-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.ledger h3{font-size:18px;color:#f0cfa2;letter-spacing:.03em}
+.ledger-tag{font:700 11.5px "Noto Sans TC",sans-serif;color:#211915;background:#f0cfa2;padding:2px 9px;border-radius:999px}
+.ledger-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.12)}
+.ledger-stats div{background:rgba(255,255,255,.06);border-radius:10px;padding:8px 10px;text-align:center}
+.ledger-stats b{display:block;font:800 20px/1.15 "Noto Serif TC",serif;color:#fff}
+.ledger-stats small{font-size:12px;color:#ccbcae}
+.ledger-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ledger-list li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:baseline;font-size:14px;border-bottom:1px dashed rgba(255,255,255,.14);padding-bottom:8px}
+.ledger-list li:last-child{border-bottom:none;padding-bottom:0}
+.ledger-list span{font:700 12px "Noto Sans TC",sans-serif;color:#211915;background:#e87e6c;padding:1px 8px;border-radius:4px;white-space:nowrap}
+.ledger-list span.o{background:#e2a552}
+.ledger-list span.i{background:#7cb4bf}
+.ledger-list b{color:#fff;font-weight:700}
+.ledger-tip{font-size:13px;color:#cbbba9;border-top:1px solid rgba(255,255,255,.14);padding-top:10px;margin:0}
+
+/* 互動模組：一塊萬華，三個生活圈（北西門・中艋舺・南加蚋） */
+.zones{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px;margin:0 0 32px}
+.zones-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:14px}
+.zones-head p{margin:0;color:var(--mute);font-size:14.5px}
+.zone-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.zone-tabs button{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:8px 15px;border-radius:999px;font:600 13.5px "Noto Sans TC",sans-serif;cursor:pointer;min-height:38px;transition:all .16s}
+.zone-tabs button[aria-pressed="true"]{background:var(--red);color:#fff;border-color:var(--red)}
+.zone-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:22px;align-items:center}
+.zone-svg{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:var(--bg)}
+.zone-svg [hidden]{display:none}
+.zone-copy{padding:20px 22px;border-radius:12px;background:var(--bg);border:1px solid var(--line)}
+.zone-copy small{display:inline-block;font-weight:700;font-size:12.5px;color:var(--indigo);letter-spacing:.05em;margin-bottom:4px}
+.zone-copy h3{font-size:20px;margin-bottom:8px}
+.zone-copy p{margin:0 0 10px;font-size:15.2px}
+.zone-copy p b,.zone-copy li b{color:var(--red);font-weight:700}
+.zone-copy ul{margin:0;padding-left:1.2em;font-size:14.5px;color:var(--mute)}
+.zone-copy li{margin:.32em 0}
+
+/* 這一場才吃得到、看得到、聽得到的 */
+.unique{margin:34px 0 18px}
+.unique > p{margin:6px 0 14px;color:var(--mute);font-size:15px}
+.uq{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px}
+.uq a{display:flex;flex-direction:column;gap:5px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:12px;padding:15px 17px;transition:transform .16s,box-shadow .2s}
+.uq a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.07)}
+.uq a.o{border-left-color:var(--ochre)}
+.uq a.i{border-left-color:var(--indigo)}
+.uq i{align-self:flex-start;font-style:normal;font-size:12px;font-weight:700;padding:1px 9px;border-radius:4px;background:var(--soft-r);color:var(--red)}
+.uq a.o i{background:var(--soft-o);color:var(--ochre)}
+.uq a.i i{background:var(--soft-i);color:var(--indigo)}
+.uq b{font-family:"Noto Serif TC",serif;font-size:17px;line-height:1.4}
+.uq span{font-size:14px;color:var(--mute);line-height:1.6}
+
+/* 動線索引 */
+.route-nav{margin:30px 0 10px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.route-nav-title{font-size:13.5px;font-weight:700;letter-spacing:.06em;color:var(--mute);margin-bottom:10px}
+nav:not(.yr-pn) .scroll{display:flex;flex-wrap:wrap;gap:8px}
+nav:not(.yr-pn) a{display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:999px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:13.5px;min-height:36px;background:var(--bg);transition:border-color .16s}
+nav:not(.yr-pn) a:hover{border-color:var(--red)}
+nav:not(.yr-pn) a span{color:var(--red);font-weight:700}
+
+/* 篇章分隔與四種交錯版型（工學博物館級大圖配比） */
+.part{margin:54px 0 8px;padding:16px 0 10px;border-top:3px solid var(--red);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px}
+.part small{display:block;color:var(--red);font-weight:700;letter-spacing:.08em;font-size:13px}
+.part span{font-size:14.5px;color:var(--mute)}
+
+.stop{padding:38px 0;border-bottom:1px solid var(--line)}
+.stop-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:16px}
+.stop-num{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:10px;background:var(--red);color:#fff;font:800 17px "Noto Serif TC",serif;flex:none}
+.stop.is-pano .stop-num{background:var(--indigo)}
+.stop.is-tasting .stop-num{background:var(--ochre)}
+.stop.is-detective .stop-num{background:var(--red)}
+.stop-meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.stop-meta .at{font-size:13.5px;font-weight:700;color:var(--red);letter-spacing:.04em}
+.stop-meta .loc{font-size:13.5px;color:var(--mute)}
+.tag{display:inline-block;font-size:12px;font-weight:700;line-height:1.65;color:#fff;background:var(--red);border-radius:4px;padding:0 9px;margin-bottom:8px}
+.tag.o{background:var(--ochre)}.tag.i{background:var(--indigo)}
+
+/* 文章關鍵詞主色加粗標記 */
+.copy p b,.copy li b,#stops ul li b{color:var(--red);font-weight:700}
+.copy h3{margin-bottom:12px}
+.copy p{margin:0 0 11px;font-size:16px}
+ul{margin:8px 0 0;padding-left:1.25em}
+li{margin:.45em 0}
+li::marker{color:var(--red)}
+
+.q{background:var(--soft-r);border-left:4px solid var(--red);border-radius:0 10px 10px 0;padding:12px 16px;margin-top:16px;font-size:15px}
+.q b{color:var(--red);font-weight:700}
+.q.o{background:var(--soft-o);border-left-color:var(--ochre)}
+.q.o b{color:var(--ochre)}
+.q.i{background:var(--soft-i);border-left-color:var(--indigo)}
+.q.i b{color:var(--indigo)}
+
+/* 版型 A：50/50 寬幅圖文並排（偶數站左右互換） */
+.split{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:24px 38px;align-items:start}
+.stop.alt .split{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+.stop.alt .split .copy{order:2}
+.stop.alt .split .lead-ph{order:1}
+
+/* 版型 B：全幅全景主照 + 雙欄圖文 */
+.pano-hero{margin-bottom:22px}
+.pano-hero .ph-btn img{aspect-ratio:16/10;max-height:560px}
+.pano-body{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:24px 36px;align-items:start}
+
+/* 版型 C：市場美食／街角老店大圖展陳（上方文字 ＋ 下方雙欄大圖卡） */
+.tasting-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 26px;margin-top:22px;align-items:start}
+.tasting-grid.five figure:first-child{grid-column:1/-1}
+.tasting-grid.five figure:first-child .ph-btn img{aspect-ratio:16/10;max-height:480px}
+.tasting-grid figure{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 12px 16px}
+.tasting-grid figcaption{padding:0 4px}
+
+/* 版型 D：建築／寺廟偵探圖版（雙欄大尺寸證據對照） */
+.plate-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 26px;margin-top:22px;align-items:start}
+.plate-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+/* 龍山寺「16 減 1 尊」尋寶清單 */
+.hunt-bar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:22px}
+.hunt-card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--red);border-radius:10px;padding:13px 15px}
+.hunt-card.gone{border-top-color:var(--ochre);background:var(--soft-o)}
+.hunt-card small{display:block;font-weight:700;font-size:12px;color:var(--red);letter-spacing:.04em;margin-bottom:3px}
+.hunt-card.gone small{color:var(--ochre)}
+.hunt-card b{display:block;font-family:"Noto Serif TC",serif;font-size:16.5px;margin-bottom:4px}
+.hunt-card span{font-size:13.8px;color:var(--mute);line-height:1.55;display:block}
+
+/* 照片外框與圖說 */
+.lead-ph figure,.more-ph figure,.pano-hero figure,.pano-side figure,.plate-grid figure,.tasting-grid figure{margin:0}
+.ph-btn{all:unset;cursor:pointer;position:relative;display:block;width:100%;border-radius:12px;overflow:hidden;background:var(--line);border:1px solid var(--line)}
+.ph-btn img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .35s}
+.ph-btn.tall img{aspect-ratio:3/4;max-height:540px}
+.ph-btn:hover img{transform:scale(1.03)}
+.ph-btn small{position:absolute;left:10px;bottom:10px;background:rgba(18,14,12,.78);color:#fff;font-size:12px;padding:2px 8px;border-radius:4px;letter-spacing:.03em}
+.ph-btn .zoom{position:absolute;right:10px;bottom:10px;background:rgba(18,14,12,.72);color:#fff;font-size:12px;padding:2px 8px;border-radius:4px;opacity:.92}
+figcaption{font-size:14.2px;line-height:1.6;color:var(--mute);margin-top:9px}
+figcaption b{color:var(--ink);font-weight:700}
+
+.more-ph{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 26px;margin-top:24px;align-items:start}
+.more-ph.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+/* 走讀後記卡片 */
+.fix{border-left:4px solid var(--red);padding:20px 24px;margin-top:42px;font-size:15.5px;background:var(--card);border-radius:0 14px 14px 0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fix h2{font-size:21px;margin-bottom:10px}
+.fix p{margin:.5em 0}
+.fix b{color:var(--red);font-weight:700}
+
+/* 燈箱 */
+#lb{position:fixed;inset:0;z-index:20;background:rgba(12,10,9,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:14px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 98px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:10px;align-items:center;color:#eee;margin-top:10px;font-size:15px;flex-wrap:wrap;justify-content:center;text-align:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #4d545c;background:#1b2026;color:#fff;font-size:18px;cursor:pointer}
+footer{max-width:1140px;margin:0 auto;padding:0 max(4vw,14px) 40px;color:var(--mute);font-size:14px}
+
+@media(max-width:880px){
+  .prologue,.zone-grid,.split,.stop.alt .split,.pano-body{grid-template-columns:minmax(0,1fr)}
+  .stop.alt .split .copy,.stop.alt .split .lead-ph{order:unset}
+  .hunt-bar,.plate-grid.three,.more-ph.three{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+  .more-ph,.more-ph.three,.tasting-grid,.plate-grid,.plate-grid.three,.hunt-bar{grid-template-columns:minmax(0,1fr)}
+  .ledger-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(prefers-reduced-motion:reduce){.ph-btn img,.uq a{transition:none}.uq a:hover{transform:none}}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・72 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../bangka/index.html" aria-current="page"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../bangka/index.html" aria-current="page"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></details><span>2024/11/08</span></div>
+
+<header class="hero">
+  <div class="ph">
+    <img src="img/163506.jpg" alt="傍晚晚課時分的艋舺龍山寺正殿與金光閃爍的香爐">
+    <div class="tx">
+      <div class="stamp"><i></i><span>萬華社區大學 113 秋季班公民週｜2024/11/08（五）14:30–16:30</span></div>
+      <h1>走讀艋舺信仰、美食與街區故事<span>從東三水市場一路吃到龍山寺：遇見「Mông-ká」的人情味與老屋密碼</span></h1>
+      <p>14:15 在萬華社區大學（龍山國中）門口集合，跟著沐育文化營運長施景耀走進熟悉卻總會漏看細節的萬華。兩個小時裡，穿過一條街藏兩個市場的東三水與新富町、邊走邊試吃老店人情、讀懂剝皮寮與騎樓上的百年密碼，最後在晚課誦經聲中進龍山寺，尋找藏在屋簷與柱腳的 15 尊外國人。</p>
+    </div>
+  </div>
+</header>
+<div class="meta">
+  <span><b>日期</b>2024/11/08（五）14:30–16:30（14:15 集合）</span>
+  <span><b>活動</b>萬華社區大學公民週「走讀艋舺信仰、美食與街區故事」</span>
+  <span><b>導覽</b>施景耀（沐育文化營運長・家族在艋舺第五代）</span>
+  <span><b>集合</b>臺北市萬華社區大學（龍山國中）門口</span>
+  <span><b>路線</b>龍山國中 → 三水街淡蘭古道 → 東三水街市場 × 新富市場 → 新富町文化市場 → 三水花生行 → 豐生國藥房 → 金好吃 → 周記肉粥 → 剝皮寮 → 康定路騎樓 → 川業肉圓 → 地藏庵與青草巷 → 龍山寺</span>
+</div>
+
+<main>
+  <section class="prologue" aria-label="開場導言與路線結構">
+    <div class="panel">
+      <h2>一條讓你「身心靈與肚子都滿足」的 Mông-ká 小旅行</h2>
+      <p>這場由<b>萬華社區大學公民週</b>舉辦的午後走讀，從龍山國中門口出發前就先替大家破題：別把整個萬華都叫成「艋舺」！萬華其實像一條長長的腰帶，從北到南切出截然不同的<b>北西門、中艋舺、南加蚋</b>三個世界，而這天走進的，正是商業與信仰核心「<b>中萬華・艋舺（Mông-ká / Báng-kah）</b>」。</p>
+      <p>對土生土長的在地第五代施景耀老師來說，認識萬華不能只聽歷史年代，還要靠<b>嘴巴試吃、雙腳踩過紅磚</b>，把市場攤商的人情溫度、街屋立面藏的建築暗號，以及龍山寺裡外國人扛廟角的幽默一起帶走——讓在地艋舺人對日常街景有全新發現，也讓初次探訪的人感受「<b>Mông-ká</b>」真正的文化底蘊。</p>
+      <div class="lang-note">
+        <strong>會唸「Báng-kah」，其實你已經會一個世界通用語</strong>
+        清代漢人進臺北開墾，看見平埔族人滑著獨木舟在淡水河上交易，就把族語稱呼獨木舟的「<b>Báng-kah</b>」留作地名。因為臺灣是南島語系發源地，紐西蘭毛利人、菲律賓原住民、古印尼語也把獨木舟叫「班卡」；連西班牙文的無動力帆船（<b>banca</b>）、希臘與羅馬的 <b>barca</b> 音律都相近——會講「艋舺」，在海洋民族的世界裡幾乎都能找到船。
+      </div>
+    </div>
+
+    <aside class="ledger" aria-label="這趟走讀的四重層次">
+      <div class="ledger-head">
+        <h3>兩小時讀懂艋舺四張臉</h3>
+        <span class="ledger-tag">12 站深度散步</span>
+      </div>
+      <div class="ledger-stats">
+        <div><b>12 站</b><small>街區與老店</small></div>
+        <div><b>43 張</b><small>精選現場照</small></div>
+        <div><b>5 代</b><small>在地帶路視角</small></div>
+      </div>
+      <ul class="ledger-list">
+        <li><span>古道脈絡</span><div><b>被切斷的淡蘭古道尾段</b>・三水街到剝皮寮其實同一條，一路通往宜蘭</div></li>
+        <li><span class="o">雙市並存</span><div><b>全臺北唯一一條街兩個市場</b>・公有新富市場與臨時攤販東三水街各自成立自治會</div></li>
+        <li><span class="o">巷弄老味</span><div><b>剛收攤與還在煎藥的日常</b>・手削炸牛蒡、冬季限定淡酥花生、炭火熬中藥、百年肉圓</div></li>
+        <li><span class="i">廟埕密碼</span><div><b>龍山寺的 16 減 1 尊外國人</b>・壓艙石地板、全臺唯一銅龍柱與少一尊的憨番傳說</div></li>
+      </ul>
+      <p class="ledger-tip">午後三點的菜市場雖然已收掉一半攤位，卻換來難得的清爽步調，剛剛好聽完每一間老店背後的故事。</p>
+    </aside>
+  </section>
+
+  <section class="zones" aria-label="萬華三大生活圈">
+    <div class="zones-head">
+      <h2>不是每個萬華人都叫「艋舺人」：北、中、南萬華怎麼分？</h2>
+      <p>點選下方三個區塊，看懂為什麼跨過西藏路連拜的神明都不一樣</p>
+    </div>
+    <div class="zone-tabs" role="group" aria-label="切換萬華三大區域">
+      <button aria-pressed="true" data-zone="0">① 北萬華・西門町（娛樂新鎮）</button>
+      <button aria-pressed="false" data-zone="1">② 中萬華・艋舺（今天走的範圍）</button>
+      <button aria-pressed="false" data-zone="2">③ 南萬華・加蚋仔（農業與豆芽菜）</button>
+    </div>
+    <div class="zone-grid">
+      <svg class="zone-svg" viewBox="0 0 440 340" role="img" aria-label="萬華北中南三大區塊示意圖">
+        <rect width="440" height="340" fill="none"/>
+        <!-- 淡水河岸 -->
+        <path d="M55,20 C42,110 40,220 62,320" stroke="var(--indigo)" stroke-width="6" fill="none" opacity=".35"/>
+        <text x="26" y="175" fill="var(--indigo)" font-size="11" font-weight="700" writing-mode="tb">淡水河・新店溪</text>
+
+        <!-- 三個區塊框 -->
+        <rect x="84" y="22" width="318" height="84" rx="10" fill="var(--card)" stroke="var(--line)"/>
+        <text x="243" y="54" text-anchor="middle" fill="var(--ink)" font-size="14" font-weight="800">北萬華｜西門町</text>
+        <text x="243" y="76" text-anchor="middle" fill="var(--mute)" font-size="11">清代沼澤亂葬崗 → 日治填平仿東京淺草</text>
+        <text x="243" y="93" text-anchor="middle" fill="var(--mute)" font-size="10.5">1990 年前屬「城中區」，老一輩不稱作萬華</text>
+
+        <rect x="84" y="120" width="318" height="96" rx="10" fill="var(--card)" stroke="var(--line)"/>
+        <text x="243" y="152" text-anchor="middle" fill="var(--ink)" font-size="14" font-weight="800">中萬華｜艋舺 Báng-kah</text>
+        <text x="243" y="174" text-anchor="middle" fill="var(--mute)" font-size="11">僅佔萬華三分之一・百年商業中心</text>
+        <text x="243" y="193" text-anchor="middle" fill="var(--mute)" font-size="10.5">農曆十月廿二萬華大拜拜（青山宮遶境）</text>
+
+        <!-- 西藏路分界 -->
+        <line x1="76" y1="228" x2="412" y2="228" stroke="var(--red)" stroke-width="2.5" stroke-dasharray="6 4"/>
+        <rect x="172" y="217" width="142" height="22" rx="999" fill="var(--red)"/>
+        <text x="243" y="232" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">西藏路（信仰與生活交界）</text>
+
+        <rect x="84" y="242" width="318" height="80" rx="10" fill="var(--card)" stroke="var(--line)"/>
+        <text x="243" y="272" text-anchor="middle" fill="var(--ink)" font-size="14" font-weight="800">南萬華｜加蚋仔 Ka-la̍h-á</text>
+        <text x="243" y="294" text-anchor="middle" fill="var(--mute)" font-size="11">肥沃沼澤地・麻竹筍・茉莉花・全臺北三成豆芽菜</text>
+        <text x="243" y="311" text-anchor="middle" fill="var(--mute)" font-size="10.5">每年四月保儀大夫（尪公）遶境，同樣不過西藏路</text>
+
+        <!-- 高亮層 -->
+        <g id="zone-hi-0">
+          <rect x="84" y="22" width="318" height="84" rx="10" fill="var(--soft-i)" stroke="var(--indigo)" stroke-width="3"/>
+          <text x="243" y="54" text-anchor="middle" fill="var(--indigo)" font-size="14.5" font-weight="800">北萬華｜西門町（娛樂流行重鎮）</text>
+          <text x="243" y="76" text-anchor="middle" fill="var(--ink)" font-size="11">西門紅樓（第一座貴婦百貨）＆ 關口商行＆ 西洋軒</text>
+          <text x="243" y="94" text-anchor="middle" fill="var(--ink)" font-size="10.5">臺北最老十間戲院佔九間・老一輩心中的舊城中區</text>
+        </g>
+        <g id="zone-hi-1" hidden>
+          <rect x="84" y="120" width="318" height="96" rx="10" fill="var(--soft-r)" stroke="var(--red)" stroke-width="3"/>
+          <text x="243" y="152" text-anchor="middle" fill="var(--red)" font-size="14.5" font-weight="800">中萬華｜艋舺 Báng-kah（本次路線）</text>
+          <text x="243" y="174" text-anchor="middle" fill="var(--ink)" font-size="11">龍山寺・剝皮寮・東三水與新富市場</text>
+          <text x="243" y="194" text-anchor="middle" fill="var(--ink)" font-size="10.5">青山宮遶境（農曆 10/22）只在中萬華，不跨過西藏路</text>
+        </g>
+        <g id="zone-hi-2" hidden>
+          <rect x="84" y="242" width="318" height="80" rx="10" fill="var(--soft-o)" stroke="var(--ochre)" stroke-width="3"/>
+          <text x="243" y="272" text-anchor="middle" fill="var(--ochre)" font-size="14.5" font-weight="800">南萬華｜加蚋仔 Ka-la̍h-á</text>
+          <text x="243" y="294" text-anchor="middle" fill="var(--ink)" font-size="11">陳賴章墾號首墾第一批水田・寶興街古井文資</text>
+          <text x="243" y="311" text-anchor="middle" fill="var(--ink)" font-size="10.5">南機場夜市、青年公園、果菜與魚市場皆在此區</text>
+        </g>
+      </svg>
+      <div class="zone-copy" id="zone-copy"></div>
+    </div>
+  </section>
+
+  <section class="unique" id="unique">
+    <h2>這一場才吃得到、看得到、聽得到的</h2>
+    <p>巷子隨時都能來走，但季節限定的花生、剛開幕兩天的鐵花窗招牌、老闆親自遞來的試吃與廟簷高處少一尊的秘密，都得跟著人情走進現場才會碰上。</p>
+    <div class="uq" id="uq"></div>
+  </section>
+
+  <nav class="route-nav" aria-label="走讀站點快速跳轉">
+    <div class="route-nav-title">從萬華社大出發，吃進東三水、穿過剝皮寮到龍山寺｜12 站街區索引（點選跳轉）</div>
+    <div class="scroll" id="nav"></div>
+  </nav>
+
+  <div id="stops"></div>
+
+  <div class="fix">
+    <h2>下次自己來艋舺，可以這樣吃、這樣看</h2>
+    <p>・<b>逛東三水街與新富市場記得趁早（週一公休）</b>：多數市場攤商中午過後便陸續收攤（艋舺大豐約 12 點後不再現炸、1–2 點收市），想配「<b>萬華世界下午酒場</b>」借盤裝炸物和水餃，<b>中午時段</b>來最對味。</p>
+    <p>・<b>在三水食品花生行鎖定季節與建築</b>：想試吃冬季限定的「<b>淡酥花生</b>」，得在每年 <b>10 月到隔年 3 月</b>天涼時才買得到；抬頭也別忘了找五、六〇年代「工作與睡覺同一屋簷下」的<b>半樓仔</b>夾層。</p>
+    <p>・<b>街角抬頭看「四柱三窗」，低頭找「TR／S 磚」</b>：就算老街屋外面貼滿新磁磚，只要二、三樓維持「<b>四根柱子夾三扇窗</b>」比例，多半就是日治街屋；走到剝皮寮或工地邊，看到帶<b>菱格紋</b>或印著「<b>TR</b>」「<b>S</b>」的紅磚，就是日治時期最高規格的機械紅磚。</p>
+    <p>・<b>晚上看龍山寺，別只拍正面</b>：兩年前重貼金箔打光的觀音佛祖，夜晚從對面區公所就看得見；進廟裡不妨仰頭數數<b>15 尊外國人</b>（金爐 4 尊、屋簷西裝金人與天使、銅龍柱後方 2 尊扛柱），再回後殿看月老桌上誰帶了<b>肯德基蛋塔</b>當急件。</p>
+  </div>
+</main>
+
+<footer>2024/11/08 參加臺北市萬華社區大學 113 秋季班公民週「走讀艋舺信仰、美食與街區故事」走讀筆記</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../wanhuafilm/index.html"><small>‹ 較新的一場・2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a><a class="nx" href="../weichang/index.html"><small>較早的一場・2024/11/04 ›</small>教師監獄？揭開台大闈場秘辛</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar"><button id="lbp" aria-label="上一張">‹</button><span id="lbc"></span><button id="lbn" aria-label="下一張">›</button><button id="lbx" aria-label="關閉">✕</button></div>
+</div>
+
+<script>
+{
+const PORTRAIT=new Set(["145202","151432","152841","162818","162935"]);
+
+const ZONES=[
+  {
+    k:"北萬華・西門町（清代荒地 → 日治娛樂鎮）",
+    t:"西門町：依東京淺草藍圖填出的娛樂城，老一輩心中的「城中區」",
+    d:"在清代老地圖上，西門町其實是一片無人居住的<b>沼澤地與亂葬崗</b>。一直到日本政府來臺，為了興建現代娛樂城鎮，才大規模填平土地（老松國小仍留有埋地紀念碑），移植東京淺草的街廓平面圖。",
+    b:[
+      "<b>第一座貴婦百貨與咖啡香</b>：西門紅樓既是菜市場也是當年的貴婦百貨，二樓開出第一間賣咖啡豆的「關口商行」；捷運西門 1 號出口旁更有臺北第一間賣咖啡的西餐廳「西洋軒」。",
+      "<b>為何老萬華人不叫它艋舺</b>：臺北最老十間戲院除第一間在城中區，其餘九間全設在西門町（全盛期三十多間戲院，連金馬執委會都在此）；加上 1990 年行政區劃分前，西門町一直與中正區同屬「<b>城中區</b>」，研究清代史或老一輩在地人口中總會說：「那不是艋舺。」"
+    ]
+  },
+  {
+    k:"中萬華・艋舺 Báng-kah（本日走讀核心）",
+    t:"只佔萬華三分之一：從獨木舟渡頭長出的百年商業與信仰中心",
+    d:"今天整趟兩個小時的路線都在<b>中萬華</b>——也就是大家口中最熟悉的「<b>艋舺（Mông-ká / Báng-kah）</b>」。自清代以來便是人潮與貨物的商業樞紐，集結了龍山寺、剝皮寮、青草巷與東三水街市場。",
+    b:[
+      "<b>跨不過西藏路的萬華大拜拜</b>：再過兩週（農曆十月廿二／國曆十一月廿二）就是臺北極具代表性的「<b>青山宮遶境</b>」，但仔細看路線便會發現——隊伍只在中萬華街區行走，絕對不會跨過<b>西藏路</b>進入南萬華。",
+      "<b>世界共通的海洋語言</b>：平埔族語「Báng-kah」指的是淡水河上載貨的獨木舟，與毛利人、菲律賓、古印尼語甚至西班牙文的船隻詞彙同源。"
+    ]
+  },
+  {
+    k:"南萬華・加蚋仔 Ka-la̍h-á（農業區與豆芽菜基地）",
+    t:"加蚋仔：從陳賴章墾號首墾水田，到供應臺北三成豆芽菜的肥沃聚落",
+    d:"南萬華的古地名叫「<b>加蚋仔（Ka-la̍h-á）</b>」，在平埔族語裡是「<b>肥沃的沼澤地</b>」，涵蓋今天的青年公園、南機場夜市與臺北農產果菜魚市場一帶。",
+    b:[
+      "<b>課本上的第一批田在這裡</b>：清代臺北第一個大型開墾組織「陳賴章墾號」開出的第一批水田就位於南萬華（寶興街至今留有具文資身分的古井）；先後種過麻竹筍與日治時期的茉莉花——東園街、西園街的「園」，正是當年的花圃與菜園。",
+      "<b>同樣不過西藏路的尪公信仰</b>：直到現在，臺北市約<b>三成的豆芽菜</b>仍產自南萬華；每年四月南萬華拜保儀大夫（尪公）遶境，同樣以<b>西藏路</b>為界，與中萬華各有各的生活圈與在地認同。"
+    ]
+  }
+];
+
+const zoneCopy=document.getElementById("zone-copy");
+const renderZone=idx=>{
+  const z=ZONES[idx];
+  zoneCopy.innerHTML=`<small>${z.k}</small><h3>${z.t}</h3><p>${z.d}</p><ul>${z.b.map(i=>`<li>${i}</li>`).join("")}</ul>`;
+  for(let i=0;i<3;i++){
+    const g=document.getElementById(`zone-hi-${i}`);
+    if(g)g.hidden=(i!==idx);
+  }
+  document.querySelectorAll(".zone-tabs button").forEach((b,i)=>{
+    b.setAttribute("aria-pressed",i===idx?"true":"false");
+  });
+};
+document.querySelectorAll(".zone-tabs button").forEach(b=>{
+  b.addEventListener("click",()=>renderZone(+b.dataset.zone));
+});
+renderZone(1);
+
+const S=[
+  {
+    at:"14:35",
+    mode:"split",
+    part:["第一篇章・從學校門前認清艋舺邊界","龍山國中開場與穿過市場的淡蘭古道"],
+    short:"龍山國中開場",
+    loc:"萬華社區大學（龍山國中）門口",
+    tag:"只有在地人懂的區劃",
+    t:"龍山國中前先認親：萬華分三塊，今天只走「艋舺」這三分之一",
+    b:[
+      "下午兩點一刻在<b>萬華社區大學（龍山國中）</b>門口集合拍照後，施景耀老師沒有急著帶隊出發，而是先舉著資料袋當場科普：「<b>遇到萬華人，別急著全都叫他艋舺人！</b>」",
+      "原來萬華呈長條狀，北邊<b>西門町</b>曾是清代荒地與城中區、南邊<b>加蚋仔</b>自古是農業聚落，唯有中間這一塊才是商業底蘊深厚的<b>艋舺（Báng-kah）</b>。現場既有住加蚋仔三十年的社大學員第一次跨過生活圈來聽課，也有外地來的朋友第一回弄懂為什麼西藏路兩邊連神明都各拜各的。"
+    ],
+    q:"同一個萬華區，有人住加蚋仔三十年卻從沒走進三水街老店；一場公民週散步，讓「在地人」和「初訪者」都在自家門口重新認識艋舺。",
+    qtag:"在地與外地的交會",
+    ph:["143856"]
+  },
+  {
+    at:"14:47",
+    mode:"detective",
+    short:"三水街淡蘭古道",
+    loc:"和平西路三段轉三水街・紅磚街屋與米行",
+    tag:"一條路走得到宜蘭",
+    t:"三水街的紅磚與米行：原來我們正踩在「淡蘭古道」尾段上",
+    b:[
+      "走出校門左轉，老師先在老紅磚屋與米行前要大家停步：這條看似尋常的<b>三水街</b>，竟然是一條能一路走到宜蘭的<b>百年淡蘭古道尾段</b>。",
+      "清代先民從淡水、宜蘭翻山入臺北盆地有兩條終點路，一條進松山，另一條就直通萬華龍山寺，甚至連馬偕醫師當年去宜蘭拔牙行醫都走過這條古徑。往東續行還能一路通到植物園才斷掉——老師還提起植物園前曾有一座老土地公廟，古時「<b>秋決</b>」押解犯人上山處決前，最後一餐會在那裡<b>吃粿</b>。",
+      "說到馬偕，老師順口補了一段反差極大的傳奇：在艋舺祖師廟旁的<b>艋舺長老教會</b>，曾被兇悍的艋舺人拆掉三次、馬偕也拿槍對峙過；但拆到第三次他越蓋越高、還幫黃、林、吳三大家族拔牙治病，最後離開回加拿大時，竟變成艋舺人扛著大轎風光送別的大恩人。"
+    ],
+    ph:["144758","145037"]
+  },
+  {
+    at:"14:51",
+    mode:"split",
+    part:["第二篇章・一條街藏兩個菜市場與現代化鼻祖","東三水街 × 新富市場 × 新富町文化市場"],
+    short:"雙市場與鐵花窗",
+    loc:"東三水街市場 × 新富市場入口",
+    tag:"全臺北唯一一條街兩座市場",
+    t:"前天剛掛上的鐵花窗新招牌，與「一條街兩個自治會」的身世",
+    b:[
+      "跨過馬路前先抬頭看街口這面金色新招牌——活動前兩天市長才剛來剪綵啟用！老師特別點名它的來頭：先請插畫家繪圖，再找來「做鐵花窗的人」<b>曾文昌師傅</b>用手工凹折鐵條做出立體造型，而且頭尾兩端入口的圖案還不一樣。",
+      "走進拱頂下立刻發現地板微微呈<b>拱形</b>、兩旁還有排水溝，這是日治至戰後初期借鏡京都錦市場、沖繩榮町市場風格留下的商店街設計——在地人都知道，就算<b>颱風天來逛，市場地板依然是乾的</b>。",
+      "更稀奇的是頭上懸掛的攤位編號：右手邊叫「<b>東 035、037</b>」，左手邊卻叫「<b>新富 03、05</b>」。原來這是<b>全臺北市唯一一條街上有兩個市場、兩個獨立自治會</b>的奇景：一邊是從日治新富市場走出來的「公有市場執照」攤商，另一邊是街邊就地合法的「臨時攤販執照」，因補助與制度截然不同而從未整併，各自熱鬧到今天。"
+    ],
+    q:"招牌剛啟用兩天，手工凹折的金色線條還在閃閃發亮；站在街心同時看見「東」與「新富」兩排招牌，是臺北市再也找不到第二處的市場風景。",
+    qtag:"全臺北唯一 + 剛開幕兩天",
+    ph:["145227","145114","145202"]
+  },
+  {
+    at:"14:53",
+    mode:"tasting",
+    short:"菜漆・大豐・多角色",
+    loc:"東三水街市場＆新富市場內攤位",
+    tag:"市場人情味現場試吃",
+    t:"菜漆麵匠、艋舺大豐與多角色：下午三點的市場照樣吃得停不下來",
+    b:[
+      "接近下午三點，早市早已收掉過半，卻剛好留出寬敞的走道讓三間各有絕活的名攤輪番端出拿手貨。第一站「<b>菜漆麵匠</b>」櫃檯像調色盤一樣繽紛：火龍果、菠菜、紅麴米、紫米、蕎麥、紅蘿蔔全是<b>新鮮蔬果打汁揉進麵糰</b>（老闆娘笑說菠菜麵放久會氧化變黃，正是沒加色素的證明），還曾推出季節限定的蝶豆花藍麵。",
+      "走到 1957 年創立、已傳至第三代鄭靖騰的「<b>艋舺大豐</b>」，大家現場接過一袋手削「<b>炸牛蒡</b>」——雖然已放涼卻依然酥脆涮嘴！導覽夥伴更掏出第一代「甜不辣圓模」改製的紀念印章，解謎什麼叫台語的「<b>雞捲（ke-kńg）</b>」：早年沒冰箱，「ke」就是把吃剩的好料「多（ke）出來」包進魚漿油炸脫水、多放兩三天，滿滿都是先民的惜食智慧。",
+      "第三攤「<b>多角色（新富 005）</b>」店面雖小能量驚人：水餃皮同樣是天然蔬果色，裡頭竟然把海鮮世家的海味全包進去——菠菜皮包干貝、胡蘿蔔皮包鮮蝦，紅麴皮裡居然包著「<b>鮮鮪魚 Toro</b>」！「神鵰俠侶」老闆 Michael 哥與 Judy 姐當場拿湯匙舀出一瓢瓢招牌「<b>小魚花生乾</b>」，排隊試吃的清脆香鹹瞬間讓整群人都想帶一盒回家配酒。"
+    ],
+    q:"市場早市其實兩點就陸續休市，想吃到剛出鍋的大豐炸物與滿攤生鮮，得早上八點半到十二點之間來；下午這場雖避開擁擠，依然被攤商的試吃誠意餵得暖呼呼。",
+    qtag:"現場才吃得到",
+    ph:["145317","150159","150627","151050"]
+  },
+  {
+    at:"15:12",
+    mode:"pano",
+    short:"新富町文化市場",
+    loc:"三水街 70 號・新富町文化市場（古蹟本體＋清水模）",
+    tag:"臺北市第一座現代化市場",
+    t:"馬蹄形市場裡的時代對話：第一代北字市徽、下午酒場與「有洞才貴」清水模",
+    b:[
+      "左轉鑽進巷底，這座<b>臺北市第一座現代化公有市場</b>「新富町文化市場」揭曉了雙市場的謎底：當年日治官方設計成百貨公司般的<b>馬蹄形單一動線</b>，還超前引進<b>自然採光通風天井</b>與洗切食材、販售分離的「<b>乾濕分離</b>」及排水溝。只是館內最多只能容納 50 攤，第 51 攤往外擺之後，客人嫌麻煩乾脆全在外面買，導致裡面最後兩攤在火災後撤出、意外變成市定古蹟。",
+      "老師領著大家在立面正中央仰頭找「<b>第一代臺北市北字徽</b>」——原來今天彩虹色的臺北『北』字市徽已是第三代，最初這個簡潔象形符號是從日本時代一路沿用下來的！走進館內，「<b>萬華世界下午酒場</b>」就開在昔日攤位間，最迷人的規矩是「歡迎帶外食」：點一杯酒、借個盤子就能衝去外面買大豐炸物或請多角色煮水餃進來配。",
+      "穿過 IG 上戲稱「<b>男友救星</b>」的對稱天井、踩過保留原始地坪的透明玻璃地板，戶外竟緊鄰著一棟三層樓高的<b>五星級清水模公廁</b>。老師笑著提醒：忠泰基金會當年怕搶走洗石子老市場風采，刻意用這個時代最貴也最低調的真清水模一次灌漿成型——「<b>牆上那些板模固定洞千萬不能補起來，有洞才是真的清水模！</b>」轉往後巷，則能望見昔日市場公務員宿舍變身的全球唯一單車咖啡廳 <b>tokyobike Café</b>。"
+    ],
+    q:"在同一個園區裡，同時看見「1935 年的洗石子綠建築市場」、「2010 年代一次灌漿成型的真清水模」、與「邊逛古蹟邊帶市場外食進來配酒的下午酒場」，反差感十足。",
+    qtag:"第一座現代市場 × 五星級公廁",
+    ph:["151458","151432","151624","151702","151842","152028","152420"]
+  },
+  {
+    at:"15:25",
+    mode:"tasting",
+    part:["第三篇章・鑽進巷弄找炭火、船柱與百年老招牌","三水花生行 → 老字號食味 → 剝皮寮 → 五腳亭騎樓"],
+    short:"三水食品花生行",
+    loc:"和平西路三段 77 號・三水食品花生行",
+    tag:"10 月到 3 月冬季限定",
+    t:"航空機上花生、刈包幕後推手，與藏著「半樓仔」的老雜貨店",
+    b:[
+      "走出市場立刻被門口滿滿的罐裝花生、果乾與蜜餞包圍——這家從鹿港北上打拚、已傳到第三代的「<b>三水食品花生行</b>」，正是長榮與華航飛機上那包熟悉花生的合作夥伴，連臺北名店<b>藍家刈包、石家刈包</b>的花生粉都出自他們家。",
+      "熱情的老闆一把一把請大家試吃：「<b>不吃他反而會難過！</b>」先試的是只有 <b>10 月到隔年 3 月</b>才做、天氣熱就會變質的冬季隱藏版「<b>淡酥花生</b>」（老師笑說上個月來帶團時都還沒開賣），接著古早味鹽酥花生、外層抹著古法防潮糖霜的果乾，還有完全去籽的<b>無籽化核梅乾</b>接連遞到手中，有人怕吃花生咳到不能講話，改啃化核梅乾正好繼續聽講。",
+      "嘴巴沒停下來，眼睛也別漏看屋子裡的小夾層：這是臺灣五、六〇年代常見的「<b>半樓仔</b>」格局。當時老闆為了省下通勤時間多賺錢，就在店鋪上方架一小間夾層直接睡在公司裡；如今附近老屋多半改建，只剩這裡還原汁原味保留著半樓與抹糖霜蜜餞的時代感。"
+    ],
+    q:"上個月來走讀都還吃不到的「淡酥花生」，在十一月的涼風裡正好開賣；一邊咬著沒有籽的化核梅乾、一邊抬頭看老雜貨店的半樓仔，整條街的甜味都湧上來了。",
+    qtag:"季節限定隱藏版",
+    ph:["152506","152841"]
+  },
+  {
+    at:"15:36",
+    mode:"tasting",
+    short:"炭火中藥與老店接力",
+    loc:"龍山商場巷弄・廣州街與康定路周邊",
+    tag:"最後一家保留古藥籤＋剛歇業百年店",
+    t:"門前炭火熬中藥的豐生國藥房，與差一個月吃不到的百年龍城號",
+    b:[
+      "穿過市場小巷接連遇見四間傳奇老字號，每一間都在跟時間賽跑。第一家「<b>豐生國藥房</b>」門前擺著炭爐與薰黑的陶壺，至今仍堅持用<b>炭火替客人現熬中藥</b>；更珍貴的是，醫藥法修正後龍山寺已不再提供藥籤，這裡卻是附近<b>最後一家還保留龍山寺古藥籤配方</b>的老藥房——去龍山寺抽完藥籤記下號碼，回來報上編號就能依古藥譜抓藥，臨走老闆還請大家吃固喉嚨的八仙果，連躲起來睡覺的店貓「店長」都被抱出來見客。",
+      "轉個彎來到從萬華車站前第一攤三輪車起家的「<b>金好吃純正花枝羹</b>」，裡頭的花枝塊不是漿裹小塊，而是整隻厚切下鍋。老師傳授內行暗號：「點一碗花枝羹會被認出是觀光客，在地人都要喊『<b>一套</b>』（湯加乾麵），老闆豆芽菜還會多放一點！」",
+      "再往前是將近 70 歲（68 年）的「<b>周記肉粥店</b>」，第三代「虎哥」正站在玻璃櫃後手起刀落切著黃金脆皮紅燒肉，連肉粥裡的小肉羹都是自家手捏；但才隔幾步路，老師指著一塊寫著人蔘雞的黃色招牌嘆了口氣——擁有 <b>110 年歷史的「龍城號」</b>因為後輩不再接手，<b>上個月（2024 年 10 月）剛悄悄歇業</b>，沒吃過的人這輩子再也吃不到了。"
+    ],
+    q:"巷口還聞得到炭火煎藥香，轉角卻剛送走一間 110 歲老店；走讀最迷人也最殘酷的，就是親眼看見哪些老手藝還守著、哪些剛剛謝幕。",
+    qtag:"最後一間留古藥籤 × 上個月剛熄燈",
+    ph:["153600","153634","153922","154122","154319"]
+  },
+  {
+    at:"15:44",
+    mode:"pano",
+    short:"剝皮寮與百年匠心",
+    loc:"剝皮寮歷史街區・廣州街與康定路口",
+    tag:"從戎克船柱走進百年店家記憶",
+    t:"被廣州街斬斷的淡蘭古道、船桅變身大柱，與《百年匠心》裡的臺灣第一",
+    b:[
+      "過馬路踏進<b>剝皮寮歷史街區</b>，這條筆直的巷弄竟與剛才的三水街「<b>原本是同一條路</b>」！日治時期開闢廣州街與康定路，把淡蘭古道硬生生斬成幾截，主幹道這才退縮成安靜的小巷，也留下右側清代店屋、左側日治騎樓街屋「一街看兩代」的奇特風景。",
+      "走進第一間展館，老師先要大家伸手摸摸看那根帶著方形卯孔的木柱：「這不是門栓，而是<b>直接把清代戎克船的主桅杆拆下來蓋房子</b>！中間那個洞就是當年插船帆的地方。」跨進由作家<b>林立青</b>採訪撰寫的《<b>百年匠心</b>》常設展，裡頭全是在萬華開業破百年的現役老字號：",
+      "<ul><li><b>福大同茶莊（1845 年／179 歲）</b>：全臺最老茶行與萬華現存最老店家，第一代為太醫，專為空腹喝茶的碼頭工人改良溫和不傷胃的焙茶工法。</li><li><b>老明玉香舖（1897 年）</b>：堅持純中藥粉配楠仔木黏液手工製香——原來古人喝「香灰治病」在天然製香年代真有中藥成分，只是現代廉價化學香讓老智慧失了效。</li><li><b>台北堂摩納卡餅本舖（1920 年）</b>：昔日進貢日本皇室與總督府的御用「最中餅」，全臺唯一保存日本早已失傳的「半自動腳踏烤爐」，連日本原廠都特地重新開模替他們做新機器、還獲日本頒發感謝狀。</li></ul>"
+    ],
+    q:"展間裡沒開冷氣有點悶熱，但每聽完一間百年老店的絕活——從能空腹喝的太醫茶到日本人也來朝聖的半自動最中餅——就更懂為什麼艋舺被叫作臺北的起家厝。",
+    qtag:"全臺最老茶行 × 失傳日本工藝唯一留存",
+    ph:["154425","154512","154608","155607"]
+  },
+  {
+    at:"15:58",
+    mode:"detective",
+    short:"老松與 TR 紅磚密碼",
+    loc:"剝皮寮巷內・日翔旅社遺構與老松國小旁",
+    tag:"被「時光凍結」八十年的街區",
+    t:"一萬一千人的金氏世界紀錄，與腳底下 60 歲比 20 歲更光滑的 TR／S 紅磚",
+    b:[
+      "走出展間，整排空蕩的清代老屋與仍保留套雅房格局的「<b>日翔旅社</b>」之所以沒有被改建，全因旁邊那座上過金氏世界紀錄的<b>老松國小</b>！當年全校高達<b>一萬一千名小學生</b>（後來才被秀朗國小的 13,000 人超越），學生得拆成上下午班共用同一張書桌，甚至寫情書放在抽屜等下午班同學收。",
+      "日治時期為了解決校地不足，把剝皮寮全區劃為教育用地、全面禁建，卻遲遲沒有徵收，讓這批房子就這樣被「<b>時光凍結</b>」；直到 921 地震後校舍龜裂才啟動徵收，居民搬走後偏偏遇上少子化，最後 1/10 給老松蓋游泳池與體育館、9/10 原地保存成今天的街道博物館——地歸教育局、屋歸文化局管。",
+      "老師最後要大家低頭摸摸地面鋪設的紅磚：上頭印著英文字母 <b>TR</b>（日治臺灣煉瓦株式會社）與更稀有的 <b>S</b>（英商撒母耳 Samuel，後來被 TR 併購）以及獨特<b>菱格紋</b>的，是 1945 年前全臺最高級的機械紅磚。在戶外風吹日曬踩了二十年、磚齡至少 60 歲起跳，摸起來竟然比旁邊 20 歲的現代磚還細緻光滑；早期工人嫌它太硬敲不碎，拆老屋時乾脆保留在裡面外包新牆，因此至今路過工地瞄見菱格紋紅磚，都還是文史行家眼中的寶。"
+    ],
+    ph:["155830","155849"]
+  },
+  {
+    at:"16:06",
+    mode:"split",
+    part:["第四篇章・騎樓密碼、肉圓先驅與龍山寺尋寶","康定路 → 川業肉圓 → 青草巷 → 龍山寺"],
+    short:"五腳亭與四柱三窗",
+    loc:"康定路騎樓・永豐銀行對街・川業肉圓",
+    tag:"臺灣獨步全球的特規建築",
+    t:"全世界只有臺灣長這樣的「五腳亭」騎樓，與 114 歲艋舺第一碗貢丸湯",
+    b:[
+      "鑽出老屋躲進康定路騎樓，這塊大家每天躲雨遮陽的日常空間，其實是<b>全世界獨一無二的臺灣特規建築</b>！當年日本人來到基隆發現一年 364 天都在下雨、路邊攤一淋雨就得收攤，日本本土又沒有騎樓，便轉向研究英國人在印度開發的「外廊式建築（5 feet building，寬約 1.5 公尺、兩人並肩，馬來西亞學去後稱作『五腳基』）」。",
+      "但日本人嫌兩人寬太難走，於是在《都市改正法》裡把臺灣騎樓強制規定要外推且相鄰連通、一口氣加寬到 <b>3.5 公尺（約五個人寬）</b>，因而得名「<b>五腳亭</b>」——走到對街，老師再教一招「街屋透視術」：別管外牆拉皮拉得多新，只要二、三樓維持「<b>四根柱子夾三個窗戶（四柱三窗）</b>」，且原本日式街屋多只有三層樓，它就一定是日治時期留下的老街屋！",
+      "順著騎樓往前兩步，遇見今年 <b>114 歲（創立於 1910 年）</b>的「<b>川業肉圓</b>」。問老萬華人「川業」沒人聽過，得講它的舊招牌「<b>新竹肉圓</b>」才點頭！第四代在開業 111 年時取「生意川流不息」與創辦人陳承業的「業」字轉型更名，不僅賣臺北少見的新竹紅糟肉圓，當年更是第一家把新竹貢丸帶來艋舺的先行者——端出了<b>艋舺的第一碗貢丸湯</b>。"
+    ],
+    ph:["161021","160629","161232"]
+  },
+  {
+    at:"16:15",
+    mode:"split",
+    short:"青草巷與穀鳥軒",
+    loc:"艋舺地藏庵・西昌街青草巷・廣州街穀鳥軒",
+    tag:"藥籤大數據 × 2.2 億百年藝旦間",
+    t:"全臺最大青草巷的「安慰劑大數據」，與曾限姓氏買賣的 2.2 億穀鳥軒",
+    b:[
+      "站在歷史同樣悠久的<b>艋舺地藏庵（地藏王廟）</b>廟埕，老師揭開對面全臺最大青草聚落「<b>西昌街青草巷</b>」的誕生秘密：早期跨海來臺的碼頭工人沒有醫生，生病只能進龍山寺向觀音抽「<b>藥籤</b>」。剛開始同一張五號籤，肚子痛跟腳痛的人喝下去靠「安慰劑效應」先好一半，喝了一年多竟慢慢累積出「人體實驗大數據」，整理成各家百年青草店獨門卻不外傳的藥譜與劑量比例。",
+      "如今青草茶動輒十幾種草藥熬煮，老師特別提醒現場喝一杯的講究：「<b>夏天會加薄荷、冬天不加</b>」，只有當場現煮的那一杯最「對時（tio̍h-sî）」。巷子裡蒲公英、車前草、芙蓉滿架飄香，不少還是河濱公園就找得到的野生青草。",
+      "走出青草巷口望向廣州街對面那棟 1899 年落成、頂端留有高氏記號的三層和洋建築「<b>穀鳥軒</b>」（85°C 曾進駐於此、如今正空置待售），早年其實是文人雅士聽曲飲酒的<b>藝旦間</b>！前任屋主怕精美山牆被亂拆，一度立下「<b>只賣姓高的人</b>」但書、連賣兩任都姓高；直到這一任屋主放寬條件開價 <b>2.2 億</b>，算盤其實打在它具備申請古蹟後上看 <b>860% 容積轉移</b>的潛在價值。"
+    ],
+    ph:["162132","161544","161949"]
+  },
+  {
+    at:"16:28",
+    mode:"pano",
+    short:"龍山寺 15 尊外國人",
+    loc:"艋舺龍山寺・三川殿 → 正殿 → 後殿萬神殿",
+    tag:"全臺唯一銅龍柱 × 16 減 1 尊外國人",
+    t:"壓艙石地基、全臺唯一銅龍柱，與龍山寺裡少了一尊的「落跑外國人」",
+    b:[
+      "最後一站踏進今年 278 歲、萬華唯一「<b>五開間</b>」的大廟<b>艋舺龍山寺</b>。大家問廟裡哪裡最老，有人猜山門、有人指龍柱，老師卻要大家低頭看<b>腳下的花崗岩地板</b>——先民渡過「十去六死三留一回頭」的黑水溝來臺後，把用來穩定船身的<b>壓艙石</b>搬上岸，再由艋舺第一首富<b>張德寶</b>捐出鋪成廟埕與地基！",
+      "擡頭看三川殿那對大正年間留下、<b>全臺唯一一對銅鑄龍柱</b>；再進門鎖定全寺公認最重要的匾額「<b>通身手眼</b>」——由艋舺三大富商之一王家（王忠和）敬獻，當年原是福建泉州晉江安海祖廟正殿匾額的<b>複製品</b>，後來祖廟毀於文革，祖廟重建時反而回頭向臺北龍山寺複製回去，「<b>複製品就這樣變成了系統裡最老的真品</b>」。",
+      "正逢晚課誦經不便上正殿打擾，大家隔門遠望兩年前重貼金箔打光的觀音佛祖——這尊日治時期的佛祖在 <b>1945 年臺北大空襲</b>正殿全毀時奇蹟坐於瓦礫中倖存（僅右臉燻黑、斷一截蓮花指），擲筊十二次都「沒筊」，直到問說保留原尊才一擲聖筊；如今晚上點燈，連對面區公所都拜得到！轉往後殿「<b>萬神殿</b>」讀完眾生煩惱，記得月老最愛<b>肯德基蛋塔</b>（這才算最速件），最後別忘了沿銅龍柱後方找找傳說中的「<b>16 尊外國人</b>」。"
+    ],
+    q:"以前在金爐（4 位戴荷蘭帽的歐洲人）、屋簷角落（穿西裝打燈的金人與長翅膀天使）加上銅龍柱後方柱腳，全寺共有 16 尊「憨番扛廟角／扛柱」；但柱腳那尊多年前被撞斷後只剩一雙鞋，老師笑說「扛了一百年太痛落跑了」，現場現在只找得到 15 尊！",
+    qtag:"16 尊少 1 尊・剩一雙鞋",
+    ph:["163506","162818","162935","163132","163631","163946","164337"]
+  }
+];
+
+const UQ=[
+  ["剛開幕兩天","曾文昌師傅手工凹折的東三水街鐵花窗新招牌",3,"活動前兩天才掛上！一條街同時掛著「東」與「新富」兩套門牌，全臺北市僅此一處。","o"],
+  ["現場才吃得到","從大豐炸牛蒡、多角色鮪魚水餃到冬季限定淡酥花生",4,"手削放涼照樣酥的炸牛蒡、小魚花生乾排隊試吃，加上 10 月到 3 月才有的淡酥花生與化核梅乾。","o"],
+  ["第一座＋五星級","新富町文化市場第一代「北字徽」與有洞真清水模",5,"保留日治第一代臺北市徽與馬蹄形綠建築，旁邊還緊鄰著「有洞才算貴」的三層樓真清水模公廁。","i"],
+  ["最後一家留藥籤","門前還在用炭火熬藥的豐生國藥房",7,"龍山寺停發藥籤後，這裡是周邊最後一家還能依古藥籤編號抓藥的老藥房，連店貓店長都被抱出來見客。",""],
+  ["上個月剛熄燈","110 年老店「龍城號」走慢一步就吃不到了",7,"擁有 110 年歷史的人蔘雞老店因後代不再接手，2024 年 10 月剛結束營業，只剩黃色招牌留在街角。","o"],
+  ["臺灣第一＆唯一","全臺最老 179 歲福大同茶莊與日本認證半自動烤爐",8,"太醫改良可空腹喝的溫茶、全臺唯一保留日本已失傳半自動腳踏烤爐的台北堂最中餅，一次收進剝皮寮展間。","i"],
+  ["獨步全球特規","比馬來西亞五腳基寬兩倍的 3.5 公尺「五腳亭」騎樓",10,"日本借鏡英國印度外廊再強制加寬到五人併行，連日本本土都沒有；抬頭還藏著「四柱三窗」日治密碼。",""],
+  ["16 尊減 1 尊","龍山寺裡被撞斷「落跑只剩一雙鞋」的憨番外國人",12,"金爐 4 荷蘭人、屋簷西裝金人與天使、加上銅龍柱後方扛柱小人原共 16 尊，如今現場只剩 15 尊找得到。",""]
+];
+
+const C={
+  "143856":"在萬華社大（龍山國中）門口集合開場，施景耀老師舉著資料袋破題「不是每個萬華人都叫艋舺人」。",
+  "144758":"穿過和平西路轉進三水街，這排紅磚老屋與米行門前，正是能一路通往宜蘭的淡蘭古道尾段。",
+  "145037":"三水街口的淡蘭古道綠色指標牌，提示著這段市區巷弄與百年山海古道的連結。",
+  "145114":"準備踏入東三水街市場入口，黃紅牌樓底下藏著兩個各自獨立運作的菜市場。",
+  "145202":"高掛入口處、剛開幕兩天的金色新招牌，由鐵花窗職人曾文昌師傅純手工凹折鐵條打造。",
+  "145227":"市場拱形屋頂與「歡迎光臨」多語看板，地板微拱排水極佳，颱風天來逛也保持乾爽。",
+  "145317":"「菜漆麵匠」門前陳列火龍果、菠菜、紅麴、紫米等天然蔬果拉麵，沒加色素全是真材實料。",
+  "150159":"1957 年創立的「艋舺大豐」紅布條前，大家現場分食手削炸牛蒡，並認識「雞捲（多 ke 捲）」惜食由來。",
+  "150627":"「多角色」招牌上印著菠菜干貝、紅麴鮮鮪魚（Toro）等創意水餃，老闆當場舀給大家試吃小魚花生乾。",
+  "151050":"同一條街頭上右側是「東」、左側是「新富」，見證全臺北唯一一條街兩座市場自治會並存的歷史。",
+  "151432":"仰望新富市場外牆正中央：至今還留著簡潔象形的「第一代臺北市北字徽」。",
+  "151458":"馬蹄形大廳裡如今進駐了「萬華世界下午酒場」，中午時段可以借盤子去市場買炸物配酒。",
+  "151624":"新富町文化市場微縮模型：重現最後兩攤雜貨與豬肉攤在火災撤出前的市場日常。",
+  "151702":"新富町文化市場中央採光通風天井，因對稱構圖成了 IG 上最受歡迎的「男友救星」美拍點。",
+  "151842":"架高地面上刻意留出的透明玻璃窗，讓來訪者低頭看見 1935 年原始市場的水泥地坪與排水溝。",
+  "152028":"從新富市場旁側小巷望過去，就是昔日市場公務員宿舍改造的全球唯一單車咖啡廳 tokyobike Café。",
+  "152420":"洗石子老市場旁矗立著三層樓真清水模「五星級公廁」，一次灌漿成型的板模孔洞才是高級工藝的證明。",
+  "152506":"和平西路三段上的「三水食品花生行」，不僅是飛機花生夥伴，也是藍家、石家刈包花生粉幕後老店。",
+  "152841":"老闆親手遞來的無籽化核梅乾；一旁還有只有十月到三月才開賣的冬季限定淡酥花生。",
+  "153600":"走進巷弄裡的「豐生國藥房」，這裡至今保留龍山寺古藥籤配方，能依籤號替老客人抓藥。",
+  "153634":"豐生國藥房門邊仍在運作的炭爐與燻黑陶壺，是巷弄裡少見堅持以炭火熬煮中藥的風景。",
+  "153922":"從萬華車站前第一攤三輪車起家的「金好吃純正花枝羹」，內行在地人都要喊點「一套」。",
+  "154122":"近 70 年老字號「周記肉粥店」，玻璃櫃後方正是第三代虎哥手起刀落切著黃金脆皮紅燒肉。",
+  "154319":"人蔘雞「龍城號」的黃色老招牌：擁有 110 年歷史卻剛於上個月熄燈，成為只能追憶的味道。",
+  "154425":"踏進剝皮寮歷史街區紅磚巷弄，這段路曾與三水街連成一線，後來才被廣州街與康定路切斷。",
+  "154512":"剝皮寮牆上的淡蘭古道萬華段地圖，清楚標示這條古道如何穿過艋舺街區。",
+  "154608":"清代老屋大廳裡，老師伸手指向直接拆自戎克船主桅杆、中央仍留有插帆卯孔的「帆船柱」。",
+  "155607":"《百年匠心》展間內，一邊聽福大同茶莊、老明玉香舖、台北堂與馬偕教會的百年故事。",
+  "155830":"剝皮寮地面鋪滿日治頂級機械紅磚——表面有菱格紋、刻著「TR」與更稀有的「S」字商標。",
+  "155849":"保留套雅房格局的「日翔旅社」遺構與紅磚立面，見證教育用地「時光凍結」八十年的結果。",
+  "160629":"康定路「五腳亭」騎樓下：日本人把英國 1.5 公尺外廊修法加寬到 3.5 公尺，全臺獨步全球。",
+  "161021":"對街永豐銀行雖然外牆翻新，二、三樓仍維持「四根柱子夾三扇窗」的典型日治街屋比例。",
+  "161232":"「創立於 1910 年 新竹肉圓／川業肉圓」雙招牌：把新竹紅糟肉圓與艋舺第一碗貢丸湯帶來這裡。",
+  "161544":"在艋舺地藏庵廟埕聽青草巷的起源——沒有醫生的年代，先民從龍山寺藥籤喝出草藥大數據。",
+  "161949":"鑽進全臺最大青草聚落「西昌街青草巷」，滿架現採青草清香撲鼻，夏天喝還會比冬天多加一味薄荷。",
+  "162132":"廣州街對面 1899 年落成的高氏家族「穀鳥軒」三層和洋藝旦間，如今空置開價 2.2 億受古蹟容積關注。",
+  "162818":"龍山寺三川殿那對全臺唯一的銅鑄龍柱，鑄於日治大正年間，至今已走過百年風華。",
+  "162935":"「通身手眼」匾額原是泉州祖廟的複製品，因祖廟文革燒毀，反倒成了全系統現存最老的真品。",
+  "163132":"龍山寺金爐底座的四位「憨番」其實是戴荷蘭帽的歐洲人，每日在爐下扛鼎受煙燻。",
+  "163506":"傍晚晚課時分不敢打擾誦經信眾，隔門望向兩年前重貼金箔打光的觀音佛祖——1945 年大空襲奇蹟倖存。",
+  "163631":"紅布條「龍山寺」龍字正上方，打著燈的「穿西裝燕尾服金人」就藏在屋簷斗拱之間。",
+  "163946":"後殿「萬神殿」聚集了祈求愛情、求子、考試與健康的人潮，月老前只有帶肯德基蛋塔才算急件！",
+  "164337":"銅龍柱後方石柱腳下正是尋找「扛柱外國人」的角落——對面另一尊多年前斷裂只剩一雙鞋，16 尊如今剩 15 尊。"
+};
+
+document.getElementById("uq").innerHTML=UQ.map(u=>`<a class="${u[4]}" href="#s${u[2]}"><i>${u[0]}</i><b>${u[1]}</b><span>${u[3]}</span></a>`).join("");
+document.getElementById("nav").innerHTML=S.map((x,i)=>`<a href="#s${i+1}"><span>${i+1}</span>${x.short}</a>`).join("");
+
+const fmtP=p=>`${p.slice(0,2)}:${p.slice(2,4)}`;
+const flat=[];
+const figHtml=(p)=>{
+  flat.push(p);
+  const idx=flat.length-1;
+  const cls=PORTRAIT.has(p)?"ph-btn tall":"ph-btn";
+  return `<figure><button class="${cls}" data-i="${idx}" aria-label="放大照片 ${fmtP(p)}"><img loading="lazy" src="img/${p}.jpg" alt="${C[p]}"><small>${fmtP(p)}</small><span class="zoom">放大 ↗</span></button><figcaption>${C[p]}</figcaption></figure>`;
+};
+
+document.getElementById("stops").innerHTML=S.map((x,i)=>{
+  const part=x.part?`<div class="part"><div><small>${x.part[0]}</small><h2>${x.part[1]}</h2></div><span>約 ${x.at} 起</span></div>`:"";
+  const hasPh=x.ph && x.ph.length>0;
+  const tagCls=x.mode==="pano"?" i":x.mode==="tasting"?" o":"";
+  const qCls=x.mode==="pano"?" i":x.mode==="tasting"?" o":"";
+  const copyHtml=`<div class="copy">${x.tag?`<span class="tag${tagCls}">${x.tag}</span>`:""}<h3>${x.t}</h3>${x.b.map(l=>l.startsWith("<ul>")?l:`<p>${l}</p>`).join("")}${x.q?`<div class="q${qCls}"><b>${x.qtag||"這一站的獨特之處"}</b>　${x.q}</div>`:""}</div>`;
+
+  let secCls="stop", bodyHtml="";
+  if(x.mode==="pano" && hasPh){
+    secCls+=" is-pano";
+    const lead=`<div class="pano-hero">${figHtml(x.ph[0])}</div>`;
+    const rest=x.ph.slice(1);
+    const sidePh=rest.length===1?`<div class="pano-side">${figHtml(rest[0])}</div>`:"";
+    const three=rest.length===3?" three":"";
+    const bottomPh=rest.length>1?`<div class="more-ph${three}">${rest.map(p=>figHtml(p)).join("")}</div>`:"";
+    const hunt=i===S.length-1?`<div class="hunt-bar" aria-label="龍山寺 16 減 1 尊外國人圖鑑">
+      <div class="hunt-card"><small>位置 1｜三川殿前金爐</small><b>4 尊荷蘭人扛鼎</b><span>戴荷蘭帽在金爐底下日夜扛爐，象徵「君子動口不動手」的文化慰藉。</span></div>
+      <div class="hunt-card"><small>位置 2｜正殿前屋簷角落</small><b>西裝金人 ＆ 天使</b><span>紅布條「龍」字上方打燈的穿西裝金人，與相鄰柱頭長翅膀的西方天使。</span></div>
+      <div class="hunt-card"><small>位置 3｜銅龍柱後方柱腳</small><b>2 尊小小扛柱外國人</b><span>得繞到銅龍柱背後蹲低看，才看得到石柱底座扛著柱身的外國人雕像。</span></div>
+      <div class="hunt-card gone"><small>位置 4｜對面只剩一雙鞋</small><b>扛太痛「落跑」的第 16 尊</b><span>對側外國人多年前被撞斷收進板橋倉庫，現場獨留一雙鞋，16 尊從此少 1 尊。</span></div>
+    </div>`:"";
+    bodyHtml=rest.length===1?`${lead}<div class="pano-body">${copyHtml}${sidePh}</div>${hunt}`:`${lead}${copyHtml}${bottomPh}${hunt}`;
+  }else if(x.mode==="tasting" && hasPh){
+    secCls+=" is-tasting";
+    const five=x.ph.length===5?" five":"";
+    const cards=`<div class="tasting-grid${five}">${x.ph.map(p=>figHtml(p)).join("")}</div>`;
+    bodyHtml=`${copyHtml}${cards}`;
+  }else if(x.mode==="detective" && hasPh){
+    secCls+=" is-detective";
+    const three=x.ph.length===3?" three":"";
+    const cards=`<div class="plate-grid${three}">${x.ph.map(p=>figHtml(p)).join("")}</div>`;
+    bodyHtml=`${copyHtml}${cards}`;
+  }else{
+    if(i%2===1) secCls+=" alt";
+    const lead=hasPh?`<div class="lead-ph">${figHtml(x.ph[0])}</div>`:"";
+    const rest=hasPh && x.ph.length>1?`<div class="more-ph">${x.ph.slice(1).map(p=>figHtml(p)).join("")}</div>`:"";
+    bodyHtml=hasPh?`<div class="split">${copyHtml}${lead}</div>${rest}`:`<div>${copyHtml}</div>`;
+  }
+
+  return `${part}<section class="${secCls}" id="s${i+1}">
+    <div class="stop-head"><span class="stop-num">${i+1}</span><div class="stop-meta"><span class="at">約 ${x.at}</span><span class="loc">${x.loc}</span></div></div>
+    ${bodyHtml}
+  </section>`;
+}).join("");
+
+const lb=document.getElementById("lb"),im=document.getElementById("lbi"),cap=document.getElementById("lbc");
+let cur=0;
+const show=i=>{
+  cur=(i+flat.length)%flat.length;
+  const p=flat[cur];
+  im.src=`img/${p}.jpg`;
+  im.alt=C[p];
+  cap.textContent=`${C[p]}　（${cur+1}/${flat.length}）`;
+};
+document.getElementById("stops").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-i]");
+  if(b){show(+b.dataset.i);lb.classList.add("on");document.getElementById("lbx").focus()}
+});
+document.getElementById("lbp").onclick=()=>show(cur-1);
+document.getElementById("lbn").onclick=()=>show(cur+1);
+const close=()=>lb.classList.remove("on");
+document.getElementById("lbx").onclick=close;
+lb.addEventListener("click",e=>{if(e.target===lb)close()});
+document.addEventListener("keydown",e=>{
+  if(!lb.classList.contains("on"))return;
+  if(e.key==="Escape")close();
+  if(e.key==="ArrowLeft")show(cur-1);
+  if(e.key==="ArrowRight")show(cur+1);
+});
+}
+</script>
+</body>
+</html>
