@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>無用之用：從松菸展場走進遠雄工地再生現場（2024/11/29）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 原本以為只是一場松菸展覽的預約導覽，卻一路步行走進遠雄總部四個樓層與剛拆鷹架的一樓大廳，看見建築廢棄物如何被認真做成日常
+   IDEA: 以「材料實驗誌 × 建築樓層剖面」編排，將松菸展場的創作起源，與遠雄總部 1.0 到 4.0 樓層的實戰演進並置
+   PICTURE: 封面採用兩欄建築策展式構圖，右側展示遠雄 16 樓由 600 塊工地木模板與大巨蛋消光鈦板組成的永續共享牆
+   COLOUR and TYPE: 灰泥白 #f3f1ec、建築墨炭 #1d201e、紅漆鐵鏽橘 #b84a27（關鍵詞主色）、再生苔綠 #2c6a5b；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 雙欄展覽封面＋數據對照帶＋本場限定四卡＋樓層水平電梯導覽＋展區工作台網格＋綠建材雙欄矩陣＋1.0–4.0 垂直樓層剖面時間軸＋後記四格 */
+:root{
+  color-scheme:light dark;
+  --bg:light-dark(#f3f1ec,#141615);
+  --paper:light-dark(#fbfaf7,#1c1f1d);
+  --slab:light-dark(#eae6dc,#232724);
+  --ink:light-dark(#1d201e,#eae8e2);
+  --mute:light-dark(#5c615d,#9da39e);
+  --accent:light-dark(#b84a27,#e88463);
+  --sage:light-dark(#2c6a5b,#7bc2b0);
+  --tint:light-dark(#e4ece8,#1c2a25);
+  --warm:light-dark(#f1e7df,#261e19);
+  --line:light-dark(#d7d2c6,#2e3330);
+}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:68px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.82 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,h4{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+p b,p strong,li b,li strong,.callout b,.prose b,.prose strong,.spec-item b{color:var(--accent);font-weight:700}
+
+/* Split Architectural Cover Hero */
+.cover{background:linear-gradient(180deg,var(--slab) 0%,var(--bg) 100%);border-bottom:1px solid var(--line);padding:clamp(28px,5vw,56px) max(4vw,18px) 32px}
+.cover-in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.06fr 1fr;gap:clamp(24px,4vw,44px);align-items:center}
+.cover-tag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--warm);border:1px solid var(--line);padding:4px 12px;border-radius:999px;margin-bottom:14px}
+.cover h1{font-size:clamp(30px,4.6vw,48px);line-height:1.14;font-weight:800;letter-spacing:.01em}
+.cover h1 span{display:block;font-size:clamp(19px,2.5vw,27px);font-weight:600;color:var(--sage);margin-top:8px}
+.cover-lead{margin:16px 0 0;font-size:16.5px;line-height:1.78;color:var(--ink)}
+.cover-route{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:13.5px;color:var(--mute)}
+.cover-route span{display:inline-flex;align-items:center;padding:3px 10px;border-radius:6px;background:var(--paper);border:1px solid var(--line);color:var(--ink);font-weight:500}
+.cover-frame{position:relative;padding:10px;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 34px rgba(0,0,0,.08)}
+.cover-frame::before,.cover-frame::after{content:"";position:absolute;width:16px;height:16px;border-color:var(--accent);border-style:solid;pointer-events:none}
+.cover-frame::before{top:-4px;left:-4px;border-width:2px 0 0 2px;border-radius:4px 0 0 0}
+.cover-frame::after{bottom:-4px;right:-4px;border-width:0 2px 2px 0;border-radius:0 0 4px 0}
+.cover-frame .fig button{box-shadow:none;border-radius:8px}
+.cover-frame .fig img{aspect-ratio:16/10}
+.cover-frame .fig figcaption{margin-top:10px;font-size:13.5px;padding:0 4px 2px}
+
+/* Metadata Bar */
+.meta-band{background:#1b201e;color:#e5e2da}
+.meta-in{max-width:1120px;margin:0 auto;padding:16px max(4vw,18px);display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px 24px;font-size:14px}
+.meta-cell b{display:block;font-size:11.5px;letter-spacing:.1em;color:#f0a186;margin-bottom:2px}
+.meta-cell a{color:#f5f2eb;text-decoration:underline;text-underline-offset:3px}
+
+/* Main Container */
+.wrap{max-width:1120px;margin:0 auto;padding:0 max(4vw,18px)}
+
+/* Opening Dossier + Stats */
+.intro-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:32px;padding:40px 0 30px;border-bottom:1px solid var(--line)}
+.intro-copy h2{font-size:clamp(22px,3vw,29px);line-height:1.3;margin-bottom:14px}
+.intro-copy p{margin:.7em 0}
+.exhibit-brief{margin-top:18px;padding:15px 18px;background:var(--slab);border-radius:10px;border:1px solid var(--line);font-size:14.5px;line-height:1.7}
+.exhibit-brief h3{font-size:16px;margin-bottom:6px;color:var(--sage)}
+.exhibit-brief ul{margin:6px 0 0;padding-left:1.2em}
+.exhibit-brief li{margin:.25em 0}
+
+.stat-panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px;align-self:start;display:grid;gap:14px}
+.stat-panel-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px dashed var(--line);padding-bottom:10px}
+.stat-panel-head h3{font-size:18px}
+.stat-panel-head span{font-size:11.5px;letter-spacing:.1em;color:var(--mute);font-weight:700}
+.stat-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.stat-box{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 13px}
+.stat-box .val{font-family:"Noto Serif TC",serif;font-weight:800;font-size:23px;line-height:1.15;color:var(--accent)}
+.stat-box.g .val{color:var(--sage)}
+.stat-box .lbl{font-size:12.5px;font-weight:700;margin-top:4px}
+.stat-box p{margin:4px 0 0;font-size:12.5px;line-height:1.5;color:var(--mute)}
+.stat-note{font-size:13.5px;line-height:1.65;color:var(--mute);padding-top:4px;border-top:1px solid var(--line)}
+
+/* Rare / Ephemeral Highlights */
+.rare{padding:34px 0 26px}
+.sec-title{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 20px;margin-bottom:16px}
+.sec-title h2{font-size:clamp(22px,3vw,28px)}
+.sec-title p{margin:0;color:var(--mute);font-size:14.5px}
+.rare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.rare-card{text-decoration:none;color:inherit;background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:10px;padding:15px 16px;display:flex;flex-direction:column;gap:6px;transition:transform .2s,box-shadow .2s}
+.rare-card.g{border-top-color:var(--sage)}
+.rare-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.07)}
+.rare-card i{font-style:normal;font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--accent)}
+.rare-card.g i{color:var(--sage)}
+.rare-card b{font-family:"Noto Serif TC",serif;font-size:16.5px;line-height:1.4}
+.rare-card span{font-size:13.8px;line-height:1.6;color:var(--mute)}
+
+/* Sticky Elevator / Section Bar */
+.floor-nav{position:sticky;top:8px;z-index:10;margin:8px 0 28px;padding:10px 14px;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.06);display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.floor-nav .fn-lbl{font-size:12.5px;font-weight:700;color:var(--mute);letter-spacing:.06em;margin-right:4px}
+.floor-nav a{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);text-decoration:none;font-size:13px;font-weight:500;transition:border-color .15s,background .15s}
+.floor-nav a:hover{border-color:var(--accent);background:var(--warm)}
+.floor-nav a em{font-style:normal;font-weight:800;color:var(--accent);font-family:"Noto Serif TC",serif}
+
+/* Chapter Banner */
+.chapter{margin:46px 0 18px;display:grid;grid-template-columns:auto 1fr;gap:14px 20px;align-items:center;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+.chapter-num{font-family:"Noto Serif TC",serif;font-weight:800;font-size:clamp(28px,4vw,38px);line-height:1;color:var(--accent);padding-right:16px;border-right:1px solid var(--line)}
+.chapter small{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--sage);text-transform:uppercase;margin-bottom:2px}
+.chapter h2{font-size:clamp(22px,3vw,30px);line-height:1.25}
+.chapter-sub{grid-column:1/-1;margin:0;color:var(--mute);font-size:15px}
+
+/* Stop Blocks */
+.stop{padding:26px 0 36px;border-bottom:1px solid var(--line)}
+.stop-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-bottom:10px}
+.pill{font-family:"Noto Serif TC",serif;font-weight:800;font-size:13px;padding:3px 10px;border-radius:6px;background:var(--ink);color:var(--bg)}
+.pill.ver{background:var(--accent);color:#fff}
+.pill.sage{background:var(--sage);color:#fff}
+.time-tag{font-size:13.5px;color:var(--mute);font-weight:500}
+.stop h3{font-size:clamp(21px,2.8vw,27px);line-height:1.32;margin-bottom:14px}
+
+.workbench{display:grid;grid-template-columns:1fr 1.04fr;gap:30px;align-items:start}
+.workbench.rev{grid-template-columns:1.04fr 1fr}
+.prose p{margin:.75em 0}
+.prose ul{margin:12px 0;padding-left:1.2em}
+.prose li{margin:.42em 0}
+.prose li::marker{color:var(--accent)}
+
+.callout{margin-top:16px;padding:14px 17px;border-radius:10px;background:var(--tint);border-left:4px solid var(--sage);font-size:15px;line-height:1.72}
+.callout.w{background:var(--warm);border-left-color:var(--accent)}
+
+/* Figures */
+.fig{margin:0}
+.fig button{all:unset;cursor:pointer;display:block;width:100%;border-radius:10px;overflow:hidden;background:var(--slab);position:relative;box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.fig img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;transition:transform .35s ease}
+.fig.wide img{aspect-ratio:16/9}
+.fig.portrait img{aspect-ratio:3/4}
+.fig.tall916 img{aspect-ratio:9/15}
+.fig button:hover img{transform:scale(1.025)}
+.fig figcaption{margin-top:8px;font-size:13.8px;line-height:1.58;color:var(--mute)}
+.fig figcaption b{color:var(--ink);font-weight:700}
+
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px}
+.bento-crossarm{display:grid;grid-template-columns:.78fr 1.22fr;gap:18px;margin-top:20px;align-items:start}
+.bento-right{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+
+/* Crossarm Color Code Strip */
+.color-codes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
+.swatch{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start}
+.swatch i{flex:none;width:14px;height:14px;border-radius:4px;margin-top:5px}
+.swatch b{display:block;font-size:14.5px;margin-bottom:2px}
+.swatch span{font-size:13px;line-height:1.5;color:var(--mute)}
+
+/* Walk Transition Band */
+.walk-bridge{margin:28px 0 8px;padding:20px 22px;background:var(--paper);border:1px dashed var(--sage);border-radius:12px;display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center}
+.walk-bridge h4{font-size:18px;color:var(--sage);margin-bottom:6px}
+.walk-bridge p{margin:0;font-size:15px;line-height:1.72}
+
+/* Material Matrix (3N, Xinda, Miniwiz) */
+.matrix{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.mat-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.mat-card .mat-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.mat-card .mat-tag{font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--warm);color:var(--accent)}
+.mat-card.g .mat-tag{background:var(--tint);color:var(--sage)}
+.mat-card h4{font-size:17.5px;line-height:1.35}
+.mat-card p{margin:0;font-size:14.2px;line-height:1.68;color:var(--mute)}
+.mat-card p b{color:var(--ink)}
+
+/* Architectural Elevation Timeline for 4 Floors */
+.elevation{position:relative;padding-left:28px;border-left:3px solid var(--line);margin-left:10px}
+.floor-stop{position:relative;padding:24px 0 34px;border-bottom:1px solid var(--line)}
+.floor-stop:last-child{border-bottom:none}
+.floor-stop::before{content:attr(data-floor);position:absolute;left:-49px;top:24px;width:40px;height:40px;border-radius:10px;background:var(--accent);color:#fff;font:800 13px/40px "Noto Serif TC",serif;text-align:center;box-shadow:0 4px 12px rgba(184,74,39,.28)}
+.floor-stop.g::before{background:var(--sage);box-shadow:0 4px 12px rgba(44,106,91,.28)}
+.floor-stop.d::before{background:var(--ink);color:var(--bg);box-shadow:none}
+
+/* Version Evolution Compare Box */
+.evo-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+.evo-box{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.evo-box h4{font-size:15.5px;color:var(--accent);margin-bottom:6px}
+.evo-box.g h4{color:var(--sage)}
+.evo-box p{margin:0;font-size:14.2px;line-height:1.68}
+
+/* Bento for 11F (tall toilet lamp + wide counter + exhibition wall) */
+.bento-11f{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:20px;align-items:start}
+.stack-11f{display:grid;gap:18px}
+
+/* Closing Afterword */
+.afterword{margin:34px 0 22px;padding:28px;background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--sage);border-radius:14px}
+.afterword-head{margin-bottom:18px}
+.afterword-head h2{font-size:clamp(22px,3vw,28px);margin-bottom:6px}
+.afterword-head p{margin:0;color:var(--mute);font-size:15px}
+.af-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.af-card{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:18px}
+.af-card h3{font-size:17px;color:var(--accent);margin-bottom:8px}
+.af-card.g h3{color:var(--sage)}
+.af-card p{margin:0;font-size:15px;line-height:1.72}
+
+footer{max-width:1120px;margin:20px auto 12px;padding:16px max(4vw,18px) 10px;border-top:1px solid var(--line);color:var(--mute);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 18px}
+
+/* Lightbox */
+#lb{position:fixed;inset:0;z-index:40;background:rgba(12,14,13,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:16px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:12px;align-items:center;color:#eee;margin-top:12px;font-size:15px;max-width:900px;text-align:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer;flex:none}
+#lb button:hover{background:#333}
+
+@media(max-width:880px){
+  .cover-in,.intro-grid,.workbench,.workbench.rev,.walk-bridge,.matrix,.grid-2,.grid-3,.bento-crossarm,.bento-right,.bento-11f,.evo-compare,.af-grid,.color-codes{grid-template-columns:1fr;gap:18px}
+  .elevation{padding-left:0;border-left:none;margin-left:0}
+  .floor-stop::before{position:static;display:inline-block;width:auto;height:auto;padding:2px 10px;line-height:1.6;margin-bottom:10px}
+  .fig.portrait img,.fig.tall916 img{aspect-ratio:4/3}
+}
+@media(prefers-reduced-motion:reduce){
+  .fig img,.rare-card{transition:none}
+  .rare-card:hover,.fig button:hover img{transform:none}
+}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・76 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../metamotion/index.html" aria-current="page"><small>2024/11/29</small>無用之用：從松菸展場走進遠雄工地再生現場</a></li><li><a href="../backto1920/index.html"><small>2024/11/29</small>回到 1920：臺北最華美宮殿 × 醫學知識殿堂</a></li><li><a href="../bethany/index.html"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../metamotion/index.html" aria-current="page"><small>2024/11/29</small>無用之用：從松菸展場走進遠雄工地再生現場</a></li><li><a href="../backto1920/index.html"><small>2024/11/29</small>回到 1920：臺北最華美宮殿 × 醫學知識殿堂</a></li><li><a href="../bethany/index.html"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></details><span>2024/11/29</span></div>
+
+<header class="cover" id="top">
+  <div class="cover-in">
+    <div>
+      <div class="cover-tag">FIELD NOTES · 2024.11.29 FRIDAY</div>
+      <h1>無用之用：＿＿<span>從松菸展場走進遠雄工地再生現場</span></h1>
+      <p class="cover-lead">在松山文創園區平日穿梭的私人導覽裡，路過服務中心旁這座亮眼的展覽，通常只會被輕輕帶過「這是跟台電合作的藝術品」。然而這場由策展團隊 <b>META Design</b> 與 <b>遠雄建設</b> 聯手的限定走讀，卻從展桌上的木橫擔與 1.7 噸卵石門柱出發，直接步行十分鐘帶進遠雄總部 17、16、24、11 樓與尚未完工的 1 樓大廳——親眼見證台灣營建廢棄物如何從粗獷 1.0 一路試錯到石材翻面 4.0。</p>
+      <div class="cover-route" aria-label="當日路線">
+        <span>松菸 A6-O109 展場</span> → <span>步行 10 分鐘（基隆路前）</span> → <span>遠雄總部 17F</span> → <span>16F（1.0）</span> → <span>24F（2.0）</span> → <span>11F（3.0）</span> → <span>1F 大廳（4.0）</span>
+      </div>
+    </div>
+    <div class="cover-frame">
+      <figure class="fig">
+        <button data-ph="164615" aria-label="放大照片：遠雄總部 16 樓永續共享牆，由 600 個工地木模板方塊與大巨蛋測試廢棄鈦板組成">
+          <img src="img/164615.jpg" alt="遠雄總部 16 樓永續共享牆，暖光映照著由工地木模板方塊與大巨蛋廢棄鈦板構成的牆面">
+        </button>
+        <figcaption><b>遠雄總部 16 樓「永續共享牆」</b>：600 個工地木模板方塊拼出企業標誌，裡頭還藏著臺北大巨蛋當年測試消光漆留下的廢棄鈦板。</figcaption>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<div class="meta-band">
+  <div class="meta-in">
+    <div class="meta-cell"><b>日期與時段</b>2024 年 11 月 29 日（五）15:00–17:35</div>
+    <div class="meta-cell"><b>活動名稱</b>一起走吧！工地計劃｜META Motion 2024 聯合導覽</div>
+    <div class="meta-cell"><b>主辦與合作</b>META Design 主辦｜遠雄建設（FG Next）、台電文創＆公共藝術、國家住都中心＆全坤建設</div>
+    <div class="meta-cell"><b>場域路線</b><a href="https://www.google.com/maps/search/%E6%9D%BE%E5%B1%B1%E6%96%87%E5%89%B5%E5%9C%92%E5%8D%80+A6-O109" target="_blank" rel="noopener">松菸 A6-O109 辦公廳舍創意空間</a> → <a href="https://www.google.com/maps/search/%E9%81%A0%E9%9B%84%E5%9C%8B%E9%9A%9B%E5%95%86%E5%8B%99%E4%B8%AD%E5%BF%83" target="_blank" rel="noopener">遠雄國際商務中心（信義區）</a></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="intro-grid">
+    <div class="intro-copy">
+      <h2>一場意想不到的跨界導覽：展覽只是序曲，職場才是實驗場</h2>
+      <p>如果只是平日經過松山文創園區服務中心旁，很容易被 <b>META Design</b> 的木材與燈具展品吸引，卻未必知道背後牽起多少台灣產業鏈。連園區裡經常路過的私人導覽團，提到這區大多也只帶過一句「跟台電合作的藝術品」，既沒提到<b>遠雄建設</b>、<b>國家住都中心</b>與<b>全坤建設</b>，甚至連主辦策展團隊也常被忽略。</p>
+      <p>實際跟著這場名為「<b>一起走吧！工地計劃</b>」的聯合導覽走一趟才明白，這不只是看藝術家如何廢物再利用，而是一場把概念從展間直接拉回<b>遠雄建設總部</b>日常空間的現場實驗。許多人聽到「永續、ESG 報告書、綠建築標章」，總覺得那是企業請顧問砸錢就能解決的紙上功夫；但當雙手摸到從工地拔下 <b>153 根生鏽鐵釘</b>的模板木椅、走進 <b>70% 材料皆為台灣社會廢棄物再生</b>的辦公室公廁時，「有感」這件事才真正成立。</p>
+      <div class="exhibit-brief">
+        <h3>關於「META Motion 2024｜無用之用：＿＿」背景檔案</h3>
+        <ul>
+          <li><b>展覽定位</b>：2024 年為第一屆 <b>META Motion</b> 年度行動（展期 2024/11/23–12/08，松菸 A6-O109 免費參觀），探討資源、環境與文化的平衡。</li>
+          <li><b>當日聯合路線</b>：15:00–15:35 松菸展場導覽 → 15:35–15:55 步行前往遠雄國際商務中心（遠雄金融大樓對面，不用過基隆路）→ 15:55 起遠雄 <b>FG Next</b> 團隊接力分享與多樓層實走。</li>
+        </ul>
+      </div>
+    </div>
+
+    <aside class="stat-panel" aria-label="工地再生現場關鍵數字">
+      <div class="stat-panel-head">
+        <h3>現場關鍵數字</h3>
+        <span>FIELD METRICS</span>
+      </div>
+      <div class="stat-cards">
+        <div class="stat-box">
+          <div class="val">34,707 kg</div>
+          <div class="lbl">已轉化各類廢棄物</div>
+          <p>META 截至展前累積轉化量，主要來自台電與遠雄專案。</p>
+        </div>
+        <div class="stat-box g">
+          <div class="val">153 根</div>
+          <div class="lbl">單片板模手工拔釘</div>
+          <p>灌漿板模反覆使用淘汰後，平均每塊得拔除上百根鏽釘。</p>
+        </div>
+        <div class="stat-box g">
+          <div class="val">7%（200 萬噸）</div>
+          <div class="lbl">台灣營建廢棄物占比</div>
+          <p>全國一年 3,000 萬噸廢棄物中營建僅占約 7%，卻被期待成為最大再生建材「消化者」。</p>
+        </div>
+        <div class="stat-box">
+          <div class="val">70% 再生</div>
+          <div class="lbl">遠雄公廁實裝材料</div>
+          <p>扣掉馬桶與小便斗，從地板、牆面到咖啡杯蓋搗擺皆為台灣廢棄物再生。</p>
+        </div>
+      </div>
+      <div class="stat-note">從單件售價 <b>$3,580</b> 的木橫擔閱讀壁燈起步，到能大規模吞吐垃圾的再生建材——「小物說故事、建材衝減量」成為整場走讀最核心的解題思路。</div>
+    </aside>
+  </section>
+
+  <section class="rare" aria-label="這一天才遇得到的現場亮點">
+    <div class="sec-title">
+      <h2>要來參加才看得到、聽得到的現場</h2>
+      <p>展板之外的即時施工現場、不對外開放的辦公樓層，以及唯有站對角度才出現的畫面。</p>
+    </div>
+    <div class="rare-grid">
+      <a class="rare-card" href="#s8">
+        <i>首屆限定・半開箱現場</i>
+        <b>剛拆鷹架不到一週的 1F 大廳 4.0</b>
+        <span>前一天還在施工圍籬裡，這一週才剛打通通行；未完工的石材背面還看得到 30 年前的紅蠟筆編號。</span>
+      </a>
+      <a class="rare-card g" href="#s7">
+        <i>稍縱即逝</i>
+        <b>即將送往文化部借展的「吊筋×水溝蓋立燈」</b>
+        <span>11 樓沙發旁由吊筋、玻璃扣具與壓壞水溝蓋組成的立燈，再過一兩週就會離開遠雄前往借展。</span>
+      </a>
+      <a class="rare-card" href="#s5">
+        <i>換個角度才顯影</i>
+        <b>拿手機鏡頭才看得清的「忠孝東路夜空」</b>
+        <span>16 樓永續共享牆運用感光元件特性藏了一幅台北盆地夜景，肉眼看不明顯，打開手機相機立刻浮現。</span>
+      </a>
+      <a class="rare-card g" href="#s4">
+        <i>走進內部才聽得到</i>
+        <b>打破「又醜又貴又麻煩」的跨世代實驗</b>
+        <span>從 2019 年殺去淡水找 META，到公開不簽排他專利、在自家公廁用清潔阿姨的回饋當作強度測試。</span>
+      </a>
+    </div>
+  </section>
+
+  <nav class="floor-nav" aria-label="展場與樓層索引">
+    <span class="fn-lbl">空間索引</span>
+    <a href="#s1"><em>01</em>工地計畫基地</a>
+    <a href="#s2"><em>02</em>台電木橫擔＆變壓箱</a>
+    <a href="#s3"><em>03</em>嘉興街門柱＆友人物件</a>
+    <a href="#s4"><em>17F</em>FG Lab 簡報室</a>
+    <a href="#s5"><em>16F</em>1.0 版工業實驗</a>
+    <a href="#s6"><em>24F</em>2.0 版精品混搭</a>
+    <a href="#s7"><em>11F</em>3.0 版日常與公廁</a>
+    <a href="#s8"><em>01F</em>4.0 半開箱大廳</a>
+  </nav>
+
+  <!-- PART 1 -->
+  <div class="chapter">
+    <div class="chapter-num">PART 01</div>
+    <div>
+      <small>15:00–15:35 · SONGSHAN CULTURAL AND CREATIVE PARK A6-O109</small>
+      <h2>松菸《無用之用：＿＿》展場：把過程攤開在桌面上</h2>
+    </div>
+    <p class="chapter-sub">2010 年成立於新北淡水的 <b>META Design</b>，在首屆「<b>META Motion 2024</b>」將三組橫跨建設與電力的合作過程搬進松菸倉庫，從「無用之用，是為大用」展開對話。</p>
+  </div>
+
+  <!-- STOP 01 -->
+  <article class="stop" id="s1">
+    <div class="stop-head">
+      <span class="pill">STOP 01</span>
+      <span class="time-tag">15:00–15:18 · 展場入口與「工地計畫」木模板基地</span>
+    </div>
+    <h3>走進可登高的「板模」基地：34,707 公斤背後的 153 根鐵釘</h3>
+    <div class="workbench">
+      <div class="prose">
+        <p>抬頭先看到展場上方那幅從「靜物畫」概念出發的掛旗——實物原本是 3D，拍成照片變成 2D，來到展場再被立體懸掛回 3D，提醒觀者「<b>從不同角度看事情</b>」。主題「<b>無用之用：＿＿</b>」刻意留白，邀請每一位走進來的人填入自己的答案，也宣示「既然已從地球擷取這麼多資源，就該做最好的運用」。</p>
+        <p>第一展區「<b>工地計畫 × 遠雄建設</b>」直接用蓋房子灌柱子時外圍搭接的木頭<b>板模（Formwork）</b>，在室內築起兩座可以踏上去、走進去體驗工地尺度的基地：</p>
+        <ul>
+          <li>每片板模重複灌漿到極限後就會淘汰，回收前得先手工拔掉平均 <b>153 根</b>生鏽彎折的鐵釘，再經過打磨才成為椅子材料。</li>
+          <li>旁邊桌上陳列著小巧的「<b>My LAND 桌上建築</b>」系列——把工地切剩的金屬管件與邊角料微縮成膠帶台、筆筒與置物座，彷彿在書桌上蓋起一片屬於自己的微建築。</li>
+          <li>影片紀錄裡更提到，起初工地師傅完全不理解「撿這些垃圾幹嘛」，直到看見成品才全員動員幫忙留料；對 META 而言，這項計畫轉化的不只是廢棄物，還有<b>參與者的意識</b>。</li>
+        </ul>
+      </div>
+      <figure class="fig">
+        <button data-ph="145528" aria-label="放大照片：展場入口「無用之用：＿＿」主牆與物件工作桌">
+          <img loading="lazy" src="img/145528.jpg" alt="展場入口無用之用冒號底線主牆與擺滿手工具和金屬配件的工作桌">
+        </button>
+        <figcaption><b>展場序曲「無用之用：＿＿」</b>：把冒號與底線留白在牆上，桌上攤開創作時拆解、測量與加工的真實工具。</figcaption>
+      </figure>
+    </div>
+    <div class="grid-3">
+      <figure class="fig">
+        <button data-ph="145637" aria-label="放大照片：牆面寫著已成功轉化 34,707 公斤各類廢棄物">
+          <img loading="lazy" src="img/145637.jpg" alt="展場海報顯示 META Design 團隊已成功轉化 34,707 KG 各類廢棄物">
+        </button>
+        <figcaption><b>34,707 KG 的累積現場</b>：集結與遠雄、台電合作所轉化的廢棄物總重，數字仍在持續往上跳。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="150033" aria-label="放大照片：堆疊工地木模板搭成的基地平台與第一代溝槽彎折高腳椅">
+          <img loading="lazy" src="img/150033.jpg" alt="以木模板層層堆疊的基地平台上放著一張以溝槽彎折工法製作的高腳椅">
+        </button>
+        <figcaption><b>踏上板模做成的基地</b>：腳下是工地灌漿淘汰木板模，上方則是靠「切溝槽彎折」成型的第一代高腳椅。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="145947" aria-label="放大照片：My LAND 桌上建築系列以工地金屬餘料做成的膠帶台">
+          <img loading="lazy" src="img/145947.jpg" alt="桌上陳列兩座以圓筒鋁管與工地金屬餘料改造的膠帶台">
+        </button>
+        <figcaption><b>「My LAND」桌上微建築</b>：工地餘料做成的文具物件，其中六款也在隔壁 Everyday Object 實體店合作販售。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- STOP 02 -->
+  <article class="stop" id="s2">
+    <div class="stop-head">
+      <span class="pill sage">STOP 02</span>
+      <span class="time-tag">15:18–15:40 · 台電退役材料再生計畫</span>
+    </div>
+    <h3>木橫擔的斷面漆色密碼，與走進退役變壓箱「打開台電」</h3>
+    <div class="workbench rev">
+      <figure class="fig">
+        <button data-ph="153013" aria-label="放大照片：依孔洞與漆色分類排列的台電退役木橫擔原件與木料裁切樣本">
+          <img loading="lazy" src="img/153013.jpg" alt="鐵架上擺放整排台電退役木橫擔與裁切木段，清楚可見孔洞與端面紅漆">
+        </button>
+        <figcaption><b>電線桿上的退役木橫擔</b>：上頭原本用來鎖固陶瓷「礙子」的孔洞，在裁切與重組後成了最具辨識度的設計語彙。</figcaption>
+      </figure>
+      <div class="prose">
+        <p>這類企業退役材料再利用的起點，正是 2020 年 META 與<b>台電文創</b>合作的「<b>木橫擔閱讀壁燈</b>」。隨著市區電纜地下化，以及台電定期將木橫擔汰換為金屬製「<b>輕鋼橫擔</b>」，一根滿布礙子孔洞的木橫擔經過全材拆解與裁切，正好能加工成 <b>8 到 12 盞</b>閱讀壁燈。</p>
+        <p>雖然這盞壁燈在官網售價 <b>$3,580</b>，顯然有其特定的設計消費受眾，但站在展牆前從「怎麼裁切第一刀」看起，反而迷人的是隱藏在電力材料管理裡的冷知識——導覽現場指著木頭斷面上的油漆，解開了過去台電區分木料等級的顏色密碼：</p>
+        <div class="color-codes" aria-label="台電木橫擔斷面漆色分類">
+          <div class="swatch"><i style="background:#c43b2b"></i><div><b>紅色・素木</b><span>未經藥水處理的天然木材（以柳安木最多，偶有檜木），也是目前主要收料對象。</span></div></div>
+          <div class="swatch"><i style="background:#d9a426"></i><div><b>黃色・針葉林</b><span>代表較少見、單價較高的針葉林樹種木料。</span></div></div>
+          <div class="swatch"><i style="background:#e5e3dc;border:1px solid #999"></i><div><b>白色・藥水木（禁用）</b><span>曾浸泡防腐藥水的木材；因藥水具毒性，現已全面禁止使用與再製。</span></div></div>
+        </div>
+        <p>為了對抗電力設施給人的距離感，展區中央還擺了一座被開門挖洞的<b>退役變壓箱</b>——邀請觀眾彎腰鑽進電箱裡「<b>從裡看外</b>」，抬頭則是取材自水湳洞<b>十三層遺址</b>意象的打洞鐵板燈；外頭更連著用電線桿鐵條穿過木橫擔孔洞鎖固的長椅，以及<b>電錶玻璃</b>做成的溫潤桌燈。</p>
+      </div>
+    </div>
+    <div class="bento-crossarm">
+      <figure class="fig portrait">
+        <button data-ph="153010" aria-label="放大照片：木橫擔全材拆解流程與木質閱讀壁燈實品">
+          <img loading="lazy" src="img/153010.jpg" alt="直幅展示牆呈現一根木橫擔如何拆解並製作成一盞木質閱讀壁燈">
+        </button>
+        <figcaption><b>一盞燈的出身履歷</b>：每批收料都附有編號與來源紀錄，出貨時跟著壁燈一起送達。</figcaption>
+      </figure>
+      <div class="bento-right">
+        <figure class="fig">
+          <button data-ph="153036" aria-label="放大照片：電錶玻璃製成的燈具與保留木橫擔孔洞與鐵件的長椅">
+            <img loading="lazy" src="img/153036.jpg" alt="木條椅旁擺著一盞圓拱狀電錶玻璃燈，椅背保留了原本鎖固金屬件的鐵條">
+          </button>
+          <figcaption><b>電錶玻璃燈 × 橫擔長椅</b>：把每天路過人家門口一樓的電錶玻璃，轉化為桌面微光。</figcaption>
+        </figure>
+        <figure class="fig">
+          <button data-ph="153115" aria-label="放大照片：可以走進去的藍色退役變壓箱「打開台電」裝置">
+            <img loading="lazy" src="img/153115.jpg" alt="展場內藍色退役變壓箱外殼切出窗口與出入口，觀眾正圍觀內部紀錄">
+          </button>
+          <figcaption><b>走進變壓箱內部</b>：把封閉的電力設備打開一扇門，讓人從裡頭望向外頭。</figcaption>
+        </figure>
+        <figure class="fig" style="grid-column:1/-1">
+          <button data-ph="154416" aria-label="放大照片：變壓箱內的十三層意象打洞鐵板壁燈與電箱門板桌面">
+            <img loading="lazy" src="img/154416.jpg" alt="藍光變壓箱內部展示水湳洞十三層遺址意象的打洞鐵板燈與舊電箱門板">
+          </button>
+          <figcaption><b>電箱裡的十三層剪影</b>：壁燈鐵板來自變壓箱天花板拆下的多孔鐵件，下方桌子則是切開電箱門板再造。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <!-- STOP 03 -->
+  <article class="stop" id="s3">
+    <div class="stop-head">
+      <span class="pill">STOP 03</span>
+      <span class="time-tag">15:40–15:48 · 留給嘉興街＆跨界友人的無用之用</span>
+    </div>
+    <h3>1.7 噸的舊台電印刷廠門柱，與壞掉砂輪機教會的事</h3>
+    <div class="prose">
+      <p>展場後段的「<b>留給嘉興街</b>」是一項還在進行中的公共藝術計畫。六張犁、北醫一帶的嘉興街公辦都更案由<b>國家住都中心</b>主導、<b>全坤建設</b>興建，基地過去有超過一半屬於台電，其實是連台北人都少有人知的「<b>舊台電印刷廠</b>」——全台灣的電費單與台電內部刊物，早年都從這裡印出來。</p>
+      <p>META 勘場時看見一面已被封死的舊員工出入口水泥門柱，索性找吊車把重達 <b>1.7 噸</b>的門柱截斷吊回淡水切開。原本外頭看似普通灰水泥，切開後卻露出距今約 <b>50 年前的「水泥拌卵石」</b>老工法斷面（對比近 30 年改為強度更高的碎石工法）。刻意切開的兩半象徵都更時「人先散了、完工後再聚回來」，未來也將回到嘉興街成為迎接台電人回家的公共藝術。</p>
+    </div>
+    <div class="grid-3">
+      <figure class="fig">
+        <button data-ph="154804" aria-label="放大照片：嘉興街舊台電印刷廠 1.7 噸門柱切開後的卵石混凝土斷面">
+          <img loading="lazy" src="img/154804.jpg" alt="兩塊沉重的 1.7 噸水泥門柱切塊並置，斷面清楚可見早期拌入的圓潤卵石">
+        </button>
+        <figcaption><b>切開 50 年的時間斷面</b>：舊台電印刷廠 1.7 噸門柱切開後，露出早期「水泥拌卵石」的建築記憶。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="154322" aria-label="放大照片：《做工的人》林立青「友洗社創」收集壞掉砂輪機給街友維修">
+          <img loading="lazy" src="img/154322.jpg" alt="木桌上陳列拆解的黃色與金屬故障砂輪機零件與友洗社創說明卡">
+        </button>
+        <figcaption><b>友洗社創的壞砂輪機</b>：《做工的人》作者林立青收集工廠報廢砂輪機，手把手教街友修好、換回自力更生的能力。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="154058" aria-label="放大照片：電影導演展出的 11 件片場道具與觀眾投入心願紙條的玻璃瓶">
+          <img loading="lazy" src="img/154058.jpg" alt="長桌上擺放片場留下的道具與一個裝滿觀眾彩色紙條的大玻璃瓶">
+        </button>
+        <figcaption><b>給下一位有緣人的片場道具</b>：從電影《小美》等片留下來的 11 件道具，觀眾可寫下理由投進玻璃瓶等待結緣。</figcaption>
+      </figure>
+    </div>
+
+    <div class="walk-bridge">
+      <div>
+        <h4>15:35–15:55｜走出松菸，步行十分鐘直達遠雄總部</h4>
+        <p>離開松菸 A6 倉庫廊道，沿著園區林蔭步出忠孝東路一帶，<b>不用過基隆路</b>，大約十分鐘就來到遠雄人壽金融大樓對面的<b>遠雄國際商務中心（遠雄建設總部）</b>——真正好玩的重頭戲，現在才要打開電梯門。</p>
+      </div>
+      <figure class="fig">
+        <button data-ph="154658" aria-label="放大照片：走出松山文創園區椰林廊道前往遠雄建設總部">
+          <img loading="lazy" src="img/154658.jpg" alt="導覽團隊步出松山文創園區古蹟廊道與棕櫚樹間，準備步行前往遠雄總部">
+        </button>
+        <figcaption><b>從展場走往實踐現場</b>：不到十分鐘路程，把展覽故事直接對回建設公司辦公室。</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <!-- PART 2 -->
+  <div class="chapter">
+    <div class="chapter-num">PART 02</div>
+    <div>
+      <small>15:55–16:30 · FARGLORY INTERNATIONAL BUSINESS CENTER 17F</small>
+      <h2>17 樓簡報室破題：為什麼「7%」總是被點名？</h2>
+    </div>
+    <p class="chapter-sub">走進遠雄總部 17 樓會議室，由 <b>FG Next（Farglory Next）</b>主要成員柏廷接棒，坦率聊起這家 50 年老牌建商如何把自家總部定調為 <b>FG Lab</b>。</p>
+  </div>
+
+  <!-- STOP 04 -->
+  <article class="stop" id="s4">
+    <div class="stop-head">
+      <span class="pill">STOP 04</span>
+      <span class="time-tag">15:55–16:30 · 17F 會議室</span>
+    </div>
+    <h3>從「又醜、又貴、又麻煩」到把自家總部當實驗場</h3>
+    <div class="workbench">
+      <div class="prose">
+        <p>2018 年遠雄二代接班後，由<b>趙文嘉副董</b>發起跨部門團隊 <b>FG Next</b>，定調未來十年建築核心為「<b>永續（友善土地）</b>」與「<b>共享（友善生命）</b>」，甚至喊出「成為最友善地球的建設事業」這個讓內部員工笑稱差點發抖的口號（據說原本還差點叫成「最友善宇宙」）。</p>
+        <p>團隊最困惑的從來不是怎麼寫 ESG 報告或拿綠建築標章——那些「請顧問砸錢就能解決」，但員工與住戶根本無感。直到 2019 年在網路上看見 <b>META 與台電合作的木橫擔燈</b>，團隊立刻殺去淡水工作室，隔年帶著 META 走進工地、北部最大營建廢棄物回收場「<b>陽光城市</b>」（團隊回來直呼「三天餘味繞樑」）、基隆爆倉的鷹架防塵網倉庫，以及當時還是工地的<b>臺北大巨蛋</b>。</p>
+        <p>2022 年調研後，他們更發現一個顛覆認知的事實：台灣一年社會廢棄物約 <b>3,000 萬噸</b>，營建業約 <b>200 萬噸（只占約 7%）</b>，卻總在新聞與研討會被點名——原因正是「<b>建材等於大量</b>」。社會期待的不是建商只管自家減廢，而是能主動吞吐其他產業的廢料、把它變成建材，為焚化爐與掩埋場卸下重擔。</p>
+      </div>
+      <figure class="fig">
+        <button data-ph="160720" aria-label="放大照片：遠雄 FG Next 成員於 17 樓會議室簡報工地再生計畫實驗場 FG LAB">
+          <img loading="lazy" src="img/160720.jpg" alt="17 樓會議室投影幕顯示工地再生計畫實驗場 FG LAB，講者正在解說緣起">
+        </button>
+        <figcaption><b>17F 會議室・FG Lab 實驗宣言</b>：光看投影片與標章沒辦法讓人有感，唯有先把自家總部變成實驗場。</figcaption>
+      </figure>
+    </div>
+
+    <div class="matrix" aria-label="遠雄與台灣綠色夥伴的三大突破">
+      <div class="mat-card">
+        <div class="mat-top"><span class="mat-tag">石材再生</span><b>三恩（3N）人造石英石</b></div>
+        <h4>難處理的舊花崗岩也能碎石重壓</h4>
+        <p>裝修舊商辦敲下的花崗岩極硬、台灣少有廠能收。遠雄找上同樣二代接班的三恩，把<b>廢棄花崗岩破碎過篩</b>取代原製程石英砂，壓出 <b>6 塊再生石英石</b>（META 參與美感調配），其中 3 塊直接鋪進總部所有男女公廁。</p>
+      </div>
+      <div class="mat-card g">
+        <div class="mat-top"><span class="mat-tag">塑膠隔間</span><b>信達（台南回收廠）</b></div>
+        <h4>7-11 咖啡杯蓋取代高耗能康貝特板</h4>
+        <p>傳統廁所隔間「搗擺」多用不可燒也不可埋的熱固性<b>康貝特板</b>。團隊上網搜尋「再生、循環經濟」找到台南信達，將 <b>7-11 咖啡杯蓋等 PP 塑膠</b>造粒熱壓，讓公廁 70% 裝修料皆為社會廢棄物轉化。</p>
+      </div>
+      <div class="mat-card">
+        <div class="mat-top"><span class="mat-tag">軟膜熱壓</span><b>小智研發（Miniwiz）</b></div>
+        <h4>銀行紅包袋啟發的「水泥袋板凳」</h4>
+        <p>工地防潮<b>水泥袋</b>內襯塑膠膜，原本不能燒不能埋。受小智研發把銀行過期「兔年／龍年紅包袋」熱壓成桌的啟發，意外發現水泥袋<b>自帶塑膠膜</b>、不用再額外加塑膠粒就能熱壓成型，成了超穩固再生板材。</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- PART 3 -->
+  <div class="chapter">
+    <div class="chapter-num">PART 03</div>
+    <div>
+      <small>16:32–17:37 · FOUR FLOORS OF EVOLUTION (16F → 24F → 11F → 01F)</small>
+      <h2>四個樓層的演化史：從粗獷 1.0 到半開箱 4.0</h2>
+    </div>
+    <p class="chapter-sub">過去一年多來，遠雄內部已悄悄辦了近 50 場、近千人次同業交流。這天一口氣走訪代表 4 個世代的四層樓，直接把試錯過程攤在眼前。</p>
+  </div>
+
+  <div class="elevation">
+    <!-- 16F: 1.0 -->
+    <article class="floor-stop" id="s5" data-floor="16F">
+      <div class="stop-head">
+        <span class="pill ver">1.0 版・2021 起步</span>
+        <span class="time-tag">16:32–16:46 · 16 樓接待大廳與共享工作區</span>
+      </div>
+      <h3>大巨蛋「蛋生」消光鈦板，與故意留著痛感的工業風 1.0</h3>
+      <div class="workbench">
+        <div class="prose">
+          <p>16 樓是遠雄建設最外層的對外接待樓層。一踏出電梯，整面「<b>永續共享牆</b>」由 <b>600 個</b>工地木模板小方塊拼組而成——每個小木塊代表個體、聚成方塊像家庭、再組成整座城市，概念由<b>趙文嘉副董</b>、META <b>鄭遠揚總監</b>與遠雄內裝設計<b>詹英偉協理</b>三人共同定調。</p>
+          <p>牆上還有一個只有現場才知道的秘密材料：當年<b>臺北大巨蛋</b>曾因屋頂反光被周邊投訴光害，遠雄先送遮光簾卻被嫌熱，只好測試各種消光漆，留下這批全球第一顆消光巨蛋（「<b>蛋生</b>」）測試報廢的<b>鈦板</b>。當年 META 在大巨蛋工地撿了一整車廢料，還差點被警衛誤認成偷料或亂倒垃圾！</p>
+          <div class="callout w"><b>拿手機才知道的視覺彩蛋：</b>導覽員突然要大家退後打開手機相機——透過感光元件看過去，原本肉眼只覺得微亮的牆面，竟浮現「從沖繩度假飛返松山機場夜空俯瞰台北盆地」的燈火意象，中間最亮的那道光線正是<b>忠孝東路</b>，遠雄總部就在它與基隆路的交叉口。</div>
+        </div>
+        <figure class="fig wide">
+          <button data-ph="163916" aria-label="放大照片：用手機鏡頭拍攝 16 樓共享牆才清楚浮現的忠孝東路夜空光帶">
+            <img loading="lazy" src="img/163916.jpg" alt="學員拿起手機對著 16 樓模型牆拍攝，螢幕上清晰浮現出忠孝東路夜空光帶">
+          </button>
+          <figcaption><b>手機螢幕裡的台北夜空</b>：肉眼看只覺得是一排發光小燈，打開手機相機才看見清楚的城市軸線。</figcaption>
+        </figure>
+      </div>
+      <div class="grid-3">
+        <figure class="fig wide">
+          <button data-ph="163225" aria-label="放大照片：16 樓電梯廳永續共享牆導覽現場">
+            <img loading="lazy" src="img/163225.jpg" alt="講者站在 16 樓永續共享牆前向來賓說明 600 個工地木塊的意義">
+          </button>
+          <figcaption><b>16F 永續共享牆</b>：把工地邊角料、大巨蛋鈦板與企業標誌疊進來訪者的第一眼。</figcaption>
+        </figure>
+        <figure class="fig wide">
+          <button data-ph="164354" aria-label="放大照片：16 樓粗獷工業風木模板共享長桌與一代高腳椅">
+            <img loading="lazy" src="img/164354.jpg" alt="16 樓共享區擺放由工地木模板打造的長桌與一代板模高腳椅">
+          </button>
+          <figcaption><b>一代「故意的不完美」</b>：板模以柳安木角料切溝槽彎折成椅腳，表面刻意留著孔洞，曾被女同事抱怨容易勾到絲襪。</figcaption>
+        </figure>
+        <figure class="fig wide">
+          <button data-ph="164451" aria-label="放大照片：16 樓窗邊以基隆鷹架防塵網編織的吊燈與窗外台北 101">
+            <img loading="lazy" src="img/164451.jpg" alt="以鷹架防塵網編織而成的金黃吊燈懸在窗前，與遠方的台北 101 同框">
+          </button>
+          <figcaption><b>鷹架網吊燈 × 台北 101</b>：基隆合作鷹架廠爆倉的廢棄防塵網，變成窗邊這盞透光吊燈。</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- 24F: 2.0 -->
+    <article class="floor-stop g" id="s6" data-floor="24F">
+      <div class="stop-head">
+        <span class="pill sage">2.0 版・高階主管樓層</span>
+        <span class="time-tag">16:47–16:59 · 24 樓副總辦公區公共空間</span>
+      </div>
+      <h3>在奢華接待區裡「混搭」精品感：蒸氣曲木與水泥袋板凳</h3>
+      <div class="workbench rev">
+        <figure class="fig wide">
+          <button data-ph="164810" aria-label="放大照片：24 樓高階主管辦公區公共空間，結合再生家具與精品裝潢">
+            <img loading="lazy" src="img/164810.jpg" alt="24 樓公共空間氣氛溫潤沉穩，地毯與曲面天花下擺放著改造後的再生桌椅">
+          </button>
+          <figcaption><b>24F 副總樓層共享區</b>：再生家具不再只能長成粗獷工地風，必須與既有工班、新品家具無縫混搭。</figcaption>
+        </figure>
+        <div class="prose">
+          <p>來到 24 樓副總與高階主管樓層，團隊特地放低音量。這裡的任務是證明「<b>再生品也能擺進高級公設 Lobby</b>」——不能再像 16 樓那麼刺眼，而是要跟遠雄原本的設計工班與新品家具<b>融合混搭</b>。</p>
+          <p>一旁拼接花崗岩碎片做成的「<b>火炬桌</b>」與拼石長桌，是當年請敲除師傅「盡量敲大塊一點」救下來的 20%–30% 石材；許多資深員工經過還會指著桌面認親：「這塊不是以前 22 樓的石頭嗎！」而最讓九成訪客猜錯的，則是角落那幾張看似「軟木塞」的圓柱<b>水泥袋板凳</b>——遠雄甚至告訴 META，只要別家工地也收得到料，這些椅子不用簽排他專利，全部歡迎放在 META 官網公開販售，把綠色供應鏈的餅做大。</p>
+        </div>
+      </div>
+
+      <div class="evo-compare" aria-label="一代與二代板模椅演化對照">
+        <div class="evo-box">
+          <h4>1.0 一代板模椅（16F）</h4>
+          <p>柳安木角料採<b>切溝槽物理彎折</b>，表面保有原始孔洞與粗獷觸感，旁邊還擺了整罐「153 根拔下來的鏽釘」，用來震撼內部員工「公司要玩真的」。</p>
+        </div>
+        <div class="evo-box g">
+          <h4>2.0 二代板模椅（24F）</h4>
+          <p>升級為<b>蒸氣曲木＋榫卯無釘結構</b>；椅墊嵌入小智研發熱壓的黃綠鷹架安全網與藍白帆布，再包覆藝術家以工地生鏽五金<b>鏽染</b>而成的布套，質感完全不輸精品單椅。</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <figure class="fig wide">
+          <button data-ph="164728" aria-label="放大照片：從 24 樓窗外望向夕陽餘暉中的臺北大巨蛋">
+            <img loading="lazy" src="img/164728.jpg" alt="從遠雄總部高樓層窗戶望向夕陽下的臺北大巨蛋與信義區天際線">
+          </button>
+          <figcaption><b>窗外的大巨蛋起點</b>：幾年前這裡還是工地，META 第一批搶撿的消光鈦板就來自那裡。</figcaption>
+        </figure>
+        <figure class="fig wide">
+          <button data-ph="164853" aria-label="放大照片：24 樓二代板模椅特寫，蒸氣曲木搭配黃色與黃綠安全網熱壓椅面">
+            <img loading="lazy" src="img/164853.jpg" alt="弧形蒸氣曲木椅架搭配黃色及黃綠色熱壓安全網椅墊，靠在花崗岩拼貼桌旁">
+          </button>
+          <figcaption><b>二代蒸氣曲木板模椅</b>：把 1.0 的溝槽硬彎改成溫潤曲木，黃色安全網熱壓片就鑲在椅面裡。</figcaption>
+        </figure>
+        <figure class="fig wide">
+          <button data-ph="165455" aria-label="放大照片：24 樓常被誤認為軟木塞的「水泥袋熱壓再生板凳」">
+            <img loading="lazy" src="img/165455.jpg" alt="大家蹲下來觸摸看似軟木塞紋理的水泥袋熱壓再生小圓凳">
+          </button>
+          <figcaption><b>水泥袋變身小圓凳</b>：「遠雄沒賣酒，不會有軟木塞啦！」自帶防潮塑膠膜的水泥袋反而成為熱壓優勢。</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- 11F: 3.0 -->
+    <article class="floor-stop" id="s7" data-floor="11F">
+      <div class="stop-head">
+        <span class="pill ver">3.0 版・融入日常與公廁實測</span>
+        <span class="time-tag">17:00–17:20 · 11 樓展覽牆、實驗公廁與共享吧台</span>
+      </div>
+      <h3>把廢棄物放進日常與廁所：清潔阿姨不抱怨，才算通過測試</h3>
+      <div class="workbench">
+        <div class="prose">
+          <p>因為 2.0 時代只能靠人工「小心敲」救回二至三成石頭，11 樓 3.0 版正式進入<b>材料技術突破</b>。電梯口每半年換展一次的牆面正展出第三檔：除了三恩壓製的 <b>6 塊再生花崗石英石</b>，還有混入工地紅磚、木屑、鏡子、保麗龍的個性桌板，以及摻進<b>回收玻璃會透光</b>的壁燈石材。</p>
+          <p>走進這層樓的空間，宛如走進建案未來的<b>媽媽教室或交誼吧台</b>：2.5 代的板模吧檯椅、用鋁門窗保護藍泡棉＋鏽染布套＋角料做成的 <b>100% 工地回收單椅</b>，自然地與一般燈具和諧共處。角落還站著一盞即將在兩週後送往<b>文化部借展</b>的造型立燈——仔細一看，它的燈架與燈罩竟然是用工地<b>吊筋、帷幕玻璃扣具與被壓壞的水溝蓋</b>重組而成。</p>
+          <div class="callout"><b>為什麼選擇男女公廁當試煉場？</b>遠雄笑稱「你不可能在上廁所的時候對著牆壁說故事，但廁所天天要被洗刷」。扣掉馬桶與小便斗，11 樓公廁高達 <b>70% 材料</b>來自台灣社會廢棄物：地面與洗手台是再生花崗石英石、隔間搗擺是回收 <b>7-11 咖啡杯蓋</b>做的 PP 再生板，就連烘手機上方的循環小燈，都是用這棟樓原本舊廁所拆下的<b>烘手機背板與擦手紙架</b>重塑而成。</div>
+        </div>
+        <figure class="fig wide">
+          <button data-ph="170448" aria-label="放大照片：11 樓再生石英石展覽牆，展示三恩壓製的 6 塊再生石材與透光玻璃磚">
+            <img loading="lazy" src="img/170448.jpg" alt="11 樓白色展覽牆上嵌著六角形再生花崗石英石樣本與發光的回收玻璃再生石材">
+          </button>
+          <figcaption><b>11F 材料進化展牆</b>：左邊是三恩壓製的再生花崗石，右邊混入回收玻璃後竟意外透出暖光。</figcaption>
+        </figure>
+      </div>
+
+      <div class="bento-11f">
+        <div class="stack-11f">
+          <figure class="fig wide">
+            <button data-ph="170910" aria-label="放大照片：11 樓 70% 再生公廁內的再生花崗石洗手台與回收咖啡杯蓋 PP 隔間搗擺">
+              <img loading="lazy" src="img/170910.jpg" alt="公廁內裝設有再生花崗石英石洗手檯面、地面，以及右側再生 PP 隔間搗擺">
+            </button>
+            <figcaption><b>70% 再生材料的公廁現場</b>：洗手台與地板是舊花崗岩碎料再生，右側隔間則是 7-11 咖啡杯蓋做的再生 PP 搗擺。</figcaption>
+          </figure>
+          <figure class="fig wide">
+            <button data-ph="171545" aria-label="放大照片：即將借展文化部的立燈，由吊筋、帷幕玻璃扣具與壓壞水溝蓋組成">
+              <img loading="lazy" src="img/171545.jpg" alt="銀色金屬立燈近照，燈頭由壓彎的工地水溝蓋與帷幕玻璃扣具解構重組">
+            </button>
+            <figcaption><b>兩週後就要去文化部借展的立燈</b>：底座與燈身是吊筋與玻璃扣具，主角則是路上常見的「壓壞水溝蓋」。</figcaption>
+          </figure>
+        </div>
+        <figure class="fig tall916">
+          <button data-ph="170907" aria-label="放大照片：公廁烘手機上方由舊烘手機背板與擦手紙架零件組成的循環小燈">
+            <img loading="lazy" src="img/170907.jpg" alt="公廁再生花崗石牆面上，烘手機正上方裝著一盞由舊金屬零件改製的壁燈">
+          </button>
+          <figcaption><b>舊廁所的零件重生</b>：烘手機上方的小燈，取自這棟樓原本舊公廁拆下的烘手機背板與擦手紙架。</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- 1F: 4.0 -->
+    <article class="floor-stop d" id="s8" data-floor="01F">
+      <div class="stop-head">
+        <span class="pill">4.0 版・尚未完工的半開箱</span>
+        <span class="time-tag">17:27–17:37 · 1 樓大廳改裝現場</span>
+      </div>
+      <h3>不買新石材，把大廳花崗岩直接「翻面」看見 30 年前紅蠟筆</h3>
+      <div class="workbench rev">
+        <figure class="fig">
+          <button data-ph="173714" aria-label="放大照片：1 樓尚未完工的大廳 4.0，兩側是由原大廳深色花崗岩翻面拼出的山水藝術牆">
+            <img loading="lazy" src="img/173714.jpg" alt="挑高 1 樓大廳兩側牆面呈現淺灰翻面花崗岩與木頭拼出的山水意象，下方是剛鋪好的再生石地坪">
+          </button>
+          <figcaption><b>剛撤鷹架不到一週的 4.0 半開箱</b>：還缺部分家具就先讓大家走進來看——門面大廳直接宣告企業轉型的決心。</figcaption>
+        </figure>
+        <div class="prose">
+          <p>壓軸回到 1 樓大廳，外頭其實還有幾件家具還沒進駐、算是一場「被強迫半開箱」的搶先看——前一週這裡還被鷹架封死，導覽這週才剛打開通道。由 META 團隊與本次展覽主視覺設計師<b>小葵／小偉</b>操刀，這一層樓丟出了最徹底也最省資源的永續答案：<b>既然既有的還能用，為什麼要換新的？</b></p>
+          <p>團隊「差點下跪」拜託工班師傅，把這棟 2、30 年老商辦大廳原本的深色亮面花崗岩一片一片完整拆下，<b>直接翻面裝回去</b>，拼出象徵台灣山水的兩側藝術牆。這招其實風險極高——事前誰也不知道翻開背面會長什麼樣子；結果拆開後竟發現每一片背面都留著當年師傅用<b>紅蠟筆寫的施工編號</b>，團隊便局部噴砂洗淨、局部刻意保留，還把 23、24 樓改裝留下的義大利珍貴「<b>奧羅拉石</b>」與回收銅片做成的日月飛鳥嵌進牆裡。</p>
+          <p>腳下大廳地板則用原大廳敲下的暗紅花崗岩碎粒送去三恩壓製重鋪；原有的早期石材拼花工藝也將轉化成小型立體雕塑放回空間。離開前團隊還預告了明年的 <b>5.0 計畫</b>：預計 2025 年 5 月後在 B1 收回租戶空間，打造像「<b>永續共享星巴克</b>」般的開放場域，未來不用預約走進辦公樓層，買杯咖啡就能坐進來體驗。</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <figure class="fig wide">
+          <button data-ph="173600" aria-label="放大照片：1 樓牆面翻面石材與保留原本深色亮面花崗岩及奧羅拉石的對比細節">
+            <img loading="lazy" src="img/173600.jpg" alt="近看 1 樓大廳牆面，淺灰粗糙的翻面石材背面與深色亮面原石並置，隱約可見舊施工印記">
+          </button>
+          <figcaption><b>同一塊石頭的正面與背面</b>：深色是 20 多年前大家熟悉的亮面大廳，淺灰粗糙面則是翻轉過來的新風景。</figcaption>
+        </figure>
+        <figure class="fig wide" style="align-self:center">
+          <div style="background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px 22px">
+            <h4 style="font-size:17.5px;color:var(--accent);margin-bottom:8px">把門面翻轉給所有人看</h4>
+            <p style="margin:0;font-size:15px;line-height:1.75">前三個版本都藏在需要刷卡才能上樓的職場裡；直到這座 4.0 大廳，不論誰推開大門走進來，第一眼踩到與摸到的，就是拆下原址再生的花崗岩。</p>
+          </div>
+        </figure>
+      </div>
+    </article>
+  </div>
+
+  <!-- AFTERWORD -->
+  <section class="afterword" aria-label="走讀後記">
+    <div class="afterword-head">
+      <h2>走讀後記：當「無用之用」從展品走進每天使用的空間</h2>
+      <p>原本只預期聽一場藝文展覽的預約導覽，卻在兩個半小時裡看懂了一場跨產業實驗的甘苦。</p>
+    </div>
+    <div class="af-grid">
+      <article class="af-card">
+        <h3>不只是一盞 $3,580 的設計壁燈</h3>
+        <p>從台電木橫擔壁燈到桌上小物件，老實說，自己並不是這類高單價設計品的目標客群；但從第一刀怎麼切木頭、怎麼辨識漆色看起，讓人真正看見創作者如何把被淘汰的物件重新放回生活裡。</p>
+      </article>
+      <article class="af-card g">
+        <h3>小物負責說故事，建材才能真正減量</h3>
+        <p>單做家具或文創小物消耗不了多少廢料，單做再生建材卻很難對大眾溝通價值。遠雄與 META、三恩、信達把兩條路綁在一起推，才讓「永續」不再只是買來交差的報告書和標章。</p>
+      </article>
+      <article class="af-card g">
+        <h3>願意花心力與金錢在自家「玩真的」</h3>
+        <p>從 16 樓勾破絲襪的 1.0 實驗、24 樓的混搭磨合、11 樓請清潔阿姨把關的 70% 再生公廁，到 1 樓下跪拜託師傅拆石翻面——很難想像背後投入多少溝通與試錯成本，才能讓理念先在員工與訪客心中「有感」。</p>
+      </article>
+      <article class="af-card">
+        <h3>期待從辦公樓走進商辦與住宅日常</h3>
+        <p>既然 1 樓大廳都已率先翻面、B1 也醞釀著明年開放的永續共享空間，期待這場始於工地廢料的「無用之用」，有天真能從自家實驗場走進更多商辦與普通人的日常住宅。</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>2024/11/29 參加「一起走吧！工地計劃｜META Motion 2024 無用之用：＿＿」聯合導覽（META Design 主辦・遠雄建設 FG Next 協辦導覽）的走讀筆記</span>
+  <a href="#top">回到頁首 ↑</a>
+</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../wanhuafilm/index.html"><small>‹ 較新的一場・2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a><a class="nx" href="../backto1920/index.html"><small>較早的一場・2024/11/29 ›</small>回到 1920：臺北最華美宮殿 × 醫學知識殿堂</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar">
+    <button id="lbp" aria-label="上一張">‹</button>
+    <span id="lbc"></span>
+    <button id="lbn" aria-label="下一張">›</button>
+    <button id="lbx" aria-label="關閉">✕</button>
+  </div>
+</div>
+
+<script>
+{
+  const btns=[...document.querySelectorAll('button[data-ph]')];
+  const items=btns.map((b,idx)=>{
+    const img=b.querySelector('img');
+    const fig=b.closest('figure');
+    const cap=fig?fig.querySelector('figcaption').textContent:img.alt;
+    b.dataset.idx=idx;
+    return {src:img.getAttribute('src'),alt:img.alt,cap};
+  });
+  const lb=document.getElementById('lb'),im=document.getElementById('lbi'),cp=document.getElementById('lbc');
+  let cur=0;
+  const show=i=>{
+    cur=(i+items.length)%items.length;
+    const x=items[cur];
+    im.src=x.src;
+    im.alt=x.alt;
+    cp.textContent=`${x.cap}　（${cur+1}/${items.length}）`;
+  };
+  document.addEventListener('click',e=>{
+    const b=e.target.closest('button[data-ph]');
+    if(b){show(+b.dataset.idx);lb.classList.add('on');document.getElementById('lbx').focus();}
+  });
+  document.getElementById('lbp').onclick=()=>show(cur-1);
+  document.getElementById('lbn').onclick=()=>show(cur+1);
+  const close=()=>lb.classList.remove('on');
+  document.getElementById('lbx').onclick=close;
+  lb.addEventListener('click',e=>{if(e.target===lb)close();});
+  document.addEventListener('keydown',e=>{
+    if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')show(cur-1);
+    if(e.key==='ArrowRight')show(cur+1);
+  });
+}
+</script>
+</body>
+</html>
