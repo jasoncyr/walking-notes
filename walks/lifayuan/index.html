@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>議場未開的那一天：走讀立法院與臺灣公路原點</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 週二上午跟著第 325 場走讀走進立法院，碰上開議前夕議場封閉檢修，意外聽成一場 70 分鐘國會解剖課的現場筆記
+   IDEA: 國會紅磚誌 × 議場平面解剖：用「百年校舍時間軸＋進不去議場的手繪結構圖」先鋪底，再沿時間脊柱走完七站
+   PICTURE: 雙欄框景封面（1919 紅磚女學校與 1960 白色議場同框）＋七站不重複的馬賽克圖組
+   COLOUR and TYPE: 公報紙白 #f6f3ec、紅樓赤磚 #a43829（關鍵詞主色）、志工背心湖水青 #1d666e、銜牌暖金 #9a6c1e；Noto Serif TC + Noto Sans TC
+   LAYOUT: 分欄框景封面 → 活動資訊帶 → 百年年表與議場解剖雙拼卡 → 本場限定四格 → 時間脊柱七站圖文誌 → 散步後記 */
+:root{
+  color-scheme:light dark;
+  --bg:light-dark(#f6f3ec,#121517);
+  --card:light-dark(#fffdf8,#1a1e21);
+  --ink:light-dark(#1d2226,#eae6de);
+  --mute:light-dark(#5e6469,#9ba2a8);
+  --brick:light-dark(#a43829,#e5826f);
+  --teal:light-dark(#1d666e,#79c4cc);
+  --gold:light-dark(#9a6c1e,#dfb45f);
+  --tint:light-dark(#e7f0f1,#1b282b);
+  --warm:light-dark(#f1eae0,#221d18);
+  --line:light-dark(#ded7ca,#2c3135);
+}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:18px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.82 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,h4{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+a{color:var(--brick)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--brick);outline-offset:2px}
+b,strong{color:var(--brick);font-weight:700}
+
+/* Split Framed Hero */
+.hero{background:#152429;color:#f5f2eb;padding:clamp(28px,4.5vw,52px) max(4vw,18px) clamp(28px,4vw,46px);border-bottom:4px solid var(--brick)}
+.hero-in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(22px,3.5vw,42px);align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.12em;font-weight:700;color:#f2b6a6;background:rgba(164,56,41,.28);border:1px solid rgba(229,130,111,.4);padding:4px 12px;border-radius:999px;margin-bottom:14px}
+.hero h1{font-size:clamp(30px,4.8vw,48px);line-height:1.15;font-weight:800;color:#fff}
+.hero h1 em{font-style:normal;display:block;font-size:clamp(20px,2.8vw,29px);font-weight:600;color:#9fd8ca;margin-top:8px}
+.hero-sub{margin:16px 0 0;font-size:16px;line-height:1.75;color:rgba(245,242,235,.9);max-width:56ch}
+.hero-stats{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);font-size:14px;color:#d6e0e2}
+.hero-stats span b{color:#dfb45f;font-size:18px;font-family:"Noto Serif TC",serif;margin-right:4px}
+.hero-frame{position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 40px rgba(0,0,0,.38);background:#0d1619}
+.hero-frame img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.hero-cap{padding:10px 14px;font-size:13px;color:#d8e1e2;background:rgba(13,22,25,.92);display:flex;justify-content:space-between;gap:10px;align-items:center}
+.hero-cap b{color:#f2b6a6}
+
+/* Meta Ribbon */
+.meta-bar{background:var(--card);border-bottom:1px solid var(--line)}
+.meta-in{max-width:1100px;margin:0 auto;padding:18px max(4vw,18px);display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px 24px;font-size:14px;line-height:1.6}
+.meta-item small{display:block;font-size:11.5px;letter-spacing:.08em;font-weight:700;color:var(--teal);margin-bottom:2px}
+.meta-item b{color:var(--ink)}
+
+/* Wrap */
+.wrap{max-width:1100px;margin:0 auto;padding:0 max(4vw,18px)}
+
+/* Dual Architectural & Chamber Deck */
+.deck{display:grid;grid-template-columns:.92fr 1.08fr;gap:24px;margin:34px 0 28px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 22px 20px;box-shadow:0 4px 16px rgba(0,0,0,.03)}
+.panel-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding-bottom:12px;margin-bottom:16px;border-bottom:1px dashed var(--line)}
+.panel-head h2{font-size:20px}
+.panel-head span{font-size:12px;letter-spacing:.1em;font-weight:700;color:var(--teal)}
+
+/* Timeline List */
+.chrono{list-style:none;margin:0;padding:0;border-left:2px solid var(--line);margin-left:6px;display:grid;gap:12px}
+.chrono li{position:relative;padding-left:18px;font-size:14.5px;line-height:1.6}
+.chrono li::before{content:"";position:absolute;left:-6px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--brick);border:2px solid var(--card)}
+.chrono li.alt::before{background:var(--teal)}
+.chrono time{font-family:"Noto Serif TC",serif;font-weight:800;color:var(--brick);margin-right:6px}
+.chrono li.alt time{color:var(--teal)}
+
+/* Chamber Schematic */
+.chamber{display:grid;gap:9px;font-size:13.5px}
+.ch-zone{border:1px solid var(--line);border-radius:8px;padding:9px 12px;background:var(--bg)}
+.ch-zone.gallery{background:var(--tint);border-color:color-mix(in srgb,var(--teal) 35%,var(--line));text-align:center}
+.ch-zone.dais{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:8px;text-align:center;background:var(--warm);border-color:color-mix(in srgb,var(--gold) 45%,var(--line))}
+.ch-box{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:6px 8px}
+.ch-box small{display:block;font-size:11.5px;color:var(--mute)}
+.ch-podiums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
+.ch-pod{background:var(--card);border:1px solid var(--brick);border-radius:8px;padding:7px 6px}
+.ch-pod.mid{border-color:var(--gold);background:var(--warm)}
+.ch-pod b{display:block;font-size:13px}
+.ch-pod small{display:block;font-size:11.5px;color:var(--mute);line-height:1.35;margin-top:2px}
+.ch-floor{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:stretch}
+.ch-clerks{writing-mode:vertical-rl;background:var(--tint);border:1px dashed var(--teal);border-radius:6px;padding:6px 5px;font-size:12px;font-weight:700;color:var(--teal);text-align:center}
+.ch-seats{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;text-align:center;line-height:1.55}
+.ch-seats .arc{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:6px}
+.ch-seats .arc i{font-style:normal;font-size:12px;padding:2px 9px;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
+
+/* Unique Highlights Bento */
+.unique-sec{margin:10px 0 28px}
+.sec-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px;margin-bottom:14px}
+.sec-bar h2{font-size:clamp(22px,3vw,28px)}
+.sec-bar p{margin:0;color:var(--mute);font-size:14.5px}
+.bento{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
+.bento-col{display:grid;gap:14px}
+.u-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;border-left:4px solid var(--brick);display:flex;flex-direction:column;gap:5px}
+.u-card.t{border-left-color:var(--teal)}
+.u-card.g{border-left-color:var(--gold)}
+.u-card .u-kicker{font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--brick)}
+.u-card.t .u-kicker{color:var(--teal)}
+.u-card.g .u-kicker{color:var(--gold)}
+.u-card h3{font-size:17.5px;line-height:1.35}
+.u-card p{margin:0;font-size:14.5px;color:var(--mute);line-height:1.65}
+
+/* Station Jump Nav */
+.jump{position:sticky;top:8px;z-index:5;margin:16px 0 26px;padding:10px 14px;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.jump-in{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.jump-label{font-size:12.5px;font-weight:700;color:var(--mute);margin-right:4px}
+.jump a{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);text-decoration:none;font-size:13.5px;min-height:34px;transition:border-color .15s,background .15s}
+.jump a:hover{border-color:var(--brick);background:var(--warm)}
+.jump a span{color:var(--brick);font-weight:700}
+
+/* Station Timeline Spine */
+.route{position:relative}
+.station{display:grid;grid-template-columns:126px minmax(0,1fr);gap:0 28px;padding:34px 0;border-top:1px solid var(--line)}
+.station:first-child{border-top:none;padding-top:12px}
+.rail{position:relative;padding-top:2px}
+.rail-badge{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:var(--brick);color:#fff;font:800 18px "Noto Serif TC",serif;box-shadow:0 4px 12px rgba(164,56,41,.22)}
+.station.t .rail-badge{background:var(--teal);box-shadow:0 4px 12px rgba(29,102,110,.22)}
+.rail-time{display:block;font-family:"Noto Serif TC",serif;font-weight:800;font-size:17px;color:var(--ink);margin-top:10px}
+.rail-loc{display:block;font-size:13px;line-height:1.5;color:var(--mute);margin-top:3px}
+.rail-pill{display:inline-block;margin-top:8px;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--warm);color:var(--brick);border:1px solid color-mix(in srgb,var(--brick) 25%,var(--line))}
+.station.t .rail-pill{background:var(--tint);color:var(--teal);border-color:color-mix(in srgb,var(--teal) 25%,var(--line))}
+
+.s-body h3{font-size:clamp(22px,2.8vw,28px);line-height:1.3;margin-bottom:14px}
+.s-body p{margin:.7em 0;font-size:16.5px}
+.s-body ul{margin:12px 0;padding-left:1.25em}
+.s-body li{margin:.42em 0}
+.s-body li::marker{color:var(--brick)}
+
+/* Callout Boxes */
+.callout{margin:16px 0;padding:13px 16px;border-radius:10px;background:var(--tint);border-left:4px solid var(--teal);font-size:15px;line-height:1.72}
+.callout.warm{background:var(--warm);border-left-color:var(--brick)}
+.callout.gold{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold)}
+.callout .c-title{display:block;font-family:"Noto Serif TC",serif;font-size:15.5px;font-weight:800;color:var(--teal);margin-bottom:4px}
+.callout.warm .c-title{color:var(--brick)}
+.callout.gold .c-title{color:var(--gold)}
+
+/* Creative Photo Mosaics (varied per station) */
+.mosaic{margin-top:18px;display:grid;gap:14px}
+.m-lead{grid-template-columns:repeat(3,minmax(0,1fr))}
+.m-lead .fig:first-child{grid-column:1/-1}
+.m-lead .fig:first-child img{aspect-ratio:16/9}
+.m-duo{grid-template-columns:repeat(2,minmax(0,1fr))}
+.m-trio{grid-template-columns:repeat(3,minmax(0,1fr))}
+.m-asym{grid-template-columns:1.35fr .85fr;align-items:start}
+.m-asym .fig-tall img{aspect-ratio:3/4}
+.m-feat-pair{grid-template-columns:1.15fr .85fr}
+.m-feat-pair .stack{display:grid;gap:14px}
+
+.fig{margin:0}
+.fig button{all:unset;cursor:pointer;display:block;width:100%;border-radius:10px;overflow:hidden;background:var(--line);border:1px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.06)}
+.fig img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;transition:transform .35s ease}
+.fig button:hover img{transform:scale(1.03)}
+.fig figcaption{margin-top:7px;font-size:13.5px;line-height:1.55;color:var(--mute)}
+.fig figcaption b{color:var(--ink)}
+
+/* Afterword */
+.afterword{margin:32px 0 24px;padding:26px;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:14px}
+.afterword h2{font-size:clamp(22px,3vw,27px);margin-bottom:6px}
+.afterword > p{margin:0 0 18px;color:var(--mute);font-size:15px}
+.af-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.af-card{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:16px}
+.af-card h3{font-size:16.5px;color:var(--teal);margin-bottom:6px}
+.af-card p{margin:0;font-size:14.5px;line-height:1.7}
+
+footer{max-width:1100px;margin:10px auto 12px;padding:16px max(4vw,18px) 10px;border-top:1px solid var(--line);color:var(--mute);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 18px}
+
+/* Lightbox */
+#lb{position:fixed;inset:0;z-index:40;background:rgba(10,12,15,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:16px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:12px;align-items:center;color:#eee;margin-top:12px;font-size:15px;max-width:900px;text-align:center;flex-wrap:wrap;justify-content:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer;flex:none}
+#lb button:hover{background:#333}
+
+@media(max-width:900px){
+  .hero-in,.deck,.bento,.af-grid{grid-template-columns:1fr}
+  .m-asym,.m-feat-pair{grid-template-columns:1fr}
+  .m-trio,.m-lead{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .m-lead .fig:first-child{grid-column:1/-1}
+}
+@media(max-width:680px){
+  .station{grid-template-columns:1fr;gap:14px}
+  .rail{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+  .rail-time{margin-top:0}
+  .rail-loc{margin-top:0;flex:1 1 100%}
+  .rail-pill{margin-top:0}
+  .jump{position:static}
+  .m-duo,.m-trio,.m-lead{grid-template-columns:1fr}
+  .m-lead .fig:first-child img{aspect-ratio:4/3}
+  .ch-zone.dais,.ch-podiums{grid-template-columns:1fr}
+  .ch-floor{grid-template-columns:1fr}
+  .ch-clerks{writing-mode:horizontal-tb}
+}
+@media(prefers-reduced-motion:reduce){
+  .fig img{transition:none}
+  .fig button:hover img{transform:none}
+}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・84 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../haishan/index.html"><small>2026/10/03</small>2026 大海山走路節先遣踏查：從枋橋社後到浮洲的水陸現場</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../zhongyuan/index.html"><small>2026/09/27</small>神在其中，味蕾交會：中原文創園區《匯流城市・文化共生》走讀</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li><a href="../lifayuan/index.html" aria-current="page"><small>2026/09/01</small>議場未開的那一天：走讀立法院與臺灣公路原點</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../dadaotea/index.html"><small>2026/01/25</small>茶香與紅磚的時光漫步：淡水河流域大稻埕走讀</a></li><li><a href="../sifang/index.html"><small>2026/01/17</small>天水路上的時代治癒所：四方醫院現地導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../tileglass/index.html"><small>2025/11/22</small>土火與微光的垂直串門：爿爿花手工瓷磚 × 真真鑲嵌玻璃研究所</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../huozi/index.html"><small>2025/10/25</small>鐵道與活版印刷的百年物語</a></li><li><a href="../fuyou1025/index.html"><small>2025/10/25</small>孚佑百年・大稻埕文化走讀史蹟導覽</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../metamotion/index.html"><small>2024/11/29</small>無用之用：從松菸展場走進遠雄工地再生現場</a></li><li><a href="../backto1920/index.html"><small>2024/11/29</small>回到 1920：臺北最華美宮殿 × 醫學知識殿堂</a></li><li><a href="../bethany/index.html"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../haishan/index.html"><small>2026/10/03</small>2026 大海山走路節先遣踏查：從枋橋社後到浮洲的水陸現場</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../zhongyuan/index.html"><small>2026/09/27</small>神在其中，味蕾交會：中原文創園區《匯流城市・文化共生》走讀</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li><a href="../lifayuan/index.html" aria-current="page"><small>2026/09/01</small>議場未開的那一天：走讀立法院與臺灣公路原點</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../dadaotea/index.html"><small>2026/01/25</small>茶香與紅磚的時光漫步：淡水河流域大稻埕走讀</a></li><li><a href="../sifang/index.html"><small>2026/01/17</small>天水路上的時代治癒所：四方醫院現地導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../tileglass/index.html"><small>2025/11/22</small>土火與微光的垂直串門：爿爿花手工瓷磚 × 真真鑲嵌玻璃研究所</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../huozi/index.html"><small>2025/10/25</small>鐵道與活版印刷的百年物語</a></li><li><a href="../fuyou1025/index.html"><small>2025/10/25</small>孚佑百年・大稻埕文化走讀史蹟導覽</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../metamotion/index.html"><small>2024/11/29</small>無用之用：從松菸展場走進遠雄工地再生現場</a></li><li><a href="../backto1920/index.html"><small>2024/11/29</small>回到 1920：臺北最華美宮殿 × 醫學知識殿堂</a></li><li><a href="../bethany/index.html"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></details><span>2026/09/01</span></div>
+
+<header class="hero" id="top">
+  <div class="hero-in">
+    <div>
+      <span class="hero-tag">2026.09.01 週二上午 · 陳子瑜第 325 場走讀</span>
+      <h1>議場未開的那一天<em>走讀立法院與臺灣公路原點</em></h1>
+      <p class="hero-sub">原本要走進立法院議場坐一回立委席次，卻碰上開議前夕議場封閉檢修。沒想到這個「進不去」的週二早晨，反倒換來資深志工在樹蔭與簡報室裡整整兩小時的深度拆解——從 1919 年紅磚女學校、防空保護色對流孔、四年才鋪一次的二月一日紅地毯，一路走到監察院前五條省道交會的臺灣公路原點。</p>
+      <div class="hero-stats">
+        <span><b>7</b>個現場站點</span>
+        <span><b>25</b>張精選紀實</span>
+        <span><b>113</b>席國會解剖</span>
+        <span><b>5</b>條省道 0 公里起點</span>
+      </div>
+    </div>
+    <figure class="hero-frame">
+      <img src="img/101749.jpg" alt="1919 年臺北第二高等女學校紅磚校舍與 1960 年白色議場並肩而立">
+      <figcaption class="hero-cap"><b>百年校舍 × 國會殿堂</b><span>紅磚女校與白色現代主義議場同框</span></figcaption>
+    </figure>
+  </div>
+</header>
+
+<div class="meta-bar">
+  <div class="meta-in">
+    <div class="meta-item"><small>日期與時段</small><b>2026 年 9 月 1 日（週二）上午</b><br>9:40 集合 → 10:00–12:00 導覽散步</div>
+    <div class="meta-item"><small>主辦與協力</small><b>陳子瑜主辦（第 325 場走讀・40 人）</b><br>立委陳培瑜辦公室助理協助・立法院志工公益導覽</div>
+    <div class="meta-item"><small>集合與解散</small><b>捷運台大醫院站 2 號出口集合</b><br>監察院前「五條公路交叉點」解散（近台北車站、善導寺站）</div>
+    <div class="meta-item"><small>當日實況變奏</small><b>議場適逢閉館整備未開放</b><br>改以院區建築史＋簡報室圖卡解剖＋合作社巡禮</div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="deck" aria-label="院區時間軸與議場空間解剖">
+    <article class="panel">
+      <div class="panel-head">
+        <h2>百年院區疊層年表</h2>
+        <span>1919 → 2026</span>
+      </div>
+      <ul class="chrono">
+        <li><time>1895</time>日本時代整建「<b>三線道路</b>」（今中山南路一帶），將昔日臺北城牆東側荒地改為林蔭大道。</li>
+        <li><time>1919</time>「<b>臺北州立臺北第二高等女學校</b>」創校，興建紅磚 L 型本館；早期僅收日籍生，1926 年後才較多臺籍女學生入學。</li>
+        <li class="alt"><time>1935–37</time>總督府營繕課長<b>井手薰</b>風格轉向現代主義，擴建北側鋼筋混凝土三層校舍，牆面曾塗<b>國防保護色</b>防空襲，並設熱對流氣孔。</li>
+        <li class="alt"><time>1945</time>二戰末期遭美軍空襲，校區東南側舊<b>游泳池</b>（今康園餐廳一帶）曾留空襲彈痕，戰後校地改作省府農林廳與水利局。</li>
+        <li><time>1950</time>立法院隨中央政府遷臺，最初十年暫借西門町「<b>臺北市中山堂</b>」開會。</li>
+        <li><time>1960</time>立法院正式遷入現址並興建<b>議場</b>，將原女校校區與禮堂徹底轉為國會空間。</li>
+        <li class="alt"><time>1988</time>520 抗議衝突中，大門上由於右任題字的「<b>立法院</b>」銜牌曾遭扯落，連夜尋回後改以文物典藏於霧峰議政博物館。</li>
+        <li><time>2017</time>院區指定為<b>臺北市市定古蹟</b>與歷史建築；<b>2026/09/01</b> 這天正好在開議前夕整修，造就本場特別版室內拆解課。</li>
+      </ul>
+    </article>
+
+    <article class="panel">
+      <div class="panel-head">
+        <h2>「進不去議場」的議場解剖圖</h2>
+        <span>2008 年後 113 席制</span>
+      </div>
+      <div class="chamber" aria-label="立法院議場平面概念示意">
+        <div class="ch-zone gallery">
+          <b>2F 民眾旁聽席（南北各 63 席＝126 席）＋ 中央記者席</b><br>
+          <span style="color:var(--mute);font-size:12.5px">早年曾發生往樓下丟寶特瓶事件，全面加裝透明防彈護欄</span>
+        </div>
+        <div class="ch-zone dais">
+          <div class="ch-box"><b>秘書長</b><small>主席台左側高座</small></div>
+          <div class="ch-box"><b>主席台（立法院長）</b><small>保持中立・僅平手時投關鍵票</small></div>
+          <div class="ch-box"><b>副秘書長／議事處</b><small>紀錄、計票、遞送敲槌</small></div>
+        </div>
+        <div class="ch-podiums">
+          <div class="ch-pod"><b>質詢委員台</b><small>左側・立委發問</small></div>
+          <div class="ch-pod mid"><b>中間發言台</b><small>週五 9–10 點國是論壇<br>院長與財主首長報告</small></div>
+          <div class="ch-pod"><b>官員備詢台</b><small>右側・2008 年改制<br>全球少見「即問即答」三台</small></div>
+        </div>
+        <div class="ch-floor">
+          <div class="ch-clerks">左側 3 名議事幹事</div>
+          <div class="ch-seats">
+            <b>1F 扇形階梯議席（挑高 13 公尺・共兩百餘座）</b><br>
+            <span style="color:var(--mute);font-size:12.5px">第一排為三黨團幹部席｜第二排起領取專屬編號「表決卡」簽收插卡，抽籤一坐 4 年<br>※ 副院長平時也坐台下；達 5% 政黨票門檻與席次才可組黨團</span>
+            <div class="arc">
+              <i>執政黨團區域</i>
+              <i>第二排中段：民眾黨團</i>
+              <i>在野黨團區域</i>
+            </div>
+          </div>
+          <div class="ch-clerks">右側 3 名議事幹事</div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="unique-sec" aria-label="本場限定亮點">
+    <div class="sec-bar">
+      <h2>要來這一場才看得到、聽得到的細節</h2>
+      <p>開議前夕的閉館巧合、只存於這一天早晨的畫面，與院內人才熟知的生存暗號。</p>
+    </div>
+    <div class="bento">
+      <div class="bento-col">
+        <article class="u-card">
+          <span class="u-kicker">UNEXPECTED UPGRADE · 意外升級</span>
+          <h3>因議場封閉檢修，換來 70 分鐘毫無冷場的簡報室深潛</h3>
+          <p>若議場照常開放，多半走馬看花拍照半小時就結束；這天志工老師乾脆掏出自製<b>藍色資料夾</b>與手摺<b>紙財神</b>，把四年才鋪一次的「二月一日紅地毯」、6 名議事幹事如何替助理傳紙條、以及 113 席為什麼一定要奇數，一路講到大家捨不得下課。</p>
+        </article>
+        <article class="u-card t">
+          <span class="u-kicker">EPHEMERAL · 僅此一天的 9/1 現場</span>
+          <h3>電視牆、廊道書畫展與群賢樓電子看板的時間切片</h3>
+          <p>玄關歡迎電視還停在稍早團體「<b>臺北市北投區一德里</b>」；往合作社走廊正好展出「<b>蔡玉雲書畫展：寄意和穆</b>」；群賢樓電子看板閃著 9 月 1 日當天的實時記者會與開標排程；走出大門時，對面監察院斜對角正架著高聳鋼構施工吊車。</p>
+        </article>
+      </div>
+      <div class="bento-col">
+        <article class="u-card g">
+          <span class="u-kicker">FIRST &amp; ONLY · 第一與唯一</span>
+          <h3>華人文化圈唯一的民主國會 × 全球少見的三座質詢台</h3>
+          <p>立法院院區是華人世界<b>第一個也是唯一</b>的民主國會所在，更是全臺罕見整座登錄文資的議場；為了落實 2008 年後的「<b>即問即答</b>」，硬是在原本單一發言台左右各增一座，變成美、英、日國會都看不到的「三台並立」。</p>
+        </article>
+        <article class="u-card">
+          <span class="u-kicker">INSIDER CODE · 院內生活暗號</span>
+          <h3>80 元康園便當通關時段、只收現金的合作社與公路 0 公里</h3>
+          <p>中午 11:30 或下午 4–5 點從側門向駐衛警說「來買康園便當或用餐」就能進院；員工合作社賣著外頭少見的平價<b>佛跳牆</b>與<b>豆干</b>且只收現金；而散場站的監察院前人行道，正是<b>五條省道 0 公里交叉點</b>——志工叮嚀「千萬別站到馬路中間」！</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <nav class="jump" aria-label="站點快速跳轉">
+    <div class="jump-in">
+      <span class="jump-label">路線索引</span>
+      <a href="#s1"><span>01</span>台大醫院站到大門</a>
+      <a href="#s2"><span>02</span>紅樓女學校與保護色</a>
+      <a href="#s3"><span>03</span>議場前與藍資料夾</a>
+      <a href="#s4"><span>04</span>康園餐廳與最高大樓</a>
+      <a href="#s5"><span>05</span>簡報室國會解剖課</a>
+      <a href="#s6"><span>06</span>合作社與書畫長廊</a>
+      <a href="#s7"><span>07</span>五條公路原點解散</a>
+    </div>
+  </nav>
+
+  <div class="route" id="stops">
+
+    <!-- STOP 1 -->
+    <section class="station" id="s1">
+      <div class="rail">
+        <span class="rail-badge">01</span>
+        <time class="rail-time">09:40–09:58</time>
+        <span class="rail-loc">台大醫院站 2 號出口 → 立法院中山南路大門</span>
+        <span class="rail-pill">銜牌軼事</span>
+      </div>
+      <div class="s-body">
+        <h3>踩著「三線道路」的歷史線，走進于右任題字的立法院大門</h3>
+        <p>上午 9:40 在<b>捷運台大醫院站 2 號出口</b>會合後，40 位夥伴沿著臺大醫院紅磚院牆與常德街、中山南路步行北上，途中還經過正搭起鷹架整修的歷史建築，約 9:51 踏進<b>中山南路 1 號</b>立法院大門。</p>
+        <p>這條筆直寬闊的<b>中山南路</b>，前身正是 1895 年後日本政府拆除臺北府城東城牆改建的「<b>三線道路</b>」——當年總督府來臺後在城東荒地陸續建起臺大醫院、總督府與女校，成為現代臺北行政中樞的起點。門楣上金光閃閃的「<b>立法院</b>」三個大字，出於曾任上海大學首任校長的一代草聖<b>于右任</b>之手。</p>
+        <div class="callout warm">
+          <span class="c-title">只有門前才聽得到的 1988 年銜牌軼事</span>
+          志工老師指著門楣問大家：「這三個字在 1988 年（民國 77 年）抗議衝突時曾被扯下來過，知道當時去哪了嗎？」原來當時群眾抗議美農產品進口，衝突間將牌匾拉落，工作人員連夜從地下坑道搶救尋回，日後原件便送往臺中霧峰的<b>立法院議政博物館</b>典藏展示。而今天進門玄關時，紀念品中心旁的歡迎螢幕還恰好停在稍早「臺北市北投區一德里」的字樣，讓這場上午多了幾分真實的臨場感。
+        </div>
+        <div class="mosaic m-lead">
+          <figure class="fig">
+            <button data-ph="095140" aria-label="放大照片：隊伍踏入中山南路 1 號立法院大門">
+              <img loading="lazy" src="img/095140.jpg" alt="參加者撐傘步行進入中山南路立法院大門門廊">
+            </button>
+            <figcaption><b>抵達中山南路 1 號</b>：門楣上懸掛著「立法院」三字，週二上午的走讀隊伍依序通過門廊。</figcaption>
+          </figure>
+          <figure class="fig">
+            <button data-ph="094139" aria-label="放大照片：從台大醫院站 2 號出口沿紅磚牆出發">
+              <img loading="lazy" src="img/094139.jpg" alt="早上的隊伍沿臺大醫院紅磚牆與椰林樹蔭前行">
+            </button>
+            <figcaption><b>09:41 準時出發</b>：沿臺大醫院紅磚院牆邊走向中山南路，兩側同屬日治時期三線道路街廓。</figcaption>
+          </figure>
+          <figure class="fig">
+            <button data-ph="095644" aria-label="放大照片：立法院大門玄關、木質信箱與歡迎螢幕">
+              <img loading="lazy" src="img/095644.jpg" alt="立法院大門玄關處的木質信箱櫃與紀念品中心入口，電視顯示歡迎北投區一德里">
+            </button>
+            <figcaption><b>玄關裡的時間差</b>：大門內側是紀念品中心與委員信箱櫃，電視牆還留著稍早參訪團體的歡迎畫面。</figcaption>
+          </figure>
+          <figure class="fig">
+            <button data-ph="100154" aria-label="放大照片：立法院主院區觸覺平面配置圖">
+              <img loading="lazy" src="img/100154.jpg" alt="玄關內的立法院主院區觸覺平面配置圖，標示紅樓、群賢樓、康園、合作社與議場">
+            </button>
+            <figcaption><b>全院區地圖開箱</b>：主院區比想像中緊湊——兩片花園盡頭是議場，右側緊鄰紅樓、群賢樓、康園與合作社。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- STOP 2 -->
+    <section class="station t" id="s2">
+      <div class="rail">
+        <span class="rail-badge">02</span>
+        <time class="rail-time">10:02–10:15</time>
+        <span class="rail-loc">紅樓前廊與中央庭園</span>
+        <span class="rail-pill">防空保護色</span>
+      </div>
+      <div class="s-body">
+        <h3>1919 紅磚女學校 × 1935 現代主義：在牆面上找空襲「保護色」與自然冷氣</h3>
+        <p>穿過玄關望向庭院，眼前的紅磚建築在 1960 年以前其實是「<b>臺北州立臺北第二高等女學校</b>」（簡稱北二高女）。早年這所學校只收日籍女學生，直到 1926 年前後才逐漸開放較多臺灣本地優秀女孩就讀；戰後學校裁撤，部分師生併入北一女中（所以老校史與部分獎盃反而在北一女找得到），校地則先撥給臺灣省政府農林廳、水利局使用，1960 年才正式成為立法院。</p>
+        <ul>
+          <li><b>兩代校舍的建築分水嶺</b>：1919 年落成的紅磚 L 型本館仍帶有紅磚白飾帶的古典語彙；到了 1935–1937 年擴建時，受 1923 年關東大地震與建築師<b>井手薰</b>（亦為臺北市中山堂設計者）影響，改採<b>鋼筋混凝土</b>與洗石子垂直線條的「<b>現代主義</b>」，拿掉了巴洛克式的繁複圓頂雕花。</li>
+          <li><b>戰爭留下的「國防保護色」</b>：別看今天紅磚洗得鮮明，1937 年擴建與戰時為了躲避盟軍空襲偵察，整片外牆曾被塗上暗沉醜陋的<b>國防保護色</b>，從高空俯瞰幾乎與泥地同色，這才讓主樓在二戰轟炸中奇蹟倖存。</li>
+          <li><b>1937 年的無電力自然對流</b>：走近外牆仔細看，每面牆上方與下方都各開了一排小氣窗——利用「熱空氣上升、冷空氣下沉」的<b>熱對流原理</b>，替沒有冷氣的教室自然換氣降溫，連變電箱外殼也貼心偽裝成紅磚窗景。</li>
+          <li><b>院區裡的「鎮院之寶」</b>：庭園一共種了 <b>151 棵、18 種</b>植栽，中軸兩側最名貴的是耐寒長壽的<b>羅漢松</b>與<b>紫薇</b>，還有可長到 15 公尺以上的<b>龍柏</b>。志工笑稱「家有羅漢松，賺錢真輕鬆」，一兩棵就抵臺北一間房的身價，是比議場還老的活古蹟。</li>
+        </ul>
+        <div class="mosaic m-duo">
+          <figure class="fig">
+            <button data-ph="100546" aria-label="放大照片：從紅樓門廊望向中軸庭院與羅漢松">
+              <img loading="lazy" src="img/100546.jpg" alt="志工站在紅樓門口指向院區紅磚校舍、羅漢松與後方議場">
+            </button>
+            <figcaption><b>門框裡的三個年代</b>：左方是 1919/1935 紅磚女校、中間是百萬身價羅漢松、遠端是 1960 議場。</figcaption>
+          </figure>
+          <figure class="fig">
+            <button data-ph="102405" aria-label="放大照片：1937 年校舍外牆上下的對流氣孔與磚紋變電箱">
+              <img loading="lazy" src="img/102405.jpg" alt="紅磚外牆頂部與底部的小氣孔，以及下方塗裝成紅磚窗戶造型的變電箱">
+            </button>
+            <figcaption><b>會呼吸的牆面</b>：牆頂與牆腳各有小排氣孔形成對流散熱，連變電箱都披上了紅磚偽裝。</figcaption>
+          </figure>
+          <figure class="fig" style="grid-column:1/-1">
+            <button data-ph="115026" aria-label="放大照片：紅磚女校側翼立面全景">
+              <img loading="lazy" src="img/115026.jpg" alt="臺北第二高等女學校紅磚立面全貌與庭園植栽">
+            </button>
+            <figcaption><b>對稱窗格下的百年校舍</b>：三層樓的紅磚立面、雙拱窗與修剪圓潤的植栽，很難想像裡面正是全國法案攻防的最前線。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- STOP 3 -->
+    <section class="station" id="s3">
+      <div class="rail">
+        <span class="rail-badge">03</span>
+        <time class="rail-time">10:15–10:30</time>
+        <span class="rail-loc">中央軸線 → 議場正門前</span>
+        <span class="rail-pill">唯一古蹟議場</span>
+      </div>
+      <div class="s-body">
+        <h3>議場閉館的驚喜插曲：在台階前翻開「四年一鋪」的二月一日紅地毯</h3>
+        <p>沿著兩排羅漢松夾道走到底，就是建於 <b>1960 年（民國 49 年）</b>的立法院議場。對比紅樓的磚紅色，議場刻意貼上白色面磚，左右對稱搭配中央大窗與中西合璧的幾何鏤空花格——志工打趣說，這白色外牆除了呼應中山堂那套「中西合併」審美，也有幾分提醒代議士「保持清白」的意味。</p>
+        <p>原本週一、三、四非院會時段團體可以走進議場坐坐看，但因下週即將開議、議場這幾天正封閉檢修，大門深鎖。沒想到志工早有準備：他站在陰涼台階旁，直接掀開那本自製<b>藍色資料夾</b>，把沒能走進去的風景一頁頁翻到我們眼前！</p>
+        <ul>
+          <li><b>四年才看得到一次的紅地毯</b>：每逢第四年 <b>2 月 1 日</b>新科立委報到宣誓就職，中山南路大門一路到議場台階會鋪上長長紅地毯，當天院區也會對一般民眾開放，平常完全見不到。</li>
+          <li><b>為什麼古蹟一塊磚都不能亂鑽？</b>立法院院區於 2017 年指定為市定古蹟與歷史建築。依《文資法》，一旦列為古蹟，想修補一塊破磚都得找回同等年代的手工磚與老師傅，擅自開孔動工最高可罰數十萬至數千萬，且須負起對外開放參觀的責任。</li>
+          <li><b>從南京、重慶到中山堂</b>：資料夾裡還貼著 1928 年南京立法院、1946 年重返南京與 1950 年代遷臺借用「<b>臺北市中山堂</b>」的黑白舊照，替立法院補上遷入現址前那十年的身世拼圖。</li>
+        </ul>
+        <div class="mosaic m-asym">
+          <div style="display:grid;gap:14px">
+            <figure class="fig">
+              <button data-ph="101231" aria-label="放大照片：從大門中軸直望議場">
+                <img loading="lazy" src="img/101231.jpg" alt="兩排羅漢松夾道直指正中央的白色立法院議場">
+              </button>
+              <figcaption><b>全院區的視覺軸線</b>：平時是灰白石磚步道，每四年一次的 2 月 1 日就會鋪上長長紅地毯。</figcaption>
+            </figure>
+            <div class="mosaic m-duo" style="margin-top:0">
+              <figure class="fig">
+                <button data-ph="101937" aria-label="放大照片：立法院議場正立面">
+                  <img loading="lazy" src="img/101937.jpg" alt="立法院議場正門，兩側有中式幾何鏤空花窗與金色銅門">
+                </button>
+                <figcaption><b>議場正門</b>：1960 年落成，兩側垂直幾何鏤空窗是當年極具代表性的折衷語彙。</figcaption>
+              </figure>
+              <figure class="fig">
+                <button data-ph="101253" aria-label="放大照片：志工展示藍色資料夾裡的二月一日紅地毯與議場內景照片">
+                  <img loading="lazy" src="img/101253.jpg" alt="導覽志工翻開藍色資料夾，手拿雷射筆介紹二月一日就職紅地毯與議場內部">
+                </button>
+                <figcaption><b>隨身藍資料夾救場</b>：裡面夾著 2 月 1 日就職紅地毯實景與從未開放拍攝的角度照。</figcaption>
+              </figure>
+            </div>
+          </div>
+          <figure class="fig fig-tall">
+            <button data-ph="102358" aria-label="放大照片：志工舉起南京院址與中山堂時期立法院歷史照片">
+              <img loading="lazy" src="img/102358.jpg" alt="導覽志工舉起印有南京立法院與臺北中山堂時期的黑白歷史照片看板">
+            </button>
+            <figcaption><b>1928–1960 的遷徙史</b>：在搬進這所前女校以前，立法院在臺北的第一個家其實借住在西門町的中山堂。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- STOP 4 -->
+    <section class="station" id="s4">
+      <div class="rail">
+        <span class="rail-badge">04</span>
+        <time class="rail-time">10:30–10:42</time>
+        <span class="rail-loc">紅樓東側廊道 → 康園餐廳前</span>
+        <span class="rail-pill">11:30 通關密語</span>
+      </div>
+      <div class="s-body">
+        <h3>康園餐廳的前世泳池，與 15 層樓「只看得到助理」的研究大樓</h3>
+        <p>趁著簡報室前一團剛要散場、外頭陽光又漸漸烈起來，志工先把隊伍帶進紅樓東側陰涼的廊道裡，順手替大家破解院區外圍各棟建築的「分工密碼」：</p>
+        <ul>
+          <li><b>二樓院長室與「最高 15 層」的委員研究室</b>：正門紅樓二樓一整層是立法院長的辦公室與外賓宴會廳；而後側青島東路方向那棟 <b>15 層樓高的中興大樓（委員研究大樓）</b>則是院區最高建築——一樓是辦公與服務空間，二樓以上塞進了 <b>113 位立委的國會辦公室</b>，每層分給好幾位委員使用，空間不大、委員也常不在位子上，走進去大多只看得到埋頭趕稿的助理。</li>
+          <li><b>「天橋」不開放一般訪客走</b>：橫跨青島東路連接研究大樓的空中天橋是委員與院內人員專用通道；另外青島東路側與主院區之間另有民眾黨等黨團空間（依照規定，政黨票須過 <b>5%</b> 門檻且達一定席次才能成立黨團，目前只有民進黨、國民黨與民眾黨三組黨團）。</li>
+          <li><b>康園餐廳的雙重記憶</b>：走廊正對面掛著紅白遮陽棚的「<b>康園餐廳</b>」，一年只休除夕一天，除夕圍爐常提前兩個月就訂滿！鮮少人知道的是，這裡在日治時期原本是北二高女的<b>露天游泳池</b>，二戰美軍空襲時曾有數名日籍人員在此罹難，志工回憶疫情前不時還有日本老太太專程前來默默悼念。</li>
+        </ul>
+        <div class="callout">
+          <span class="c-title">志工偷偷傳授：平常想吃「康園便當」怎麼進去？</span>
+          志工低聲分享一個院內小秘密：平常訪客走正門沒證件一定進不來，但如果是在平日中午 <b>11:30</b> 左右，或是下午 <b>16:30–17:00</b> 用餐時段，從這棟大樓旁側門走向駐衛警，坦白說一聲「<b>我要去康園買便當（80 元起）或用餐</b>」，因為餐廳有對外開放訂餐，在指定時段內就能順利入內嚐鮮！
+        </div>
+        <div class="mosaic m-duo">
+          <figure class="fig">
+            <button data-ph="103856" aria-label="放大照片：從廊道望向康園餐廳與連結天橋">
+              <img loading="lazy" src="img/103856.jpg" alt="紅磚廊道下望向對面的康園餐廳白牆與紅色雨遮">
+            </button>
+            <figcaption><b>泳池舊址上的康園餐廳</b>：一年只休除夕一天，平日 11:30 側門報出「買便當」即可入內用餐。</figcaption>
+          </figure>
+          <figure class="fig">
+            <button data-ph="113302" aria-label="放大照片：紅樓 101 會議室經濟委員會門牌">
+              <img loading="lazy" src="img/113302.jpg" alt="紅磚走廊牆面掛著紅樓 101 會議室與經濟委員會黑色名牌">
+            </button>
+            <figcaption><b>八大委員會的現場門牌</b>：每位立委在八個常設委員會裡只能擇一參加，無法跨區表決。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- STOP 5 -->
+    <section class="station t" id="s5">
+      <div class="rail">
+        <span class="rail-badge">05</span>
+        <time class="rail-time">10:42–11:32</time>
+        <span class="rail-loc">立法院簡報室（講堂）</span>
+        <span class="rail-pill">全場高潮・70 分鐘</span>
+      </div>
+      <div class="s-body">
+        <h3>簡報室裡的「國會脫口秀」：三個質詢台、表決卡與手摺紙財神</h3>
+        <p>走進冷氣開得十足的<b>簡報室</b>，先看 15 分鐘的「立法為民・接軌國際」官方導覽影片（從 113 席結構、單一選區兩票制到今年女性立委突破 <b>41%</b>），原以為看完影片就要散場，沒想到志工老師拿著麥克風與一疊親手摺的「<b>紙財神</b>」走上台，開啟了一場整整七十多分鐘、全場笑聲不斷的「沒進議場反而賺到更多」深度講解！</p>
+        <ul>
+          <li><b>為什麼席次一定要「113」這種單數？</b>答案很務實：避免表決時出現 50 比 50 的平手僵局。立法院是「<b>委員制</b>」而非行政院「首長制」，不管是金門三千多票當選還是都會區五萬多票當選，每位委員手中永遠只有等值的一票；連院長在台上主持時也不能偏袒，只有出現平手關鍵時刻才依規定行使投票權。</li>
+          <li><b>全世界罕見的「三座質詢台」</b>：2008 年以前議場只有中央一座發言台；為了實現「<b>即問即答</b>」（質詢委員在左、官員在右，一問完馬上回答不用等坐下），2008 年後改成三座並立，中間那座留給週五上午 9:00–10:00 的「<b>國是論壇</b>」與行政院長、主計長、財政部長報告之用。</li>
+          <li><b>4 年固定的座位編號與「表決卡」</b>：雖然一樓議席超過兩百張，但每屆就職前由三黨團先協商劃分區域（第一排留給黨團幹部，第二排中間讓給 8 席的民眾黨團），再由黨團內部抽籤領號碼，<b>一坐就是 4 年</b>。表決時必須本人簽領對應編號的<b>表決卡</b>插入桌面卡槽按下綠燈（同意）或紅燈（反對），兩側大螢幕才會跳出姓名與票數，最後由院長敲下<b>議事槌</b>定案（志工還亮出王金平院長以前與現在放大版議事槌的尺寸對照圖！）。</li>
+          <li><b>助理不能進議場，靠誰遞小抄？</b>螢幕前立委振振有詞，背後全靠外頭 8 到 14 名助理死盯著 24 小時直播與新聞台，一發現遺漏資料立刻傳給議場兩側共 <b>6 名議事幹事</b>接力送進場內。</li>
+        </ul>
+        <div class="callout gold">
+          <span class="c-title">有獎徵答與法學小教室：連名帶姓才算數？</span>
+          曾在學校教了十幾年法律與摺紙養生的志工老師，現場發送連廟裡香火都還沒過過爐的手摺「紙財神」（還認真叮嚀大家去廟裡要報完姓名出生年月日、左三圈右三圈過兩次爐神明才聽得見！）。有學員趁機請教：「老師剛剛講《刑法》公然侮辱罪不能指名道姓，那如果我在網路上把名字中間字改成叉叉，會不會被告？」老師立刻笑答：法律講究明確單一證據，不能拿兩段模糊文字拼拼湊湊定罪——但還是提醒大家「好好說話，比學怎麼閃法律更重要！」尾聲還開放大家輪流站上「中華民國立法院」講台在八面國旗前留影。
+        </div>
+        <div class="mosaic m-feat-pair">
+          <div class="stack">
+            <figure class="fig">
+              <button data-ph="104444" aria-label="放大照片：簡報螢幕上的議場內部三座質詢台">
+                <img loading="lazy" src="img/104444.jpg" alt="簡報室大螢幕播映立法院議場內部實景，可見左中右三座質詢與發言台">
+              </button>
+              <figcaption><b>一眼看懂三座發言台</b>：簡報畫面裡左邊立委質詢、右邊官員備詢、正中則是國是論壇與施政報告專用台。</figcaption>
+            </figure>
+            <figure class="fig">
+              <button data-ph="111815" aria-label="放大照片：志工手持表決卡與議事槌圖卡講解">
+                <img loading="lazy" src="img/111815.jpg" alt="導覽志工在簡報室舉起自製表決卡與座位圖卡說明議場規則">
+              </button>
+              <figcaption><b>圖卡還原現場細節</b>：從桌面電子表決卡槽到新舊議事槌大小差異，比站在旁聽席看得更清楚。</figcaption>
+            </figure>
+          </div>
+          <div class="stack">
+            <figure class="fig">
+              <button data-ph="104226" aria-label="放大照片：簡報室「立法為民・接軌國際」開場畫面">
+                <img loading="lazy" src="img/104226.jpg" alt="坐滿簡報室沙發座的學員，大螢幕寫著立法為民接軌國際">
+              </button>
+              <figcaption><b>冷氣室裡的 40 人專場</b>：避開正午烈日，全團舒舒服服坐進貴賓沙發聽完導覽。</figcaption>
+            </figure>
+            <figure class="fig">
+              <button data-ph="113209" aria-label="放大照片：學員輪流站上國旗前的立法院發言台合影">
+                <img loading="lazy" src="img/113209.jpg" alt="走讀學員站在八面國旗前的中華民國立法院講台微笑留念">
+              </button>
+              <figcaption><b>講台上的五秒圓夢</b>：下課前大家輪流站上「中華民國立法院」講台拍下紀念照。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STOP 6 -->
+    <section class="station" id="s6">
+      <div class="rail">
+        <span class="rail-badge">06</span>
+        <time class="rail-time">11:32–11:52</time>
+        <span class="rail-loc">書畫長廊 → 員工消費合作社 → 群賢樓側門</span>
+        <span class="rail-pill">只收現金</span>
+      </div>
+      <div class="s-body">
+        <h3>「不能帶團進去」的合作社秘境：書畫展、平價佛跳牆與 115 年參觀證</h3>
+        <p>11:32 走出簡報室，導覽行程其實已接近尾聲，但整團人的腳步反而被一條亮白的長廊吸住——廊道左側玻璃櫥窗裡正巧展出「<b>蔡玉雲書畫展：寄意和穆</b>（115 年 9 月）」，右側鐵皮屋頂底下則是傳說中的「<b>立法院員工消費合作社</b>」。</p>
+        <p>志工笑著打預防針：因為院外附近商家曾反映過，依規定他不能直接「帶團」進去採買，只好站在廊口大喊：「<b>要看展覽的跟我走後面，要買東西的自己從前面走過去！</b>」話音剛落，超過一半團員立刻轉進只收現金的合作社市集，瞬間變成搶購外頭罕見平價<b>佛跳牆</b>、古早味<b>豆干</b>與銅板價<b>咖啡</b>的熱鬧場面。</p>
+        <p>往群賢樓方向離開院區前，迎面看見<b>王金平</b>敬題的「<b>滙集多元民意 散播民主芳鄰</b>」金字匾額，下方電子看板還即時顯示著 2026 年 9 月 1 日當天的會議排程——包括台灣民眾黨記者會、林月琴、鍾佳濱與伍麗華（Saidhai・Tahovecahe）委員辦公室的會議資訊。臨出大門前低頭再看一眼胸口這張寫著「<b>115</b>」（民國 115 年）的圓形參觀證貼紙，才算正式完成這趟院內旅程。</p>
+        <div class="mosaic m-trio">
+          <figure class="fig">
+            <button data-ph="113436" aria-label="放大照片：通往合作社的蔡玉雲書畫展長廊">
+              <img loading="lazy" src="img/113436.jpg" alt="走廊玻璃展櫃展出蔡玉雲書畫展寄意和穆作品">
+            </button>
+            <figcaption><b>2026 年 9 月限定展</b>：長廊正在展出「蔡玉雲書畫展：寄意和穆」，成了離場前的靜謐轉折。</figcaption>
+          </figure>
+          <figure class="fig">
+            <button data-ph="113627" aria-label="放大照片：立法院員工消費合作社走廊市集">
+              <img loading="lazy" src="img/113627.jpg" alt="員工消費合作社室內走廊擺滿農特產、豆干、咖啡與熟食攤位">
+            </button>
+            <figcaption><b>只收現金的合作社</b>：豆干、咖啡與外頭少見的平價佛跳牆，讓團員人手一袋戰利品。</figcaption>
+          </figure>
+          <figure class="fig">
+            <button data-ph="114854" aria-label="放大照片：滙集多元民意散播民主芳鄰與當日會議電子看板">
+              <img loading="lazy" src="img/114854.jpg" alt="王金平敬題滙集多元民意散播民主芳鄰下方電子看板顯示 9 月 1 日會議行程">
+            </button>
+            <figcaption><b>國會運作的即時脈搏</b>：牆上電子看板滾動著 9 月 1 日當日各委員會與委員辦公室的會議排程。</figcaption>
+          </figure>
+        </div>
+        <div class="mosaic m-asym" style="margin-top:14px">
+          <figure class="fig">
+            <button data-ph="105844" aria-label="放大照片：志工老師在簡報室黑板前講解全貌">
+              <img loading="lazy" src="img/105844.jpg" alt="戴白帽著淺藍背心的導覽志工在簡報室拿麥克風開講">
+            </button>
+            <figcaption><b>把制度講成生活故事</b>：這位自備紙財神與手繪資料夾的志工老師，讓沒開放的議場反而成為這天最難忘的一課。</figcaption>
+          </figure>
+          <figure class="fig fig-tall">
+            <button data-ph="115212" aria-label="放大照片：立法院 115 年參觀證圓形貼紙">
+              <img loading="lazy" src="img/115212.jpg" alt="手拿印有中華民國國旗與立法院參觀證 115 字樣的圓形貼紙">
+            </button>
+            <figcaption><b>115 年的入場憑證</b>：依規定離院歸還或留存紀念的這枚圓貼紙，上面壓印著「115.9.-1」日期戳記。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- STOP 7 -->
+    <section class="station t" id="s7">
+      <div class="rail">
+        <span class="rail-badge">07</span>
+        <time class="rail-time">11:52–12:00</time>
+        <span class="rail-loc">監察院前人行道（五條公路交叉點）</span>
+        <span class="rail-pill">臺灣公路原點</span>
+      </div>
+      <div class="s-body">
+        <h3>五條省道的「0 公里」起點：站在監察院前人行道看全臺灣</h3>
+        <p>走出立法院，隊伍沿著中山南路北行至忠孝東、西路交叉口——這裡正是整場走讀的彩蛋壓軸站「<b>五條公路交叉點</b>」，也就是交通部公路局正式標示的「<b>臺灣公路原點</b>」。</p>
+        <p>站上<b>監察院前的人行道</b>往十字路口望去，對街高樓鋼構工地正吊起塔吊施工，而路旁那面寫著「<b>0 起點</b>」的綠色十字路牌，把全臺灣最重要的一組公路編號全部匯聚在腳邊：</p>
+        <ul>
+          <li><b>台 1 線</b>（向西沿忠孝西路一段起算）：縱貫西部走廊的幹線起點。</li>
+          <li><b>台 1 甲線</b>（向北沿中山北路一段起算）：串連北區與新北的舊線／替代線。</li>
+          <li><b>台 3 線</b>（由忠孝西路共線起算）：貫穿內山山麓的內山公路。</li>
+          <li><b>台 5 線</b>（向東沿忠孝東路一段起算）：通往汐止與基隆的北基公路。</li>
+          <li><b>台 9 線</b>（向南沿中山南路起算）：一路經過新店、北宜、花東直到屏東楓港的東部幹線。</li>
+        </ul>
+        <p>接近正午 12:00，志工在解散前還補上一句令人噴飯的交通安全提醒：「想看五條路怎麼交叉，<b>站在監察院人行道看就好，千萬不要走到五條馬路正中間去</b>——不然七天後才回家喔！」在一片笑聲與各自拎著合作社豆干的滿足感中，大家順著近在咫尺的捷運善導寺站與台北車站，結束了這場第 325 場走讀。</p>
+        <div class="mosaic m-duo">
+          <figure class="fig">
+            <button data-ph="115633" aria-label="放大照片：走出立法院轉往忠孝東路口的城市施工景觀">
+              <img loading="lazy" src="img/115633.jpg" alt="隊伍走向中山南路與忠孝東路口，背景可見高樓鋼構施工與吊車">
+            </button>
+            <figcaption><b>2026 年 9 月的街角風景</b>：跨出立法院不到兩百公尺，城市核心路口正進行著大型鋼構新建工程。</figcaption>
+          </figure>
+          <figure class="fig">
+            <button data-ph="120006" aria-label="放大照片：監察院前人行道望向五條公路交叉點與 0 起點路牌">
+              <img loading="lazy" src="img/120006.jpg" alt="走讀隊伍停留在監察院前人行道，遠處可見綠色臺灣公路原點 0 起點路牌">
+            </button>
+            <figcaption><b>五條省道的共同起點</b>：遠處那面綠色「0 起點」牌子，把台 1、台 1 甲、台 3、台 5 與台 9 線全都鎖在同一個路口。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- AFTERWORD -->
+  <section class="afterword" aria-label="走讀後記">
+    <h2>散步後記：把新聞畫面裡的建築，還回它原本站立的街角</h2>
+    <p>原本衝著議場而來，最後卻因為議場沒開，反而讀進了更多平常走進去也未必注意到的牆角、故事與幽默。</p>
+    <div class="af-grid">
+      <article class="af-card">
+        <h3>1. 沒開門的議場，反而聽見最多門道</h3>
+        <p>如果只進議場拍照半小時，大概不會知道三座質詢台是因為 2008 年「即問即答」才長出來的，也不會看見那張四年才鋪一次的二月一日紅地毯照片。有時候計畫被打亂，反而正是走讀最迷人的地方。</p>
+      </article>
+      <article class="af-card">
+        <h3>2. 一座女學校撐起六十年國會</h3>
+        <p>從 1919 年紅磚、1935 年井手薰現代主義與戰時保護色，到康園前身的游泳池空襲記憶，這塊地先教出了臺北的女學生，後來才裝進了整個國家的立法權與法案辯論。</p>
+      </article>
+      <article class="af-card">
+        <h3>3. 散步再延伸：從國會走到公路原點</h3>
+        <p>下次路過中山南路，不妨抬頭看看紅樓牆頂牆腳的對流小氣孔，挑個平日 11:30 從側門試試康園便當；走出大門再多走三分鐘到監察院前人行道，站在全臺灣五條省道共同的 0 公里起點吹吹風。</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>2026/09/01 參加「陳子瑜第 325 場走讀：立法院之旅」（立委陳培瑜辦公室助理協助・立法院志工導覽）的現場筆記</span>
+  <a href="#top">回到頁首 ↑</a>
+</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../power/index.html"><small>‹ 較新的一場・2026/09/05</small>走進臺灣用電百年</a><a class="nx" href="../zhongshan/index.html"><small>較早的一場・2026/08/25 ›</small>漫步中山橋，聽故事，想未來</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar">
+    <button id="lbp" aria-label="上一張">‹</button>
+    <span id="lbc"></span>
+    <button id="lbn" aria-label="下一張">›</button>
+    <button id="lbx" aria-label="關閉">✕</button>
+  </div>
+</div>
+
+<script>
+{
+  const btns=[...document.querySelectorAll('main button[data-ph]')];
+  const items=btns.map((b,idx)=>{
+    const img=b.querySelector('img');
+    const fig=b.closest('figure');
+    const cap=fig&&fig.querySelector('figcaption')?fig.querySelector('figcaption').textContent:img.alt;
+    b.dataset.idx=idx;
+    return {src:img.getAttribute('src'),alt:img.alt,cap};
+  });
+  const lb=document.getElementById('lb'),im=document.getElementById('lbi'),cp=document.getElementById('lbc');
+  let cur=0;
+  const show=i=>{
+    cur=(i+items.length)%items.length;
+    const x=items[cur];
+    im.src=x.src;
+    im.alt=x.alt;
+    cp.textContent=`${x.cap}　（${cur+1}/${items.length}）`;
+  };
+  document.querySelector('main').addEventListener('click',e=>{
+    const b=e.target.closest('button[data-ph]');
+    if(b){show(+b.dataset.idx);lb.classList.add('on');document.getElementById('lbx').focus();}
+  });
+  document.getElementById('lbp').onclick=()=>show(cur-1);
+  document.getElementById('lbn').onclick=()=>show(cur+1);
+  const close=()=>lb.classList.remove('on');
+  document.getElementById('lbx').onclick=close;
+  lb.addEventListener('click',e=>{if(e.target===lb)close();});
+  document.addEventListener('keydown',e=>{
+    if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')show(cur-1);
+    if(e.key==='ArrowRight')show(cur+1);
+  });
+}
+</script>
+</body>
+</html>
