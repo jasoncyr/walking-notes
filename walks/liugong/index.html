@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>瑠公綠廊：一場大雨裡的東區水路翻身記（2026/06/05 臺北城市設計選拔走讀）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 跟著台灣世曦設計團隊在傾盆大雨的週五午後走進 SOGO 後巷，在雨水與手動喚醒的水霧之間，把隱形的大灣河道、單一鋼模工藝與路權協調一次看清
+   IDEA: 以「水文地層 × 都市綠廊工程誌」重構編排：浮動工程規格帶、地下箱涵剖面圖解、改造前後矩陣與三方共管三角，展現不同於一般散步筆記的景觀設計解剖視角
+   PICTURE: 雨中三座弧形水霧光環被手動喚醒、白霧穿過阿勃勒黃花與傘海（152501.jpg）
+   COLOUR and TYPE: 晨霧紙白 #f2f5f3、墨松炭 #16211e、瑠公深碧綠 #176957（關鍵詞主色）、壓花磚紅 #b34832；Noto Serif TC 標題 + Noto Sans TC 內文
+   LAYOUT: 滿版英雄圖＋浮動四欄規格帶 → 雙欄行前脈絡與 SVG 地下剖面圖解 → 六格雨天限定亮點 → 異質分段章節（馬賽克網格、年表對照、前後矩陣、工藝三欄、共管三角）→ 自助漫步清單＋四格結語 */
+:root{
+  color-scheme:light dark;
+  --bg:light-dark(#f2f5f3,#0f1513);
+  --paper:light-dark(#fbfdfb,#17201d);
+  --ink:light-dark(#16211e,#e7eeeb);
+  --mute:light-dark(#56635f,#9aa8a3);
+  --acc:light-dark(#176957,#63c7b0);
+  --brick:light-dark(#b34832,#e88670);
+  --mist:light-dark(#e0efeb,#192b27);
+  --sand:light-dark(#f1ece1,#231f18);
+  --line:light-dark(#d4ded9,#283530);
+}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.82 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,h4{font-family:"Noto Serif TC",serif;text-wrap:balance;margin:0}
+a{color:var(--acc)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+
+/* Keyword primary-color emphasis across all article content */
+.intro-copy b,.intro-copy strong,
+.prose b,.prose strong,
+.callout b,.callout strong,
+.strata-note b,.strata-note strong,
+.matrix-card b,.matrix-card strong,
+.craft-card b,.craft-card strong,
+.gov-card b,.gov-card strong,
+.pocket b,.pocket strong,
+.af-card b,.af-card strong{color:var(--acc);font-weight:700}
+
+/* Hero Banner */
+.hero{position:relative;min-height:clamp(430px,64vh,640px);display:flex;align-items:flex-end;background:#101c19;color:#f3f7f5;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;filter:saturate(.96) contrast(1.03)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,24,21,.18) 0%,rgba(12,24,21,.56) 46%,rgba(10,18,16,.95) 100%)}
+.hero-in{position:relative;z-index:1;width:100%;max-width:1120px;margin:0 auto;padding:48px max(4vw,18px) 62px}
+.pill-tag{display:inline-flex;align-items:center;gap:8px;padding:4px 12px;border-radius:999px;background:rgba(23,105,87,.72);border:1px solid rgba(159,216,202,.45);color:#daf2eb;font-size:12.5px;font-weight:700;letter-spacing:.08em;margin-bottom:14px}
+.hero h1{font-size:clamp(32px,5.5vw,56px);line-height:1.12;font-weight:800;letter-spacing:.01em}
+.hero-en{display:block;font-family:"Noto Sans TC",sans-serif;font-size:clamp(13px,1.5vw,16px);font-weight:500;letter-spacing:.06em;color:#a8ddd0;margin-top:10px}
+.hero-sub{margin:16px 0 0;max-width:65ch;font-size:16.5px;line-height:1.74;color:rgba(243,247,245,.92)}
+
+/* Overlapping 4-Metric Spec Strip */
+.spec-wrap{max-width:1120px;margin:-36px auto 0;padding:0 max(4vw,18px);position:relative;z-index:2}
+.spec-bar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--acc);border-radius:14px;box-shadow:0 14px 36px rgba(0,0,0,.09);overflow:hidden}
+.spec-cell{padding:16px 18px;border-right:1px solid var(--line)}
+.spec-cell:last-child{border-right:0}
+.spec-cell small{display:block;font-size:12px;letter-spacing:.08em;color:var(--mute);margin-bottom:3px}
+.spec-cell strong{display:block;font:800 clamp(20px,2.5vw,27px)/1.15 "Noto Serif TC",serif;color:var(--acc)}
+.spec-cell span{display:block;font-size:13px;color:var(--mute);margin-top:3px}
+
+/* Event Metadata Ribbon */
+.event-ribbon{max-width:1120px;margin:16px auto 0;padding:0 max(4vw,18px)}
+.ribbon-in{background:var(--mist);border:1px solid var(--line);border-radius:12px;padding:14px 18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 20px;font-size:14px}
+.ribbon-in div b{display:block;font-size:11.5px;letter-spacing:.08em;color:var(--acc);margin-bottom:2px}
+.ribbon-in a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 max(4vw,18px)}
+
+/* Intro + Underground Cross-Section Diagram */
+.opening{display:grid;grid-template-columns:1.15fr .95fr;gap:34px;padding:42px 0 32px;border-bottom:1px solid var(--line);align-items:start}
+.intro-copy h2{font-size:clamp(24px,3.1vw,32px);line-height:1.28;margin-bottom:14px}
+.intro-copy p{margin:.75em 0;font-size:16.5px}
+.brief-box{margin-top:18px;padding:14px 16px;background:var(--sand);border-left:4px solid var(--brick);border-radius:0 10px 10px 0;font-size:14.5px;line-height:1.7}
+.brief-box b{color:var(--brick)}
+
+.strata-card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 20px 16px;box-shadow:0 6px 20px rgba(0,0,0,.04)}
+.strata-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:10px;margin-bottom:14px}
+.strata-head h3{font-size:18.5px}
+.strata-head span{font-size:11.5px;letter-spacing:.1em;color:var(--brick);font-weight:700}
+.strata-svg{width:100%;height:auto;display:block;border-radius:8px;background:var(--bg);border:1px solid var(--line)}
+.strata-note{margin:12px 0 0;font-size:14px;line-height:1.68;color:var(--mute)}
+
+/* 6-Tile Field Exclusives */
+.exclusives{padding:36px 0 24px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 20px;margin-bottom:16px}
+.sec-head h2{font-size:clamp(23px,3vw,30px)}
+.sec-head p{margin:0;color:var(--mute);font-size:15px}
+.ex-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.ex-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:15px 16px;position:relative;transition:transform .2s,border-color .2s,box-shadow .2s}
+.ex-card:hover{transform:translateY(-2px);border-color:var(--acc);box-shadow:0 8px 22px rgba(0,0,0,.07)}
+.ex-tag{align-self:flex-start;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--acc);color:#fff;margin-bottom:8px}
+.ex-card.r .ex-tag{background:var(--brick)}
+.ex-card b{font-family:"Noto Serif TC",serif;font-size:17px;line-height:1.38;margin-bottom:5px;color:var(--ink)}
+.ex-card span{font-size:14px;color:var(--mute);line-height:1.6}
+
+/* Sticky Sub-Navigation Strip */
+.chap-nav{position:sticky;top:10px;z-index:5;margin:14px 0 26px;padding:10px 14px;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:999px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;box-shadow:0 8px 22px rgba(0,0,0,.06)}
+.chap-nav .cn-label{font-size:12.5px;font-weight:700;color:var(--mute);padding:0 6px}
+.chap-nav a{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;text-decoration:none;color:var(--ink);font-size:13.5px;border:1px solid transparent;transition:background .15s,border-color .15s}
+.chap-nav a:hover{background:var(--mist);border-color:var(--line)}
+.chap-nav a i{font-style:normal;font-weight:700;color:var(--acc)}
+
+/* Section Framing */
+.chapter{padding:34px 0 42px;border-top:1px solid var(--line)}
+.ch-kicker{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px}
+.ch-no{font-family:"Noto Serif TC",serif;font-weight:800;font-size:13px;letter-spacing:.08em;color:#fff;background:var(--ink);padding:3px 10px;border-radius:4px}
+.ch-time{font-size:13.5px;color:var(--mute);font-weight:500}
+.ch-badge{font-size:12px;font-weight:700;color:#fff;background:var(--acc);padding:2px 9px;border-radius:4px}
+.ch-badge.r{background:var(--brick)}
+.chapter h2{font-size:clamp(24px,3.2vw,32px);line-height:1.28;margin-bottom:16px}
+.prose p{margin:.75em 0;font-size:16.5px}
+.prose ul{margin:12px 0;padding-left:1.25em}
+.prose li{margin:.45em 0}
+.prose li::marker{color:var(--acc)}
+
+.callout{margin:18px 0 0;padding:14px 18px;background:var(--mist);border-left:4px solid var(--acc);border-radius:0 10px 10px 0;font-size:15px;line-height:1.72}
+.callout.r{background:var(--sand);border-left-color:var(--brick)}
+.callout.r b{color:var(--brick)}
+
+/* Figures */
+.fig{margin:0}
+.fig button{all:unset;cursor:pointer;display:block;width:100%;border-radius:11px;overflow:hidden;background:var(--line);box-shadow:0 8px 22px rgba(0,0,0,.07)}
+.fig img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;transition:transform .35s ease}
+.fig.tall img{aspect-ratio:3/4;object-fit:cover}
+.fig.wide img{aspect-ratio:16/10;object-fit:cover}
+.fig button:hover img{transform:scale(1.025)}
+.fig figcaption{margin-top:8px;font-size:14px;line-height:1.58;color:var(--mute)}
+.fig figcaption b{color:var(--ink);font-weight:700}
+
+/* Chapter 01: Left Prose + Right Asymmetric 3-Photo Mosaic */
+.mosaic-split{display:grid;grid-template-columns:1fr 1.12fr;gap:32px;align-items:start}
+.mosaic-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;align-items:start}
+.mosaic-stack{display:grid;gap:14px}
+
+/* Chapter 02: 4-Stage Historical Ribbon + Side-by-Side Plaque Diptych */
+.hist-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:20px 0 26px}
+.hist-node{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--acc);border-radius:10px;padding:13px 14px}
+.hist-node.brick{border-top-color:var(--brick)}
+.hist-node .yr{font:800 22px/1.1 "Noto Serif TC",serif;color:var(--acc);margin-bottom:5px}
+.hist-node.brick .yr{color:var(--brick)}
+.hist-node h4{font-size:15.5px;margin-bottom:4px}
+.hist-node p{margin:0;font-size:13.5px;line-height:1.58;color:var(--mute)}
+.diptych{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:22px}
+
+/* Chapter 03: Before/After Matrix + Wide Photos */
+.matrix{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0 24px}
+.matrix-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.matrix-card.before{border-left:5px solid var(--brick)}
+.matrix-card.after{border-left:5px solid var(--acc)}
+.matrix-card h3{font-size:18.5px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.matrix-card.before h3 span{font-size:12px;background:var(--brick);color:#fff;padding:2px 8px;border-radius:4px;font-family:"Noto Sans TC",sans-serif}
+.matrix-card.after h3 span{font-size:12px;background:var(--acc);color:#fff;padding:2px 8px;border-radius:4px;font-family:"Noto Sans TC",sans-serif}
+.matrix-card ul{margin:0;padding-left:1.2em;font-size:15px}
+.matrix-card li{margin:.42em 0}
+
+/* Chapter 04: 3-Column Craftsmanship Cards + Feature Showcase */
+.craft-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:20px 0 24px}
+.craft-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.craft-card .cc-num{font:800 12px/1 "Noto Sans TC",sans-serif;letter-spacing:.12em;color:var(--brick)}
+.craft-card h3{font-size:18.5px;line-height:1.32}
+.craft-card p{margin:0;font-size:14.8px;line-height:1.68;color:var(--mute)}
+.showcase{display:grid;gap:22px}
+
+/* Chapter 05: 3-Party Governance Triangle + Driftwood Exhibition Split */
+.gov-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:20px 0 26px}
+.gov-card{background:var(--mist);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.gov-card small{display:block;font-size:12px;font-weight:700;color:var(--acc);letter-spacing:.06em;margin-bottom:4px}
+.gov-card h4{font-size:17px;margin-bottom:6px}
+.gov-card p{margin:0;font-size:14.5px;line-height:1.62;color:var(--ink)}
+.closer-trio{display:grid;grid-template-columns:.84fr 1.08fr .84fr;gap:20px;align-items:start;margin-top:22px}
+
+/* Pocket Guide & Afterword */
+.pocket{margin:12px 0 28px;padding:22px 24px;background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:12px}
+.pocket h2{font-size:clamp(21px,2.8vw,27px);margin-bottom:8px}
+.pocket ul{margin:10px 0 0;padding-left:1.25em;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 26px}
+.pocket li{font-size:15px;line-height:1.65}
+.pocket li::marker{color:var(--acc)}
+
+.afterword{margin:0 0 24px;padding:26px;background:var(--sand);border:1px solid var(--line);border-radius:14px}
+.afterword-head{margin-bottom:16px}
+.afterword-head h2{font-size:clamp(22px,3vw,28px);margin-bottom:5px}
+.afterword-head p{margin:0;color:var(--mute);font-size:15px}
+.af-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.af-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px}
+.af-card h3{font-size:17.5px;color:var(--acc);margin-bottom:7px}
+.af-card p{margin:0;font-size:15px;line-height:1.7}
+
+footer{max-width:1120px;margin:20px auto 12px;padding:16px max(4vw,18px) 10px;border-top:1px solid var(--line);color:var(--mute);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 18px}
+
+/* Lightbox */
+#lb{position:fixed;inset:0;z-index:40;background:rgba(10,14,13,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:16px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px}
+#lb .bar{display:flex;gap:12px;align-items:center;color:#eee;margin-top:12px;font-size:15px;max-width:900px;text-align:center}
+#lb button{min-width:44px;min-height:44px;border-radius:22px;border:1px solid #555;background:#222;color:#fff;font-size:18px;cursor:pointer;flex:none}
+#lb button:hover{background:#333}
+
+@media(max-width:900px){
+  .spec-bar,.ex-grid,.hist-strip,.craft-grid,.gov-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .spec-cell{border-bottom:1px solid var(--line)}
+  .opening,.mosaic-split,.mosaic-grid,.diptych,.matrix,.closer-trio,.pocket ul,.af-grid{grid-template-columns:1fr;gap:20px}
+  .chap-nav{border-radius:14px;position:static}
+}
+@media(max-width:560px){
+  .spec-bar,.ex-grid,.hist-strip,.craft-grid,.gov-grid{grid-template-columns:1fr}
+  .spec-cell{border-right:0}
+  .fig.tall img{aspect-ratio:4/3}
+}
+@media(prefers-reduced-motion:reduce){
+  .fig img,.ex-card{transition:none}
+  .ex-card:hover,.fig button:hover img{transform:none}
+}
+</style>
+<style>.yr-top{display:flex;align-items:center;gap:10px;padding:8px max(4vw,14px);background:#17262a;color:#e9efec;font:500 14px/1.4 "Noto Sans TC",system-ui,sans-serif;position:relative;z-index:8}.yr-top a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:36px}.yr-top a:hover{text-decoration:underline}.yr-top span{margin-left:auto;opacity:.7;white-space:nowrap}.yr-side{display:none}.yr-se{font:700 12.5px/1 "Noto Sans TC",sans-serif;color:#9fd8ca;padding:14px 12px 6px 18px;letter-spacing:.05em;position:sticky;top:var(--yr-hh,0px);z-index:2;background:#17262a;margin:0 -6px}.yr-side,.yr-dd ul{font:14.5px/1.45 "Noto Sans TC",system-ui,sans-serif}.yr-side ul,.yr-dd ul{list-style:none;margin:0;padding:0}.yr-side li a,.yr-dd li a{display:block;padding:9px 12px;border-radius:8px;color:#dfe7e4;text-decoration:none}.yr-side li a:hover,.yr-dd li a:hover{background:rgba(255,255,255,.08)}.yr-side li a[aria-current],.yr-dd li a[aria-current]{background:#2c6e63;color:#fff}.yr-side small,.yr-dd small{display:block;font-size:12.5px;opacity:.7}.yr-head{position:sticky;top:0;z-index:3;background:#17262a;padding:18px 12px 6px;margin:0 -12px;border-bottom:1px solid rgba(255,255,255,.08)}@media(min-width:1180px){.yr-side{display:block;position:fixed;left:0;top:0;bottom:0;width:260px;z-index:6;overflow-y:auto;background:#17262a;color:#e9efec;padding:0 12px 30px}.yr-side .yr-home{display:block;color:#fff;text-decoration:none;font:800 19px/1.3 "Noto Serif TC",serif;padding:4px 12px 2px}.yr-side .yr-home:hover{text-decoration:underline}.yr-side p{margin:4px 12px 8px;font-size:13px;opacity:.65}body{margin-left:260px!important}.yr-top{display:none!important}}.yr-dd{position:static}.yr-dd summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;white-space:nowrap}.yr-dd summary::-webkit-details-marker{display:none}.yr-dd ul{position:absolute;left:max(4vw,14px);top:calc(100% - 2px);z-index:30;width:min(320px,calc(100vw - 28px));max-height:70vh;overflow-y:auto;background:#17262a;border-radius:10px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.35)}.yr-dd .yr-se{top:-6px}.yr-pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:1040px;margin:10px auto 40px;padding:0 max(4vw,14px);font:15px/1.5 "Noto Sans TC",system-ui,sans-serif}.yr-pn a{display:block;padding:14px 16px;border:1px solid rgba(127,127,127,.35);border-radius:10px;color:inherit;text-decoration:none}.yr-pn a:hover{border-color:#2c6e63}.yr-pn small{display:block;opacity:.65;font-size:13px}.yr-pn .nx{text-align:right}.yr-pn .home{text-align:center;grid-column:1/-1}@media(max-width:600px){.yr-pn{grid-template-columns:minmax(0,1fr)}.yr-pn .nx{text-align:left}}</style></head>
+<body><aside class="yr-side" aria-label="全部走讀"><div class="yr-head"><a class="yr-home" href="../../index.html">‹ 遠任的走讀筆記</a><p>全部走讀・85 場</p></div><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../haishan/index.html"><small>2026/10/03</small>2026 大海山走路節先遣踏查：從枋橋社後到浮洲的水陸現場</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../zhongyuan/index.html"><small>2026/09/27</small>神在其中，味蕾交會：中原文創園區《匯流城市・文化共生》走讀</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li><a href="../lifayuan/index.html"><small>2026/09/01</small>議場未開的那一天：走讀立法院與臺灣公路原點</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li><a href="../liugong/index.html" aria-current="page"><small>2026/06/05</small>瑠公綠廊：一場大雨裡的東區水路翻身記</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../dadaotea/index.html"><small>2026/01/25</small>茶香與紅磚的時光漫步：淡水河流域大稻埕走讀</a></li><li><a href="../sifang/index.html"><small>2026/01/17</small>天水路上的時代治癒所：四方醫院現地導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../tileglass/index.html"><small>2025/11/22</small>土火與微光的垂直串門：爿爿花手工瓷磚 × 真真鑲嵌玻璃研究所</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../huozi/index.html"><small>2025/10/25</small>鐵道與活版印刷的百年物語</a></li><li><a href="../fuyou1025/index.html"><small>2025/10/25</small>孚佑百年・大稻埕文化走讀史蹟導覽</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../metamotion/index.html"><small>2024/11/29</small>無用之用：從松菸展場走進遠雄工地再生現場</a></li><li><a href="../backto1920/index.html"><small>2024/11/29</small>回到 1920：臺北最華美宮殿 × 醫學知識殿堂</a></li><li><a href="../bethany/index.html"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></aside><script>{const h=document.querySelector(".yr-head"),a=document.querySelector(".yr-side");const f=()=>{if(h&&a)a.style.setProperty("--yr-hh",h.offsetHeight+"px")};f();addEventListener("resize",f);try{a.querySelector("[aria-current]").scrollIntoView({block:"center"})}catch(e){}}</script><div class="yr-top"><a href="../../index.html">‹ 遠任的走讀筆記</a><details class="yr-dd"><summary>全部走讀 ▾</summary><ul><li class="yr-se">2026 秋</li><li><a href="../catholic/index.html"><small>2026/11/22</small>踏查天主教臺灣北部之路</a></li><li><a href="../beimen/index.html"><small>2026/11/14</small>北門城中的商街歲月</a></li><li><a href="../lin/index.html"><small>2026/10/13</small>板橋雅韻：林家花園的園林逸趣</a></li><li><a href="../chanchu/index.html"><small>2026/10/09</small>蟾蜍山・煥民新村</a></li><li><a href="../haishan/index.html"><small>2026/10/03</small>2026 大海山走路節先遣踏查：從枋橋社後到浮洲的水陸現場</a></li><li><a href="../adachi/index.html"><small>2026/10/02</small>足立仁與他的南方家屋</a></li><li><a href="../zhongyuan/index.html"><small>2026/09/27</small>神在其中，味蕾交會：中原文創園區《匯流城市・文化共生》走讀</a></li><li><a href="../kala/index.html"><small>2026/09/26</small>南萬華散步：南城再現，加蚋好味</a></li><li><a href="../ztd/index.html"><small>2026/09/23</small>忠孝東路走九遍：東區的時代變奏曲</a></li><li><a href="../keelung/index.html"><small>2026/09/20</small>港灣即城市：國門廣場周邊散步</a></li><li><a href="../caoshan/index.html"><small>2026/09/20</small>草山御道與朝聖之途</a></li><li><a href="../monga/index.html"><small>2026/09/19</small>艋舺的修復進行式</a></li><li><a href="../eastmall/index.html"><small>2026/09/10</small>東區巷弄淘寶</a></li><li><a href="../shiji/index.html"><small>2026/09/05</small>城外信仰行：從西本願寺走到小南門</a></li><li><a href="../power/index.html"><small>2026/09/05</small>走進臺灣用電百年</a></li><li><a href="../lifayuan/index.html"><small>2026/09/01</small>議場未開的那一天：走讀立法院與臺灣公路原點</a></li><li class="yr-se">2026 夏</li><li><a href="../zhongshan/index.html"><small>2026/08/25</small>漫步中山橋，聽故事，想未來</a></li><li><a href="../danjiang/index.html"><small>2026/07/08</small>淡江大橋工程美學特展</a></li><li><a href="../pts/index.html"><small>2026/07/05</small>走進公視幕後定時導覽</a></li><li><a href="../liugong/index.html" aria-current="page"><small>2026/06/05</small>瑠公綠廊：一場大雨裡的東區水路翻身記</a></li><li class="yr-se">2026 春</li><li><a href="../budai/index.html"><small>2026/05/20</small>走讀布袋戲街：大稻埕的戲曲底蘊</a></li><li><a href="../tamsui/index.html"><small>2026/04/11</small>淡水女路：女力綻放 Her Story</a></li><li><a href="../indo/index.html"><small>2026/03/14</small>Little Indonesia！台北小印尼</a></li><li><a href="../tnua/index.html"><small>2026/03/01</small>打開北藝：21 世紀的劇場</a></li><li class="yr-se">2025–26 冬</li><li><a href="../honglou/index.html"><small>2026/01/30</small>西門紅樓定時導覽</a></li><li><a href="../dadaotea/index.html"><small>2026/01/25</small>茶香與紅磚的時光漫步：淡水河流域大稻埕走讀</a></li><li><a href="../sifang/index.html"><small>2026/01/17</small>天水路上的時代治癒所：四方醫院現地導覽</a></li><li><a href="../sifen/index.html"><small>2026/01/07</small>四分溪畔的空間故事</a></li><li><a href="../haoshi/index.html"><small>2026/01/06</small>好事度量・機電導覽</a></li><li><a href="../qinghe/index.html"><small>2025/12/24</small>青禾蘊：劉青和故居老屋導覽</a></li><li><a href="../freedom/index.html"><small>2025/12/18</small>走進自由之家：嚴家淦 120 冥誕紀念展</a></li><li><a href="../humanities/index.html"><small>2025/12/13</small>人文大道與早期經典建築</a></li><li><a href="../minzu/index.html"><small>2025/12/05</small>一只生活的容器：漢寶德的民族所</a></li><li><a href="../nightride/index.html"><small>2025/12/03</small>城南夜騎探奇</a></li><li><a href="../suyuan/index.html"><small>2025/12/02</small>溯源前行：跟著策展人看中研院</a></li><li class="yr-se">2025 秋</li><li><a href="../dome/index.html"><small>2025/11/26</small>臺北大巨蛋專屬導覽</a></li><li><a href="../wangdh/index.html"><small>2025/11/25</small>王大閎與中研院</a></li><li><a href="../tileglass/index.html"><small>2025/11/22</small>土火與微光的垂直串門：爿爿花手工瓷磚 × 真真鑲嵌玻璃研究所</a></li><li><a href="../hospital/index.html"><small>2025/11/20</small>醫院街的仕紳之路</a></li><li><a href="../renwen/index.html"><small>2025/11/18</small>四分溪畔與人文大道</a></li><li><a href="../caoshanold/index.html"><small>2025/11/16</small>老屋中的草山記憶</a></li><li><a href="../guanyin/index.html"><small>2025/11/13</small>觀音山蓄水池・地下水宮殿</a></li><li><a href="../water/index.html"><small>2025/11/12</small>自來水博物館</a></li><li><a href="../ntnuart/index.html"><small>2025/11/12</small>師大美術館：巷弄中的異形建築</a></li><li><a href="../taijingnong/index.html"><small>2025/11/11</small>臺靜農故居定點導覽</a></li><li><a href="../yejintu/index.html"><small>2025/11/02</small>從鳳梨酸到蜜糖甜：葉金塗與罐頭產業</a></li><li><a href="../yangming/index.html"><small>2025/11/01</small>尋找修澤蘭：陽明高中</a></li><li><a href="../huozi/index.html"><small>2025/10/25</small>鐵道與活版印刷的百年物語</a></li><li><a href="../fuyou1025/index.html"><small>2025/10/25</small>孚佑百年・大稻埕文化走讀史蹟導覽</a></li><li><a href="../taoyuan/index.html"><small>2025/10/16</small>桃園車站遺跡大解密</a></li><li><a href="../song/index.html"><small>2025/09/26</small>「唱 我們的歌」流行音樂故事展</a></li><li><a href="../liuran/index.html"><small>2025/09/22</small>新竹六燃石油產業文化路徑</a></li><li><a href="../jingmei/index.html"><small>2025/09/20</small>尋找修澤蘭：景美女中</a></li><li><a href="../rongding/index.html"><small>2025/09/14</small>老城建築：榮町衡陽路</a></li><li><a href="../liuguan/index.html"><small>2025/09/13</small>店屋古厝：六館街尾洋式店屋</a></li><li><a href="../huayuan/index.html"><small>2025/09/06</small>花園新城走讀</a></li><li class="yr-se">2025 春</li><li><a href="../shuiyuan/index.html"><small>2025/05/09</small>水源寶藏・好戲上場</a></li><li><a href="../fuyou/index.html"><small>2025/05/04</small>孚佑百年・大稻埕仙公廟走讀</a></li><li><a href="../guangci/index.html"><small>2025/04/12</small>廣慈社宅的前世今生</a></li><li><a href="../dashen/index.html"><small>2025/04/12</small>大神百貨・城中走讀</a></li><li class="yr-se">2024–25 冬</li><li><a href="../ntuwang/index.html"><small>2025/02/22</small>最後的貴族：王大閎與臺大校園建築（場次四）</a></li><li><a href="../hanbaode/index.html"><small>2025/02/21</small>形色質美：漢寶德的建築特展策展人導覽</a></li><li><a href="../ntuwang0111/index.html"><small>2025/01/11</small>最後的貴族：王大閎與臺大校園建築（場次一）</a></li><li><a href="../gongxue/index.html"><small>2025/01/11</small>椰林大道的轉向：由臺北帝大校園發展談工學博物館</a></li><li><a href="../wanhuafilm/index.html"><small>2024/12/28</small>從《影視場景》拼湊萬華街景（青年組）</a></li><li class="yr-se">2024 秋</li><li><a href="../metamotion/index.html"><small>2024/11/29</small>無用之用：從松菸展場走進遠雄工地再生現場</a></li><li><a href="../backto1920/index.html"><small>2024/11/29</small>回到 1920：臺北最華美宮殿 × 醫學知識殿堂</a></li><li><a href="../bethany/index.html"><small>2024/11/09</small>伯大尼來樓：在城市角落點亮一盞「家」的燈塔</a></li><li><a href="../bangka/index.html"><small>2024/11/08</small>走讀艋舺信仰、美食與街區故事</a></li><li><a href="../mengzang/index.html"><small>2024/11/07</small>蒙藏文化大揭密 × 臺北清真寺</a></li><li><a href="../weichang/index.html"><small>2024/11/04</small>教師監獄？揭開台大闈場秘辛</a></li><li><a href="../dangchan/index.html"><small>2024/11/02</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../shuishui/index.html"><small>2024/10/28</small>萬華板橋雙北兩市水水家園走讀</a></li><li><a href="../meiwufu/index.html"><small>2024/10/28</small>中山學：九條通梅屋敷走讀</a></li><li><a href="../dangchan1026/index.html"><small>2024/10/26</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../dangchan1006/index.html"><small>2024/10/06</small>走讀國家寶藏：台北城中區的黨產謎團</a></li><li><a href="../miaoyu/index.html"><small>2024/09/07</small>百年廟宇巡禮：騎單車串起艋舺與大稻埕</a></li><li class="yr-se">2024 夏</li><li><a href="../zoo/index.html"><small>2024/08/31</small>動物園的指標系統：臺北設計獎作品走讀</a></li><li><a href="../luzhou/index.html"><small>2024/06/01</small>蘆洲故事島：從李宅走到保和宮</a></li><li class="yr-se">2024 春</li><li><a href="../xindian/index.html"><small>2024/05/04</small>巡遊新店時代聚落：從 1779 土地公走進高樓與神祕眷村</a></li><li><a href="../xinsheng/index.html"><small>2024/05/01</small>打開新生流域：給未來「新生」的一封信</a></li><li><a href="../xichang/index.html"><small>2024/04/30</small>西昌街走讀：從艋舺的中心點說起</a></li><li><a href="../tiaotong/index.html"><small>2024/04/29</small>三板橋大正町條通走讀</a></li><li><a href="../anken/index.html"><small>2024/04/24</small>安坑輕軌春日行：雨中從十四張走進老安坑</a></li><li><a href="../guishan/index.html"><small>2024/03/09</small>紅土台地上的時間摺頁：龜山坪頂走讀紀行</a></li></ul></details><span>2026/06/05</span></div>
+<header class="hero" id="top">
+  <img class="hero-bg" src="img/152501.jpg" alt="大雨中手動啟動的三座弧形水霧光環噴出白霧，穿過阿勃勒樹梢與撐傘的人群">
+  <div class="hero-in">
+    <div class="pill-tag">2025 臺北設計獎・臺北城市設計選拔得獎作品走讀</div>
+    <h1>瑠公綠廊：一場大雨裡的東區水路翻身記
+      <span class="hero-en">Liugong Green Corridor Pedestrian Environment Improvement Project</span>
+    </h1>
+    <p class="hero-sub">週五午後的傾盆大雨，讓遠東百貨忠孝館後方這條 4,500 平方公尺的「瑠公綠廊」變成一場無可取代的工務實測現場：紙本講義臨時換成手舉護貝 QR Code、腳下親眼看穿透水混凝土與壓花瀝青的排水反差、雨天自動休眠的水霧系統被設計團隊特地手動喚醒，還碰巧遇上開幕第三天的漂流木動物園。</p>
+  </div>
+</header>
+
+<section class="spec-wrap" aria-label="工程基本檔案">
+  <div class="spec-bar">
+    <div class="spec-cell"><small>BASE AREA · 基地面積</small><strong>4,500 m²</strong><span>SOGO 忠孝館後方至復興南路 135 巷</span></div>
+    <div class="spec-cell"><small>COMPLETION · 完工啟用</small><strong>2024 年</strong><span>6 月啟用・年底結案・東區振興首段</span></div>
+    <div class="spec-cell"><small>BUDGET · 工程規模</small><strong>5,647 萬</strong><span>含專案經費共 6,615 萬元</span></div>
+    <div class="spec-cell"><small>UNDERGROUND · 地下覆土</small><strong>60–80 cm</strong><span>兩條既有大箱涵緊貼地面之下</span></div>
+  </div>
+</section>
+
+<div class="event-ribbon">
+  <div class="ribbon-in">
+    <div><b>活動日期與時間</b>2026 年 6 月 5 日（五）14:40–15:00 報到・15:00–16:00 導覽</div>
+    <div><b>現場導覽團隊</b>台灣世曦工程顧問股份有限公司－設計師團隊</div>
+    <div><b>主辦／執行單位</b>臺北市政府產業發展局主辦・中國生產力中心協辦</div>
+    <div><b>走讀起點與街區</b><a href="https://www.google.com/maps/search/%E8%87%BA%E5%8C%97%E5%B8%82%E5%A4%A7%E5%AE%89%E5%8D%80%E5%A4%A7%E5%AE%89%E8%B7%AF%E4%B8%80%E6%AE%B5+%E7%91%A0%E5%85%AC%E5%85%AC%E5%9C%92" target="_blank" rel="noopener">遠東 SOGO 忠孝館後方瑠公公園至大安路一段（頂好商圈）</a></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <!-- OPENING DOSSIER + SVG CROSS-SECTION -->
+  <section class="opening">
+    <div class="intro-copy">
+      <h2>從百貨後門的機車海，變身串聯東區的綠色走廊</h2>
+      <p>隨著臺北商業重心一度東移至信義計畫區與西側中山商圈，昔日繁華的<b>頂好商圈</b>需要一條重新把人留下來的步行軸線。臺北市政府自 2019 年提出「<b>東區發展振興計畫</b>」，而「<b>瑠公綠廊人行環境改造工程</b>」正是全計畫率先完工的第一段示範工程。</p>
+      <p>本案透過<b>人行環境改善</b>、<b>綠帶整合</b>及<b>街道空間優化</b>，提升步行舒適性與都市景觀品質，重新串聯商圈、人行動線與公共空間，打造兼具宜行性、友善性與都市美學的綠色廊道。也因精準翻轉了城市後巷與車本空間的限制，作品不僅在 <b>2025 臺北設計獎「臺北城市設計選拔」</b>榮獲<b>台灣設計聯盟特別獎</b>，更接連拿下<b>第 24 屆公共工程金質獎</b>土木類特優與<b>台灣景觀大獎</b>肯定。</p>
+      <div class="brief-box"><b>這天的意外舞台：</b>原訂在遠東百貨忠孝館門口集合，偏偏遇上六月初的一場大雨，團隊臨機把開場搬進後方瑠公公園白色涼亭，也讓每一位帶著輕便雨具前來的市民，意外看見晴天絕對看不出來的設計細節。</div>
+    </div>
+
+    <aside class="strata-card" aria-label="瑠公綠廊地下剖面圖解">
+      <div class="strata-head">
+        <h3>地下剖面圖解：為何不直接把河道掀開？</h3>
+        <span>SECTION · 60–80 CM</span>
+      </div>
+      <svg class="strata-svg" viewBox="0 0 440 250" role="img" aria-label="瑠公綠廊地下剖面圖：地面為透水廣場與抬高花臺，下方僅六十至八十公分即是兩條排水大箱涵">
+        <!-- Sky / Mist -->
+        <rect x="0" y="0" width="440" height="122" fill="#e6f1ee" opacity=".6"/>
+        <!-- Mist Arcs -->
+        <path d="M295 122 C295 45, 365 45, 365 122" fill="none" stroke="#3b6e61" stroke-width="5" opacity=".75"/>
+        <path d="M325 122 C325 65, 385 65, 385 122" fill="none" stroke="#3b6e61" stroke-width="4" opacity=".45"/>
+        <circle cx="330" cy="60" r="22" fill="#ffffff" opacity=".45"/>
+        <circle cx="352" cy="70" r="16" fill="#ffffff" opacity=".4"/>
+        <!-- Existing Cassia Tree in Raised Planter -->
+        <rect x="38" y="96" width="96" height="26" rx="3" fill="#635147"/>
+        <path d="M86 96 L86 42 M86 64 L66 44 M86 58 L106 38" stroke="#4d3d35" stroke-width="5" stroke-linecap="round"/>
+        <ellipse cx="86" cy="36" rx="38" ry="22" fill="#3b825e" opacity=".9"/>
+        <circle cx="72" cy="32" r="6" fill="#e6be3a"/>
+        <circle cx="98" cy="38" r="5" fill="#e6be3a"/>
+        <text x="86" y="113" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">抬高花臺（保留老樹）</text>
+        <!-- Precast Bench & Permeable Plaza -->
+        <rect x="160" y="106" width="66" height="16" rx="4" fill="#b8c2be"/>
+        <text x="193" y="117" text-anchor="middle" font-size="10" fill="#1b2925" font-weight="700">預鑄長椅</text>
+        <!-- Ground line -->
+        <rect x="0" y="122" width="278" height="12" fill="#7c8f88"/>
+        <rect x="278" y="122" width="162" height="12" fill="#b34832"/>
+        <text x="200" y="131" text-anchor="middle" font-size="9.5" fill="#fff">透水混凝土＋透水磚</text>
+        <text x="358" y="131" text-anchor="middle" font-size="9.5" fill="#fff">壓花瀝青消防車道</text>
+        <!-- Shallow Soil Layer 60-80cm -->
+        <rect x="0" y="134" width="440" height="32" fill="#cfc6b4"/>
+        <text x="220" y="154" text-anchor="middle" font-size="12" fill="#3a2f22" font-weight="700">淺層覆土僅 60–80 cm（無法直接深根植樹）</text>
+        <!-- Two Box Culverts -->
+        <rect x="0" y="166" width="440" height="84" fill="#8f9896"/>
+        <rect x="46" y="176" width="150" height="58" rx="4" fill="#2d4c49" stroke="#d9e3e0" stroke-width="3"/>
+        <rect x="244" y="176" width="150" height="58" rx="4" fill="#2d4c49" stroke="#d9e3e0" stroke-width="3"/>
+        <path d="M54 212 Q85 204, 118 212 T188 212" fill="none" stroke="#8ad4c3" stroke-width="2.5"/>
+        <path d="M252 212 Q283 204, 316 212 T386 212" fill="none" stroke="#8ad4c3" stroke-width="2.5"/>
+        <text x="121" y="198" text-anchor="middle" font-size="11.5" fill="#e6f5f1" font-weight="700">既有排水大箱涵 ①</text>
+        <text x="319" y="198" text-anchor="middle" font-size="11.5" fill="#e6f5f1" font-weight="700">既有排水大箱涵 ②</text>
+        <text x="220" y="245" text-anchor="middle" font-size="10.5" fill="#182220" font-weight="700">早期大灣河道加蓋後遺留的雙箱涵結構</text>
+      </svg>
+      <p class="strata-note">地下僅 <b>60–80 公分</b>即為兩條排水大箱涵，無法將基地全面降平或開蓋成明渠——否則不僅傷及既有<b>阿勃勒老樹</b>，也會把百貨後門與鄰里再次切斷。團隊轉而利用<b>抬高花臺</b>整合高程，再用<b>夜間水波紋投影、銅魚雕塑與三座水霧光環</b>重現水路記憶。</p>
+    </aside>
+  </section>
+
+  <!-- 6 FIELD EXCLUSIVES -->
+  <section class="exclusives" aria-label="本場限定亮點">
+    <div class="sec-head">
+      <h2>這一場雨天走讀，才遇得到、聽得到的</h2>
+      <p>晴天看得到綠意與座椅，但下面這六件事，唯有在這個下雨的週五午後踏進現場才碰得上。</p>
+    </div>
+    <div class="ex-grid">
+      <a class="ex-card" href="#s1"><span class="ex-tag">雨天限定應變</span><b>沒有紙本，手舉護貝 QR Code 的涼亭開場</b><span>為防大雨淋濕講義，設計團隊舉起一張護貝 A4 條碼，讓現場市民撐傘圍圈即時掃碼看圖資。</span></a>
+      <a class="ex-card r" href="#s3"><span class="ex-tag">現地實測</span><b>大雨讓「透水 vs 不透水」在腳下直接現形</b><span>一邊是吸乾雨滴的透水廣場，緊鄰看似紅磚卻會反光積水的壓花瀝青車道，晴天根本比不出來。</span></a>
+      <a class="ex-card" href="#s4"><span class="ex-tag">唯一這場才有</span><b>雨天自動休眠的水霧，特地手動喚醒</b><span>水霧系統設有雨天感應器原應停機，工程師破例手動開閘，讓細霧與大雨在弧形光環下交會。</span></a>
+      <a class="ex-card r" href="#s2"><span class="ex-tag">要來才知道</span><b>別被「瑠公」騙了：其實是大灣河道三叉匯流</b><span>基地前身並非單純的瑠公圳支線，而是早年三條大灣河道匯集處，1907 年才整併進瑠公圳系統。</span></a>
+      <a class="ex-card" href="#s4"><span class="ex-tag">金質獎工藝</span><b>廠商原本喊做不出來：單一鋼模橫躺灌漿長椅</b><span>一顆寬 90 公分、刻意帶微斜脫模角，捨棄會錯位的雙模具改用單一鋼模逐顆翻製，精準對縫。</span></a>
+      <a class="ex-card r" href="#s5"><span class="ex-tag">稍縱即逝</span><b>開展第三天的 6 月限定「漂流木動物園」</b><span>6 月 2 日才剛進駐花臺的張弘欣漂流木特展，加上水霧養出「太澎湃」的灌木，只在這季看得到。</span></a>
+    </div>
+  </section>
+
+  <!-- STICKY JUMP NAV -->
+  <nav class="chap-nav" aria-label="章節導覽">
+    <span class="cn-label">走讀五幕</span>
+    <a href="#s1"><i>01</i>涼亭雨中開場</a>
+    <a href="#s2"><i>02</i>大灣河道百年</a>
+    <a href="#s3"><i>03</i>路權與雙色鋪面</a>
+    <a href="#s4"><i>04</i>水霧與預鑄工藝</a>
+    <a href="#s5"><i>05</i>漂流木特展與共管</a>
+  </nav>
+
+  <!-- CHAPTER 01 -->
+  <section class="chapter" id="s1">
+    <div class="ch-kicker">
+      <span class="ch-no">SCENE 01</span>
+      <span class="ch-time">14:40–15:10 · 瑠公公園白色涼亭</span>
+      <span class="ch-badge r">雨天臨時移師</span>
+    </div>
+    <h2>撐傘走進涼亭：一張護貝 QR Code 展開的序曲</h2>
+    <div class="mosaic-split">
+      <div class="prose">
+        <p>午後兩點四十分過後，東區雨勢轉急。原訂在<b>遠東百貨忠孝館門口</b>的報到集合，改為往後穿進<b>瑠公公園</b>的白色棚架下躲雨。長椅上早已排好一盒盒活動茶點，工作人員用<b>黃色半透明雨布</b>把紙盒嚴嚴實實地蓋了起來，參加者各自收傘、抖落雨水，站在白柱涼亭裡等開場。</p>
+        <p>三點整，協辦單位<b>財團法人中國生產力中心</b>的承辦人方威先向大家致意，感謝大家在滂沱大雨中仍準時赴約；接著把麥克風交給負責這座工程景觀設計的<b>台灣世曦工程顧問</b>團隊代表。沒想到團隊開場第一句先向大家致歉：原本沒料到會下這麼大的雨，怕紙本圖冊一發出去立刻糊成一團，只好臨時印出<b>一張護貝 A4 的 QR Code</b>。</p>
+        <p>於是出現了這場走讀最有意思的第一幅畫面——承辦人一邊拎著擴音器背包、一邊高高舉起護貝紙牌，後頭的設計師拿著麥克風開口講解，亭子下的市民紛紛舉起手機對準半空中掃碼，雨滴就在頭頂的白色格柵棚架間滴滴答答地落下來。</p>
+        <div class="callout"><b>為什麼從大安路圍籬看起？</b>設計師在出發前先指著涼亭旁正在施工的大安路圍籬破題：瑠公綠廊只是<b>東區發展振興計畫的第一段完工工程</b>，往後還會一路接上施工中的大安路一段人本工程，從<b>北科大、瑠公公園、龍門廣場一路串到仁愛圓環</b>，把這條隱形河道上的行人路權一截一截拼回來。</div>
+      </div>
+
+      <div class="mosaic-grid">
+        <div class="mosaic-stack">
+          <figure class="fig">
+            <button data-ph="150445" aria-label="放大照片：大雨下用黃色雨布保護活動茶點的瑠公公園長椅">
+              <img loading="lazy" src="img/150445.jpg" alt="瑠公公園涼亭下用黃色塑膠布蓋著的白色茶點盒與等候開場的市民">
+            </button>
+            <figcaption><b>大雨裡的備戰</b>：涼亭長椅上的茶點盒被黃色雨衣細心遮蓋，後頭正是施工圍籬。</figcaption>
+          </figure>
+          <figure class="fig">
+            <button data-ph="150440" aria-label="放大照片：雨水滑落白色涼亭格柵棚架下的集合人潮">
+              <img loading="lazy" src="img/150440.jpg" alt="瑠公公園白色格柵涼亭下聚集的走讀參加者與背景東區街景">
+            </button>
+            <figcaption><b>白色棚架下的聚落</b>：雨水在透明頂棚上積出倒影，眾人在這裡聽見東區振興藍圖。</figcaption>
+          </figure>
+        </div>
+        <figure class="fig tall">
+          <button data-ph="150724" aria-label="放大照片：工作人員高舉護貝 QR Code 讓市民掃描，設計師在後方開講">
+            <img loading="lazy" src="img/150724.jpg" alt="中國生產力中心承辦人高舉瑠公綠廊 QR Code 護貝牌，市民舉手機掃描，後方台灣世曦設計師持麥克風講解">
+          </button>
+          <figcaption><b>雨天限定的數位導覽牌</b>：取消紙本改舉護貝條碼，牌角印著 4,500 ㎡ 與 5,647 萬元的工程檔案。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 02 -->
+  <section class="chapter" id="s2">
+    <div class="ch-kicker">
+      <span class="ch-no">SCENE 02</span>
+      <span class="ch-time">15:10–15:15 · 復興南路一段 135 巷年表花臺</span>
+      <span class="ch-badge">水文正名現場</span>
+    </div>
+    <h2>別被「瑠公」兩字騙了：腳下原是大灣河道三叉匯流</h2>
+    <div class="prose">
+      <p>跨過巷口走進 <b>SOGO 忠孝館後方</b>，設計師立刻拋出一個多數臺北人都會誤會的身世之謎：「大家都叫這裡瑠公綠廊，但它最早其實<b>不算是瑠公圳</b>，而是天然形成的<b>大灣河道與大灣埤塘</b>。」團隊在翻查古地圖後發現，早年共有<b>三條河道在此匯集</b>，穿過今日復興南路往對面廟宇前的三叉點流去，只是後來水系整併進瑠公圳下游，才一路背負「瑠公」之名。</p>
+      <p>更讓人好奇的是：既然地下就是舊水道，為什麼不像台中柳川或韓國清溪川那樣直接把蓋子掀開、做一條親水明渠？設計師指著兩側貼得極近的百貨牆面與住宅大樓苦笑回答：第一，這條帶狀綠廊在東區精華區「寸土寸金」，寬度極窄，一旦開蓋挖出溝渠，<b>反而會再次切斷百貨後門與住戶、行人之間的聯繫</b>；第二，當年 <b>1985 年</b>加蓋的兩條排水大箱涵就埋在地面下僅 <b>60 到 80 公分</b>處，而且早期圖資並不精確，工程一挖開才發現箱涵與管線密布，根本沒有重新降挖、或讓樹根直接往地底深扎的空間。</p>
+    </div>
+
+    <div class="hist-strip" aria-label="基地百年演變時間軸">
+      <article class="hist-node">
+        <div class="yr">1895</div>
+        <h4>大灣河道</h4>
+        <p>自然匯流的三條水路穿過東區水田，在今日 SOGO 後方與復興南路交會成大灣埤塘水系。</p>
+      </article>
+      <article class="hist-node">
+        <div class="yr">1907</div>
+        <h4>圳路改造</h4>
+        <p>大灣與瑠公合併為「公共埤圳瑠公圳組合」，大灣正式納入瑠公圳管理範疇；周邊街廓漸起。</p>
+      </article>
+      <article class="hist-node brick">
+        <div class="yr">1985</div>
+        <h4>停車場建置</h4>
+        <p>瑠公農田水利會租出 50 年地上權（1983–2033）興建太平洋 SOGO，市府將水溝加蓋成停車場。</p>
+      </article>
+      <article class="hist-node">
+        <div class="yr">2024</div>
+        <h4>瑠公綠廊</h4>
+        <p>配合東區發展振興計畫，把長期佔用的機車格與排班計程車退場，重塑為人本步行綠廊。</p>
+      </article>
+    </div>
+
+    <div class="diptych">
+      <figure class="fig">
+        <button data-ph="151434" aria-label="放大照片：花臺金屬收邊上的 1895、1907、1985 歷史年表銘牌">
+          <img loading="lazy" src="img/151434.jpg" alt="花臺深褐色金屬收邊刻著 1985 停車場建置、1907 圳路改造與 1895 大灣河道歷史圖文">
+        </button>
+        <figcaption><b>刻在花臺邊緣的百年年表</b>：1895 大灣河道、1907 納入瑠公圳到 1985 加蓋為停車場，蹲下來就能讀完整段變遷。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="151428" aria-label="放大照片：2024 瑠公綠廊銘牌、地坪銅魚雕塑與水霧噴頭">
+          <img loading="lazy" src="img/151428.jpg" alt="2024 瑠公綠廊銘牌下方可見地面金屬魚形鑲嵌雕塑與銀色水霧地燈噴頭">
+        </button>
+        <figcaption><b>不能開蓋，就讓魚在路面游</b>：2024 銘牌下的透水地坪鑲著小魚雕塑與霧化地燈，夜裡會打上整條藍色水波紋。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHAPTER 03 -->
+  <section class="chapter" id="s3">
+    <div class="ch-kicker">
+      <span class="ch-no">SCENE 03</span>
+      <span class="ch-time">15:15–15:22 · 復興南路一段 135 巷南北兩側</span>
+      <span class="ch-badge r">雨天材質大對決</span>
+    </div>
+    <h2>把「早九停滿」的機車海與 9 台排班計程車請出去</h2>
+    <div class="prose">
+      <p>想把後巷還給行人，最難的從來不是畫設計圖，而是<b>把車位挪走</b>。改造前，這裡夾在 SOGO 後門與住宅之間，是百貨員工與附近上班族「<b>早上九點就停滿、一停一整天</b>」的機車停車場——轉換率低到連來逛街的市民都停不進去；同一時間，SOGO 排班計程車一路從忠孝東路轉進巷底，動輒排上<b>八、九台</b>，整個空間幾乎全被引擎與排氣占據。</p>
+      <p>經過多次地方說明會，以及光武里<b>韓修和里長</b>與市府跨局處穿梭溝通，終於拍板：既有停車格數並未消失，而是<b>退移至市民大道下重新規劃</b>；計程車排班區則改設到 SOGO 側邊小巷，一次只能容納約兩台車，並由百貨派員在忠孝東路上控管引導。北側巷道留給社區車輛與 <b>3 格裝卸貨車位</b>；南側緊鄰百貨這條原寬 <b>5.5 公尺</b>的車道，則直接<b>縮減 1.5 公尺</b>並封閉常態車行，只留下供<b>緊急消防車臨時進入</b>的寬度。</p>
+      <div class="callout r"><b>原本想做「可旋轉車阻」的幕後小故事：</b>設計團隊起初還構想在車道口安裝平時封閉、有車時可旋轉開啟的活動車阻；但評估東區假日人潮龐大，可活動的機構容易遭碰撞或破壞，最後決定取消旋轉車阻，改用清晰的鋪面分色來區隔步行與緊急通道。</div>
+    </div>
+
+    <div class="matrix" aria-label="改造前後空間對照">
+      <article class="matrix-card before">
+        <h3>改造前 <span>BEFORE</span></h3>
+        <ul>
+          <li><b>低轉換率機車海</b>：早上九點前就被周邊上班族停滿，逛街民眾幾乎無法使用。</li>
+          <li><b>計程車長龍佔道</b>：SOGO 後門排班動輒八、九台車迴轉堵死巷弄。</li>
+          <li><b>破碎高差與暗巷感</b>：前後高起的花臺、斑駁瀝青與各自加裝的節慶燈飾顯得雜亂。</li>
+          <li><b>過馬路得繞遠路</b>：行人想穿過復興南路接瑠公公園，往往得繞到市民大道底下。</li>
+        </ul>
+      </article>
+      <article class="matrix-card after">
+        <h3>改造後 <span>AFTER</span></h3>
+        <ul>
+          <li><b>全透水步行廣場</b>：透水混凝土＋透水磚取代不透水柏油，透水面積大增逾倍。</li>
+          <li><b>車道退縮 1.5 公尺</b>：南側改為緊急消防與百貨推車共用的減速緩衝通道。</li>
+          <li><b>行穿線與號誌前移</b>：紅綠燈往前移動，出綠廊直接跨過復興南路接軌瑠公公園。</li>
+          <li><b>燈桿整合＋太陽能 YouBike</b>：過去各自拉線的節慶燈光整併進景觀燈桿；周邊單車柱也改為免開挖的太陽能模組。</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="diptych">
+      <figure class="fig">
+        <button data-ph="151141" aria-label="放大照片：撐傘人群沿阿勃勒黃花與三座燈桿走進 SOGO 後方綠廊">
+          <img loading="lazy" src="img/151141.jpg" alt="遠東 SOGO 忠孝館白色建築與對側住商大樓之間，盛開的阿勃勒黃花下撐滿五顏六色的雨傘">
+        </button>
+        <figcaption><b>夾在高樓與百貨之間的綠谷</b>：右側住宅退讓、左側百貨敞開，頭頂是六月正盛開的黃金阿勃勒。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="151338" aria-label="放大照片：雨天對比紅色壓花瀝青車道積水反光與灰色透水廣場乾爽不積水">
+          <img loading="lazy" src="img/151338.jpg" alt="SOGO 後門推車工人推著黃色手推車經過濕亮反光的橘紅色壓花瀝青通道，右側市民站在乾爽的灰色透水鋪面上">
+        </button>
+        <figcaption><b>雨天才看得見的雙材質實測</b>：左邊看似紅磚其實是抗車壓的<b>彩色壓花瀝青</b>（雨天明顯反光），右邊則是全透水的灰色廣場。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHAPTER 04 -->
+  <section class="chapter" id="s4">
+    <div class="ch-kicker">
+      <span class="ch-no">SCENE 04</span>
+      <span class="ch-time">15:22–15:35 · 中央廣場・預鑄座椅・吧台休憩區</span>
+      <span class="ch-badge">破例手動開霧＋金質獎工藝</span>
+    </div>
+    <h2>只有走近才懂的三個密碼：喚醒水霧、單一鋼模與兩分鐘吧台</h2>
+    <div class="prose">
+      <p>既然無法把河水挖出來，團隊改用<b>空氣裡的濕度</b>與<b>街道家具的尺度</b>讓空間「涼」下來。這座綠廊沿著花臺與三個水霧圓環設有細緻的<b>自來水高壓水霧系統</b>——設計設定在早上十點到晚上八點間，<b>每整點自動噴灑 5 到 10 分鐘</b>替行人調節微氣候。但因為機器內建雨水／濕度感應器，遇到這天下大雨，系統原本早就乖乖休眠了。</p>
+      <p>「大家難得冒雨來，我等一下手動把它打開讓各位感受一下！」話才說完不久，花臺低處與半空中三座深色弧形光環同時嘶嘶噴出細白水霧，瞬間在雨簾裡疊出一層飄渺的白煙。這幕<b>雨水與水霧同框</b>的奇景，晴天看不見雨勢、一般雨天機器不會噴，只有參加這場走讀的人剛好撞個正著。</p>
+    </div>
+
+    <div class="craft-grid" aria-label="三大設計工藝解析">
+      <article class="craft-card">
+        <span class="cc-num">DETAIL 01 · MICROCLIMATE</span>
+        <h3>低矮噴霧＋夜間懸浮光條</h3>
+        <p>水霧噴頭從低處斜向步道吹送，水粒子極細、沾身不濕；花臺下方還藏了<b>沖孔板與燈條</b>，夜裡看去整座花臺就像輕輕懸浮在藍色水波紋之上。</p>
+      </article>
+      <article class="craft-card">
+        <span class="cc-num">DETAIL 02 · PRECAST BENCH</span>
+        <h3>讓廠商一度抗拒的「單一鋼模」長椅</h3>
+        <p>這排曲線混凝土座椅寬約 <b>90 公分</b>一顆，採臺灣公園少見的<b>工廠鋼模橫躺灌漿＋現場吊裝</b>。當初開兩套模具仍對不齊接縫，廠商乾脆用<b>同一套鋼模</b>逐顆翻製，並刻意做出微斜角度才順利脫模，品質穩定到成為拿下金質獎的一大亮點。</p>
+      </article>
+      <article class="craft-card">
+        <span class="cc-num">DETAIL 03 · ERGONOMICS</span>
+        <h3>不作「岩盤浴」的立食高腳吧台</h3>
+        <p>百貨最初很擔心坐椅太舒適會讓群眾徹夜聚眾喧嘩，因此住戶側保留穿越動線、商業側才設休憩區：除可<b>快閃站著喝咖啡</b>的弧形高腳吧台，椅面更選用<b>鍍鋅鋼加氟碳烤漆</b>網孔材質，夏天直曬不會像混凝土座面燙得像做「岩盤浴」，中間還留出推<b>嬰兒車與輪椅</b>的停靠空檔。</p>
+      </article>
+    </div>
+
+    <div class="showcase">
+      <figure class="fig wide">
+        <button data-ph="152501" aria-label="放大照片：手動啟動的三座水霧光環在大雨中噴出濃密白霧">
+          <img loading="lazy" src="img/152501.jpg" alt="大安路側三座弧形水霧光環在大雨中手動啟動，濃密白霧包圍阿勃勒與高樓，市民撐傘仰望">
+        </button>
+        <figcaption><b>全場最高潮的一刻</b>：設計師手動觸發三座弧形水霧光環，白霧順著雨氣湧向樹梢，重現昔日大灣水岸的清涼記憶。</figcaption>
+      </figure>
+      <div class="diptych">
+        <figure class="fig">
+          <button data-ph="151936" aria-label="放大照片：花臺低處向透水步道噴出的微氣候降溫水霧">
+            <img loading="lazy" src="img/151936.jpg" alt="花臺低處的水霧噴頭沿地面向透水磚步道噴出細霧，對面是遠東 SOGO 建築與阿勃勒">
+          </button>
+          <figcaption><b>貼近地面的降溫水霧</b>：向人行道低矮處吹送的細霧粒子極小，站在旁邊拍照幾乎不會沾濕衣服。</figcaption>
+        </figure>
+        <figure class="fig">
+          <button data-ph="151602" aria-label="放大照片：模組化預鑄曲線長椅與金屬扶手接縫近景">
+            <img loading="lazy" src="img/151602.jpg" alt="近看由單一鋼模預鑄拼接而成的灰色曲線混凝土長椅與金屬扶手，背景為橘紅壓花瀝青車道">
+          </button>
+          <figcaption><b>單一鋼模對縫的極致</b>：吊車安裝時邊角曾小有碰撞再修補平順，每顆 90 公分的曲率接縫幾乎嚴絲合縫。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 05 -->
+  <section class="chapter" id="s5">
+    <div class="ch-kicker">
+      <span class="ch-no">SCENE 05</span>
+      <span class="ch-time">15:35–16:00 · 漂流木綠廊特展・星巴克前吧台區</span>
+      <span class="ch-badge r">6 月限時風景 × 三方共管</span>
+    </div>
+    <h2>開展第三天的漂流木動物園，與「長太好」的甜蜜煩惱</h2>
+    <div class="prose">
+      <p>走到綠廊後段，灌木叢裡竟然探出一頭昂首的馬與一頭鹿！原來就在這場走讀前三天（<b>6 月 2 日至 7 月 30 日</b>），遠東 SOGO 忠孝館攜手光武里與東區商圈發展協會，邀請漂流木藝術家<b>張弘欣</b>把「<b>漂流木永續創藝</b>」綠廊特展搬進這裡——讓山海之間的漂流朽木化身為都市叢林裡的《<b>木躍奔馬</b>》與鹿群，成了這趟六月走讀才遇得到的期間限定風景。</p>
+      <p>有趣的是，這座綠廊之所以能維持得不像多數完工兩年後就顯疲態的公園，靠的是一套少見的<b>三方共管默契</b>。甚至因為水霧系統每小時自動幫植物補水一次，這裡的多層次灌木與蕨類長得比臺北其他公園都要「<b>澎湃</b>」，讓地方里長常得打電話請公園處派人修剪；而在星巴克前的立食吧台旁，這場走讀一路聊到將近四點，市民們拿著雨傘繼續追問預鑄模具造價、噴頭阻塞維護與未來大安路銜接工程，把公共建設幕後的眉角問個徹底才各自散去。</p>
+    </div>
+
+    <div class="gov-grid" aria-label="三方共管機制">
+      <article class="gov-card">
+        <small>PARTNER 01 · 地方里鄰</small>
+        <h4>光武里辦公處・東區商圈發展協會</h4>
+        <p>韓修和里長幾乎每周緊盯空間狀況與植栽生長；廣場更預留了<b>活動專用電源</b>，周末辦市集活動再也不用叫吵雜的發電車。</p>
+      </article>
+      <article class="gov-card">
+        <small>PARTNER 02 · 百貨企業</small>
+        <h4>遠東 SOGO 忠孝館</h4>
+        <p>認養鄰接空間清潔與日常巡管，配合側巷計程車交管，也主動策劃 6 月漂流木特展等季展，讓「後門」真正成為「後院」。</p>
+      </article>
+      <article class="gov-card">
+        <small>PARTNER 03 · 市政公部門</small>
+        <h4>北市府公園處・新工處</h4>
+        <p>負責大樹颱風前修枝、水霧系統維管與植栽養護；工程群組搭配市民 <b>1999</b> 即時回報機制，讓精華區公園維持高水準狀態。</p>
+      </article>
+    </div>
+
+    <div class="diptych">
+      <figure class="fig">
+        <button data-ph="153524" aria-label="放大照片：星巴克前曲線高腳吧台桌與白色圓凳街道家具">
+          <img loading="lazy" src="img/153524.jpg" alt="星巴克門前的弧形白色高腳吧台與圓凳街道家具，中間留有推車與輪椅空間，右側可見漂流木動物雕塑">
+        </button>
+        <figcaption><b>給兩分鐘快閃族的弧形吧台</b>：高腳桌方便上班族站著喝杯咖啡就走，中間空檔貼心留給嬰兒車與輪椅。</figcaption>
+      </figure>
+      <figure class="fig">
+        <button data-ph="153311" aria-label="放大照片：藏在茂密灌木中的漂流木鹿雕塑與雨中解說人群">
+          <img loading="lazy" src="img/153311.jpg" alt="水霧滋養下茂密生長的綠廊灌木裡藏著漂流木鹿雕塑，設計師在撐傘人群中拿著麥克風回答提問">
+        </button>
+        <figcaption><b>灌木太「澎湃」的證據</b>：水霧養得蕨類與灌木格外飽滿，六月限定的漂流木鹿就像真的躲進森林裡。</figcaption>
+      </figure>
+    </div>
+
+    <div class="closer-trio">
+      <figure class="fig tall">
+        <button data-ph="151207" aria-label="放大照片：SOGO 漂流木永續創藝綠廊特展立牌">
+          <img loading="lazy" src="img/151207.jpg" alt="寫著 6/2 至 7/30 漂流木永續創藝綠廊特展的活動看板與後方漂流木馬">
+        </button>
+        <figcaption><b>開展第三天的展牌</b>：光武里與商圈共同協辦，展期只有六到七月。</figcaption>
+      </figure>
+      <div class="prose" style="align-self:center">
+        <h3 style="font-size:21px;margin-bottom:10px">一場公共工程走讀，其實是市民與設計師的對焦時刻</h3>
+        <p>走到尾聲，一位愛看公共建設的市民忍不住對設計師說：「我覺得把車道縮減 1.5 公尺是一件很偉大的事情。」設計師笑著回應，其實地方住戶原本也討厭排班車潮與違停，只是過去沒人帶頭重整；一旦開始做了，就會發現只要有人願意在臺灣嘗試<b>預鑄工法與減法設計</b>，下一個工程團隊才會跟著往前邁步。</p>
+        <p>從星巴克前這場雨中的最後問答散開時，雨勢依舊沒停，但這條原本誰都不太想多停留的百貨後巷，已經悄悄讓人想在某個晴朗夜晚再回來——看看藍色水波紋在地上流動的樣子。</p>
+      </div>
+      <figure class="fig tall">
+        <button data-ph="154158" aria-label="放大照片：星巴克前雨中壓軸 Q&A 現場">
+          <img loading="lazy" src="img/154158.jpg" alt="星巴克外白色圓凳與燈柱旁，台灣世曦設計師持麥克風與撐傘市民進行最後熱烈問答">
+        </button>
+        <figcaption><b>星巴克前的壓軸問答</b>：從水霧水質（自來水）一路問到預鑄鋼模成本，雨天反而讓對話更深入。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- POCKET GUIDE -->
+  <section class="pocket" aria-label="下次自己散步去東區可以這樣看">
+    <h2>下次自己散步去頂好商圈，可以這樣看懂瑠公綠廊</h2>
+    <ul>
+      <li><b>低頭找兩條線索</b>：先比對灰色<b>透水廣場</b>與紅色<b>壓花瀝青車道</b>的腳感差別，再低頭在花臺邊緣找尋 <b>1895→2024 歷史年表</b>與地坪上的銅色小魚。</li>
+      <li><b>抬頭看三個圓環</b>：面向復興南路那三座弧形光環，正好標示出早期大灣河道穿越馬路、接回對面瑠公公園的古老走向。</li>
+      <li><b>整點來吹水霧</b>：晴天早上 10:00 到晚上 20:00，每個整點會自動噴水霧 5–10 分鐘；若碰上晚上前來，地面還會亮起藍色水波紋投影與花臺懸浮光條。</li>
+      <li><b>坐下來比一比</b>：先試坐 90 公分模組化拼接的預鑄混凝土曲椅，再去星巴克前靠一靠氟碳烤漆的立食高腳吧台，體會兩種完全不同的街區節奏。</li>
+    </ul>
+  </section>
+
+  <!-- AFTERWORD -->
+  <section class="afterword" aria-label="走讀後記">
+    <div class="afterword-head">
+      <h2>走讀後記：大雨替設計圖做的最誠實檢驗</h2>
+      <p>有些風景要天氣正好才美，但公共工程好不好用，偏偏要一場午後大雨才能檢驗得最透徹。</p>
+    </div>
+    <div class="af-grid">
+      <article class="af-card">
+        <h3>唯一：紙本換成 QR Code 的雨天版本</h3>
+        <p>誰也沒預料到六月初的這場大雨，卻因此留下撐傘在涼亭舉牌掃碼、與雨中手動喚醒水霧光環的畫面，成了再辦十場晴天場次也複製不來的記憶。</p>
+      </article>
+      <article class="af-card">
+        <h3>第一：東區振興計畫的領頭示範段</h3>
+        <p>從這 4,500 平方公尺開始，一路接向正在施工的大安路一段人本工程、龍門廣場與仁愛圓環——站在這裡，正好看到東區步行軸線起跑的第一棒。</p>
+      </article>
+      <article class="af-card">
+        <h3>要來才知道：圖面背後的妥協與堅持</h3>
+        <p>為什麼不掀開河道、為什麼只用單一鋼模、為什麼商業側才放高腳吧台、甚至公園處與 SOGO 怎麼分頭顧花顧燈，全是站在實體前才聽得到的真實眉角。</p>
+      </article>
+      <article class="af-card">
+        <h3>稍縱即逝：6 月花季與漂流木動物園</h3>
+        <p>頭頂正好掛著六月盛開的阿勃勒黃花，花臺裡住進展期僅到七月底的張弘欣漂流木動物雕塑——城市裡的自然與藝術，永遠只在當下同框。</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>2026/06/05 參加「臺北城市設計選拔作品走讀活動・瑠公綠廊人行環境改造工程」（臺北市政府產業發展局主辦、中國生產力中心協辦、台灣世曦工程顧問設計師團隊導覽）的走讀筆記</span>
+  <a href="#top">回到頁首 ↑</a>
+</footer><nav class="yr-pn" aria-label="其他走讀"><a href="../pts/index.html"><small>‹ 較新的一場・2026/07/05</small>走進公視幕後定時導覽</a><a class="nx" href="../budai/index.html"><small>較早的一場・2026/05/20 ›</small>走讀布袋戲街：大稻埕的戲曲底蘊</a><a class="home" href="../../index.html">回到全部走讀筆記</a></nav>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="照片放大檢視">
+  <img id="lbi" alt="">
+  <div class="bar">
+    <button id="lbp" aria-label="上一張">‹</button>
+    <span id="lbc"></span>
+    <button id="lbn" aria-label="下一張">›</button>
+    <button id="lbx" aria-label="關閉">✕</button>
+  </div>
+</div>
+
+<script>
+{
+  const btns=[...document.querySelectorAll('main button[data-ph]')];
+  const items=btns.map((b,idx)=>{
+    const img=b.querySelector('img');
+    const fig=b.closest('figure');
+    const cap=fig?fig.querySelector('figcaption').textContent:img.alt;
+    b.dataset.idx=idx;
+    return {src:img.getAttribute('src'),alt:img.alt,cap};
+  });
+  const lb=document.getElementById('lb'),im=document.getElementById('lbi'),cp=document.getElementById('lbc');
+  let cur=0;
+  const show=i=>{
+    cur=(i+items.length)%items.length;
+    const x=items[cur];
+    im.src=x.src;
+    im.alt=x.alt;
+    cp.textContent=`${x.cap}　（${cur+1}/${items.length}）`;
+  };
+  document.querySelector('main').addEventListener('click',e=>{
+    const b=e.target.closest('button[data-ph]');
+    if(b){show(+b.dataset.idx);lb.classList.add('on');document.getElementById('lbx').focus();}
+  });
+  document.getElementById('lbp').onclick=()=>show(cur-1);
+  document.getElementById('lbn').onclick=()=>show(cur+1);
+  const close=()=>lb.classList.remove('on');
+  document.getElementById('lbx').onclick=close;
+  lb.addEventListener('click',e=>{if(e.target===lb)close();});
+  document.addEventListener('keydown',e=>{
+    if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')show(cur-1);
+    if(e.key==='ArrowRight')show(cur+1);
+  });
+}
+</script>
+</body>
+</html>
